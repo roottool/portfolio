@@ -1,0 +1,24 @@
+.about-page__title {
+    font-size: 3.5rem;
+    margin-top: 10vh;
+}
+
+.about-page__card {
+    margin: 5vh auto;
+}
+
+.about-page__table {
+    text-align: left;
+    padding: 50px 50px;
+    margin: 0 auto;
+    border-radius: 50px;
+    box-shadow: 1px 0px 3px rgba(0, 0, 0, 0.5);
+}
+
+.about-page__table tr {
+    margin-bottom: 20px;
+}
+
+.about-page__icons {
+    text-align: center;
+}

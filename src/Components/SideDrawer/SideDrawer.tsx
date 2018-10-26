@@ -20,10 +20,15 @@ class SideDrawer extends React.Component<IProps, {}> {
 
         return (
             <nav className={drawerClasses.join(' ')}>
+                <div className="side-drawer__title-area">
+                    <p className="side-drawer__title">Menu</p>
+                </div>
                 <ul>
-                    <li>
-                        <a href="/">About</a>
-                    </li>
+                    <a href="/">
+                        <li>
+                            About
+                        </li>
+                    </a>
                     <li>
                         <a href="/">Work</a>
                     </li>

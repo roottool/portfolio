@@ -1,10 +1,13 @@
 import * as React from 'react';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
+import './App.css';
 
 import Backdrop from './Components/Backdrop/Backdrop';
 import Navbar from './Components/Navbar/Navbar';
 import SideDrawer from './Components/SideDrawer/SideDrawer';
+import About from './Pages/About/About';
+import Home from './Pages/Home/Home';
 
 interface ISideDrawerState {
   isOpen: boolean;
@@ -31,26 +34,29 @@ class App extends React.Component<{}, ISideDrawerState> {
     }
 
     return (
-      <div className="App">
-        <Navbar drawToggleClickHandler={this.drawToggleClickHandler}/>
-        <SideDrawer show={this.state.isOpen}/>;
-        {backDrop}
-        <main className="main">
-          <p>"Why do it yourself when robots do it better."</p>
-          <p>- echo -</p>
-        </main>
-      </div>
+      <Router>
+        <div className="App">
+          <Navbar drawToggleClickHandler={this.drawToggleClickHandler} />
+          <SideDrawer show={this.state.isOpen} />
+          {backDrop}
+          <Switch>
+            <Route path="/about" component={About} />
+            <Route path="/" component={Home} />
+            <Route component={Home} />
+          </Switch>
+        </div>
+      </Router>
     );
   }
 
   private drawToggleClickHandler = () => {
     this.setState((prevState) => {
-      return {isOpen: !prevState.isOpen};
+      return { isOpen: !prevState.isOpen };
     });
   };
 
   private backdropClickHandler = () => {
-    this.setState({isOpen: false});
+    this.setState({ isOpen: false });
   };
 }
 

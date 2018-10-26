@@ -27,7 +27,7 @@ class Navbar extends React.Component<IProps, {}> {
                     <div className="navbar__navigation-items">
                         <ul>
                             <li>
-                                <a href="/">About</a>
+                                <a href="/about">About</a>
                             </li>
                             <li>
                                 <a href="/">Work</a>
