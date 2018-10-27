@@ -8,6 +8,7 @@ import Navbar from './Components/Navbar/Navbar';
 import SideDrawer from './Components/SideDrawer/SideDrawer';
 import About from './Pages/About/About';
 import Home from './Pages/Home/Home';
+import Skills from './Pages/Skills/Skills';
 
 interface ISideDrawerState {
   isOpen: boolean;
@@ -37,10 +38,11 @@ class App extends React.Component<{}, ISideDrawerState> {
       <Router>
         <div className="App">
           <Navbar drawToggleClickHandler={this.drawToggleClickHandler} />
-          <SideDrawer show={this.state.isOpen} />
+          <SideDrawer show={this.state.isOpen} drawToggleClickHandler={this.drawToggleClickHandler} />
           {backDrop}
           <Switch>
             <Route path="/about" component={About} />
+            <Route path="/skills" component={Skills} />
             <Route path="/" component={Home} />
             <Route component={Home} />
           </Switch>

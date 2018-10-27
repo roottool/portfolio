@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { Link } from "react-router-dom";
+
 import './Navbar.css';
 
 interface IProps {
@@ -15,23 +17,26 @@ class Navbar extends React.Component<IProps, {}> {
 
     public render() {
         return (
-            <header className="navbar">
+            <header className="navbar" style={{padding: 0}}>
                 <nav className="navbar__navigation">
                     <div className="navbar__toggle-button">
-                        <DrawerToggleButton clickHandler={this.clickHandler}/>
+                        <DrawerToggleButton clickHandler={this.clickHandler} />
                     </div>
                     <div>
-                        <a href="/" className="navbar__title">roottool's portfolio</a>
+                        <Link to="/" className="navbar__title">roottool's portfolio</Link>
                     </div>
-                    <div className="spacer" />
+                    <div className="spacer" style={{flex: 1}} />
                     <div className="navbar__navigation-items">
                         <ul>
-                            <li>
-                                <a href="/about">About</a>
-                            </li>
-                            <li>
-                                <a href="/">Work</a>
-                            </li>
+                            <Link to="/about">
+                                <li>about</li>
+                            </Link>
+                            <Link to="/">
+                                <li>Work</li>
+                            </Link>
+                            <Link to="/skills">
+                                <li>Skills</li>
+                            </Link>
                         </ul>
                     </div>
                 </nav>

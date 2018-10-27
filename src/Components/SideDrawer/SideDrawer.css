@@ -41,18 +41,17 @@
     padding: 1rem 0;
     padding-left: 1rem;
     border-bottom: thin solid black;
+    color: black;
 }
 
+.side-drawer li:hover,
+.side-drawer li:active {
+    background-color: #c2203b;
+}
 
 .side-drawer a {
-    color: #521751;
     text-decoration: none;
     font-size: 1.2rem;
-}
-
-.side-drawer a:hover,
-.side-drawer a:active {
-    color: #fa923f;
 }
 
 @media (min-width: 769px) {

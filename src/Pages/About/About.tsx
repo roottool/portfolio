@@ -21,17 +21,21 @@ class About extends React.Component {
                                 <th>Name</th>
                                 <td>roottool</td>
                             </tr>
+                            <tr>
+                                <th>Birthday</th>
+                                <td>1990/8/15</td>
+                            </tr>
                             <tr className="about-page__icons">
                                 <td>
                                     <a href="https://github.com/roottool">
-                                <IconContext.Provider value={{ size: "5em" }}>
+                                <IconContext.Provider value={{ size: "3em" }}>
                                     <GoMarkGithub />
                                 </IconContext.Provider>
                                     </a>
                                 </td>
                                 <td>
                                     <a href="https://twitter.com/roottool">
-                                <IconContext.Provider value={{ size: "5em" }}>
+                                <IconContext.Provider value={{ size: "3em" }}>
                                     <FaTwitterSquare />
                                 </IconContext.Provider>
                                     </a>

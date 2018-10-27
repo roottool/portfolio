@@ -1,14 +1,17 @@
 import * as React from 'react';
+import { Link } from "react-router-dom";
 
 import './SideDrawer.css';
 
 interface IProps {
     show: boolean,
+    drawToggleClickHandler(): void,
 }
 
 class SideDrawer extends React.Component<IProps, {}> {
     constructor(props: IProps) {
         super(props);
+        this.clickHandler = this.clickHandler.bind(this);
     };
 
     public render() {
@@ -24,17 +27,22 @@ class SideDrawer extends React.Component<IProps, {}> {
                     <p className="side-drawer__title">Menu</p>
                 </div>
                 <ul>
-                    <a href="/">
-                        <li>
-                            About
-                        </li>
-                    </a>
-                    <li>
-                        <a href="/">Work</a>
-                    </li>
+                    <Link to="/about">
+                        <li onClick={this.clickHandler}>About</li>
+                    </Link>
+                    <Link to="/">
+                        <li onClick={this.clickHandler}>Work</li>
+                    </Link>
+                    <Link to="/skills">
+                        <li onClick={this.clickHandler}>Skills</li>
+                    </Link>
                 </ul>
             </nav>
         );
+    }
+
+    private clickHandler() {
+        this.props.drawToggleClickHandler();
     }
 }
 
