@@ -117,7 +117,7 @@ class Skills extends React.Component {
                                     <CardTitle>Firebase</CardTitle>
                                     <CardText>
                                         Cookie☆Sound、OrgaSoundの制作で使用しました。
-                                        使用経験のあるサービスは認証、Realtime Database、Storage、Hostingです。
+                                        使用経験のあるサービスはAuthentication、Realtime Database、Storage、Hostingです。
                                     </CardText>
                                 </CardBody>
                             </Card>
