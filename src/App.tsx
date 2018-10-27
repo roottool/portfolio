@@ -9,6 +9,7 @@ import SideDrawer from './Components/SideDrawer/SideDrawer';
 import About from './Pages/About/About';
 import Home from './Pages/Home/Home';
 import Skills from './Pages/Skills/Skills';
+import Works from './Pages/Works/Works';
 
 interface ISideDrawerState {
   isOpen: boolean;
@@ -42,6 +43,7 @@ class App extends React.Component<{}, ISideDrawerState> {
           {backDrop}
           <Switch>
             <Route path="/about" component={About} />
+            <Route path="/works" component={Works} />
             <Route path="/skills" component={Skills} />
             <Route path="/" component={Home} />
             <Route component={Home} />

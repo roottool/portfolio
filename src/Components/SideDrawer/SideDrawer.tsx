@@ -30,8 +30,8 @@ class SideDrawer extends React.Component<IProps, {}> {
                     <Link to="/about">
                         <li onClick={this.clickHandler}>About</li>
                     </Link>
-                    <Link to="/">
-                        <li onClick={this.clickHandler}>Work</li>
+                    <Link to="/works">
+                        <li onClick={this.clickHandler}>Works</li>
                     </Link>
                     <Link to="/skills">
                         <li onClick={this.clickHandler}>Skills</li>

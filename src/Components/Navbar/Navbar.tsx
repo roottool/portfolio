@@ -31,8 +31,8 @@ class Navbar extends React.Component<IProps, {}> {
                             <Link to="/about">
                                 <li>about</li>
                             </Link>
-                            <Link to="/">
-                                <li>Work</li>
+                            <Link to="/works">
+                                <li>Works</li>
                             </Link>
                             <Link to="/skills">
                                 <li>Skills</li>
