@@ -72,7 +72,7 @@ class Works extends React.Component {
                                         スマートフォンからの閲覧を考慮したレスポンシブデザインになっています。
                                     </CardText>
                                     <div className="works-page__source-link">
-                                        <a href="https://github.com/roottool/MyPortfolio">ソースコード</a>
+                                        <a href="https://github.com/roottool/roottool.github.io">ソースコード</a>
                                     </div>
                                 </CardBody>
                             </Card>

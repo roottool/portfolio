@@ -25,18 +25,18 @@ class Navbar extends React.Component<IProps, {}> {
                         </IconContext.Provider>
                     </div>
                     <div>
-                        <Link to="/MyPortfolio" className="navbar__title">roottool's portfolio</Link>
+                        <Link to="/" className="navbar__title">roottool's portfolio</Link>
                     </div>
                     <div className="spacer" style={{ flex: 1 }} />
                     <div className="navbar__navigation-items">
                         <ul>
-                            <Link to="/MyPortfolio/about">
+                            <Link to="/about">
                                 <li>about</li>
                             </Link>
-                            <Link to="/MyPortfolio/works">
+                            <Link to="/works">
                                 <li>Works</li>
                             </Link>
-                            <Link to="/MyPortfolio/skills">
+                            <Link to="/skills">
                                 <li>Skills</li>
                             </Link>
                         </ul>
