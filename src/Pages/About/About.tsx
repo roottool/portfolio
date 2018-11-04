@@ -12,7 +12,7 @@ class About extends React.Component {
 
     public render() {
         return (
-            <main className="main">
+            <div>
                 <h1 className="about-page__title">About</h1>
                 <div className="about-page__card">
                     <table className="about-page__table">
@@ -28,23 +28,23 @@ class About extends React.Component {
                             <tr className="about-page__icons">
                                 <td>
                                     <a href="https://github.com/roottool">
-                                <IconContext.Provider value={{ size: "3em" }}>
-                                    <GoMarkGithub />
-                                </IconContext.Provider>
+                                        <IconContext.Provider value={{ size: "3em" }}>
+                                            <GoMarkGithub />
+                                        </IconContext.Provider>
                                     </a>
                                 </td>
                                 <td>
                                     <a href="https://twitter.com/roottool">
-                                <IconContext.Provider value={{ size: "3em" }}>
-                                    <FaTwitterSquare />
-                                </IconContext.Provider>
+                                        <IconContext.Provider value={{ size: "3em" }}>
+                                            <FaTwitterSquare />
+                                        </IconContext.Provider>
                                     </a>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-            </main>
+            </div>
         );
     }
 }

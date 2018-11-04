@@ -10,15 +10,15 @@ class Works extends React.Component {
 
     public render() {
         return (
-            <main className="main">
+            <div>
                 <h1 className="works-page__title">Works</h1>
                 <Container fluid={true} className="works-page__container">
                     <Row>
-                        <Col xs="12" md="4">
+                        <Col xs="12" lg="4">
                             <Card className="works-page__card">
                                 <CardBody>
                                     <CardTitle>Cookie☆Sound</CardTitle>
-                                    <CardText>
+                                    <CardText className="works-page__cardText">
                                         C# + Firebase<br />
                                         Firebaseからローカルにダウンロードした、音声ファイルを再生するGUIチャットアプリです。
                                         IRCチャットサーバの同じチャットルーム内のメンバーに対して、ローカルの音声ファイルを再生させることが可能です。
@@ -29,11 +29,11 @@ class Works extends React.Component {
                                 </CardBody>
                             </Card>
                         </Col>
-                        <Col xs="12" md="4">
+                        <Col xs="12" lg="4">
                             <Card className="works-page__card">
                                 <CardBody>
                                     <CardTitle>Cookie☆☆Sound</CardTitle>
-                                    <CardText>
+                                    <CardText className="works-page__cardText">
                                         Python<br />
                                         ローカルの音声ファイルを再生するCUIチャットアプリです。
                                         IRCチャットサーバの同じチャットルーム内のメンバーに対して、ローカルの音声ファイルを再生させることが可能です。
@@ -44,11 +44,11 @@ class Works extends React.Component {
                                 </CardBody>
                             </Card>
                         </Col>
-                        <Col xs="12" md="4">
+                        <Col xs="12" lg="4">
                             <Card className="works-page__card">
                                 <CardBody>
                                     <CardTitle>OrgaSound</CardTitle>
-                                    <CardText>
+                                    <CardText className="works-page__cardText">
                                         Angular 6 + Firebase<br />
                                         Firebaseから音声ファイルを取得して再生することが出来るWebチャットアプリです。
                                         チャットルーム内のメンバーに対して、Firebase上にある音声ファイルを再生させることが可能です。
@@ -61,11 +61,11 @@ class Works extends React.Component {
                         </Col>
                     </Row>
                     <Row>
-                        <Col xs="12" md="4">
+                        <Col xs="12" lg="4">
                             <Card className="works-page__card">
                                 <CardBody>
                                     <CardTitle>Portfolio site</CardTitle>
-                                    <CardText>
+                                    <CardText className="works-page__cardText">
                                         React<br />
                                         このポートフォリオです。
                                         Reactの学習のために作成しました。
@@ -79,7 +79,7 @@ class Works extends React.Component {
                         </Col>
                     </Row>
                 </Container>
-            </main>
+            </div>
         );
     }
 }
