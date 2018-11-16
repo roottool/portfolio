@@ -3,7 +3,7 @@ import { IconContext } from "react-icons";
 import { MdMenu } from 'react-icons/md';
 import { Link } from "react-router-dom";
 
-import './Navbar.css';
+import styles from './Navbar.module.scss';
 
 interface IProps {
     drawToggleClickHandler(): void,
@@ -17,18 +17,18 @@ class Navbar extends React.Component<IProps, {}> {
 
     public render() {
         return (
-            <header className="navbar" style={{ padding: 0 }}>
-                <nav className="navbar__navigation">
-                    <div className="navbar__toggle-button" onClick={this.clickHandler}>
+            <header className={styles.navbar} style={{ padding: 0 }}>
+                <nav className={styles.navigation}>
+                    <div className={styles.toggleButton} onClick={this.clickHandler}>
                         <IconContext.Provider value={{ color: "white", size: "1.5em" }}>
                             <MdMenu />
                         </IconContext.Provider>
                     </div>
                     <div>
-                        <Link to="/" className="navbar__title">roottool's portfolio</Link>
+                        <Link to="/" className={styles.title}>roottool's portfolio</Link>
                     </div>
-                    <div className="spacer" style={{ flex: 1 }} />
-                    <div className="navbar__navigation-items">
+                    <div className={styles.spacer} style={{ flex: 1 }} />
+                    <div className={styles.navigationItems}>
                         <ul>
                             <Link to="/about">
                                 <li>about</li>
