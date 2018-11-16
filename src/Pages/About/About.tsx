@@ -15,7 +15,7 @@ class About extends React.Component {
             <div>
                 <h1 className={stlyes.title}>About</h1>
                 <div className={stlyes.card}>
-                    <table className="about-page__table">
+                    <table className={stlyes.table}>
                         <tbody>
                             <tr>
                                 <th>Name</th>

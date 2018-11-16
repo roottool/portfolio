@@ -51,13 +51,8 @@
     }
 }
 
-.navbar__navigation-items .navbar__navigation-items li:hover,
-.navbar__navigation-items li:active {
-    background-color: #c2203b;
-}
-
 @media (max-width: 768px) {
-    .items {
+    .navigationItems {
         display: none;
     }
 }

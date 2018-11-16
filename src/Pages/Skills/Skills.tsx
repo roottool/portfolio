@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Card, CardBody, CardText, CardTitle, Col, Container, Row } from 'reactstrap';
 
-import './Skills.module.scss';
+import styles from './Skills.module.scss';
 
 class Skills extends React.Component {
     constructor(props: {}) {
@@ -11,11 +11,11 @@ class Skills extends React.Component {
     public render() {
         return (
             <div>
-                <h1 className="skills-page__title">Skills</h1>
-                <Container fluid={true} className="skills-page__container">
+                <h1 className={styles.title}>Skills</h1>
+                <Container fluid={true} className={styles.container}>
                     <Row>
                         <Col xs="12" lg="4">
-                            <Card className="skills-page__card">
+                            <Card className={styles.card}>
                                 <CardBody>
                                     <CardTitle>HTML &amp; CSS</CardTitle>
                                     <CardText>
@@ -27,7 +27,7 @@ class Skills extends React.Component {
                             </Card>
                         </Col>
                         <Col xs="12" lg="4">
-                            <Card className="skills-page__card">
+                            <Card className={styles.card}>
                                 <CardBody>
                                     <CardTitle>SASS</CardTitle>
                                     <CardText>
@@ -38,7 +38,7 @@ class Skills extends React.Component {
                             </Card>
                         </Col>
                         <Col xs="12" lg="4">
-                            <Card className="skills-page__card">
+                            <Card className={styles.card}>
                                 <CardBody>
                                     <CardTitle>javascript (jQuery)</CardTitle>
                                     <CardText>
@@ -52,7 +52,7 @@ class Skills extends React.Component {
                     </Row>
                     <Row>
                         <Col xs="12" lg="4">
-                            <Card className="skills-page__card">
+                            <Card className={styles.card}>
                                 <CardBody>
                                     <CardTitle>Typescript</CardTitle>
                                     <CardText>
@@ -63,7 +63,7 @@ class Skills extends React.Component {
                             </Card>
                         </Col>
                         <Col xs="12" lg="4">
-                            <Card className="skills-page__card">
+                            <Card className={styles.card}>
                                 <CardBody>
                                     <CardTitle>Angular 6</CardTitle>
                                     <CardText>
@@ -75,7 +75,7 @@ class Skills extends React.Component {
                             </Card>
                         </Col>
                         <Col xs="12" lg="4">
-                            <Card className="skills-page__card">
+                            <Card className={styles.card}>
                                 <CardBody>
                                     <CardTitle>React</CardTitle>
                                     <CardText>
@@ -89,7 +89,7 @@ class Skills extends React.Component {
                     </Row>
                     <Row>
                         <Col xs="12" lg="4">
-                            <Card className="skills-page__card">
+                            <Card className={styles.card}>
                                 <CardBody>
                                     <CardTitle>C#</CardTitle>
                                     <CardText>
@@ -100,7 +100,7 @@ class Skills extends React.Component {
                             </Card>
                         </Col>
                         <Col xs="12" lg="4">
-                            <Card className="skills-page__card">
+                            <Card className={styles.card}>
                                 <CardBody>
                                     <CardTitle>Python</CardTitle>
                                     <CardText>
@@ -112,7 +112,7 @@ class Skills extends React.Component {
                             </Card>
                         </Col>
                         <Col xs="12" lg="4">
-                            <Card className="skills-page__card">
+                            <Card className={styles.card}>
                                 <CardBody>
                                     <CardTitle>Firebase</CardTitle>
                                     <CardText>
@@ -125,7 +125,7 @@ class Skills extends React.Component {
                     </Row>
                     <Row>
                         <Col xs="12" lg="4">
-                            <Card className="skills-page__card">
+                            <Card className={styles.card}>
                                 <CardBody>
                                     <CardTitle>Unity (C#)</CardTitle>
                                     <CardText>
@@ -135,7 +135,7 @@ class Skills extends React.Component {
                             </Card>
                         </Col>
                         <Col xs="12" lg="4">
-                            <Card className="skills-page__card">
+                            <Card className={styles.card}>
                                 <CardBody>
                                     <CardTitle>Java (Android)</CardTitle>
                                     <CardText>
@@ -145,7 +145,7 @@ class Skills extends React.Component {
                             </Card>
                         </Col>
                         <Col xs="12" lg="4">
-                            <Card className="skills-page__card">
+                            <Card className={styles.card}>
                                 <CardBody>
                                     <CardTitle>Objective-C</CardTitle>
                                     <CardText>
