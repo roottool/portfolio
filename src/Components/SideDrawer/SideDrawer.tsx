@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Link } from "react-router-dom";
 
-import './SideDrawer.css';
+import styles from './SideDrawer.module.scss';
 
 interface IProps {
     show: boolean,
@@ -15,16 +15,16 @@ class SideDrawer extends React.Component<IProps, {}> {
     };
 
     public render() {
-        let drawerClasses = ['side-drawer'];
+        let drawerClasses = [`${styles.sideDrawer}`];
 
         if (this.props.show) {
-            drawerClasses = ['side-drawer', 'open'];
+            drawerClasses = [`${styles.sideDrawer}`, `${styles.open}`];
         }
 
         return (
             <nav className={drawerClasses.join(' ')}>
-                <div className="side-drawer__title-area">
-                    <p className="side-drawer__title">Menu</p>
+                <div className={styles.titleArea}>
+                    <p className={styles.title}>Menu</p>
                 </div>
                 <ul>
                     <Link to="/about">

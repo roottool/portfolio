@@ -1,0 +1,61 @@
+.sideDrawer {
+    height: 100%;
+    background: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70%;
+    max-width: 300px;
+    z-index: 200;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-out;
+
+    & .open {
+        box-shadow: 1px 0px 3px rgba(0, 0, 0, 0.5);
+        transform: translateX(0);
+    }
+
+    & ul {
+        height: 100%;
+        padding: 0 0;
+        margin: 0 0;
+        list-style: none;
+        justify-content: center;
+    }
+
+    & li {
+        padding: 1rem 0;
+        padding-left: 1rem;
+        border-bottom: thin solid black;
+        color: black;
+    }
+
+    & li:hover,
+    & li:active {
+        background-color: #c2203b;
+    }
+
+    & a {
+        text-decoration: none;
+        font-size: 1.2rem;
+    }
+}
+
+.titleArea {
+    height: 56px;
+    background: #df4848;
+}
+
+.title {
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    margin: 0;
+}
+
+@media (min-width: 769px) {
+    .sideDrawer {
+        display: none;
+    }
+}
