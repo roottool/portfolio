@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Card, CardBody, CardText, CardTitle, Col, Container, Row } from 'reactstrap';
 
-import './Skills.css';
+import './Skills.module.scss';
 
 class Skills extends React.Component {
     constructor(props: {}) {

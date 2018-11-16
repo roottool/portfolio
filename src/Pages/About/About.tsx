@@ -3,7 +3,7 @@ import { IconContext } from "react-icons";
 import { FaTwitterSquare } from 'react-icons/fa';
 import { GoMarkGithub } from 'react-icons/go';
 
-import './About.css';
+import stlyes from './About.module.scss';
 
 class About extends React.Component {
     constructor(props: {}) {
@@ -13,8 +13,8 @@ class About extends React.Component {
     public render() {
         return (
             <div>
-                <h1 className="about-page__title">About</h1>
-                <div className="about-page__card">
+                <h1 className={stlyes.title}>About</h1>
+                <div className={stlyes.card}>
                     <table className="about-page__table">
                         <tbody>
                             <tr>
@@ -25,7 +25,7 @@ class About extends React.Component {
                                 <th>Birthday</th>
                                 <td>1990/8/15</td>
                             </tr>
-                            <tr className="about-page__icons">
+                            <tr className={stlyes.icons}>
                                 <td>
                                     <a href="https://github.com/roottool">
                                         <IconContext.Provider value={{ size: "3em" }}>
