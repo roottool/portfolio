@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import './Backdrop.css';
+import styles from './Backdrop.module.scss';
 
 interface IProps {
     backdropClickHandler(): void,
@@ -14,7 +14,7 @@ class Backdrop extends React.Component<IProps, {}> {
 
     public render() {
         return (
-            <div className="backdrop" onClick={this.clickHandler}/>
+            <div className={styles.backdrop} onClick={this.clickHandler}/>
         );
     }
 
