@@ -1,87 +1,154 @@
-import * as React from 'react';
-import { Card, CardBody, CardText, CardTitle, Col, Container, Row } from 'reactstrap';
+import React, { Component } from "react";
 
-import styles from './Works.module.scss';
+import Button from "@material-ui/core/Button";
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
+import CardActions from "@material-ui/core/CardActions";
+import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
+import {
+    withStyles,
+    Theme,
+    WithStyles,
+    createStyles
+} from "@material-ui/core/styles";
 
-class Works extends React.Component {
-    constructor(props: {}) {
+import styles from "./Works.module.scss";
+
+const styleSettings = (theme: Theme) =>
+    createStyles({
+        container: {
+            maxWidth: "1200px",
+            margin: "5vh auto"
+        },
+        cardGrid: {
+            paddingLeft: "15px",
+            paddingRight: "15px"
+        },
+        card: {
+            maxWidth: "400px",
+            height: "350px",
+            marginBottom: "30px",
+            marginLeft: "auto",
+            marginRight: "auto"
+        },
+        sourceLink: {
+            margin: "0 auto"
+        }
+    });
+
+class Works extends Component<WithStyles<typeof styleSettings>, {}> {
+    constructor(props: WithStyles<typeof styleSettings>) {
         super(props);
     }
 
     public render() {
+        const { classes } = this.props;
         return (
             <div>
                 <h1 className={styles.title}>Works</h1>
-                <Container fluid={true} className={styles.container}>
-                    <Row>
-                        <Col xs="12" lg="4">
-                            <Card className={styles.card}>
-                                <CardBody>
-                                    <CardTitle>Cookie☆Sound</CardTitle>
-                                    <CardText className={styles.cardText}>
-                                        C# + Firebase<br />
-                                        Firebaseからローカルにダウンロードした、音声ファイルを再生するGUIチャットアプリです。
-                                        IRCチャットサーバの同じチャットルーム内のメンバーに対して、ローカルの音声ファイルを再生させることが可能です。
-                                    </CardText>
-                                    <div className={styles.sourceLink}>
-                                        <a href="https://github.com/roottool/Cookiesound-kari-">ソースコード</a>
-                                    </div>
-                                </CardBody>
-                            </Card>
-                        </Col>
-                        <Col xs="12" lg="4">
-                            <Card className={styles.card}>
-                                <CardBody>
-                                    <CardTitle>Cookie☆☆Sound</CardTitle>
-                                    <CardText className={styles.cardText}>
-                                        Python<br />
-                                        ローカルの音声ファイルを再生するCUIチャットアプリです。
-                                        IRCチャットサーバの同じチャットルーム内のメンバーに対して、ローカルの音声ファイルを再生させることが可能です。
-                                    </CardText>
-                                    <div className={styles.sourceLink}>
-                                        <a href="https://github.com/roottool/CookieSound2">ソースコード</a>
-                                    </div>
-                                </CardBody>
-                            </Card>
-                        </Col>
-                        <Col xs="12" lg="4">
-                            <Card className={styles.card}>
-                                <CardBody>
-                                    <CardTitle>OrgaSound</CardTitle>
-                                    <CardText className={styles.cardText}>
-                                        Angular 6 + Firebase<br />
-                                        Firebaseから音声ファイルを取得して再生することが出来るWebチャットアプリです。
-                                        チャットルーム内のメンバーに対して、Firebase上にある音声ファイルを再生させることが可能です。
-                                    </CardText>
-                                    <div className={styles.sourceLink}>
-                                        <a href="https://github.com/roottool/OrgaSound">ソースコード</a>
-                                    </div>
-                                </CardBody>
-                            </Card>
-                        </Col>
-                    </Row>
-                    <Row>
-                        <Col xs="12" lg="4">
-                            <Card className={styles.card}>
-                                <CardBody>
-                                    <CardTitle>Portfolio site</CardTitle>
-                                    <CardText className={styles.cardText}>
-                                        React<br />
-                                        このポートフォリオです。
-                                        Reactの学習のために作成しました。
-                                        スマートフォンからの閲覧を考慮したレスポンシブデザインになっています。
-                                    </CardText>
-                                    <div className={styles.sourceLink}>
-                                        <a href="https://github.com/roottool/roottool.github.io">ソースコード</a>
-                                    </div>
-                                </CardBody>
-                            </Card>
-                        </Col>
-                    </Row>
-                </Container>
+                <Grid container spacing={0} className={classes.container}>
+                    <Grid xs={12} lg={4} className={classes.cardGrid}>
+                        <Card className={classes.card}>
+                            <CardContent>
+                                <Typography variant="h6" gutterBottom>
+                                    Cookie☆Sound
+                                </Typography>
+                                <Typography variant="subtitle1">
+                                    C# + Firebase
+                                    <br />
+                                    Firebaseからローカルにダウンロードした、音声ファイルを再生するGUIチャットアプリです。
+                                    IRCチャットサーバの同じチャットルーム内のメンバーに対して、ローカルの音声ファイルを再生させることが可能です。
+                                </Typography>
+                                <CardActions>
+                                    <Button
+                                        color="primary"
+                                        href="https://github.com/roottool/Cookiesound-kari-"
+                                        className={classes.sourceLink}
+                                    >
+                                        ソースコード
+                                    </Button>
+                                </CardActions>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid xs={12} lg={4} className={classes.cardGrid}>
+                        <Card className={classes.card}>
+                            <CardContent>
+                                <Typography variant="h6" gutterBottom>
+                                    Cookie☆☆Sound
+                                </Typography>
+                                <Typography variant="subtitle1">
+                                    Python
+                                    <br />
+                                    ローカルの音声ファイルを再生するCUIチャットアプリです。
+                                    IRCチャットサーバの同じチャットルーム内のメンバーに対して、ローカルの音声ファイルを再生させることが可能です。
+                                </Typography>
+                                <CardActions>
+                                    <Button
+                                        color="primary"
+                                        href="https://github.com/roottool/CookieSound2"
+                                        className={classes.sourceLink}
+                                    >
+                                        ソースコード
+                                    </Button>
+                                </CardActions>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid xs={12} lg={4} className={classes.cardGrid}>
+                        <Card className={classes.card}>
+                            <CardContent>
+                                <Typography variant="h6" gutterBottom>
+                                    OrgaSound
+                                </Typography>
+                                <Typography variant="subtitle1">
+                                    Angular 6 + Firebase
+                                    <br />
+                                    Firebaseから音声ファイルを取得して再生することが出来るWebチャットアプリです。
+                                    チャットルーム内のメンバーに対して、Firebase上にある音声ファイルを再生させることが可能です。
+                                </Typography>
+                                <CardActions>
+                                    <Button
+                                        color="primary"
+                                        href="https://github.com/roottool/OrgaSound"
+                                        className={classes.sourceLink}
+                                    >
+                                        ソースコード
+                                    </Button>
+                                </CardActions>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                    <Grid xs={12} lg={4} className={classes.cardGrid}>
+                        <Card className={classes.card}>
+                            <CardContent>
+                                <Typography variant="h6" gutterBottom>
+                                    Portfolio site
+                                </Typography>
+                                <Typography variant="subtitle1">
+                                    React
+                                    <br />
+                                    このポートフォリオです。
+                                    Reactの学習のために作成しました。
+                                    スマートフォンからの閲覧を考慮したレスポンシブデザインになっています。
+                                </Typography>
+                                <CardActions>
+                                    <Button
+                                        color="primary"
+                                        href="https://github.com/roottool/roottool.github.io"
+                                        className={classes.sourceLink}
+                                    >
+                                        ソースコード
+                                    </Button>
+                                </CardActions>
+                            </CardContent>
+                        </Card>
+                    </Grid>
+                </Grid>
             </div>
         );
     }
 }
 
-export default Works;
+export default withStyles(styleSettings)(Works);
