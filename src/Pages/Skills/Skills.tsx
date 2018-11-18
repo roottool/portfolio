@@ -17,8 +17,6 @@ const styleSettings = (theme: Theme) =>
     createStyles({
         container: {
             maxWidth: "1200px",
-            paddingLeft: "5vw",
-            paddingRight: "5vw",
             margin: "5vh auto"
         },
         cardGrid: {
