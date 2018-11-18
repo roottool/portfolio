@@ -12,7 +12,12 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "lib":[
+      "es5",
+      "es6",
+      "dom"
+    ]
   },
   "include": [
     "src"
