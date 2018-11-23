@@ -17,15 +17,12 @@ import contents from "./SkillsContents.json";
 const styleSettings = (theme: Theme) =>
     createStyles({
         container: {
-            maxWidth: "1300px",
+            maxWidth: "1200px",
             margin: "5vh auto"
         },
         card: {
-            maxWidth: "90%",
             height: "300px",
-            marginBottom: "30px",
-            marginLeft: "auto",
-            marginRight: "auto"
+            marginBottom: "30px"
         }
     });
 
@@ -39,7 +36,7 @@ class Skills extends Component<WithStyles<typeof styleSettings>, {}> {
         return (
             <div>
                 <h1 className={styles.title}>Skills</h1>
-                <Grid container className={classes.container}>
+                <Grid container spacing={16} className={classes.container}>
                     {contents.map((item, key) => (
                         <Grid key={key} item xs={12} sm={6} md={4}>
                             <Card className={classes.card}>
