@@ -38,7 +38,7 @@ class Navbar extends Component<IProps, {}> {
         const { classes } = this.props;
         return (
             <div>
-                <AppBar position="fixed" className={classes.root}>
+                <AppBar className={classes.root}>
                     <Toolbar>
                         <div
                             className={styles.toggleButton}
