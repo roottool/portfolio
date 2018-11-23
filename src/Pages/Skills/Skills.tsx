@@ -40,8 +40,8 @@ class Skills extends Component<WithStyles<typeof styleSettings>, {}> {
             <div>
                 <h1 className={styles.title}>Skills</h1>
                 <Grid container className={classes.container}>
-                    {contents.map(item => (
-                        <Grid xs={12} sm={6} md={4}>
+                    {contents.map((item, key) => (
+                        <Grid key={key} item xs={12} sm={6} md={4}>
                             <Card className={classes.card}>
                                 <CardContent>
                                     <Typography variant="h6" gutterBottom>
