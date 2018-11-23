@@ -20,6 +20,9 @@ const styleSettings = (theme: Theme) =>
             maxWidth: "1200px",
             margin: "5vh auto"
         },
+        cardGrid: {
+            padding: "0 16px"
+        },
         card: {
             height: "300px",
             marginBottom: "30px"
@@ -36,9 +39,16 @@ class Skills extends Component<WithStyles<typeof styleSettings>, {}> {
         return (
             <div>
                 <h1 className={styles.title}>Skills</h1>
-                <Grid container spacing={16} className={classes.container}>
+                <Grid container className={classes.container}>
                     {contents.map((item, key) => (
-                        <Grid key={key} item xs={12} sm={6} md={4}>
+                        <Grid
+                            item
+                            key={key}
+                            xs={12}
+                            sm={6}
+                            md={4}
+                            className={classes.cardGrid}
+                        >
                             <Card className={classes.card}>
                                 <CardContent>
                                     <Typography variant="h6" gutterBottom>
