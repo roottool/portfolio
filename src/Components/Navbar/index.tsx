@@ -38,7 +38,7 @@ class Navbar extends Component<IProps, {}> {
         const { classes } = this.props;
         return (
             <div>
-                <AppBar className={classes.root}>
+                <AppBar position={"static"} className={classes.root}>
                     <Toolbar>
                         <div
                             className={styles.toggleButton}
@@ -64,6 +64,9 @@ class Navbar extends Component<IProps, {}> {
                                 </Link>
                                 <Link to="/skills">
                                     <li>Skills</li>
+                                </Link>
+                                <Link to="/hobbies">
+                                    <li>Hobbies</li>
                                 </Link>
                             </ul>
                         </div>
