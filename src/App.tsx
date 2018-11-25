@@ -10,6 +10,7 @@ import About from "./Pages/About";
 import Home from "./Pages/Home";
 import Skills from "./Pages/Skills";
 import Works from "./Pages/Works";
+import Hobbies from "./Pages/Hobbies";
 
 interface ISideDrawerState {
     isOpen: boolean;
@@ -52,6 +53,7 @@ class App extends React.Component<{}, ISideDrawerState> {
                             <Route path="/about" component={About} />
                             <Route path="/works" component={Works} />
                             <Route path="/skills" component={Skills} />
+                            <Route path="/hobbies" component={Hobbies} />
                             <Route path="/" component={Home} />
                             <Route component={Home} />
                         </Switch>
