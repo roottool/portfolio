@@ -1,5 +1,5 @@
 import * as React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 import styles from "./App.module.scss";
 
@@ -12,66 +12,58 @@ import Skills from "./Pages/Skills";
 import Works from "./Pages/Works";
 import Hobbies from "./Pages/Hobbies";
 
-interface ISideDrawerState {
-    isOpen: boolean;
+import { AppState } from "./module";
+import { ActionDispatcher } from "./Container";
+
+interface IProps {
+    value: AppState;
+    actions: ActionDispatcher;
 }
 
-class App extends React.Component<{}, ISideDrawerState> {
-    constructor(props: {}) {
+class App extends React.Component<IProps, {}> {
+    constructor(props: IProps) {
         super(props);
-        this.state = {
-            isOpen: false
-        };
-
-        this.drawToggleClickHandler = this.drawToggleClickHandler.bind(this);
-        this.backdropClickHandler = this.backdropClickHandler.bind(this);
     }
+
+    private menuIconClickHandler = () => {
+        this.props.actions.openSideMenu();
+    };
+
+    private closeSideMenuHandler = () => {
+        this.props.actions.closeSideMenu();
+    };
 
     public render() {
         let backDrop;
         const sideDrawerOption = {
-            show: this.state.isOpen,
-            drawToggleClickHandler: this.drawToggleClickHandler
+            show: this.props.value.isOpened,
+            drawToggleClickHandler: this.closeSideMenuHandler
         };
 
-        if (this.state.isOpen) {
+        if (this.props.value.isOpened) {
             backDrop = (
-                <Backdrop backdropClickHandler={this.backdropClickHandler} />
+                <Backdrop backdropClickHandler={this.closeSideMenuHandler} />
             );
         }
 
         return (
-            <Router>
-                <div className="App">
-                    <Navbar
-                        drawToggleClickHandler={this.drawToggleClickHandler}
-                    />
-                    <SideDrawer {...sideDrawerOption} />
-                    {backDrop}
-                    <main className={styles.main}>
-                        <Switch>
-                            <Route path="/about" component={About} />
-                            <Route path="/works" component={Works} />
-                            <Route path="/skills" component={Skills} />
-                            <Route path="/hobbies" component={Hobbies} />
-                            <Route path="/" component={Home} />
-                            <Route component={Home} />
-                        </Switch>
-                    </main>
-                </div>
-            </Router>
+            <div className="App">
+                <Navbar drawToggleClickHandler={this.menuIconClickHandler} />
+                <SideDrawer {...sideDrawerOption} />
+                {backDrop}
+                <main className={styles.main}>
+                    <Switch>
+                        <Route path="/about" component={About} />
+                        <Route path="/works" component={Works} />
+                        <Route path="/skills" component={Skills} />
+                        <Route path="/hobbies" component={Hobbies} />
+                        <Route path="/" component={Home} />
+                        <Route component={Home} />
+                    </Switch>
+                </main>
+            </div>
         );
     }
-
-    private drawToggleClickHandler = () => {
-        this.setState(prevState => {
-            return { isOpen: !prevState.isOpen };
-        });
-    };
-
-    private backdropClickHandler = () => {
-        this.setState({ isOpen: false });
-    };
 }
 
 export default App;
