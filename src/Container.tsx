@@ -17,7 +17,7 @@ export class ActionDispatcher {
 }
 
 export default connect(
-    (state: ReduxState) => ({ router: state.router, value: state.App }),
+    (state: ReduxState) => ({ router: state.router, value: state.app }),
     (dispatch: Dispatch<ReduxAction>) => ({
         actions: new ActionDispatcher(dispatch)
     })

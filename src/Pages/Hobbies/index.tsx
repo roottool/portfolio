@@ -74,7 +74,7 @@ class Hobbies extends Component<WithStyles<typeof styleSettings>, IState> {
     private async fetchUserOwnedGames() {
         await axios
             .get(
-                "https://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=XXX&steamid=YYY&include_appinfo=1"
+                "https://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=0F5E11F09D439A3BF76B230771F957D4&steamid=76561198091104577&include_appinfo=1"
             )
             .then(response => {
                 this.setState({ isFetching: false });

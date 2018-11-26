@@ -2,19 +2,22 @@ import { Action, combineReducers } from "redux";
 import { History } from "history";
 import { RouterState, connectRouter } from "connected-react-router";
 
-import App, { AppActions, AppState } from "./module";
+import app, { AppActions, AppState } from "./module";
+import hobbies, { HobbiesActions, HobbiesState } from "./Pages/Hobbies/module";
 
 const rootReducer = (history: History) =>
     combineReducers({
         router: connectRouter(history),
-        App
+        app,
+        hobbies
     });
 
 export type ReduxState = {
     router: RouterState;
-    App: AppState;
+    app: AppState;
+    hobbies: HobbiesState;
 };
 
-export type ReduxAction = AppActions | Action;
+export type ReduxAction = AppActions | HobbiesActions | Action;
 
 export default rootReducer;
