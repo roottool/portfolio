@@ -172,7 +172,7 @@ class Hobbies extends Component<WithStyles<typeof styleSettings>, IState> {
                     }}
                 >
                     <Typography variant="subtitle1" gutterBottom>
-                        Steam等でFPSかストラテジーを中心にゲーム買ってPCで遊んでいます。映画を見たりもします。
+                        Steam等でFPSかストラテジーのゲームを中心に買ってPCで遊んでいます。映画を見たりもします。
                     </Typography>
                     <hr />
                     <Typography variant="h6">Steam ライブラリ</Typography>
