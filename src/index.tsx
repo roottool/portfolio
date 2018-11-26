@@ -15,8 +15,6 @@ import {
     routerMiddleware
 } from "connected-react-router";
 
-//import store from "./store";
-
 import App from "./Container";
 import rootReduser from "./RootReduser";
 
