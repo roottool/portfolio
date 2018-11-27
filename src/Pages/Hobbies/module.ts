@@ -21,16 +21,15 @@ interface IGamesInfo {
 enum ActionNames {
     FETCH_START = "hobbies/startFetchingUserOwnedGames",
     FETCH = "hobbies/fetchUserOwnedGames",
-    FETCH_FINISH = "hobbies/finishFetchedUserOwnedGames"
+    FETCH_FINISH = "hobbies/finishFetchedUserOwnedGames",
+    CHANGE_PAGE = "hobbies/changePage"
 }
 
 interface StartFetchingUserOwnedGamesAction extends Action {
     type: ActionNames.FETCH_START;
-    hobbiesAction: boolean;
 }
 export const startFetchingOwnedGameInfo = (): StartFetchingUserOwnedGamesAction => ({
-    type: ActionNames.FETCH_START,
-    hobbiesAction: true
+    type: ActionNames.FETCH_START
 });
 
 interface FetchUserOwnedGamesAction extends Action {
@@ -49,12 +48,20 @@ export const fetchUserOwnedGames = (
 
 interface FinishFetchedUserOwnedGamesAction extends Action {
     type: ActionNames.FETCH_FINISH;
-    hobbiesAction: boolean;
 }
 
 export const finishFetchedOwnedGameInfo = (): FinishFetchedUserOwnedGamesAction => ({
-    type: ActionNames.FETCH_FINISH,
-    hobbiesAction: false
+    type: ActionNames.FETCH_FINISH
+});
+
+interface ChangePageAction extends Action {
+    type: ActionNames.CHANGE_PAGE;
+    page: number;
+}
+
+export const changePage = (page: number): ChangePageAction => ({
+    type: ActionNames.CHANGE_PAGE,
+    page: page
 });
 
 //reducer
@@ -68,16 +75,21 @@ interface IGamesInfo {
     has_community_visible_stats: boolean;
 }
 export interface HobbiesState {
+    isFetching: boolean;
     rows: IGamesInfo[];
+    page: number;
 }
 
 export type HobbiesActions =
     | StartFetchingUserOwnedGamesAction
     | FetchUserOwnedGamesAction
-    | FinishFetchedUserOwnedGamesAction;
+    | FinishFetchedUserOwnedGamesAction
+    | ChangePageAction;
 
 const initialState: HobbiesState = {
-    rows: []
+    isFetching: true,
+    rows: [],
+    page: 0
 };
 
 export default function reducer(
@@ -88,9 +100,19 @@ export default function reducer(
         case ActionNames.FETCH_START:
             return state;
         case ActionNames.FETCH:
-            return { rows: action.OwnedGameInfo };
+            return {
+                isFetching: state.isFetching,
+                rows: action.OwnedGameInfo,
+                page: state.page
+            };
         case ActionNames.FETCH_FINISH:
-            return state;
+            return { isFetching: false, rows: state.rows, page: state.page };
+        case ActionNames.CHANGE_PAGE:
+            return {
+                isFetching: state.isFetching,
+                rows: state.rows,
+                page: action.page
+            };
         default:
             return state;
     }

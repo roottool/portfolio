@@ -6,7 +6,8 @@ import {
     IUserOwnedGames,
     startFetchingOwnedGameInfo,
     fetchUserOwnedGames,
-    finishFetchedOwnedGameInfo
+    finishFetchedOwnedGameInfo,
+    changePage
 } from "./module";
 import { ReduxAction, ReduxState } from "../../RootReduser";
 
@@ -26,6 +27,8 @@ export class ActionDispatcher {
                  * 参考URL
                  * https://medium.com/@pagalvin/sort-arrays-using-typescript-592fa6e77f1
                  */
+                console.log(result);
+
                 const sortPlayTime = result.response.games.sort(
                     (leftSide, rightSide): number => {
                         if (
@@ -45,9 +48,13 @@ export class ActionDispatcher {
                 this.dispatch(fetchUserOwnedGames(sortPlayTime));
             })
             .catch(error => {
-                console.log(error);
+                throw new Error(error);
             });
         this.dispatch(finishFetchedOwnedGameInfo());
+    }
+
+    public changeOwnedGameInfoPage(page: number) {
+        this.dispatch(changePage(page));
     }
 }
 

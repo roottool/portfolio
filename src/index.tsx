@@ -1,19 +1,9 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import {
-    applyMiddleware,
-    compose,
-    createStore,
-    combineReducers,
-    Action
-} from "redux";
+import { applyMiddleware, compose, createStore } from "redux";
 import { Provider } from "react-redux";
 import { createBrowserHistory } from "history";
-import {
-    ConnectedRouter,
-    RouterState,
-    routerMiddleware
-} from "connected-react-router";
+import { ConnectedRouter, routerMiddleware } from "connected-react-router";
 
 import App from "./Container";
 import rootReduser from "./RootReduser";

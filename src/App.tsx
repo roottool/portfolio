@@ -10,7 +10,7 @@ import About from "./Pages/About";
 import Home from "./Pages/Home";
 import Skills from "./Pages/Skills";
 import Works from "./Pages/Works";
-import Hobbies from "./Pages/Hobbies";
+import Hobbies from "./Pages/Hobbies/Container";
 
 import { AppState } from "./module";
 import { ActionDispatcher } from "./Container";

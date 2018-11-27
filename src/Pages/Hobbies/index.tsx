@@ -21,6 +21,9 @@ import stlyes from "./Hobbies.module.scss";
 import GameInfoContents from "./Components/GameInfoContents";
 import TablePaginationActionWrapped from "./Components/TablePaginationActionWrapped";
 
+import { HobbiesState } from "./module";
+import { ActionDispatcher } from "./Container";
+
 const StyledTablePagination = withStyles({
     toolbar: {
         padding: 0
@@ -34,84 +37,26 @@ const styleSettings = (theme: Theme) =>
         }
     });
 
-interface IGamesInfo {
-    appid: number;
-    name: string;
-    playtime_2weeks: number;
-    playtime_forever: number;
-    img_icon_url: string;
-    img_logo_url: string;
-    has_community_visible_stats: boolean;
-}
-
-interface IUserOwnedGames {
-    response: {
-        game_count: number;
-        games: [IGamesInfo];
-    };
-}
-
-interface IState {
-    isFetching: boolean;
-    rows: IGamesInfo[];
-    page: number;
+interface IProps extends WithStyles<typeof styleSettings> {
+    value: HobbiesState;
+    actions: ActionDispatcher;
 }
 
 const rowsPerPage = 5;
 
-class Hobbies extends Component<WithStyles<typeof styleSettings>, IState> {
-    constructor(props: WithStyles<typeof styleSettings>) {
+class Hobbies extends Component<IProps, {}> {
+    constructor(props: IProps) {
         super(props);
 
-        this.state = {
-            isFetching: true,
-            rows: [],
-            page: 0
-        };
-        this.fetchUserOwnedGames();
-    }
-
-    private async fetchUserOwnedGames() {
-        await axios
-            .get(
-                "https://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=0F5E11F09D439A3BF76B230771F957D4&steamid=76561198091104577&include_appinfo=1"
-            )
-            .then(response => {
-                this.setState({ isFetching: false });
-                const result: IUserOwnedGames = response.data;
-                /**
-                 * プレイ時間降順ソート
-                 * 参考URL
-                 * https://medium.com/@pagalvin/sort-arrays-using-typescript-592fa6e77f1
-                 */
-                const sortPlayTime = result.response.games.sort(
-                    (leftSide, rightSide): number => {
-                        if (
-                            leftSide.playtime_forever >
-                            rightSide.playtime_forever
-                        ) {
-                            return -1;
-                        } else if (
-                            leftSide.playtime_forever <
-                            rightSide.playtime_forever
-                        ) {
-                            return 1;
-                        }
-                        return 0;
-                    }
-                );
-                this.setState({ rows: sortPlayTime });
-            })
-            .catch(error => {
-                console.log(error);
-            });
+        this.props.actions.fetchUserOwnedGameInfo();
     }
 
     private handleChangePage = (
         event: React.MouseEvent<HTMLButtonElement> | null,
         page: number
     ) => {
-        this.setState({ page: page });
+        this.props.actions.changeOwnedGameInfoPage(page);
+        //this.setState({ page: page });
     };
 
     public render() {
@@ -120,10 +65,10 @@ class Hobbies extends Component<WithStyles<typeof styleSettings>, IState> {
         const renderCompletedFetching = (
             <Table>
                 <TableBody>
-                    {this.state.rows
+                    {this.props.value.rows
                         .slice(
-                            this.state.page * rowsPerPage,
-                            this.state.page * rowsPerPage + rowsPerPage
+                            this.props.value.page * rowsPerPage,
+                            this.props.value.page * rowsPerPage + rowsPerPage
                         )
                         .map(row => {
                             return (
@@ -150,10 +95,10 @@ class Hobbies extends Component<WithStyles<typeof styleSettings>, IState> {
                     <TableRow>
                         <StyledTablePagination
                             rowsPerPageOptions={[]}
-                            count={this.state.rows.length}
+                            count={this.props.value.rows.length}
                             rowsPerPage={rowsPerPage}
                             labelRowsPerPage=""
-                            page={this.state.page}
+                            page={this.props.value.page}
                             onChangePage={this.handleChangePage}
                             ActionsComponent={TablePaginationActionWrapped}
                         />
@@ -176,7 +121,7 @@ class Hobbies extends Component<WithStyles<typeof styleSettings>, IState> {
                     </Typography>
                     <hr />
                     <Typography variant="h6">Steam ライブラリ</Typography>
-                    {this.state.isFetching ? (
+                    {this.props.value.isFetching ? (
                         <div>
                             <CircularProgress className={classes.progress} />
                         </div>

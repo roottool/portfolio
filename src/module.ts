@@ -8,21 +8,17 @@ enum ActionNames {
 
 interface OpenSideMenuAction extends Action {
     type: ActionNames.OPEN;
-    isOpened: boolean;
 }
 export const openSideMenu = (): OpenSideMenuAction => ({
-    type: ActionNames.OPEN,
-    isOpened: true
+    type: ActionNames.OPEN
 });
 
 interface CloseSideMenuAction extends Action {
     type: ActionNames.CLOSE;
-    isOpened: boolean;
 }
 
 export const closeSideMenu = (): CloseSideMenuAction => ({
-    type: ActionNames.CLOSE,
-    isOpened: false
+    type: ActionNames.CLOSE
 });
 
 //reducer

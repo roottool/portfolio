@@ -1,18 +1,18 @@
-import * as React from 'react';
+import * as React from "react";
 import { Link } from "react-router-dom";
 
-import styles from './SideDrawer.module.scss';
+import styles from "./SideDrawer.module.scss";
 
 interface IProps {
-    show: boolean,
-    drawToggleClickHandler(): void,
+    show: boolean;
+    drawToggleClickHandler(): void;
 }
 
 class SideDrawer extends React.Component<IProps, {}> {
     constructor(props: IProps) {
         super(props);
         this.clickHandler = this.clickHandler.bind(this);
-    };
+    }
 
     public render() {
         let drawerClasses = [`${styles.sideDrawer}`];
@@ -22,7 +22,7 @@ class SideDrawer extends React.Component<IProps, {}> {
         }
 
         return (
-            <nav className={drawerClasses.join(' ')}>
+            <nav className={drawerClasses.join(" ")}>
                 <div className={styles.titleArea}>
                     <p className={styles.title}>Menu</p>
                 </div>
@@ -35,6 +35,9 @@ class SideDrawer extends React.Component<IProps, {}> {
                     </Link>
                     <Link to="/skills">
                         <li onClick={this.clickHandler}>Skills</li>
+                    </Link>
+                    <Link to="/hobbies">
+                        <li onClick={this.clickHandler}>Hobbies</li>
                     </Link>
                 </ul>
             </nav>
