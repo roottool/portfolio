@@ -7,7 +7,7 @@ export interface IUserOwnedGames {
     };
 }
 
-interface IGamesInfo {
+export interface IGamesInfo {
     appid: number;
     name: string;
     playtime_2weeks: number;
@@ -18,40 +18,29 @@ interface IGamesInfo {
 }
 
 // ActionCreator
-enum ActionNames {
-    FETCH_START = "hobbies/startFetchingUserOwnedGames",
-    FETCH = "hobbies/fetchUserOwnedGames",
-    FETCH_FINISH = "hobbies/finishFetchedUserOwnedGames",
+export enum ActionNames {
+    REQUEST_FETCH = "hobbies/requestFetchingUserOwnedGames",
+    RECEIVE_FETCH = "hobbies/receiveFetchedUserOwnedGames",
     CHANGE_PAGE = "hobbies/changePage"
 }
 
-interface StartFetchingUserOwnedGamesAction extends Action {
-    type: ActionNames.FETCH_START;
+interface RequestFetchingUserOwnedGamesAction extends Action {
+    type: ActionNames.REQUEST_FETCH;
 }
-export const startFetchingOwnedGameInfo = (): StartFetchingUserOwnedGamesAction => ({
-    type: ActionNames.FETCH_START
+export const requestFetchingUserOwnedGameInfo = (): RequestFetchingUserOwnedGamesAction => ({
+    type: ActionNames.REQUEST_FETCH
 });
 
-interface FetchUserOwnedGamesAction extends Action {
-    type: ActionNames.FETCH;
-    hobbiesAction: boolean;
+interface ReceiveFetchedUserOwnedGamesAction extends Action {
+    type: ActionNames.RECEIVE_FETCH;
     OwnedGameInfo: IGamesInfo[];
 }
 
-export const fetchUserOwnedGames = (
+export const receiveFetchedUserOwnedGameInfo = (
     fetchData: IGamesInfo[]
-): FetchUserOwnedGamesAction => ({
-    type: ActionNames.FETCH,
-    hobbiesAction: true,
+): ReceiveFetchedUserOwnedGamesAction => ({
+    type: ActionNames.RECEIVE_FETCH,
     OwnedGameInfo: fetchData
-});
-
-interface FinishFetchedUserOwnedGamesAction extends Action {
-    type: ActionNames.FETCH_FINISH;
-}
-
-export const finishFetchedOwnedGameInfo = (): FinishFetchedUserOwnedGamesAction => ({
-    type: ActionNames.FETCH_FINISH
 });
 
 interface ChangePageAction extends Action {
@@ -65,15 +54,6 @@ export const changePage = (page: number): ChangePageAction => ({
 });
 
 //reducer
-interface IGamesInfo {
-    appid: number;
-    name: string;
-    playtime_2weeks: number;
-    playtime_forever: number;
-    img_icon_url: string;
-    img_logo_url: string;
-    has_community_visible_stats: boolean;
-}
 export interface HobbiesState {
     isFetching: boolean;
     rows: IGamesInfo[];
@@ -81,13 +61,12 @@ export interface HobbiesState {
 }
 
 export type HobbiesActions =
-    | StartFetchingUserOwnedGamesAction
-    | FetchUserOwnedGamesAction
-    | FinishFetchedUserOwnedGamesAction
+    | RequestFetchingUserOwnedGamesAction
+    | ReceiveFetchedUserOwnedGamesAction
     | ChangePageAction;
 
 const initialState: HobbiesState = {
-    isFetching: true,
+    isFetching: false,
     rows: [],
     page: 0
 };
@@ -97,16 +76,18 @@ export default function reducer(
     action: HobbiesActions
 ): HobbiesState {
     switch (action.type) {
-        case ActionNames.FETCH_START:
-            return state;
-        case ActionNames.FETCH:
+        case ActionNames.REQUEST_FETCH:
             return {
-                isFetching: state.isFetching,
+                isFetching: true,
+                rows: state.rows,
+                page: state.page
+            };
+        case ActionNames.RECEIVE_FETCH:
+            return {
+                isFetching: false,
                 rows: action.OwnedGameInfo,
                 page: state.page
             };
-        case ActionNames.FETCH_FINISH:
-            return { isFetching: false, rows: state.rows, page: state.page };
         case ActionNames.CHANGE_PAGE:
             return {
                 isFetching: state.isFetching,

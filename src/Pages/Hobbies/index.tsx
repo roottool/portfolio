@@ -48,7 +48,7 @@ class Hobbies extends Component<IProps, {}> {
     constructor(props: IProps) {
         super(props);
 
-        this.props.actions.fetchUserOwnedGameInfo();
+        this.props.actions.requestFetchingUserOwnedGameInfo();
     }
 
     private handleChangePage = (
@@ -56,7 +56,6 @@ class Hobbies extends Component<IProps, {}> {
         page: number
     ) => {
         this.props.actions.changeOwnedGameInfoPage(page);
-        //this.setState({ page: page });
     };
 
     public render() {

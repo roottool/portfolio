@@ -3,10 +3,9 @@ import { connect } from "react-redux";
 import { Dispatch } from "redux";
 import axios from "axios";
 import {
-    IUserOwnedGames,
-    startFetchingOwnedGameInfo,
-    fetchUserOwnedGames,
-    finishFetchedOwnedGameInfo,
+    IGamesInfo,
+    requestFetchingUserOwnedGameInfo,
+    receiveFetchedUserOwnedGameInfo,
     changePage
 } from "./module";
 import { ReduxAction, ReduxState } from "../../RootReduser";
@@ -14,43 +13,12 @@ import { ReduxAction, ReduxState } from "../../RootReduser";
 export class ActionDispatcher {
     constructor(private dispatch: (action: ReduxAction) => void) {}
 
-    public async fetchUserOwnedGameInfo() {
-        this.dispatch(startFetchingOwnedGameInfo());
-        await axios
-            .get(
-                "https://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=XXX&steamid=YYY&include_appinfo=1"
-            )
-            .then(response => {
-                const result: IUserOwnedGames = response.data;
-                /**
-                 * プレイ時間降順ソート
-                 * 参考URL
-                 * https://medium.com/@pagalvin/sort-arrays-using-typescript-592fa6e77f1
-                 */
-                console.log(result);
+    public requestFetchingUserOwnedGameInfo() {
+        this.dispatch(requestFetchingUserOwnedGameInfo());
+    }
 
-                const sortPlayTime = result.response.games.sort(
-                    (leftSide, rightSide): number => {
-                        if (
-                            leftSide.playtime_forever >
-                            rightSide.playtime_forever
-                        ) {
-                            return -1;
-                        } else if (
-                            leftSide.playtime_forever <
-                            rightSide.playtime_forever
-                        ) {
-                            return 1;
-                        }
-                        return 0;
-                    }
-                );
-                this.dispatch(fetchUserOwnedGames(sortPlayTime));
-            })
-            .catch(error => {
-                throw new Error(error);
-            });
-        this.dispatch(finishFetchedOwnedGameInfo());
+    public receiveFetchedUserOwnedGameInfo(userOwnedGamesnfo: IGamesInfo[]) {
+        this.dispatch(receiveFetchedUserOwnedGameInfo(userOwnedGamesnfo));
     }
 
     public changeOwnedGameInfoPage(page: number) {
