@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import PropTypes, { number } from "prop-types";
 import { withStyles, Theme, WithStyles } from "@material-ui/core/styles";
 import IconButton from "@material-ui/core/IconButton";
 import FirstPageIcon from "@material-ui/icons/FirstPage";
@@ -25,7 +24,7 @@ interface IProps extends WithStyles<typeof actionsStyles> {
     theme: Theme;
 }
 
-class TablePaginationActionsWrapped extends React.Component<IProps> {
+class TablePaginationActionsWrapped extends Component<IProps, {}> {
     constructor(props: IProps) {
         super(props);
     }
