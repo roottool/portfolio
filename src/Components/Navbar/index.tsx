@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { IconContext } from "react-icons";
 import { MdMenu } from "react-icons/md";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
 
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -11,8 +12,6 @@ import {
     WithStyles,
     createStyles
 } from "@material-ui/core/styles";
-
-import styles from "./Navbar.module.scss";
 
 const styleSettings = (theme: Theme) =>
     createStyles({
@@ -31,7 +30,6 @@ interface IProps extends WithStyles<typeof styleSettings> {
 class Navbar extends Component<IProps, {}> {
     constructor(props: IProps) {
         super(props);
-        this.clickHandler = this.clickHandler.bind(this);
     }
 
     public render() {
@@ -40,21 +38,16 @@ class Navbar extends Component<IProps, {}> {
             <div>
                 <AppBar position={"static"} className={classes.root}>
                     <Toolbar>
-                        <div
-                            className={styles.toggleButton}
-                            onClick={this.clickHandler}
-                        >
+                        <MenuIconWrapper onClick={this.clickHandler}>
                             <IconContext.Provider
                                 value={{ color: "white", size: "1.5em" }}
                             >
                                 <MdMenu />
                             </IconContext.Provider>
-                        </div>
-                        <Link to="/" className={styles.title}>
-                            roottool's portfolio
-                        </Link>
-                        <div className={classes.grow} />
-                        <div className={styles.navigationItems}>
+                        </MenuIconWrapper>
+                        <TitleWrapper to="/">roottool's portfolio</TitleWrapper>
+                        <GrowWrapper />
+                        <NavigationItemsWrapper>
                             <ul>
                                 <Link to="/about">
                                     <li>about</li>
@@ -69,16 +62,60 @@ class Navbar extends Component<IProps, {}> {
                                     <li>Hobbies</li>
                                 </Link>
                             </ul>
-                        </div>
+                        </NavigationItemsWrapper>
                     </Toolbar>
                 </AppBar>
             </div>
         );
     }
 
-    private clickHandler() {
+    private clickHandler = () => {
         this.props.drawToggleClickHandler();
-    }
+    };
 }
 
 export default withStyles(styleSettings)(Navbar);
+
+const MenuIconWrapper = styled.div`
+    @media (min-width: 769px) {
+        display: none;
+    }
+`;
+
+const TitleWrapper = styled(Link)`
+    color: white;
+    font-size: 1.5rem;
+    padding: 0 1rem;
+    text-decoration: none;
+    @media (min-width: 769px) {
+        padding: 0 0rem;
+    }
+`;
+
+const GrowWrapper = styled.div`
+    flex: 1;
+`;
+
+const NavigationItemsWrapper = styled.div`
+    height: 100%;
+
+    & ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+
+    & li {
+        padding: 16px 1rem;
+    }
+
+    & a {
+        color: white;
+        text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+        display: none;
+    }
+`;
