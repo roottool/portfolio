@@ -19,7 +19,7 @@ import {
 
 import stlyes from "./Hobbies.module.scss";
 import GameInfoContents from "./Components/GameInfoContents";
-import TablePaginationActionWrapped from "./Components/TablePaginationActionWrapped";
+import TablePaginationActionsWrapped from "./Components/TablePaginationActionWrapped";
 
 import { HobbiesState } from "./module";
 import { ActionDispatcher } from "./Container";
@@ -99,7 +99,7 @@ class Hobbies extends Component<IProps, {}> {
                             labelRowsPerPage=""
                             page={this.props.value.page}
                             onChangePage={this.handleChangePage}
-                            ActionsComponent={TablePaginationActionWrapped}
+                            ActionsComponent={TablePaginationActionsWrapped}
                         />
                     </TableRow>
                 </TableFooter>

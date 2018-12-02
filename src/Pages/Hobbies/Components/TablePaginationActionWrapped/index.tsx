@@ -1,33 +1,48 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core/styles";
+import PropTypes, { number } from "prop-types";
+import { withStyles, Theme, WithStyles } from "@material-ui/core/styles";
 import IconButton from "@material-ui/core/IconButton";
 import FirstPageIcon from "@material-ui/icons/FirstPage";
 import KeyboardArrowLeft from "@material-ui/icons/KeyboardArrowLeft";
 import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
 import LastPageIcon from "@material-ui/icons/LastPage";
 
-const actionsStyles = theme => ({
+const actionsStyles = (theme: Theme) => ({
     root: {
         flexShrink: 0,
         color: theme.palette.text.secondary
     }
 });
 
-class TablePaginationActionsWrapped extends Component {
-    handleFirstPageButtonClick = event => {
+interface IProps extends WithStyles<typeof actionsStyles> {
+    count: number;
+    onChangePage: (
+        event: React.MouseEvent<HTMLButtonElement> | null,
+        page: number
+    ) => void;
+    page: number;
+    rowsPerPage: number;
+    theme: Theme;
+}
+
+class TablePaginationActionsWrapped extends React.Component<IProps> {
+    constructor(props: IProps) {
+        super(props);
+    }
+
+    handleFirstPageButtonClick = (event: any) => {
         this.props.onChangePage(event, 0);
     };
 
-    handleBackButtonClick = event => {
+    handleBackButtonClick = (event: any) => {
         this.props.onChangePage(event, this.props.page - 1);
     };
 
-    handleNextButtonClick = event => {
+    handleNextButtonClick = (event: any) => {
         this.props.onChangePage(event, this.props.page + 1);
     };
 
-    handleLastPageButtonClick = event => {
+    handleLastPageButtonClick = (event: any) => {
         this.props.onChangePage(
             event,
             Math.max(
@@ -90,15 +105,6 @@ class TablePaginationActionsWrapped extends Component {
         );
     }
 }
-
-TablePaginationActionsWrapped.propTypes = {
-    classes: PropTypes.object.isRequired,
-    count: PropTypes.number.isRequired,
-    onChangePage: PropTypes.func.isRequired,
-    page: PropTypes.number.isRequired,
-    rowsPerPage: PropTypes.number.isRequired,
-    theme: PropTypes.object.isRequired
-};
 
 export default withStyles(actionsStyles, { withTheme: true })(
     TablePaginationActionsWrapped
