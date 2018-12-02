@@ -10,8 +10,6 @@ import App from "./Container";
 import rootReduser from "./RootReduser";
 import rootSaga from "./sagas";
 
-import "./index.css";
-
 // store関連
 const history = createBrowserHistory();
 const composeEnhancer: typeof compose =
