@@ -15,16 +15,13 @@ import {
 } from "@material-ui/core/styles";
 
 import PageTitleWrapper from "../../Shared/Styles/PageTitleWrapper";
-import {
-    MAX_SMARTPHONE_SIZE,
-    MIN_TABLET_SIZE
-} from "../../Shared/Styles/StyleConstants";
+import { MIN_TABLET_SIZE } from "../../Shared/Styles/StyleConstants";
 
 const styleSettings = (theme: Theme) =>
     createStyles({
         card: {
             margin: "5vh auto",
-            [theme.breakpoints.down(MAX_SMARTPHONE_SIZE)]: {
+            [theme.breakpoints.down(MIN_TABLET_SIZE)]: {
                 width: "90%"
             },
             [theme.breakpoints.up(MIN_TABLET_SIZE)]: {
