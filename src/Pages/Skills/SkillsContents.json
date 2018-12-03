@@ -1,11 +1,10 @@
-[
-    {
+[{
         "title": "HTML & CSS",
         "text": "フロントエンドの制作で使用しています。OrgaSoundではBootstrap4を使用していました。業務ではMaterial Design Liteを使用していました。"
     },
     {
         "title": "SASS",
-        "text": "OrgaSoundとこのポートフォリオの制作で使用しました。業務でも現在(2018/11/29)使用中です。"
+        "text": "OrgaSoundとこのポートフォリオの制作で使用していました。業務でも現在(2018/11/29)使用中です。"
     },
     {
         "title": "javascript (jQuery)",
@@ -21,7 +20,7 @@
     },
     {
         "title": "React",
-        "text": "このポートフォリオの制作で使用しました。このポートフォリオの制作にはTypescriptを採用しました。使用経験のあるパッケージはMaterial UI, Redux, redux-saga, react-router, connected-react-routerです。業務でも現在(2018/11/29)使用中です。"
+        "text": "このポートフォリオの制作でTypescriptと共に使用しました。使用経験のあるパッケージはMaterial UI, Redux, redux-saga, react-router, connected-react-router, styled-componentsです。業務でも現在(2018/11/29)使用中です。"
     },
     {
         "title": "C#",
