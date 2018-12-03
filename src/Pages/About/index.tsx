@@ -14,10 +14,23 @@ import {
     createStyles
 } from "@material-ui/core/styles";
 
-import stlyes from "./About.module.scss";
+import PageTitleWrapper from "../../Shared/Styles/PageTitleWrapper";
+import {
+    MAX_SMARTPHONE_SIZE,
+    MIN_TABLET_SIZE
+} from "../../Shared/Styles/StyleConstants";
 
 const styleSettings = (theme: Theme) =>
     createStyles({
+        card: {
+            margin: "5vh auto",
+            [theme.breakpoints.down(MAX_SMARTPHONE_SIZE)]: {
+                width: "90%"
+            },
+            [theme.breakpoints.up(MIN_TABLET_SIZE)]: {
+                width: "60%"
+            }
+        },
         contents: {
             fontSize: "1.5rem",
             textAlign: "center"
@@ -33,8 +46,8 @@ class About extends Component<WithStyles<typeof styleSettings>, {}> {
         const { classes } = this.props;
         return (
             <div>
-                <h1 className={stlyes.title}>About</h1>
-                <Card className={stlyes.card}>
+                <PageTitleWrapper>About</PageTitleWrapper>
+                <Card className={classes.card}>
                     <CardContent>
                         <Grid
                             container
