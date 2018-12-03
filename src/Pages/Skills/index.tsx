@@ -11,7 +11,7 @@ import {
     createStyles
 } from "@material-ui/core/styles";
 
-import styles from "./Skills.module.scss";
+import PageTitleWrapper from "../../Shared/Styles/PageTitleWrapper";
 import contents from "./SkillsContents.json";
 
 const styleSettings = (theme: Theme) =>
@@ -38,7 +38,7 @@ class Skills extends Component<WithStyles<typeof styleSettings>, {}> {
         const { classes } = this.props;
         return (
             <div>
-                <h1 className={styles.title}>Skills</h1>
+                <PageTitleWrapper>Skills</PageTitleWrapper>
                 <Grid container className={classes.container}>
                     {contents.map((item, key) => (
                         <Grid
