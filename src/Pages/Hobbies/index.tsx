@@ -54,8 +54,6 @@ interface IProps extends WithStyles<typeof styleSettings> {
     actions: ActionDispatcher;
 }
 
-const rowsPerPage = 5;
-
 class Hobbies extends Component<IProps, {}> {
     constructor(props: IProps) {
         super(props);
@@ -78,8 +76,11 @@ class Hobbies extends Component<IProps, {}> {
                 <TableBody>
                     {this.props.value.rows
                         .slice(
-                            this.props.value.page * rowsPerPage,
-                            this.props.value.page * rowsPerPage + rowsPerPage
+                            this.props.value.page *
+                                this.props.value.rowsPerPage,
+                            this.props.value.page *
+                                this.props.value.rowsPerPage +
+                                this.props.value.rowsPerPage
                         )
                         .map(row => {
                             return (
@@ -89,14 +90,7 @@ class Hobbies extends Component<IProps, {}> {
                                             textAlign: "center"
                                         }}
                                     >
-                                        <GameInfoContents
-                                            appid={row.appid}
-                                            name={row.name}
-                                            playtime_forever={
-                                                row.playtime_forever
-                                            }
-                                            img_logo_url={row.img_logo_url}
-                                        />
+                                        <GameInfoContents {...row} />
                                     </TableCell>
                                 </TableRow>
                             );
@@ -107,7 +101,7 @@ class Hobbies extends Component<IProps, {}> {
                         <StyledTablePagination
                             rowsPerPageOptions={[]}
                             count={this.props.value.rows.length}
-                            rowsPerPage={rowsPerPage}
+                            rowsPerPage={this.props.value.rowsPerPage}
                             labelRowsPerPage=""
                             page={this.props.value.page}
                             onChangePage={this.handleChangePage}

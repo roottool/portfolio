@@ -58,6 +58,7 @@ export interface HobbiesState {
     isFetching: boolean;
     rows: IGamesInfo[];
     page: number;
+    rowsPerPage: number;
 }
 
 export type HobbiesActions =
@@ -68,7 +69,8 @@ export type HobbiesActions =
 const initialState: HobbiesState = {
     isFetching: false,
     rows: [],
-    page: 0
+    page: 0,
+    rowsPerPage: 5
 };
 
 export default function reducer(
@@ -78,20 +80,18 @@ export default function reducer(
     switch (action.type) {
         case ActionNames.REQUEST_FETCH:
             return {
-                isFetching: true,
-                rows: state.rows,
-                page: state.page
+                ...state,
+                isFetching: true
             };
         case ActionNames.RECEIVE_FETCH:
             return {
+                ...state,
                 isFetching: false,
-                rows: action.OwnedGameInfo,
-                page: state.page
+                rows: action.OwnedGameInfo
             };
         case ActionNames.CHANGE_PAGE:
             return {
-                isFetching: state.isFetching,
-                rows: state.rows,
+                ...state,
                 page: action.page
             };
         default:
