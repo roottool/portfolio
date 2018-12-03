@@ -13,6 +13,11 @@ import {
     createStyles
 } from "@material-ui/core/styles";
 
+import {
+    MAX_SMARTPHONE_SIZE,
+    MIN_TABLET_SIZE
+} from "../../Shared/Styles/StyleConstants";
+
 const styleSettings = (theme: Theme) =>
     createStyles({
         root: {
@@ -77,7 +82,7 @@ class Navbar extends Component<IProps, {}> {
 export default withStyles(styleSettings)(Navbar);
 
 const MenuIconWrapper = styled.div`
-    @media (min-width: 769px) {
+    @media (min-width: ${MIN_TABLET_SIZE}px) {
         display: none;
     }
 `;
@@ -87,7 +92,7 @@ const TitleWrapper = styled(Link)`
     font-size: 1.5rem;
     padding: 0 1rem;
     text-decoration: none;
-    @media (min-width: 769px) {
+    @media (min-width: ${MIN_TABLET_SIZE}px) {
         padding: 0 0rem;
     }
 `;
@@ -115,7 +120,7 @@ const NavigationItemsWrapper = styled.div`
         text-decoration: none;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: ${MAX_SMARTPHONE_SIZE}px) {
         display: none;
     }
 `;

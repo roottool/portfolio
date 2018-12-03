@@ -2,6 +2,8 @@ import * as React from "react";
 import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 
+import { MIN_TABLET_SIZE } from "../../Shared/Styles/StyleConstants";
+
 interface ISideDrawerWrapperProps {
     show: boolean;
 }
@@ -89,7 +91,7 @@ const SideDrawerWrapper = styled.nav`
         font-size: 1.2rem;
     }
 
-    @media (min-width: 769px) {
+    @media (min-width: ${MIN_TABLET_SIZE}px) {
         display: none;
     }
 `;
