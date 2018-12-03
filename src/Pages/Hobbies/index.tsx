@@ -17,12 +17,14 @@ import {
     createStyles
 } from "@material-ui/core/styles";
 
-import stlyes from "./Hobbies.module.scss";
 import GameInfoContents from "./Components/GameInfoContents";
 import TablePaginationActionsWrapped from "./Components/TablePaginationActionWrapped";
 
 import { HobbiesState } from "./module";
 import { ActionDispatcher } from "./Container";
+
+import PageTitleWrapper from "../../Shared/Styles/PageTitleWrapper";
+import { MIN_TABLET_SIZE } from "../../Shared/Styles/StyleConstants";
 
 const StyledTablePagination = withStyles({
     toolbar: {
@@ -32,6 +34,16 @@ const StyledTablePagination = withStyles({
 
 const styleSettings = (theme: Theme) =>
     createStyles({
+        paper: {
+            margin: "5vh auto",
+            overflowX: "auto",
+            [theme.breakpoints.down(MIN_TABLET_SIZE)]: {
+                width: "90%"
+            },
+            [theme.breakpoints.up(MIN_TABLET_SIZE)]: {
+                width: "60%"
+            }
+        },
         progress: {
             margin: theme.spacing.unit * 2
         }
@@ -108,13 +120,8 @@ class Hobbies extends Component<IProps, {}> {
 
         return (
             <div>
-                <h1 className={stlyes.title}>Hobbies</h1>
-                <Paper
-                    className={stlyes.paper}
-                    style={{
-                        overflowX: "auto"
-                    }}
-                >
+                <PageTitleWrapper>Hobbies</PageTitleWrapper>
+                <Paper className={classes.paper}>
                     <Typography variant="subtitle1" gutterBottom>
                         Steam等でFPSかストラテジーのゲームを中心に買ってPCで遊んでいます。映画を見たりもします。
                     </Typography>
