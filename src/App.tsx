@@ -14,6 +14,8 @@ import Hobbies from "./Pages/Hobbies/Container";
 import { AppState } from "./module";
 import { ActionDispatcher } from "./Container";
 
+import backgroundImage from "./images/EchoCat.png";
+
 interface IProps {
     value: AppState;
     actions: ActionDispatcher;
@@ -77,7 +79,7 @@ const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         font-family: sans-serif;
-        background-image: url('./images/EchoCat.png');
+        background-image: url(${backgroundImage});
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-position: right bottom;
