@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
+import LazyImage from "../../../../Components/lazyImage";
 
 interface IProps {
     appid: number;
@@ -32,7 +33,7 @@ class GameInfoContents extends Component<IProps, {}> {
                             this.props.appid
                         }/`}
                     >
-                        <img
+                        <LazyImage
                             src={`http://media.steampowered.com/steamcommunity/public/images/apps/${
                                 this.props.appid
                             }/${this.props.img_logo_url}.jpg`}
