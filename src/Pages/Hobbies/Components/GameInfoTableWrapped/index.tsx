@@ -36,11 +36,11 @@ class GameInfoTableWrapped extends Component<IProps, {}> {
                 <TableBody>
                     {this.props.value.rows
                         .slice(
-                            this.firstPageContent(
+                            this.firstContentOfThePage(
                                 this.props.value.page,
                                 this.props.value.rowsPerPage
                             ),
-                            this.lastPageContent(
+                            this.lastContentOfThePage(
                                 this.props.value.page,
                                 this.props.value.rowsPerPage
                             )
@@ -76,18 +76,22 @@ class GameInfoTableWrapped extends Component<IProps, {}> {
         );
     }
 
+    readonly firstContentOfThePage = (
+        currentPage: number,
+        rowsPerPage: number
+    ) => currentPage * rowsPerPage;
+
+    readonly lastContentOfThePage = (
+        currentPage: number,
+        rowsPerPage: number
+    ) => currentPage * rowsPerPage + rowsPerPage;
+
     readonly handleChangePage = (
         event: React.MouseEvent<HTMLButtonElement> | null,
         page: number
     ) => {
         this.props.actions.changeOwnedGameInfoPage(page);
     };
-
-    readonly firstPageContent = (currentPage: number, rowsPerPage: number) =>
-        currentPage * rowsPerPage;
-
-    readonly lastPageContent = (currentPage: number, rowsPerPage: number) =>
-        currentPage * rowsPerPage + rowsPerPage;
 }
 
 export default GameInfoTableWrapped;
