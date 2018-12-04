@@ -6,13 +6,14 @@ import TableCell from "@material-ui/core/TableCell";
 import TableFooter from "@material-ui/core/TableFooter";
 import TablePagination from "@material-ui/core/TablePagination";
 import TableRow from "@material-ui/core/TableRow";
-import { withStyles } from "@material-ui/core/styles";
-
-import GameInfoContents from "../GameInfoContents";
-import TablePaginationActionsWrapped from "../TablePaginationActionWrapped";
-
+import { withStyles, createMuiTheme } from "@material-ui/core/styles";
+// redux関連
 import { HobbiesState } from "../../module";
 import { ActionDispatcher } from "../../Container";
+// Components
+import GameInfoContents from "../GameInfoContents";
+import EmptyTableRow from "../EmptyTableRow";
+import TablePaginationActionsWrapped from "../TablePaginationActionWrapped";
 
 const StyledTablePagination = withStyles({
     toolbar: {
@@ -31,6 +32,14 @@ class GameInfoTableWrapped extends Component<IProps, {}> {
     }
 
     public render() {
+        const emptyRows =
+            this.props.value.rowsPerPage -
+            Math.min(
+                this.props.value.rowsPerPage,
+                this.props.value.rows.length -
+                    this.props.value.page * this.props.value.rowsPerPage
+            );
+
         return (
             <Table>
                 <TableBody>
@@ -58,6 +67,7 @@ class GameInfoTableWrapped extends Component<IProps, {}> {
                                 </TableRow>
                             );
                         })}
+                    {emptyRows > 0 && <EmptyTableRow emptyRows={emptyRows} />}
                 </TableBody>
                 <TableFooter>
                     <TableRow>
