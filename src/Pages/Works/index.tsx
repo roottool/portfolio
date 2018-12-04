@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Helmet from "react-helmet";
 
 import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
@@ -45,6 +46,9 @@ class Works extends Component<WithStyles<typeof styleSettings>, {}> {
         const { classes } = this.props;
         return (
             <div>
+                <Helmet>
+                    <title>Works - roottool's Portfolio Site</title>
+                </Helmet>
                 <PageTitleWrapper>Works</PageTitleWrapper>
                 <Grid container className={classes.container}>
                     {contents.map((item, key) => (

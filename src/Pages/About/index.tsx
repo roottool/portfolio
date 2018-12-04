@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Helmet from "react-helmet";
 
 import { IconContext } from "react-icons";
 import { FaTwitterSquare } from "react-icons/fa";
@@ -43,6 +44,9 @@ class About extends Component<WithStyles<typeof styleSettings>, {}> {
         const { classes } = this.props;
         return (
             <div>
+                <Helmet>
+                    <title>About - roottool's Portfolio Site</title>
+                </Helmet>
                 <PageTitleWrapper>About</PageTitleWrapper>
                 <Card className={classes.card}>
                     <CardContent>

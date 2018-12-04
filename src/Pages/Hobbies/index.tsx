@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Helmet from "react-helmet";
 
 import CircularProgress from "@material-ui/core/CircularProgress";
 import Paper from "@material-ui/core/Paper";
@@ -52,6 +53,9 @@ class Hobbies extends Component<IProps, {}> {
 
         return (
             <div>
+                <Helmet>
+                    <title>Hobbies - roottool's Portfolio Site</title>
+                </Helmet>
                 <PageTitleWrapper>Hobbies</PageTitleWrapper>
                 <Paper className={classes.paper}>
                     <Typography variant="subtitle1" gutterBottom>
