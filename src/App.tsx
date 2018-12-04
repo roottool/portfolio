@@ -14,7 +14,8 @@ import Hobbies from "./Pages/Hobbies/Container";
 import { AppState } from "./module";
 import { ActionDispatcher } from "./Container";
 
-import backgroundImage from "./images/EchoCat.png";
+import backgroundImagePNG from "./images/EchoCat.png";
+import backgroundImageWebP from "./images/EchoCat.webp";
 
 interface IProps {
     value: AppState;
@@ -79,7 +80,8 @@ const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         font-family: sans-serif;
-        background-image: url(${backgroundImage});
+        background-image: url(${backgroundImagePNG});
+        background-image: url(${backgroundImageWebP});
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-position: right bottom;
