@@ -12,7 +12,6 @@
     "@types/react-redux": "^6.0.10",
     "@types/react-router-dom": "^4.3.1",
     "@types/styled-components": "^4.1.2",
-    "awesome-typed-sass-modules": "^1.1.4",
     "axios": "^0.18.0",
     "connected-react-router": "^5.0.1",
     "node-sass": "^4.9.4",
@@ -28,8 +27,7 @@
     "typescript": "3.1.6"
   },
   "scripts": {
-    "build:typed-sass-modules": "atsm -p src/**/*.module.scss",
-    "start": "atsm -p src/**/*.module.scss && react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

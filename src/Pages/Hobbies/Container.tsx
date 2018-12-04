@@ -1,7 +1,6 @@
 import Hobbies from "./index";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
-import axios from "axios";
 import {
     IGamesInfo,
     requestFetchingUserOwnedGameInfo,
