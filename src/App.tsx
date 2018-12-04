@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Route, Switch } from "react-router-dom";
-import styled, { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle, css } from "styled-components";
 
 import Backdrop from "./Components/Backdrop";
 import Navbar from "./Components/Navbar";
@@ -35,6 +35,12 @@ class App extends React.Component<IProps, {}> {
         this.props.actions.closeSideMenu();
     };
 
+    // FirefoxはWebPに対応していないので、背景画像にPNGを使用する
+    // 参考URL
+    // http://cly7796.net/wp/javascript/make-a-determination-using-the-useragent-in-javascript/
+    readonly ua = navigator.userAgent.toLowerCase();
+    readonly isFirefox = this.ua.indexOf("firefox") > -1;
+
     public render() {
         let backDrop;
         const sideDrawerOption = {
@@ -50,7 +56,7 @@ class App extends React.Component<IProps, {}> {
 
         return (
             <div className="App">
-                <GlobalStyle />
+                <GlobalStyle isFirefox={this.isFirefox} />
                 <Navbar drawToggleClickHandler={this.menuIconClickHandler} />
                 <SideDrawer {...sideDrawerOption} />
                 {backDrop}
@@ -71,6 +77,10 @@ class App extends React.Component<IProps, {}> {
 
 export default App;
 
+interface IGlobalStyleProps {
+    isFirefox: boolean;
+}
+
 const GlobalStyle = createGlobalStyle`
     html {
         height: 100%;
@@ -80,8 +90,14 @@ const GlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
         font-family: sans-serif;
-        background-image: url(${backgroundImagePNG});
-        background-image: url(${backgroundImageWebP});
+        ${(props: IGlobalStyleProps) =>
+            props.isFirefox
+                ? css`
+                      background-image: url(${backgroundImagePNG});
+                  `
+                : css`
+                      background-image: url(${backgroundImageWebP});
+                  `}
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-position: right bottom;
