@@ -53,20 +53,10 @@ class Navbar extends Component<IProps, {}> {
                         <TitleWrapper to="/">roottool's portfolio</TitleWrapper>
                         <GrowWrapper />
                         <NavigationItemsWrapper>
-                            <ul>
-                                <Link to="/about">
-                                    <li>about</li>
-                                </Link>
-                                <Link to="/works">
-                                    <li>Works</li>
-                                </Link>
-                                <Link to="/skills">
-                                    <li>Skills</li>
-                                </Link>
-                                <Link to="/hobbies">
-                                    <li>Hobbies</li>
-                                </Link>
-                            </ul>
+                            <LinkWrapper to="/about">about</LinkWrapper>
+                            <LinkWrapper to="/works">Works</LinkWrapper>
+                            <LinkWrapper to="/skills">Skills</LinkWrapper>
+                            <LinkWrapper to="/hobbies">Hobbies</LinkWrapper>
                         </NavigationItemsWrapper>
                     </Toolbar>
                 </AppBar>
@@ -103,24 +93,18 @@ const GrowWrapper = styled.div`
 
 const NavigationItemsWrapper = styled.div`
     height: 100%;
-
-    & ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-    }
-
-    & li {
-        padding: 16px 1rem;
-    }
-
-    & a {
-        color: white;
-        text-decoration: none;
-    }
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
 
     @media (max-width: ${MAX_SMARTPHONE_SIZE}px) {
         display: none;
     }
+`;
+
+const LinkWrapper = styled(Link)`
+    color: white;
+    text-decoration: none;
+    padding: 16px 1rem;
 `;

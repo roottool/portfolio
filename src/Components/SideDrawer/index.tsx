@@ -23,20 +23,20 @@ class SideDrawer extends React.Component<IProps, {}> {
                 <TitleAreaWrapper>
                     <TitleWrapper>Menu</TitleWrapper>
                 </TitleAreaWrapper>
-                <ul>
-                    <Link to="/about">
-                        <li onClick={this.clickHandler}>About</li>
-                    </Link>
-                    <Link to="/works">
-                        <li onClick={this.clickHandler}>Works</li>
-                    </Link>
-                    <Link to="/skills">
-                        <li onClick={this.clickHandler}>Skills</li>
-                    </Link>
-                    <Link to="/hobbies">
-                        <li onClick={this.clickHandler}>Hobbies</li>
-                    </Link>
-                </ul>
+                <LinkListWrapper>
+                    <LinkWrapper to="/about" onClick={this.clickHandler}>
+                        About
+                    </LinkWrapper>
+                    <LinkWrapper to="/works" onClick={this.clickHandler}>
+                        Works
+                    </LinkWrapper>
+                    <LinkWrapper to="/skills" onClick={this.clickHandler}>
+                        Skills
+                    </LinkWrapper>
+                    <LinkWrapper to="/hobbies" onClick={this.clickHandler}>
+                        Hobbies
+                    </LinkWrapper>
+                </LinkListWrapper>
             </SideDrawerWrapper>
         );
     }
@@ -66,31 +66,6 @@ const SideDrawerWrapper = styled.nav`
             transform: translateX(0);
         `}
 
-    & ul {
-        height: 100%;
-        padding: 0 0;
-        margin: 0 0;
-        list-style: none;
-        justify-content: center;
-    }
-
-    & li {
-        padding: 1rem 0;
-        padding-left: 1rem;
-        border-bottom: thin solid black;
-        color: black;
-    }
-
-    & li:hover,
-    & li:active {
-        background-color: #c2203b;
-    }
-
-    & a {
-        text-decoration: none;
-        font-size: 1.2rem;
-    }
-
     @media (min-width: ${MIN_TABLET_SIZE}px) {
         display: none;
     }
@@ -107,4 +82,26 @@ const TitleWrapper = styled.p`
     text-decoration: none;
     padding: 0.5rem 1rem;
     margin: 0;
+`;
+
+const LinkListWrapper = styled.div`
+    height: 100%;
+    padding: 0 0;
+    margin: 0 0;
+    list-style: none;
+    justify-content: center;
+`;
+
+const LinkWrapper = styled(Link)`
+    display: block;
+    padding: 1rem 0;
+    padding-left: 1rem;
+    border-bottom: thin solid black;
+    color: black;
+    text-decoration: none;
+    font-size: 1.2rem;
+    &:hover,
+    &:active {
+        background-color: #c2203b;
+    }
 `;
