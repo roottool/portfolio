@@ -1,4 +1,4 @@
-import { take, put, call, fork, select } from "redux-saga/effects";
+import { take, put, call, fork } from "redux-saga/effects";
 import axios from "axios";
 import {
     ActionNames,
