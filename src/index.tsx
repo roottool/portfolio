@@ -3,13 +3,17 @@ import * as ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { ConnectedRouter } from "connected-react-router";
 import * as serviceWorker from "./serviceWorker";
-
+// components
 import App from "./Container";
+// redux, redux-saga関連
+import store, { history, sagaMiddleware } from "./store";
+import rootSaga from "./sagas";
 
-import store, { history } from "./store";
+// Saga を起動する
+sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(
-    <Provider store={store()}>
+    <Provider store={store}>
         <ConnectedRouter history={history}>
             <App />
         </ConnectedRouter>
