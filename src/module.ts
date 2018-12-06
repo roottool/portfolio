@@ -2,8 +2,8 @@ import { Action } from "redux";
 
 // ActionCreator
 enum ActionNames {
-    OPEN = "root/openSideMenu",
-    CLOSE = "root/closeSideMenu"
+    OPEN = "app/openSideMenu",
+    CLOSE = "app/closeSideMenu"
 }
 
 interface OpenSideMenuAction extends Action {
