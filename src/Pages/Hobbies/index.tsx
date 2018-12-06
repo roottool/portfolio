@@ -45,7 +45,9 @@ class Hobbies extends Component<IProps, {}> {
     constructor(props: IProps) {
         super(props);
 
-        this.props.actions.requestFetchingUserOwnedGameInfo();
+        if (this.props.value.rows && this.props.value.rows.length === 0) {
+            this.props.actions.requestFetchingUserOwnedGameInfo();
+        }
     }
 
     public render() {
