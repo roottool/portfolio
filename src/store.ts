@@ -1,9 +1,21 @@
-import { applyMiddleware, compose, createStore } from "redux";
+import {
+    Action,
+    applyMiddleware,
+    compose,
+    createStore,
+    combineReducers
+} from "redux";
 import { createBrowserHistory } from "history";
-import { routerMiddleware } from "connected-react-router";
+import {
+    RouterState,
+    routerMiddleware,
+    connectRouter
+} from "connected-react-router";
 import createSagaMiddleware from "redux-saga";
-
-import rootReduser from "./RootReduser";
+// redux関連
+import app, { AppActions, AppState } from "./module";
+import hobbies, { HobbiesActions, HobbiesState } from "./Pages/Hobbies/module";
+// redux-saga関連
 import rootSaga from "./sagas";
 
 const composeEnhancer: typeof compose =
@@ -13,7 +25,11 @@ export const history = createBrowserHistory();
 
 export default () => {
     const store = createStore(
-        rootReduser(history),
+        combineReducers({
+            router: connectRouter(history),
+            app,
+            hobbies
+        }),
         composeEnhancer(
             applyMiddleware(routerMiddleware(history), sagaMiddleware)
         )
@@ -21,3 +37,11 @@ export default () => {
     sagaMiddleware.run(rootSaga);
     return store;
 };
+
+export type ReduxState = {
+    router: RouterState;
+    app: AppState;
+    hobbies: HobbiesState;
+};
+
+export type ReduxAction = AppActions | HobbiesActions | Action;
