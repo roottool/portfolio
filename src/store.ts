@@ -9,7 +9,8 @@ import { createBrowserHistory } from "history";
 import {
     RouterState,
     routerMiddleware,
-    connectRouter
+    connectRouter,
+    RouterAction
 } from "connected-react-router";
 import createSagaMiddleware from "redux-saga";
 // redux関連
@@ -44,4 +45,4 @@ export type ReduxState = {
     hobbies: HobbiesState;
 };
 
-export type ReduxAction = AppActions | HobbiesActions | Action;
+export type ReduxAction = Action | RouterAction | AppActions | HobbiesActions;
