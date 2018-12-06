@@ -14,7 +14,7 @@ import {
  *
  * https://medium.com/@pagalvin/sort-arrays-using-typescript-592fa6e77f1
  */
-function sortOwnedGames(ownedGames: IUserOwnedGames) {
+const sortOwnedGames = (ownedGames: IUserOwnedGames) => {
     return ownedGames.response.games.sort(
         (leftSide: IGamesInfo, rightSide: IGamesInfo): number => {
             if (leftSide.playtime_forever > rightSide.playtime_forever) {
@@ -25,7 +25,7 @@ function sortOwnedGames(ownedGames: IUserOwnedGames) {
             return 0;
         }
     );
-}
+};
 
 const fetchOwnedGamesApi = () => {
     const apiKey = "XXX";
