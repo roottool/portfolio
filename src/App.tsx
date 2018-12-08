@@ -17,6 +17,10 @@ import { ActionDispatcher } from "./Container";
 import backgroundImagePNG from "./images/EchoCat.png";
 import backgroundImageWebP from "./images/EchoCat.webp";
 
+interface IGlobalStyleProps {
+    edge: boolean;
+    chrome: boolean;
+}
 interface IProps {
     value: AppState;
     actions: ActionDispatcher;
@@ -35,11 +39,19 @@ class App extends React.Component<IProps, {}> {
         this.props.actions.closeSideMenu();
     };
 
-    // FirefoxはWebPに対応していないので、背景画像にPNGを使用する
+    // WebPはEdgeとChromeに対応しているので、背景画像にWebPを使用する
     // 参考URL
     // http://cly7796.net/wp/javascript/make-a-determination-using-the-useragent-in-javascript/
     readonly ua = navigator.userAgent.toLowerCase();
-    readonly isFirefox = this.ua.indexOf("firefox") > -1;
+    // Edge
+    readonly isEdge = this.ua.indexOf("edge") > -1;
+    // Google Chrome
+    readonly isChrome =
+        this.ua.indexOf("chrome") > -1 && this.ua.indexOf("edge") == -1;
+    readonly browserUsingWebP = {
+        edge: this.isEdge,
+        chrome: this.isChrome
+    };
 
     public render() {
         let backDrop;
@@ -56,7 +68,7 @@ class App extends React.Component<IProps, {}> {
 
         return (
             <div className="App">
-                <GlobalStyle isFirefox={this.isFirefox} />
+                <GlobalStyle {...this.browserUsingWebP} />
                 <Navbar drawToggleClickHandler={this.menuIconClickHandler} />
                 <SideDrawer {...sideDrawerOption} />
                 {backDrop}
@@ -77,10 +89,6 @@ class App extends React.Component<IProps, {}> {
 
 export default App;
 
-interface IGlobalStyleProps {
-    isFirefox: boolean;
-}
-
 const GlobalStyle = createGlobalStyle`
     html {
         height: 100%;
@@ -91,12 +99,12 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
         font-family: sans-serif;
         ${(props: IGlobalStyleProps) =>
-            props.isFirefox
+            props.chrome || props.edge
                 ? css`
-                      background-image: url(${backgroundImagePNG});
+                      background-image: url(${backgroundImageWebP});
                   `
                 : css`
-                      background-image: url(${backgroundImageWebP});
+                      background-image: url(${backgroundImagePNG});
                   `}
         background-repeat: no-repeat;
         background-attachment: fixed;
