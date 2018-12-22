@@ -42,10 +42,12 @@ const fetchOwnedGamesApi = () => {
 };
 
 export function* fetchUserOwnedGameInfo() {
+    while (true) {
     yield take(ActionNames.REQUEST_FETCH);
     const ownedGames = yield call(fetchOwnedGamesApi);
     const sortedOwendGames = yield call(sortOwnedGames, ownedGames);
     yield put(receiveFetchedUserOwnedGameInfo(sortedOwendGames));
+}
 }
 
 export default function* root() {
