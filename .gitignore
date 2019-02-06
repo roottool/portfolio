@@ -19,9 +19,4 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-src/images/
-src/logo.svg
-public/favicon.ico
-public/favicon512.png
-public/favicon192.png
-public/ScreenShot.png
+.env
