@@ -38,9 +38,7 @@ const sortOwnedGames = (ownedGames: IUserOwnedGames) => {
  * Therefore I cancel to use this function until this issue is resolved.
  */
 const fetchOwnedGamesApi = () => {
-    const apiKey = process.env.REACT_APP_STEAM_API_KEY;
-    const steamId = process.env.REACT_APP_STEAM_USER_ID;
-    const url = `https://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${apiKey}&steamid=${steamId}&include_appinfo=1`;
+    const url = `https://roottool.netlify.com/.netlify/functions/fetchOwnedGamesApi`;
 
     return axios
         .get(url)
