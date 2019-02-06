@@ -1,6 +1,6 @@
 import axios from "axios";
 
-exports.handler = async (event, context) => {
+exports.handler = (event, context) => {
     const apiKey = process.env.REACT_APP_STEAM_API_KEY;
     const steamId = process.env.REACT_APP_STEAM_USER_ID;
     const url = `https://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${apiKey}&steamid=${steamId}&include_appinfo=1`;
@@ -8,7 +8,6 @@ exports.handler = async (event, context) => {
     axios
         .get(url)
         .then(response => {
-            console.log(response);
             return {
                 statusCode: 200,
                 body: JSON.stringify(response.data)
