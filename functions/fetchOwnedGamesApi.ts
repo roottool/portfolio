@@ -8,6 +8,7 @@ exports.handler = async (event, context) => {
     axios
         .get(url)
         .then(response => {
+            console.log(response);
             return {
                 statusCode: 200,
                 body: response.data
