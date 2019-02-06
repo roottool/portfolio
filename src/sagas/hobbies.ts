@@ -43,7 +43,7 @@ const fetchOwnedGamesApi = () => {
     return axios
         .get(url)
         .then(response => {
-            return JSON.parse(response.data);
+            return response.data;
         })
         .catch(error => {
             throw new Error(error);
