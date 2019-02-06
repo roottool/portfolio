@@ -4,7 +4,7 @@
     },
     {
         "title": "SASS",
-        "text": "OrgaSoundとこのポートフォリオの制作で使用していました。業務でも現在(2018/11/29)使用中です。"
+        "text": "OrgaSoundとこのポートフォリオの制作で使用していました。業務でも使用していました。"
     },
     {
         "title": "javascript (jQuery)",
@@ -12,7 +12,7 @@
     },
     {
         "title": "Typescript",
-        "text": "OrgaSoundとこのポートフォリオの制作で使用しました。使えるとjavascriptよりVSCodeでのメンテナンスが楽なので学習中です。業務でも現在(2018/11/29)使用中です。"
+        "text": "OrgaSoundとこのポートフォリオの制作で使用しました。使えるとjavascriptよりVSCodeでのメンテナンスが楽なので学習中です。業務でも使用していました。"
     },
     {
         "title": "Angular 6",
@@ -20,7 +20,7 @@
     },
     {
         "title": "React",
-        "text": "このポートフォリオの制作でTypescriptと共に使用しました。使用経験のあるパッケージはMaterial UI, Redux, redux-saga, react-router, connected-react-router, styled-componentsです。業務でも現在(2018/11/29)使用中です。"
+        "text": "このポートフォリオの制作でTypescriptと共に使用しました。使用経験のあるパッケージはMaterial UI, Redux, redux-saga, react-router, connected-react-router, styled-componentsです。業務でも使用していました。"
     },
     {
         "title": "C#",
