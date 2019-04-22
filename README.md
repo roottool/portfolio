@@ -1,5 +1,5 @@
 # MyPortfolio
-私のポートフォリオサイトです。[roottool's portfolio site](https://roottool.github.io/MyPortfolio)
+私のポートフォリオサイトです。[roottool's portfolio site](https://roottool.netlify.com)
 
 ReactとTypescriptで作成しました。
 
