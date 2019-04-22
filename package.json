@@ -15,7 +15,6 @@
     "@types/styled-components": "^4.1.6",
     "axios": "^0.18.0",
     "connected-react-router": "^5.0.1",
-    "node-sass": "^4.9.4",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-helmet": "^5.2.0",
