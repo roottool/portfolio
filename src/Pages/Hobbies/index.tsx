@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Helmet from "react-helmet";
+import { Helmet } from "react-helmet";
 
 import CircularProgress from "@material-ui/core/CircularProgress";
 import Paper from "@material-ui/core/Paper";
@@ -32,7 +32,7 @@ const styleSettings = (theme: Theme) =>
             }
         },
         progress: {
-            margin: theme.spacing.unit * 2
+            margin: theme.spacing() * 2
         }
     });
 
@@ -68,8 +68,8 @@ class Hobbies extends Component<IProps, {}> {
                             <CircularProgress className={classes.progress} />
                         </div>
                     ) : (
-                        <GameInfoTableWrapped {...this.props} />
-                    )}
+                            <GameInfoTableWrapped {...this.props} />
+                        )}
                 </Paper>
             </div>
         );

@@ -18,7 +18,7 @@ class GameInfoContents extends Component<IProps, {}> {
 
     render() {
         return (
-            <Grid container spacing={16}>
+            <Grid container spacing={8}>
                 <Grid
                     item
                     xs={12}
@@ -31,12 +31,12 @@ class GameInfoContents extends Component<IProps, {}> {
                     <a
                         href={`https://store.steampowered.com/app/${
                             this.props.appid
-                        }/`}
+                            }/`}
                     >
                         <LazyImage
                             src={`http://media.steampowered.com/steamcommunity/public/images/apps/${
                                 this.props.appid
-                            }/${this.props.img_logo_url}.jpg`}
+                                }/${this.props.img_logo_url}.jpg`}
                             title={this.props.name}
                         />
                     </a>

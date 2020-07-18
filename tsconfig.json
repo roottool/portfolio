@@ -13,13 +13,8 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "preserve",
-    "lib":[
-      "es5",
-      "es6",
-      "dom"
-    ]
+    "lib": ["es5", "es6", "dom"],
+    "types": ["react", "jest"]
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }

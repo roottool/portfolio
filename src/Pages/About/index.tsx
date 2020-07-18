@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Helmet from "react-helmet";
+import { Helmet } from "react-helmet";
 
 import { IconContext } from "react-icons";
 import { FaTwitterSquare } from "react-icons/fa";
@@ -52,7 +52,7 @@ class About extends Component<WithStyles<typeof styleSettings>, {}> {
                     <CardContent>
                         <Grid
                             container
-                            spacing={24}
+                            spacing={8}
                             className={classes.contents}
                         >
                             <Grid item xs={6}>
