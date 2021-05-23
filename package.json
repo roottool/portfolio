@@ -1,8 +1,55 @@
 {
   "name": "my-portfolio",
   "version": "0.1.0",
+  "description": "My portfolio with React using Typescript.",
   "license": "MIT",
   "private": true,
+  "author": {
+    "name": "roottool",
+    "url": "https://github.com/roottool"
+  },
+  "homepage": "https://roottool.github.io/",
+  "repository": "https://github.com/roottool/my-portfolio.git",
+  "bugs": {
+    "url": "https://github.com/roottool/my-portfolio/issues"
+  },
+  "scripts": {
+    "preinstall": "npx only-allow yarn",
+    "prepare": "is-ci || husky install",
+    "start": "react-scripts start",
+    "build": "run-p build:*",
+    "build:react": "react-scripts build",
+    "build:lambda": "netlify-lambda build functions",
+    "lint": "run-p eslint",
+    "lint:fix": "run-p fix:*",
+    "eslint": "eslint . --ext .js,.ts,.tsx",
+    "fix:eslint": "eslint . --fix --ext .js,.ts,.tsx",
+    "format": "prettier --write \"**/*.{js,ts,tsx,json,md}\"",
+    "test": "run-p test:*",
+    "test:jest": "echo \"Write test!\"",
+    "test:check-types": "tsc --noEmit"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "importSort": {
+    ".js, .ts, .tsx": {
+      "style": "module",
+      "parser": "typescript"
+    }
+  },
+  "lint-staged": {
+    "*.{js|ts|tsx}": [
+      "yarn lint:fix",
+      "yarn format"
+    ],
+    "*.{json|md}": [
+      "yarn format"
+    ]
+  },
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.5.1",
@@ -28,28 +75,26 @@
     "styled-components": "^5.2.3",
     "typescript": "4.2.4"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build; npm run build:lambda",
-    "build:lambda": "netlify-lambda build functions",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build -b master"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
   "devDependencies": {
-    "gh-pages": "^3.1.0",
+    "@typescript-eslint/eslint-plugin": "^4.24.0",
+    "@typescript-eslint/parser": "^4.24.0",
+    "eslint": "^7.27.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-plugin-import": "^2.23.3",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-sort-destructure-keys": "^1.3.5",
+    "eslint-plugin-sort-keys-fix": "^1.1.1",
+    "eslint-plugin-typescript-sort-keys": "^1.6.0",
+    "husky": "^6.0.0",
+    "import-sort-style-module": "^6.0.0",
+    "is-ci": "^3.0.0",
+    "lint-staged": "^11.0.0",
     "netlify-lambda": "^2.0.1",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.3.0",
     "redux-devtools-extension": "^2.13.9"
-  },
-  "homepage": "https://roottool.github.io/"
+  }
 }
