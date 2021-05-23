@@ -1,110 +1,99 @@
-import React, { Component } from "react";
-import { withStyles, Theme, WithStyles } from "@material-ui/core/styles";
-import IconButton from "@material-ui/core/IconButton";
-import FirstPageIcon from "@material-ui/icons/FirstPage";
-import KeyboardArrowLeft from "@material-ui/icons/KeyboardArrowLeft";
-import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
-import LastPageIcon from "@material-ui/icons/LastPage";
+import IconButton from '@material-ui/core/IconButton'
+import { withStyles, Theme, WithStyles } from '@material-ui/core/styles'
+import FirstPageIcon from '@material-ui/icons/FirstPage'
+import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft'
+import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight'
+import LastPageIcon from '@material-ui/icons/LastPage'
+import { Component, MouseEvent } from 'react'
 
 const actionsStyles = (theme: Theme) => ({
-    root: {
-        flexShrink: 0,
-        color: theme.palette.text.secondary
-    }
-});
+  root: {
+    color: theme.palette.text.secondary,
+    flexShrink: 0,
+  },
+})
 
 interface IProps extends WithStyles<typeof actionsStyles> {
-    count: number;
-    onChangePage: (
-        event: React.MouseEvent<HTMLButtonElement> | null,
-        page: number
-    ) => void;
-    page: number;
-    rowsPerPage: number;
-    theme: Theme;
+  count: number
+  onChangePage: (
+    event: React.MouseEvent<HTMLButtonElement> | null,
+    page: number
+  ) => void
+  page: number
+  rowsPerPage: number
+  theme: Theme
 }
 
-class TablePaginationActionsWrapped extends Component<IProps, {}> {
-    constructor(props: IProps) {
-        super(props);
-    }
+class TablePaginationActionsWrapped extends Component<IProps> {
+  constructor(props: IProps) {
+    super(props)
+  }
 
-    handleFirstPageButtonClick = (event: any) => {
-        this.props.onChangePage(event, 0);
-    };
+  handleFirstPageButtonClick = (event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent> | null) => {
+    this.props.onChangePage(event, 0)
+  }
 
-    handleBackButtonClick = (event: any) => {
-        this.props.onChangePage(event, this.props.page - 1);
-    };
+  handleBackButtonClick = (event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent> | null) => {
+    this.props.onChangePage(event, this.props.page - 1)
+  }
 
-    handleNextButtonClick = (event: any) => {
-        this.props.onChangePage(event, this.props.page + 1);
-    };
+  handleNextButtonClick = (event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent> | null) => {
+    this.props.onChangePage(event, this.props.page + 1)
+  }
 
-    handleLastPageButtonClick = (event: any) => {
-        this.props.onChangePage(
-            event,
-            Math.max(
-                0,
-                Math.ceil(this.props.count / this.props.rowsPerPage) - 1
-            )
-        );
-    };
+  handleLastPageButtonClick = (event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent> | null) => {
+    this.props.onChangePage(
+      event,
+      Math.max(0, Math.ceil(this.props.count / this.props.rowsPerPage) - 1)
+    )
+  }
 
-    render() {
-        const { classes, count, page, rowsPerPage, theme } = this.props;
+  render() {
+    const { classes, count, page, rowsPerPage, theme } = this.props
 
-        return (
-            <div className={classes.root}>
-                <IconButton
-                    onClick={this.handleFirstPageButtonClick}
-                    disabled={page === 0}
-                    aria-label="First Page"
-                >
-                    {theme.direction === "rtl" ? (
-                        <LastPageIcon />
-                    ) : (
-                        <FirstPageIcon />
-                    )}
-                </IconButton>
-                <IconButton
-                    onClick={this.handleBackButtonClick}
-                    disabled={page === 0}
-                    aria-label="Previous Page"
-                >
-                    {theme.direction === "rtl" ? (
-                        <KeyboardArrowRight />
-                    ) : (
-                        <KeyboardArrowLeft />
-                    )}
-                </IconButton>
-                <IconButton
-                    onClick={this.handleNextButtonClick}
-                    disabled={page >= Math.ceil(count / rowsPerPage) - 1}
-                    aria-label="Next Page"
-                >
-                    {theme.direction === "rtl" ? (
-                        <KeyboardArrowLeft />
-                    ) : (
-                        <KeyboardArrowRight />
-                    )}
-                </IconButton>
-                <IconButton
-                    onClick={this.handleLastPageButtonClick}
-                    disabled={page >= Math.ceil(count / rowsPerPage) - 1}
-                    aria-label="Last Page"
-                >
-                    {theme.direction === "rtl" ? (
-                        <FirstPageIcon />
-                    ) : (
-                        <LastPageIcon />
-                    )}
-                </IconButton>
-            </div>
-        );
-    }
+    return (
+      <div className={classes.root}>
+        <IconButton
+          aria-label="First Page"
+          disabled={page === 0}
+          onClick={this.handleFirstPageButtonClick}
+        >
+          {theme.direction === 'rtl' ? <LastPageIcon /> : <FirstPageIcon />}
+        </IconButton>
+        <IconButton
+          aria-label="Previous Page"
+          disabled={page === 0}
+          onClick={this.handleBackButtonClick}
+        >
+          {theme.direction === 'rtl' ? (
+            <KeyboardArrowRight />
+          ) : (
+            <KeyboardArrowLeft />
+          )}
+        </IconButton>
+        <IconButton
+          aria-label="Next Page"
+          disabled={page >= Math.ceil(count / rowsPerPage) - 1}
+          onClick={this.handleNextButtonClick}
+        >
+          {theme.direction === 'rtl' ? (
+            <KeyboardArrowLeft />
+          ) : (
+            <KeyboardArrowRight />
+          )}
+        </IconButton>
+        <IconButton
+          aria-label="Last Page"
+          disabled={page >= Math.ceil(count / rowsPerPage) - 1}
+          onClick={this.handleLastPageButtonClick}
+        >
+          {theme.direction === 'rtl' ? <FirstPageIcon /> : <LastPageIcon />}
+        </IconButton>
+      </div>
+    )
+  }
 }
 
 export default withStyles(actionsStyles, { withTheme: true })(
-    TablePaginationActionsWrapped
-);
+  TablePaginationActionsWrapped
+)
