@@ -12,26 +12,25 @@
   },
   "mounts": [
     "source=/var/run/docker.sock,target=/var/run/docker-host.sock,type=bind",
-    "source=zsh_history-for-{repository name},target=/home/vscode/commandhistory,type=volume",
-    "source=node_modules-for-{repository name},target=${containerWorkspaceFolder}/node_modules,type=volume",
-    "source=vscode-extension-for-{repository name},target=/home/vscode/.vscode-server/extensions,type=volume",
+    "source=zsh_history-for-my-portfolio,target=/home/vscode/commandhistory,type=volume",
+    "source=node_modules-for-my-portfolio,target=${containerWorkspaceFolder}/node_modules,type=volume",
+    "source=vscode-extension-for-my-portfolio,target=/home/vscode/.vscode-server/extensions,type=volume",
   ],
   "runArgs": [
-    "--name={repository name}",
+    "--name=my-portfolio",
   ],
   // * Set *default* container specific settings.json values on container create.
   "settings": {
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    // * For Linter and Formatter
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
     "editor.codeActionsOnSave": [
       "source.fixAll.eslint",
     ],
-    // * For Linter and Formatter
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
     "editor.formatOnSaveMode": "modifications",
-    "editor.formatOnType": true,
     "editor.tabSize": 2,
     "eslint.packageManager": "yarn",
     "[markdown]": {
@@ -51,7 +50,9 @@
     "esbenp.prettier-vscode",
   ],
   // * Use 'forwardPorts' to make a list of ports inside the container available locally.
-  // "forwardPorts": [],
+  "forwardPorts": [
+    3000
+  ],
   // * Use 'postCreateCommand' to run commands after the container is created.
   // "postCreateCommand": "",
   // * Uncomment to connect as a non-root user.
