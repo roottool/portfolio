@@ -8,47 +8,53 @@ ARG USERNAME=${USERNAME:-"vscode"}
 ARG USER_UID=${USER_UID:-"2000"}
 ARG USER_GID=${USER_UID}
 
-ARG WORKING_DIR=/workspaces/my-portfolio
+ARG WORKING_DIR=/workspaces/my_portfolio
 
-# * Create the non-root user
+# * Create the non-root user.
 RUN groupadd --gid ${USER_GID} ${USERNAME} \
-    && useradd --uid ${USER_UID} --gid ${USER_GID} -m ${USERNAME} \
-    && chown -R ${USER_UID}:${USER_GID} /home/${USERNAME} \
-    && mkdir -p ${WORKING_DIR}/node_modules \
-    && chown -R ${USER_UID}:${USER_GID} ${WORKING_DIR}
+  && useradd --uid ${USER_UID} --gid ${USER_GID} -m ${USERNAME} \
+  && chown -R ${USER_UID}:${USER_GID} /home/${USERNAME} \
+  && mkdir -p ${WORKING_DIR}/node_modules \
+  && chown -R ${USER_UID}:${USER_GID} ${WORKING_DIR}
+
+# * Add sudo support.
+RUN apt-get update \
+  && apt-get install -y --no-install-recommends \
+  sudo \
+  && echo ${USERNAME} ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/${USERNAME} \
+  && chmod 0440 /etc/sudoers.d/${USERNAME}
 
 WORKDIR ${WORKING_DIR}
 
 ARG INSTALL_ZSH="true"
 ARG ENABLE_NONROOT_DOCKER="true"
-# * Upgrade OS packages to their latest versions
+# * Upgrade OS packages to their latest versions.
 ARG UPGRADE_PACKAGES="false"
-# * Use the OSS Moby CLI instead of the licensed Docker CLI
+# * Use the OSS Moby CLI instead of the licensed Docker CLI.
 ARG USE_MOBY="true"
 
 ARG COMMON_DEBIAN_URL=https://raw.githubusercontent.com/microsoft/vscode-dev-containers/master/script-library/common-debian.sh
 ARG DOCKER_DEBIAN_URL=https://raw.githubusercontent.com/microsoft/vscode-dev-containers/master/script-library/docker-debian.sh
 
-RUN apt update \
-  && curl ${COMMON_DEBIAN_URL} -sSf | bash -s "${INSTALL_ZSH}" "${USERNAME}" "${USER_UID}" "${USER_GID}" "${UPGRADE_PACKAGES}" "true" "true" \
-  # * Use Docker script from script library to set things up
+RUN curl ${COMMON_DEBIAN_URL} -sSf | bash -s "${INSTALL_ZSH}" "${USERNAME}" "${USER_UID}" "${USER_GID}" "${UPGRADE_PACKAGES}" "true" "true" \
+  # * Use Docker script from script library to set things up.
   && curl ${DOCKER_DEBIAN_URL} -sSf | bash -s "${ENABLE_NONROOT_DOCKER}" "/var/run/docker-host.sock" "/var/run/docker.sock" "${USERNAME}" "${USE_MOBY}"
 
-# * Clean up
-RUN apt autoremove -y \
-  && apt clean -y \
+# * Clean up.
+RUN apt-get autoremove -y \
+  && apt-get clean -y \
   && rm -rf /var/lib/apt/lists/*
 
 USER ${USERNAME}
 
-# * Avoiding extension reinstalls on container rebuild
+# * Avoiding extension reinstalls on container rebuild.
 RUN mkdir -p /home/${USERNAME}/.vscode-server/extensions
 
-# * Persist zsh history between runs
+# * Persist zsh history between runs.
 RUN SNIPPET="export PROMPT_COMMAND='history -a' && export HISTFILE=/home/${USERNAME}/commandhistory/.zsh_history" \
   && mkdir -p /home/${USERNAME}/commandhistory \
   && touch /home/${USERNAME}/commandhistory/.zsh_history \
   && echo ${SNIPPET} >> "/home/${USERNAME}/.zshrc"
 
-ARG WORKING_DIR=/workspaces/my-portfolio
-WORKDIR ${WORKING_DIR}
+ENTRYPOINT [ "/usr/local/share/docker-init.sh" ]
+CMD [ "sleep", "infinity" ]
