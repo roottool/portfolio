@@ -1,0 +1,18 @@
+{
+  // * For Linter and Formatter
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "editor.codeActionsOnSave": [
+    "source.fixAll.eslint"
+  ],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "modifications",
+  "editor.tabSize": 2,
+  "eslint.packageManager": "yarn",
+  "[markdown]": {
+    "files.trimTrailingWhitespace": false,
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": false
+  }
+}
