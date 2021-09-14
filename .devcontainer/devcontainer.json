@@ -11,14 +11,12 @@
     }
   },
   "overrideCommand": false,
-  "runArgs": [
-    "--name=my_portfolio"
-  ],
+  "runArgs": ["--name=my_portfolio"],
   "mounts": [
     "source=/var/run/docker.sock,target=/var/run/docker-host.sock,type=bind",
     "source=my_portfolio-node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume",
     "source=my_portfolio-vscode_extensions,target=/home/vscode/.vscode-server/extensions,type=volume",
-    "source=my_portfolio-zsh_history,target=/home/vscode/commandhistory,type=volume",
+    "source=my_portfolio-zsh_history,target=/home/vscode/commandhistory,type=volume"
   ],
   // * Set *default* container specific settings.json values on container create.
   "settings": {
@@ -26,9 +24,7 @@
     // * For Linter and Formatter
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
-    "editor.codeActionsOnSave": [
-      "source.fixAll.eslint"
-    ],
+    "editor.codeActionsOnSave": ["source.fixAll.eslint"],
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
     "editor.formatOnSaveMode": "modifications",
@@ -51,9 +47,7 @@
     "esbenp.prettier-vscode"
   ],
   // * Use 'forwardPorts' to make a list of ports inside the container available locally.
-  "forwardPorts": [
-    3000
-  ],
+  "forwardPorts": [3000],
   // * Use 'postCreateCommand' to run commands after the container is created.
   // "postCreateCommand": "",
   // * Uncomment to connect as a non-root user.

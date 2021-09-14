@@ -29,19 +29,27 @@ class TablePaginationActionsWrapped extends Component<IProps> {
     super(props)
   }
 
-  handleFirstPageButtonClick = (event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent> | null) => {
+  handleFirstPageButtonClick = (
+    event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent> | null
+  ) => {
     this.props.onChangePage(event, 0)
   }
 
-  handleBackButtonClick = (event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent> | null) => {
+  handleBackButtonClick = (
+    event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent> | null
+  ) => {
     this.props.onChangePage(event, this.props.page - 1)
   }
 
-  handleNextButtonClick = (event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent> | null) => {
+  handleNextButtonClick = (
+    event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent> | null
+  ) => {
     this.props.onChangePage(event, this.props.page + 1)
   }
 
-  handleLastPageButtonClick = (event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent> | null) => {
+  handleLastPageButtonClick = (
+    event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent> | null
+  ) => {
     this.props.onChangePage(
       event,
       Math.max(0, Math.ceil(this.props.count / this.props.rowsPerPage) - 1)

@@ -86,11 +86,15 @@ class GameInfoTableWrapped extends Component<IProps> {
     )
   }
 
-  readonly firstContentOfThePage = (currentPage: number, rowsPerPage: number): number =>
-    currentPage * rowsPerPage
+  readonly firstContentOfThePage = (
+    currentPage: number,
+    rowsPerPage: number
+  ): number => currentPage * rowsPerPage
 
-  readonly lastContentOfThePage = (currentPage: number, rowsPerPage: number): number =>
-    currentPage * rowsPerPage + rowsPerPage
+  readonly lastContentOfThePage = (
+    currentPage: number,
+    rowsPerPage: number
+  ): number => currentPage * rowsPerPage + rowsPerPage
 
   readonly handleChangePage = (
     _event: React.MouseEvent<HTMLButtonElement> | null,
