@@ -15,18 +15,19 @@
   },
   "scripts": {
     "preinstall": "npx only-allow yarn",
-    "prepare": "is-ci || husky install",
+    "prepare": "npx is-ci || husky install",
     "start": "react-scripts start",
     "build": "run-p build:*",
     "build:react": "react-scripts build",
-    "build:lambda": "netlify-lambda build functions",
-    "lint": "run-p eslint",
-    "lint:fix": "run-p fix:*",
-    "eslint": "eslint . --ext .js,.ts,.tsx",
-    "fix:eslint": "eslint . --fix --ext .js,.ts,.tsx",
-    "format": "prettier --write \"**/*.{js,ts,tsx,json,md}\"",
+    "lint": "run-p -c lint:*",
+    "lint:check-types": "tsc --noEmit",
+    "lint:eslint": "eslint . --color --ext .js,.jsx,.ts,.tsx",
+    "lint:prettier": "prettier --check .",
+    "fix": "run-p -c fix:*",
+    "fix:eslint": "eslint . --fix --color --ext .js,.jsx,.ts,.tsx",
+    "format": "prettier --write .",
     "test": "run-p test:*",
-    "test:jest": "echo \"Write test!\"",
+    "test:jest": "echo \"Write tests!\"",
     "test:check-types": "tsc --noEmit"
   },
   "browserslist": [
@@ -36,17 +37,20 @@
     "not op_mini all"
   ],
   "importSort": {
-    ".js, .ts, .tsx": {
+    ".js, .jsx, .ts, .tsx": {
       "style": "module",
       "parser": "typescript"
     }
   },
   "lint-staged": {
-    "*.{js|ts|tsx}": [
-      "yarn lint:fix",
+    "*.{js|jsx|ts|tsx}": [
+      "yarn fix",
       "yarn format"
     ],
     "*.{json|md}": [
+      "yarn format"
+    ],
+    ".{eslint|prettier}rc": [
       "yarn format"
     ]
   },
@@ -90,9 +94,7 @@
     "eslint-plugin-typescript-sort-keys": "^1.6.0",
     "husky": "^6.0.0",
     "import-sort-style-module": "^6.0.0",
-    "is-ci": "^3.0.0",
     "lint-staged": "^11.0.0",
-    "netlify-lambda": "^2.0.1",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.3.0",
     "redux-devtools-extension": "^2.13.9"
