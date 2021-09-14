@@ -75,7 +75,7 @@ class GameInfoTableWrapped extends Component<IProps> {
               ActionsComponent={TablePaginationActionsWrapped}
               count={this.props.value.rows.length}
               labelRowsPerPage=""
-              onChangePage={this.handleChangePage}
+              onPageChange={this.handlePageChange}
               page={this.props.value.page}
               rowsPerPage={this.props.value.rowsPerPage}
               rowsPerPageOptions={[]}
@@ -96,7 +96,7 @@ class GameInfoTableWrapped extends Component<IProps> {
     rowsPerPage: number
   ): number => currentPage * rowsPerPage + rowsPerPage
 
-  readonly handleChangePage = (
+  readonly handlePageChange = (
     _event: React.MouseEvent<HTMLButtonElement> | null,
     page: number
   ): void => {
