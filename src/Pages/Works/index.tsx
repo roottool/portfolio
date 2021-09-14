@@ -4,11 +4,7 @@ import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
-import {
-  withStyles,
-  WithStyles,
-  createStyles,
-} from '@material-ui/core/styles'
+import { withStyles, WithStyles, createStyles } from '@material-ui/core/styles'
 import React, { Component } from 'react'
 import { Helmet } from 'react-helmet'
 

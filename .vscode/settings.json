@@ -2,9 +2,7 @@
   // * For Linter and Formatter
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
-  "editor.codeActionsOnSave": [
-    "source.fixAll.eslint"
-  ],
+  "editor.codeActionsOnSave": ["source.fixAll.eslint"],
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "editor.formatOnSaveMode": "modifications",

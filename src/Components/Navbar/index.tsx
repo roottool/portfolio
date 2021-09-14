@@ -1,10 +1,6 @@
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
-import {
-  withStyles,
-  WithStyles,
-  createStyles,
-} from '@material-ui/core/styles'
+import { withStyles, WithStyles, createStyles } from '@material-ui/core/styles'
 import { Component } from 'react'
 import { IconContext } from 'react-icons'
 import { MdMenu } from 'react-icons/md'

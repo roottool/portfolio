@@ -1,4 +1,5 @@
 import IconButton from '@material-ui/core/IconButton'
+import type { TablePaginationActionsProps } from '@material-ui/core/TablePagination/TablePaginationActions'
 import { withStyles, Theme, WithStyles } from '@material-ui/core/styles'
 import FirstPageIcon from '@material-ui/icons/FirstPage'
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft'
@@ -13,9 +14,9 @@ const actionsStyles = (theme: Theme) => ({
   },
 })
 
-interface IProps extends WithStyles<typeof actionsStyles> {
+interface IProps extends TablePaginationActionsProps, WithStyles<typeof actionsStyles> {
   count: number
-  onChangePage: (
+  onPageChange: (
     event: React.MouseEvent<HTMLButtonElement> | null,
     page: number
   ) => void
@@ -29,20 +30,28 @@ class TablePaginationActionsWrapped extends Component<IProps> {
     super(props)
   }
 
-  handleFirstPageButtonClick = (event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent> | null) => {
-    this.props.onChangePage(event, 0)
+  handleFirstPageButtonClick = (
+    event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent> | null
+  ) => {
+    this.props.onPageChange(event, 0)
   }
 
-  handleBackButtonClick = (event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent> | null) => {
-    this.props.onChangePage(event, this.props.page - 1)
+  handleBackButtonClick = (
+    event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent> | null
+  ) => {
+    this.props.onPageChange(event, this.props.page - 1)
   }
 
-  handleNextButtonClick = (event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent> | null) => {
-    this.props.onChangePage(event, this.props.page + 1)
+  handleNextButtonClick = (
+    event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent> | null
+  ) => {
+    this.props.onPageChange(event, this.props.page + 1)
   }
 
-  handleLastPageButtonClick = (event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent> | null) => {
-    this.props.onChangePage(
+  handleLastPageButtonClick = (
+    event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent> | null
+  ) => {
+    this.props.onPageChange(
       event,
       Math.max(0, Math.ceil(this.props.count / this.props.rowsPerPage) - 1)
     )
