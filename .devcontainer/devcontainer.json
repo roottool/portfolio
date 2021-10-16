@@ -1,5 +1,5 @@
 {
-  "name": "My portfolio",
+  "name": "Portfolio",
   "build": {
     "dockerfile": "Dockerfile",
     "args": {
@@ -9,13 +9,18 @@
     }
   },
   "overrideCommand": false,
-  "runArgs": ["--name=my_portfolio"],
+  "runArgs": ["--name=portfolio"],
   "mounts": [
     "source=/var/run/docker.sock,target=/var/run/docker-host.sock,type=bind",
-    "source=my_portfolio-node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume",
-    "source=my_portfolio-vscode_extensions,target=/home/node/.vscode-server/extensions,type=volume",
-    "source=my_portfolio-zsh_history,target=/home/node/commandhistory,type=volume"
+    "source=portfolio-node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume",
+    "source=portfolio-vscode_extensions,target=/home/node/.vscode-server/extensions,type=volume",
+    "source=portfolio-zsh_history,target=/home/node/commandhistory,type=volume"
   ],
+  "features": {
+    "git": {
+      "version": "latest"
+    }
+  },
   // * Set *default* container specific settings.json values on container create.
   "settings": {
     "terminal.integrated.defaultProfile.linux": "zsh",

@@ -42,7 +42,7 @@ RUN apt-get update \
 
 USER ${USERNAME}
 
-ARG WORKING_DIR=/workspaces/my_portfolio
+ARG WORKING_DIR=/workspaces/portfolio
 WORKDIR ${WORKING_DIR}
 
 ENTRYPOINT [ "/usr/local/share/docker-init.sh" ]
