@@ -1,52 +1,38 @@
-import { Component } from 'react'
+import { useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import styled, { css } from 'styled-components'
 
 import { MIN_TABLET_SIZE } from '../../Shared/Styles/StyleConstants'
 
-interface ISideDrawerWrapperProps {
+interface SideDrawerWrapperProps {
   show: boolean
 }
 
-interface IProps extends ISideDrawerWrapperProps {
-  drawToggleClickHandler(): void
+interface Props extends SideDrawerWrapperProps {
+  handleSideMenuItemClick: () => void
 }
 
-class SideDrawer extends Component<IProps> {
-  constructor(props: IProps) {
-    super(props)
-  }
-
-  public render(): JSX.Element {
-    return (
-      <SideDrawerWrapper show={this.props.show}>
-        <TitleAreaWrapper>
-          <TitleWrapper>Menu</TitleWrapper>
-        </TitleAreaWrapper>
-        <LinkListWrapper>
-          <LinkWrapper onClick={this.clickHandler} to="/about">
-            About
-          </LinkWrapper>
-          <LinkWrapper onClick={this.clickHandler} to="/works">
-            Works
-          </LinkWrapper>
-          <LinkWrapper onClick={this.clickHandler} to="/skills">
-            Skills
-          </LinkWrapper>
-          <LinkWrapper onClick={this.clickHandler} to="/hobbies">
-            Hobbies
-          </LinkWrapper>
-        </LinkListWrapper>
-      </SideDrawerWrapper>
-    )
-  }
-
-  private clickHandler = () => {
-    this.props.drawToggleClickHandler()
-  }
-}
-
-export default SideDrawer
+const SideDrawer: (props: Props) => JSX.Element = ({ handleSideMenuItemClick }) => (
+  <SideDrawerWrapper show >
+    <TitleAreaWrapper>
+      <TitleWrapper>Menu</TitleWrapper>
+    </TitleAreaWrapper>
+    <LinkListWrapper>
+      <LinkWrapper onClick={handleSideMenuItemClick} to="/about">
+        About
+      </LinkWrapper>
+      <LinkWrapper onClick={handleSideMenuItemClick} to="/works">
+        Works
+      </LinkWrapper>
+      <LinkWrapper onClick={handleSideMenuItemClick} to="/skills">
+        Skills
+      </LinkWrapper>
+      <LinkWrapper onClick={handleSideMenuItemClick} to="/hobbies">
+        Hobbies
+      </LinkWrapper>
+    </LinkListWrapper>
+  </SideDrawerWrapper>
+)
 
 const SideDrawerWrapper = styled.nav`
   height: 100%;
@@ -59,7 +45,7 @@ const SideDrawerWrapper = styled.nav`
   z-index: 200;
   transform: translateX(-100%);
   transition: transform 0.3s ease-out;
-  ${(props: ISideDrawerWrapperProps) =>
+  ${(props: SideDrawerWrapperProps) =>
     props.show &&
     css`
       box-shadow: 1px 0px 3px rgba(0, 0, 0, 0.5);
@@ -105,3 +91,5 @@ const LinkWrapper = styled(Link)`
     background-color: #c2203b;
   }
 `
+
+export default SideDrawer

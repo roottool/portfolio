@@ -1,25 +1,10 @@
-import { Component } from 'react'
 import styled from 'styled-components'
 
-interface IProps {
-  backdropClickHandler(): void
+interface Props {
+  handleBackdropClick: () => void
 }
 
-class Backdrop extends Component<IProps> {
-  constructor(props: IProps) {
-    super(props)
-  }
-
-  public render(): JSX.Element {
-    return <BackdropWrapper onClick={this.clickHandler} />
-  }
-
-  private clickHandler = () => {
-    this.props.backdropClickHandler()
-  }
-}
-
-export default Backdrop
+const Backdrop: (props: Props) => JSX.Element = ({ handleBackdropClick }) => <BackdropWrapper onClick={handleBackdropClick} />
 
 const BackdropWrapper = styled.div`
   position: fixed;
@@ -30,3 +15,5 @@ const BackdropWrapper = styled.div`
   background: rgba(0, 0, 0, 0.3);
   z-index: 100;
 `
+
+export default Backdrop

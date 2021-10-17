@@ -1,4 +1,4 @@
-import { Component } from 'react'
+import { useCallback, useMemo } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import styled, { createGlobalStyle, css } from 'styled-components'
 
@@ -15,101 +15,88 @@ import backgroundImagePNG from './images/EchoCat.png'
 import backgroundImageWebP from './images/EchoCat.webp'
 import { AppState } from './module'
 
-interface IGlobalStyleProps {
-  chrome: boolean
-  edge: boolean
+interface GlobalStyleProps {
+  canUseWebP: boolean
 }
-interface IProps {
+interface Props extends GlobalStyleProps {
+  handleMenuIconClick: () => void
+  handleSideMenuItemClick: () => void
+  isOpened: boolean
+}
+
+interface ContainerProps {
   actions: ActionDispatcher
   value: AppState
 }
 
-class App extends Component<IProps> {
-  constructor(props: IProps) {
-    super(props)
-  }
-
-  private menuIconClickHandler = () => {
-    this.props.actions.openSideMenu()
-  }
-
-  private closeSideMenuHandler = () => {
-    this.props.actions.closeSideMenu()
-  }
-
-  // WebPはEdgeとChromeに対応しているので、背景画像にWebPを使用する
-  // 参考URL
-  // http://cly7796.net/wp/javascript/make-a-determination-using-the-useragent-in-javascript/
-  readonly ua = navigator.userAgent.toLowerCase()
-  // Edge
-  readonly isEdge = this.ua.indexOf('edge') > -1
-  // Google Chrome
-  readonly isChrome =
-    this.ua.indexOf('chrome') > -1 && this.ua.indexOf('edge') == -1
-  readonly browserUsingWebP = {
-    chrome: this.isChrome,
-    edge: this.isEdge,
-  }
-
-  public render(): JSX.Element {
-    let backDrop
-    const sideDrawerOption = {
-      drawToggleClickHandler: this.closeSideMenuHandler,
-      show: this.props.value.isOpened,
-    }
-
-    if (this.props.value.isOpened) {
-      backDrop = <Backdrop backdropClickHandler={this.closeSideMenuHandler} />
-    }
-
-    return (
-      <div className="App">
-        <GlobalStyle {...this.browserUsingWebP} />
-        <Navbar drawToggleClickHandler={this.menuIconClickHandler} />
-        <SideDrawer {...sideDrawerOption} />
-        {backDrop}
-        <MainWrapper>
-          <Switch>
-            <Route component={About} path="/about" />
-            <Route component={Works} path="/works" />
-            <Route component={Skills} path="/skills" />
-            <Route component={Hobbies} path="/hobbies" />
-            <Route component={Home} path="/" />
-            <Route component={Home} />
-          </Switch>
-        </MainWrapper>
-      </div>
-    )
-  }
-}
-
-export default App
+const App: (props: Props) => JSX.Element = ({ handleMenuIconClick, handleSideMenuItemClick, isOpened }) => (
+  <div className="App">
+    <GlobalStyle canUseWebP />
+    <Navbar handleMenuIconClick={handleMenuIconClick} />
+    <SideDrawer handleSideMenuItemClick={handleSideMenuItemClick} show={isOpened} />
+    {isOpened && <Backdrop handleBackdropClick={handleSideMenuItemClick} />}
+    <MainWrapper>
+      <Switch>
+        <Route component={About} path="/about" />
+        <Route component={Works} path="/works" />
+        <Route component={Skills} path="/skills" />
+        <Route component={Hobbies} path="/hobbies" />
+        <Route component={Home} path="/" />
+        <Route component={Home} />
+      </Switch>
+    </MainWrapper>
+  </div>
+)
 
 const GlobalStyle = createGlobalStyle`
-    html {
-        height: 100%;
-    }
+  html {
+    height: 100%;
+  }
 
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: sans-serif;
-        ${(props: IGlobalStyleProps) =>
-          props.chrome || props.edge
-            ? css`
-                background-image: url(${backgroundImageWebP});
-              `
-            : css`
-                background-image: url(${backgroundImagePNG});
-              `}
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-position: right bottom;
-        background-size: 38% 38%;
-    }
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    ${(props: GlobalStyleProps) =>
+    props.canUseWebP
+      ? css`
+            background-image: url(${backgroundImageWebP});
+          `
+      : css`
+            background-image: url(${backgroundImagePNG});
+          `}
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: right bottom;
+    background-size: 38% 38%;
+  }
 `
 
 const MainWrapper = styled.main`
   height: 100%;
   text-align: center;
 `
+
+const Container: (props: ContainerProps) => JSX.Element = ({ actions, value }) => {
+  const { closeSideMenu, openSideMenu } = actions
+  const handleMenuIconClick = useCallback(() => {
+    openSideMenu()
+  }, [openSideMenu])
+  const handleSideMenuItemClick = useCallback(() => {
+    closeSideMenu()
+  }, [closeSideMenu])
+
+  const ua = useMemo(() => navigator.userAgent.toLowerCase(), [navigator])
+  const isEdge = useMemo(() => ua.indexOf('edge') > -1, [ua])
+  const isChrome = useMemo(() => ua.indexOf('chrome') > -1 && ua.indexOf('edge') == -1, [ua])
+  /**
+   * It checks to use a WebP image at the background image if the browser is Chrome or Edge.
+   * @link http://cly7796.net/wp/javascript/make-a-determination-using-the-useragent-in-javascript/
+   */
+  const canUseWebP = useMemo(() => isChrome || isEdge, [isChrome, isEdge])
+
+  const { isOpened } = value
+  return <App canUseWebP={canUseWebP} handleMenuIconClick={handleMenuIconClick} handleSideMenuItemClick={handleSideMenuItemClick} isOpened={isOpened} />
+}
+
+export default Container

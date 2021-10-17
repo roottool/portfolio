@@ -22,46 +22,38 @@ const styleSettings = () =>
     },
   })
 
-interface IProps extends WithStyles<typeof styleSettings> {
-  drawToggleClickHandler(): void
+interface Props extends WithStyles<typeof styleSettings> {
+  handleMenuIconClick(): void
 }
 
-class Navbar extends Component<IProps> {
-  constructor(props: IProps) {
+class Navbar extends Component<Props> {
+  constructor(props: Props) {
     super(props)
   }
 
   public render() {
     const { classes } = this.props
     return (
-      <div>
-        <AppBar className={classes.root} position={'static'}>
-          <Toolbar>
-            <MenuIconWrapper onClick={this.clickHandler}>
-              <IconContext.Provider value={{ color: 'white', size: '1.5em' }}>
-                <MdMenu />
-              </IconContext.Provider>
-            </MenuIconWrapper>
-            <TitleWrapper to="/">roottool&apos;s portfolio</TitleWrapper>
-            <GrowWrapper />
-            <NavigationItemsWrapper>
-              <LinkWrapper to="/about">about</LinkWrapper>
-              <LinkWrapper to="/works">Works</LinkWrapper>
-              <LinkWrapper to="/skills">Skills</LinkWrapper>
-              <LinkWrapper to="/hobbies">Hobbies</LinkWrapper>
-            </NavigationItemsWrapper>
-          </Toolbar>
-        </AppBar>
-      </div>
+      <AppBar className={classes.root} position={'static'}>
+        <Toolbar>
+          <MenuIconWrapper onClick={this.props.handleMenuIconClick}>
+            <IconContext.Provider value={{ color: 'white', size: '1.5em' }}>
+              <MdMenu />
+            </IconContext.Provider>
+          </MenuIconWrapper>
+          <TitleWrapper to="/">roottool&apos;s portfolio</TitleWrapper>
+          <GrowWrapper />
+          <NavigationItemsWrapper>
+            <LinkWrapper to="/about">about</LinkWrapper>
+            <LinkWrapper to="/works">Works</LinkWrapper>
+            <LinkWrapper to="/skills">Skills</LinkWrapper>
+            <LinkWrapper to="/hobbies">Hobbies</LinkWrapper>
+          </NavigationItemsWrapper>
+        </Toolbar>
+      </AppBar>
     )
   }
-
-  private clickHandler = () => {
-    this.props.drawToggleClickHandler()
-  }
 }
-
-export default withStyles(styleSettings)(Navbar)
 
 const MenuIconWrapper = styled.div`
   @media (min-width: ${MIN_TABLET_SIZE}px) {
@@ -100,3 +92,5 @@ const LinkWrapper = styled(Link)`
   text-decoration: none;
   padding: 16px 1rem;
 `
+
+export default withStyles(styleSettings)(Navbar)
