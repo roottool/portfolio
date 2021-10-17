@@ -16,7 +16,12 @@
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "types": ["react", "jest"],
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "@/": ["src/*"],
+      "@components/": ["src/components/*"],
+      "%/": ["public/*"]
+    }
   },
   "include": ["functions", "src"],
   "exclude": ["node_modules"]

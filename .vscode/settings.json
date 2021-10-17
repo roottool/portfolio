@@ -1,13 +1,20 @@
 {
+  "files.watcherExclude": {
+    "**/node_modules/**": true
+  },
   // * For Linter and Formatter
-  "files.trimFinalNewlines": true,
-  "files.trimTrailingWhitespace": true,
-  "editor.codeActionsOnSave": ["source.fixAll.eslint"],
+  "editor.codeActionsOnSave": [
+    "source.fixAll.eslint",
+    "source.addMissingImports"
+  ],
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "editor.formatOnSaveMode": "modifications",
   "editor.tabSize": 2,
   "eslint.packageManager": "yarn",
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "json.format.enable": false,
   "[markdown]": {
     "files.trimTrailingWhitespace": false,
     "editor.wordWrap": "on",
