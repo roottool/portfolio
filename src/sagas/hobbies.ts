@@ -12,14 +12,9 @@ import type {
   ReceiveFetchedUserOwnedGamesAction,
 } from '../Pages/Hobbies/module'
 
-// 2019/1/22 time point SteamOwnedGameData
-
 /**
  * プレイ時間降順ソート
- *
- * 参考URL
- *
- * https://medium.com/@pagalvin/sort-arrays-using-typescript-592fa6e77f1
+ * @link https://medium.com/@pagalvin/sort-arrays-using-typescript-592fa6e77f1
  */
 const sortOwnedGames = (ownedGames: IUserOwnedGames) => {
   return ownedGames.response.games.sort(
@@ -34,30 +29,21 @@ const sortOwnedGames = (ownedGames: IUserOwnedGames) => {
   )
 }
 
-/**
- * An error has occured.
- *
- * Error message is "No 'Access-Control-Allow-Origin' header is present on the requested resource.".
- *
- * Therefore I cancel to use this function until this issue is resolved.
- */
-const fetchOwnedGamesApi = () => {
+const fetchOwnedGamesApi = async () => {
   const url = `https://roottool.netlify.com/.netlify/functions/fetchOwnedGamesApi`
-
-  return axios
-    .get(url)
-    .then((response) => {
-      return response.data
-    })
-    .catch((error) => {
-      throw new Error(error)
-    })
+  const response = await axios
+  .get<IUserOwnedGames>(url).then(response => response.data).catch(error => {
+    // FIXME: An error has occurred.
+    // ! Error message is "No 'Access-Control-Allow-Origin' header is present on the requested resource.".
+    // ! Therefore I cancel to use this function until this issue is resolved.
+    throw new Error(error)
+  })
+  return response
 }
 
 export async function* fetchUserOwnedGameInfo(): AsyncGenerator<
   TakeEffect | PutEffect<ReceiveFetchedUserOwnedGamesAction>,
-  void,
-  unknown
+  void
 > {
   while (true) {
     yield take(ActionNames.REQUEST_FETCH)
@@ -75,8 +61,7 @@ export default function* root(): Generator<
       unknown
     >
   >,
-  void,
-  unknown
+  void
 > {
   yield fork(fetchUserOwnedGameInfo)
 }
