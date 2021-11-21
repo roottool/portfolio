@@ -1,5 +1,5 @@
 import { Component } from 'react'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import styled, { createGlobalStyle, css } from 'styled-components'
 
 import Backdrop from './Components/Backdrop'
@@ -69,14 +69,14 @@ class App extends Component<IProps> {
         <SideDrawer {...sideDrawerOption} />
         {backDrop}
         <MainWrapper>
-          <Switch>
-            <Route component={About} path="/about" />
-            <Route component={Works} path="/works" />
-            <Route component={Skills} path="/skills" />
-            <Route component={Hobbies} path="/hobbies" />
-            <Route component={Home} path="/" />
-            <Route component={Home} />
-          </Switch>
+          <Routes>
+            <Route element={<About />} path="/about" />
+            <Route element={<Works />} path="/works" />
+            <Route element={<Skills />} path="/skills" />
+            <Route element={<Hobbies />} path="/hobbies" />
+            <Route element={<Home />} path="/" />
+            <Route element={<Home />} />
+          </Routes>
         </MainWrapper>
       </div>
     )

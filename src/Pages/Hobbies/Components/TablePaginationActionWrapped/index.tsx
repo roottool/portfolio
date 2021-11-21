@@ -14,7 +14,9 @@ const actionsStyles = (theme: Theme) => ({
   },
 })
 
-interface IProps extends TablePaginationActionsProps, WithStyles<typeof actionsStyles> {
+interface IProps
+  extends TablePaginationActionsProps,
+    WithStyles<typeof actionsStyles> {
   count: number
   onPageChange: (
     event: React.MouseEvent<HTMLButtonElement> | null,
