@@ -3,25 +3,21 @@
   "build": {
     "dockerfile": "Dockerfile",
     "args": {
-      "VARIANT": "16-bullseye",
-      "USERNAME": "node",
-      "USER_UID": "1000"
+      "USERNAME": "vscode",
+      "VARIANT": "bullseye"
     }
   },
-  "overrideCommand": false,
-  "runArgs": ["--name=portfolio"],
+  "runArgs": ["--init", "--name=portfolio"],
   "mounts": [
-    "source=/var/run/docker.sock,target=/var/run/docker-host.sock,type=bind",
     "source=portfolio-node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume",
     "source=portfolio-vscode_extensions,target=/home/node/.vscode-server/extensions,type=volume",
     "source=portfolio-zsh_history,target=/home/node/commandhistory,type=volume"
   ],
   "features": {
-    "git": {
-      "version": "latest"
-    }
+    "docker-from-docker": "latest",
+    "git": "latest",
+    "node": "lts"
   },
-  // * Set *default* container specific settings.json values on container create.
   "settings": {
     "terminal.integrated.defaultProfile.linux": "zsh",
     "files.watcherExclude": {
@@ -29,29 +25,33 @@
     },
     // * For Linter and Formatter
     "editor.codeActionsOnSave": [
-      "source.fixAll.eslint",
-      "source.addMissingImports"
+      "source.organizeImports",
+      "source.addMissingImports",
+      "source.removeUnusedImports",
+      "source.fixAll.eslint"
     ],
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": true,
     "editor.formatOnSaveMode": "modifications",
     "editor.tabSize": 2,
     "eslint.packageManager": "yarn",
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
-    "json.format.enable": false,
+    "javascript.preferences.importModuleSpecifierEnding": "minimal",
+    "typescript.preferences.importModuleSpecifierEnding": "minimal",
     "[markdown]": {
       "files.trimTrailingWhitespace": false,
       "editor.wordWrap": "on",
       "editor.quickSuggestions": false
     }
   },
-  // * Add the IDs of extensions you want installed when the container is created.
   "extensions": [
-    // * EditorConfig
-    "editorconfig.editorconfig",
     // * Docker
     "ms-azuretools.vscode-docker",
+    // * EditorConfig
+    "editorconfig.editorconfig",
     // * JavaScript, TypeScript
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode"
@@ -59,8 +59,8 @@
   // * Use 'forwardPorts' to make a list of ports inside the container available locally.
   "forwardPorts": [3000],
   // * Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": "sudo chown -R node:node node_modules",
-  // * Uncomment to connect as a non-root user.
-  // * See https://aka.ms/vscode-remote/containers/non-root.
-  "remoteUser": "node"
+  "postCreateCommand": "sudo chown -R vscode:vscode node_modules",
+  // * Comment out connect as root instead.
+  // * More info: https://aka.ms/vscode-remote/containers/non-root.
+  "remoteUser": "vscode"
 }
