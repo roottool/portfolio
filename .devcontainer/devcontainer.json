@@ -58,6 +58,8 @@
   ],
   // * Use 'forwardPorts' to make a list of ports inside the container available locally.
   "forwardPorts": [3000],
+  // * Use `include` in a local `.gitconfig` for the personal secret information.
+  "initializeCommand": "cd \"${localWorkspaceFolder}\" && git config --local user.email \"$(git config user.email)\" && git config --local user.name \"$(git config user.name)\" && git config --local user.signingkey \"$(git config user.signingkey)\"",
   // * Use 'postCreateCommand' to run commands after the container is created.
   "postCreateCommand": "sudo chown -R vscode:vscode node_modules",
   // * Comment out connect as root instead.
