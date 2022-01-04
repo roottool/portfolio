@@ -32,10 +32,7 @@ const initialState: AppState = {
   isOpened: false,
 }
 
-export default function reducer(
-  state: AppState = initialState,
-  action: AppActions
-): AppState {
+export default function reducer(state: AppState = initialState, action: AppActions): AppState {
   switch (action.type) {
     case ActionNames.OPEN:
       return { isOpened: true }

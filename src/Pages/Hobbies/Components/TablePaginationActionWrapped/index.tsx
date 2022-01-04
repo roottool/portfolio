@@ -14,14 +14,9 @@ const actionsStyles = (theme: Theme) => ({
   },
 })
 
-interface IProps
-  extends TablePaginationActionsProps,
-    WithStyles<typeof actionsStyles> {
+interface IProps extends TablePaginationActionsProps, WithStyles<typeof actionsStyles> {
   count: number
-  onPageChange: (
-    event: React.MouseEvent<HTMLButtonElement> | null,
-    page: number
-  ) => void
+  onPageChange: (event: React.MouseEvent<HTMLButtonElement> | null, page: number) => void
   page: number
   rowsPerPage: number
   theme: Theme
@@ -38,15 +33,11 @@ class TablePaginationActionsWrapped extends Component<IProps> {
     this.props.onPageChange(event, 0)
   }
 
-  handleBackButtonClick = (
-    event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent> | null
-  ) => {
+  handleBackButtonClick = (event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent> | null) => {
     this.props.onPageChange(event, this.props.page - 1)
   }
 
-  handleNextButtonClick = (
-    event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent> | null
-  ) => {
+  handleNextButtonClick = (event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent> | null) => {
     this.props.onPageChange(event, this.props.page + 1)
   }
 
@@ -76,22 +67,14 @@ class TablePaginationActionsWrapped extends Component<IProps> {
           disabled={page === 0}
           onClick={this.handleBackButtonClick}
         >
-          {theme.direction === 'rtl' ? (
-            <KeyboardArrowRight />
-          ) : (
-            <KeyboardArrowLeft />
-          )}
+          {theme.direction === 'rtl' ? <KeyboardArrowRight /> : <KeyboardArrowLeft />}
         </IconButton>
         <IconButton
           aria-label="Next Page"
           disabled={page >= Math.ceil(count / rowsPerPage) - 1}
           onClick={this.handleNextButtonClick}
         >
-          {theme.direction === 'rtl' ? (
-            <KeyboardArrowLeft />
-          ) : (
-            <KeyboardArrowRight />
-          )}
+          {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
         </IconButton>
         <IconButton
           aria-label="Last Page"
@@ -105,6 +88,4 @@ class TablePaginationActionsWrapped extends Component<IProps> {
   }
 }
 
-export default withStyles(actionsStyles, { withTheme: true })(
-  TablePaginationActionsWrapped
-)
+export default withStyles(actionsStyles, { withTheme: true })(TablePaginationActionsWrapped)

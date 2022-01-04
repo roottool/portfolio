@@ -1,17 +1,6 @@
-import {
-  RouterState,
-  routerMiddleware,
-  connectRouter,
-  RouterAction,
-} from 'connected-react-router'
+import { RouterState, routerMiddleware, connectRouter, RouterAction } from 'connected-react-router'
 import { createBrowserHistory } from 'history'
-import {
-  Action,
-  applyMiddleware,
-  compose,
-  createStore,
-  combineReducers,
-} from 'redux'
+import { Action, applyMiddleware, compose, createStore, combineReducers } from 'redux'
 import createSagaMiddleware from 'redux-saga'
 
 // redux関連

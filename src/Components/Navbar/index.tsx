@@ -7,10 +7,7 @@ import { MdMenu } from 'react-icons/md'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-import {
-  MAX_SMARTPHONE_SIZE,
-  MIN_TABLET_SIZE,
-} from '../../Shared/Styles/StyleConstants'
+import { MAX_SMARTPHONE_SIZE, MIN_TABLET_SIZE } from '../../Shared/Styles/StyleConstants'
 
 const styleSettings = () =>
   createStyles({

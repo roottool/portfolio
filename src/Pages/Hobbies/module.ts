@@ -27,10 +27,9 @@ export enum ActionNames {
 interface RequestFetchingUserOwnedGamesAction extends Action {
   type: ActionNames.REQUEST_FETCH
 }
-export const requestFetchingUserOwnedGameInfo =
-  (): RequestFetchingUserOwnedGamesAction => ({
-    type: ActionNames.REQUEST_FETCH,
-  })
+export const requestFetchingUserOwnedGameInfo = (): RequestFetchingUserOwnedGamesAction => ({
+  type: ActionNames.REQUEST_FETCH,
+})
 
 export interface ReceiveFetchedUserOwnedGamesAction extends Action {
   OwnedGameInfo: IGamesInfo[]

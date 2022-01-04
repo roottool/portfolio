@@ -44,8 +44,7 @@ class App extends Component<IProps> {
   // Edge
   readonly isEdge = this.ua.indexOf('edge') > -1
   // Google Chrome
-  readonly isChrome =
-    this.ua.indexOf('chrome') > -1 && this.ua.indexOf('edge') == -1
+  readonly isChrome = this.ua.indexOf('chrome') > -1 && this.ua.indexOf('edge') == -1
   readonly browserUsingWebP = {
     chrome: this.isChrome,
     edge: this.isEdge,

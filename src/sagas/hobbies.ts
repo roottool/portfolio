@@ -2,10 +2,7 @@ import axios from 'axios'
 import { take, put, fork } from 'redux-saga/effects'
 import type { ForkEffect, PutEffect, TakeEffect } from 'redux-saga/effects'
 
-import {
-  ActionNames,
-  receiveFetchedUserOwnedGameInfo,
-} from '../Pages/Hobbies/module'
+import { ActionNames, receiveFetchedUserOwnedGameInfo } from '../Pages/Hobbies/module'
 import type {
   IUserOwnedGames,
   IGamesInfo,
@@ -22,16 +19,14 @@ import type {
  * https://medium.com/@pagalvin/sort-arrays-using-typescript-592fa6e77f1
  */
 const sortOwnedGames = (ownedGames: IUserOwnedGames) => {
-  return ownedGames.response.games.sort(
-    (leftSide: IGamesInfo, rightSide: IGamesInfo): number => {
-      if (leftSide.playtime_forever > rightSide.playtime_forever) {
-        return -1
-      } else if (leftSide.playtime_forever < rightSide.playtime_forever) {
-        return 1
-      }
-      return 0
+  return ownedGames.response.games.sort((leftSide: IGamesInfo, rightSide: IGamesInfo): number => {
+    if (leftSide.playtime_forever > rightSide.playtime_forever) {
+      return -1
+    } else if (leftSide.playtime_forever < rightSide.playtime_forever) {
+      return 1
     }
-  )
+    return 0
+  })
 }
 
 /**
@@ -69,11 +64,7 @@ export async function* fetchUserOwnedGameInfo(): AsyncGenerator<
 
 export default function* root(): Generator<
   ForkEffect<
-    AsyncGenerator<
-      TakeEffect | PutEffect<ReceiveFetchedUserOwnedGamesAction>,
-      void,
-      unknown
-    >
+    AsyncGenerator<TakeEffect | PutEffect<ReceiveFetchedUserOwnedGamesAction>, void, unknown>
   >,
   void,
   unknown

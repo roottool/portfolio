@@ -46,14 +46,7 @@ class Works extends Component<WithStyles<typeof styleSettings>> {
         <PageTitleWrapper>Works</PageTitleWrapper>
         <Grid container className={classes.container}>
           {contents.map((item, key) => (
-            <Grid
-              key={key}
-              item
-              className={classes.cardGrid}
-              md={4}
-              sm={6}
-              xs={12}
-            >
+            <Grid key={key} item className={classes.cardGrid} md={4} sm={6} xs={12}>
               <Card className={classes.card}>
                 <CardContent>
                   <Typography gutterBottom variant="h6">
@@ -65,11 +58,7 @@ class Works extends Component<WithStyles<typeof styleSettings>> {
                     {item.text}
                   </Typography>
                   <CardActions>
-                    <Button
-                      className={classes.sourceLink}
-                      color="primary"
-                      href={item.href}
-                    >
+                    <Button className={classes.sourceLink} color="primary" href={item.href}>
                       {sourceCodeLinkLabel}
                     </Button>
                   </CardActions>

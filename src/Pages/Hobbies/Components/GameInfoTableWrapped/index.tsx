@@ -36,8 +36,7 @@ class GameInfoTableWrapped extends Component<IProps> {
       this.props.value.rowsPerPage -
       Math.min(
         this.props.value.rowsPerPage,
-        this.props.value.rows.length -
-          this.props.value.page * this.props.value.rowsPerPage
+        this.props.value.rows.length - this.props.value.page * this.props.value.rowsPerPage
       )
 
     return (
@@ -45,14 +44,8 @@ class GameInfoTableWrapped extends Component<IProps> {
         <TableBody>
           {this.props.value.rows
             .slice(
-              this.firstContentOfThePage(
-                this.props.value.page,
-                this.props.value.rowsPerPage
-              ),
-              this.lastContentOfThePage(
-                this.props.value.page,
-                this.props.value.rowsPerPage
-              )
+              this.firstContentOfThePage(this.props.value.page, this.props.value.rowsPerPage),
+              this.lastContentOfThePage(this.props.value.page, this.props.value.rowsPerPage)
             )
             .map((row) => {
               return (
@@ -86,15 +79,11 @@ class GameInfoTableWrapped extends Component<IProps> {
     )
   }
 
-  readonly firstContentOfThePage = (
-    currentPage: number,
-    rowsPerPage: number
-  ): number => currentPage * rowsPerPage
+  readonly firstContentOfThePage = (currentPage: number, rowsPerPage: number): number =>
+    currentPage * rowsPerPage
 
-  readonly lastContentOfThePage = (
-    currentPage: number,
-    rowsPerPage: number
-  ): number => currentPage * rowsPerPage + rowsPerPage
+  readonly lastContentOfThePage = (currentPage: number, rowsPerPage: number): number =>
+    currentPage * rowsPerPage + rowsPerPage
 
   readonly handlePageChange = (
     _event: React.MouseEvent<HTMLButtonElement> | null,
