@@ -9,6 +9,7 @@
   },
   "runArgs": ["--init", "--name=portfolio"],
   "mounts": [
+    "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind",
     "source=portfolio-node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume",
     "source=portfolio-vscode_extensions,target=/home/node/.vscode-server/extensions,type=volume",
     "source=portfolio-zsh_history,target=/home/node/commandhistory,type=volume"
