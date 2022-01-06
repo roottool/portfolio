@@ -18,6 +18,6 @@
     "types": ["react", "jest"],
     "baseUrl": "."
   },
-  "include": ["functions", "src"],
+  "include": ["netlify/functions", "src"],
   "exclude": ["node_modules"]
 }
