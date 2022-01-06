@@ -1,10 +1,5 @@
 import CircularProgress from '@material-ui/core/CircularProgress'
-import {
-  withStyles,
-  Theme,
-  WithStyles,
-  createStyles,
-} from '@material-ui/core/styles'
+import { withStyles, Theme, WithStyles, createStyles } from '@material-ui/core/styles'
 import { Component } from 'react'
 
 const styleSettings = (theme: Theme) =>
@@ -70,13 +65,7 @@ class LazyImage extends Component<IProps, IState> {
         </div>
       )
     }
-    return (
-      <img
-        alt={this.props.title}
-        src={this.props.src}
-        title={this.props.title}
-      />
-    )
+    return <img alt={this.props.title} src={this.props.src} title={this.props.title} />
   }
 }
 
