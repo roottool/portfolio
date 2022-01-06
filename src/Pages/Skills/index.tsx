@@ -6,7 +6,7 @@ import { withStyles, WithStyles, createStyles } from '@material-ui/core/styles'
 import { Component } from 'react'
 import { Helmet } from 'react-helmet'
 
-import PageTitleWrapper from '../../Shared/Styles/PageTitleWrapper'
+import PageTitleWrapper from '../../Components/PageTitleWrapper'
 import contents from './SkillsContents.json'
 
 const styleSettings = () =>
