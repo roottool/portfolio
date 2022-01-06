@@ -8,7 +8,7 @@ import { Helmet } from 'react-helmet'
 // redux関連
 // components
 // style
-import PageTitleWrapper from '../../Shared/Styles/PageTitleWrapper'
+import PageTitleWrapper from '../../Components/PageTitleWrapper'
 import { MIN_TABLET_SIZE } from '../../Shared/Styles/StyleConstants'
 import GameInfoTableWrapped from './Components/GameInfoTableWrapped'
 import { ActionDispatcher } from './Container'
