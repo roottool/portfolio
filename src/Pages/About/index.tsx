@@ -5,7 +5,7 @@ import { IconContext } from 'react-icons'
 import { FaTwitterSquare } from 'react-icons/fa'
 import { GoMarkGithub } from 'react-icons/go'
 
-import PageTitleWrapper from '../../Components/PageTitleWrapper'
+import PageTitleWrapper from '../../Components/atoms/PageTitleWrapper'
 import { MIN_TABLET_SIZE } from '../../Shared/Styles/StyleConstants'
 
 const styleSettings = (theme: Theme) =>

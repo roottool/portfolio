@@ -2,7 +2,7 @@ import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 import { Component } from 'react'
 
-import LazyImage from '../../../../Components/lazyImage'
+import LazyImage from '../../../../Components/atoms/lazyImage'
 
 interface IProps {
   appid: number
