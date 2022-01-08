@@ -5,13 +5,15 @@ import { Helmet } from 'react-helmet'
 import PageTitleWrapper from '../../Components/atoms/PageTitleWrapper'
 import contents from './WorksContents.json'
 
-const Works = ({ classes }: WithStyles<typeof styleSettings>) => (
+const Works = ({
+  classes: { card, cardGrid, container, sourceLink },
+}: WithStyles<typeof styleSettings>) => (
   <div>
     <PageTitleWrapper>Works</PageTitleWrapper>
-    <Grid container className={classes.container}>
+    <Grid container className={container}>
       {contents.map((item, key) => (
-        <Grid key={key} item className={classes.cardGrid} md={4} sm={6} xs={12}>
-          <Card className={classes.card}>
+        <Grid key={key} item className={cardGrid} md={4} sm={6} xs={12}>
+          <Card className={card}>
             <CardContent>
               <Typography gutterBottom variant="h6">
                 {item.title}
@@ -22,7 +24,7 @@ const Works = ({ classes }: WithStyles<typeof styleSettings>) => (
                 {item.text}
               </Typography>
               <CardActions>
-                <Button className={classes.sourceLink} color="primary" href={item.href}>
+                <Button className={sourceLink} color="primary" href={item.href}>
                   ソースコード
                 </Button>
               </CardActions>
@@ -51,14 +53,15 @@ const styleSettings = () =>
       margin: '0 auto',
     },
   })
+const StyledWorks = withStyles(styleSettings)(Works)
 
-const Container = ({ classes }: WithStyles<typeof styleSettings>) => (
+const Container = () => (
   <>
     <Helmet>
       <title>Works - roottool&apos;s Portfolio Site</title>
     </Helmet>
-    <Works classes={classes} />
+    <StyledWorks />
   </>
 )
 
-export default withStyles(styleSettings)(Container)
+export default Container

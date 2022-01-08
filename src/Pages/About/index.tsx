@@ -8,31 +8,15 @@ import { GoMarkGithub } from 'react-icons/go'
 import PageTitleWrapper from '../../Components/atoms/PageTitleWrapper'
 import { MIN_TABLET_SIZE } from '../../Shared/Styles/StyleConstants'
 
-const styleSettings = (theme: Theme) =>
-  createStyles({
-    card: {
-      margin: '5vh auto',
-      [theme.breakpoints.down(MIN_TABLET_SIZE)]: {
-        width: '90%',
-      },
-      [theme.breakpoints.up(MIN_TABLET_SIZE)]: {
-        width: '60%',
-      },
-    },
-    contents: {
-      fontSize: '1.5rem',
-      textAlign: 'center',
-    },
-  })
-
 const GITHUB_URL = 'https://github.com/roottool' as const
 const TWITTER_URL = 'https://twitter.com/roottool' as const
-const About = ({ classes }: WithStyles<typeof styleSettings>) => (
+
+const About = ({ classes: { card, contents } }: WithStyles<typeof styleSettings>) => (
   <div>
     <PageTitleWrapper>About</PageTitleWrapper>
-    <Card className={classes.card}>
+    <Card className={card}>
       <CardContent>
-        <Grid container className={classes.contents} spacing={8}>
+        <Grid container className={contents} spacing={8}>
           <Grid item xs={6}>
             Name
           </Grid>
@@ -65,13 +49,31 @@ const About = ({ classes }: WithStyles<typeof styleSettings>) => (
   </div>
 )
 
-const Container = ({ classes }: WithStyles<typeof styleSettings>) => (
+const styleSettings = (theme: Theme) =>
+  createStyles({
+    card: {
+      margin: '5vh auto',
+      [theme.breakpoints.down(MIN_TABLET_SIZE)]: {
+        width: '90%',
+      },
+      [theme.breakpoints.up(MIN_TABLET_SIZE)]: {
+        width: '60%',
+      },
+    },
+    contents: {
+      fontSize: '1.5rem',
+      textAlign: 'center',
+    },
+  })
+const StyledAbout = withStyles(styleSettings)(About)
+
+const Container = () => (
   <>
     <Helmet>
       <title>About - roottool&apos;s Portfolio Site</title>
     </Helmet>
-    <About classes={classes} />
+    <StyledAbout />
   </>
 )
 
-export default withStyles(styleSettings)(Container)
+export default Container
