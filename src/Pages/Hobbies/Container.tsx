@@ -18,8 +18,8 @@ export class ActionDispatcher {
     this.dispatch(requestFetchingUserOwnedGameInfo())
   }
 
-  public receiveFetchedUserOwnedGameInfo(userOwnedGamesnfo: IGamesInfo[]): void {
-    this.dispatch(receiveFetchedUserOwnedGameInfo(userOwnedGamesnfo))
+  public receiveFetchedUserOwnedGameInfo(userOwnedGamesInfo: IGamesInfo[]): void {
+    this.dispatch(receiveFetchedUserOwnedGameInfo(userOwnedGamesInfo))
   }
 
   public changeOwnedGameInfoPage(page: number): void {
