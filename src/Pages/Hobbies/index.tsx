@@ -1,18 +1,52 @@
-import CircularProgress from '@material-ui/core/CircularProgress'
-import Paper from '@material-ui/core/Paper'
-import Typography from '@material-ui/core/Typography'
-import { withStyles, Theme, WithStyles, createStyles } from '@material-ui/core/styles'
-import { Component } from 'react'
+import { CircularProgress, Paper, Typography } from '@material-ui/core'
+import { createStyles, withStyles, type Theme, type WithStyles } from '@material-ui/core/styles'
+import { useEffect } from 'react'
 import { Helmet } from 'react-helmet'
 
-// redux関連
-// components
-// style
 import PageTitleWrapper from '../../Components/atoms/PageTitleWrapper'
 import { MIN_TABLET_SIZE } from '../../Shared/Styles/StyleConstants'
 import GameInfoTableWrapped from './Components/GameInfoTableWrapped'
 import { ActionDispatcher } from './Container'
 import { HobbiesState } from './module'
+
+interface Props {
+  actions: ActionDispatcher
+  value: HobbiesState
+}
+interface HobbiesProps extends WithStyles<typeof styleSettings> {
+  hobbiesRedux: Props
+  isFetching: HobbiesState['isFetching']
+}
+
+const Hobbies = ({ classes: { paper, progress }, hobbiesRedux, isFetching }: HobbiesProps) => (
+  <div>
+    <PageTitleWrapper>Hobbies</PageTitleWrapper>
+    <Paper className={paper}>
+      <Typography gutterBottom variant="subtitle1">
+        FPS かストラテジーを中心に Steam 等でゲームを購入して PC
+        で遊んでいます。映画を見たりもします。
+      </Typography>
+      <hr />
+      <Typography variant="h6">Steam ライブラリ</Typography>
+      {isFetching ? (
+        <div>
+          <CircularProgress className={progress} />
+        </div>
+      ) : (
+        <GameInfoTableWrapped {...hobbiesRedux} />
+      )}
+    </Paper>
+  </div>
+)
+
+const useHobbies = ({ actions, value }: Props) => {
+  const { requestFetchingUserOwnedGameInfo } = actions
+  useEffect(() => requestFetchingUserOwnedGameInfo(), [requestFetchingUserOwnedGameInfo])
+
+  const hobbiesRedux = { actions, value }
+  const { isFetching } = value
+  return { hobbiesRedux, isFetching }
+}
 
 const styleSettings = (theme: Theme) =>
   createStyles({
@@ -30,45 +64,19 @@ const styleSettings = (theme: Theme) =>
       margin: theme.spacing() * 2,
     },
   })
+const StyledHobbies = withStyles(styleSettings)(Hobbies)
 
-interface IProps extends WithStyles<typeof styleSettings> {
-  actions: ActionDispatcher
-  value: HobbiesState
+const Container = (props: Props) => {
+  const { hobbiesRedux, isFetching } = useHobbies(props)
+
+  return (
+    <>
+      <Helmet>
+        <title>Hobbies - roottool&apos;s Portfolio Site</title>
+      </Helmet>
+      <StyledHobbies hobbiesRedux={hobbiesRedux} isFetching={isFetching} />
+    </>
+  )
 }
 
-class Hobbies extends Component<IProps> {
-  constructor(props: IProps) {
-    super(props)
-
-    this.props.actions.requestFetchingUserOwnedGameInfo()
-  }
-
-  public render() {
-    const { classes } = this.props
-
-    return (
-      <div>
-        <Helmet>
-          <title>Hobbies - roottool&apos;s Portfolio Site</title>
-        </Helmet>
-        <PageTitleWrapper>Hobbies</PageTitleWrapper>
-        <Paper className={classes.paper}>
-          <Typography gutterBottom variant="subtitle1">
-            Steam等でFPSかストラテジーのゲームを中心に買ってPCで遊んでいます。映画を見たりもします。
-          </Typography>
-          <hr />
-          <Typography variant="h6">Steam ライブラリ</Typography>
-          {this.props.value.isFetching ? (
-            <div>
-              <CircularProgress className={classes.progress} />
-            </div>
-          ) : (
-            <GameInfoTableWrapped {...this.props} />
-          )}
-        </Paper>
-      </div>
-    )
-  }
-}
-
-export default withStyles(styleSettings)(Hobbies)
+export default Container
