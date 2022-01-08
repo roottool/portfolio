@@ -39,14 +39,15 @@ const styleSettings = () =>
       maxWidth: '1200px',
     },
   })
+const StyledSkills = withStyles(styleSettings)(Skills)
 
-const Container = ({ classes }: WithStyles<typeof styleSettings>) => (
+const Container = () => (
   <>
     <Helmet>
       <title>Skills - roottool&apos;s Portfolio Site</title>
     </Helmet>
-    <Skills classes={classes} />
+    <StyledSkills />
   </>
 )
 
-export default withStyles(styleSettings)(Container)
+export default Container
