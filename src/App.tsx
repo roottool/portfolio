@@ -19,7 +19,7 @@ interface Props {
   value: AppState
 }
 
-const App = () => (
+const AppComponent = () => (
   <MainWrapper>
     <Routes>
       <Route element={<About />} path="/about" />
@@ -55,21 +55,21 @@ const MainWrapper = styled.main`
 `
 
 const useApp = (closeSideMenu: () => void, openSideMenu: () => void, isOpened: boolean) => {
-  const menuIconClickHandler = useCallback(() => openSideMenu(), [openSideMenu])
+  const handleMenuIconClick = useCallback(() => openSideMenu(), [openSideMenu])
   const closeSideMenuHandler = useCallback(() => closeSideMenu(), [closeSideMenu])
   const sideDrawerOption = useMemo(
     () => ({
-      drawToggleClickHandler: closeSideMenuHandler,
-      show: isOpened,
+      handleDrawToggleClick: closeSideMenuHandler,
+      isOpened,
     }),
     [closeSideMenuHandler, isOpened]
   )
 
-  return { closeSideMenuHandler, menuIconClickHandler, sideDrawerOption }
+  return { closeSideMenuHandler, handleMenuIconClick, sideDrawerOption }
 }
 
-const Container = ({ actions: { closeSideMenu, openSideMenu }, value: { isOpened } }: Props) => {
-  const { closeSideMenuHandler, menuIconClickHandler, sideDrawerOption } = useApp(
+const App = ({ actions: { closeSideMenu, openSideMenu }, value: { isOpened } }: Props) => {
+  const { closeSideMenuHandler, handleMenuIconClick, sideDrawerOption } = useApp(
     closeSideMenu,
     openSideMenu,
     isOpened
@@ -79,13 +79,13 @@ const Container = ({ actions: { closeSideMenu, openSideMenu }, value: { isOpened
     <>
       <GlobalStyle />
       <div className="App">
-        <Navbar drawToggleClickHandler={menuIconClickHandler} />
+        <Navbar drawToggleClickHandler={handleMenuIconClick} />
         <SideDrawer {...sideDrawerOption} />
         {isOpened && <Backdrop backdropClickHandler={closeSideMenuHandler} />}
-        <App />
+        <AppComponent />
       </div>
     </>
   )
 }
 
-export default Container
+export default App
