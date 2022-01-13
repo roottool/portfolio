@@ -1,54 +1,41 @@
 import { Component } from 'react'
 import { Link } from 'react-router-dom'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 import { MIN_TABLET_SIZE } from '../../Shared/Styles/StyleConstants'
 
-interface ISideDrawerWrapperProps {
-  show: boolean
+interface SideDrawerProps {
+  handleClick: () => void
 }
 
-interface IProps extends ISideDrawerWrapperProps {
-  drawToggleClickHandler(): void
+interface Props {
+  handleDrawToggleClick: SideDrawerProps['handleClick']
+  isOpened: boolean
 }
 
-class SideDrawer extends Component<IProps> {
-  constructor(props: IProps) {
-    super(props)
-  }
+const SideDrawerComponent = ({ handleClick }: SideDrawerProps) => (
+  <>
+    <TitleAreaWrapper>
+      <TitleWrapper>Menu</TitleWrapper>
+    </TitleAreaWrapper>
+    <LinkListWrapper>
+      <LinkWrapper onClick={handleClick} to="/about">
+        About
+      </LinkWrapper>
+      <LinkWrapper onClick={handleClick} to="/works">
+        Works
+      </LinkWrapper>
+      <LinkWrapper onClick={handleClick} to="/skills">
+        Skills
+      </LinkWrapper>
+      <LinkWrapper onClick={handleClick} to="/hobbies">
+        Hobbies
+      </LinkWrapper>
+    </LinkListWrapper>
+  </>
+)
 
-  public render(): JSX.Element {
-    return (
-      <SideDrawerWrapper show={this.props.show}>
-        <TitleAreaWrapper>
-          <TitleWrapper>Menu</TitleWrapper>
-        </TitleAreaWrapper>
-        <LinkListWrapper>
-          <LinkWrapper onClick={this.clickHandler} to="/about">
-            About
-          </LinkWrapper>
-          <LinkWrapper onClick={this.clickHandler} to="/works">
-            Works
-          </LinkWrapper>
-          <LinkWrapper onClick={this.clickHandler} to="/skills">
-            Skills
-          </LinkWrapper>
-          <LinkWrapper onClick={this.clickHandler} to="/hobbies">
-            Hobbies
-          </LinkWrapper>
-        </LinkListWrapper>
-      </SideDrawerWrapper>
-    )
-  }
-
-  private clickHandler = () => {
-    this.props.drawToggleClickHandler()
-  }
-}
-
-export default SideDrawer
-
-const SideDrawerWrapper = styled.nav`
+const ClosedSideDrawerWrapper = styled.nav`
   height: 100%;
   background: white;
   position: fixed;
@@ -59,16 +46,15 @@ const SideDrawerWrapper = styled.nav`
   z-index: 200;
   transform: translateX(-100%);
   transition: transform 0.3s ease-out;
-  ${(props: ISideDrawerWrapperProps) =>
-    props.show &&
-    css`
-      box-shadow: 1px 0px 3px rgba(0, 0, 0, 0.5);
-      transform: translateX(0);
-    `}
 
   @media (min-width: ${MIN_TABLET_SIZE}px) {
     display: none;
   }
+`
+
+const SideDrawerWrapper = styled(ClosedSideDrawerWrapper)`
+  box-shadow: 1px 0px 3px rgba(0, 0, 0, 0.5);
+  transform: translateX(0);
 `
 
 const TitleAreaWrapper = styled.div`
@@ -105,3 +91,18 @@ const LinkWrapper = styled(Link)`
     background-color: #c2203b;
   }
 `
+
+const toggleSideDrawerWrapper = (isOpened: Props['isOpened']) =>
+  isOpened ? SideDrawerWrapper : ClosedSideDrawerWrapper
+
+const SideDrawer = ({ handleDrawToggleClick, isOpened }: Props) => {
+  const SideDrawerWrapperComponent = toggleSideDrawerWrapper(isOpened)
+
+  return (
+    <SideDrawerWrapperComponent>
+      <SideDrawerComponent handleClick={handleDrawToggleClick} />
+    </SideDrawerWrapperComponent>
+  )
+}
+
+export default SideDrawer
