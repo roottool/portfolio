@@ -18,19 +18,10 @@
     "types": ["react", "jest"],
     "baseUrl": ".",
     "paths": {
-      "@/": [
-        "src/*"
-      ],
-      "@components/": [
-        "src/components/*"
-      ],
-      "$/": [
-        "public/*"
-      ]
+      "@/": ["src/*"],
+      "@components/": ["src/components/*"],
+      "$/": ["public/*"]
     }
   },
-  "include": [
-    "netlify/functions",
-    "src"
-  ]
+  "include": ["netlify/functions", "src"]
 }
