@@ -16,7 +16,18 @@
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "types": ["react", "jest"],
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "@/": [
+        "src/*"
+      ],
+      "@components/": [
+        "src/components/*"
+      ],
+      "$/": [
+        "public/*"
+      ]
+    }
   },
   "include": ["netlify/functions", "src"],
   "exclude": ["node_modules"]

@@ -2,12 +2,12 @@ import axios from 'axios'
 import { take, put, fork } from 'redux-saga/effects'
 import type { ForkEffect, PutEffect, TakeEffect } from 'redux-saga/effects'
 
-import { ActionNames, receiveFetchedUserOwnedGameInfo } from '../Pages/Hobbies/module'
+import { ActionNames, receiveFetchedUserOwnedGameInfo } from '../pages/Hobbies/module'
 import type {
   IUserOwnedGames,
   IGamesInfo,
   ReceiveFetchedUserOwnedGamesAction,
-} from '../Pages/Hobbies/module'
+} from '../pages/Hobbies/module'
 
 // 2019/1/22 time point SteamOwnedGameData
 

@@ -3,8 +3,8 @@ import { createStyles, withStyles, type Theme, type WithStyles } from '@material
 import { useEffect } from 'react'
 import { Helmet } from 'react-helmet'
 
-import PageTitleWrapper from '../../Components/atoms/PageTitleWrapper'
-import { MIN_TABLET_SIZE } from '../../Shared/Styles/StyleConstants'
+import PageTitleWrapper from '../../components/atoms/PageTitleWrapper'
+import { MIN_TABLET_SIZE } from '../../shared/styles/StyleConstants'
 import GameInfoTableWrapped from './Components/GameInfoTableWrapped'
 import { ActionDispatcher } from './Container'
 import { HobbiesState } from './module'

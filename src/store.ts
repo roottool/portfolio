@@ -4,8 +4,8 @@ import { Action, applyMiddleware, compose, createStore, combineReducers } from '
 import createSagaMiddleware from 'redux-saga'
 
 // redux関連
-import hobbies, { HobbiesActions, HobbiesState } from './Pages/Hobbies/module'
 import app, { AppActions, AppState } from './module'
+import hobbies, { HobbiesActions, HobbiesState } from './pages/Hobbies/module'
 
 const composeEnhancer: typeof compose =
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
