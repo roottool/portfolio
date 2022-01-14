@@ -12,7 +12,9 @@
     "ecmaFeatures": {
       "jsx": true
     },
-    "project": ["tsconfig.json"],
+    "project": [
+      "tsconfig.dev.json"
+    ],
     "sourceType": "module",
     "tsconfigRootDir": "."
   },
@@ -27,11 +29,10 @@
   ],
   "extends": [
     "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
     "plugin:import/recommended",
     "plugin:import/typescript",
     "prettier"
@@ -44,7 +45,7 @@
     "import/resolver": {
       "typescript": {
         "alwaysTryTypes": true,
-        "project": "tsconfig.json"
+        "project": "tsconfig.dev.json"
       }
     },
     "react": {
