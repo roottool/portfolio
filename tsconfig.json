@@ -5,7 +5,7 @@
     "module": "esnext",
     "moduleResolution": "node",
     "jsx": "react-jsx",
-    "allowJs": true,
+    "allowJs": false,
     "strict": true,
     "noEmit": true,
     "skipLibCheck": true,
@@ -29,6 +29,8 @@
       ]
     }
   },
-  "include": ["netlify/functions", "src"],
-  "exclude": ["node_modules"]
+  "include": [
+    "netlify/functions",
+    "src"
+  ]
 }
