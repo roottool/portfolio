@@ -9,7 +9,10 @@
     "url": "https://github.com/roottool"
   },
   "homepage": "https://roottool.netlify.app/",
-  "repository": "https://github.com/roottool/portfolio.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/roottool/portfolio.git"
+  },
   "bugs": {
     "url": "https://github.com/roottool/portfolio/issues"
   },
