@@ -1,69 +1,42 @@
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
-import { Component } from 'react'
+import styled from 'styled-components'
 
 import LazyImage from '@components/atoms/lazyImage'
 
-interface IProps {
+interface Props {
   appid: number
   img_logo_url: string
   name: string
   playtime_forever: number
 }
 
-class GameInfoContents extends Component<IProps> {
-  constructor(props: IProps) {
-    super(props)
-  }
+const STEAM_BASE_URL = 'https://store.steampowered.com'
+const APP_URL = `${STEAM_BASE_URL}/app`
+const APP_IMAGE_URL = `http://media.steampowered.com/steamcommunity/public/images/apps`
 
-  render(): JSX.Element {
-    return (
-      <Grid container spacing={8}>
-        <Grid
-          item
-          md={4}
-          sm={6}
-          style={{
-            margin: 'auto',
-          }}
-          xs={12}
-        >
-          <a href={`https://store.steampowered.com/app/${this.props.appid}/`}>
-            <LazyImage
-              src={`http://media.steampowered.com/steamcommunity/public/images/apps/${this.props.appid}/${this.props.img_logo_url}.jpg`}
-              title={this.props.name}
-            />
-          </a>
-        </Grid>
-        <Grid
-          item
-          md={4}
-          sm={6}
-          style={{
-            margin: 'auto',
-          }}
-          xs={12}
-        >
-          <Typography variant="subtitle1">{this.props.name}</Typography>
-        </Grid>
-        <Grid
-          item
-          md={4}
-          sm={12}
-          style={{
-            margin: 'auto',
-          }}
-          xs={12}
-        >
-          <Typography variant="subtitle1">
-            プレイ時間:
-            {Math.round(this.props.playtime_forever / 60)}
-            時間
-          </Typography>
-        </Grid>
-      </Grid>
-    )
-  }
-}
+const GameInfoContents = ({ appid, img_logo_url, name, playtime_forever }: Props) => (
+  <Grid container spacing={8}>
+    <StyledGrid item md={4} sm={6} xs={12}>
+      <a href={`${APP_URL}/${appid}/`}>
+        <LazyImage src={`${APP_IMAGE_URL}/${appid}/${img_logo_url}.jpg`} title={name} />
+      </a>
+    </StyledGrid>
+    <StyledGrid item md={4} sm={6} xs={12}>
+      <Typography variant="subtitle1">{name}</Typography>
+    </StyledGrid>
+    <StyledGrid item md={4} sm={12} xs={12}>
+      <Typography variant="subtitle1">
+        プレイ時間:
+        {Math.round(playtime_forever / 60)}
+        時間
+      </Typography>
+    </StyledGrid>
+  </Grid>
+)
+
+const StyledGrid = styled(Grid)`
+  margin: auto;
+`
 
 export default GameInfoContents
