@@ -7,12 +7,12 @@ import {
   TableRow,
 } from '@material-ui/core'
 import { withStyles } from '@material-ui/core/styles'
-import { useCallback, useMemo } from 'react'
+import { useCallback, useMemo, type MouseEvent } from 'react'
 import styled from 'styled-components'
 
 import EmptyTableRow from '@components/features/hobbies/EmptyTableRow'
 import GameInfoContents from '@components/features/hobbies/GameInfoContents'
-import TablePaginationActionsWrapped from '@components/features/hobbies/TablePaginationActionWrapped'
+import TablePaginationArea from '@components/features/hobbies/TablePaginationArea'
 
 import { type ActionDispatcher } from '@/pages/Hobbies/Container'
 import { type HobbiesState } from '@/pages/Hobbies/module'
@@ -75,8 +75,7 @@ const useGameInfoTable = ({
     [page, rows, rowsPerPage]
   )
   const handlePageChange = useCallback(
-    (_event: React.MouseEvent<HTMLButtonElement> | null, page: number) =>
-      changeOwnedGameInfoPage(page),
+    (_event: MouseEvent<HTMLButtonElement> | null, page: number) => changeOwnedGameInfoPage(page),
     [changeOwnedGameInfoPage]
   )
 
@@ -103,7 +102,7 @@ const GameInfoTable = ({
       <TableFooter>
         <TableRow>
           <StyledTablePagination
-            ActionsComponent={TablePaginationActionsWrapped}
+            ActionsComponent={TablePaginationArea}
             count={rows.length}
             labelRowsPerPage=""
             onPageChange={handlePageChange}
