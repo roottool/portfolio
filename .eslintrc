@@ -12,7 +12,7 @@
     "ecmaFeatures": {
       "jsx": true
     },
-    "project": ["tsconfig.dev.json"],
+    "project": ["tsconfig.json", "tsconfig.dev.json"],
     "sourceType": "module",
     "tsconfigRootDir": "."
   },

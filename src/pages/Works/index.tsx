@@ -2,7 +2,8 @@ import { Button, Card, CardActions, CardContent, Grid, Typography } from '@mater
 import { createStyles, withStyles, type WithStyles } from '@material-ui/core/styles'
 import { Helmet } from 'react-helmet'
 
-import PageTitleWrapper from '../../components/atoms/PageTitleWrapper'
+import PageTitleWrapper from '@components/atoms/PageTitleWrapper'
+
 import contents from './WorksContents.json'
 
 const Works = ({

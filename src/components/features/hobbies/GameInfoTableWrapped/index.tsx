@@ -7,13 +7,12 @@ import TableRow from '@material-ui/core/TableRow'
 import { withStyles } from '@material-ui/core/styles'
 import { Component } from 'react'
 
-// redux関連
-import { ActionDispatcher } from '../../Container'
-import { HobbiesState } from '../../module'
-// Components
-import EmptyTableRow from '../EmptyTableRow'
-import GameInfoContents from '../GameInfoContents'
-import TablePaginationActionsWrapped from '../TablePaginationActionWrapped'
+import EmptyTableRow from '@components/features/hobbies/EmptyTableRow'
+import GameInfoContents from '@components/features/hobbies/GameInfoContents'
+import TablePaginationActionsWrapped from '@components/features/hobbies/TablePaginationActionWrapped'
+
+import { ActionDispatcher } from '@/pages/Hobbies/Container'
+import { HobbiesState } from '@/pages/Hobbies/module'
 
 const StyledTablePagination = withStyles({
   toolbar: {

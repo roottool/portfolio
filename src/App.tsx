@@ -2,17 +2,19 @@ import { useCallback, useMemo } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import styled, { createGlobalStyle } from 'styled-components'
 
-import { ActionDispatcher } from './Container'
-import Navbar from './components/Navbar'
-import SideDrawer from './components/SideDrawer'
-import Backdrop from './components/atoms/Backdrop'
+import Backdrop from '@components/atoms/Backdrop'
+import Navbar from '@components/organisms/Navbar'
+import SideDrawer from '@components/organisms/SideDrawer'
+
 import backgroundImageWebP from './images/EchoCat.webp'
-import { AppState } from './module'
-import About from './pages/About'
-import Hobbies from './pages/Hobbies/Container'
-import Home from './pages/Home'
-import Skills from './pages/Skills'
-import Works from './pages/Works'
+
+import { ActionDispatcher } from '@/Container'
+import { AppState } from '@/module'
+import About from '@/pages/About'
+import Hobbies from '@/pages/Hobbies/Container'
+import Home from '@/pages/Home'
+import Skills from '@/pages/Skills'
+import Works from '@/pages/Works'
 
 interface Props {
   actions: ActionDispatcher

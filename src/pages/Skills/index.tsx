@@ -2,8 +2,9 @@ import { Card, CardContent, Grid, Typography } from '@material-ui/core'
 import { createStyles, withStyles, type WithStyles } from '@material-ui/core/styles'
 import { Helmet } from 'react-helmet'
 
-import PageTitleWrapper from '../../components/atoms/PageTitleWrapper'
 import contents from './SkillsContents.json'
+
+import PageTitleWrapper from '@/components/atoms/PageTitleWrapper'
 
 const Skills = ({ classes }: WithStyles<typeof styleSettings>) => (
   <div>
