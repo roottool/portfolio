@@ -14,7 +14,7 @@ const actionsStyles = (theme: Theme) => ({
   },
 })
 
-interface IProps extends TablePaginationActionsProps, WithStyles<typeof actionsStyles> {
+interface Props extends TablePaginationActionsProps, WithStyles<typeof actionsStyles> {
   count: number
   onPageChange: (event: React.MouseEvent<HTMLButtonElement> | null, page: number) => void
   page: number
@@ -22,8 +22,8 @@ interface IProps extends TablePaginationActionsProps, WithStyles<typeof actionsS
   theme: Theme
 }
 
-class TablePaginationActionsWrapped extends Component<IProps> {
-  constructor(props: IProps) {
+class TablePaginationActionsWrapped extends Component<Props> {
+  constructor(props: Props) {
     super(props)
   }
 

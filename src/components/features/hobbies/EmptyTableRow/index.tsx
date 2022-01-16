@@ -3,7 +3,7 @@ import TableRow from '@material-ui/core/TableRow'
 import { withStyles, createMuiTheme } from '@material-ui/core/styles'
 import { Component } from 'react'
 
-interface IProps {
+interface Props {
   emptyRows: number
 }
 
@@ -12,8 +12,8 @@ interface IProps {
  */
 const theme = createMuiTheme()
 
-class EmptyTableRow extends Component<IProps> {
-  constructor(props: IProps) {
+class EmptyTableRow extends Component<Props> {
+  constructor(props: Props) {
     super(props)
   }
 
