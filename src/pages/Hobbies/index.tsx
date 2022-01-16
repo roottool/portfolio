@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 import { Helmet } from 'react-helmet'
 
 import PageTitleWrapper from '@components/atoms/PageTitleWrapper'
-import GameInfoTableWrapped from '@components/features/hobbies/GameInfoTableWrapped'
+import GameInfoTable from '@components/features/hobbies/GameInfoTable'
 
 import { ActionDispatcher } from './Container'
 import { HobbiesState } from './module'
@@ -35,7 +35,7 @@ const Hobbies = ({ classes: { paper, progress }, hobbiesRedux, isFetching }: Hob
           <CircularProgress className={progress} />
         </div>
       ) : (
-        <GameInfoTableWrapped {...hobbiesRedux} />
+        <GameInfoTable {...hobbiesRedux} />
       )}
     </Paper>
   </div>
