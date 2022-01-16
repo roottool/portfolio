@@ -30,7 +30,7 @@ const sortOwnedGames = (ownedGames: IUserOwnedGames) => {
 }
 
 /**
- * An error has occured.
+ * An error has occurred.
  *
  * Error message is "No 'Access-Control-Allow-Origin' header is present on the requested resource.".
  *
