@@ -5,7 +5,7 @@ import { MdMenu } from 'react-icons/md'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-import { MAX_SMARTPHONE_SIZE, MIN_TABLET_SIZE } from '../../shared/styles/StyleConstants'
+import { MAX_SMARTPHONE_SIZE, MIN_TABLET_SIZE } from '@/shared/styles/StyleConstants'
 
 interface Props {
   drawToggleClickHandler: () => void

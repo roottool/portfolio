@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-import { MIN_TABLET_SIZE } from '../../shared/styles/StyleConstants'
+import { MIN_TABLET_SIZE } from '@/shared/styles/StyleConstants'
 
 interface SideDrawerProps {
   handleClick: () => void

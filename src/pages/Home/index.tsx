@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet'
 import styled from 'styled-components'
 
-import { MAX_SMARTPHONE_SIZE, MIN_TABLET_SIZE } from '../../shared/styles/StyleConstants'
+import { MAX_SMARTPHONE_SIZE, MIN_TABLET_SIZE } from '@/shared/styles/StyleConstants'
 
 const Home = () => (
   <div>
