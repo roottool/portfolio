@@ -1,48 +1,50 @@
-import TableCell from '@material-ui/core/TableCell'
-import TableRow from '@material-ui/core/TableRow'
-import { withStyles, createMuiTheme } from '@material-ui/core/styles'
-import { Component } from 'react'
+import { useMediaQuery, TableCell, TableRow } from '@material-ui/core'
+import { useTheme } from '@material-ui/core/styles'
+import { useMemo } from 'react'
+import styled from 'styled-components'
 
 interface Props {
   emptyRows: number
 }
+interface StyledEmptyTableRowProps {
+  height: string
+}
 
-/**
- * Material-UIの画面幅分岐メソッドを使用するために定義
- */
-const theme = createMuiTheme()
+const StyledEmptyTableRow = styled(TableRow)`
+  height: ${({ height }: StyledEmptyTableRowProps) => height};
+`
 
-class EmptyTableRow extends Component<Props> {
-  constructor(props: Props) {
-    super(props)
-  }
-
-  public render(): JSX.Element {
-    return (
-      <this.StyledEmptyTableRow>
-        <TableCell />
-      </this.StyledEmptyTableRow>
-    )
-  }
-
+const useFetchHeight = (emptyRows: Props['emptyRows']) => {
+  const theme = useTheme()
+  const canMatchXs = useMediaQuery(theme.breakpoints.up('xs'))
+  const canMatchSm = useMediaQuery(theme.breakpoints.up('sm'))
   /**
    * 1つにまとめた空行の高さは、
    *
    * "1行の高さの実測値 * 空行数 * 境界線(1px)数"とする
    */
-  readonly StyledEmptyTableRow = withStyles({
-    root: {
-      [theme.breakpoints.up('xs')]: {
-        height: `calc(168px * ${this.props.emptyRows} + ${this.props.emptyRows}px)`,
-      },
-      [theme.breakpoints.up('sm')]: {
-        height: `calc(124px * ${this.props.emptyRows} + ${this.props.emptyRows}px)`,
-      },
-      [theme.breakpoints.up('md')]: {
-        height: `calc(80px * ${this.props.emptyRows} + ${this.props.emptyRows}px)`,
-      },
-    },
-  })(TableRow)
+  const fetchHeight = () => {
+    if (canMatchXs) {
+      return `calc(168px * ${emptyRows} + ${emptyRows}px)`
+    } else if (canMatchSm) {
+      return `calc(124px * ${emptyRows} + ${emptyRows}px)`
+    } else {
+      return `calc(80px * ${emptyRows} + ${emptyRows}px)`
+    }
+  }
+  const height = useMemo(fetchHeight, [canMatchSm, canMatchXs, emptyRows])
+
+  return height
+}
+
+const EmptyTableRow = ({ emptyRows }: Props) => {
+  const height = useFetchHeight(emptyRows)
+
+  return (
+    <StyledEmptyTableRow height={height}>
+      <TableCell />
+    </StyledEmptyTableRow>
+  )
 }
 
 export default EmptyTableRow
