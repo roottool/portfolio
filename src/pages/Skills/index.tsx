@@ -1,6 +1,6 @@
 import { Card, CardContent, Grid, Typography } from '@material-ui/core'
 import { createStyles, withStyles, type WithStyles } from '@material-ui/core/styles'
-import { Helmet } from 'react-helmet'
+import Head from 'next/head'
 
 import contents from './SkillsContents.json'
 
@@ -44,9 +44,9 @@ const StyledSkills = withStyles(styleSettings)(Skills)
 
 const Container = () => (
   <>
-    <Helmet>
+    <Head>
       <title>Skills - roottool&apos;s Portfolio Site</title>
-    </Helmet>
+    </Head>
     <StyledSkills />
   </>
 )

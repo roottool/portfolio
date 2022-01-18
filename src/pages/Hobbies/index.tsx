@@ -1,7 +1,8 @@
 import { CircularProgress, Paper, Typography } from '@material-ui/core'
 import { createStyles, withStyles, type Theme, type WithStyles } from '@material-ui/core/styles'
 import { useEffect } from 'react'
-import { Helmet } from 'react-helmet'
+
+import Head from 'next/head'
 
 import PageTitleWrapper from '@components/atoms/PageTitleWrapper'
 import GameInfoTable from '@components/features/hobbies/GameInfoTable'
@@ -73,9 +74,9 @@ const Container = (props: Props) => {
 
   return (
     <>
-      <Helmet>
+      <Head>
         <title>Hobbies - roottool&apos;s Portfolio Site</title>
-      </Helmet>
+      </Head>
       <StyledHobbies hobbiesRedux={hobbiesRedux} isFetching={isFetching} />
     </>
   )

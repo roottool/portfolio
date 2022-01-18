@@ -1,6 +1,6 @@
 import { Button, Card, CardActions, CardContent, Grid, Typography } from '@material-ui/core'
 import { createStyles, withStyles, type WithStyles } from '@material-ui/core/styles'
-import { Helmet } from 'react-helmet'
+import Head from 'next/head'
 
 import PageTitleWrapper from '@components/atoms/PageTitleWrapper'
 
@@ -58,9 +58,9 @@ const StyledWorks = withStyles(styleSettings)(Works)
 
 const Container = () => (
   <>
-    <Helmet>
+    <Head>
       <title>Works - roottool&apos;s Portfolio Site</title>
-    </Helmet>
+    </Head>
     <StyledWorks />
   </>
 )

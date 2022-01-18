@@ -1,6 +1,6 @@
 import { Card, CardContent, Grid } from '@material-ui/core'
 import { createStyles, withStyles, type Theme, type WithStyles } from '@material-ui/core/styles'
-import { Helmet } from 'react-helmet'
+import Head from 'next/head'
 import { IconContext } from 'react-icons'
 import { FaTwitterSquare } from 'react-icons/fa'
 import { GoMarkGithub } from 'react-icons/go'
@@ -70,9 +70,9 @@ const StyledAbout = withStyles(styleSettings)(About)
 
 const Container = () => (
   <>
-    <Helmet>
+    <Head>
       <title>About - roottool&apos;s Portfolio Site</title>
-    </Helmet>
+    </Head>
     <StyledAbout />
   </>
 )
