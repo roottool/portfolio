@@ -18,18 +18,18 @@ const SideDrawerComponent = ({ handleClick }: SideDrawerProps) => (
       <TitleWrapper>Menu</TitleWrapper>
     </TitleAreaWrapper>
     <LinkListWrapper>
-      <LinkWrapper href="/about">
-        <a onClick={handleClick}>About</a>
-      </LinkWrapper>
-      <LinkWrapper href="/works">
-        <a onClick={handleClick}>Works</a>
-      </LinkWrapper>
-      <LinkWrapper href="/skills">
-        <a onClick={handleClick}>Skills</a>
-      </LinkWrapper>
-      <LinkWrapper href="/hobbies">
-        <a onClick={handleClick}>Hobbies</a>
-      </LinkWrapper>
+      <AWrapper onClick={handleClick}>
+        <Link href="/about">About</Link>
+      </AWrapper>
+      <AWrapper onClick={handleClick}>
+        <Link href="/works">Works</Link>
+      </AWrapper>
+      <AWrapper onClick={handleClick}>
+        <Link href="/skills">Skills</Link>
+      </AWrapper>
+      <AWrapper onClick={handleClick}>
+        <Link href="/hobbies">Hobbies</Link>
+      </AWrapper>
     </LinkListWrapper>
   </>
 )
@@ -77,7 +77,7 @@ const LinkListWrapper = styled.div`
   justify-content: center;
 `
 
-const LinkWrapper = styled(Link)`
+const AWrapper = styled.a`
   display: block;
   padding: 1rem 0;
   padding-left: 1rem;

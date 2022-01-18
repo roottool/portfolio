@@ -31,7 +31,7 @@
     "plugin:jsx-a11y/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
-    "next/core-web-vitals",
+    "plugin:@next/next/core-web-vitals",
     "plugin:import/recommended",
     "plugin:import/typescript",
     "prettier"
@@ -44,7 +44,7 @@
     "import/resolver": {
       "typescript": {
         "alwaysTryTypes": true,
-        "project": "tsconfig.dev.json"
+        "project": ["tsconfig.json", "tsconfig.dev.json"]
       }
     },
     "react": {

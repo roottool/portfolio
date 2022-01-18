@@ -23,23 +23,26 @@
     "build:next": "next build",
     "start": "next start",
     "lint": "run-p -c lint:*",
-    "lint:eslint": "eslint . --color --ext .js,.jsx,.ts,.tsx",
+    "lint:eslint": "eslint . --color --ext .js,.ts,.tsx",
     "lint:prettier": "prettier --check .",
     "fix": "run-p -c fix:*",
-    "fix:eslint": "eslint . --fix --color --ext .js,.jsx,.ts,.tsx",
+    "fix:eslint": "eslint . --fix --color --ext .js,.ts,.tsx",
     "format": "prettier --write .",
     "test": "run-p test:*",
     "test:jest": "echo \"Write tests!\"",
     "test:check-types": "tsc --noEmit"
   },
   "importSort": {
-    ".js, .jsx, .ts, .tsx": {
+    ".js, .ts, .tsx": {
       "style": "module",
       "parser": "typescript"
     }
   },
   "lint-staged": {
-    "*.js|jsx|ts|tsx": [
+    "*.js|.d.ts": [
+      "yarn format"
+    ],
+    "*.(d.)?tsx?": [
       "yarn format",
       "yarn fix"
     ],
@@ -74,6 +77,7 @@
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
     "eslint": "^8.3.0",
+    "eslint-config-next": "^12.0.8",
     "eslint-config-prettier": "^8.3.0",
     "eslint-import-resolver-typescript": "^2.4.0",
     "eslint-plugin-import": "^2.25.3",

@@ -1,23 +1,16 @@
 import { AppBar, Toolbar } from '@material-ui/core'
 import { createStyles, withStyles, type WithStyles } from '@material-ui/core/styles'
+import Link from 'next/link'
 import { IconContext } from 'react-icons'
 import { MdMenu } from 'react-icons/md'
-import Link from 'next/link'
 import styled from 'styled-components'
 
 import { MAX_SMARTPHONE_SIZE, MIN_TABLET_SIZE } from '@/shared/styles/StyleConstants'
 
-interface Props {
-  drawToggleClickHandler: () => void
-}
-interface NavbarComponentProps extends WithStyles<typeof styleSettings> {
-  handleClick: Props['drawToggleClickHandler']
-}
-
-const NavbarComponent = ({ classes: { root }, handleClick }: NavbarComponentProps) => (
+const NavbarComponent = ({ classes: { root } }: WithStyles<typeof styleSettings>) => (
   <AppBar className={root} position={'static'}>
     <Toolbar>
-      <MenuIconWrapper onClick={handleClick}>
+      <MenuIconWrapper>
         <IconContext.Provider value={{ color: 'white', size: '1.5em' }}>
           <MdMenu />
         </IconContext.Provider>
@@ -78,13 +71,13 @@ const NavigationItemsWrapper = styled.div`
 `
 
 const LinkWrapper = styled(Link)`
-  color: white;
-  text-decoration: none;
-  padding: 16px 1rem;
+  & > a {
+    color: white;
+    text-decoration: none;
+    padding: 16px 1rem;
+  }
 `
 
-const Navbar = ({ drawToggleClickHandler }: Props) => (
-  <StyledNavbarComponent handleClick={drawToggleClickHandler} />
-)
+const Navbar = () => <StyledNavbarComponent />
 
 export default Navbar

@@ -1,8 +1,7 @@
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
+import Image from 'next/image'
 import styled from 'styled-components'
-
-import LazyImage from '@components/atoms/lazyImage'
 
 interface Props {
   appid: number
@@ -19,7 +18,12 @@ const GameInfoContents = ({ appid, img_logo_url, name, playtime_forever }: Props
   <Grid container spacing={8}>
     <StyledGrid item md={4} sm={6} xs={12}>
       <a href={`${APP_URL}/${appid}/`}>
-        <LazyImage src={`${APP_IMAGE_URL}/${appid}/${img_logo_url}.jpg`} title={name} />
+        <Image
+          height="69"
+          src={`${APP_IMAGE_URL}/${appid}/${img_logo_url}.jpg`}
+          title={name}
+          width="184"
+        />
       </a>
     </StyledGrid>
     <StyledGrid item md={4} sm={6} xs={12}>

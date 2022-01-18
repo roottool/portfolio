@@ -3,6 +3,7 @@ import { createStyles, withStyles, type WithStyles } from '@material-ui/core/sty
 import Head from 'next/head'
 
 import PageTitleWrapper from '@components/atoms/PageTitleWrapper'
+import BasePageTemplate from '@components/templates/BasePageTemplate'
 
 import contents from './WorksContents.json'
 
@@ -61,7 +62,9 @@ const Container = () => (
     <Head>
       <title>Works - roottool&apos;s Portfolio Site</title>
     </Head>
-    <StyledWorks />
+    <BasePageTemplate>
+      <StyledWorks />
+    </BasePageTemplate>
   </>
 )
 

@@ -1,27 +1,26 @@
 import { CircularProgress, Paper, Typography } from '@material-ui/core'
 import { createStyles, withStyles, type Theme, type WithStyles } from '@material-ui/core/styles'
-import { useEffect } from 'react'
-
 import Head from 'next/head'
 
 import PageTitleWrapper from '@components/atoms/PageTitleWrapper'
-import GameInfoTable from '@components/features/hobbies/GameInfoTable'
+import BasePageTemplate from '@components/templates/BasePageTemplate'
 
-import { ActionDispatcher } from './Container'
-import { HobbiesState } from './module'
+import test from './OwnedGames.json'
 
+import GameInfoContents from '@/components/features/hobbies/GameInfoContents'
 import { MIN_TABLET_SIZE } from '@/shared/styles/StyleConstants'
 
-interface Props {
-  actions: ActionDispatcher
-  value: HobbiesState
-}
 interface HobbiesProps extends WithStyles<typeof styleSettings> {
-  hobbiesRedux: Props
-  isFetching: HobbiesState['isFetching']
+  isFetching: boolean
 }
 
-const Hobbies = ({ classes: { paper, progress }, hobbiesRedux, isFetching }: HobbiesProps) => (
+const {
+  response: { games },
+} = test
+const { appid, img_logo_url, name, playtime_forever } = games[0]
+const props = { appid, img_logo_url, name, playtime_forever }
+
+const Hobbies = ({ classes: { paper, progress }, isFetching }: HobbiesProps) => (
   <div>
     <PageTitleWrapper>Hobbies</PageTitleWrapper>
     <Paper className={paper}>
@@ -31,25 +30,15 @@ const Hobbies = ({ classes: { paper, progress }, hobbiesRedux, isFetching }: Hob
       </Typography>
       <hr />
       <Typography variant="h6">Steam ライブラリ</Typography>
-      {isFetching ? (
+      {isFetching && (
         <div>
           <CircularProgress className={progress} />
         </div>
-      ) : (
-        <GameInfoTable {...hobbiesRedux} />
       )}
+      <GameInfoContents {...props} />
     </Paper>
   </div>
 )
-
-const useHobbies = ({ actions, value }: Props) => {
-  const { requestFetchingUserOwnedGameInfo } = actions
-  useEffect(() => requestFetchingUserOwnedGameInfo(), [requestFetchingUserOwnedGameInfo])
-
-  const hobbiesRedux = { actions, value }
-  const { isFetching } = value
-  return { hobbiesRedux, isFetching }
-}
 
 const styleSettings = (theme: Theme) =>
   createStyles({
@@ -69,15 +58,15 @@ const styleSettings = (theme: Theme) =>
   })
 const StyledHobbies = withStyles(styleSettings)(Hobbies)
 
-const Container = (props: Props) => {
-  const { hobbiesRedux, isFetching } = useHobbies(props)
-
+const Container = () => {
   return (
     <>
       <Head>
         <title>Hobbies - roottool&apos;s Portfolio Site</title>
       </Head>
-      <StyledHobbies hobbiesRedux={hobbiesRedux} isFetching={isFetching} />
+      <BasePageTemplate>
+        <StyledHobbies isFetching={false} />
+      </BasePageTemplate>
     </>
   )
 }

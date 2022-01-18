@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import styled from 'styled-components'
 
+import BasePageTemplate from '@components/templates/BasePageTemplate'
+
 import { MAX_SMARTPHONE_SIZE, MIN_TABLET_SIZE } from '@/shared/styles/StyleConstants'
 
 const Home = () => (
@@ -28,7 +30,9 @@ const Container = () => (
     <Head>
       <title>roottool&apos;s Portfolio Site</title>
     </Head>
-    <Home />
+    <BasePageTemplate>
+      <Home />
+    </BasePageTemplate>
   </>
 )
 

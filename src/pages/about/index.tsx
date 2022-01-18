@@ -6,6 +6,7 @@ import { FaTwitterSquare } from 'react-icons/fa'
 import { GoMarkGithub } from 'react-icons/go'
 
 import PageTitleWrapper from '@components/atoms/PageTitleWrapper'
+import BasePageTemplate from '@components/templates/BasePageTemplate'
 
 import { MIN_TABLET_SIZE } from '@/shared/styles/StyleConstants'
 
@@ -73,7 +74,9 @@ const Container = () => (
     <Head>
       <title>About - roottool&apos;s Portfolio Site</title>
     </Head>
-    <StyledAbout />
+    <BasePageTemplate>
+      <StyledAbout />
+    </BasePageTemplate>
   </>
 )
 
