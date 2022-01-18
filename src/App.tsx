@@ -6,7 +6,7 @@ import Backdrop from '@components/atoms/Backdrop'
 import Navbar from '@components/organisms/Navbar'
 import SideDrawer from '@components/organisms/SideDrawer'
 
-import backgroundImageWebP from './images/EchoCat.webp'
+import backgroundImageWebP from '#/images/EchoCat.webp'
 
 import { ActionDispatcher } from '@/Container'
 import { AppState } from '@/module'
