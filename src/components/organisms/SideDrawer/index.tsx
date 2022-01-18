@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import styled from 'styled-components'
 
 import { MIN_TABLET_SIZE } from '@/shared/styles/StyleConstants'
@@ -18,17 +18,17 @@ const SideDrawerComponent = ({ handleClick }: SideDrawerProps) => (
       <TitleWrapper>Menu</TitleWrapper>
     </TitleAreaWrapper>
     <LinkListWrapper>
-      <LinkWrapper onClick={handleClick} to="/about">
-        About
+      <LinkWrapper href="/about">
+        <a onClick={handleClick}>About</a>
       </LinkWrapper>
-      <LinkWrapper onClick={handleClick} to="/works">
-        Works
+      <LinkWrapper href="/works">
+        <a onClick={handleClick}>Works</a>
       </LinkWrapper>
-      <LinkWrapper onClick={handleClick} to="/skills">
-        Skills
+      <LinkWrapper href="/skills">
+        <a onClick={handleClick}>Skills</a>
       </LinkWrapper>
-      <LinkWrapper onClick={handleClick} to="/hobbies">
-        Hobbies
+      <LinkWrapper href="/hobbies">
+        <a onClick={handleClick}>Hobbies</a>
       </LinkWrapper>
     </LinkListWrapper>
   </>

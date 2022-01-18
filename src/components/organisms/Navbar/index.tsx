@@ -2,7 +2,7 @@ import { AppBar, Toolbar } from '@material-ui/core'
 import { createStyles, withStyles, type WithStyles } from '@material-ui/core/styles'
 import { IconContext } from 'react-icons'
 import { MdMenu } from 'react-icons/md'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import styled from 'styled-components'
 
 import { MAX_SMARTPHONE_SIZE, MIN_TABLET_SIZE } from '@/shared/styles/StyleConstants'
@@ -22,13 +22,13 @@ const NavbarComponent = ({ classes: { root }, handleClick }: NavbarComponentProp
           <MdMenu />
         </IconContext.Provider>
       </MenuIconWrapper>
-      <TitleWrapper to="/">roottool&apos;s portfolio</TitleWrapper>
+      <TitleWrapper href="/">roottool&apos;s portfolio</TitleWrapper>
       <GrowWrapper />
       <NavigationItemsWrapper>
-        <LinkWrapper to="/about">about</LinkWrapper>
-        <LinkWrapper to="/works">Works</LinkWrapper>
-        <LinkWrapper to="/skills">Skills</LinkWrapper>
-        <LinkWrapper to="/hobbies">Hobbies</LinkWrapper>
+        <LinkWrapper href="/about">about</LinkWrapper>
+        <LinkWrapper href="/works">Works</LinkWrapper>
+        <LinkWrapper href="/skills">Skills</LinkWrapper>
+        <LinkWrapper href="/hobbies">Hobbies</LinkWrapper>
       </NavigationItemsWrapper>
     </Toolbar>
   </AppBar>
