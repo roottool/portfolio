@@ -39,10 +39,7 @@
     }
   },
   "lint-staged": {
-    "*.js|.d.ts": [
-      "yarn format"
-    ],
-    "*.(d.)?tsx?": [
+    "*.js|tsx?": [
       "yarn format",
       "yarn fix"
     ],
