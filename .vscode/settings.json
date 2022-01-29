@@ -8,6 +8,12 @@
   "editor.formatOnSaveMode": "modifications",
   "editor.tabSize": 2,
   "eslint.packageManager": "yarn",
+  "[javascript|typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact|typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[markdown]": {
     "files.trimTrailingWhitespace": false,
     "editor.wordWrap": "on",
