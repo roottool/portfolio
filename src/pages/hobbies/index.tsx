@@ -2,13 +2,15 @@ import { CircularProgress, Paper, Typography } from '@material-ui/core'
 import { createStyles, withStyles, type Theme, type WithStyles } from '@material-ui/core/styles'
 import Head from 'next/head'
 
-import PageTitleWrapper from '@components/atoms/PageTitleWrapper'
-import BasePageTemplate from '@components/templates/BasePageTemplate'
-
 import test from './OwnedGames.json'
 
+import PageTitleWrapper from '@/components/atoms/PageTitleWrapper'
 import GameInfoContents from '@/components/features/hobbies/GameInfoContents'
+import BasePageTemplate from '@/components/templates/BasePageTemplate'
 import { MIN_TABLET_SIZE } from '@/shared/styles/StyleConstants'
+
+
+
 
 interface HobbiesProps extends WithStyles<typeof styleSettings> {
   isFetching: boolean

@@ -1,17 +1,21 @@
 {
   // * For Linter and Formatter
-  "files.trimFinalNewlines": true,
-  "files.trimTrailingWhitespace": true,
-  "editor.codeActionsOnSave": ["source.fixAll.eslint"],
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": [
+    "source.addMissingImports",
+    "source.removeUnusedImports",
+    "source.fixAll.eslint"
+  ],
   "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": true,
   "editor.formatOnSaveMode": "modifications",
   "editor.tabSize": 2,
   "eslint.packageManager": "yarn",
-  "[javascript|typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascriptreact|typescriptreact]": {
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "javascript.preferences.importModuleSpecifierEnding": "minimal",
+  "typescript.preferences.importModuleSpecifierEnding": "minimal",
+  "[javascript|typescript|typescriptreact|json|markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[markdown]": {

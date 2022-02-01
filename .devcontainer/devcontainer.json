@@ -26,7 +26,6 @@
     },
     // * For Linter and Formatter
     "editor.codeActionsOnSave": [
-      "source.organizeImports",
       "source.addMissingImports",
       "source.removeUnusedImports",
       "source.fixAll.eslint"
@@ -41,10 +40,7 @@
     "files.trimTrailingWhitespace": true,
     "javascript.preferences.importModuleSpecifierEnding": "minimal",
     "typescript.preferences.importModuleSpecifierEnding": "minimal",
-    "[javascript|typescript]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[javascriptreact|typescriptreact]": {
+    "[javascript|typescript|typescriptreact|json|markdown]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[markdown]": {

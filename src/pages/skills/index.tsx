@@ -2,11 +2,11 @@ import { Card, CardContent, Grid, Typography } from '@material-ui/core'
 import { createStyles, withStyles, type WithStyles } from '@material-ui/core/styles'
 import Head from 'next/head'
 
-import BasePageTemplate from '@components/templates/BasePageTemplate'
 
 import contents from './SkillsContents.json'
 
 import PageTitleWrapper from '@/components/atoms/PageTitleWrapper'
+import BasePageTemplate from '@/components/templates/BasePageTemplate'
 
 const Skills = ({ classes }: WithStyles<typeof styleSettings>) => (
   <div>
