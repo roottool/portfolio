@@ -7,7 +7,6 @@ import contents from './WorksContents.json'
 import PageTitleWrapper from '@/components/atoms/PageTitleWrapper'
 import BasePageTemplate from '@/components/templates/BasePageTemplate'
 
-
 const Works = ({
   classes: { card, cardGrid, container, sourceLink },
 }: WithStyles<typeof styleSettings>) => (
