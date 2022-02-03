@@ -15,13 +15,23 @@ const NavbarComponent = ({ classes: { root } }: WithStyles<typeof styleSettings>
           <MdMenu />
         </IconContext.Provider>
       </MenuIconWrapper>
-      <TitleWrapper href="/">roottool&apos;s portfolio</TitleWrapper>
+      <Link passHref href="/">
+        <TitleWrapper>roottool&apos;s portfolio</TitleWrapper>
+      </Link>
       <GrowWrapper />
       <NavigationItemsWrapper>
-        <LinkWrapper href="/about">about</LinkWrapper>
-        <LinkWrapper href="/works">Works</LinkWrapper>
-        <LinkWrapper href="/skills">Skills</LinkWrapper>
-        <LinkWrapper href="/hobbies">Hobbies</LinkWrapper>
+        <Link passHref href="/about">
+          <AWrapper>about</AWrapper>
+        </Link>
+        <Link passHref href="/works">
+          <AWrapper>Works</AWrapper>
+        </Link>
+        <Link passHref href="/skills">
+          <AWrapper>Skills</AWrapper>
+        </Link>
+        <Link passHref href="/hobbies">
+          <AWrapper>Hobbies</AWrapper>
+        </Link>
       </NavigationItemsWrapper>
     </Toolbar>
   </AppBar>
@@ -44,7 +54,7 @@ const MenuIconWrapper = styled.div`
   }
 `
 
-const TitleWrapper = styled(Link)`
+const TitleWrapper = styled.a`
   color: white;
   font-size: 1.5rem;
   padding: 0 1rem;
@@ -70,12 +80,10 @@ const NavigationItemsWrapper = styled.div`
   }
 `
 
-const LinkWrapper = styled(Link)`
-  & > a {
-    color: white;
-    text-decoration: none;
-    padding: 16px 1rem;
-  }
+const AWrapper = styled.a`
+  color: white;
+  text-decoration: none;
+  padding: 16px 1rem;
 `
 
 const Navbar = () => <StyledNavbarComponent />
