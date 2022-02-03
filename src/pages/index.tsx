@@ -2,7 +2,7 @@ import Head from 'next/head'
 import styled from 'styled-components'
 
 import BasePageTemplate from '@/components/templates/BasePageTemplate'
-import { MAX_SMARTPHONE_SIZE, MIN_TABLET_SIZE } from '@/shared/styles/StyleConstants'
+import { MAX_SMARTPHONE_SIZE, MIN_TABLET_SIZE } from '@/styles/StyleConstants'
 
 const Home = () => (
   <div>

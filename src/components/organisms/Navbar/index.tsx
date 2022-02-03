@@ -5,7 +5,7 @@ import { IconContext } from 'react-icons'
 import { MdMenu } from 'react-icons/md'
 import styled from 'styled-components'
 
-import { MAX_SMARTPHONE_SIZE, MIN_TABLET_SIZE } from '@/shared/styles/StyleConstants'
+import { MAX_SMARTPHONE_SIZE, MIN_TABLET_SIZE } from '@/styles/StyleConstants'
 
 const NavbarComponent = ({ classes: { root } }: WithStyles<typeof styleSettings>) => (
   <AppBar className={root} position={'static'}>

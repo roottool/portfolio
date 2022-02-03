@@ -7,7 +7,7 @@ import { GoMarkGithub } from 'react-icons/go'
 
 import PageTitleWrapper from '@/components/atoms/PageTitleWrapper'
 import BasePageTemplate from '@/components/templates/BasePageTemplate'
-import { MIN_TABLET_SIZE } from '@/shared/styles/StyleConstants'
+import { MIN_TABLET_SIZE } from '@/styles/StyleConstants'
 
 const GITHUB_URL = 'https://github.com/roottool' as const
 const TWITTER_URL = 'https://twitter.com/roottool' as const
