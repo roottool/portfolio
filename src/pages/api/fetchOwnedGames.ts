@@ -1,26 +1,16 @@
-import axios from 'axios'
+import axios, { type AxiosResponse } from 'axios'
+import type { NextApiRequest, NextApiResponse } from 'next'
 
-interface Response {
-  body: string
-  statusCode: number
-}
+import type { OwnedGamesResponse } from '@/utils/types'
 
-exports.handler = (
-  _event: unknown,
-  _context: unknown,
-  callback: (context: null, response: Response) => void
-) => {
-  const apiKey = process.env.REACT_APP_STEAM_API_KEY
-  const steamId = process.env.REACT_APP_STEAM_USER_ID
-  const url = `https://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${apiKey}&steamid=${steamId}&include_appinfo=1`
+const API_KEY = process.env.REACT_APP_STEAM_API_KEY
+const STEAM_ID = process.env.REACT_APP_STEAM_USER_ID
+const URL = `https://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${API_KEY}&steamid=${STEAM_ID}&include_appinfo=1`
 
+const fetchOwnedGamesHandler = (_req: NextApiRequest, res: NextApiResponse) =>
   axios
-    .get(url)
-    .then((response) => {
-      callback(null, {
-        body: JSON.stringify(response.data),
-        statusCode: 200,
-      })
-    })
-    .catch((error) => callback(null, { body: String(error), statusCode: 422 }))
-}
+    .get(URL)
+    .then((response: AxiosResponse<OwnedGamesResponse>) => res.status(200).json(response.data))
+    .catch((error) => res.status(500).json(error))
+
+export default fetchOwnedGamesHandler

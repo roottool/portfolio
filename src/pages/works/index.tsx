@@ -2,10 +2,10 @@ import { Button, Card, CardActions, CardContent, Grid, Typography } from '@mater
 import { createStyles, withStyles, type WithStyles } from '@material-ui/core/styles'
 import Head from 'next/head'
 
-import contents from './WorksContents.json'
-
 import PageTitleWrapper from '@/components/atoms/PageTitleWrapper'
 import BasePageTemplate from '@/components/templates/BasePageTemplate'
+
+import contents from './WorksContents.json'
 
 const Works = ({
   classes: { card, cardGrid, container, sourceLink },

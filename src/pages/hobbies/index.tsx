@@ -1,25 +1,23 @@
 import { CircularProgress, Paper, Typography } from '@material-ui/core'
 import { createStyles, withStyles, type Theme, type WithStyles } from '@material-ui/core/styles'
 import Head from 'next/head'
+import useSwr from 'swr'
 
-import test from './OwnedGames.json'
+// import test from './OwnedGames.json'
 
 import PageTitleWrapper from '@/components/atoms/PageTitleWrapper'
 import GameInfoContents from '@/components/features/hobbies/GameInfoContents'
 import BasePageTemplate from '@/components/templates/BasePageTemplate'
 import { MIN_TABLET_SIZE } from '@/styles/StyleConstants'
+import fetcher from '@/utils/fetcher'
+import type { OwnedGame, OwnedGamesResponse } from '@/utils/types'
 
 interface HobbiesProps extends WithStyles<typeof styleSettings> {
-  isFetching: boolean
+  hasError: boolean
+  ownedGames: OwnedGame[] | undefined
 }
 
-const {
-  response: { games },
-} = test
-const { appid, img_logo_url, name, playtime_forever } = games[0]
-const props = { appid, img_logo_url, name, playtime_forever }
-
-const Hobbies = ({ classes: { paper, progress }, isFetching }: HobbiesProps) => (
+const Hobbies = ({ classes: { paper, progress }, hasError, ownedGames }: HobbiesProps) => (
   <div>
     <PageTitleWrapper>Hobbies</PageTitleWrapper>
     <Paper className={paper}>
@@ -27,14 +25,12 @@ const Hobbies = ({ classes: { paper, progress }, isFetching }: HobbiesProps) => 
         FPS かストラテジーを中心に Steam 等でゲームを購入して PC
         で遊んでいます。映画を見たりもします。
       </Typography>
-      <hr />
       <Typography variant="h6">Steam ライブラリ</Typography>
-      {isFetching && (
-        <div>
-          <CircularProgress className={progress} />
-        </div>
-      )}
-      <GameInfoContents {...props} />
+      <div>
+        {hasError && <Typography variant="subtitle1">読み込みに失敗しました</Typography>}
+        {!ownedGames && <CircularProgress className={progress} />}
+        {ownedGames && <GameInfoContents ownedGames={ownedGames} />}
+      </div>
     </Paper>
   </div>
 )
@@ -58,13 +54,15 @@ const styleSettings = (theme: Theme) =>
 const StyledHobbies = withStyles(styleSettings)(Hobbies)
 
 const Container = () => {
+  const { data, error } = useSwr<OwnedGamesResponse>('/api/fetchOwnedGames', fetcher)
+
   return (
     <>
       <Head>
         <title>Hobbies - roottool&apos;s Portfolio Site</title>
       </Head>
       <BasePageTemplate>
-        <StyledHobbies isFetching={false} />
+        <StyledHobbies hasError={!!error} ownedGames={data?.response.games} />
       </BasePageTemplate>
     </>
   )
