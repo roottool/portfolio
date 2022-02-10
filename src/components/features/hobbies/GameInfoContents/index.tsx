@@ -1,25 +1,33 @@
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
+import Image from 'next/image'
 import styled from 'styled-components'
 
-import LazyImage from '@components/atoms/lazyImage'
+import type { OwnedGame } from '@/utils/types'
 
+interface GameInfoGridProps {
+  game: OwnedGame
+}
 interface Props {
-  appid: number
-  img_logo_url: string
-  name: string
-  playtime_forever: number
+  ownedGames: OwnedGame[]
 }
 
 const STEAM_BASE_URL = 'https://store.steampowered.com'
 const APP_URL = `${STEAM_BASE_URL}/app`
 const APP_IMAGE_URL = `http://media.steampowered.com/steamcommunity/public/images/apps`
 
-const GameInfoContents = ({ appid, img_logo_url, name, playtime_forever }: Props) => (
-  <Grid container spacing={8}>
+const GameInfoGrid = ({
+  game: { appid, img_logo_url, name, playtime_forever },
+}: GameInfoGridProps) => (
+  <Grid key={appid ?? 0} container spacing={8}>
     <StyledGrid item md={4} sm={6} xs={12}>
       <a href={`${APP_URL}/${appid}/`}>
-        <LazyImage src={`${APP_IMAGE_URL}/${appid}/${img_logo_url}.jpg`} title={name} />
+        <Image
+          height="69"
+          src={`${APP_IMAGE_URL}/${appid}/${img_logo_url}.jpg`}
+          title={name}
+          width="184"
+        />
       </a>
     </StyledGrid>
     <StyledGrid item md={4} sm={6} xs={12}>
@@ -38,5 +46,13 @@ const GameInfoContents = ({ appid, img_logo_url, name, playtime_forever }: Props
 const StyledGrid = styled(Grid)`
   margin: auto;
 `
+
+const GameInfoContents = ({ ownedGames }: Props) => (
+  <>
+    {ownedGames.map(({ appid, ...game }) => (
+      <GameInfoGrid key={appid} game={{ appid, ...game }} />
+    ))}
+  </>
+)
 
 export default GameInfoContents

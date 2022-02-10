@@ -1,10 +1,11 @@
 import { Card, CardContent, Grid, Typography } from '@material-ui/core'
 import { createStyles, withStyles, type WithStyles } from '@material-ui/core/styles'
-import { Helmet } from 'react-helmet'
-
-import contents from './SkillsContents.json'
+import Head from 'next/head'
 
 import PageTitleWrapper from '@/components/atoms/PageTitleWrapper'
+import BasePageTemplate from '@/components/templates/BasePageTemplate'
+
+import contents from './SkillsContents.json'
 
 const Skills = ({ classes }: WithStyles<typeof styleSettings>) => (
   <div>
@@ -44,10 +45,12 @@ const StyledSkills = withStyles(styleSettings)(Skills)
 
 const Container = () => (
   <>
-    <Helmet>
+    <Head>
       <title>Skills - roottool&apos;s Portfolio Site</title>
-    </Helmet>
-    <StyledSkills />
+    </Head>
+    <BasePageTemplate>
+      <StyledSkills />
+    </BasePageTemplate>
   </>
 )
 

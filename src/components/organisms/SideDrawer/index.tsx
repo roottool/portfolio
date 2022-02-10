@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import styled from 'styled-components'
 
-import { MIN_TABLET_SIZE } from '@/shared/styles/StyleConstants'
+import { MIN_TABLET_SIZE } from '@/styles/StyleConstants'
 
 interface SideDrawerProps {
   handleClick: () => void
@@ -18,18 +18,18 @@ const SideDrawerComponent = ({ handleClick }: SideDrawerProps) => (
       <TitleWrapper>Menu</TitleWrapper>
     </TitleAreaWrapper>
     <LinkListWrapper>
-      <LinkWrapper onClick={handleClick} to="/about">
-        About
-      </LinkWrapper>
-      <LinkWrapper onClick={handleClick} to="/works">
-        Works
-      </LinkWrapper>
-      <LinkWrapper onClick={handleClick} to="/skills">
-        Skills
-      </LinkWrapper>
-      <LinkWrapper onClick={handleClick} to="/hobbies">
-        Hobbies
-      </LinkWrapper>
+      <AWrapper onClick={handleClick}>
+        <Link href="/about">About</Link>
+      </AWrapper>
+      <AWrapper onClick={handleClick}>
+        <Link href="/works">Works</Link>
+      </AWrapper>
+      <AWrapper onClick={handleClick}>
+        <Link href="/skills">Skills</Link>
+      </AWrapper>
+      <AWrapper onClick={handleClick}>
+        <Link href="/hobbies">Hobbies</Link>
+      </AWrapper>
     </LinkListWrapper>
   </>
 )
@@ -77,7 +77,7 @@ const LinkListWrapper = styled.div`
   justify-content: center;
 `
 
-const LinkWrapper = styled(Link)`
+const AWrapper = styled.a`
   display: block;
   padding: 1rem 0;
   padding-left: 1rem;

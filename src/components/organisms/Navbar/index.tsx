@@ -1,34 +1,37 @@
 import { AppBar, Toolbar } from '@material-ui/core'
 import { createStyles, withStyles, type WithStyles } from '@material-ui/core/styles'
+import Link from 'next/link'
 import { IconContext } from 'react-icons'
 import { MdMenu } from 'react-icons/md'
-import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-import { MAX_SMARTPHONE_SIZE, MIN_TABLET_SIZE } from '@/shared/styles/StyleConstants'
+import { MAX_SMARTPHONE_SIZE, MIN_TABLET_SIZE } from '@/styles/StyleConstants'
 
-interface Props {
-  drawToggleClickHandler: () => void
-}
-interface NavbarComponentProps extends WithStyles<typeof styleSettings> {
-  handleClick: Props['drawToggleClickHandler']
-}
-
-const NavbarComponent = ({ classes: { root }, handleClick }: NavbarComponentProps) => (
+const NavbarComponent = ({ classes: { root } }: WithStyles<typeof styleSettings>) => (
   <AppBar className={root} position={'static'}>
     <Toolbar>
-      <MenuIconWrapper onClick={handleClick}>
+      <MenuIconWrapper>
         <IconContext.Provider value={{ color: 'white', size: '1.5em' }}>
           <MdMenu />
         </IconContext.Provider>
       </MenuIconWrapper>
-      <TitleWrapper to="/">roottool&apos;s portfolio</TitleWrapper>
+      <Link passHref href="/">
+        <TitleWrapper>roottool&apos;s portfolio</TitleWrapper>
+      </Link>
       <GrowWrapper />
       <NavigationItemsWrapper>
-        <LinkWrapper to="/about">about</LinkWrapper>
-        <LinkWrapper to="/works">Works</LinkWrapper>
-        <LinkWrapper to="/skills">Skills</LinkWrapper>
-        <LinkWrapper to="/hobbies">Hobbies</LinkWrapper>
+        <Link passHref href="/about">
+          <AWrapper>about</AWrapper>
+        </Link>
+        <Link passHref href="/works">
+          <AWrapper>Works</AWrapper>
+        </Link>
+        <Link passHref href="/skills">
+          <AWrapper>Skills</AWrapper>
+        </Link>
+        <Link passHref href="/hobbies">
+          <AWrapper>Hobbies</AWrapper>
+        </Link>
       </NavigationItemsWrapper>
     </Toolbar>
   </AppBar>
@@ -51,7 +54,7 @@ const MenuIconWrapper = styled.div`
   }
 `
 
-const TitleWrapper = styled(Link)`
+const TitleWrapper = styled.a`
   color: white;
   font-size: 1.5rem;
   padding: 0 1rem;
@@ -77,14 +80,12 @@ const NavigationItemsWrapper = styled.div`
   }
 `
 
-const LinkWrapper = styled(Link)`
+const AWrapper = styled.a`
   color: white;
   text-decoration: none;
   padding: 16px 1rem;
 `
 
-const Navbar = ({ drawToggleClickHandler }: Props) => (
-  <StyledNavbarComponent handleClick={drawToggleClickHandler} />
-)
+const Navbar = () => <StyledNavbarComponent />
 
 export default Navbar
