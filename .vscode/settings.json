@@ -1,4 +1,5 @@
 {
+  "terminal.integrated.defaultProfile.linux": "zsh",
   // * For Linter and Formatter
   "editor.codeActionsOnSave": [
     "source.addMissingImports",
