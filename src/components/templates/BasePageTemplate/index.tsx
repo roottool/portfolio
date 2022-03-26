@@ -7,10 +7,10 @@ interface Props {
 }
 
 const BasePageTemplate = ({ children }: Props) => (
-  <div className="App">
+  <>
     <Navbar />
     <main>{children}</main>
-  </div>
+  </>
 )
 
 export default BasePageTemplate

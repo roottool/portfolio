@@ -75,8 +75,8 @@
     ],
     "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
-    "sort-keys-fix/sort-keys-fix": "warn",
-    "sort-destructure-keys/sort-destructure-keys": "warn",
+    // "sort-keys-fix/sort-keys-fix": "warn",
+    // "sort-destructure-keys/sort-destructure-keys": "warn",
     "typescript-sort-keys/interface": "warn",
     "typescript-sort-keys/string-enum": "warn"
   }

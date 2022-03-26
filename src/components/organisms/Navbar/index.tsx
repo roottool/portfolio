@@ -1,91 +1,75 @@
-import { AppBar, Toolbar } from '@material-ui/core'
-import { createStyles, withStyles, type WithStyles } from '@material-ui/core/styles'
+import { AppBar, Toolbar, createTheme } from '@material-ui/core'
+import { ThemeProvider } from '@material-ui/styles'
 import Link from 'next/link'
-import { IconContext } from 'react-icons'
-import { MdMenu } from 'react-icons/md'
-import styled from 'styled-components'
 
-import { MAX_SMARTPHONE_SIZE, MIN_TABLET_SIZE } from '@/styles/StyleConstants'
+import { styled } from '@/styles/StyleConstants'
 
-const NavbarComponent = ({ classes: { root } }: WithStyles<typeof styleSettings>) => (
-  <AppBar className={root} position={'static'}>
-    <Toolbar>
-      <MenuIconWrapper>
-        <IconContext.Provider value={{ color: 'white', size: '1.5em' }}>
-          <MdMenu />
-        </IconContext.Provider>
-      </MenuIconWrapper>
-      <Link passHref href="/">
-        <TitleWrapper>roottool&apos;s portfolio</TitleWrapper>
-      </Link>
-      <GrowWrapper />
-      <NavigationItemsWrapper>
-        <Link passHref href="/about">
-          <AWrapper>about</AWrapper>
+const NavbarComponent = () => (
+  <ThemeProvider theme={theme}>
+    <AppBar>
+      <Toolbar>
+        <Link passHref href="/">
+          <TitleWrapper>roottool&apos;s portfolio</TitleWrapper>
         </Link>
-        <Link passHref href="/works">
-          <AWrapper>Works</AWrapper>
-        </Link>
-        <Link passHref href="/skills">
-          <AWrapper>Skills</AWrapper>
-        </Link>
-        <Link passHref href="/hobbies">
-          <AWrapper>Hobbies</AWrapper>
-        </Link>
-      </NavigationItemsWrapper>
-    </Toolbar>
-  </AppBar>
+        <GrowWrapper />
+        <NavigationItemsWrapper>
+          <Link passHref href="/about">
+            <AWrapper>about</AWrapper>
+          </Link>
+          <Link passHref href="/works">
+            <AWrapper>Works</AWrapper>
+          </Link>
+          <Link passHref href="/skills">
+            <AWrapper>Skills</AWrapper>
+          </Link>
+          <Link passHref href="/hobbies">
+            <AWrapper>Hobbies</AWrapper>
+          </Link>
+        </NavigationItemsWrapper>
+      </Toolbar>
+    </AppBar>
+  </ThemeProvider>
 )
 
-const styleSettings = () =>
-  createStyles({
-    grow: {
-      flex: 1,
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#df4848',
     },
-    root: {
-      background: '#df4848',
-    },
-  })
-const StyledNavbarComponent = withStyles(styleSettings)(NavbarComponent)
+  },
+})
 
-const MenuIconWrapper = styled.div`
-  @media (min-width: ${MIN_TABLET_SIZE}px) {
-    display: none;
-  }
-`
+const TitleWrapper = styled('a', {
+  color: 'white',
+  fontSize: '1.5rem',
+  padding: '0 1rem',
+  textDecoration: 'none',
+  '@bp2': {
+    padding: '0 0rem',
+  },
+})
 
-const TitleWrapper = styled.a`
-  color: white;
-  font-size: 1.5rem;
-  padding: 0 1rem;
-  text-decoration: none;
-  @media (min-width: ${MIN_TABLET_SIZE}px) {
-    padding: 0 0rem;
-  }
-`
+const GrowWrapper = styled('div', {
+  flex: 1,
+})
 
-const GrowWrapper = styled.div`
-  flex: 1;
-`
+const NavigationItemsWrapper = styled('div', {
+  display: 'flex',
+  height: '100%',
+  listStyle: 'none',
+  margin: 0,
+  padding: 0,
+  '@bp2': {
+    display: 'none',
+  },
+})
 
-const NavigationItemsWrapper = styled.div`
-  height: 100%;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
+const AWrapper = styled('a', {
+  color: 'white',
+  padding: '16px 1rem',
+  textDecoration: 'none',
+})
 
-  @media (max-width: ${MAX_SMARTPHONE_SIZE}px) {
-    display: none;
-  }
-`
-
-const AWrapper = styled.a`
-  color: white;
-  text-decoration: none;
-  padding: 16px 1rem;
-`
-
-const Navbar = () => <StyledNavbarComponent />
+const Navbar = () => <NavbarComponent />
 
 export default Navbar
