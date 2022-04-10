@@ -44,9 +44,7 @@
     "import/resolver": {
       "typescript": {
         "alwaysTryTypes": true,
-        "project": [
-          "tsconfig.dev.json"
-        ]
+        "project": ["tsconfig.dev.json"]
       }
     },
     "react": {
