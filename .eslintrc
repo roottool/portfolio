@@ -23,7 +23,8 @@
     "react-hooks",
     "sort-keys-fix",
     "sort-destructure-keys",
-    "typescript-sort-keys"
+    "typescript-sort-keys",
+    "unused-imports"
   ],
   "extends": [
     "eslint:recommended",
