@@ -52,6 +52,7 @@
     }
   },
   "rules": {
+    "@typescript-eslint/no-unused-vars": "off",
     "import/order": [
       "warn",
       {
@@ -78,6 +79,16 @@
     "sort-keys-fix/sort-keys-fix": "warn",
     "sort-destructure-keys/sort-destructure-keys": "warn",
     "typescript-sort-keys/interface": "warn",
-    "typescript-sort-keys/string-enum": "warn"
+    "typescript-sort-keys/string-enum": "warn",
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "varsIgnorePattern": "^_",
+        "args": "after-used",
+        "argsIgnorePattern": "^_"
+      }
+    ],
   }
 }
