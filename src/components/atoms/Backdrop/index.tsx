@@ -4,9 +4,7 @@ interface Props {
   backdropClickHandler(): void
 }
 
-const Backdrop = ({ backdropClickHandler }: Props) => (
-  <StyledDiv aria-hidden="true" onClick={backdropClickHandler} />
-)
+const Backdrop = ({ backdropClickHandler }: Props) => <StyledDiv aria-hidden="true" onClick={backdropClickHandler} />
 
 const StyledDiv = styled('div', {
   backgroundColor: 'rgba(0, 0, 0, 0.3)',
