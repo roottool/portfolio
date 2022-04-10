@@ -8,7 +8,7 @@
   "root": true,
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "ecmaVersion": 12,
+    "ecmaVersion": "latest",
     "ecmaFeatures": {
       "jsx": true
     },
@@ -44,7 +44,9 @@
     "import/resolver": {
       "typescript": {
         "alwaysTryTypes": true,
-        "project": ["tsconfig.json", "tsconfig.dev.json"]
+        "project": [
+          "tsconfig.dev.json"
+        ]
       }
     },
     "react": {
@@ -89,6 +91,6 @@
         "args": "after-used",
         "argsIgnorePattern": "^_"
       }
-    ],
+    ]
   }
 }

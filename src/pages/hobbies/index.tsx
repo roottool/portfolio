@@ -22,8 +22,7 @@ const Hobbies = ({ classes: { paper, progress }, hasError, ownedGames }: Hobbies
     <PageTitleWrapper>Hobbies</PageTitleWrapper>
     <Paper className={paper}>
       <Typography gutterBottom variant="subtitle1">
-        FPS かストラテジーを中心に Steam 等でゲームを購入して PC
-        で遊んでいます。映画を見たりもします。
+        FPS かストラテジーを中心に Steam 等でゲームを購入して PC で遊んでいます。映画を見たりもします。
       </Typography>
       <Typography variant="h6">Steam ライブラリ</Typography>
       <div>
