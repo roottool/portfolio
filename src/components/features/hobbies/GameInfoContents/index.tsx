@@ -16,18 +16,11 @@ const STEAM_BASE_URL = 'https://store.steampowered.com'
 const APP_URL = `${STEAM_BASE_URL}/app`
 const APP_IMAGE_URL = `http://media.steampowered.com/steamcommunity/public/images/apps`
 
-const GameInfoGrid = ({
-  game: { appid, img_logo_url, name, playtime_forever },
-}: GameInfoGridProps) => (
+const GameInfoGrid = ({ game: { appid, img_logo_url, name, playtime_forever } }: GameInfoGridProps) => (
   <Grid key={appid ?? 0} container spacing={8}>
     <StyleGrid md={4} sm={6} xs={12}>
       <a href={`${APP_URL}/${appid}/`}>
-        <Image
-          height="69"
-          src={`${APP_IMAGE_URL}/${appid}/${img_logo_url}.jpg`}
-          title={name}
-          width="184"
-        />
+        <Image height="69" src={`${APP_IMAGE_URL}/${appid}/${img_logo_url}.jpg`} title={name} width="184" />
       </a>
     </StyleGrid>
     <StyleGrid md={4} sm={6} xs={12}>

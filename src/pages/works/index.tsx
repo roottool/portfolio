@@ -7,9 +7,7 @@ import BasePageTemplate from '@/components/templates/BasePageTemplate'
 
 import contents from './WorksContents.json'
 
-const Works = ({
-  classes: { card, cardGrid, container, sourceLink },
-}: WithStyles<typeof styleSettings>) => (
+const Works = ({ classes: { card, cardGrid, container, sourceLink } }: WithStyles<typeof styleSettings>) => (
   <div>
     <PageTitleWrapper>Works</PageTitleWrapper>
     <Grid container className={container}>
