@@ -25,11 +25,7 @@
       "**/node_modules/**": true
     },
     // * For Linter and Formatter
-    "editor.codeActionsOnSave": [
-      "source.addMissingImports",
-      "source.removeUnusedImports",
-      "source.fixAll.eslint"
-    ],
+    "editor.codeActionsOnSave": ["source.addMissingImports", "source.removeUnusedImports", "source.fixAll.eslint"],
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true,
     "editor.formatOnType": true,

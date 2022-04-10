@@ -4,9 +4,7 @@ interface Props {
   backdropClickHandler(): void
 }
 
-const Backdrop = ({ backdropClickHandler }: Props) => (
-  <div aria-hidden="true" onClick={backdropClickHandler} />
-)
+const Backdrop = ({ backdropClickHandler }: Props) => <div aria-hidden="true" onClick={backdropClickHandler} />
 
 const BackdropWrapper = styled(Backdrop)`
   position: fixed;
