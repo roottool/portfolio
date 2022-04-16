@@ -22,6 +22,6 @@
       "$/*": ["public/*"]
     }
   },
-  "include": ["src", "*.config.js", "next-env.d.ts"],
-  "exclude": ["node_modules"]
+  "include": ["src", ".eslintrc.js", ".prettierrc.js", "*.config.js", "next-env.d.ts"],
+  "exclude": [".next", "node_modules"]
 }

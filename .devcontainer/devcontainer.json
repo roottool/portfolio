@@ -36,7 +36,7 @@
     "files.trimTrailingWhitespace": true,
     "javascript.preferences.importModuleSpecifierEnding": "minimal",
     "typescript.preferences.importModuleSpecifierEnding": "minimal",
-    "[javascript|typescript|typescriptreact|json|markdown]": {
+    "[javascript|typescript|typescriptreact|json|jsonc|markdown]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[markdown]": {

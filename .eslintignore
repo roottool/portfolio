@@ -1,5 +1,11 @@
-.next/
-node_module/
-public/
+# dependencies
+node_modules/
 
-*.d.ts
+# testing
+coverage/
+
+# build
+.next/
+
+# assets
+public/
