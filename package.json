@@ -18,36 +18,28 @@
   },
   "scripts": {
     "prepare": "husky install",
+    "clean": "rimraf .next",
     "dev": "next dev",
-    "build": "run-p build:*",
+    "build": "npm-run-all clean --parallel build:*",
     "build:next": "next build",
     "start": "next start",
-    "lint": "run-p -c lint:*",
+    "lint": "run-s -c lint:*",
     "lint:eslint": "eslint . --color --ext .js,.ts,.tsx",
     "lint:prettier": "prettier --check .",
     "fix": "run-p -c fix:*",
     "fix:eslint": "eslint . --fix --color --ext .js,.ts,.tsx",
     "format": "prettier --write .",
-    "test": "run-p test:*",
+    "test": "run-s test:*",
     "test:jest": "echo \"Write tests!\"",
-    "test:check-types": "tsc --noEmit"
-  },
-  "importSort": {
-    ".js, .ts, .tsx": {
-      "style": "module",
-      "parser": "typescript"
-    }
+    "test:type-check": "tsc --noEmit"
   },
   "lint-staged": {
     "*.js|tsx?": [
-      "yarn format",
-      "yarn fix"
+      "prettier --write",
+      "eslint --fix --color"
     ],
     "*.json|md": [
-      "yarn format"
-    ],
-    ".eslint|prettierrc": [
-      "yarn format"
+      "prettier --write"
     ]
   },
   "dependencies": {
@@ -82,15 +74,14 @@
     "eslint-plugin-react": "^7.27.1",
     "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-plugin-sort-destructure-keys": "^1.4.0",
-    "eslint-plugin-sort-keys-fix": "^1.1.1",
     "eslint-plugin-typescript-sort-keys": "^2.0.0",
     "eslint-plugin-unused-imports": "^2.0.0",
     "husky": "^7.0.4",
-    "import-sort-style-module": "^6.0.0",
     "lint-staged": "^12.0.3",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.5.1",
     "redux-devtools-extension": "^2.13.9",
+    "rimraf": "^3.0.2",
     "typescript": "^4.5.2"
   }
 }
