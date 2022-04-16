@@ -1,18 +1,43 @@
-const parser = {
+// @ts-check
+
+/** @type {import('eslint/lib/shared/types').ConfigData} */
+const config = {
+  root: true,
+  env: {
+    browser: true,
+    node: true,
+    es6: true,
+    jest: true,
+  },
+  plugins: [
+    '@typescript-eslint',
+    'import',
+    'react',
+    'react-hooks',
+    'sort-destructure-keys',
+    'typescript-sort-keys',
+    'unused-imports',
+  ],
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:jsx-a11y/recommended',
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    'plugin:@next/next/core-web-vitals',
+    'plugin:typescript-sort-keys/recommended',
+    'plugin:import/recommended',
+    'plugin:import/typescript',
+    'prettier',
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaVersion: 'latest',
+    ecmaVersion: 2022,
     ecmaFeatures: {
       jsx: true,
     },
-    project: ['tsconfig.json'],
     sourceType: 'module',
-    tsconfigRootDir: '.',
   },
-}
-
-/** @type {import('eslint/lib/shared/types').ConfigData.['settings']} */
-const settings = {
   settings: {
     'import/extensions': ['.js', '.ts', '.tsx'],
     'import/parsers': {
@@ -28,10 +53,6 @@ const settings = {
       version: 'detect',
     },
   },
-}
-
-/** @type {import('eslint/lib/shared/types').ConfigData['rules']} */
-const rules = {
   rules: {
     '@typescript-eslint/no-unused-vars': 'off',
     'import/order': [
@@ -75,41 +96,6 @@ const rules = {
       },
     ],
   },
-}
-
-/** @type {import('eslint/lib/shared/types').ConfigData} */
-const config = {
-  ...parser,
-  ...settings,
-  ...rules,
-  root: true,
-  env: {
-    browser: true,
-    node: true,
-    es6: true,
-    jest: true,
-  },
-  plugins: [
-    '@typescript-eslint',
-    'import',
-    'react',
-    'react-hooks',
-    'sort-destructure-keys',
-    'typescript-sort-keys',
-    'unused-imports',
-  ],
-  extends: [
-    'eslint:recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:jsx-a11y/recommended',
-    'plugin:react/recommended',
-    'plugin:react-hooks/recommended',
-    'plugin:@next/next/core-web-vitals',
-    'plugin:typescript-sort-keys/recommended',
-    'plugin:import/recommended',
-    'plugin:import/typescript',
-    'prettier',
-  ],
 }
 
 module.exports = config
