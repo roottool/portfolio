@@ -2,6 +2,9 @@ import { globalCss } from '@stitches/react'
 import type { AppProps } from 'next/app'
 
 const globalStyles = globalCss({
+  html: {
+    height: '100%',
+  },
   body: {
     backgroundAttachment: 'fixed',
     backgroundImage: 'url(/images/EchoCat.webp)',
@@ -11,12 +14,13 @@ const globalStyles = globalCss({
     fontFamily: 'sans-serif',
     margin: 0,
     padding: 0,
-  },
-  html: {
-    height: '100%',
+    overflow: 'hidden',
   },
   main: {
-    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    height: '100vh',
+    overflow: 'auto',
     textAlign: 'center',
   },
 })

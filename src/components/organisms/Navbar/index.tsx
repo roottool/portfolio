@@ -1,52 +1,47 @@
-import { AppBar, Toolbar, createTheme } from '@material-ui/core'
-import { ThemeProvider } from '@material-ui/styles'
+// import * as Toolbar from '@radix-ui/react-toolbar'
+// import { createTheme } from '@stitches/react'
+import { Root as ToolbarRoot, Link as ToolbarLink } from '@radix-ui/react-toolbar'
 import Link from 'next/link'
 
 import { styled } from '@/styles/StyleConstants'
 
 const NavbarComponent = () => (
-  <ThemeProvider theme={theme}>
-    <AppBar>
-      <Toolbar>
-        <Link passHref href="/">
-          <TitleWrapper>roottool&apos;s portfolio</TitleWrapper>
-        </Link>
-        <GrowWrapper />
-        <NavigationItemsWrapper>
-          <Link passHref href="/about">
-            <AWrapper>about</AWrapper>
-          </Link>
-          <Link passHref href="/works">
-            <AWrapper>Works</AWrapper>
-          </Link>
-          <Link passHref href="/skills">
-            <AWrapper>Skills</AWrapper>
-          </Link>
-          <Link passHref href="/hobbies">
-            <AWrapper>Hobbies</AWrapper>
-          </Link>
-        </NavigationItemsWrapper>
-      </Toolbar>
-    </AppBar>
-  </ThemeProvider>
+  <StyledToolbarRoot>
+    <Link passHref href="/">
+      <StyledToolbarLink>roottool&apos;s portfolio</StyledToolbarLink>
+    </Link>
+    <GrowWrapper />
+    <NavigationItemsWrapper>
+      <Link passHref href="/about">
+        <StyledToolbarLink>about</StyledToolbarLink>
+      </Link>
+      <Link passHref href="/works">
+        <StyledToolbarLink>Works</StyledToolbarLink>
+      </Link>
+      <Link passHref href="/skills">
+        <StyledToolbarLink>Skills</StyledToolbarLink>
+      </Link>
+      <Link passHref href="/hobbies">
+        <StyledToolbarLink>Hobbies</StyledToolbarLink>
+      </Link>
+    </NavigationItemsWrapper>
+  </StyledToolbarRoot>
 )
 
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#df4848',
-    },
-  },
+const StyledToolbarRoot = styled(ToolbarRoot, {
+  display: 'flex',
+  alignItems: 'center',
+  backgroundColor: '#df4848',
+  fontSize: '1rem',
+  fontWeight: 'bold',
+  padding: '0 0.5rem',
+  textDecoration: 'none',
 })
 
-const TitleWrapper = styled('a', {
+const StyledToolbarLink = styled(ToolbarLink, {
   color: 'white',
-  fontSize: '1.5rem',
-  padding: '0 1rem',
+  padding: '1rem 0.5rem',
   textDecoration: 'none',
-  '@bp2': {
-    padding: '0 0rem',
-  },
 })
 
 const GrowWrapper = styled('div', {
@@ -55,19 +50,11 @@ const GrowWrapper = styled('div', {
 
 const NavigationItemsWrapper = styled('div', {
   display: 'flex',
-  height: '100%',
-  listStyle: 'none',
-  margin: 0,
-  padding: 0,
+  alignItems: 'center',
+  gap: '0.5rem',
   '@bp2': {
-    display: 'none',
+    opacity: 0,
   },
-})
-
-const AWrapper = styled('a', {
-  color: 'white',
-  padding: '16px 1rem',
-  textDecoration: 'none',
 })
 
 const Navbar = () => <NavbarComponent />
