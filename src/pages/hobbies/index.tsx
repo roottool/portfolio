@@ -18,7 +18,7 @@ interface HobbiesProps extends WithStyles<typeof styleSettings> {
 }
 
 const Hobbies = ({ classes: { paper, progress }, hasError, ownedGames }: HobbiesProps) => (
-  <>
+  <BasePageTemplate>
     <PageTitleWrapper>Hobbies</PageTitleWrapper>
     <Paper className={paper}>
       <Typography gutterBottom variant="subtitle1">
@@ -31,7 +31,7 @@ const Hobbies = ({ classes: { paper, progress }, hasError, ownedGames }: Hobbies
         {ownedGames && <GameInfoContents ownedGames={ownedGames} />}
       </StyledList>
     </Paper>
-  </>
+  </BasePageTemplate>
 )
 
 const styleSettings = (theme: Theme) =>
@@ -70,9 +70,7 @@ const Container = () => {
       <Head>
         <title>Hobbies - roottool&apos;s Portfolio Site</title>
       </Head>
-      <BasePageTemplate>
-        <StyledHobbies hasError={!!error} ownedGames={data?.response.games} />
-      </BasePageTemplate>
+      <StyledHobbies hasError={!!error} ownedGames={data?.response.games} />
     </>
   )
 }
