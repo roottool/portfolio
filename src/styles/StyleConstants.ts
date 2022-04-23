@@ -5,6 +5,6 @@ export const MIN_TABLET_SIZE = 769
 
 export const { css, styled } = createStitches({
   media: {
-    bp2: '(max-width: 769px)',
+    bp2: '(max-width: 767.98px)',
   },
 })
