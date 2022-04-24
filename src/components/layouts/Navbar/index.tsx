@@ -8,7 +8,7 @@ import { styled } from '@/styles/StyleConstants'
 const NavbarComponent = () => (
   <StyledToolbarRoot>
     <Link passHref href="/">
-      <StyledToolbarLink>roottool&apos;s portfolio</StyledToolbarLink>
+      <DisplayLinkOnDesktop>roottool&apos;s portfolio</DisplayLinkOnDesktop>
     </Link>
     <GrowWrapper />
     <NavigationItemsWrapper>
@@ -17,6 +17,9 @@ const NavbarComponent = () => (
       </Link>
       <Link passHref href="/works">
         <StyledToolbarLink>Works</StyledToolbarLink>
+      </Link>
+      <Link passHref href="/">
+        <DisplayLinkExcludeDesktop>Home</DisplayLinkExcludeDesktop>
       </Link>
       <Link passHref href="/skills">
         <StyledToolbarLink>Skills</StyledToolbarLink>
@@ -36,6 +39,9 @@ const StyledToolbarRoot = styled(ToolbarRoot, {
   fontWeight: 'bold',
   padding: '0 0.5rem',
   textDecoration: 'none',
+  '@bp2': {
+    display: 'block',
+  },
 })
 
 const StyledToolbarLink = styled(ToolbarLink, {
@@ -44,17 +50,32 @@ const StyledToolbarLink = styled(ToolbarLink, {
   textDecoration: 'none',
 })
 
+const DisplayLinkOnDesktop = styled(StyledToolbarLink, {
+  display: 'block',
+  '@bp2': {
+    display: 'none',
+  },
+})
+
+const DisplayLinkExcludeDesktop = styled(StyledToolbarLink, {
+  display: 'none',
+  '@bp2': {
+    display: 'block',
+  },
+})
+
 const GrowWrapper = styled('div', {
+  display: 'block',
   flex: 1,
+  '@bp2': {
+    display: 'none',
+  },
 })
 
 const NavigationItemsWrapper = styled('div', {
   display: 'flex',
   alignItems: 'center',
-  gap: '0.5rem',
-  '@bp2': {
-    display: 'none',
-  },
+  justifyContent: 'space-between',
 })
 
 const Navbar = () => <NavbarComponent />
