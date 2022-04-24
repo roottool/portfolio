@@ -8,7 +8,7 @@ import BasePageTemplate from '@/components/templates/BasePageTemplate'
 import contents from './WorksContents.json'
 
 const Works = ({ classes: { card, cardGrid, container, sourceLink } }: WithStyles<typeof styleSettings>) => (
-  <>
+  <BasePageTemplate>
     <PageTitleWrapper>Works</PageTitleWrapper>
     <Grid container className={container}>
       {contents.map((item, key) => (
@@ -33,7 +33,7 @@ const Works = ({ classes: { card, cardGrid, container, sourceLink } }: WithStyle
         </Grid>
       ))}
     </Grid>
-  </>
+  </BasePageTemplate>
 )
 
 const styleSettings = () =>
@@ -60,9 +60,7 @@ const Container = () => (
     <Head>
       <title>Works - roottool&apos;s Portfolio Site</title>
     </Head>
-    <BasePageTemplate>
-      <StyledWorks />
-    </BasePageTemplate>
+    <StyledWorks />
   </>
 )
 

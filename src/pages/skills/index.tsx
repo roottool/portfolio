@@ -8,7 +8,7 @@ import BasePageTemplate from '@/components/templates/BasePageTemplate'
 import contents from './SkillsContents.json'
 
 const Skills = ({ classes }: WithStyles<typeof styleSettings>) => (
-  <>
+  <BasePageTemplate>
     <PageTitleWrapper>Skills</PageTitleWrapper>
     <Grid container className={classes.container}>
       {contents.map((item, key) => (
@@ -24,7 +24,7 @@ const Skills = ({ classes }: WithStyles<typeof styleSettings>) => (
         </Grid>
       ))}
     </Grid>
-  </>
+  </BasePageTemplate>
 )
 
 const styleSettings = () =>
@@ -48,9 +48,7 @@ const Container = () => (
     <Head>
       <title>Skills - roottool&apos;s Portfolio Site</title>
     </Head>
-    <BasePageTemplate>
-      <StyledSkills />
-    </BasePageTemplate>
+    <StyledSkills />
   </>
 )
 

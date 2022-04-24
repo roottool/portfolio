@@ -4,11 +4,11 @@ import BasePageTemplate from '@/components/templates/BasePageTemplate'
 import { styled } from '@/styles/StyleConstants'
 
 const Home = () => (
-  <>
+  <BasePageTemplate>
     <TopPageTitleWrapper>Welcome to roottool&apos;s portfolio site!</TopPageTitleWrapper>
     <p>&quot;Why do it yourself when robots do it better?&quot;</p>
     <p>- echo -</p>
-  </>
+  </BasePageTemplate>
 )
 
 const TopPageTitleWrapper = styled('h1', {
@@ -25,9 +25,7 @@ const Container = () => (
     <Head>
       <title>roottool&apos;s Portfolio Site</title>
     </Head>
-    <BasePageTemplate>
-      <Home />
-    </BasePageTemplate>
+    <Home />
   </>
 )
 
