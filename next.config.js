@@ -12,7 +12,7 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
-    domains: ['media.steampowered.com'],
+    domains: ['cdn.cloudflare.steamstatic.com'],
   },
   reactStrictMode: true,
   typescript: {
