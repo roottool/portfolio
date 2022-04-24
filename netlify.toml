@@ -1,6 +1,6 @@
 [build]
-command = "next build"
-publish = ".next"
+  command = "next build"
+  publish = ".next"
 
 [context.deploy-preview]
   publish = .next"
