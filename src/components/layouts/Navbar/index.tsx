@@ -53,7 +53,7 @@ const NavigationItemsWrapper = styled('div', {
   alignItems: 'center',
   gap: '0.5rem',
   '@bp2': {
-    opacity: 0,
+    display: 'none',
   },
 })
 
