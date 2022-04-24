@@ -1,37 +1,31 @@
 import Head from 'next/head'
-import styled from 'styled-components'
 
 import BasePageTemplate from '@/components/templates/BasePageTemplate'
-import { MAX_SMARTPHONE_SIZE, MIN_TABLET_SIZE } from '@/styles/StyleConstants'
+import { styled } from '@/styles/StyleConstants'
 
 const Home = () => (
-  <div>
-    <TopPageTitleWrapper>Welcome to roottool&apos;s portfolio site!</TopPageTitleWrapper>
+  <BasePageTemplate>
+    <TopPageTitleWrapper>Welcome to roottool&apos;s portfolio!</TopPageTitleWrapper>
     <p>&quot;Why do it yourself when robots do it better?&quot;</p>
     <p>- echo -</p>
-  </div>
+  </BasePageTemplate>
 )
 
-const TopPageTitleWrapper = styled.h1`
-  @media (max-width: ${MAX_SMARTPHONE_SIZE}px) {
-    font-size: 2rem;
-    margin-top: 20vh;
-  }
-
-  @media (min-width: ${MIN_TABLET_SIZE}px) {
-    font-size: 3.5rem;
-    margin-top: 40vh;
-  }
-`
+const TopPageTitleWrapper = styled('h1', {
+  fontSize: '3.5rem',
+  marginTop: '40vh',
+  '@bp2': {
+    fontSize: '2rem',
+    marginTop: '20vh',
+  },
+})
 
 const Container = () => (
   <>
     <Head>
       <title>roottool&apos;s Portfolio Site</title>
     </Head>
-    <BasePageTemplate>
-      <Home />
-    </BasePageTemplate>
+    <Home />
   </>
 )
 

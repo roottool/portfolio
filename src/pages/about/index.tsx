@@ -13,7 +13,7 @@ const GITHUB_URL = 'https://github.com/roottool' as const
 const TWITTER_URL = 'https://twitter.com/roottool' as const
 
 const About = ({ classes: { card, contents } }: WithStyles<typeof styleSettings>) => (
-  <div>
+  <BasePageTemplate>
     <PageTitleWrapper>About</PageTitleWrapper>
     <Card className={card}>
       <CardContent>
@@ -47,7 +47,7 @@ const About = ({ classes: { card, contents } }: WithStyles<typeof styleSettings>
         </Grid>
       </CardContent>
     </Card>
-  </div>
+  </BasePageTemplate>
 )
 
 const styleSettings = (theme: Theme) =>
@@ -73,9 +73,7 @@ const Container = () => (
     <Head>
       <title>About - roottool&apos;s Portfolio Site</title>
     </Head>
-    <BasePageTemplate>
-      <StyledAbout />
-    </BasePageTemplate>
+    <StyledAbout />
   </>
 )
 

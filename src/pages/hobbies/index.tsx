@@ -8,7 +8,7 @@ import useSwr from 'swr'
 import PageTitleWrapper from '@/components/atoms/PageTitleWrapper'
 import GameInfoContents from '@/components/features/hobbies/GameInfoContents'
 import BasePageTemplate from '@/components/templates/BasePageTemplate'
-import { MIN_TABLET_SIZE } from '@/styles/StyleConstants'
+import { MIN_TABLET_SIZE, styled } from '@/styles/StyleConstants'
 import fetcher from '@/utils/fetcher'
 import type { OwnedGame, OwnedGamesResponse } from '@/utils/types'
 
@@ -18,27 +18,31 @@ interface HobbiesProps extends WithStyles<typeof styleSettings> {
 }
 
 const Hobbies = ({ classes: { paper, progress }, hasError, ownedGames }: HobbiesProps) => (
-  <div>
+  <BasePageTemplate>
     <PageTitleWrapper>Hobbies</PageTitleWrapper>
     <Paper className={paper}>
       <Typography gutterBottom variant="subtitle1">
         FPS かストラテジーを中心に Steam 等でゲームを購入して PC で遊んでいます。映画を見たりもします。
       </Typography>
       <Typography variant="h6">Steam ライブラリ</Typography>
-      <div>
+      <StyledList>
         {hasError && <Typography variant="subtitle1">読み込みに失敗しました</Typography>}
         {!ownedGames && <CircularProgress className={progress} />}
         {ownedGames && <GameInfoContents ownedGames={ownedGames} />}
-      </div>
+      </StyledList>
     </Paper>
-  </div>
+  </BasePageTemplate>
 )
 
 const styleSettings = (theme: Theme) =>
   createStyles({
     paper: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      height: '70%',
+      gap: '1rem',
       margin: '5vh auto',
-      overflowX: 'auto',
       [theme.breakpoints.down(MIN_TABLET_SIZE)]: {
         width: '90%',
       },
@@ -52,6 +56,12 @@ const styleSettings = (theme: Theme) =>
   })
 const StyledHobbies = withStyles(styleSettings)(Hobbies)
 
+const StyledList = styled('div', {
+  height: '100%',
+  width: '100%',
+  overflow: 'hidden auto',
+})
+
 const Container = () => {
   const { data, error } = useSwr<OwnedGamesResponse>('/api/fetchOwnedGames', fetcher)
 
@@ -60,9 +70,7 @@ const Container = () => {
       <Head>
         <title>Hobbies - roottool&apos;s Portfolio Site</title>
       </Head>
-      <BasePageTemplate>
-        <StyledHobbies hasError={!!error} ownedGames={data?.response.games} />
-      </BasePageTemplate>
+      <StyledHobbies hasError={!!error} ownedGames={data?.response.games} />
     </>
   )
 }

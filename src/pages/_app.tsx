@@ -1,33 +1,34 @@
+import { globalCss } from '@stitches/react'
 import type { AppProps } from 'next/app'
-import { createGlobalStyle } from 'styled-components'
 
-const GlobalStyle = createGlobalStyle`
-  html {
-    height: 100%;
-  }
+const globalStyles = globalCss({
+  html: {
+    height: '100%',
+  },
+  body: {
+    backgroundAttachment: 'fixed',
+    backgroundImage: 'url(/images/EchoCat.webp)',
+    backgroundPosition: 'right bottom',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: '38% 38%',
+    fontFamily: 'sans-serif',
+    margin: 0,
+    padding: 0,
+    overflow: 'hidden',
+  },
+  main: {
+    display: 'flex',
+    flexDirection: 'column',
+    height: '100vh',
+    overflow: 'auto',
+    textAlign: 'center',
+  },
+})
 
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    background-image: url(/images/EchoCat.webp);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: right bottom;
-    background-size: 38% 38%;
-  }
+const App = ({ Component, pageProps }: AppProps) => {
+  globalStyles()
 
-  main {
-    height: 100%;
-    text-align: center;
-  }
-`
-
-const App = ({ Component, pageProps }: AppProps) => (
-  <>
-    <GlobalStyle />
-    <Component {...pageProps} />
-  </>
-)
+  return <Component {...pageProps} />
+}
 
 export default App

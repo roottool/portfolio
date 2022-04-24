@@ -1,16 +1,21 @@
 import type { ReactNode } from 'react'
 
-import Navbar from '@/components/organisms/Navbar'
+import Navbar from '@/components/layouts/Navbar'
+import { styled } from '@/styles/StyleConstants'
 
 interface Props {
   children: ReactNode
 }
 
+const GridContainer = styled('div', {
+  display: 'grid',
+})
+
 const BasePageTemplate = ({ children }: Props) => (
-  <div className="App">
+  <GridContainer>
     <Navbar />
     <main>{children}</main>
-  </div>
+  </GridContainer>
 )
 
 export default BasePageTemplate
