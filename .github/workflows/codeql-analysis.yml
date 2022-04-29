@@ -18,6 +18,17 @@ on:
     # The branches below must be a subset of the branches above
     branches: [main]
     types: [opened, synchronize, reopened, ready_for_review]
+    paths-ignore:
+      - '**/*.md'
+      - '.devcontainer/**'
+      - '.husky/**'
+      - '.vscode/**'
+      - 'public/**'
+      - '!public/**/*.js'
+      - '!public/**/*.ts'
+      - '.*ignore'
+      - .editorconfig
+      - LICENSE
   schedule:
     - cron: '19 18 * * 0'
 
