@@ -1,7 +1,7 @@
 {
   "terminal.integrated.defaultProfile.linux": "zsh",
   // * For Linter and Formatter
-  "editor.codeActionsOnSave": ["source.addMissingImports", "source.removeUnusedImports", "source.fixAll.eslint"],
+  "editor.codeActionsOnSave": ["source.addMissingImports", "source.fixAll.eslint"],
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
   "editor.formatOnType": true,
@@ -19,5 +19,6 @@
     "files.trimTrailingWhitespace": false,
     "editor.wordWrap": "on",
     "editor.quickSuggestions": false
-  }
+  },
+  "cSpell.words": ["codeql", "steamstatic", "tsbuildinfo"]
 }
