@@ -1,3 +1,10 @@
 {
-  "extends": ["config:base"]
+  "extends": ["config:base", "group:allNonMajor"],
+  "assignees": ["@roottool"],
+  "labels": ["dependencies"],
+  "vulnerabilityAlerts": {
+    "labels": ["security"],
+    "schedule": ["before 3am on Friday"]
+  },
+  "timezone": "Asia/Tokyo"
 }
