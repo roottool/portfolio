@@ -14,10 +14,20 @@ name: 'CodeQL'
 on:
   push:
     branches: [main]
+    paths:
+      - '**/*.jsx?'
+      - '**/*.tsx?'
+      - 'package.json'
+      - 'yarn.lock'
   pull_request:
     # The branches below must be a subset of the branches above
     branches: [main]
     types: [opened, synchronize, reopened, ready_for_review]
+    paths:
+      - '**/*.jsx?'
+      - '**/*.tsx?'
+      - 'package.json'
+      - 'yarn.lock'
   schedule:
     - cron: '19 18 * * 0'
 
