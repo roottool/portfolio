@@ -21,6 +21,8 @@ on:
     paths-ignore:
       - '**/*.md'
       - '.devcontainer/**'
+      - '.github/**'
+      - '!.github/**/*.js'
       - '.husky/**'
       - '.vscode/**'
       - 'public/**'
