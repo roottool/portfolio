@@ -9,7 +9,7 @@
 # the `language` matrix defined below to confirm you have the correct set of
 # supported CodeQL languages.
 #
-name: 'CodeQL / Analyze (javascript)'
+name: 'Analyze (javascript)'
 
 on:
   push:
@@ -25,11 +25,16 @@ on:
       - reopened
       - ready_for_review
     paths-ignore:
-      - '**/*.js'
-      - '**/*.ts'
-      - '**/*.tsx'
-  schedule:
-    - cron: '19 18 * * 0'
+      - '**/*.md'
+      - '.devcontainer/**'
+      - '.github/**'
+      - '!.github/**/*.js'
+      - '.husky/**'
+      - '.vscode/**'
+      - 'public/**'
+      - '.*ignore'
+      - .editorconfig
+      - LICENSE
 
 jobs:
   analyze:
