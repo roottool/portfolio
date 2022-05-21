@@ -24,17 +24,6 @@ on:
       - synchronize
       - reopened
       - ready_for_review
-    paths-ignore:
-      - '**/*.md'
-      - '.devcontainer/**'
-      - '.github/**'
-      - '!.github/**/*.js'
-      - '.husky/**'
-      - '.vscode/**'
-      - 'public/**'
-      - '.*ignore'
-      - .editorconfig
-      - LICENSE
   schedule:
     - cron: '37 21 * * 4'
 
