@@ -20,5 +20,5 @@
     "editor.wordWrap": "on",
     "editor.quickSuggestions": false
   },
-  "cSpell.words": ["codeql", "steamstatic", "tsbuildinfo"]
+  "cSpell.words": ["codeql", "sarif", "steamstatic", "tsbuildinfo"]
 }
