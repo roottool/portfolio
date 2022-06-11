@@ -2,9 +2,12 @@
   "extends": ["config:base", "group:allNonMajor"],
   "assignees": ["@roottool"],
   "labels": ["dependencies"],
+  "timezone": "Asia/Tokyo",
   "vulnerabilityAlerts": {
     "labels": ["security"],
     "schedule": ["before 3am on Friday"]
   },
-  "timezone": "Asia/Tokyo"
+  "github-actions": {
+    "automerge": true
+  }
 }
