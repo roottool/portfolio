@@ -1,5 +1,8 @@
 {
   "terminal.integrated.defaultProfile.linux": "zsh",
+  "files.watcherExclude": {
+    "**/node_modules/**": true
+  },
   // * For Linter and Formatter
   "editor.codeActionsOnSave": ["source.addMissingImports", "source.fixAll.eslint"],
   "editor.formatOnSave": true,
