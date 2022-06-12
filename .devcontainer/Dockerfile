@@ -1,11 +1,11 @@
 # See here for image contents: https://github.com/microsoft/vscode-dev-containers/tree/v0.205.2/containers/debian/.devcontainer/base.Dockerfile
-ARG VARIANT=${VARIANT:-"bullseye"}
-FROM mcr.microsoft.com/vscode/devcontainers/base:${VARIANT}
+ARG VARIANT=${VARIANT:-"16-bullseye"}
+FROM mcr.microsoft.com/vscode/devcontainers/typescript-node:0-${VARIANT}
 
-ARG USERNAME=${USERNAME:-"vscode"}
+ARG USERNAME=${USERNAME:-"node"}
 USER ${USERNAME}
 
-ARG WORKING_DIR=/workspaces/portfolio
+ARG WORKING_DIR=${WORKING_DIR:-"/workspace"}
 WORKDIR ${WORKING_DIR}
 
 # * Avoiding extension reinstalls on container rebuild
