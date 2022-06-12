@@ -31,17 +31,18 @@
         "files.trimTrailingWhitespace": true,
         "javascript.preferences.importModuleSpecifierEnding": "minimal",
         "typescript.preferences.importModuleSpecifierEnding": "minimal",
-        "[javascript|typescript|typescriptreact|json|jsonc|markdown]": {
+        "[javascript|typescript|typescriptreact|json|jsonc|yaml]": {
           "editor.defaultFormatter": "esbenp.prettier-vscode"
         },
         "[markdown]": {
-          "files.trimTrailingWhitespace": false,
+          "editor.defaultFormatter": "esbenp.prettier-vscode",
           "editor.wordWrap": "on",
           "editor.quickSuggestions": {
             "comments": "off",
             "strings": "off",
             "other": "off"
-          }
+          },
+          "files.trimTrailingWhitespace": false
         }
       },
       "extensions": [
