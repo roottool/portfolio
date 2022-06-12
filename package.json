@@ -24,14 +24,14 @@
     "build:next": "next build",
     "start": "next start",
     "lint": "run-s -c lint:*",
-    "lint:eslint": "eslint . --color --ext .js,.ts,.tsx",
     "lint:prettier": "prettier --check .",
+    "lint:eslint": "eslint . --color --ext .js,.ts,.tsx",
+    "lint:tsc": "tsc --noEmit",
     "fix": "run-p -c fix:*",
+    "fix:prettier": "prettier --write .",
     "fix:eslint": "eslint . --fix --color --ext .js,.ts,.tsx",
-    "format": "prettier --write .",
     "test": "run-s test:*",
-    "test:jest": "echo \"Write tests!\"",
-    "test:type-check": "tsc --noEmit"
+    "test:jest": "echo \"Write tests!\""
   },
   "lint-staged": {
     "*.js|tsx?": [
