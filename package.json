@@ -8,7 +8,7 @@
     "name": "roottool",
     "url": "https://github.com/roottool"
   },
-  "homepage": "https://roottool.netlify.app/",
+  "homepage": "https://roottool.vercel.app",
   "repository": {
     "type": "git",
     "url": "https://github.com/roottool/portfolio.git"
@@ -38,7 +38,7 @@
       "prettier --write",
       "eslint --fix --color"
     ],
-    "*.json|md": [
+    "*.md|json|ya?ml": [
       "prettier --write"
     ]
   },
