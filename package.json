@@ -57,7 +57,7 @@
   "devDependencies": {
     "@next/eslint-plugin-next": "12.1.6",
     "@types/node": "17.0.30",
-    "@types/react": "17.0.45",
+    "@types/react": "17.0.46",
     "@types/react-dom": "17.0.17",
     "@typescript-eslint/eslint-plugin": "5.28.0",
     "@typescript-eslint/parser": "5.28.0",
@@ -76,7 +76,7 @@
     "is-ci": "^3.0.1",
     "lint-staged": "13.0.1",
     "npm-run-all": "4.1.5",
-    "prettier": "2.7.0",
+    "prettier": "2.7.1",
     "rimraf": "3.0.2",
     "typescript": "4.7.3"
   }
