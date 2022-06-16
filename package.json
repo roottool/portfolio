@@ -27,7 +27,7 @@
     "lint:prettier": "prettier --check .",
     "lint:eslint": "eslint . --color --ext .js,.ts,.tsx",
     "lint:tsc": "tsc --noEmit",
-    "fix": "run-p -c fix:*",
+    "fix": "run-s -c fix:*",
     "fix:prettier": "prettier --write .",
     "fix:eslint": "eslint . --fix --color --ext .js,.ts,.tsx",
     "test": "run-s test:*",
