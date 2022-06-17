@@ -28,7 +28,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # v3.0.2
       - name: Setup Node.js LTS
-        uses: actions/setup-node@b287e177c940f854dde9dcea09c4428a6d5edcf0 # v3.3.0
+        uses: actions/setup-node@cdcc53e14f65270996e107107b9a9f72862f58ee # v3.3.0
         with:
           node-version: lts/*
           cache: yarn
