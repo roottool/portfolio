@@ -28,8 +28,8 @@
     "lint:eslint": "eslint . --color --ext .js,.ts,.tsx",
     "lint:tsc": "tsc --noEmit",
     "fix": "run-s -c fix:*",
-    "fix:prettier": "prettier --write .",
-    "fix:eslint": "eslint . --fix --color --ext .js,.ts,.tsx",
+    "fix:prettier": "prettier --cache --write .",
+    "fix:eslint": "eslint . --fix --color --cache --ext .js,.ts,.tsx",
     "test": "run-s test:*",
     "test:jest": "echo \"Write tests!\""
   },

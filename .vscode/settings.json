@@ -28,5 +28,11 @@
     },
     "files.trimTrailingWhitespace": false
   },
-  "cSpell.words": ["codeql", "sarif", "steamstatic", "tsbuildinfo"]
+  "cSpell.words": [
+    "codeql",
+    "eslintcache",
+    "sarif",
+    "steamstatic",
+    "tsbuildinfo"
+  ]
 }

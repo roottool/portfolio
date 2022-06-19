@@ -7,10 +7,13 @@ coverage/
 # build
 .next/
 
+# cache
+.dccache
+.eslintcache
+tsconfig.tsbuildinfo
+
 # misc
 .DS_Store
-.dccache
-tsconfig.tsbuildinfo
 
 # logs
 npm-debug.log*
