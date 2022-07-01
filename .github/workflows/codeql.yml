@@ -25,7 +25,7 @@ on:
       - reopened
       - ready_for_review
   schedule:
-    - cron: '37 21 * * 4'
+    - cron: '30 21 * * 4'
 
 jobs:
   analyze:
