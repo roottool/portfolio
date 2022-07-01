@@ -25,6 +25,6 @@ jobs:
     if: ${{ !github.event.pull_request.draft }}
     steps:
       - name: 'Checkout Repository'
-        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # renovate: tag=v3.0.2
       - name: 'Dependency Review'
-        uses: actions/dependency-review-action@26b790870174b01a5110cc2be9ad84ec2374e5b5
+        uses: actions/dependency-review-action@1c59cdf2a9c7f29c90e8da32237eb04b81bad9f0 # renovate: tag=v2.0.2
