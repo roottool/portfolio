@@ -3,9 +3,6 @@ on:
   push:
     branches:
       - main
-    paths-ignore:
-      - .husky/**
-      - public/**
   pull_request:
     branches:
       - main
@@ -14,15 +11,13 @@ on:
       - synchronize
       - reopened
       - ready_for_review
-    paths-ignore:
-      - .husky/**
-      - public/**
 
 permissions:
   contents: read
 
 jobs:
   lint:
+    name: Lint
     runs-on: ubuntu-latest
     if: ${{ !github.event.pull_request.draft }}
     steps:
@@ -35,5 +30,44 @@ jobs:
           cache: yarn
       - name: Dependency install
         run: yarn install --frozen-lockfile
-      - name: Lint
+      - name: Run lint
         run: yarn lint
+
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    if: ${{ !github.event.pull_request.draft }}
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # renovate: tag=v3.0.2
+      - name: Setup Node.js LTS
+        uses: actions/setup-node@eeb10cff27034e7acf239c5d29f62154018672fd # renovate: tag=v3.3.0
+        with:
+          node-version: lts/*
+          cache: yarn
+      - name: Dependency install
+        run: yarn install --frozen-lockfile
+      - name: Run test
+        run: yarn test
+
+  snyk:
+    name: Check for vulnerabilities by Snyk
+    runs-on: ubuntu-latest
+    permissions:
+      # * Needed to upload the results to code-scanning dashboard.
+      security-events: write
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # renovate: tag=v3.0.2
+      - name: Run Snyk to check for vulnerabilities
+        uses: snyk/actions/node@7fad562681122205233d1242c3bb39598c5393da # renovate: tag=v2.1.15
+        # * To make sure that SARIF upload gets called.
+        continue-on-error: true
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          args: --sarif-file-output=snyk.sarif
+      - name: Upload result to GitHub Code Scanning
+        uses: github/codeql-action/upload-sarif@3f62b754e23e0dd60f91b744033e1dc1654c0ec6 # renovate: tag=0.3.0
+        with:
+          sarif_file: snyk.sarif
