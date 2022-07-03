@@ -60,7 +60,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # renovate: tag=v3.0.2
       - name: Run Snyk to check for vulnerabilities
-        uses: snyk/actions/node@7fad562681122205233d1242c3bb39598c5393da # renovate: tag=v2.1.15
+        uses: snyk/actions/node@7fad562681122205233d1242c3bb39598c5393da # renovate: tag=0.3.0
         # * To make sure that SARIF upload gets called.
         continue-on-error: true
         env:
@@ -68,6 +68,6 @@ jobs:
         with:
           args: --sarif-file-output=snyk.sarif
       - name: Upload result to GitHub Code Scanning
-        uses: github/codeql-action/upload-sarif@3f62b754e23e0dd60f91b744033e1dc1654c0ec6 # renovate: tag=0.3.0
+        uses: github/codeql-action/upload-sarif@3f62b754e23e0dd60f91b744033e1dc1654c0ec6 # renovate: tag=v2.1.15
         with:
           sarif_file: snyk.sarif
