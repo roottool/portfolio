@@ -32,7 +32,7 @@ permissions: read-all
 
 jobs:
   analyze:
-    name: Analyze
+    name: Analyze code by CodeQL
     runs-on: ubuntu-latest
     if: ${{ !github.event.pull_request.draft }}
     permissions:
