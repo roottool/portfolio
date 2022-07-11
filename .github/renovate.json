@@ -9,6 +9,15 @@
   },
   "packageRules": [
     {
+      "updateTypes": [
+        "minor",
+        "patch",
+        "pin",
+        "digest"
+      ],
+      "automerge": true
+    },
+    {
       "matchPackagePatterns": ["eslint"],
       "groupName": "ESLint",
       "automerge": true
