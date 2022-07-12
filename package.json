@@ -34,11 +34,11 @@
     "test:jest": "echo \"Write tests!\""
   },
   "lint-staged": {
-    "*.js|tsx?": [
+    "*.{js,ts?(x)}": [
       "prettier --write",
       "eslint --fix --color"
     ],
-    "*.md|json|ya?ml": [
+    "*.{md,json,y?(a)ml}": [
       "prettier --write"
     ]
   },
