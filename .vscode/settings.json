@@ -26,5 +26,13 @@
     },
     "files.trimTrailingWhitespace": false
   },
-  "cSpell.words": ["automerge", "codeql", "eslintcache", "ossf", "sarif", "steamstatic", "tsbuildinfo"]
+  "cSpell.words": [
+    "automerge",
+    "codeql",
+    "eslintcache",
+    "ossf",
+    "sarif",
+    "steamstatic",
+    "tsbuildinfo"
+  ]
 }

@@ -21,7 +21,8 @@ const Hobbies = ({ hasError, ownedGames }: HobbiesProps) => (
     <PageTitleWrapper>Hobbies</PageTitleWrapper>
     <StyledPaper>
       <Typography gutterBottom variant="subtitle1">
-        FPS かストラテジーを中心に Steam 等でゲームを購入して PC で遊んでいます。映画を見たりもします。
+        FPS かストラテジーを中心に Steam 等でゲームを購入して PC
+        で遊んでいます。映画を見たりもします。
       </Typography>
       <Typography variant="h6">Steam ライブラリ</Typography>
       <StyledList>
