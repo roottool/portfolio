@@ -28,6 +28,7 @@
         "eslint.packageManager": "yarn",
         "files.trimFinalNewlines": true,
         "files.trimTrailingWhitespace": true,
+        "prettier.printWidth": 100,
         "javascript.preferences.importModuleSpecifierEnding": "minimal",
         "typescript.preferences.importModuleSpecifierEnding": "minimal",
         "[javascript|typescript|typescriptreact|json|jsonc|yaml]": {
