@@ -8,15 +8,7 @@ const config = {
     node: true,
     es6: true,
   },
-  plugins: [
-    '@typescript-eslint',
-    'import',
-    'react',
-    'react-hooks',
-    'sort-destructure-keys',
-    'typescript-sort-keys',
-    'unused-imports',
-  ],
+  plugins: ['@typescript-eslint', 'import', 'react', 'react-hooks', 'unused-imports'],
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
@@ -24,7 +16,6 @@ const config = {
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
     'plugin:@next/next/core-web-vitals',
-    'plugin:typescript-sort-keys/recommended',
     'plugin:import/recommended',
     'plugin:import/typescript',
     'prettier',
@@ -84,7 +75,6 @@ const config = {
     ],
     'react/prop-types': 'off',
     'react/react-in-jsx-scope': 'off',
-    'sort-destructure-keys/sort-destructure-keys': 'warn',
     'unused-imports/no-unused-imports': 'error',
     'unused-imports/no-unused-vars': [
       'warn',
