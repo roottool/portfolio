@@ -1,6 +1,12 @@
 import { globalCss } from '@stitches/react'
 import type { AppProps } from 'next/app'
 
+import initMocks from '@/mocks'
+
+if (process.env.NODE_ENV === 'development') {
+  initMocks()
+}
+
 const globalStyles = globalCss({
   html: {
     height: '100%',
