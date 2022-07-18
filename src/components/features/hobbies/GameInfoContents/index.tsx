@@ -1,6 +1,7 @@
 import Typography from '@material-ui/core/Typography'
 import Image from 'next/image'
 
+import { generateSteamAppUrl, generateSteamAppBannerUrl } from '@/concerns/steam/generateUrl'
 import { styled } from '@/styles/StyleConstants'
 import type { OwnedGame } from '@/types/api'
 
@@ -11,24 +12,15 @@ interface Props {
   ownedGames: OwnedGame[]
 }
 
-const STEAM_BASE_URL = 'https://store.steampowered.com'
-const APP_URL = `${STEAM_BASE_URL}/app`
-const APP_IMAGE_URL = `http://cdn.cloudflare.steamstatic.com/steam/apps`
-
 const GameInfoGrid = ({ game: { appid, name, playtime_forever } }: GameInfoGridProps) => (
-  <StyledFlex key={appid ?? 0}>
-    <a href={`${APP_URL}/${appid}/`}>
-      <Image
-        height="87"
-        src={`${APP_IMAGE_URL}/${appid}/capsule_231x87.jpg`}
-        title={name}
-        width="231"
-      />
+  <StyledFlex key={appid}>
+    <a href={generateSteamAppUrl(appid)}>
+      <Image height="87" src={generateSteamAppBannerUrl(appid)} title={name} width="231" />
     </a>
     <GrowWrapper />
     <Typography variant="h6">{name}</Typography>
     <GrowWrapper />
-    <Typography variant="subtitle1">
+    <Typography variant="subtitle2">
       プレイ時間:
       {Math.round(playtime_forever / 60)}
       時間
