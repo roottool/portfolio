@@ -28,12 +28,16 @@
     "files.trimTrailingWhitespace": false
   },
   "cSpell.words": [
+    "appinfo",
     "automerge",
     "codeql",
+    "deepcode",
     "eslintcache",
     "ossf",
     "sarif",
+    "steamid",
     "steamstatic",
-    "tsbuildinfo"
+    "tsbuildinfo",
+    "webp"
   ]
 }

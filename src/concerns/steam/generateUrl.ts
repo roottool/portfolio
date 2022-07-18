@@ -1,5 +1,6 @@
 import type { OwnedGame } from '@/types/api'
-import { STEAM_APP_IMAGE_URL, STEAM_APP_URL } from '@/utils/construct/steam'
+
+import { STEAM_APP_URL, STEAM_APP_IMAGE_URL } from './construct'
 
 export const generateSteamAppUrl = (appId: OwnedGame['appid']): string =>
   `${STEAM_APP_URL}/${appId}/`

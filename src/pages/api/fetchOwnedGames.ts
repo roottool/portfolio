@@ -1,9 +1,9 @@
 import axios, { type AxiosResponse } from 'axios'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
+import { GET_OWNED_GAMES_API_URL } from '@/concerns/steam/construct'
 import sortOwnedGames from '@/concerns/steam/sortOwnedGames'
 import type { OwnedGamesApiResponse } from '@/types/api'
-import { GET_OWNED_GAMES_API_URL } from '@/utils/construct/steam'
 
 const fetchOwnedGamesHandler = (_req: NextApiRequest, res: NextApiResponse) =>
   axios

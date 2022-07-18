@@ -3,13 +3,13 @@ import { rest } from 'msw'
 
 import MockedImage from '$/images/EchoCat.webp'
 import sortOwnedGames from '@/concerns/sortOwnedGames'
+import { GET_OWNED_GAMES_API_URL_WITHOUT_QUERY } from '@/concerns/steam/construct'
 import type { OwnedGame } from '@/types/api'
-import { GET_OWNED_GAMES_API_URL } from '@/utils/construct'
 
 import OwnedGames from './OwnedGames.json'
 
 export const handlers = [
-  rest.get(GET_OWNED_GAMES_API_URL, (_req, res, ctx) => {
+  rest.get(GET_OWNED_GAMES_API_URL_WITHOUT_QUERY, (_req, res, ctx) => {
     return res(ctx.json(OwnedGames))
   }),
   rest.get('/api/fetchOwnedGames', (_req, res, ctx) => {

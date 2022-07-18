@@ -1,32 +1,27 @@
 import { CircularProgress, Paper, Typography } from '@material-ui/core'
 import Head from 'next/head'
-import useSwr from 'swr'
+import { Suspense } from 'react'
 
 import PageTitleWrapper from '@/components/atoms/PageTitleWrapper'
+import FetchErrorBoundary from '@/components/features/FetchErrorBoundary'
 import GameInfoContents from '@/components/features/hobbies/GameInfoContents'
 import BasePageTemplate from '@/components/templates/BasePageTemplate'
 import { styled } from '@/styles/StyleConstants'
-import type { OwnedGame, OwnedGamesResponse } from '@/types/api'
-import fetcher from '@/utils/fetcher'
 
-interface HobbiesProps {
-  hasError: boolean
-  ownedGames: OwnedGame[] | undefined
-}
-
-const Hobbies = ({ hasError, ownedGames }: HobbiesProps) => (
+const HobbiesPresenter = () => (
   <BasePageTemplate>
     <PageTitleWrapper>Hobbies</PageTitleWrapper>
     <StyledPaper>
       <Typography gutterBottom variant="subtitle1">
-        FPS かストラテジーを中心に Steam 等でゲームを購入して PC
-        で遊んでいます。映画を見たりもします。
+        PCでゲームをすることで、主に遊ぶゲームのジャンルはFPSかストラテジーです。映画を見たりもします。
       </Typography>
       <Typography variant="h6">Steam ライブラリ</Typography>
       <StyledList>
-        {hasError && <Typography variant="subtitle1">読み込みに失敗しました</Typography>}
-        {!ownedGames && <StyledCircularProgress />}
-        {ownedGames && <GameInfoContents ownedGames={ownedGames} />}
+        <FetchErrorBoundary>
+          <Suspense fallback={<StyledCircularProgress />}>
+            <GameInfoContents />
+          </Suspense>
+        </FetchErrorBoundary>
       </StyledList>
     </StyledPaper>
   </BasePageTemplate>
@@ -58,14 +53,12 @@ const StyledList = styled('div', {
 })
 
 const Container = () => {
-  const { data, error } = useSwr<OwnedGamesResponse>('/api/fetchOwnedGames', fetcher)
-
   return (
     <>
       <Head>
         <title>Hobbies - roottool&apos;s Portfolio Site</title>
       </Head>
-      <Hobbies hasError={!!error} ownedGames={data?.games} />
+      <HobbiesPresenter />
     </>
   )
 }

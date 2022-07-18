@@ -15,6 +15,7 @@ const nextConfig = {
     domains: ['cdn.cloudflare.steamstatic.com'],
   },
   reactStrictMode: true,
+  swcMinify: true,
   typescript: {
     // !! WARN !!
     // Dangerously allow production builds to successfully complete
