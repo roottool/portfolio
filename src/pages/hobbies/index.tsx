@@ -2,14 +2,12 @@ import { CircularProgress, Paper, Typography } from '@material-ui/core'
 import Head from 'next/head'
 import useSwr from 'swr'
 
-// import test from './OwnedGames.json'
-
 import PageTitleWrapper from '@/components/atoms/PageTitleWrapper'
 import GameInfoContents from '@/components/features/hobbies/GameInfoContents'
 import BasePageTemplate from '@/components/templates/BasePageTemplate'
 import { styled } from '@/styles/StyleConstants'
+import type { OwnedGame, OwnedGamesResponse } from '@/types/api'
 import fetcher from '@/utils/fetcher'
-import type { OwnedGame, OwnedGamesResponse } from '@/utils/types'
 
 interface HobbiesProps {
   hasError: boolean
@@ -67,7 +65,7 @@ const Container = () => {
       <Head>
         <title>Hobbies - roottool&apos;s Portfolio Site</title>
       </Head>
-      <Hobbies hasError={!!error} ownedGames={data?.response.games} />
+      <Hobbies hasError={!!error} ownedGames={data?.games} />
     </>
   )
 }

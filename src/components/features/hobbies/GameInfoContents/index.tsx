@@ -2,7 +2,7 @@ import Typography from '@material-ui/core/Typography'
 import Image from 'next/image'
 
 import { styled } from '@/styles/StyleConstants'
-import type { OwnedGame } from '@/utils/types'
+import type { OwnedGame } from '@/types/api'
 
 interface GameInfoGridProps {
   game: OwnedGame
