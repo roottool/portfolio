@@ -2,6 +2,7 @@ import Typography from '@material-ui/core/Typography'
 import Image from 'next/image'
 
 import { styled } from '@/styles/StyleConstants'
+
 import type { OwnedGame } from '@/utils/types'
 
 interface GameInfoGridProps {
