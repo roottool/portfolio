@@ -17,7 +17,8 @@ const globalStyles = globalCss({
     backgroundPosition: 'right bottom',
     backgroundRepeat: 'no-repeat',
     backgroundSize: '38% 38%',
-    fontFamily: 'sans-serif',
+    fontFamily:
+      '"Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif',
     margin: 0,
     padding: 0,
     overflow: 'hidden',
