@@ -1,10 +1,10 @@
-export interface OwnedGamesResponse {
-  game_count: number
-  games: OwnedGame[]
+export interface OwnedGamesApiResponse {
+  response: OwnedGamesInfoResponse
 }
 
-export interface OwnedGamesApiResponse {
-  response: OwnedGamesResponse
+interface OwnedGamesInfoResponse {
+  game_count: number
+  games: OwnedGame[]
 }
 
 export interface OwnedGame {

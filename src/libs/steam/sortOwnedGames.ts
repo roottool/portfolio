@@ -1,4 +1,4 @@
-import type { OwnedGame } from './type'
+import type { OwnedGame } from './api'
 
 const sortOwnedGames = (ownedGames: OwnedGame[]) =>
   ownedGames.sort((a, b) => {

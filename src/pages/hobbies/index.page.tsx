@@ -5,7 +5,7 @@ import { Suspense } from 'react'
 
 import PageTitleWrapper from '@/components/atoms/PageTitleWrapper'
 import FetchErrorBoundary from '@/components/features/FetchErrorBoundary'
-import GameInfoContents from '@/components/features/hobbies/GameInfoContents'
+import GameInfoGrid from '@/components/features/hobbies/GameInfoGrid'
 import BasePageTemplate from '@/components/templates/BasePageTemplate'
 import { styled } from '@/styles/StyleConstants'
 
@@ -20,7 +20,7 @@ const HobbiesPresenter = () => (
       <StyledList>
         <FetchErrorBoundary>
           <Suspense fallback={<StyledCircularProgress />}>
-            <GameInfoContents />
+            <GameInfoGrid />
           </Suspense>
         </FetchErrorBoundary>
       </StyledList>
