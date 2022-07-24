@@ -11,13 +11,13 @@ describe('generateUrl', () => {
   test('generateSteamAppUrl', () => {
     const steamAppId: OwnedGame['appid'] = 27751
     const result = generateSteamAppUrl(steamAppId)
-    expect(result).toMatchSnapshot(`${STEAM_APP_URL}/${steamAppId}/`)
+    expect(result).toBe(`${STEAM_APP_URL}/${steamAppId}/`)
   })
 
   test('generateSteamAppBannerUrl', () => {
     const steamAppId: OwnedGame['appid'] = 27751
     const result = generateSteamAppBannerUrl(steamAppId)
-    expect(result).toMatchSnapshot(
+    expect(result).toBe(
       `${STEAM_APP_BANNER_URL}/${steamAppId}/capsule_${STEAM_APP_BANNER_WIDTH}x${STEAM_APP_BANNER_HEIGHT}.jpg`,
     )
   })
