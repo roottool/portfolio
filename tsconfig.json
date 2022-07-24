@@ -32,6 +32,6 @@
       "$/*": ["public/*"]
     }
   },
-  "include": ["next-env.d.ts", "src/**/*.ts", "src/**/*.tsx"],
+  "include": ["next-env.d.ts", "src/**/*.ts", "src/**/*.tsx", "src/**/*.json"],
   "exclude": [".next", "node_modules"]
 }

@@ -3,9 +3,9 @@ import type { FetchOwnedGamesResponse } from '@/pages/api/fetchOwnedGames'
 
 const useGameInfoGrid = () => {
   const { data } = useFetchSuspense<FetchOwnedGamesResponse>('/api/fetchOwnedGames')
-  const games = data?.ownedGames ?? []
+  const ownedGames = data?.ownedGames ?? []
 
-  return [games] as const
+  return [ownedGames] as const
 }
 
 export default useGameInfoGrid
