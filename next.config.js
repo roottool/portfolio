@@ -4,6 +4,12 @@
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
+  reactStrictMode: true,
+  swcMinify: true,
+  pageExtensions: ['page.tsx', 'api.ts'],
+  images: {
+    domains: ['cdn.cloudflare.steamstatic.com'],
+  },
   eslint: {
     // !! WARN !!
     // Warning: This allows production builds to successfully complete
@@ -11,11 +17,6 @@ const nextConfig = {
     // !! WARN !!
     ignoreDuringBuilds: true,
   },
-  images: {
-    domains: ['cdn.cloudflare.steamstatic.com'],
-  },
-  reactStrictMode: true,
-  swcMinify: true,
   typescript: {
     // !! WARN !!
     // Dangerously allow production builds to successfully complete

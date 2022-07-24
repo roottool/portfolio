@@ -7,4 +7,7 @@ export const GET_OWNED_GAMES_API_URL =
 
 const STEAM_BASE_URL = 'https://store.steampowered.com' as const
 export const STEAM_APP_URL = `${STEAM_BASE_URL}/app` as const
-export const STEAM_APP_IMAGE_URL = `http://cdn.cloudflare.steamstatic.com/steam/apps` as const
+
+export const STEAM_APP_BANNER_WIDTH = 231 as const
+export const STEAM_APP_BANNER_HEIGHT = 87 as const
+export const STEAM_APP_BANNER_URL = `http://cdn.cloudflare.steamstatic.com/steam/apps` as const

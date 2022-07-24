@@ -86,6 +86,14 @@ const config = {
       },
     ],
   },
+  overrides: [
+    {
+      files: ['jest.config.js'],
+      rules: {
+        '@typescript-eslint/no-var-requires': 'off',
+      },
+    },
+  ],
 }
 
 module.exports = config

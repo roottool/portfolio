@@ -1,10 +1,11 @@
 import { CircularProgress, Paper, Typography } from '@material-ui/core'
+import type { NextPage } from 'next'
 import Head from 'next/head'
 import { Suspense } from 'react'
 
 import PageTitleWrapper from '@/components/atoms/PageTitleWrapper'
 import FetchErrorBoundary from '@/components/features/FetchErrorBoundary'
-import GameInfoContents from '@/components/features/hobbies/GameInfoContents'
+import GameInfoGrid from '@/components/features/hobbies/GameInfoGrid'
 import BasePageTemplate from '@/components/templates/BasePageTemplate'
 import { styled } from '@/styles/StyleConstants'
 
@@ -19,7 +20,7 @@ const HobbiesPresenter = () => (
       <StyledList>
         <FetchErrorBoundary>
           <Suspense fallback={<StyledCircularProgress />}>
-            <GameInfoContents />
+            <GameInfoGrid />
           </Suspense>
         </FetchErrorBoundary>
       </StyledList>
@@ -52,7 +53,7 @@ const StyledList = styled('div', {
   overflow: 'hidden auto',
 })
 
-const Container = () => {
+const Container: NextPage = () => {
   return (
     <>
       <Head>

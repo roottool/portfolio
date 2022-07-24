@@ -1,3 +1,4 @@
+import type { NextPage } from 'next'
 import Head from 'next/head'
 
 import BasePageTemplate from '@/components/templates/BasePageTemplate'
@@ -20,7 +21,7 @@ const TopPageTitleWrapper = styled('h1', {
   },
 })
 
-const Container = () => (
+const Container: NextPage = () => (
   <>
     <Head>
       <title>roottool&apos;s Portfolio Site</title>

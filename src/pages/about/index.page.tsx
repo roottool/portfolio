@@ -1,5 +1,6 @@
 import { Card, CardContent, Grid } from '@material-ui/core'
 import { createStyles, withStyles, type Theme, type WithStyles } from '@material-ui/core/styles'
+import type { NextPage } from 'next'
 import Head from 'next/head'
 import { IconContext } from 'react-icons'
 import { FaTwitterSquare } from 'react-icons/fa'
@@ -68,7 +69,7 @@ const styleSettings = (theme: Theme) =>
   })
 const StyledAbout = withStyles(styleSettings)(About)
 
-const Container = () => (
+const Container: NextPage = () => (
   <>
     <Head>
       <title>About - roottool&apos;s Portfolio Site</title>
