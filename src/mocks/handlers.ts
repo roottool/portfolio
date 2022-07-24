@@ -2,9 +2,9 @@
 import { rest } from 'msw'
 
 import MockedImage from '$/images/EchoCat.webp'
-import { GET_OWNED_GAMES_API_URL_WITHOUT_QUERY } from '@/concerns/steam/construct'
-import sortOwnedGames from '@/concerns/steam/sortOwnedGames'
-import type { OwnedGame } from '@/types/api'
+import { GET_OWNED_GAMES_API_URL_WITHOUT_QUERY } from '@/libs/steam/construct'
+import sortOwnedGames from '@/libs/steam/sortOwnedGames'
+import type { OwnedGame } from '@/libs/steam/type'
 
 import OwnedGames from './OwnedGames.json'
 

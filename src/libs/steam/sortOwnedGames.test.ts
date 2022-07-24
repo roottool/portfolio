@@ -1,4 +1,5 @@
-import sortOwnedGames from '@/concerns/steam/sortOwnedGames'
+import sortOwnedGames from './sortOwnedGames'
+
 // @ponicode
 describe('sortOwnedGames.default', () => {
   test('0', () => {
