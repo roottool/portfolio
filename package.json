@@ -31,7 +31,7 @@
     "fix:prettier": "prettier --cache --write .",
     "fix:eslint": "eslint . --fix --color --cache --ext .js,.ts,.tsx",
     "test": "run-s test:*",
-    "test:jest": "echo \"Write tests!\""
+    "test:jest": "jest"
   },
   "lint-staged": {
     "*.{js,ts?(x)}": [
@@ -79,6 +79,7 @@
     "husky": "8.0.1",
     "is-ci": "3.0.1",
     "jest": "^28.1.3",
+    "jest-environment-jsdom": "^28.1.3",
     "lint-staged": "13.0.3",
     "msw": "0.44.2",
     "npm-run-all": "4.1.5",
