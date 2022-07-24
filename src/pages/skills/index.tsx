@@ -1,5 +1,6 @@
 import { Card, CardContent, Grid, Typography } from '@material-ui/core'
 import { createStyles, withStyles, type WithStyles } from '@material-ui/core/styles'
+import type { NextPage } from 'next'
 import Head from 'next/head'
 
 import PageTitleWrapper from '@/components/atoms/PageTitleWrapper'
@@ -43,7 +44,7 @@ const styleSettings = () =>
   })
 const StyledSkills = withStyles(styleSettings)(Skills)
 
-const Container = () => (
+const Container: NextPage = () => (
   <>
     <Head>
       <title>Skills - roottool&apos;s Portfolio Site</title>

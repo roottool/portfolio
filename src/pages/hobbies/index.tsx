@@ -1,4 +1,5 @@
 import { CircularProgress, Paper, Typography } from '@material-ui/core'
+import type { NextPage } from 'next'
 import Head from 'next/head'
 import { Suspense } from 'react'
 
@@ -52,7 +53,7 @@ const StyledList = styled('div', {
   overflow: 'hidden auto',
 })
 
-const Container = () => {
+const Container: NextPage = () => {
   return (
     <>
       <Head>
