@@ -1,6 +1,7 @@
 import { globalCss } from '@stitches/react'
 import type { AppProps } from 'next/app'
 
+import BasePageTemplate from '@/components/templates/BasePageTemplate'
 import initMocks from '@/mocks'
 
 if (process.env.NODE_ENV === 'development') {
@@ -32,10 +33,13 @@ const globalStyles = globalCss({
   },
 })
 
+globalStyles()
 const App = ({ Component, pageProps }: AppProps) => {
-  globalStyles()
-
-  return <Component {...pageProps} />
+  return (
+    <BasePageTemplate>
+      <Component {...pageProps} />
+    </BasePageTemplate>
+  )
 }
 
 export default App

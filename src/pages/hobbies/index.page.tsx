@@ -6,11 +6,10 @@ import { Suspense } from 'react'
 import PageTitleWrapper from '@/components/atoms/PageTitleWrapper'
 import FetchErrorBoundary from '@/components/features/FetchErrorBoundary'
 import GameInfoGrid from '@/components/features/hobbies/GameInfoGrid'
-import BasePageTemplate from '@/components/templates/BasePageTemplate'
 import { styled } from '@/styles/StyleConstants'
 
 const HobbiesPresenter = () => (
-  <BasePageTemplate>
+  <>
     <PageTitleWrapper>Hobbies</PageTitleWrapper>
     <StyledPaper>
       <Typography gutterBottom variant="subtitle1">
@@ -25,7 +24,7 @@ const HobbiesPresenter = () => (
         </FetchErrorBoundary>
       </StyledList>
     </StyledPaper>
-  </BasePageTemplate>
+  </>
 )
 
 const StyledPaper = styled(Paper, {
