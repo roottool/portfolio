@@ -4,14 +4,13 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 
 import PageTitleWrapper from '@/components/atoms/PageTitleWrapper'
-import BasePageTemplate from '@/components/templates/BasePageTemplate'
 
 import contents from './WorksContents.json'
 
 const Works = ({
   classes: { card, cardGrid, container, sourceLink },
 }: WithStyles<typeof styleSettings>) => (
-  <BasePageTemplate>
+  <>
     <PageTitleWrapper>Works</PageTitleWrapper>
     <Grid container className={container}>
       {contents.map((item, key) => (
@@ -36,7 +35,7 @@ const Works = ({
         </Grid>
       ))}
     </Grid>
-  </BasePageTemplate>
+  </>
 )
 
 const styleSettings = () =>

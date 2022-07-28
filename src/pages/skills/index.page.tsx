@@ -4,12 +4,11 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 
 import PageTitleWrapper from '@/components/atoms/PageTitleWrapper'
-import BasePageTemplate from '@/components/templates/BasePageTemplate'
 
 import contents from './SkillsContents.json'
 
 const Skills = ({ classes }: WithStyles<typeof styleSettings>) => (
-  <BasePageTemplate>
+  <>
     <PageTitleWrapper>Skills</PageTitleWrapper>
     <Grid container className={classes.container}>
       {contents.map((item, key) => (
@@ -25,7 +24,7 @@ const Skills = ({ classes }: WithStyles<typeof styleSettings>) => (
         </Grid>
       ))}
     </Grid>
-  </BasePageTemplate>
+  </>
 )
 
 const styleSettings = () =>

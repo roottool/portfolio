@@ -1,50 +1,38 @@
 [
   {
     "title": "HTML & CSS",
-    "text": "フロントエンドの制作で使用しています。OrgaSoundではBootstrap4を使用していました。業務ではMaterial Design Liteを使用していました。"
+    "text": "フロントエンドの制作で使用しています。業務ではCSSフレームワークのMaterial Design Liteを使用していました。"
   },
   {
-    "title": "SASS",
-    "text": "OrgaSoundとこのポートフォリオの制作で使用していました。業務でも使用していました。"
+    "title": "JavaScript",
+    "text": "業務で使用していました。業務ではES3でjQuery、ES5でVue.jsと共に使用していました。"
   },
   {
-    "title": "javascript (jQuery)",
-    "text": "業務で使用しています。主にES5以前の書式でjQueryと共に使用しています。恐らく2番目に長く使用しています。"
+    "title": "Vue.js",
+    "text": "業務で使用していました。使用していたのはVue 2となります。"
   },
   {
-    "title": "Typescript",
-    "text": "OrgaSoundとこのポートフォリオの制作で使用しました。使えるとjavascriptよりVSCodeでのメンテナンスが楽なので学習中です。業務でも使用していました。"
-  },
-  {
-    "title": "Angular 6",
-    "text": "OrgaSoundの制作で使用しました。Firebaseを使用したWebアプリ解説で、Angularを使用していたので学習のために採用しました。ライブラリはAngular MaterialとAngularFireを使用しました。"
+    "title": "TypeScript",
+    "text": "Reactと共に個人開発で主に使用しています。業務でも使用しています。自身のメイン言語でもあります。"
   },
   {
     "title": "React",
-    "text": "このポートフォリオの制作でTypescriptと共に使用しました。使用経験のあるパッケージはMaterial UI, Redux, redux-saga, react-router, connected-react-router, styled-componentsです。業務でも使用していました。"
-  },
-  {
-    "title": "C#",
-    "text": "Cookie☆Soundの制作で使用しました。1番長く使用していますが、業務としては数ヶ月程度の機能追加案件のコーディングに参加した程度です。"
+    "text": "個人開発や業務で使用するメインライブラリです。Next.jsと共にこのポートフォリオで使用しています。業務でも使用しています。"
   },
   {
     "title": "Python",
-    "text": "業務のバックエンドとCookie☆☆Soundの制作で使用しました。業務ではDjangoと共に使用しています。恐らく3番目に長く使用しています。"
+    "text": "業務のバックエンドや個人開発のCookie☆☆Soundの制作で使用しました。業務ではDjangoかFlaskと共に使用しています。"
   },
   {
-    "title": "Firebase",
-    "text": "Cookie☆Sound、OrgaSoundの制作で使用しました。使用経験のあるサービスはAuthentication、Realtime Database、Storage、Hostingです。"
+    "title": "Ruby",
+    "text": "業務のバックエンドで、Ruby on Railsと共に使用しています。"
+  },
+  {
+    "title": "C#",
+    "text": "Cookie☆Soundの制作で使用しました。業務としては機能追加を行う客先常駐案件のコーディングに参加していました。"
   },
   {
     "title": "Unity (C#)",
     "text": "Unityで制作されたスマートフォン用アプリのメンテナンスを業務で行っていました。"
-  },
-  {
-    "title": "Java (Android)",
-    "text": "業務でネイティブ向けライブラリをUnityで制作されたスマートフォンアプリに組み込むため、プラグインの作成を行っていました。"
-  },
-  {
-    "title": "Objective-C",
-    "text": "業務でネイティブ向けライブラリをUnityで制作されたスマートフォンアプリに組み込むため、プラグインの作成を行っていました。"
   }
 ]

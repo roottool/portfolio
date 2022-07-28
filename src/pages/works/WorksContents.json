@@ -13,14 +13,20 @@
   },
   {
     "title": "OrgaSound",
-    "tools": "Angular 6 + Typescript + Firebase",
+    "tools": "Angular 6 + TypeScript + Firebase",
     "text": "Firebaseから音声ファイルを取得して再生することが出来るWebチャットアプリです。チャットルーム内のメンバーに対して、Firebase上にある音声ファイルを再生させることが可能です。",
     "href": "https://github.com/roottool/OrgaSound"
   },
   {
     "title": "Portfolio site",
-    "tools": "React + Typescript",
-    "text": "このポートフォリオです。ReactとTypescriptの学習のために作成しました。スマートフォンからの閲覧を考慮したレスポンシブデザインになっています。",
+    "tools": "React + Next.js + TypeScript",
+    "text": "このポートフォリオです。React, Next.jsとTypeScriptの学習のために作成しました。スマートフォンからの閲覧を考慮したレスポンシブデザインになっています。",
     "href": "https://github.com/roottool/roottool.github.io"
+  },
+  {
+    "title": "Portfolio site",
+    "tools": "React + TypeScript + Electron",
+    "text": "Electronの学習のために作成しました。PC向けカンバンアプリです。",
+    "href": "https://github.com/roottool/skeban"
   }
 ]
