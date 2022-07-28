@@ -1,24 +1,13 @@
-import type { OwnedGame } from './api'
-import {
-  STEAM_APP_BANNER_HEIGHT,
-  STEAM_APP_BANNER_URL,
-  STEAM_APP_BANNER_WIDTH,
-  STEAM_APP_URL,
-} from './construct'
 import { generateSteamAppUrl, generateSteamAppBannerUrl } from './generateUrl'
 
 describe('generateUrl', () => {
   test('generateSteamAppUrl', () => {
-    const steamAppId: OwnedGame['appid'] = 27751
-    const result = generateSteamAppUrl(steamAppId)
-    expect(result).toBe(`${STEAM_APP_URL}/${steamAppId}/`)
+    const result = generateSteamAppUrl(27751)
+    expect(result).toBe('https://store.steampowered.com/app/27751/')
   })
 
   test('generateSteamAppBannerUrl', () => {
-    const steamAppId: OwnedGame['appid'] = 27751
-    const result = generateSteamAppBannerUrl(steamAppId)
-    expect(result).toBe(
-      `${STEAM_APP_BANNER_URL}/${steamAppId}/capsule_${STEAM_APP_BANNER_WIDTH}x${STEAM_APP_BANNER_HEIGHT}.jpg`,
-    )
+    const result = generateSteamAppBannerUrl(27751)
+    expect(result).toBe('http://cdn.cloudflare.steamstatic.com/steam/apps/27751/capsule_231x87.jpg')
   })
 })
