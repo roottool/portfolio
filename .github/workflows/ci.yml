@@ -53,25 +53,4 @@ jobs:
         uses: codecov/codecov-action@81cd2dc8148241f03f5839d295e000b8f761e378 # tag=v3.1.0
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-
-  snyk:
-    name: Check for vulnerabilities by Snyk
-    runs-on: ubuntu-latest
-    permissions:
-      # * Needed to upload the results to code-scanning dashboard.
-      security-events: write
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3.0.2
-      - name: Run Snyk to check for vulnerabilities
-        uses: snyk/actions/node@7fad562681122205233d1242c3bb39598c5393da # tag=0.3.0
-        # * To make sure that SARIF upload gets called.
-        continue-on-error: true
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-        with:
-          args: --sarif-file-output=snyk.sarif
-      - name: Upload result to GitHub Code Scanning
-        uses: github/codeql-action/upload-sarif@0c670bbf0414f39666df6ce8e718ec5662c21e03 # tag=v2.1.17
-        with:
-          sarif_file: snyk.sarif
+          fail_ci_if_error: true
