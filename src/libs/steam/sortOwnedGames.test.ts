@@ -1,8 +1,7 @@
 import sortOwnedGames from './sortOwnedGames'
 
-// @ponicode
 describe('sortOwnedGames', () => {
-  test('Sorted in descending order for `playtime_forever`.', () => {
+  test('This function must run sorting in descending order for `playtime_forever`.', () => {
     const reversePattern = [
       {
         appid: 2945,
@@ -19,13 +18,10 @@ describe('sortOwnedGames', () => {
         playtime_forever: 180,
       },
     ]
-    const expected = reversePattern.reverse()
-    const result = sortOwnedGames(reversePattern)
-
-    expect(result).toEqual(expected)
+    expect(sortOwnedGames(reversePattern)).toEqual(reversePattern.reverse())
   })
 
-  test('Sorting order patterns that do not require sorting.', () => {
+  test('Patterns that do not require sorting.', () => {
     const unnecessaryPattern = [
       {
         appid: 10,
@@ -42,13 +38,11 @@ describe('sortOwnedGames', () => {
         playtime_forever: 60,
       },
     ]
-    const result = sortOwnedGames(unnecessaryPattern)
-
-    expect(result).toEqual(unnecessaryPattern)
+    expect(sortOwnedGames(unnecessaryPattern)).toEqual(unnecessaryPattern)
   })
 
-  test('Even if the comparison results in the same value, no sorting is required.', () => {
-    const unnecessaryPattern = [
+  test('Patterns with the same value also do not require sorting.', () => {
+    const samePlaytimeForeverPattern = [
       {
         appid: 10,
         has_community_visible_stats: true,
@@ -64,8 +58,6 @@ describe('sortOwnedGames', () => {
         playtime_forever: 180,
       },
     ]
-    const result = sortOwnedGames(unnecessaryPattern)
-
-    expect(result).toEqual(unnecessaryPattern)
+    expect(sortOwnedGames(samePlaytimeForeverPattern)).toEqual(samePlaytimeForeverPattern)
   })
 })
