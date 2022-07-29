@@ -12,7 +12,9 @@
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
   "prettier.printWidth": 100,
+  "javascript.preferences.importModuleSpecifier": "project-relative",
   "javascript.preferences.importModuleSpecifierEnding": "minimal",
+  "typescript.preferences.importModuleSpecifier": "project-relative",
   "typescript.preferences.importModuleSpecifierEnding": "minimal",
   "[javascript|typescript|typescriptreact|json|jsonc|yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
