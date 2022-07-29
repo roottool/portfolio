@@ -38,14 +38,3 @@ jobs:
         uses: github/codeql-action/upload-sarif@0c670bbf0414f39666df6ce8e718ec5662c21e03 # tag=v2.1.17
         with:
           sarif_file: snyk.sarif
-  fossa:
-    name: Scan with FOSSA
-    runs-on: ubuntu-latest
-    if: ${{ !github.event.pull_request.draft }}
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3.0.2
-      - name: Run FOSSA Scan
-        uses: fossas/fossa-action@f61a4c0c263690f2ddb54b9822a719c25a7b608f # tag=v1.3.1
-        with:
-          api-key: ${{secrets.FOSSA_API_KEY}}
