@@ -93,6 +93,15 @@ const config = {
         '@typescript-eslint/no-var-requires': 'off',
       },
     },
+    {
+      files: ['src/test/**/*', 'src/**/*.test.ts', 'src/**/*.test.tsx'],
+      env: {
+        browser: true,
+        node: true,
+        es6: true,
+        jest: true,
+      },
+    },
   ],
 }
 
