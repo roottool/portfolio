@@ -1,7 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:base", "group:allNonMajor", "helpers:pinGitHubActionDigests"],
-  "assignees": ["roottool"],
+  "assignees": ["@roottool"],
   "labels": ["dependencies"],
   "timezone": "Asia/Tokyo",
   "vulnerabilityAlerts": {
@@ -14,17 +14,12 @@
     },
     {
       "matchPackagePatterns": ["eslint"],
-      "groupName": "ESLint",
+      "groupName": "ESLint Group",
       "automerge": true
     },
     {
       "matchPackagePrefixes": ["@types/"],
-      "groupName": "Type definitions",
-      "automerge": true
-    },
-    {
-      "matchPackagePrefixes": ["prettier"],
-      "groupName": "Prettier",
+      "groupName": "Type definitions Group",
       "automerge": true
     }
   ]
