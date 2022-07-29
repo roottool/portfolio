@@ -22,7 +22,7 @@ jobs:
     if: ${{ !github.event.pull_request.draft }}
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # renovate: tag=v3.0.2
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3.0.2
       - name: Setup Node.js LTS
         uses: actions/setup-node@2fddd8803e2f5c9604345a0b591c3020ee971a93 # tag=v3.4.1
         with:
@@ -39,7 +39,7 @@ jobs:
     if: ${{ !github.event.pull_request.draft }}
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # renovate: tag=v3.0.2
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3.0.2
       - name: Setup Node.js LTS
         uses: actions/setup-node@2fddd8803e2f5c9604345a0b591c3020ee971a93 # tag=v3.4.1
         with:
@@ -48,7 +48,11 @@ jobs:
       - name: Dependency install
         run: yarn install --frozen-lockfile
       - name: Run test with Jest
-        run: yarn test --ci
+        run: yarn test --ci --coverage
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@81cd2dc8148241f03f5839d295e000b8f761e378 # tag=v3.1.0
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
 
   snyk:
     name: Check for vulnerabilities by Snyk
@@ -58,9 +62,9 @@ jobs:
       security-events: write
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # renovate: tag=v3.0.2
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3.0.2
       - name: Run Snyk to check for vulnerabilities
-        uses: snyk/actions/node@7fad562681122205233d1242c3bb39598c5393da # renovate: tag=0.3.0
+        uses: snyk/actions/node@7fad562681122205233d1242c3bb39598c5393da # tag=0.3.0
         # * To make sure that SARIF upload gets called.
         continue-on-error: true
         env:
