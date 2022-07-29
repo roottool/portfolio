@@ -47,8 +47,8 @@ jobs:
           cache: yarn
       - name: Dependency install
         run: yarn install --frozen-lockfile
-      - name: Run test
-        run: yarn test
+      - name: Run test with Jest
+        run: yarn test --ci
 
   snyk:
     name: Check for vulnerabilities by Snyk

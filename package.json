@@ -30,8 +30,7 @@
     "fix": "run-s -c fix:*",
     "fix:prettier": "prettier --cache --write .",
     "fix:eslint": "eslint . --fix --color --cache --ext .js,.ts,.tsx",
-    "test": "run-s test:*",
-    "test:jest": "jest"
+    "test": "jest --colors"
   },
   "lint-staged": {
     "*.{js,ts?(x)}": [
