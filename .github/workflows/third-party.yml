@@ -19,6 +19,7 @@ jobs:
   snyk:
     name: Check for vulnerabilities by Snyk
     runs-on: ubuntu-latest
+    if: ${{ !github.event.pull_request.draft }}
     permissions:
       # * Needed to upload the results to code-scanning dashboard.
       security-events: write
@@ -40,6 +41,7 @@ jobs:
   fossa:
     name: Scan and test by FOSSA
     runs-on: ubuntu-latest
+    if: ${{ !github.event.pull_request.draft }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3.0.2
