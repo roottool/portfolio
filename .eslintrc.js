@@ -8,7 +8,7 @@ const config = {
     node: true,
     es6: true,
   },
-  plugins: ['@typescript-eslint', 'import', 'react', 'react-hooks', 'unused-imports'],
+  plugins: ['@typescript-eslint', 'jsx-a11y', 'react', 'react-hooks', 'import', 'unused-imports'],
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',

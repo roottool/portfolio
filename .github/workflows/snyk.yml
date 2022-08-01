@@ -1,4 +1,4 @@
-name: CI with third party
+name: Snyk
 on:
   push:
     branches:
