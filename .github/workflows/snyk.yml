@@ -26,6 +26,8 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # tag=v3.0.2
+      - name: Initialize
+        uses: ./.github/actions/init
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/node@7fad562681122205233d1242c3bb39598c5393da # tag=0.3.0
         # * To make sure that SARIF upload gets called.

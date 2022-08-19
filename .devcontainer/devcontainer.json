@@ -34,5 +34,5 @@
   "initializeCommand": "cd \"${localWorkspaceFolder}\" && git config --local user.email \"$(git config user.email)\" && git config --local user.name \"$(git config user.name)\" && git config --local user.signingkey \"$(git config user.signingkey)\"",
   // * Use 'postCreateCommand' to run commands after the container is created.
   "postCreateCommand": "sudo chown -R node:node node_modules",
-  "postStartCommand": "yarn && yarn prepare"
+  "postStartCommand": "pnpm install"
 }
