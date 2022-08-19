@@ -1,0 +1,14 @@
+runs:
+  using: 'composite'
+  steps:
+    - name: Setup pnpm
+      uses: pnpm/action-setup@10693b3829bf86eb2572aef5f3571dcf5ca9287d # tag=v2.2.2
+      with:
+        version: 7
+    - name: Setup Node.js LTS
+      uses: actions/setup-node@2fddd8803e2f5c9604345a0b591c3020ee971a93 # tag=v3.4.1
+      with:
+        node-version: lts/*
+        cache: pnpm
+    - name: Dependency install
+      run: pnpm install --frozen-lockfile
