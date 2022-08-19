@@ -29,7 +29,7 @@
     "fix": "run-s -c fix:*",
     "fix:prettier": "prettier --cache --write .",
     "fix:eslint": "eslint . --fix --color --cache --ext .js,.ts,.tsx",
-    "test": "run-s -c test:*",
+    "test": "run-s -c test:tsc \"test:jest {@}\"",
     "test:tsc": "tsc --noEmit",
     "test:jest": "jest --colors"
   },
