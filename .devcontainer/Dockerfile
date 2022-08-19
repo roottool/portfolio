@@ -8,8 +8,9 @@ USER ${USERNAME}
 ARG WORKING_DIR=${WORKING_DIR:-"/workspace"}
 WORKDIR ${WORKING_DIR}
 
-# * Avoiding extension reinstalls on container rebuild
-RUN mkdir -p /home/${USERNAME}/.vscode-server/extensions \
+RUN npm install -g pnpm \
+  # * Avoiding extension reinstalls on container rebuild
+  && mkdir -p /home/${USERNAME}/.vscode-server/extensions \
   # * Persist zsh history between runs
   && SNIPPET="export PROMPT_COMMAND='history -a' && export HISTFILE=/home/${USERNAME}/commandhistory/.zsh_history" \
   && mkdir -p /home/${USERNAME}/commandhistory \
