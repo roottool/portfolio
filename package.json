@@ -26,11 +26,12 @@
     "lint": "run-s -c lint:*",
     "lint:prettier": "prettier --check .",
     "lint:eslint": "eslint . --color --ext .js,.ts,.tsx",
-    "lint:tsc": "tsc --noEmit",
     "fix": "run-s -c fix:*",
     "fix:prettier": "prettier --cache --write .",
     "fix:eslint": "eslint . --fix --color --cache --ext .js,.ts,.tsx",
-    "test": "jest --colors"
+    "test": "run-s -c test:tsc \"test:jest {@}\"",
+    "test:tsc": "tsc --noEmit",
+    "test:jest": "jest --colors"
   },
   "lint-staged": {
     "*.{js,ts?(x)}": [
