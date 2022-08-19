@@ -26,7 +26,7 @@ jobs:
       - name: Initialize
         uses: ./.github/actions/init
       - name: Run lint
-        run: pnpm lint
+        run: pnpm run lint
 
   test:
     name: Test
@@ -38,7 +38,7 @@ jobs:
       - name: Initialize
         uses: ./.github/actions/init
       - name: Run test with Jest
-        run: pnpm test --ci --coverage
+        run: pnpm run test --ci --coverage
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@81cd2dc8148241f03f5839d295e000b8f761e378 # tag=v3.1.0
         with:
