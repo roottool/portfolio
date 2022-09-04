@@ -8,7 +8,15 @@ const config = {
     node: true,
     es6: true,
   },
-  plugins: ['@typescript-eslint', 'jsx-a11y', 'react', 'react-hooks', 'import', 'unused-imports'],
+  plugins: [
+    '@typescript-eslint',
+    'jsx-a11y',
+    'react',
+    'react-hooks',
+    '@next/next',
+    'import',
+    'unused-imports',
+  ],
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
@@ -45,6 +53,7 @@ const config = {
   },
   rules: {
     '@typescript-eslint/no-unused-vars': 'off',
+    '@typescript-eslint/consistent-type-imports': 'warn',
     '@typescript-eslint/consistent-type-definitions': ['warn', 'interface'],
     'import/order': [
       'warn',
