@@ -1,7 +1,7 @@
 import { Typography } from '@material-ui/core'
 import { OpenInNew } from '@material-ui/icons'
 import { styled } from '@stitches/react'
-import Image from 'next/image'
+import Image from 'next/future/image'
 
 import { STEAM_APP_BANNER_HEIGHT, STEAM_APP_BANNER_WIDTH } from '@/libs/steam/construct'
 import type { OwnedGameInfo } from '@/pages/api/fetchOwnedGames'
@@ -15,16 +15,16 @@ const GameInfoGridPresenter = ({
   playTimeInHours,
 }: GameInfoGridProps) => (
   <StyledFlex>
-    <a href={appUrl} rel="noreferrer" target="_blank">
+    <a href={appUrl} rel="noopener noreferrer" target="_blank">
       <Image
+        alt={appName}
         height={STEAM_APP_BANNER_HEIGHT}
         src={bannerUrl}
-        title={appName}
         width={STEAM_APP_BANNER_WIDTH}
       />
     </a>
     <div>
-      <a href={appUrl} rel="noreferrer" target="_blank">
+      <a href={appUrl} rel="noopener noreferrer" target="_blank">
         <Typography align="left" variant="h6">
           {appName}
           <OpenInNew fontSize="small" />
