@@ -1,5 +1,5 @@
-import axios from 'axios'
+import ky from 'ky'
 
-const fetcher = <T>(url: string) => axios.get<T>(url).then((response) => response.data)
+const fetcher = <T>(url: string) => ky.get(url).json<T>()
 
 export default fetcher
