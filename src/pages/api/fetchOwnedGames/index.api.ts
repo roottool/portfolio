@@ -1,4 +1,4 @@
-import axios, { type AxiosResponse } from 'axios'
+import got from 'got'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 import type { OwnedGamesApiResponse } from '@/libs/steam/api'
@@ -13,10 +13,10 @@ const fetchOwnedGamesHandler = (
   _req: NextApiRequest,
   res: NextApiResponse<FetchOwnedGamesResponse>,
 ) =>
-  axios
+  got
     .get(GET_OWNED_GAMES_API_URL)
-    .then((response: AxiosResponse<OwnedGamesApiResponse>) => {
-      const { games, game_count } = response.data.response
+    .json<OwnedGamesApiResponse>()
+    .then(({ response: { games, game_count } }) => {
       const ownedGames: FetchOwnedGamesResponse['ownedGames'] = sortOwnedGames(games).map(
         ({ appid, name, playtime_forever }) => ({
           appId: appid,
