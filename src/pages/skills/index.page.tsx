@@ -1,14 +1,15 @@
 import { Card, CardContent, Grid, Typography } from '@material-ui/core'
 import { createStyles, withStyles, type WithStyles } from '@material-ui/core/styles'
-import type { NextPage } from 'next'
 import Head from 'next/head'
 
 import PageTitleWrapper from '@/components/atoms/PageTitleWrapper'
 
+import BasicLayout from '../../components/templates/BasicLayout'
+import type { NextPageWithLayout } from '../_app.page'
 import contents from './SkillsContents.json'
 
 const Skills = ({ classes }: WithStyles<typeof styleSettings>) => (
-  <>
+  <main>
     <PageTitleWrapper>Skills</PageTitleWrapper>
     <Grid container className={classes.container}>
       {contents.map((item, key) => (
@@ -24,7 +25,7 @@ const Skills = ({ classes }: WithStyles<typeof styleSettings>) => (
         </Grid>
       ))}
     </Grid>
-  </>
+  </main>
 )
 
 const styleSettings = () =>
@@ -43,7 +44,7 @@ const styleSettings = () =>
   })
 const StyledSkills = withStyles(styleSettings)(Skills)
 
-const Container: NextPage = () => (
+const Container: NextPageWithLayout = () => (
   <>
     <Head>
       <title>Skills - roottool&apos;s Portfolio Site</title>
@@ -51,5 +52,6 @@ const Container: NextPage = () => (
     <StyledSkills />
   </>
 )
+Container.getLayout = BasicLayout
 
 export default Container

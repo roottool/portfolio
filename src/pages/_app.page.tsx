@@ -1,11 +1,20 @@
 import { globalCss } from '@stitches/react'
+import type { NextPage } from 'next'
 import type { AppProps } from 'next/app'
+import { type ReactElement, type ReactNode, StrictMode } from 'react'
 
-import BasePageTemplate from '@/components/templates/BasePageTemplate'
 import initMocks from '@/mocks'
 
 if (process.env.NODE_ENV === 'development') {
   initMocks()
+}
+
+export type NextPageWithLayout = NextPage & {
+  getLayout?: (page: ReactElement) => ReactNode
+}
+
+type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout
 }
 
 const globalStyles = globalCss({
@@ -32,13 +41,15 @@ const globalStyles = globalCss({
     textAlign: 'center',
   },
 })
-
 globalStyles()
-const App = ({ Component, pageProps }: AppProps) => {
-  return (
-    <BasePageTemplate>
+
+const App = ({ Component, pageProps }: AppPropsWithLayout) => {
+  const getLayout = Component.getLayout ?? ((page) => page)
+
+  return getLayout(
+    <StrictMode>
       <Component {...pageProps} />
-    </BasePageTemplate>
+    </StrictMode>,
   )
 }
 
