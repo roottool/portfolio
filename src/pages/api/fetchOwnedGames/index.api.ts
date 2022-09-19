@@ -1,4 +1,4 @@
-import got from 'got'
+import { got } from 'got'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 import type { OwnedGamesApiResponse } from '@/libs/steam/api'
