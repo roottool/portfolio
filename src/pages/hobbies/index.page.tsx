@@ -1,5 +1,4 @@
 import { CircularProgress, Paper, Typography } from '@material-ui/core'
-import type { NextPage } from 'next'
 import Head from 'next/head'
 import { Suspense } from 'react'
 
@@ -8,8 +7,11 @@ import FetchErrorBoundary from '@/components/features/FetchErrorBoundary'
 import GameInfoGrid from '@/components/features/hobbies/GameInfoGrid'
 import { styled } from '@/styles/StyleConstants'
 
+import BasicLayout from '../../components/templates/BasicLayout'
+import type { NextPageWithLayout } from '../_app.page'
+
 const HobbiesPresenter = () => (
-  <>
+  <main>
     <PageTitleWrapper>Hobbies</PageTitleWrapper>
     <StyledPaper>
       <Typography gutterBottom variant="subtitle1">
@@ -24,7 +26,7 @@ const HobbiesPresenter = () => (
         </FetchErrorBoundary>
       </StyledList>
     </StyledPaper>
-  </>
+  </main>
 )
 
 const StyledPaper = styled(Paper, {
@@ -52,7 +54,7 @@ const StyledList = styled('div', {
   overflow: 'hidden auto',
 })
 
-const Container: NextPage = () => {
+const Container: NextPageWithLayout = () => {
   return (
     <>
       <Head>
@@ -62,5 +64,6 @@ const Container: NextPage = () => {
     </>
   )
 }
+Container.getLayout = BasicLayout
 
 export default Container

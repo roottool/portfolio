@@ -1,6 +1,5 @@
 import { Card, CardContent, Grid } from '@material-ui/core'
 import { createStyles, withStyles, type Theme, type WithStyles } from '@material-ui/core/styles'
-import type { NextPage } from 'next'
 import Head from 'next/head'
 import { IconContext } from 'react-icons'
 import { FaTwitterSquare } from 'react-icons/fa'
@@ -9,11 +8,14 @@ import { GoMarkGithub } from 'react-icons/go'
 import PageTitleWrapper from '@/components/atoms/PageTitleWrapper'
 import { MIN_TABLET_SIZE } from '@/styles/StyleConstants'
 
+import BasicLayout from '../../components/templates/BasicLayout'
+import type { NextPageWithLayout } from '../_app.page'
+
 const GITHUB_URL = 'https://github.com/roottool' as const
 const TWITTER_URL = 'https://twitter.com/roottool' as const
 
 const About = ({ classes: { card, contents } }: WithStyles<typeof styleSettings>) => (
-  <>
+  <main>
     <PageTitleWrapper>About</PageTitleWrapper>
     <Card className={card}>
       <CardContent>
@@ -47,7 +49,7 @@ const About = ({ classes: { card, contents } }: WithStyles<typeof styleSettings>
         </Grid>
       </CardContent>
     </Card>
-  </>
+  </main>
 )
 
 const styleSettings = (theme: Theme) =>
@@ -68,7 +70,7 @@ const styleSettings = (theme: Theme) =>
   })
 const StyledAbout = withStyles(styleSettings)(About)
 
-const Container: NextPage = () => (
+const Container: NextPageWithLayout = () => (
   <>
     <Head>
       <title>About - roottool&apos;s Portfolio Site</title>
@@ -76,5 +78,6 @@ const Container: NextPage = () => (
     <StyledAbout />
   </>
 )
+Container.getLayout = BasicLayout
 
 export default Container
