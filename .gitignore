@@ -1,5 +1,7 @@
 # dependencies
 node_modules/
+/.pnp
+.pnp.js
 
 # pnpm
 .pnpm-store/
@@ -10,11 +12,18 @@ coverage/
 # build
 .next/
 .swc/
+out/
+
+# production
+build/
 
 # cache
 .dccache
 .eslintcache
+
+# TypeScript
 tsconfig.tsbuildinfo
+next-env.d.ts
 
 # misc
 .DS_Store
@@ -28,3 +37,9 @@ yarn-error.log*
 
 # ENV files
 .env*
+
+# vercel
+.vercel
+
+# MSW
+public/mockServiceWorker.js

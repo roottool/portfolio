@@ -42,6 +42,7 @@
     "steamid",
     "steamstatic",
     "tsbuildinfo",
+    "vercel",
     "webp"
   ]
 }
