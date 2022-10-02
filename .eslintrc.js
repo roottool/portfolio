@@ -103,7 +103,7 @@ const config = {
       },
     },
     {
-      files: ['src/test/**/*', 'src/**/*.test.ts', 'src/**/*.test.tsx'],
+      files: ['jest.setup.js', 'src/test/**/*', 'src/**/*.test.ts', 'src/**/*.test.tsx'],
       env: {
         browser: true,
         node: true,
