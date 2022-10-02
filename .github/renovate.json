@@ -1,7 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:base", "group:allNonMajor", "helpers:pinGitHubActionDigests"],
-  "assignees": ["@roottool"],
   "labels": ["dependencies"],
   "timezone": "Asia/Tokyo",
   "vulnerabilityAlerts": {
