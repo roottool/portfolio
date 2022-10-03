@@ -8,12 +8,7 @@ import type { OwnedGameInfo } from '@/pages/api/fetchOwnedGames'
 
 type GameInfoGridProps = Omit<OwnedGameInfo, 'appId'>
 
-const GameInfoGridPresenter = ({
-  appName,
-  appUrl,
-  bannerUrl,
-  playTimeInHours,
-}: GameInfoGridProps) => (
+const GameInfoListItem = ({ appName, appUrl, bannerUrl, playTimeInHours }: GameInfoGridProps) => (
   <StyledFlex>
     <a href={appUrl} rel="noopener noreferrer" target="_blank">
       <Image
@@ -46,4 +41,4 @@ const StyledFlex = styled('div', {
   padding: '0 0.5rem',
 })
 
-export default GameInfoGridPresenter
+export default GameInfoListItem

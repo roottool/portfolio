@@ -1,15 +1,15 @@
-import GameInfoGridPresenter from './Presenter'
+import GameInfoListItem from './GameInfoListItem'
 import useGameInfoGrid from './useGameInfoGrid'
 
-const GameInfoGrid = () => {
+const GameInfoList = () => {
   const [ownedGames] = useGameInfoGrid()
   return (
     <>
       {ownedGames.map(({ appId, ...game }) => (
-        <GameInfoGridPresenter key={appId} {...game} />
+        <GameInfoListItem key={appId} {...game} />
       ))}
     </>
   )
 }
 
-export default GameInfoGrid
+export default GameInfoList
