@@ -18,7 +18,7 @@
   },
   "scripts": {
     "prepare": "is-ci || husky install",
-    "clean": "rimraf .next",
+    "clean": "rimraf .next .swc",
     "dev": "next dev",
     "build": "npm-run-all clean --parallel build:*",
     "build:next": "next build",
