@@ -1,5 +1,5 @@
 name: 'Auto Assign'
-on: [ pull_request_target ]
+on: [pull_request_target]
 
 permissions:
   contents: read
@@ -11,4 +11,4 @@ jobs:
     steps:
       - uses: kentaro-m/auto-assign-action@60730395fd3afb76c7407e16cd4b144fbbcf28a6 # tag=v1.2.3
         with:
-          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          repo-token: '${{ secrets.GITHUB_TOKEN }}'
