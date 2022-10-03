@@ -1,4 +1,2 @@
-addReviewers: true
-reviewers:
-  - roottool
+addReviewers: false
 addAssignees: author
