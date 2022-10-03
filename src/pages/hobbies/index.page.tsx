@@ -3,8 +3,8 @@ import Head from 'next/head'
 import { Suspense } from 'react'
 
 import PageTitleWrapper from '@/components/atoms/PageTitleWrapper'
-import FetchErrorBoundary from '@/components/features/FetchErrorBoundary'
 import GameInfoGrid from '@/components/features/hobbies/GameInfoGrid'
+import FetchErrorBoundary from '@/components/layouts/FetchErrorBoundary'
 import { styled } from '@/styles/StyleConstants'
 
 import BasicLayout from '../../components/templates/BasicLayout'
