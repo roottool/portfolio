@@ -2,7 +2,7 @@ runs:
   using: 'composite'
   steps:
     - name: Setup pnpm
-      uses: pnpm/action-setup@10693b3829bf86eb2572aef5f3571dcf5ca9287d # tag=v2.2.2
+      uses: pnpm/action-setup@537643d491d20c2712d11533497cb47b2d0eb9d5 # tag=v2.2.3
       with:
         version: 7
     - name: Setup Node.js LTS
