@@ -12,13 +12,18 @@
       "automerge": true
     },
     {
+      "matchPackagePrefixes": ["@types/"],
+      "groupName": "Type definitions Group",
+      "automerge": true
+    },
+    {
       "matchPackagePatterns": ["eslint"],
       "groupName": "ESLint Group",
       "automerge": true
     },
     {
-      "matchPackagePrefixes": ["@types/"],
-      "groupName": "Type definitions Group",
+      "matchPackagePatterns": ["jest"],
+      "groupName": "Jest Group",
       "automerge": true
     }
   ]
