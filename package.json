@@ -48,7 +48,7 @@
   "dependencies": {
     "@material-ui/core": "4.12.4",
     "@material-ui/icons": "4.11.3",
-    "@radix-ui/react-toolbar": "1.0.0",
+    "@radix-ui/react-toolbar": "1.0.1",
     "@stitches/react": "1.2.8",
     "got": "12.5.2",
     "ky": "0.31.4",
