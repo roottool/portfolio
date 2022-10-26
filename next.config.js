@@ -5,7 +5,6 @@
  */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
   pageExtensions: ['page.tsx', 'api.ts'],
   images: {
     domains: ['cdn.cloudflare.steamstatic.com'],
