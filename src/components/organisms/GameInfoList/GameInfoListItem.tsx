@@ -1,7 +1,7 @@
 import { Typography } from '@material-ui/core'
 import { OpenInNew } from '@material-ui/icons'
 import { styled } from '@stitches/react'
-import Image from 'next/future/image'
+import Image from 'next/image'
 
 import { STEAM_APP_BANNER_HEIGHT, STEAM_APP_BANNER_WIDTH } from '@/libs/steam/construct'
 import type { OwnedGameInfo } from '@/pages/api/fetchOwnedGames'
