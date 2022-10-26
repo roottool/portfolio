@@ -1,32 +1,20 @@
 // import * as Toolbar from '@radix-ui/react-toolbar'
 // import { createTheme } from '@stitches/react'
-import { Root as ToolbarRoot, Link as ToolbarLink } from '@radix-ui/react-toolbar'
+import { Root as ToolbarRoot } from '@radix-ui/react-toolbar'
 import Link from 'next/link'
 
 import { styled } from '@/styles/StyleConstants'
 
 const NavbarComponent = () => (
   <StyledToolbarRoot>
-    <Link passHref href="/">
-      <DisplayLinkOnDesktop>roottool&apos;s portfolio</DisplayLinkOnDesktop>
-    </Link>
+    <DisplayLinkOnDesktop href="/">roottool&apos;s portfolio</DisplayLinkOnDesktop>
     <GrowWrapper />
     <NavigationItemsWrapper>
-      <Link passHref href="/about">
-        <StyledToolbarLink>about</StyledToolbarLink>
-      </Link>
-      <Link passHref href="/works">
-        <StyledToolbarLink>Works</StyledToolbarLink>
-      </Link>
-      <Link passHref href="/">
-        <DisplayLinkExcludeDesktop>Home</DisplayLinkExcludeDesktop>
-      </Link>
-      <Link passHref href="/skills">
-        <StyledToolbarLink>Skills</StyledToolbarLink>
-      </Link>
-      <Link passHref href="/hobbies">
-        <StyledToolbarLink>Hobbies</StyledToolbarLink>
-      </Link>
+      <StyledToolbarLink href="/about">about</StyledToolbarLink>
+      <StyledToolbarLink href="/works">Works</StyledToolbarLink>
+      <DisplayLinkExcludeDesktop href="/">Home</DisplayLinkExcludeDesktop>
+      <StyledToolbarLink href="/skills">Skills</StyledToolbarLink>
+      <StyledToolbarLink href="/hobbies">Hobbies</StyledToolbarLink>
     </NavigationItemsWrapper>
   </StyledToolbarRoot>
 )
@@ -44,20 +32,23 @@ const StyledToolbarRoot = styled(ToolbarRoot, {
   },
 })
 
-const StyledToolbarLink = styled(ToolbarLink, {
+const StyledToolbarLink = styled(Link, {
   color: 'white',
   padding: '1rem 0.5rem',
   textDecoration: 'none',
 })
 
-const DisplayLinkOnDesktop = styled(StyledToolbarLink, {
-  display: 'block',
+const DisplayLinkOnDesktop = styled(Link, {
+  color: 'white',
+  padding: '1rem 0.5rem',
+  fontSize: '1.25rem',
+  textDecoration: 'none',
   '@bp2': {
     display: 'none',
   },
 })
 
-const DisplayLinkExcludeDesktop = styled(StyledToolbarLink, {
+const DisplayLinkExcludeDesktop = styled(Link, {
   display: 'none',
   '@bp2': {
     display: 'block',
@@ -65,7 +56,6 @@ const DisplayLinkExcludeDesktop = styled(StyledToolbarLink, {
 })
 
 const GrowWrapper = styled('div', {
-  display: 'block',
   flex: 1,
   '@bp2': {
     display: 'none',
