@@ -27,7 +27,7 @@ specifiers:
   is-ci: 3.0.1
   jest: 29.2.2
   jest-environment-jsdom: 29.2.2
-  ky: 0.32.1
+  ky: 0.32.2
   lint-staged: 13.0.3
   msw: 0.47.4
   next: 13.0.1
@@ -47,7 +47,7 @@ dependencies:
   '@radix-ui/react-toolbar': 1.0.1_biqbaboplfbrettd7655fr4n2y
   '@stitches/react': 1.2.8_react@18.2.0
   got: 12.5.2
-  ky: 0.32.1
+  ky: 0.32.2
   next: 13.0.1_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -4265,8 +4265,8 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /ky/0.32.1:
-    resolution: {integrity: sha512-Kfs8P2HNH1Zyivoba/nREwqKsHHIEApDe1Zs8IogBRKsZDHe2mWJ9N0m1dv+9T/12llvhClke331s6khwpMb7w==}
+  /ky/0.32.2:
+    resolution: {integrity: sha512-eBJeF6IXNwX5rksdwBrE2rIJrU2d84GoTvdM7OmmTIwUVXEMd72wIwvT+nyhrqtv7AzbSNsWz7yRsHgVhj1uog==}
     engines: {node: '>=14.16'}
     dev: false
 
