@@ -22,11 +22,6 @@ const globalStyles = globalCss({
     height: '100%',
   },
   body: {
-    backgroundAttachment: 'fixed',
-    backgroundImage: 'url(/images/EchoCat.webp)',
-    backgroundPosition: 'right bottom',
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: '38% 38%',
     fontFamily:
       '"Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif',
     margin: 0,
