@@ -1,13 +1,15 @@
 // @ts-check
 
+/** @type {import('eslint/lib/shared/types').ConfigData['env']} */
+const env = {
+  browser: true,
+  es6: true,
+}
+
 /** @type {import('eslint/lib/shared/types').ConfigData} */
 const config = {
+  env,
   root: true,
-  env: {
-    browser: true,
-    node: true,
-    es6: true,
-  },
   plugins: [
     '@typescript-eslint',
     'jsx-a11y',
@@ -97,7 +99,11 @@ const config = {
   },
   overrides: [
     {
-      files: ['jest.config.js'],
+      files: ['./*.js'],
+      env: {
+        ...env,
+        node: true,
+      },
       rules: {
         '@typescript-eslint/no-var-requires': 'off',
       },
@@ -105,9 +111,8 @@ const config = {
     {
       files: ['src/test/**/*', 'src/**/*.test.ts', 'src/**/*.test.tsx'],
       env: {
-        browser: true,
+        ...env,
         node: true,
-        es6: true,
         jest: true,
       },
     },
