@@ -29,7 +29,7 @@ specifiers:
   jest-environment-jsdom: 29.3.1
   ky: 0.32.2
   lint-staged: 13.0.3
-  msw: 0.48.0
+  msw: 0.48.1
   next: 13.0.2
   npm-run-all: 4.1.5
   prettier: 2.7.1
@@ -78,7 +78,7 @@ devDependencies:
   jest: 29.3.1_@types+node@18.11.9
   jest-environment-jsdom: 29.3.1
   lint-staged: 13.0.3
-  msw: 0.48.0_typescript@4.8.4
+  msw: 0.48.1_typescript@4.8.4
   npm-run-all: 4.1.5
   prettier: 2.7.1
   rimraf: 3.0.2
@@ -4581,8 +4581,8 @@ packages:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
     dev: true
 
-  /msw/0.48.0_typescript@4.8.4:
-    resolution: {integrity: sha512-bInpCikiW1VnjNkEjdaL5Wj+P/Xgz/U1GiUH/++Ck96w+FRpegP38HqBHJjdYZM1oH8VrtGiT14xvQHHhUTDzQ==}
+  /msw/0.48.1_typescript@4.8.4:
+    resolution: {integrity: sha512-lnhIsC5aQOpqu5CjJ11CPl6RYGbY9+LhZZw1zKX3S710O9qGQ7kftmfX1FifmZNk2FuKoygprKITSfqHWpE5LQ==}
     engines: {node: '>=14'}
     hasBin: true
     requiresBuild: true
