@@ -1,6 +1,18 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base", "group:allNonMajor", "helpers:pinGitHubActionDigests"],
+  "extends": [
+    ":dependencyDashboard",
+    ":semanticPrefixFixDepsChoreOthers",
+    ":ignoreModulesAndTests",
+    ":autodetectPinVersions",
+    ":prHourlyLimit4",
+    ":prConcurrentLimit10",
+    "group:monorepos",
+    "group:recommended",
+    "group:allNonMajor",
+    "workarounds:all",
+    "helpers:pinGitHubActionDigests"
+  ],
   "labels": ["dependencies"],
   "timezone": "Asia/Tokyo",
   "vulnerabilityAlerts": {
@@ -12,8 +24,13 @@
       "automerge": true
     },
     {
-      "matchPackagePrefixes": ["@types/"],
-      "groupName": "Type definitions Group",
+      "matchPackagePatterns": ["react", "react-dom"],
+      "groupName": "React Group",
+      "automerge": true
+    },
+    {
+      "matchPackageNames": ["next", "@next/eslint-plugin-next"],
+      "groupName": "Next.js Group",
       "automerge": true
     },
     {
@@ -24,6 +41,11 @@
     {
       "matchPackagePatterns": ["jest"],
       "groupName": "Jest Group",
+      "automerge": true
+    },
+    {
+      "matchPackagePrefixes": ["@types/"],
+      "groupName": "Type definitions Group",
       "automerge": true
     }
   ]
