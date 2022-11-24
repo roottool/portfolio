@@ -20,16 +20,13 @@
   },
   "packageRules": [
     {
-      "updateTypes": ["minor", "patch", "pin", "digest"],
-      "automerge": true
-    },
-    {
-      "matchPackagePatterns": ["react", "react-dom"],
+      "matchPackageNames": ["react", "react-dom"],
       "groupName": "React Group",
       "automerge": true
     },
     {
-      "matchPackageNames": ["next", "@next/eslint-plugin-next"],
+      "matchPackageNames": ["next"],
+      "matchPackagePrefixes": ["@next/"],
       "groupName": "Next.js Group",
       "automerge": true
     },
@@ -46,6 +43,10 @@
     {
       "matchPackagePrefixes": ["@types/"],
       "groupName": "Type definitions Group",
+      "automerge": true
+    },
+    {
+      "updateTypes": ["minor", "patch", "pin", "digest"],
       "automerge": true
     }
   ]
