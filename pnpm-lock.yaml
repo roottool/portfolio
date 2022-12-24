@@ -3,7 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@material-ui/core': 4.12.4
   '@material-ui/icons': 4.11.3
-  '@next/eslint-plugin-next': 13.1.0
+  '@next/eslint-plugin-next': 13.1.1
   '@radix-ui/react-toolbar': 1.0.1
   '@stitches/react': 1.2.8
   '@testing-library/jest-dom': 5.16.5
@@ -56,7 +56,7 @@ dependencies:
   swr: 2.0.0_react@18.2.0
 
 devDependencies:
-  '@next/eslint-plugin-next': 13.1.0
+  '@next/eslint-plugin-next': 13.1.1
   '@testing-library/jest-dom': 5.16.5
   '@testing-library/react': 13.4.0_biqbaboplfbrettd7655fr4n2y
   '@types/jest': 29.2.4
@@ -903,8 +903,8 @@ packages:
     resolution: {integrity: sha512-6iNixFzCndH+Bl4FetQzOMjxCJqg8fs0LAlZviig1K6mIjOWH2m2oPcHcOg1Ta5VCe7Bx5KG1Hs+NrWDUkBt9A==}
     dev: false
 
-  /@next/eslint-plugin-next/13.1.0:
-    resolution: {integrity: sha512-LGh0iqcEwxs0HmEK96cXXuhofcOGSUGl8Zms279JW8Zq/6GJkXo87gtRpfJrwD+a77nEIdRaORPM91Us3xW0Qw==}
+  /@next/eslint-plugin-next/13.1.1:
+    resolution: {integrity: sha512-SBrOFS8PC3nQ5aeZmawJkjKkWjwK9RoxvBSv/86nZp0ubdoVQoko8r8htALd9ufp16NhacCdqhu9bzZLDWtALQ==}
     dependencies:
       glob: 7.1.7
     dev: true
