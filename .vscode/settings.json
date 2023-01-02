@@ -8,10 +8,8 @@
   "editor.formatOnPaste": true,
   "editor.formatOnSaveMode": "modificationsIfAvailable",
   "editor.tabSize": 2,
-  "eslint.packageManager": "pnpm",
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
-  "prettier.printWidth": 100,
   "javascript.preferences.importModuleSpecifier": "project-relative",
   "javascript.preferences.importModuleSpecifierEnding": "minimal",
   "typescript.preferences.importModuleSpecifier": "project-relative",
@@ -29,6 +27,7 @@
     },
     "files.trimTrailingWhitespace": false
   },
+  // Extensions
   "cSpell.words": [
     "appinfo",
     "automerge",
@@ -45,5 +44,8 @@
     "tsbuildinfo",
     "vercel",
     "webp"
-  ]
+  ],
+  "jest.jestCommandLine": "pnpm run test:jest",
+  "eslint.packageManager": "pnpm",
+  "prettier.printWidth": 100
 }
