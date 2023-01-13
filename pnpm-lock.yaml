@@ -37,7 +37,7 @@ specifiers:
   react-dom: 18.2.0
   react-error-boundary: 3.1.4
   react-icons: 4.7.1
-  rimraf: 3.0.2
+  rimraf: 4.0.2
   swr: 2.0.0
   typescript: 4.9.4
 
@@ -81,7 +81,7 @@ devDependencies:
   msw: 0.49.2_typescript@4.9.4
   npm-run-all: 4.1.5
   prettier: 2.8.2
-  rimraf: 3.0.2
+  rimraf: 4.0.2
   typescript: 4.9.4
 
 packages:
@@ -5337,6 +5337,12 @@ packages:
     hasBin: true
     dependencies:
       glob: 7.2.3
+    dev: true
+
+  /rimraf/4.0.2:
+    resolution: {integrity: sha512-WrOGeOIPqDLQZw+fBlciqu/yajcfNYeI1tERmCNMJ14VLBiKq1Ud3xSfPD+nqA8kYRcEr39HZeBuxHYEqvoRyw==}
+    engines: {node: '>=14'}
+    hasBin: true
     dev: true
 
   /run-async/2.4.1:
