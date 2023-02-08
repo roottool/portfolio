@@ -26,6 +26,18 @@ jobs:
       - name: Run lint
         run: pnpm run lint
 
+  types-check:
+    name: Types check
+    runs-on: ubuntu-latest
+    if: ${{ !github.event.pull_request.draft }}
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
+      - name: Initialize
+        uses: ./.github/actions/init
+      - name: Run types check
+        run: pnpm run types-check
+
   test:
     name: Test
     runs-on: ubuntu-latest
