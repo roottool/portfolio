@@ -37,8 +37,8 @@ specifiers:
   react-dom: 18.2.0
   react-error-boundary: 3.1.4
   react-icons: 4.8.0
-  rimraf: 4.3.0
-  swr: 2.0.4
+  rimraf: 4.3.1
+  swr: 2.1.0
   typescript: 4.9.5
 
 dependencies:
@@ -53,7 +53,7 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
   react-error-boundary: 3.1.4_react@18.2.0
   react-icons: 4.8.0_react@18.2.0
-  swr: 2.0.4_react@18.2.0
+  swr: 2.1.0_react@18.2.0
 
 devDependencies:
   '@next/eslint-plugin-next': 13.2.3
@@ -81,7 +81,7 @@ devDependencies:
   msw: 1.1.0_typescript@4.9.5
   npm-run-all: 4.1.5
   prettier: 2.8.4
-  rimraf: 4.3.0
+  rimraf: 4.3.1
   typescript: 4.9.5
 
 packages:
@@ -5469,8 +5469,8 @@ packages:
       glob: 7.2.3
     dev: true
 
-  /rimraf/4.3.0:
-    resolution: {integrity: sha512-5qVDXPbByA1qSJEWMv1qAwKsoS22vVpsL2QyxCKBw4gf6XiFo1K3uRLY6uSOOBFDwnqAZtnbILqWKKlzh8bkGg==}
+  /rimraf/4.3.1:
+    resolution: {integrity: sha512-GfHJHBzFQra23IxDzIdBqhOWfbtdgS1/dCHrDy+yvhpoJY5TdwdT28oWaHWfRpKFDLd3GZnGTx6Mlt4+anbsxQ==}
     engines: {node: '>=14'}
     hasBin: true
     dependencies:
@@ -5852,8 +5852,8 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /swr/2.0.4_react@18.2.0:
-    resolution: {integrity: sha512-4GUiTjknRUVuw4MWUHR7mzJ9G/DWL+yZz/TgWDfiA0OZ9tL6qyrTkN2wPeboBpL3OJTkej3pexh3mWCnv8cFkQ==}
+  /swr/2.1.0_react@18.2.0:
+    resolution: {integrity: sha512-4hYl5p3/KalQ1MORealM79g/DtLohmud6yyfXw5l4wjtFksYUnocRFudvyaoUtgj3FrVNK9lS25Av9dsZYvz0g==}
     engines: {pnpm: '7'}
     peerDependencies:
       react: ^16.11.0 || ^17.0.0 || ^18.0.0
