@@ -4,9 +4,9 @@ import Head from 'next/head'
 
 import PageTitleWrapper from '@/components/atoms/PageTitleWrapper'
 
+import contents from './SkillsContents.json'
 import BasicLayout from '../../components/templates/BasicLayout'
 import type { NextPageWithLayout } from '../_app.page'
-import contents from './SkillsContents.json'
 
 const Skills = ({ classes }: WithStyles<typeof styleSettings>) => (
   <main>
