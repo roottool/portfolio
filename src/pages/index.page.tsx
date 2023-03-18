@@ -1,8 +1,8 @@
 import Head from 'next/head'
 
+import type { NextPageWithLayout } from './_app.page'
 import BasicLayout from '../components/templates/BasicLayout'
 import Home from '../components/templates/Home'
-import type { NextPageWithLayout } from './_app.page'
 
 const Container: NextPageWithLayout = () => (
   <>
