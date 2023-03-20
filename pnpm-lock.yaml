@@ -29,7 +29,7 @@ specifiers:
   jest-environment-jsdom: 29.5.0
   ky: 0.33.3
   lint-staged: 13.2.0
-  msw: 1.1.0
+  msw: 1.1.1
   next: 13.2.4
   npm-run-all: 4.1.5
   prettier: 2.8.5
@@ -78,7 +78,7 @@ devDependencies:
   jest: 29.5.0_@types+node@18.15.3
   jest-environment-jsdom: 29.5.0
   lint-staged: 13.2.0
-  msw: 1.1.0_typescript@5.0.2
+  msw: 1.1.1_typescript@5.0.2
   npm-run-all: 4.1.5
   prettier: 2.8.5
   rimraf: 4.4.0
@@ -4642,13 +4642,13 @@ packages:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
     dev: true
 
-  /msw/1.1.0_typescript@5.0.2:
-    resolution: {integrity: sha512-oqMvUXm1bMbwvGpoXAQVz8vXXQyQyx52HBDg3EDOK+dFXkQHssgkXEG4LfMwwZyr2Qt18I/w04XPaY4BkFTkzA==}
+  /msw/1.1.1_typescript@5.0.2:
+    resolution: {integrity: sha512-XVm+Mjod4qjJGwpSyj6ZXFkFkQMG8lzyWY/W0cWJAueG/jELTQEP8OJSsV9QTe6zHwtHoekeRjeGp/zBgDNZjQ==}
     engines: {node: '>=14'}
     hasBin: true
     requiresBuild: true
     peerDependencies:
-      typescript: '>= 4.4.x <= 4.9.x'
+      typescript: '>= 4.4.x <= 5.0.x'
     peerDependenciesMeta:
       typescript:
         optional: true
