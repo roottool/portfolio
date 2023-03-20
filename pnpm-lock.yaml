@@ -32,7 +32,7 @@ specifiers:
   msw: 1.1.0
   next: 13.2.4
   npm-run-all: 4.1.5
-  prettier: 2.8.4
+  prettier: 2.8.5
   react: 18.2.0
   react-dom: 18.2.0
   react-error-boundary: 3.1.4
@@ -80,7 +80,7 @@ devDependencies:
   lint-staged: 13.2.0
   msw: 1.1.0_typescript@5.0.2
   npm-run-all: 4.1.5
-  prettier: 2.8.4
+  prettier: 2.8.5
   rimraf: 4.4.0
   typescript: 5.0.2
 
@@ -5151,8 +5151,8 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier/2.8.4:
-    resolution: {integrity: sha512-vIS4Rlc2FNh0BySk3Wkd6xmwxB0FpOndW5fisM5H8hsZSxU2VWVB5CWIkIjWvrHjIhxk2g3bfMKM87zNTrZddw==}
+  /prettier/2.8.5:
+    resolution: {integrity: sha512-3gzuxrHbKUePRBB4ZeU08VNkUcqEHaUaouNt0m7LGP4Hti/NuB07C7PPTM/LkWqXoJYJn2McEo5+kxPNrtQkLQ==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
