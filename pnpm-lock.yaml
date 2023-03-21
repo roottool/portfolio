@@ -35,7 +35,7 @@ specifiers:
   prettier: 2.8.6
   react: 18.2.0
   react-dom: 18.2.0
-  react-error-boundary: 3.1.4
+  react-error-boundary: 4.0.0
   react-icons: 4.8.0
   rimraf: 4.4.0
   swr: 2.1.0
@@ -51,7 +51,7 @@ dependencies:
   next: 13.2.4_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
-  react-error-boundary: 3.1.4_react@18.2.0
+  react-error-boundary: 4.0.0_react@18.2.0
   react-icons: 4.8.0_react@18.2.0
   swr: 2.1.0_react@18.2.0
 
@@ -5221,13 +5221,12 @@ packages:
       react: 18.2.0
       scheduler: 0.23.0
 
-  /react-error-boundary/3.1.4_react@18.2.0:
-    resolution: {integrity: sha512-uM9uPzZJTF6wRQORmSrvOIgt4lJ9MC1sNgEOj2XGsDTRE4kmpWxg7ENK9EWNKJRMAOY9z0MuF4yIfl6gp4sotA==}
-    engines: {node: '>=10', npm: '>=6'}
+  /react-error-boundary/4.0.0_react@18.2.0:
+    resolution: {integrity: sha512-vNbTyivmwBxCpJA68Ry55rJhZMzJSB+egkEm8hkEzbEBJLsJp5054zEVpoK/8ndxt6B+dvEA2LDw33xUfvE8og==}
     peerDependencies:
       react: '>=16.13.1'
     dependencies:
-      '@babel/runtime': 7.18.9
+      '@babel/runtime': 7.20.7
       react: 18.2.0
     dev: false
 
