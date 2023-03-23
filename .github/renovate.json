@@ -9,7 +9,6 @@
     ":prConcurrentLimit10",
     "group:monorepos",
     "group:recommended",
-    "group:allNonMajor",
     "workarounds:all",
     "helpers:pinGitHubActionDigests"
   ],
@@ -19,6 +18,13 @@
     "labels": ["security"]
   },
   "packageRules": [
+    {
+      "groupName": "all non-major dependencies",
+      "groupSlug": "all-minor-patch-pin-digest",
+      "matchPackagePatterns": ["*"],
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "automerge": true
+    },
     {
       "matchPackageNames": ["react", "react-dom"],
       "groupName": "React Group",
@@ -43,10 +49,6 @@
     {
       "matchPackagePrefixes": ["@types/"],
       "groupName": "Type definitions Group",
-      "automerge": true
-    },
-    {
-      "updateTypes": ["minor", "patch", "pin", "digest"],
       "automerge": true
     }
   ]
