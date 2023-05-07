@@ -19,21 +19,23 @@
   },
   "packageRules": [
     {
-      "groupName": "all non-major dependencies",
-      "groupSlug": "all-minor-patch-pin-digest",
+      "groupName": "all non-major devDependencies",
+      "groupSlug": "all-devDependencies-minor-patch-pin-digest",
       "matchPackagePatterns": ["*"],
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "automerge": true
     },
     {
-      "matchPackageNames": ["react", "react-dom"],
-      "groupName": "React Group",
+      "groupName": "all non-major dependencies",
+      "groupSlug": "all-dependencies-minor-patch-pin-digest",
+      "matchDepTypes": ["dependencies"],
+      "matchPackagePatterns": ["*"],
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
       "automerge": true
     },
     {
-      "matchPackageNames": ["next"],
-      "matchPackagePrefixes": ["@next/"],
-      "groupName": "Next.js Group",
+      "matchPackagePrefixes": ["@types/"],
+      "groupName": "Type definitions Group",
       "automerge": true
     },
     {
@@ -47,8 +49,20 @@
       "automerge": true
     },
     {
-      "matchPackagePrefixes": ["@types/"],
-      "groupName": "Type definitions Group",
+      "matchPackagePrefixes": ["@testing-library/"],
+      "groupName": "Testing Library Group",
+      "automerge": true
+    },
+    {
+      "matchPackageNames": ["@types/react", "@types/react-dom"],
+      "matchPackagePrefixes": ["react"],
+      "groupName": "React Group",
+      "automerge": true
+    },
+    {
+      "matchPackageNames": ["next"],
+      "matchPackagePrefixes": ["@next/"],
+      "groupName": "Next.js Group",
       "automerge": true
     }
   ]
