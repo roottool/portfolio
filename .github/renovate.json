@@ -9,6 +9,7 @@
     ":prConcurrentLimit10",
     "group:monorepos",
     "group:recommended",
+    "schedule:daily",
     "workarounds:all",
     "helpers:pinGitHubActionDigests"
   ],
