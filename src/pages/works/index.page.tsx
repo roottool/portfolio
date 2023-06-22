@@ -1,16 +1,15 @@
-import { Button, Card, CardActions, CardContent, Grid, Typography } from '@material-ui/core'
+import { Card, CardContent, Grid, Typography } from '@material-ui/core'
 import { createStyles, withStyles, type WithStyles } from '@material-ui/core/styles'
 import Head from 'next/head'
+import Link from 'next/link'
 
 import PageTitleWrapper from '@/components/atoms/PageTitleWrapper'
+import BasicLayout from '@/components/templates/BasicLayout'
 
 import contents from './WorksContents.json'
-import BasicLayout from '../../components/templates/BasicLayout'
 import type { NextPageWithLayout } from '../_app.page'
 
-const Works = ({
-  classes: { card, cardGrid, container, sourceLink },
-}: WithStyles<typeof styleSettings>) => (
+const Works = ({ classes: { card, cardGrid, container } }: WithStyles<typeof styleSettings>) => (
   <main>
     <PageTitleWrapper>Works</PageTitleWrapper>
     <Grid container className={container}>
@@ -18,19 +17,16 @@ const Works = ({
         <Grid key={key} item className={cardGrid} md={4} sm={6} xs={12}>
           <Card className={card}>
             <CardContent>
-              <Typography gutterBottom variant="h6">
-                {item.title}
-              </Typography>
+              <Link href={item.href}>
+                <Typography gutterBottom variant="h6">
+                  {item.title}
+                </Typography>
+              </Link>
               <Typography variant="subtitle1">
                 {item.tools}
                 <br />
                 {item.text}
               </Typography>
-              <CardActions>
-                <Button className={sourceLink} color="primary" href={item.href}>
-                  ソースコード
-                </Button>
-              </CardActions>
             </CardContent>
           </Card>
         </Grid>
@@ -42,7 +38,7 @@ const Works = ({
 const styleSettings = () =>
   createStyles({
     card: {
-      height: '350px',
+      minHeight: '272px',
       marginBottom: '30px',
     },
     cardGrid: {
