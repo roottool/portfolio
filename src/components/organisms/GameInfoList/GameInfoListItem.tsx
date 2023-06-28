@@ -19,7 +19,6 @@ const GameInfoListItem = ({ appName, appUrl, bannerUrl, playTimeInHours }: GameI
       />
     </a>
     <div>
-      {' '}
       <StyledTitle href={appUrl} rel="noopener noreferrer" target="_blank">
         <Typography align="left" variant="h6">
           {appName}
