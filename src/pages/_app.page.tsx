@@ -6,6 +6,8 @@ import type { ReactElement, ReactNode } from 'react'
 
 import initMocks from '@/mocks'
 
+import '@/styles/globals.css'
+
 if (process.env.NODE_ENV === 'development') {
   initMocks()
 }
