@@ -3,10 +3,10 @@ import { createStyles, withStyles, type WithStyles } from '@material-ui/core/sty
 import Head from 'next/head'
 
 import PageTitleWrapper from '@/components/atoms/PageTitleWrapper'
+import BasicLayout from '@/components/templates/BasicLayout'
+import type { NextPageWithLayout } from '@/pages/_app.page'
 
 import contents from './SkillsContents.json'
-import BasicLayout from '../../components/templates/BasicLayout'
-import type { NextPageWithLayout } from '../_app.page'
 
 const Skills = ({ classes }: WithStyles<typeof styleSettings>) => (
   <main>

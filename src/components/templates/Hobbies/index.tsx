@@ -1,11 +1,10 @@
 import { Typography, Paper, CircularProgress } from '@material-ui/core'
 import { Suspense } from 'react'
 
+import PageTitleWrapper from '@/components/atoms/PageTitleWrapper'
+import FetchErrorBoundary from '@/components/layouts/FetchErrorBoundary'
+import GameInfoList from '@/components/organisms/GameInfoList'
 import { styled } from '@/styles/StyleConstants'
-
-import PageTitleWrapper from '../../atoms/PageTitleWrapper'
-import FetchErrorBoundary from '../../layouts/FetchErrorBoundary'
-import GameInfoList from '../../organisms/GameInfoList'
 
 const Hobbies = () => (
   <main>
