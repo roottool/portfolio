@@ -1,65 +1,49 @@
-import { Card, CardContent, Grid, Typography } from '@material-ui/core'
-import { createStyles, withStyles, type WithStyles } from '@material-ui/core/styles'
 import Head from 'next/head'
 import Link from 'next/link'
+import { IconContext } from 'react-icons'
+import { GoMarkGithub } from 'react-icons/go'
 
 import PageTitleWrapper from '@/components/atoms/PageTitleWrapper'
 import BasicLayout from '@/components/templates/BasicLayout'
+import { Card, CardHeader, CardContent, CardDescription } from '@/components/ui/card'
+import type { NextPageWithLayout } from '@/pages/_app.page'
 
 import contents from './WorksContents.json'
-import type { NextPageWithLayout } from '../_app.page'
 
-const Works = ({ classes: { card, cardGrid, container } }: WithStyles<typeof styleSettings>) => (
-  <main>
+const Works = () => (
+  <main className="container mx-auto">
     <PageTitleWrapper>Works</PageTitleWrapper>
-    <Grid container className={container}>
+    <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
       {contents.map((item, key) => (
-        <Grid key={key} item className={cardGrid} md={4} sm={6} xs={12}>
-          <Card className={card}>
+        <section key={key}>
+          <Card>
+            <CardHeader>
+              <div className="grid grid-flow-col auto-cols-max justify-around gap-2">
+                <h4>{item.title}</h4>
+                <Link href={item.href}>
+                  <IconContext.Provider value={{ size: '2em' }}>
+                    <GoMarkGithub />
+                  </IconContext.Provider>
+                </Link>
+              </div>
+              <CardDescription>{item.tools}</CardDescription>
+            </CardHeader>
             <CardContent>
-              <Link href={item.href}>
-                <Typography gutterBottom variant="h6">
-                  {item.title}
-                </Typography>
-              </Link>
-              <Typography variant="subtitle1">
-                {item.tools}
-                <br />
-                {item.text}
-              </Typography>
+              <p>{item.text}</p>
             </CardContent>
           </Card>
-        </Grid>
+        </section>
       ))}
-    </Grid>
+    </div>
   </main>
 )
-
-const styleSettings = () =>
-  createStyles({
-    card: {
-      minHeight: '272px',
-      marginBottom: '30px',
-    },
-    cardGrid: {
-      padding: '0 16px',
-    },
-    container: {
-      margin: '5vh auto',
-      maxWidth: '1200px',
-    },
-    sourceLink: {
-      margin: '0 auto',
-    },
-  })
-const StyledWorks = withStyles(styleSettings)(Works)
 
 const Container: NextPageWithLayout = () => (
   <>
     <Head>
       <title>Works - roottool&apos;s Portfolio Site</title>
     </Head>
-    <StyledWorks />
+    <Works />
   </>
 )
 Container.getLayout = BasicLayout
