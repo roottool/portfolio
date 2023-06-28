@@ -1,4 +1,3 @@
-import { Typography } from '@material-ui/core'
 import { styled } from '@stitches/react'
 import Image from 'next/image'
 import { MdOpenInNew } from 'react-icons/md'
@@ -20,21 +19,15 @@ const GameInfoListItem = ({ appName, appUrl, bannerUrl, playTimeInHours }: GameI
     </a>
     <div>
       <StyledTitle href={appUrl} rel="noopener noreferrer" target="_blank">
-        <Typography align="left" variant="h6">
-          {appName}
-        </Typography>
+        <h4>{appName}</h4>
         <MdOpenInNew />
       </StyledTitle>
-      <Typography align="left" variant="subtitle2">
-        プレイ時間:
-        {playTimeInHours}
-        時間
-      </Typography>
+      <p>プレイ時間: {playTimeInHours}時間</p>
     </div>
   </StyledFlex>
 )
 
-const StyledFlex = styled('div', {
+const StyledFlex = styled('section', {
   display: 'flex',
   alignItems: 'center',
   gap: '2rem',
