@@ -1,7 +1,7 @@
 import { Typography } from '@material-ui/core'
-import { OpenInNew } from '@material-ui/icons'
 import { styled } from '@stitches/react'
 import Image from 'next/image'
+import { MdOpenInNew } from 'react-icons/md'
 
 import { STEAM_APP_BANNER_HEIGHT, STEAM_APP_BANNER_WIDTH } from '@/libs/steam/construct'
 import type { OwnedGameInfo } from '@/pages/api/fetchOwnedGames'
@@ -19,12 +19,13 @@ const GameInfoListItem = ({ appName, appUrl, bannerUrl, playTimeInHours }: GameI
       />
     </a>
     <div>
-      <a href={appUrl} rel="noopener noreferrer" target="_blank">
+      {' '}
+      <StyledTitle href={appUrl} rel="noopener noreferrer" target="_blank">
         <Typography align="left" variant="h6">
           {appName}
-          <OpenInNew fontSize="small" />
         </Typography>
-      </a>
+        <MdOpenInNew />
+      </StyledTitle>
       <Typography align="left" variant="subtitle2">
         プレイ時間:
         {playTimeInHours}
@@ -39,6 +40,11 @@ const StyledFlex = styled('div', {
   alignItems: 'center',
   gap: '2rem',
   padding: '0 0.5rem',
+})
+const StyledTitle = styled('a', {
+  display: 'flex',
+  alignItems: 'center',
+  gap: '0.25rem',
 })
 
 export default GameInfoListItem

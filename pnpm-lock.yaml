@@ -8,9 +8,6 @@ dependencies:
   '@material-ui/core':
     specifier: 4.12.4
     version: 4.12.4(@types/react@18.2.7)(react-dom@18.2.0)(react@18.2.0)
-  '@material-ui/icons':
-    specifier: 4.11.3
-    version: 4.11.3(@material-ui/core@4.12.4)(@types/react@18.2.7)(react-dom@18.2.0)(react@18.2.0)
   '@radix-ui/react-slot':
     specifier: 1.0.2
     version: 1.0.2(@types/react@18.2.7)(react@18.2.0)
@@ -854,25 +851,6 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
       react-is: 17.0.2
       react-transition-group: 4.4.5(react-dom@18.2.0)(react@18.2.0)
-    dev: false
-
-  /@material-ui/icons@4.11.3(@material-ui/core@4.12.4)(@types/react@18.2.7)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-IKHlyx6LDh8n19vzwH5RtHIOHl9Tu90aAAxcbWME6kp4dmvODM3UvOHJeMIDzUbd4muuJKHmlNoBN+mDY4XkBA==}
-    engines: {node: '>=8.0.0'}
-    peerDependencies:
-      '@material-ui/core': ^4.0.0
-      '@types/react': ^16.8.6 || ^17.0.0
-      react: ^16.8.0 || ^17.0.0
-      react-dom: ^16.8.0 || ^17.0.0
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-    dependencies:
-      '@babel/runtime': 7.18.9
-      '@material-ui/core': 4.12.4(@types/react@18.2.7)(react-dom@18.2.0)(react@18.2.0)
-      '@types/react': 18.2.7
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   /@material-ui/styles@4.11.5(@types/react@18.2.7)(react-dom@18.2.0)(react@18.2.0):
