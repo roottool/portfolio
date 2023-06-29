@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import { IconContext } from 'react-icons'
-import { GoMarkGithub } from 'react-icons/go'
+import { RxGithubLogo } from 'react-icons/rx'
 
 import PageTitleWrapper from '@/components/atoms/PageTitleWrapper'
 import BasicLayout from '@/components/templates/BasicLayout'
@@ -22,7 +22,7 @@ const Works = () => (
                 <h4>{item.title}</h4>
                 <Link href={item.href}>
                   <IconContext.Provider value={{ size: '2em' }}>
-                    <GoMarkGithub />
+                    <RxGithubLogo />
                   </IconContext.Provider>
                 </Link>
               </div>

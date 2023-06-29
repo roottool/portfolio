@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { IconContext } from 'react-icons'
 import { FaTwitterSquare } from 'react-icons/fa'
-import { GoMarkGithub } from 'react-icons/go'
+import { RxGithubLogo } from 'react-icons/rx'
 
 import { styled } from '@/styles/StyleConstants'
 
@@ -16,7 +16,7 @@ const Home = () => (
     <div className="mx-auto grid grid-cols-2 justify-around gap-8">
       <a href={GITHUB_URL}>
         <IconContext.Provider value={{ size: '3em' }}>
-          <GoMarkGithub />
+          <RxGithubLogo />
         </IconContext.Provider>
       </a>
       <Link href={TWITTER_URL}>
