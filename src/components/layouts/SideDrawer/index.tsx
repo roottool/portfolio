@@ -18,13 +18,7 @@ const SideDrawerComponent = ({ handleClick }: SideDrawerProps) => (
     </TitleAreaWrapper>
     <LinkListWrapper>
       <AWrapper onClick={handleClick}>
-        <Link href="/about">About</Link>
-      </AWrapper>
-      <AWrapper onClick={handleClick}>
         <Link href="/works">Works</Link>
-      </AWrapper>
-      <AWrapper onClick={handleClick}>
-        <Link href="/skills">Skills</Link>
       </AWrapper>
       <AWrapper onClick={handleClick}>
         <Link href="/hobbies">Hobbies</Link>
