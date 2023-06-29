@@ -13,7 +13,6 @@ const NavbarComponent = () => (
       <StyledToolbarLink href="/about">about</StyledToolbarLink>
       <StyledToolbarLink href="/works">Works</StyledToolbarLink>
       <DisplayLinkExcludeDesktop href="/">Home</DisplayLinkExcludeDesktop>
-      <StyledToolbarLink href="/skills">Skills</StyledToolbarLink>
       <StyledToolbarLink href="/hobbies">Hobbies</StyledToolbarLink>
     </NavigationItemsWrapper>
   </StyledToolbarRoot>

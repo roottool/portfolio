@@ -24,9 +24,6 @@ const SideDrawerComponent = ({ handleClick }: SideDrawerProps) => (
         <Link href="/works">Works</Link>
       </AWrapper>
       <AWrapper onClick={handleClick}>
-        <Link href="/skills">Skills</Link>
-      </AWrapper>
-      <AWrapper onClick={handleClick}>
         <Link href="/hobbies">Hobbies</Link>
       </AWrapper>
     </LinkListWrapper>
