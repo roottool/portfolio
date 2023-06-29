@@ -46,7 +46,6 @@
     "workerDirectory": "public"
   },
   "dependencies": {
-    "@material-ui/core": "4.12.4",
     "@radix-ui/react-slot": "1.0.2",
     "@radix-ui/react-toolbar": "1.0.4",
     "@stitches/react": "1.2.8",
