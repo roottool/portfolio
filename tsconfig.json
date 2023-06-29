@@ -28,7 +28,9 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
-      "$/*": ["public/*"]
+      "$/*": ["public/*"],
+      // https://github.com/sindresorhus/got/issues/2267#issuecomment-1582075262
+      "got": ["./node_modules/got/dist/source"]
     }
   },
   "include": ["next-env.d.ts", "src/**/*.ts", "src/**/*.tsx", "src/**/*.json"],
