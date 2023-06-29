@@ -18,11 +18,16 @@ const GameInfoListItem = ({ appName, appUrl, bannerUrl, playTimeInHours }: GameI
       />
     </a>
     <div>
-      <StyledTitle href={appUrl} rel="noopener noreferrer" target="_blank">
-        <h4>{appName}</h4>
+      <a
+        className="flex items-center gap-1 w-max"
+        href={appUrl}
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <p className="font-bold">{appName}</p>
         <MdOpenInNew />
-      </StyledTitle>
-      <p>プレイ時間: {playTimeInHours}時間</p>
+      </a>
+      <p className="text-left">プレイ時間: {playTimeInHours}時間</p>
     </div>
   </StyledFlex>
 )
@@ -32,11 +37,6 @@ const StyledFlex = styled('section', {
   alignItems: 'center',
   gap: '2rem',
   padding: '0 0.5rem',
-})
-const StyledTitle = styled('a', {
-  display: 'flex',
-  alignItems: 'center',
-  gap: '0.25rem',
 })
 
 export default GameInfoListItem

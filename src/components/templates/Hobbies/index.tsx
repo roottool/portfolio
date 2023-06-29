@@ -1,31 +1,31 @@
-import { Typography, Paper, CircularProgress } from '@material-ui/core'
 import { Suspense } from 'react'
 
 import PageTitleWrapper from '@/components/atoms/PageTitleWrapper'
 import FetchErrorBoundary from '@/components/layouts/FetchErrorBoundary'
 import GameInfoList from '@/components/organisms/GameInfoList'
+import { LoadingSpinner } from '@/components/ui/LoadingSpinner'
 import { styled } from '@/styles/StyleConstants'
 
 const Hobbies = () => (
   <main>
     <PageTitleWrapper>Hobbies</PageTitleWrapper>
-    <StyledPaper>
-      <Typography gutterBottom variant="subtitle1">
+    <StyledSection>
+      <p>
         PCでゲームをすることで、主に遊ぶゲームのジャンルはFPSかストラテジーです。映画を見たりもします。
-      </Typography>
-      <Typography variant="h6">Steam ライブラリ</Typography>
+      </p>
+      <h4>Steam ライブラリ</h4>
       <StyledList>
         <FetchErrorBoundary>
-          <Suspense fallback={<StyledCircularProgress />}>
+          <Suspense fallback={<LoadingSpinner />}>
             <GameInfoList />
           </Suspense>
         </FetchErrorBoundary>
       </StyledList>
-    </StyledPaper>
+    </StyledSection>
   </main>
 )
 
-const StyledPaper = styled(Paper, {
+const StyledSection = styled('section', {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
@@ -36,12 +36,6 @@ const StyledPaper = styled(Paper, {
   '@bp2': {
     width: '90%',
   },
-})
-
-const StyledCircularProgress = styled(CircularProgress, {
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
 })
 
 const StyledList = styled('div', {
