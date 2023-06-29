@@ -10,7 +10,6 @@ const NavbarComponent = () => (
     <DisplayLinkOnDesktop href="/">roottool&apos;s portfolio</DisplayLinkOnDesktop>
     <GrowWrapper />
     <NavigationItemsWrapper>
-      <StyledToolbarLink href="/about">about</StyledToolbarLink>
       <StyledToolbarLink href="/works">Works</StyledToolbarLink>
       <DisplayLinkExcludeDesktop href="/">Home</DisplayLinkExcludeDesktop>
       <StyledToolbarLink href="/hobbies">Hobbies</StyledToolbarLink>
@@ -51,6 +50,7 @@ const DisplayLinkExcludeDesktop = styled(Link, {
   display: 'none',
   '@bp2': {
     display: 'block',
+    color: 'white',
   },
 })
 
