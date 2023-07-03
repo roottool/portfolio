@@ -45,7 +45,5 @@
     "vercel",
     "webp"
   ],
-  "jest.jestCommandLine": "pnpm run test:jest",
-  "eslint.packageManager": "pnpm",
-  "prettier.printWidth": 100
+  "jest.jestCommandLine": "pnpm run test:jest"
 }
