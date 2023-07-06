@@ -8,7 +8,7 @@
 
 ## Overview
 
-This is [my portfolio site](https://roottool.vercel.app). I use the below stacks in this site.
+This is [my portfolio site](https://roottool.vercel.app). I use the below stacks on this site.
 
 - React
 - Next.js
