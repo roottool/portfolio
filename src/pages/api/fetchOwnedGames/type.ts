@@ -1,7 +1,6 @@
+import type { OwnedGame } from '@/libs/steam/api'
 import type convertPlayTimeToHours from '@/libs/steam/convertPlayTimeToHours'
 import type { generateSteamAppBannerUrl, generateSteamAppUrl } from '@/libs/steam/generateUrl'
-
-import type { OwnedGame } from '@/libs/steam/type'
 
 export interface OwnedGameInfo {
   appId: OwnedGame['appid']

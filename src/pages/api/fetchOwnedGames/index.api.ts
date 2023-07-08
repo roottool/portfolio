@@ -7,7 +7,7 @@ import convertPlayTimeToHours from '@/libs/steam/convertPlayTimeToHours'
 import { generateSteamAppBannerUrl, generateSteamAppUrl } from '@/libs/steam/generateUrl'
 import sortOwnedGames from '@/libs/steam/sortOwnedGames'
 
-import type { FetchOwnedGamesResponse } from '.'
+import type { FetchOwnedGamesResponse } from './type'
 
 const fetchOwnedGamesHandler = (
   _req: NextApiRequest,
