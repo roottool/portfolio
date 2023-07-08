@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { MdOpenInNew } from 'react-icons/md'
 
 import { STEAM_APP_BANNER_HEIGHT, STEAM_APP_BANNER_WIDTH } from '@/libs/steam/construct'
-import type { OwnedGameInfo } from '@/pages/api/fetchOwnedGames'
+import type { OwnedGameInfo } from '@/pages/api/fetchOwnedGames/type'
 
 type GameInfoGridProps = Omit<OwnedGameInfo, 'appId'>
 

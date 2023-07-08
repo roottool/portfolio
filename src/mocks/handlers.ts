@@ -6,7 +6,7 @@ import { GET_OWNED_GAMES_API_URL_WITHOUT_QUERY } from '@/libs/steam/construct'
 import convertPlayTimeToHours from '@/libs/steam/convertPlayTimeToHours'
 import { generateSteamAppUrl, generateSteamAppBannerUrl } from '@/libs/steam/generateUrl'
 import sortOwnedGames from '@/libs/steam/sortOwnedGames'
-import type { FetchOwnedGamesResponse } from '@/pages/api/fetchOwnedGames'
+import type { FetchOwnedGamesResponse } from '@/pages/api/fetchOwnedGames/type'
 
 import OwnedGames from './OwnedGames.json'
 
