@@ -9,46 +9,46 @@ import initMocks from '@/mocks'
 import '@/styles/globals.css'
 
 if (process.env.NODE_ENV === 'development') {
-  initMocks()
+	initMocks()
 }
 
 export type NextPageWithLayout = NextPage & {
-  getLayout?: (page: ReactElement) => ReactNode
+	getLayout?: (page: ReactElement) => ReactNode
 }
 
 type AppPropsWithLayout = AppProps & {
-  Component: NextPageWithLayout
+	Component: NextPageWithLayout
 }
 
 const globalStyles = globalCss({
-  html: {
-    height: '100%',
-  },
-  body: {
-    fontFamily:
-      '"Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif',
-    margin: 0,
-    padding: 0,
-    overflow: 'hidden',
-  },
-  main: {
-    display: 'flex',
-    flexDirection: 'column',
-    height: '100vh',
-    overflow: 'auto',
-    textAlign: 'center',
-  },
+	html: {
+		height: '100%',
+	},
+	body: {
+		fontFamily:
+			'"Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif',
+		margin: 0,
+		padding: 0,
+		overflow: 'hidden',
+	},
+	main: {
+		display: 'flex',
+		flexDirection: 'column',
+		height: '100vh',
+		overflow: 'auto',
+		textAlign: 'center',
+	},
 })
 globalStyles()
 
 const App = ({ Component, pageProps }: AppPropsWithLayout) => {
-  const getLayout = Component.getLayout ?? ((page) => page)
+	const getLayout = Component.getLayout ?? ((page) => page)
 
-  return getLayout(
-    <StrictMode>
-      <Component {...pageProps} />
-    </StrictMode>,
-  )
+	return getLayout(
+		<StrictMode>
+			<Component {...pageProps} />
+		</StrictMode>,
+	)
 }
 
 export default App
