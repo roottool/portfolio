@@ -24,10 +24,10 @@
 		"build:next": "next build",
 		"start": "next start",
 		"lint": "run-s -c lint:*",
-		"lint:prettier": "prettier --check .",
+		"lint:prettier": "prettier --ignore-path=.prettierignore --check .",
 		"lint:eslint": "eslint . --color --ext .js,.ts,.tsx",
 		"fix": "run-s -c fix:*",
-		"fix:prettier": "prettier --cache --write .",
+		"fix:prettier": "prettier --cache --ignore-path=.prettierignore --write .",
 		"fix:eslint": "eslint . --fix --color --cache --ext .js,.ts,.tsx",
 		"types-check": "tsc --noEmit",
 		"test": "run-s -c \"test:jest {@}\"",
@@ -35,11 +35,11 @@
 	},
 	"lint-staged": {
 		"*.{js,ts?(x)}": [
-			"prettier --write",
+			"prettier --write --ignore-path=.prettierignore",
 			"eslint --fix --color"
 		],
 		"*.{md,json,y?(a)ml}": [
-			"prettier --write"
+			"prettier --write --ignore-path=.prettierignore"
 		]
 	},
 	"msw": {
