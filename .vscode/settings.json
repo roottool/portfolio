@@ -1,49 +1,53 @@
 {
-  "files.watcherExclude": {
-    "**/node_modules/**": true
-  },
-  // * For Linter and Formatter
-  "editor.codeActionsOnSave": ["source.addMissingImports", "source.fixAll.eslint"],
-  "editor.formatOnSave": true,
-  "editor.formatOnPaste": true,
-  "editor.formatOnSaveMode": "modificationsIfAvailable",
-  "editor.tabSize": 2,
-  "files.trimFinalNewlines": true,
-  "files.trimTrailingWhitespace": true,
-  "javascript.preferences.importModuleSpecifier": "project-relative",
-  "javascript.preferences.importModuleSpecifierEnding": "minimal",
-  "typescript.preferences.importModuleSpecifier": "project-relative",
-  "typescript.preferences.importModuleSpecifierEnding": "minimal",
-  "[javascript|typescript|typescriptreact|json|jsonc|yaml]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[markdown]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.wordWrap": "on",
-    "editor.quickSuggestions": {
-      "comments": "off",
-      "strings": "off",
-      "other": "off"
-    },
-    "files.trimTrailingWhitespace": false
-  },
-  // Extensions
-  "cSpell.words": [
-    "appinfo",
-    "automerge",
-    "Codecov",
-    "codeql",
-    "deepcode",
-    "eslintcache",
-    "kentaro",
-    "ossf",
-    "pnpm",
-    "sarif",
-    "steamid",
-    "steamstatic",
-    "tsbuildinfo",
-    "vercel",
-    "webp"
-  ],
-  "jest.jestCommandLine": "pnpm run test:jest"
+	"files.watcherExclude": {
+		"**/node_modules/**": true
+	},
+	// * For Linter and Formatter
+	"editor.codeActionsOnSave": [
+		"source.addMissingImports",
+		"source.fixAll.eslint"
+	],
+	"editor.formatOnSave": true,
+	"editor.formatOnPaste": true,
+	"editor.formatOnSaveMode": "modificationsIfAvailable",
+	"editor.tabSize": 2,
+	"files.trimFinalNewlines": true,
+	"files.trimTrailingWhitespace": true,
+	"javascript.preferences.importModuleSpecifier": "project-relative",
+	"javascript.preferences.importModuleSpecifierEnding": "minimal",
+	"typescript.preferences.importModuleSpecifier": "project-relative",
+	"typescript.preferences.importModuleSpecifierEnding": "minimal",
+	"[javascript|typescript|typescriptreact|json|jsonc|yaml]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[markdown]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"editor.wordWrap": "on",
+		"editor.quickSuggestions": {
+			"comments": "off",
+			"strings": "off",
+			"other": "off"
+		},
+		"files.trimTrailingWhitespace": false
+	},
+	// Extensions
+	"cSpell.words": [
+		"appinfo",
+		"automerge",
+		"Codecov",
+		"codeql",
+		"deepcode",
+		"eslintcache",
+		"kentaro",
+		"ossf",
+		"pnpm",
+		"sarif",
+		"steamid",
+		"steamstatic",
+		"tsbuildinfo",
+		"vercel",
+		"webp"
+	],
+	"jest.jestCommandLine": "pnpm run test:jest",
+	"prettier.configPath": "prettier.config.js"
 }

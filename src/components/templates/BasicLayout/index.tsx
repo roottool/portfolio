@@ -4,14 +4,14 @@ import Navbar from '@/components/layouts/Navbar'
 import { styled } from '@/styles/StyleConstants'
 
 const BasicLayout = (page: ReactElement) => (
-  <GridContainer>
-    <Navbar />
-    {page}
-  </GridContainer>
+	<GridContainer>
+		<Navbar />
+		{page}
+	</GridContainer>
 )
 
 const GridContainer = styled('div', {
-  display: 'grid',
+	display: 'grid',
 })
 
 export default BasicLayout

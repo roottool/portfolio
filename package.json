@@ -1,99 +1,99 @@
 {
-  "name": "portfolio",
-  "version": "1.0.0",
-  "description": "My portfolio with React using TypeScript.",
-  "license": "MIT",
-  "private": true,
-  "author": {
-    "name": "roottool",
-    "url": "https://github.com/roottool"
-  },
-  "homepage": "https://roottool.vercel.app",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/roottool/portfolio.git"
-  },
-  "bugs": {
-    "url": "https://github.com/roottool/portfolio/issues"
-  },
-  "scripts": {
-    "prepare": "is-ci || husky install",
-    "clean": "rimraf .next .swc",
-    "dev": "next dev",
-    "build": "npm-run-all clean --parallel build:*",
-    "build:next": "next build",
-    "start": "next start",
-    "lint": "run-s -c lint:*",
-    "lint:prettier": "prettier --check .",
-    "lint:eslint": "eslint . --color --ext .js,.ts,.tsx",
-    "fix": "run-s -c fix:*",
-    "fix:prettier": "prettier --cache --write .",
-    "fix:eslint": "eslint . --fix --color --cache --ext .js,.ts,.tsx",
-    "types-check": "tsc --noEmit",
-    "test": "run-s -c \"test:jest {@}\"",
-    "test:jest": "jest --colors"
-  },
-  "lint-staged": {
-    "*.{js,ts?(x)}": [
-      "prettier --write",
-      "eslint --fix --color"
-    ],
-    "*.{md,json,y?(a)ml}": [
-      "prettier --write"
-    ]
-  },
-  "msw": {
-    "workerDirectory": "public"
-  },
-  "dependencies": {
-    "@radix-ui/react-slot": "1.0.2",
-    "@radix-ui/react-toolbar": "1.0.4",
-    "@stitches/react": "1.2.8",
-    "class-variance-authority": "0.6.1",
-    "clsx": "1.2.1",
-    "got": "13.0.0",
-    "ky": "0.33.3",
-    "lucide-react": "0.259.0",
-    "next": "13.4.9",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-error-boundary": "4.0.10",
-    "react-icons": "4.10.1",
-    "swr": "2.2.0",
-    "tailwind-merge": "1.13.2",
-    "tailwindcss-animate": "1.0.6"
-  },
-  "devDependencies": {
-    "@next/eslint-plugin-next": "13.4.9",
-    "@testing-library/jest-dom": "5.16.5",
-    "@testing-library/react": "14.0.0",
-    "@types/jest": "29.5.2",
-    "@types/node": "18.16.19",
-    "@types/react": "18.2.14",
-    "@types/react-dom": "18.2.6",
-    "@typescript-eslint/eslint-plugin": "5.61.0",
-    "@typescript-eslint/parser": "5.61.0",
-    "autoprefixer": "10.4.14",
-    "cssnano": "6.0.1",
-    "eslint": "8.44.0",
-    "eslint-config-prettier": "8.8.0",
-    "eslint-import-resolver-typescript": "3.5.5",
-    "eslint-plugin-import": "2.27.5",
-    "eslint-plugin-jsx-a11y": "6.7.1",
-    "eslint-plugin-react": "7.32.2",
-    "eslint-plugin-react-hooks": "4.6.0",
-    "eslint-plugin-unused-imports": "2.0.0",
-    "husky": "8.0.3",
-    "is-ci": "3.0.1",
-    "jest": "29.6.1",
-    "jest-environment-jsdom": "29.6.1",
-    "lint-staged": "13.2.3",
-    "msw": "1.2.2",
-    "npm-run-all": "4.1.5",
-    "postcss": "8.4.25",
-    "prettier": "3.0.0",
-    "rimraf": "5.0.1",
-    "tailwindcss": "3.3.2",
-    "typescript": "5.1.6"
-  }
+	"name": "portfolio",
+	"version": "1.0.0",
+	"description": "My portfolio with React using TypeScript.",
+	"license": "MIT",
+	"private": true,
+	"author": {
+		"name": "roottool",
+		"url": "https://github.com/roottool"
+	},
+	"homepage": "https://roottool.vercel.app",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/roottool/portfolio.git"
+	},
+	"bugs": {
+		"url": "https://github.com/roottool/portfolio/issues"
+	},
+	"scripts": {
+		"prepare": "is-ci || husky install",
+		"clean": "rimraf .next .swc",
+		"dev": "next dev",
+		"build": "npm-run-all clean --parallel build:*",
+		"build:next": "next build",
+		"start": "next start",
+		"lint": "run-s -c lint:*",
+		"lint:prettier": "prettier --check .",
+		"lint:eslint": "eslint . --color --ext .js,.ts,.tsx",
+		"fix": "run-s -c fix:*",
+		"fix:prettier": "prettier --cache --write .",
+		"fix:eslint": "eslint . --fix --color --cache --ext .js,.ts,.tsx",
+		"types-check": "tsc --noEmit",
+		"test": "run-s -c \"test:jest {@}\"",
+		"test:jest": "jest --colors"
+	},
+	"lint-staged": {
+		"*.{js,ts?(x)}": [
+			"prettier --write",
+			"eslint --fix --color"
+		],
+		"*.{md,json,y?(a)ml}": [
+			"prettier --write"
+		]
+	},
+	"msw": {
+		"workerDirectory": "public"
+	},
+	"dependencies": {
+		"@radix-ui/react-slot": "1.0.2",
+		"@radix-ui/react-toolbar": "1.0.4",
+		"@stitches/react": "1.2.8",
+		"class-variance-authority": "0.6.1",
+		"clsx": "1.2.1",
+		"got": "13.0.0",
+		"ky": "0.33.3",
+		"lucide-react": "0.259.0",
+		"next": "13.4.9",
+		"react": "18.2.0",
+		"react-dom": "18.2.0",
+		"react-error-boundary": "4.0.10",
+		"react-icons": "4.10.1",
+		"swr": "2.2.0",
+		"tailwind-merge": "1.13.2",
+		"tailwindcss-animate": "1.0.6"
+	},
+	"devDependencies": {
+		"@next/eslint-plugin-next": "13.4.9",
+		"@testing-library/jest-dom": "5.16.5",
+		"@testing-library/react": "14.0.0",
+		"@types/jest": "29.5.2",
+		"@types/node": "18.16.19",
+		"@types/react": "18.2.14",
+		"@types/react-dom": "18.2.6",
+		"@typescript-eslint/eslint-plugin": "5.61.0",
+		"@typescript-eslint/parser": "5.61.0",
+		"autoprefixer": "10.4.14",
+		"cssnano": "6.0.1",
+		"eslint": "8.44.0",
+		"eslint-config-prettier": "8.8.0",
+		"eslint-import-resolver-typescript": "3.5.5",
+		"eslint-plugin-import": "2.27.5",
+		"eslint-plugin-jsx-a11y": "6.7.1",
+		"eslint-plugin-react": "7.32.2",
+		"eslint-plugin-react-hooks": "4.6.0",
+		"eslint-plugin-unused-imports": "2.0.0",
+		"husky": "8.0.3",
+		"is-ci": "3.0.1",
+		"jest": "29.6.1",
+		"jest-environment-jsdom": "29.6.1",
+		"lint-staged": "13.2.3",
+		"msw": "1.2.2",
+		"npm-run-all": "4.1.5",
+		"postcss": "8.4.25",
+		"prettier": "3.0.0",
+		"rimraf": "5.0.1",
+		"tailwindcss": "3.3.2",
+		"typescript": "5.1.6"
+	}
 }

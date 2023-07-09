@@ -1,70 +1,70 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    ":dependencyDashboard",
-    ":semanticPrefixFixDepsChoreOthers",
-    ":ignoreModulesAndTests",
-    ":autodetectPinVersions",
-    ":prHourlyLimit4",
-    ":prConcurrentLimit10",
-    "group:monorepos",
-    "group:recommended",
-    "schedule:daily",
-    "workarounds:all",
-    "helpers:pinGitHubActionDigests"
-  ],
-  "labels": ["dependencies"],
-  "timezone": "Asia/Tokyo",
-  "vulnerabilityAlerts": {
-    "labels": ["security"]
-  },
-  "packageRules": [
-    {
-      "groupName": "all non-major devDependencies",
-      "groupSlug": "all-devDependencies-minor-patch-pin-digest",
-      "matchPackagePatterns": ["*"],
-      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
-      "automerge": true
-    },
-    {
-      "groupName": "all non-major dependencies",
-      "groupSlug": "all-dependencies-minor-patch-pin-digest",
-      "matchDepTypes": ["dependencies"],
-      "matchPackagePatterns": ["*"],
-      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
-      "automerge": true
-    },
-    {
-      "matchPackagePrefixes": ["@types/"],
-      "groupName": "Type definitions Group",
-      "automerge": true
-    },
-    {
-      "matchPackagePatterns": ["eslint"],
-      "groupName": "ESLint Group",
-      "automerge": true
-    },
-    {
-      "matchPackagePatterns": ["jest"],
-      "groupName": "Jest Group",
-      "automerge": true
-    },
-    {
-      "matchPackagePrefixes": ["@testing-library/"],
-      "groupName": "Testing Library Group",
-      "automerge": true
-    },
-    {
-      "matchPackageNames": ["@types/react", "@types/react-dom"],
-      "matchPackagePrefixes": ["react"],
-      "groupName": "React Group",
-      "automerge": true
-    },
-    {
-      "matchPackageNames": ["next"],
-      "matchPackagePrefixes": ["@next/"],
-      "groupName": "Next.js Group",
-      "automerge": true
-    }
-  ]
+	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
+	"extends": [
+		":dependencyDashboard",
+		":semanticPrefixFixDepsChoreOthers",
+		":ignoreModulesAndTests",
+		":autodetectPinVersions",
+		":prHourlyLimit4",
+		":prConcurrentLimit10",
+		"group:monorepos",
+		"group:recommended",
+		"schedule:daily",
+		"workarounds:all",
+		"helpers:pinGitHubActionDigests"
+	],
+	"labels": ["dependencies"],
+	"timezone": "Asia/Tokyo",
+	"vulnerabilityAlerts": {
+		"labels": ["security"]
+	},
+	"packageRules": [
+		{
+			"groupName": "all non-major devDependencies",
+			"groupSlug": "all-devDependencies-minor-patch-pin-digest",
+			"matchPackagePatterns": ["*"],
+			"matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+			"automerge": true
+		},
+		{
+			"groupName": "all non-major dependencies",
+			"groupSlug": "all-dependencies-minor-patch-pin-digest",
+			"matchDepTypes": ["dependencies"],
+			"matchPackagePatterns": ["*"],
+			"matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+			"automerge": true
+		},
+		{
+			"matchPackagePrefixes": ["@types/"],
+			"groupName": "Type definitions Group",
+			"automerge": true
+		},
+		{
+			"matchPackagePatterns": ["eslint"],
+			"groupName": "ESLint Group",
+			"automerge": true
+		},
+		{
+			"matchPackagePatterns": ["jest"],
+			"groupName": "Jest Group",
+			"automerge": true
+		},
+		{
+			"matchPackagePrefixes": ["@testing-library/"],
+			"groupName": "Testing Library Group",
+			"automerge": true
+		},
+		{
+			"matchPackageNames": ["@types/react", "@types/react-dom"],
+			"matchPackagePrefixes": ["react"],
+			"groupName": "React Group",
+			"automerge": true
+		},
+		{
+			"matchPackageNames": ["next"],
+			"matchPackagePrefixes": ["@next/"],
+			"groupName": "Next.js Group",
+			"automerge": true
+		}
+	]
 }
