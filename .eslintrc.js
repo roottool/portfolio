@@ -36,7 +36,7 @@ const config = {
 			jsx: true,
 		},
 		sourceType: 'module',
-		project: './tsconfig.eslint.json',
+		project: true,
 		tsconfigRootDir: __dirname,
 	},
 	settings: {
