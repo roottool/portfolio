@@ -6,7 +6,7 @@ const initMocks = async () => {
 	}
 
 	const { worker } = await import('./browser')
-	worker.start()
+	void worker.start()
 }
 
 export default initMocks

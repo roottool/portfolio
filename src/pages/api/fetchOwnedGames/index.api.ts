@@ -31,6 +31,8 @@ const fetchOwnedGamesHandler = (
 			}))
 			res.status(200).json({ game_count, ownedGames })
 		})
-		.catch((error) => res.status(500).json(error))
+		.catch(() => {
+			res.status(500)
+		})
 
 export default fetchOwnedGamesHandler

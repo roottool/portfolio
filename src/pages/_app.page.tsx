@@ -9,7 +9,7 @@ import initMocks from '@/mocks'
 import '@/styles/globals.css'
 
 if (process.env.NODE_ENV === 'development') {
-	initMocks()
+	void initMocks()
 }
 
 export type NextPageWithLayout = NextPage & {
