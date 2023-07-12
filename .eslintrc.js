@@ -1,15 +1,25 @@
-// @ts-check
-
-/** @type {import('eslint/lib/shared/types').ConfigData['env']} */
+/** @type {import('eslint').ESLint.ConfigData['env']} */
 const env = {
 	browser: true,
 	es6: true,
 }
 
-/** @type {import('eslint/lib/shared/types').ConfigData} */
+/** @type {import('eslint').ESLint.ConfigData} */
 const config = {
 	env,
 	root: true,
+	extends: [
+		'eslint:recommended',
+		'plugin:@typescript-eslint/strict-type-checked',
+		'plugin:@typescript-eslint/stylistic-type-checked',
+		'plugin:jsx-a11y/recommended',
+		'plugin:react/recommended',
+		'plugin:react-hooks/recommended',
+		'plugin:@next/next/core-web-vitals',
+		'plugin:import/recommended',
+		'plugin:import/typescript',
+		'prettier',
+	],
 	plugins: [
 		'@typescript-eslint',
 		'jsx-a11y',
@@ -19,17 +29,6 @@ const config = {
 		'import',
 		'unused-imports',
 	],
-	extends: [
-		'eslint:recommended',
-		'plugin:@typescript-eslint/recommended',
-		'plugin:jsx-a11y/recommended',
-		'plugin:react/recommended',
-		'plugin:react-hooks/recommended',
-		'plugin:@next/next/core-web-vitals',
-		'plugin:import/recommended',
-		'plugin:import/typescript',
-		'prettier',
-	],
 	parser: '@typescript-eslint/parser',
 	parserOptions: {
 		ecmaVersion: 2022,
@@ -37,6 +36,8 @@ const config = {
 			jsx: true,
 		},
 		sourceType: 'module',
+		project: true,
+		tsconfigRootDir: __dirname,
 	},
 	settings: {
 		'import/extensions': ['.js', '.ts', '.tsx'],
@@ -55,6 +56,7 @@ const config = {
 	},
 	rules: {
 		'@typescript-eslint/no-unused-vars': 'off',
+		'@typescript-eslint/consistent-type-exports': 'warn',
 		'@typescript-eslint/consistent-type-imports': 'warn',
 		'@typescript-eslint/consistent-type-definitions': ['warn', 'interface'],
 		'import/order': [
@@ -111,6 +113,7 @@ const config = {
 				...env,
 				node: true,
 			},
+			extends: ['plugin:@typescript-eslint/disable-type-checked'],
 			rules: {
 				'@typescript-eslint/no-var-requires': 'off',
 			},
