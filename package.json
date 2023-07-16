@@ -50,7 +50,7 @@
 		"@radix-ui/react-toolbar": "1.0.4",
 		"@stitches/react": "1.2.8",
 		"class-variance-authority": "0.6.1",
-		"clsx": "1.2.1",
+		"clsx": "2.0.0",
 		"got": "13.0.0",
 		"ky": "0.33.3",
 		"lucide-react": "0.260.0",
