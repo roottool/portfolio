@@ -1,7 +1,7 @@
 {
 	"name": "portfolio",
 	"version": "1.0.0",
-	"description": "My portfolio with React using TypeScript.",
+	"description": "My portfolio with Next.js using TypeScript.",
 	"license": "MIT",
 	"private": true,
 	"author": {
