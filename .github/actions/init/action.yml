@@ -11,25 +11,20 @@ runs:
       with:
         version: 8
         run_install: false
-    - name: Get pnpm store directory
-      id: pnpm-cache
-      shell: bash
-      run: |
-        echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
-    - name: Restore pnpm cache
+    - name: Restore dependences cache
       uses: actions/cache/restore@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8 # v3.3.1
-      id: restore-pnpm-cache
+      id: restore-dependences-cache
       with:
-        path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-        key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+        path: node_modules
+        key: ${{ runner.os }}-dependences-${{ hashFiles('pnpm-lock.yaml') }}
     - name: Dependency install
-      if: steps.restore-pnpm-cache.outputs.cache-hit != 'true'
+      if: steps.restore-dependences-cache.outputs.cache-hit != 'true'
       run: pnpm install --frozen-lockfile
       shell: bash
-    - name: Cache Save devDependencies
-      if: steps.restore-pnpm-cache.outputs.cache-hit != 'true'
+    - name: Save dependences cache
+      if: steps.restore-dependences-cache.outputs.cache-hit != 'true'
       uses: actions/cache/save@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8 # v3.3.1
-      id: save-pnpm-cache
+      id: save-dependences-cache
       with:
-        path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
-        key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+        path: node_modules
+        key: ${{ runner.os }}-dependences-${{ hashFiles('pnpm-lock.yaml') }}
