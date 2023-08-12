@@ -24,5 +24,6 @@ runs:
         restore-keys: |
           ${{ runner.os }}-pnpm-store-
     - name: Dependency install
+      if: ${{ steps.pnpm-cache.outputs.cache-hit != 'true' }}
       run: pnpm install --frozen-lockfile
       shell: bash
