@@ -1,4 +1,4 @@
-import { got } from 'got'
+import ky from 'ky'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 import type { OwnedGamesApiResponse } from '@/libs/steam/api'
@@ -16,7 +16,7 @@ const fetchOwnedGamesHandler = (
 	_req: NextApiRequest,
 	res: NextApiResponse<FetchOwnedGamesResponse>,
 ) =>
-	got
+	ky
 		.get(GET_OWNED_GAMES_API_URL)
 		.json<OwnedGamesApiResponse>()
 		.then(({ response: { games, game_count } }) => {
