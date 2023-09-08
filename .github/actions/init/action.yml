@@ -12,7 +12,7 @@ runs:
         version: 8
         run_install: false
     - name: Restore dependences cache
-      uses: actions/cache/restore@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8 # v3.3.1
+      uses: actions/cache/restore@704facf57e6136b1bc63b828d79edcd491f0ee84 # v3.3.2
       id: restore-dependences-cache
       with:
         path: node_modules
@@ -23,7 +23,7 @@ runs:
       shell: bash
     - name: Save dependences cache
       if: steps.restore-dependences-cache.outputs.cache-hit != 'true'
-      uses: actions/cache/save@88522ab9f39a2ea568f7027eddc7d8d8bc9d59c8 # v3.3.1
+      uses: actions/cache/save@704facf57e6136b1bc63b828d79edcd491f0ee84 # v3.3.2
       id: save-dependences-cache
       with:
         path: node_modules
