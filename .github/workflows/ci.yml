@@ -51,7 +51,7 @@ jobs:
       - name: Initialize
         uses: ./.github/actions/setup-bun
       - name: Run test with Jest
-        run: bun run test:jest --ci --coverage
+        run: bun run test
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@eaaf4bedf32dbdc6b720b63067d99c4d77d6047d # v3.1.4
         with:
