@@ -1,5 +1,8 @@
+name: Setup Node.js
+description: Setup Node.js with cache and pnpm
+
 runs:
-  using: 'composite'
+  using: composite
   steps:
     - name: Setup Node.js LTS
       uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d # v3.8.1
