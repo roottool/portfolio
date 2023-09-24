@@ -23,9 +23,9 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4.1.0
       - name: Initialize
-        uses: ./.github/actions/setup-node-and-pnpm
+        uses: ./.github/actions/setup-bun
       - name: Run lint
-        run: pnpm run lint
+        run: bun run lint
 
   types-check:
     name: Types check
@@ -35,9 +35,9 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4.1.0
       - name: Initialize
-        uses: ./.github/actions/setup-node-and-pnpm
+        uses: ./.github/actions/setup-bun
       - name: Run types check
-        run: pnpm run types-check
+        run: bun run types-check
 
   test:
     name: Test
@@ -47,9 +47,9 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4.1.0
       - name: Initialize
-        uses: ./.github/actions/setup-node-and-pnpm
+        uses: ./.github/actions/setup-bun
       - name: Run test with Jest
-        run: pnpm run test -- --ci --coverage
+        run: bun run test -- --ci --coverage
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@eaaf4bedf32dbdc6b720b63067d99c4d77d6047d # v3.1.4
         with:
