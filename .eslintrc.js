@@ -2,6 +2,7 @@
 const env = {
 	browser: true,
 	es6: true,
+	node: true,
 }
 
 /** @type {import('eslint').ESLint.ConfigData} */
@@ -109,21 +110,9 @@ const config = {
 	overrides: [
 		{
 			files: ['./*.js'],
-			env: {
-				...env,
-				node: true,
-			},
 			extends: ['plugin:@typescript-eslint/disable-type-checked'],
 			rules: {
 				'@typescript-eslint/no-var-requires': 'off',
-			},
-		},
-		{
-			files: ['src/test/**/*', 'src/**/*.test.ts', 'src/**/*.test.tsx'],
-			env: {
-				...env,
-				node: true,
-				jest: true,
 			},
 		},
 	],

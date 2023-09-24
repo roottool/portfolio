@@ -31,23 +31,5 @@
 		"files.trimTrailingWhitespace": false
 	},
 	// Extensions
-	"cSpell.words": [
-		"appinfo",
-		"automerge",
-		"Codecov",
-		"codeql",
-		"deepcode",
-		"eslintcache",
-		"kentaro",
-		"ossf",
-		"pnpm",
-		"sarif",
-		"steamid",
-		"steamstatic",
-		"tsbuildinfo",
-		"vercel",
-		"webp"
-	],
-	"jest.jestCommandLine": "pnpm run test:jest",
 	"prettier.configPath": "prettier.config.js"
 }
