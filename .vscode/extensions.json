@@ -1,0 +1,12 @@
+{
+	"recommendations": [
+		"streetsidesoftware.code-spell-checker",
+		// * EditorConfig
+		"editorconfig.editorconfig",
+		// * JavaScript, TypeScript
+		"dbaeumer.vscode-eslint",
+		"esbenp.prettier-vscode",
+		"ZixuanChen.vitest-explorer",
+		"kingwl.vscode-vitest-runner"
+	]
+}

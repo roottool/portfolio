@@ -26,7 +26,8 @@
 			// * JavaScript, TypeScript
 			"dbaeumer.vscode-eslint",
 			"esbenp.prettier-vscode",
-			"Orta.vscode-jest"
+			"ZixuanChen.vitest-explorer",
+			"kingwl.vscode-vitest-runner"
 		]
 	},
 	// * Use `include` in a local `.gitconfig` for the personal secret information.
