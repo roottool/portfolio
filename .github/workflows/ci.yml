@@ -23,21 +23,23 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4.1.0
       - name: Initialize
-        uses: ./.github/actions/init
+        uses: ./.github/actions/setup-bun
+      - name: Run format check
+        run: bun run lint:prettier
       - name: Run lint
-        run: pnpm run lint
+        run: bun run lint:eslint
 
-  types-check:
-    name: Types check
+  typecheck:
+    name: Type check
     runs-on: ubuntu-latest
     if: ${{ !github.event.pull_request.draft }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4.1.0
       - name: Initialize
-        uses: ./.github/actions/init
-      - name: Run types check
-        run: pnpm run types-check
+        uses: ./.github/actions/setup-bun
+      - name: Run type check
+        run: bun run typecheck
 
   test:
     name: Test
@@ -47,9 +49,9 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4.1.0
       - name: Initialize
-        uses: ./.github/actions/init
+        uses: ./.github/actions/setup-bun
       - name: Run test with Jest
-        run: pnpm run test -- --ci --coverage
+        run: bun run test:jest --ci --coverage
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@eaaf4bedf32dbdc6b720b63067d99c4d77d6047d # v3.1.4
         with:

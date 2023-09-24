@@ -1,0 +1,11 @@
+name: Setup Bun
+description: Setup Bun
+
+runs:
+  using: composite
+  steps:
+    - name: Setup Node.js LTS
+      uses: oven-sh/setup-bun@a1800f471a0bc25cddac36bb13e6f436ddf341d7 # v1
+    - name: Install dependencies
+      run: bun install
+      shell: bash
