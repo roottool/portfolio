@@ -35,35 +35,36 @@
 			"automerge": true
 		},
 		{
-			"matchPackagePrefixes": ["@types/"],
 			"groupName": "Type definitions Group",
+			"matchPackagePrefixes": ["@types/"],
 			"automerge": true
 		},
 		{
-			"matchPackagePatterns": ["eslint"],
-			"groupName": "ESLint Group",
-			"automerge": true
-		},
-		{
-			"matchPackagePatterns": ["jest"],
-			"groupName": "Jest Group",
-			"automerge": true
-		},
-		{
-			"matchPackagePrefixes": ["@testing-library/"],
 			"groupName": "Testing Library Group",
+			"matchPackagePrefixes": ["@testing-library/"],
 			"automerge": true
 		},
 		{
-			"matchPackageNames": ["@types/react", "@types/react-dom"],
-			"matchPackagePrefixes": ["react"],
-			"groupName": "React Group",
+			"groupName": "Vitest Group",
+			"matchPackageNames": ["vitest"],
+			"matchPackagePatterns": ["@vitejs/", "@vitest/"],
 			"automerge": true
 		},
 		{
+			"groupName": "ESLint Group",
+			"matchPackagePatterns": ["eslint"],
+			"automerge": true
+		},
+		{
+			"groupName": "Next.js Group",
 			"matchPackageNames": ["next"],
 			"matchPackagePrefixes": ["@next/"],
-			"groupName": "Next.js Group",
+			"automerge": true
+		},
+		{
+			"groupName": "React Group",
+			"matchPackageNames": ["@types/react", "@types/react-dom"],
+			"matchPackagePrefixes": ["react"],
 			"automerge": true
 		}
 	]
