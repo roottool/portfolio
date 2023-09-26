@@ -28,7 +28,7 @@ jobs:
       - name: Initialize
         uses: ./.github/actions/setup-node-and-pnpm
       - name: Run Snyk to check for vulnerabilities
-        uses: snyk/actions/node@b98d498629f1c368650224d6d212bf7dfa89e4bf # V0.4.0
+        uses: snyk/actions/node@39091e69b560da335383b404e50d65b408f4f812 # V0.4.0
         # * To make sure that SARIF upload gets called.
         continue-on-error: true
         env:
