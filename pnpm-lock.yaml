@@ -113,8 +113,8 @@ devDependencies:
     specifier: 3.0.0
     version: 3.0.0(@typescript-eslint/eslint-plugin@6.7.3)(eslint@8.50.0)
   happy-dom:
-    specifier: 12.1.6
-    version: 12.1.6
+    specifier: 12.2.0
+    version: 12.2.0
   husky:
     specifier: 8.0.3
     version: 8.0.3
@@ -137,8 +137,8 @@ devDependencies:
     specifier: 3.0.3
     version: 3.0.3
   rimraf:
-    specifier: 5.0.1
-    version: 5.0.1
+    specifier: 5.0.4
+    version: 5.0.4
   tailwindcss:
     specifier: 3.3.3
     version: 3.3.3
@@ -147,7 +147,7 @@ devDependencies:
     version: 5.2.2
   vitest:
     specifier: 0.34.5
-    version: 0.34.5(happy-dom@12.1.6)
+    version: 0.34.5(happy-dom@12.2.0)
 
 packages:
 
@@ -1175,7 +1175,7 @@ packages:
       dom-accessibility-api: 0.5.16
       lodash: 4.17.21
       redent: 3.0.0
-      vitest: 0.34.5(happy-dom@12.1.6)
+      vitest: 0.34.5(happy-dom@12.2.0)
     dev: true
 
   /@testing-library/react@14.0.0(react-dom@18.2.0)(react@18.2.0):
@@ -1465,7 +1465,7 @@ packages:
       std-env: 3.4.3
       test-exclude: 6.0.0
       v8-to-istanbul: 9.1.0
-      vitest: 0.34.5(happy-dom@12.1.6)
+      vitest: 0.34.5(happy-dom@12.2.0)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2975,13 +2975,13 @@ packages:
     resolution: {integrity: sha512-lkX1HJXwyMcprw/5YUZc2s7DrpAiHB21/V+E1rHUrVNokkvB6bqMzT0VfV6/86ZNabt1k14YOIaT7nDvOX3Iiw==}
     dev: false
 
-  /glob@10.3.6:
-    resolution: {integrity: sha512-mEfImdc/fiYHEcF6pHFfD2b/KrdFB1qH9mRe5vI5HROF8G51SWxQJ2V56Ezl6ZL9y86gsxQ1Lgo2S746KGUPSQ==}
+  /glob@10.3.9:
+    resolution: {integrity: sha512-2tU/LKevAQvDVuVJ9pg9Yv9xcbSh+TqHuTaXTNbQwf+0kDl9Fm6bMovi4Nm5c8TVvfxo2LLcqCGtmO9KoJaGWg==}
     engines: {node: '>=16 || 14 >=14.17'}
     hasBin: true
     dependencies:
       foreground-child: 3.1.1
-      jackspeak: 2.3.3
+      jackspeak: 2.3.5
       minimatch: 9.0.3
       minipass: 7.0.3
       path-scurry: 1.10.1
@@ -3067,8 +3067,8 @@ packages:
     engines: {node: ^12.22.0 || ^14.16.0 || ^16.0.0 || >=17.0.0}
     dev: true
 
-  /happy-dom@12.1.6:
-    resolution: {integrity: sha512-5ul/0itJ6HJszSJAc9NbwTrTAY1wwEqxS92zUb8j+FBA62g0BplpBA1xjox1gecvCRw16lUfZo4fjVL0P2h6Cg==}
+  /happy-dom@12.2.0:
+    resolution: {integrity: sha512-n9MwvjBUhkNplw74hTCTUOqR67JWgJllnVAgB8c7U+AI+EQp7PdUYFOOfrjEeOmEqsRPUT6lwwM7NjCj6vEZ4g==}
     dependencies:
       css.escape: 1.5.1
       entities: 4.5.0
@@ -3478,8 +3478,8 @@ packages:
       set-function-name: 2.0.1
     dev: true
 
-  /jackspeak@2.3.3:
-    resolution: {integrity: sha512-R2bUw+kVZFS/h1AZqBKrSgDmdmjApzgY0AlCPumopFiAlbUxE2gf+SCuBzQ0cP5hHmUmFYF5yw55T97Th5Kstg==}
+  /jackspeak@2.3.5:
+    resolution: {integrity: sha512-Ratx+B8WeXLAtRJn26hrhY8S1+Jz6pxPMrkrdkgb/NstTNiqMhX0/oFVu5wX+g5n6JlEu2LPsDJmY8nRP4+alw==}
     engines: {node: '>=14'}
     dependencies:
       '@isaacs/cliui': 8.0.2
@@ -4820,12 +4820,12 @@ packages:
       glob: 7.2.3
     dev: true
 
-  /rimraf@5.0.1:
-    resolution: {integrity: sha512-OfFZdwtd3lZ+XZzYP/6gTACubwFcHdLRqS9UX3UwpU2dnGQYkPFISRwvM3w9IiB2w7bW5qGo/uAwE4SmXXSKvg==}
+  /rimraf@5.0.4:
+    resolution: {integrity: sha512-rizQI/o/YAMM1us0Zyax0uRfIK39XR52EAjjOi0fzMolpGp0onj6CWzBAXuOx6+6Xi9Rgi0d9tUZojhJerLUmQ==}
     engines: {node: '>=14'}
     hasBin: true
     dependencies:
-      glob: 10.3.6
+      glob: 10.3.9
     dev: true
 
   /rollup@3.29.3:
@@ -5571,7 +5571,7 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /vitest@0.34.5(happy-dom@12.1.6):
+  /vitest@0.34.5(happy-dom@12.2.0):
     resolution: {integrity: sha512-CPI68mmnr2DThSB3frSuE5RLm9wo5wU4fbDrDwWQQB1CWgq9jQVoQwnQSzYAjdoBOPoH2UtXpOgHVge/uScfZg==}
     engines: {node: '>=v14.18.0'}
     hasBin: true
@@ -5615,7 +5615,7 @@ packages:
       cac: 6.7.14
       chai: 4.3.8
       debug: 4.3.4
-      happy-dom: 12.1.6
+      happy-dom: 12.2.0
       local-pkg: 0.4.3
       magic-string: 0.30.3
       pathe: 1.1.1
