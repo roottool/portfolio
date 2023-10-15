@@ -1,4 +1,3 @@
-import { styled } from '@stitches/react'
 import Image from 'next/image'
 import { MdOpenInNew } from 'react-icons/md'
 
@@ -16,7 +15,7 @@ const GameInfoListItem = ({
 	bannerUrl,
 	playTimeInHours,
 }: GameInfoGridProps) => (
-	<StyledFlex>
+	<li className="flex items-center gap-8 list-none">
 		<a href={appUrl} rel="noopener noreferrer" target="_blank">
 			<Image
 				alt={appName}
@@ -37,14 +36,7 @@ const GameInfoListItem = ({
 			</a>
 			<p className="text-left">プレイ時間: {playTimeInHours}時間</p>
 		</div>
-	</StyledFlex>
+	</li>
 )
-
-const StyledFlex = styled('section', {
-	display: 'flex',
-	alignItems: 'center',
-	gap: '2rem',
-	padding: '0 0.5rem',
-})
 
 export default GameInfoListItem

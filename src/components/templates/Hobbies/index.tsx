@@ -14,13 +14,13 @@ const Hobbies = () => (
 				PCでゲームをすることで、主に遊ぶゲームのジャンルはFPSかストラテジーです。映画を見たりもします。
 			</p>
 			<h4>Steam ライブラリ</h4>
-			<StyledList>
+			<ul className="flex flex-col gap-2 w-full h-full overflow-x-hidden overflow-y-auto">
 				<FetchErrorBoundary>
 					<Suspense fallback={<LoadingSpinner />}>
 						<GameInfoList />
 					</Suspense>
 				</FetchErrorBoundary>
-			</StyledList>
+			</ul>
 		</StyledSection>
 	</main>
 )
@@ -36,12 +36,6 @@ const StyledSection = styled('section', {
 	'@bp2': {
 		width: '90%',
 	},
-})
-
-const StyledList = styled('div', {
-	width: '100%',
-	height: '100%',
-	overflow: 'hidden auto',
 })
 
 export default Hobbies
