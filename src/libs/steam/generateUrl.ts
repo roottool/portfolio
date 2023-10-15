@@ -1,9 +1,9 @@
 import type { OwnedGame } from './api'
 import {
-	STEAM_APP_URL,
+	STEAM_APP_BANNER_HEIGHT,
 	STEAM_APP_BANNER_URL,
 	STEAM_APP_BANNER_WIDTH,
-	STEAM_APP_BANNER_HEIGHT,
+	STEAM_APP_URL,
 } from './construct'
 
 export const generateSteamAppUrl = (appId: OwnedGame['appid']) =>
