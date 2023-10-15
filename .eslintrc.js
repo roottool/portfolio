@@ -17,8 +17,6 @@ const config = {
 		'plugin:react/recommended',
 		'plugin:react-hooks/recommended',
 		'plugin:@next/next/core-web-vitals',
-		'plugin:import/recommended',
-		'plugin:import/typescript',
 		'prettier',
 	],
 	plugins: [
@@ -27,8 +25,6 @@ const config = {
 		'react',
 		'react-hooks',
 		'@next/next',
-		'import',
-		'unused-imports',
 	],
 	parser: '@typescript-eslint/parser',
 	parserOptions: {
@@ -56,27 +52,18 @@ const config = {
 		},
 	},
 	rules: {
-		'@typescript-eslint/no-unused-vars': 'off',
+		'@typescript-eslint/no-unused-vars': [
+			'warn',
+			{
+				argsIgnorePattern: '^_',
+				varsIgnorePattern: '^_',
+				caughtErrorsIgnorePattern: '^_',
+				destructuredArrayIgnorePattern: '^_',
+			},
+		],
 		'@typescript-eslint/consistent-type-exports': 'warn',
 		'@typescript-eslint/consistent-type-imports': 'warn',
 		'@typescript-eslint/consistent-type-definitions': ['warn', 'interface'],
-		'import/order': [
-			'warn',
-			{
-				alphabetize: {
-					order: 'asc',
-				},
-				groups: [
-					'builtin',
-					'external',
-					'internal',
-					['sibling', 'parent'],
-					'index',
-					'object',
-				],
-				'newlines-between': 'always',
-			},
-		],
 		'jsx-a11y/anchor-is-valid': [
 			'error',
 			{
@@ -96,16 +83,6 @@ const config = {
 		],
 		'react/prop-types': 'off',
 		'react/react-in-jsx-scope': 'off',
-		'unused-imports/no-unused-imports': 'error',
-		'unused-imports/no-unused-vars': [
-			'warn',
-			{
-				args: 'after-used',
-				argsIgnorePattern: '^_',
-				vars: 'all',
-				varsIgnorePattern: '^_',
-			},
-		],
 	},
 	overrides: [
 		{

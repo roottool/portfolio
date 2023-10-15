@@ -7,9 +7,9 @@ import PageTitleWrapper from '@/components/atoms/PageTitleWrapper'
 import BasicLayout from '@/components/templates/BasicLayout'
 import {
 	Card,
-	CardHeader,
 	CardContent,
 	CardDescription,
+	CardHeader,
 } from '@/components/ui/card'
 import type { NextPageWithLayout } from '@/pages/_app.page'
 

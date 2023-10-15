@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest'
 
-import { generateSteamAppUrl, generateSteamAppBannerUrl } from './generateUrl'
+import { generateSteamAppBannerUrl, generateSteamAppUrl } from './generateUrl'
 
 describe('generateUrl', () => {
 	test('generateSteamAppUrl', () => {
