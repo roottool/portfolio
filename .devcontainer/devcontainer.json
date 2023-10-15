@@ -20,7 +20,7 @@
 	},
 	"customizations": {
 		"extensions": [
-			"streetsidesoftware.code-spell-checker",
+			"tekumara.typos-vscode",
 			// * EditorConfig
 			"editorconfig.editorconfig",
 			// * JavaScript, TypeScript
