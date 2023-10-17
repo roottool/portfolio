@@ -52,7 +52,7 @@
 		"@stitches/react": "1.2.8",
 		"class-variance-authority": "0.7.0",
 		"clsx": "2.0.0",
-		"ky": "1.0.1",
+		"ky": "1.1.0",
 		"lucide-react": "0.287.0",
 		"next": "13.5.5",
 		"react": "18.2.0",
