@@ -24,9 +24,9 @@
 		"build:next": "next build",
 		"start": "next start",
 		"lint": "run-s -c lint:*",
-		"lint:prettier": "prettier --ignore-path=.prettierignore --check .",
+		"lint:prettier": "prettier --ignore-path=.gitignore --ignore-path=.prettierignore --check .",
 		"lint:eslint": "eslint . --color --ext .js,.ts,.tsx",
-		"format": "prettier --cache --ignore-path=.prettierignore --write .",
+		"format": "prettier --cache --ignore-path=.gitignore --ignore-path=.prettierignore --write .",
 		"fix": "run-s -c format fix:*",
 		"fix:eslint": "eslint . --fix --color --cache --ext .js,.ts,.tsx",
 		"typecheck": "tsc --noEmit",
@@ -36,11 +36,11 @@
 	},
 	"lint-staged": {
 		"*.{js,ts?(x)}": [
-			"prettier --write --ignore-path=.prettierignore",
+			"prettier --ignore-path=.gitignore --ignore-path=.prettierignore --write",
 			"eslint --fix --color"
 		],
 		"*.{md,json,y?(a)ml}": [
-			"prettier --write --ignore-path=.prettierignore"
+			"prettier --ignore-path=.gitignore --ignore-path=.prettierignore --write"
 		]
 	},
 	"msw": {
