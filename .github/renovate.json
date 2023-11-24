@@ -1,37 +1,39 @@
 {
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
 	"extends": [
-		":dependencyDashboard",
-		":semanticPrefixFixDepsChoreOthers",
-		":ignoreModulesAndTests",
-		":autodetectPinVersions",
-		":prHourlyLimit4",
-		":prConcurrentLimit10",
-		"group:monorepos",
-		"group:recommended",
+		"config:recommended",
 		"schedule:daily",
-		"workarounds:all",
-		"helpers:pinGitHubActionDigests"
+		":enableVulnerabilityAlertsWithLabel(security)"
 	],
 	"labels": ["dependencies"],
 	"timezone": "Asia/Tokyo",
-	"vulnerabilityAlerts": {
-		"labels": ["security"]
+	"prHourlyLimit": 0,
+	"rebaseWhen": "never",
+	"lockFileMaintenance": {
+		"enabled": true,
+		"recreateWhen": "never",
+		"schedule": ["before 3am on the first day of the month"]
 	},
 	"packageRules": [
 		{
 			"groupName": "all non-major devDependencies",
-			"groupSlug": "all-devDependencies-minor-patch-pin-digest",
+			"groupSlug": "all-devDependencies-minor-patch",
 			"matchPackagePatterns": ["*"],
-			"matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+			"matchUpdateTypes": ["minor", "patch"],
 			"automerge": true
 		},
 		{
 			"groupName": "all non-major dependencies",
-			"groupSlug": "all-dependencies-minor-patch-pin-digest",
+			"groupSlug": "all-dependencies-minor-patch",
 			"matchDepTypes": ["dependencies"],
 			"matchPackagePatterns": ["*"],
-			"matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+			"matchUpdateTypes": ["minor", "patch"],
+			"automerge": true
+		},
+		{
+			"groupName": "GitHub Action digests",
+			"matchDepTypes": ["action"],
+			"pinDigests": true,
 			"automerge": true
 		},
 		{
