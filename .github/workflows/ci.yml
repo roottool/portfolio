@@ -26,7 +26,7 @@ jobs:
   paths:
     name: Check diff targets by path filters
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 3
     permissions:
       pull-requests: read
     outputs:
