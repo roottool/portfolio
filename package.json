@@ -36,8 +36,8 @@
 	},
 	"lint-staged": {
 		"*.{js,ts?(x)}": [
-			"prettier --ignore-path=.gitignore --ignore-path=.prettierignore --write",
-			"eslint --fix --color"
+			"eslint --fix --color",
+			"prettier --ignore-path=.gitignore --ignore-path=.prettierignore --write"
 		],
 		"*.{md,json,y?(a)ml}": [
 			"prettier --ignore-path=.gitignore --ignore-path=.prettierignore --write"
@@ -67,6 +67,7 @@
 		"@next/eslint-plugin-next": "14.0.3",
 		"@testing-library/jest-dom": "6.1.4",
 		"@testing-library/react": "14.1.2",
+		"@trivago/prettier-plugin-sort-imports": "^4.3.0",
 		"@types/node": "20.10.0",
 		"@types/react": "18.2.38",
 		"@types/react-dom": "18.2.17",
@@ -82,6 +83,7 @@
 		"eslint-plugin-jsx-a11y": "6.8.0",
 		"eslint-plugin-react": "7.33.2",
 		"eslint-plugin-react-hooks": "4.6.0",
+		"eslint-plugin-unused-imports": "^3.0.0",
 		"happy-dom": "12.10.3",
 		"husky": "8.0.3",
 		"is-ci": "3.0.1",
@@ -90,7 +92,6 @@
 		"npm-run-all": "4.1.5",
 		"postcss": "8.4.31",
 		"prettier": "3.1.0",
-		"prettier-plugin-organize-imports": "^3.2.3",
 		"rimraf": "5.0.5",
 		"tailwindcss": "3.3.5",
 		"typescript": "5.3.2",
