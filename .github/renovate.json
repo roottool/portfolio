@@ -9,6 +9,7 @@
 	"timezone": "Asia/Tokyo",
 	"prHourlyLimit": 4,
 	"prConcurrentLimit": 10,
+	"configMigration": true,
 	"lockFileMaintenance": {
 		"enabled": true,
 		"recreateWhen": "never",
