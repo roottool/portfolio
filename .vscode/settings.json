@@ -30,5 +30,5 @@
 		"files.trimTrailingWhitespace": false
 	},
 	// Extensions
-	"prettier.configPath": "prettier.config.js"
+	"prettier.configPath": "prettier.config.mjs"
 }
