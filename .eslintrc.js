@@ -25,6 +25,7 @@ const config = {
 		'react',
 		'react-hooks',
 		'@next/next',
+		'unused-imports',
 	],
 	parser: '@typescript-eslint/parser',
 	parserOptions: {
@@ -52,15 +53,7 @@ const config = {
 		},
 	},
 	rules: {
-		'@typescript-eslint/no-unused-vars': [
-			'warn',
-			{
-				argsIgnorePattern: '^_',
-				varsIgnorePattern: '^_',
-				caughtErrorsIgnorePattern: '^_',
-				destructuredArrayIgnorePattern: '^_',
-			},
-		],
+		'@typescript-eslint/no-unused-vars': 'off',
 		'@typescript-eslint/consistent-type-exports': 'warn',
 		'@typescript-eslint/consistent-type-imports': 'warn',
 		'@typescript-eslint/consistent-type-definitions': ['warn', 'interface'],
@@ -83,6 +76,16 @@ const config = {
 		],
 		'react/prop-types': 'off',
 		'react/react-in-jsx-scope': 'off',
+		'unused-imports/no-unused-imports': 'error',
+		'unused-imports/no-unused-vars': [
+			'warn',
+			{
+				vars: 'all',
+				varsIgnorePattern: '^_',
+				args: 'after-used',
+				argsIgnorePattern: '^_',
+			},
+		],
 	},
 	overrides: [
 		{
