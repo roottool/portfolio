@@ -11,6 +11,7 @@ permissions:
 jobs:
   add-reviews:
     runs-on: ubuntu-latest
+    timeout-minutes: 2
     steps:
       - uses: kentaro-m/auto-assign-action@3e986bf9c274729de0d85191da42484917883328 # v1.2.5
         with:
