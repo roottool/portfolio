@@ -7,8 +7,9 @@
 	],
 	"labels": ["dependencies"],
 	"timezone": "Asia/Tokyo",
-	"prHourlyLimit": 0,
-	"rebaseWhen": "never",
+	"prHourlyLimit": 4,
+	"prConcurrentLimit": 10,
+	"configMigration": true,
 	"lockFileMaintenance": {
 		"enabled": true,
 		"recreateWhen": "never",
@@ -42,19 +43,14 @@
 			"automerge": true
 		},
 		{
-			"groupName": "Testing Library Group",
-			"matchPackagePrefixes": ["@testing-library/"],
-			"automerge": true
-		},
-		{
-			"groupName": "Vitest Group",
+			"groupName": "Test Group",
 			"matchPackageNames": ["vitest"],
-			"matchPackagePatterns": ["@vitejs/", "@vitest/"],
+			"matchPackagePatterns": ["@vitejs/", "@vitest/", "@testing-library/"],
 			"automerge": true
 		},
 		{
-			"groupName": "ESLint Group",
-			"matchPackagePatterns": ["eslint"],
+			"groupName": "Lint Group",
+			"matchPackagePatterns": ["eslint", "prettier"],
 			"automerge": true
 		},
 		{

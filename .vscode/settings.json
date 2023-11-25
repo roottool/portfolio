@@ -8,7 +8,6 @@
 		"source.fixAll.eslint"
 	],
 	"editor.formatOnSave": true,
-	"editor.formatOnPaste": true,
 	"editor.formatOnSaveMode": "modificationsIfAvailable",
 	"editor.tabSize": 2,
 	"files.trimFinalNewlines": true,
