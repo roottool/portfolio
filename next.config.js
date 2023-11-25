@@ -8,6 +8,7 @@ const nextConfig = {
 		domains: ['cdn.cloudflare.steamstatic.com'],
 	},
 	webpack: (config, { isServer }) => {
+		// https://github.com/mswjs/msw/issues/1801#issuecomment-1794145119
 		if (isServer) {
 			config.resolve.alias = {
 				...config.resolve.alias,
