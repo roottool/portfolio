@@ -1,4 +1,5 @@
 import Link from 'next/link'
+
 import { IconContext } from 'react-icons'
 import { FaTwitterSquare } from 'react-icons/fa'
 import { RxGithubLogo } from 'react-icons/rx'

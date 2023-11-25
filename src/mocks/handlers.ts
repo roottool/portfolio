@@ -1,6 +1,7 @@
 // src/mocks/handlers.js
 import { rest } from 'msw'
 
+import OwnedGames from './OwnedGames.json'
 import type { OwnedGame, OwnedGamesApiResponse } from '@/libs/steam/api'
 import { GET_OWNED_GAMES_API_URL_WITHOUT_QUERY } from '@/libs/steam/construct'
 import convertPlayTimeToHours from '@/libs/steam/convertPlayTimeToHours'
@@ -10,8 +11,6 @@ import {
 } from '@/libs/steam/generateUrl'
 import sortOwnedGames from '@/libs/steam/sortOwnedGames'
 import type { FetchOwnedGamesResponse } from '@/pages/api/fetchOwnedGames/type'
-
-import OwnedGames from './OwnedGames.json'
 
 export const handlers = [
 	rest.get<OwnedGamesApiResponse>(

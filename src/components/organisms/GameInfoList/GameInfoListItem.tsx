@@ -1,4 +1,5 @@
 import Image from 'next/image'
+
 import { MdOpenInNew } from 'react-icons/md'
 
 import {

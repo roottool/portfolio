@@ -1,8 +1,10 @@
 import Head from 'next/head'
 import Link from 'next/link'
+
 import { IconContext } from 'react-icons'
 import { RxGithubLogo } from 'react-icons/rx'
 
+import contents from './WorksContents.json'
 import PageTitleWrapper from '@/components/atoms/PageTitleWrapper'
 import BasicLayout from '@/components/templates/BasicLayout'
 import {
@@ -12,8 +14,6 @@ import {
 	CardHeader,
 } from '@/components/ui/card'
 import type { NextPageWithLayout } from '@/pages/_app.page'
-
-import contents from './WorksContents.json'
 
 const Works = () => (
 	<main className="container mx-auto">

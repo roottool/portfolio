@@ -1,11 +1,12 @@
-import { globalCss } from '@stitches/react'
 import type { NextPage } from 'next'
 import type { AppProps } from 'next/app'
+
 import type { ReactElement, ReactNode } from 'react'
 import { StrictMode } from 'react'
 
-import initMocks from '@/mocks'
+import { globalCss } from '@stitches/react'
 
+import initMocks from '@/mocks'
 import '@/styles/globals.css'
 
 if (process.env.NODE_ENV === 'development') {

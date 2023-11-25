@@ -1,5 +1,6 @@
-import { Root as ToolbarRoot } from '@radix-ui/react-toolbar'
 import Link from 'next/link'
+
+import { Root as ToolbarRoot } from '@radix-ui/react-toolbar'
 
 import StyledToolbarLink from './ToolbarLink'
 
