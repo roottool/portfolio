@@ -6,12 +6,10 @@ import { StrictMode } from 'react'
 
 import { globalCss } from '@stitches/react'
 
-import initMocks from '@/mocks'
+import { enableMocking } from '@/mocks'
 import '@/styles/globals.css'
 
-if (process.env.NODE_ENV === 'development') {
-	void initMocks()
-}
+void enableMocking()
 
 export type NextPageWithLayout = NextPage & {
 	getLayout?: (page: ReactElement) => ReactNode

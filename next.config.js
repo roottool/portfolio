@@ -7,19 +7,19 @@ const nextConfig = {
 	images: {
 		domains: ['cdn.cloudflare.steamstatic.com'],
 	},
-	eslint: {
-		// !! WARN !!
-		// Warning: This allows production builds to successfully complete
-		// even if your project has ESLint errors.
-		// !! WARN !!
-		ignoreDuringBuilds: true,
-	},
-	typescript: {
-		// !! WARN !!
-		// Dangerously allow production builds to successfully complete
-		// even if your project has type errors.
-		// !! WARN !!
-		ignoreBuildErrors: true,
+	webpack: (config, { isServer }) => {
+		if (isServer) {
+			config.resolve.alias = {
+				...config.resolve.alias,
+				'msw/browser': false,
+			}
+		} else {
+			config.resolve.alias = {
+				...config.resolve.alias,
+				'msw/node': false,
+			}
+		}
+		return config
 	},
 }
 
