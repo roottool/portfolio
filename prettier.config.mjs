@@ -9,4 +9,4 @@ const config = {
 	importOrderSortSpecifiers: true,
 }
 
-module.exports = config
+export default config
