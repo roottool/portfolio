@@ -52,18 +52,18 @@ jobs:
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
         with:
           sparse-checkout: |
-            .github/actions/setup-bun/action.yml
+            .github/actions/setup-node-and-pnpm/action.yml
             .github/renovate.json
             package.json
             pnpm-lock.yaml
             prettier.config.mjs
           sparse-checkout-cone-mode: false
       - name: Initialize
-        uses: ./.github/actions/setup-bun
+        uses: ./.github/actions/setup-node-and-pnpm
       - name: Check format by Prettier
-        run: bunx prettier --check .github/renovate.json
+        run: pnpm exec prettier --check .github/renovate.json
       - name: Validate Renovate config
-        run: bunx --package renovate --strict -c 'renovate-config-validator'
+        run: pnpm --package renovate dlx renovate-config-validator --strict
 
   lint:
     name: Lint
