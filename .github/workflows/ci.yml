@@ -33,9 +33,9 @@ jobs:
         with:
           filters: |
             typescript:
-              - **/tsconfig*.json
-              - **/*.ts
-              - **/*.tsx
+              - '**/tsconfig*.json'
+              - '**/*.ts'
+              - '**/*.tsx'
             renovate-config:
               - '.github/renovate.json'
 
