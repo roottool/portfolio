@@ -16,28 +16,26 @@ jobs:
     name: Setup
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    permissions:
+      pull-requests: read
+    outputs:
+      typescript: ${{ steps.filter.outputs.typescript }}
+      renovate-config: ${{ steps.filter.outputs.renovate-config }}
     if: ${{ !github.event.pull_request.draft }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
       - name: Initialize
         uses: ./.github/actions/setup-bun
-
-  paths:
-    name: Check diff targets by path filters
-    runs-on: ubuntu-latest
-    timeout-minutes: 3
-    permissions:
-      pull-requests: read
-    outputs:
-      renovate-config: ${{ steps.filter.outputs.renovate-config }}
-    if: ${{ !github.event.pull_request.draft }}
-    steps:
-      - name: Set filters output
+      - name: Check diff targets by path filters
         uses: dorny/paths-filter@4512585405083f25c027a35db413c2b3b9006d50 # v2.11.1
         id: filter
         with:
           filters: |
+            typescript:
+              - '**/tsconfig*.json'
+              - '**/*.ts'
+              - '**/*.tsx'
             renovate-config:
               - '.github/renovate.json'
 
@@ -45,8 +43,8 @@ jobs:
     name: Renovate config lint
     runs-on: ubuntu-latest
     timeout-minutes: 5
-    needs: [setup, paths]
-    if: ${{ needs.paths.outputs.renovate-config == 'true' }}
+    needs: [setup]
+    if: ${{ needs.setup.outputs.renovate-config == 'true' }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
@@ -85,6 +83,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 3
     needs: [setup]
+    if: ${{ needs.setup.outputs.typescript == 'true' }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
@@ -98,6 +97,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     needs: [lint, typecheck]
+    if: ${{ !(failure() || contains(needs.*.result, 'cancelled')) }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
