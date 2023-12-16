@@ -5,7 +5,7 @@ const nextConfig = {
 	reactStrictMode: true,
 	pageExtensions: ['page.tsx', 'api.ts'],
 	images: {
-		domains: ['cdn.cloudflare.steamstatic.com'],
+		remotePatterns: ['cdn.cloudflare.steamstatic.com'],
 	},
 	webpack: (config, { isServer }) => {
 		// https://github.com/mswjs/msw/issues/1801#issuecomment-1794145119
