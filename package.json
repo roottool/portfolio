@@ -25,7 +25,7 @@
 		"start": "next start",
 		"lint": "run-s -c lint:*",
 		"lint:prettier": "prettier --ignore-path=.gitignore --ignore-path=.prettierignore --check .",
-		"lint:eslint": "eslint . --color --ext .js,.ts,.tsx",
+		"lint:eslint": "eslint . --color --ext .js,.ts,.tsx --max-warnings=0",
 		"format": "prettier --cache --ignore-path=.gitignore --ignore-path=.prettierignore --write .",
 		"fix": "run-s -c fix:* format",
 		"fix:eslint": "eslint . --fix --color --cache --ext .js,.ts,.tsx",
