@@ -33,6 +33,7 @@ jobs:
         with:
           filters: |
             typescript:
+              - 'pnpm-lock.yaml'
               - '**/tsconfig*.json'
               - '**/*.ts'
               - '**/*.tsx'
