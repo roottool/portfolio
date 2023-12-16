@@ -2,14 +2,14 @@
 import { HttpResponse, http } from 'msw'
 
 import OwnedGames from './OwnedGames.json'
-import type { OwnedGame } from '@/libs/steam/api'
-import { GET_OWNED_GAMES_API_URL_WITHOUT_QUERY } from '@/libs/steam/construct'
-import convertPlayTimeToHours from '@/libs/steam/convertPlayTimeToHours'
+import type { OwnedGame } from '@/libs/steam'
 import {
+	GET_OWNED_GAMES_API_URL_WITHOUT_QUERY,
+	convertPlayTimeToHours,
 	generateSteamAppBannerUrl,
 	generateSteamAppUrl,
-} from '@/libs/steam/generateUrl'
-import sortOwnedGames from '@/libs/steam/sortOwnedGames'
+	sortOwnedGames,
+} from '@/libs/steam'
 import type { FetchOwnedGamesResponse } from '@/pages/api/fetchOwnedGames/type'
 
 export const handlers = [

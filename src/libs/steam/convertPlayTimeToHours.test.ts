@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest'
 
-import convertPlayTimeToHours from './convertPlayTimeToHours'
+import { convertPlayTimeToHours } from './convertPlayTimeToHours'
 
 describe('convertPlayTimeToHours', () => {
 	test('Returns 0 if less than or equal to 0.', () => {

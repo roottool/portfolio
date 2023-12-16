@@ -55,6 +55,9 @@ dependencies:
     version: 0.24.1
 
 devDependencies:
+  '@next/env':
+    specifier: 14.0.4
+    version: 14.0.4
   '@next/eslint-plugin-next':
     specifier: 14.0.4
     version: 14.0.4
@@ -754,7 +757,6 @@ packages:
 
   /@next/env@14.0.4:
     resolution: {integrity: sha512-irQnbMLbUNQpP1wcE5NstJtbuA/69kRfzBrpAD7Gsn8zm/CY6YQYc3HQBz8QPxwISG26tIm5afvvVbu508oBeQ==}
-    dev: false
 
   /@next/eslint-plugin-next@14.0.4:
     resolution: {integrity: sha512-U3qMNHmEZoVmHA0j/57nRfi3AscXNvkOnxDmle/69Jz/G0o/gWjXTDdlgILZdrxQ0Lw/jv2mPW8PGy0EGIHXhQ==}

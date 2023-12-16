@@ -9,6 +9,12 @@ export default defineConfig({
 		setupFiles: './vitest.setup.ts',
 		coverage: {
 			reporter: ['text', 'json', 'html'],
+			include: ['src/**/*.?(c|m)[jt]s?(x)'],
+			exclude: [
+				'src/**/?(*.)type.?(c|m)ts',
+				'src/mocks/**/*',
+				'src/styles/**/*',
+			],
 		},
 	},
 	resolve: {
