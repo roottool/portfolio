@@ -1,8 +1,8 @@
 import Head from 'next/head'
 
-import BasicLayout from '../../components/templates/BasicLayout'
-import Hobbies from '../../components/templates/Hobbies'
 import type { NextPageWithLayout } from '../_app.page'
+import BasicLayout from '@/components/templates/BasicLayout'
+import Hobbies from '@/components/templates/Hobbies'
 
 const Container: NextPageWithLayout = () => (
 	<>
