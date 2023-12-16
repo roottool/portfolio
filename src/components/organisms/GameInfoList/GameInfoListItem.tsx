@@ -16,7 +16,7 @@ const GameInfoListItem = ({
 	bannerUrl,
 	playTimeInHours,
 }: GameInfoGridProps) => (
-	<li className="flex items-center gap-8 list-none">
+	<li className="flex items-center gap-8 list-none bg-white">
 		<a href={appUrl} rel="noopener noreferrer" target="_blank">
 			<Image
 				alt={appName}
