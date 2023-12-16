@@ -3,14 +3,14 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import ky from 'ky'
 
 import type { FetchOwnedGamesResponse } from './type'
-import type { OwnedGamesApiResponse } from '@/libs/steam/api'
-import { GET_OWNED_GAMES_API_URL } from '@/libs/steam/construct'
-import convertPlayTimeToHours from '@/libs/steam/convertPlayTimeToHours'
 import {
+	GET_OWNED_GAMES_API_URL,
+	convertPlayTimeToHours,
 	generateSteamAppBannerUrl,
 	generateSteamAppUrl,
-} from '@/libs/steam/generateUrl'
-import sortOwnedGames from '@/libs/steam/sortOwnedGames'
+	sortOwnedGames,
+} from '@/libs/steam'
+import type { OwnedGamesApiResponse } from '@/libs/steam'
 
 const fetchOwnedGamesHandler = (
 	_req: NextApiRequest,

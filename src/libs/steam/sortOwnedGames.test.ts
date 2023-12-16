@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest'
 
-import sortOwnedGames from './sortOwnedGames'
+import { sortOwnedGames } from './sortOwnedGames'
 
 describe('sortOwnedGames', () => {
 	test('This function must run sorting in descending order for `playtime_forever`.', () => {

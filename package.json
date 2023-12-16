@@ -61,9 +61,11 @@
 		"react-icons": "4.12.0",
 		"swr": "2.2.4",
 		"tailwind-merge": "2.1.0",
-		"tailwindcss-animate": "1.0.7"
+		"tailwindcss-animate": "1.0.7",
+		"valibot": "0.24.1"
 	},
 	"devDependencies": {
+		"@next/env": "14.0.4",
 		"@next/eslint-plugin-next": "14.0.4",
 		"@testing-library/jest-dom": "6.1.5",
 		"@testing-library/react": "14.1.2",

@@ -1,13 +1,13 @@
-import useFetchSuspense from '@/hooks/useFetchSuspense'
+import useFetch from '@/hooks/useFetch'
 import type { FetchOwnedGamesResponse } from '@/pages/api/fetchOwnedGames/type'
 
 const useGameInfoGrid = () => {
-	const { data } = useFetchSuspense<FetchOwnedGamesResponse>(
+	const { data, isLoading } = useFetch<FetchOwnedGamesResponse>(
 		'/api/fetchOwnedGames',
 	)
 	const ownedGames = data?.ownedGames ?? []
 
-	return [ownedGames] as const
+	return { ownedGames, isLoading } as const
 }
 
 export default useGameInfoGrid

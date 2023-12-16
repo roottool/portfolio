@@ -1,7 +1,7 @@
-import type { OwnedGame } from './api'
+import type { OwnedGame } from './type'
 
-const sortOwnedGames = (ownedGames: OwnedGame[]) =>
-	ownedGames.sort((a, b) => {
+export function sortOwnedGames(ownedGames: OwnedGame[]) {
+	return ownedGames.sort((a, b) => {
 		if (a.playtime_forever < b.playtime_forever) {
 			return 1
 		}
@@ -11,5 +11,4 @@ const sortOwnedGames = (ownedGames: OwnedGame[]) =>
 
 		return 0
 	})
-
-export default sortOwnedGames
+}
