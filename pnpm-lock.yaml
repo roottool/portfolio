@@ -62,7 +62,7 @@ devDependencies:
     specifier: 14.1.2
     version: 14.1.2(react-dom@18.2.0)(react@18.2.0)
   '@trivago/prettier-plugin-sort-imports':
-    specifier: ^4.3.0
+    specifier: 4.3.0
     version: 4.3.0(prettier@3.1.1)
   '@types/node':
     specifier: 20.10.4
@@ -110,7 +110,7 @@ devDependencies:
     specifier: 4.6.0
     version: 4.6.0(eslint@8.55.0)
   eslint-plugin-unused-imports:
-    specifier: ^3.0.0
+    specifier: 3.0.0
     version: 3.0.0(@typescript-eslint/eslint-plugin@6.14.0)(eslint@8.55.0)
   happy-dom:
     specifier: 12.10.3
@@ -208,7 +208,7 @@ packages:
     resolution: {integrity: sha512-oLcVCTeIFadUoArDTwpluncplrYBmTCCZZgXCbgNGvOBBiSDDK3eWO4b/+eOTli5tKv1lg+a5/NAXg+nTcei1w==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      '@babel/types': 7.17.0
+      '@babel/types': 7.23.5
       jsesc: 2.5.2
       source-map: 0.5.7
     dev: true
