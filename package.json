@@ -67,7 +67,7 @@
 	"devDependencies": {
 		"@next/env": "14.0.4",
 		"@next/eslint-plugin-next": "14.0.4",
-		"@testing-library/jest-dom": "6.1.6",
+		"@testing-library/jest-dom": "6.2.0",
 		"@testing-library/react": "14.1.2",
 		"@trivago/prettier-plugin-sort-imports": "4.3.0",
 		"@types/node": "20.10.6",
