@@ -11,7 +11,7 @@ const config = {
 	root: true,
 	extends: [
 		'eslint:recommended',
-		'plugin:@typescript-eslint/strict-type-checked',
+		'plugin:@typescript-eslint/recommended-type-checked',
 		'plugin:@typescript-eslint/stylistic-type-checked',
 		'plugin:jsx-a11y/recommended',
 		'plugin:react/recommended',
@@ -53,7 +53,6 @@ const config = {
 		},
 	},
 	rules: {
-		'@typescript-eslint/no-unused-vars': 'off',
 		'@typescript-eslint/consistent-type-exports': 'warn',
 		'@typescript-eslint/consistent-type-imports': 'warn',
 		'@typescript-eslint/consistent-type-definitions': ['warn', 'interface'],
@@ -77,6 +76,7 @@ const config = {
 		'react/prop-types': 'off',
 		'react/react-in-jsx-scope': 'off',
 		'unused-imports/no-unused-imports': 'error',
+		'@typescript-eslint/no-unused-vars': 'off',
 		'unused-imports/no-unused-vars': [
 			'warn',
 			{
@@ -91,9 +91,6 @@ const config = {
 		{
 			files: ['./*.js', './*.mjs'],
 			extends: ['plugin:@typescript-eslint/disable-type-checked'],
-			rules: {
-				'@typescript-eslint/no-var-requires': 'off',
-			},
 		},
 	],
 }
