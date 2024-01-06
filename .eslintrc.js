@@ -91,9 +91,6 @@ const config = {
 		{
 			files: ['./*.js', './*.mjs'],
 			extends: ['plugin:@typescript-eslint/disable-type-checked'],
-			rules: {
-				// '@typescript-eslint/no-var-requires': 'off',
-			},
 		},
 	],
 }
