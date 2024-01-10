@@ -49,7 +49,7 @@
 	"engines": {
 		"node": "^18.17.0"
 	},
-	"packageManager": "pnpm@8.14.0+sha256.9cebf61abd83f68177b29484da72da9751390eaad46dfc3072d266bfbb1ba7bf",
+	"packageManager": "pnpm@8.14.1",
 	"dependencies": {
 		"@radix-ui/react-slot": "1.0.2",
 		"@radix-ui/react-toolbar": "1.0.4",
