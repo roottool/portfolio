@@ -28,7 +28,7 @@ jobs:
       - name: Initialize
         uses: ./.github/actions/setup-bun
       - name: Check diff targets by path filters
-        uses: dorny/paths-filter@4512585405083f25c027a35db413c2b3b9006d50 # v2.11.1
+        uses: dorny/paths-filter@7267a8516b6f92bdb098633497bad573efdbf271 # v2.12.0
         id: filter
         with:
           filters: |
@@ -107,7 +107,7 @@ jobs:
       - name: Run test
         run: bun run test
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@eaaf4bedf32dbdc6b720b63067d99c4d77d6047d # v3.1.4
+        uses: codecov/codecov-action@4fe8c5f003fae66aa5ebb77cfd3e7bfbbda0b6b0 # v3.1.5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           fail_ci_if_error: true
