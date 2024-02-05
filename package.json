@@ -17,7 +17,7 @@
 		"url": "https://github.com/roottool/portfolio/issues"
 	},
 	"scripts": {
-		"prepare": "is-ci || husky install",
+		"prepare": "is-ci || husky",
 		"clean": "rimraf .next .swc",
 		"dev": "next dev",
 		"build": "npm-run-all clean --parallel build:*",
@@ -91,7 +91,7 @@
 		"eslint-plugin-react-hooks": "4.6.0",
 		"eslint-plugin-unused-imports": "3.0.0",
 		"happy-dom": "13.3.8",
-		"husky": "8.0.3",
+		"husky": "9.0.10",
 		"is-ci": "3.0.1",
 		"lint-staged": "15.2.1",
 		"msw": "2.1.5",
