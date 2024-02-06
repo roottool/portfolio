@@ -24,8 +24,8 @@ dependencies:
     specifier: 1.2.0
     version: 1.2.0
   lucide-react:
-    specifier: 0.321.0
-    version: 0.321.0(react@18.2.0)
+    specifier: 0.323.0
+    version: 0.323.0(react@18.2.0)
   next:
     specifier: 14.1.0
     version: 14.1.0(@babel/core@7.23.7)(react-dom@18.2.0)(react@18.2.0)
@@ -51,8 +51,8 @@ dependencies:
     specifier: 1.0.7
     version: 1.0.7(tailwindcss@3.4.1)
   valibot:
-    specifier: 0.27.1
-    version: 0.27.1
+    specifier: 0.28.1
+    version: 0.28.1
 
 devDependencies:
   '@next/env':
@@ -3836,8 +3836,8 @@ packages:
       yallist: 4.0.0
     dev: true
 
-  /lucide-react@0.321.0(react@18.2.0):
-    resolution: {integrity: sha512-Fi9VahIna6642U+2nAGSjnXwUBV3WyfFFPQq4yi3w30jtqxDLfSyiYCtCYCYQZ2KWNZc1MDI+rcsa0t+ChdYpw==}
+  /lucide-react@0.323.0(react@18.2.0):
+    resolution: {integrity: sha512-rTXZFILl2Y4d1SG9p1Mdcf17AcPvPvpc/egFIzUrp7IUy60MUQo3Oi1mu8LGYXUVwuRZYsSMt3csHRW5mAovJg==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0
     dependencies:
@@ -5556,8 +5556,8 @@ packages:
       convert-source-map: 2.0.0
     dev: true
 
-  /valibot@0.27.1:
-    resolution: {integrity: sha512-k57/5/kMwMjiVP0LUMpa+n4ihSemuXshz1ND4fftKw1bkHZYN/TnHcbjaEie3K7FwAceiOgugLZPjSaNxdygeg==}
+  /valibot@0.28.1:
+    resolution: {integrity: sha512-zQnjwNJuXk6362Leu0+4eFa/SMwRom3/hEvH6s1EGf3oXIPbo2WFKDra9ymnbVh3clLRvd8hw4sKF5ruI2Lyvw==}
     dev: false
 
   /vite-node@1.2.2(@types/node@20.11.16):
