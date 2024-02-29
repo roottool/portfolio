@@ -7,7 +7,7 @@ runs:
     - name: Setup Node.js LTS
       uses: oven-sh/setup-bun@9b21598af8d4dfc302e5a30250007de0fda92acc # v1
     - name: Restore dependences cache
-      uses: actions/cache/restore@13aacd865c20de90d75de3b17ebe84f7a17d57d2 # v4.0.0
+      uses: actions/cache/restore@ab5e6d0c87105b4c9c2047343972218f562e4319 # v4.0.1
       id: restore-bun-dependences-cache
       with:
         path: node_modules
@@ -18,7 +18,7 @@ runs:
       shell: bash
     - name: Save dependences cache
       if: steps.restore-bun-dependences-cache.outputs.cache-hit != 'true'
-      uses: actions/cache/save@13aacd865c20de90d75de3b17ebe84f7a17d57d2 # v4.0.0
+      uses: actions/cache/save@ab5e6d0c87105b4c9c2047343972218f562e4319 # v4.0.1
       id: save-dependences-cache
       with:
         path: node_modules
