@@ -6,8 +6,8 @@ import { RxGithubLogo } from 'react-icons/rx'
 
 import { styled } from '@/styles/StyleConstants'
 
-const GITHUB_URL = 'https://github.com/roottool' as const
-const TWITTER_URL = 'https://twitter.com/roottool' as const
+const GITHUB_URL = 'https://github.com/roottool' as const satisfies string
+const TWITTER_URL = 'https://twitter.com/roottool' as const satisfies string
 
 const Home = () => (
 	<main>
