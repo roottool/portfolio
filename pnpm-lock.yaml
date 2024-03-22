@@ -119,8 +119,8 @@ devDependencies:
     specifier: 3.1.0
     version: 3.1.0(@typescript-eslint/eslint-plugin@7.3.1)(eslint@8.57.0)
   happy-dom:
-    specifier: 14.2.1
-    version: 14.2.1
+    specifier: 14.3.1
+    version: 14.3.1
   husky:
     specifier: 9.0.11
     version: 9.0.11
@@ -131,8 +131,8 @@ devDependencies:
     specifier: 15.2.2
     version: 15.2.2
   msw:
-    specifier: 2.2.9
-    version: 2.2.9(typescript@5.4.3)
+    specifier: 2.2.10
+    version: 2.2.10(typescript@5.4.3)
   npm-run-all2:
     specifier: 6.1.2
     version: 6.1.2
@@ -153,7 +153,7 @@ devDependencies:
     version: 5.4.3
   vitest:
     specifier: 1.4.0
-    version: 1.4.0(@types/node@20.11.30)(happy-dom@14.2.1)
+    version: 1.4.0(@types/node@20.11.30)(happy-dom@14.3.1)
 
 packages:
 
@@ -1378,7 +1378,7 @@ packages:
       dom-accessibility-api: 0.6.3
       lodash: 4.17.21
       redent: 3.0.0
-      vitest: 1.4.0(@types/node@20.11.30)(happy-dom@14.2.1)
+      vitest: 1.4.0(@types/node@20.11.30)(happy-dom@14.3.1)
     dev: true
 
   /@testing-library/react@14.2.2(react-dom@18.2.0)(react@18.2.0):
@@ -1686,7 +1686,7 @@ packages:
       strip-literal: 2.0.0
       test-exclude: 6.0.0
       v8-to-istanbul: 9.2.0
-      vitest: 1.4.0(@types/node@20.11.30)(happy-dom@14.2.1)
+      vitest: 1.4.0(@types/node@20.11.30)(happy-dom@14.3.1)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -3268,8 +3268,8 @@ packages:
     engines: {node: ^12.22.0 || ^14.16.0 || ^16.0.0 || >=17.0.0}
     dev: true
 
-  /happy-dom@14.2.1:
-    resolution: {integrity: sha512-jePN+tMrrkHbVso83nYTMf/v/ttmbhj4qBUzTGmaQTbrM/vKeEb5oFlthVwHQ5i8UhSjLXaxX4XUiDgBTY5Gcg==}
+  /happy-dom@14.3.1:
+    resolution: {integrity: sha512-uv2mE7jUH0S3cTnDPqNQj+J+Z5wOevqzopc7e8URXtcCH2STubCjPFVyEJ1ONGSv/aL/uvNwo5WWjsinpWpADQ==}
     engines: {node: '>=16.0.0'}
     dependencies:
       entities: 4.5.0
@@ -3967,8 +3967,8 @@ packages:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
     dev: true
 
-  /msw@2.2.9(typescript@5.4.3):
-    resolution: {integrity: sha512-MLIFufBe6m9c5rZKlmGl6jl1pjn7cTNiDGEgn5v2iVRs0mz+neE2r7lRyYNzvcp6FbdiUEIRp/Y2O2gRMjO8yQ==}
+  /msw@2.2.10(typescript@5.4.3):
+    resolution: {integrity: sha512-OQhHBocUsI8j+czCTRouGCGYE8pk6hq8HQ0HFg9mYQg7KCzqVpUSbMikmRbRXGoid28FFvYqjbxB3/UWw50VZQ==}
     engines: {node: '>=18'}
     hasBin: true
     requiresBuild: true
@@ -5592,7 +5592,7 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /vitest@1.4.0(@types/node@20.11.30)(happy-dom@14.2.1):
+  /vitest@1.4.0(@types/node@20.11.30)(happy-dom@14.3.1):
     resolution: {integrity: sha512-gujzn0g7fmwf83/WzrDTnncZt2UiXP41mHuFYFrdwaLRVQ6JYQEiME2IfEjU3vcFL3VKa75XhI3lFgn+hfVsQw==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -5627,7 +5627,7 @@ packages:
       chai: 4.4.1
       debug: 4.3.4
       execa: 8.0.1
-      happy-dom: 14.2.1
+      happy-dom: 14.3.1
       local-pkg: 0.5.0
       magic-string: 0.30.7
       pathe: 1.1.2
