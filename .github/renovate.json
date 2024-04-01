@@ -12,7 +12,8 @@
 	"configMigration": true,
 	"lockFileMaintenance": {
 		"enabled": true,
-		"schedule": ["before 3am on the first day of the month"]
+		"schedule": ["before 3am on the first day of the month"],
+		"automerge": true
 	},
 	"packageRules": [
 		{
