@@ -17,7 +17,6 @@ const config = {
 		'plugin:react/recommended',
 		'plugin:react-hooks/recommended',
 		'plugin:@next/next/core-web-vitals',
-		'prettier',
 	],
 	plugins: [
 		'@typescript-eslint',
