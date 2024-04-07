@@ -19,6 +19,11 @@
 		}
 	},
 	"customizations": {
+		"vscode": {
+			"settings": {
+				"eslint.experimental.useFlatConfig": true
+			}
+		},
 		"extensions": [
 			"tekumara.typos-vscode",
 			// * EditorConfig

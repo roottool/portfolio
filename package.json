@@ -24,11 +24,11 @@
 		"build:next": "next build",
 		"start": "next start",
 		"lint": "run-s -c lint:*",
-		"lint:prettier": "prettier --ignore-path=.gitignore --ignore-path=.prettierignore --check .",
-		"lint:eslint": "eslint . --color --ext .js,.ts,.tsx --max-warnings=0",
-		"format": "prettier --cache --ignore-path=.gitignore --ignore-path=.prettierignore --write .",
+		"lint:prettier": "prettier --check .",
+		"lint:eslint": "eslint --config eslint.config.mjs --color --max-warnings=0 .",
+		"format": "prettier --cache --write .",
 		"fix": "run-s -c fix:* format",
-		"fix:eslint": "eslint . --fix --color --cache --ext .js,.ts,.tsx",
+		"fix:eslint": "eslint --config eslint.config.mjs --color --cache --fix .",
 		"typecheck": "tsc --noEmit",
 		"test": "run-s -c test:vitest",
 		"test:watch": "vitest watch",
@@ -36,11 +36,11 @@
 	},
 	"lint-staged": {
 		"*.{js,ts?(x)}": [
-			"eslint --fix --color",
-			"prettier --ignore-path=.gitignore --ignore-path=.prettierignore --write"
+			"eslint --config eslint.config.mjs --color --fix",
+			"prettier --write"
 		],
 		"*.{md,json,y?(a)ml}": [
-			"prettier --ignore-path=.gitignore --ignore-path=.prettierignore --write"
+			"prettier --write"
 		]
 	},
 	"msw": {
@@ -77,18 +77,18 @@
 		"@types/node": "20.12.5",
 		"@types/react": "18.2.74",
 		"@types/react-dom": "18.2.24",
-		"@typescript-eslint/eslint-plugin": "7.5.0",
-		"@typescript-eslint/parser": "7.5.0",
 		"@vitejs/plugin-react": "4.2.1",
 		"@vitest/coverage-v8": "1.4.0",
 		"autoprefixer": "10.4.19",
 		"cssnano": "6.1.2",
 		"eslint": "9.0.0",
+		"eslint-config-flat-gitignore": "0.1.5",
 		"eslint-import-resolver-typescript": "3.6.1",
 		"eslint-plugin-jsx-a11y": "6.8.0",
 		"eslint-plugin-react": "7.34.1",
 		"eslint-plugin-react-hooks": "4.6.0",
 		"eslint-plugin-unused-imports": "3.1.0",
+		"globals": "15.0.0",
 		"happy-dom": "14.7.0",
 		"husky": "9.0.11",
 		"is-ci": "3.0.1",
@@ -100,6 +100,7 @@
 		"rimraf": "5.0.5",
 		"tailwindcss": "3.4.3",
 		"typescript": "5.4.4",
+		"typescript-eslint": "7.5.0",
 		"vitest": "1.4.0"
 	}
 }
