@@ -47,7 +47,7 @@
 		"workerDirectory": "public"
 	},
 	"engines": {
-		"node": "^18.18.0"
+		"node": ">=18.18.0"
 	},
 	"packageManager": "pnpm@9.0.2",
 	"dependencies": {
