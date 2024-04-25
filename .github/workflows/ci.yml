@@ -24,7 +24,7 @@ jobs:
     if: ${{ !github.event.pull_request.draft }}
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f # v4.1.3
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
       - name: Initialize
         uses: ./.github/actions/setup-bun
       - name: Check diff targets by path filters
@@ -48,7 +48,7 @@ jobs:
     if: ${{ needs.setup.outputs.renovate-config == 'true' }}
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f # v4.1.3
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
         with:
           sparse-checkout: |
             .github/actions/setup-node-and-pnpm/action.yml
@@ -71,7 +71,7 @@ jobs:
     needs: [setup]
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f # v4.1.3
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
       - name: Initialize
         uses: ./.github/actions/setup-bun
       - name: Run format check
@@ -87,7 +87,7 @@ jobs:
     if: ${{ needs.setup.outputs.typescript == 'true' }}
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f # v4.1.3
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
       - name: Initialize
         uses: ./.github/actions/setup-bun
       - name: Run type check
@@ -101,7 +101,7 @@ jobs:
     if: ${{ !(failure() || contains(needs.*.result, 'cancelled')) }}
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@1d96c772d19495a3b5c517cd2bc0cb401ea0529f # v4.1.3
+        uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
       - name: Initialize
         uses: ./.github/actions/setup-bun
       - name: Run test
