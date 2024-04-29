@@ -62,6 +62,8 @@ jobs:
           sparse-checkout-cone-mode: false
       - name: Initialize
         uses: ./.github/actions/setup-node-and-pnpm
+        with:
+          node-version: ${{ env.NODE_VERSION }}
       - name: Check format by Prettier
         run: pnpm exec prettier --check .github/renovate.json
       - name: Validate Renovate config
