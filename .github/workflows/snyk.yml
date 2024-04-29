@@ -31,6 +31,8 @@ jobs:
         uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # v4.1.4
       - name: Initialize
         uses: ./.github/actions/setup-node-and-pnpm
+        with:
+          node-version: ${{ env.NODE_VERSION }}
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/node@8349f9043a8b7f0f3ee8885bf28f0b388d2446e8 # V0.4.0
         # * To make sure that SARIF upload gets called.
