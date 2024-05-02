@@ -72,7 +72,7 @@
 		"@next/env": "14.2.3",
 		"@next/eslint-plugin-next": "14.2.3",
 		"@testing-library/jest-dom": "6.4.2",
-		"@testing-library/react": "15.0.5",
+		"@testing-library/react": "15.0.6",
 		"@trivago/prettier-plugin-sort-imports": "4.3.0",
 		"@types/node": "20.12.7",
 		"@types/react": "18.3.1",
