@@ -28,13 +28,13 @@ jobs:
       security-events: write
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@44c2b7a8a4ea60a981eaca3cf939b5f4305c123b # v4.1.5
+        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
       - name: Initialize
         uses: ./.github/actions/setup-node-and-pnpm
         with:
           node-version: ${{ env.NODE_VERSION }}
       - name: Run Snyk to check for vulnerabilities
-        uses: snyk/actions/node@8349f9043a8b7f0f3ee8885bf28f0b388d2446e8 # V0.4.0
+        uses: snyk/actions/node@d406fd286b663eb8c6f8adcced4f7bcd199c0a3f # V0.4.0
         # * To make sure that SARIF upload gets called.
         continue-on-error: true
         env:
@@ -42,6 +42,6 @@ jobs:
         with:
           args: --sarif-file-output=snyk.sarif
       - name: Upload result to GitHub Code Scanning
-        uses: github/codeql-action/upload-sarif@b7cec7526559c32f1616476ff32d17ba4c59b2d6 # v3.25.5
+        uses: github/codeql-action/upload-sarif@9fdb3e49720b44c48891d036bb502feb25684276 # v3.25.6
         with:
           sarif_file: snyk.sarif
