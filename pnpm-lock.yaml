@@ -82,8 +82,8 @@ importers:
         specifier: 18.3.0
         version: 18.3.0
       '@vitejs/plugin-react':
-        specifier: 4.2.1
-        version: 4.2.1(vite@5.2.10(@types/node@20.12.13))
+        specifier: 4.3.0
+        version: 4.3.0(vite@5.2.10(@types/node@20.12.13))
       '@vitest/coverage-v8':
         specifier: 1.6.0
         version: 1.6.0(vitest@1.6.0(@types/node@20.12.13)(happy-dom@14.11.4))
@@ -1020,8 +1020,8 @@ packages:
     resolution: {integrity: sha512-iESPx2TNLDNGQLyjKhUvIKprlP49XNEK+MvIf9nIO7ZZaZdbnfWKHnXAgufpxqfA0YryH8XToi4+CjBgVnFTSQ==}
     engines: {node: ^18.18.0 || >=20.0.0}
 
-  '@vitejs/plugin-react@4.2.1':
-    resolution: {integrity: sha512-oojO9IDc4nCUUi8qIR11KoQm0XFFLIwsRBwHRR4d/88IWghn1y6ckz/bJ8GHDCsYEJee8mDzqtJxh15/cisJNQ==}
+  '@vitejs/plugin-react@4.3.0':
+    resolution: {integrity: sha512-KcEbMsn4Dpk+LIbHMj7gDPRKaTMStxxWRkRmxsg/jVdFdJCZWt1SchZcf0M4t8lIKdwwMsEyzhrcOXRrDPtOBw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       vite: ^4.2.0 || ^5.0.0
@@ -4137,7 +4137,7 @@ snapshots:
       '@typescript-eslint/types': 7.9.0
       eslint-visitor-keys: 3.4.3
 
-  '@vitejs/plugin-react@4.2.1(vite@5.2.10(@types/node@20.12.13))':
+  '@vitejs/plugin-react@4.3.0(vite@5.2.10(@types/node@20.12.13))':
     dependencies:
       '@babel/core': 7.24.5
       '@babel/plugin-transform-react-jsx-self': 7.24.5(@babel/core@7.24.5)
