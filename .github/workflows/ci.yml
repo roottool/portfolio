@@ -27,7 +27,7 @@ jobs:
     if: ${{ !github.event.pull_request.draft }}
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
       - name: Initialize
         uses: ./.github/actions/setup-bun
       - name: Check diff targets by path filters
@@ -51,7 +51,7 @@ jobs:
     if: ${{ needs.setup.outputs.renovate-config == 'true' }}
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
         with:
           sparse-checkout: |
             .github/actions/setup-node-and-pnpm/action.yml
@@ -76,7 +76,7 @@ jobs:
     needs: [setup]
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
       - name: Initialize
         uses: ./.github/actions/setup-bun
       - name: Run format check
@@ -92,7 +92,7 @@ jobs:
     if: ${{ needs.setup.outputs.typescript == 'true' }}
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
       - name: Initialize
         uses: ./.github/actions/setup-bun
       - name: Run type check
@@ -106,13 +106,13 @@ jobs:
     if: ${{ !(failure() || contains(needs.*.result, 'cancelled')) }}
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29 # v4.1.6
+        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
       - name: Initialize
         uses: ./.github/actions/setup-bun
       - name: Run test
         run: bun run test
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@125fc84a9a348dbcf27191600683ec096ec9021c # v4.4.1
+        uses: codecov/codecov-action@e28ff129e5465c2c0dcc6f003fc735cb6ae0c673 # v4.5.0
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           fail_ci_if_error: true
