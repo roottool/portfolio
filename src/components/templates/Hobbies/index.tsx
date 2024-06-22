@@ -8,9 +8,9 @@ export default function Hobbies() {
 	return (
 		<main>
 			<PageTitleWrapper>Hobbies</PageTitleWrapper>
-			<section className="flex flex-col items-center m-0 md:m-auto">
+			<section className="flex flex-col items-center h-full m-0 md:m-auto">
 				<h4>Steam ライブラリ</h4>
-				<ul className="flex flex-col gap-1 bg-gray-100 w-full h-full overflow-x-hidden overflow-y-auto">
+				<ul className="grow flex flex-col gap-1 divide-y w-full h-full overflow-x-hidden overflow-y-auto">
 					{isLoading ? (
 						<LoadingSpinner />
 					) : (
