@@ -82,8 +82,8 @@ importers:
         specifier: 4.3.1
         version: 4.3.1(vite@5.3.2(@types/node@20.14.10))
       '@vitest/coverage-v8':
-        specifier: 2.0.1
-        version: 2.0.1(vitest@2.0.1(@types/node@20.14.10)(happy-dom@14.12.3))
+        specifier: 2.0.2
+        version: 2.0.2(vitest@2.0.1(@types/node@20.14.10)(happy-dom@14.12.3))
       autoprefixer:
         specifier: 10.4.19
         version: 10.4.19(postcss@8.4.39)
@@ -1028,10 +1028,10 @@ packages:
     peerDependencies:
       vite: ^4.2.0 || ^5.0.0
 
-  '@vitest/coverage-v8@2.0.1':
-    resolution: {integrity: sha512-ACcSlJtWlravv0QyJSCO9rvm06msj6x0HooXouB0NXKG6PGxUN5VX4X8QEATfTMGsJlZLqWvq0dEY9W1V0rcSw==}
+  '@vitest/coverage-v8@2.0.2':
+    resolution: {integrity: sha512-iA8eb4PMid3bMc++gfQSTvYE1QL//fC8pz+rKsTUDBFjdDiy/gH45hvpqyDu5K7FHhvgG0GNNCJzTMMSFKhoxg==}
     peerDependencies:
-      vitest: 2.0.1
+      vitest: 2.0.2
 
   '@vitest/expect@2.0.1':
     resolution: {integrity: sha512-yw70WL3ZwzbI2O3MOXYP2Shf4vqVkS3q5FckLJ6lhT9VMMtDyWdofD53COZcoeuHwsBymdOZp99r5bOr5g+oeA==}
@@ -3063,6 +3063,10 @@ packages:
     resolution: {integrity: sha512-KIKExllK7jp3uvrNtvRBYBWBOAXSX8ZvoaD8T+7KB/QHIuoJW3Pmr60zucywjAlMb5TeXUkcs/MWeWLu0qvuAQ==}
     engines: {node: ^18.0.0 || >=20.0.0}
 
+  tinyrainbow@1.2.0:
+    resolution: {integrity: sha512-weEDEq7Z5eTHPDh4xjX789+fHfF+P8boiFB+0vbWzpbnbsEr/GRaohi/uMKxg8RZMXnl1ItAi/IUHWMsjDV7kQ==}
+    engines: {node: '>=14.0.0'}
+
   tinyspy@3.0.0:
     resolution: {integrity: sha512-q5nmENpTHgiPVd1cJDDc9cVoYN5x4vCvwT3FMilvKPKneCBZAxn2YWQjDF0UMcE9k0Cay1gBiDfTMU0g+mPMQA==}
     engines: {node: '>=14.0.0'}
@@ -4123,7 +4127,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@vitest/coverage-v8@2.0.1(vitest@2.0.1(@types/node@20.14.10)(happy-dom@14.12.3))':
+  '@vitest/coverage-v8@2.0.2(vitest@2.0.1(@types/node@20.14.10)(happy-dom@14.12.3))':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@bcoe/v8-coverage': 0.2.3
@@ -4134,10 +4138,10 @@ snapshots:
       istanbul-reports: 3.1.7
       magic-string: 0.30.10
       magicast: 0.3.4
-      picocolors: 1.0.1
       std-env: 3.7.0
       strip-literal: 2.1.0
       test-exclude: 7.0.1
+      tinyrainbow: 1.2.0
       vitest: 2.0.1(@types/node@20.14.10)(happy-dom@14.12.3)
     transitivePeerDependencies:
       - supports-color
@@ -6410,6 +6414,8 @@ snapshots:
   tinybench@2.8.0: {}
 
   tinypool@1.0.0: {}
+
+  tinyrainbow@1.2.0: {}
 
   tinyspy@3.0.0: {}
 
