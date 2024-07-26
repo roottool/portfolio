@@ -34,7 +34,7 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
       - name: Run Snyk to check for vulnerabilities
-        uses: snyk/actions/node@640e31719aac3e44867d239dc86c20c3e34c8e4f # V0.4.0
+        uses: snyk/actions/node@6312a53377a551c0258438bf25fb8f378afbc977 # V0.4.0
         # * To make sure that SARIF upload gets called.
         continue-on-error: true
         env:
@@ -42,6 +42,6 @@ jobs:
         with:
           args: --sarif-file-output=snyk.sarif
       - name: Upload result to GitHub Code Scanning
-        uses: github/codeql-action/upload-sarif@5cf07d8b700b67e235fbb65cbc84f69c0cf10464 # v3.25.14
+        uses: github/codeql-action/upload-sarif@afb54ba388a7dca6ecae48f608c4ff05ff4cc77a # v3.25.15
         with:
           sarif_file: snyk.sarif
