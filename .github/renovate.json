@@ -5,62 +5,42 @@
 		"schedule:daily",
 		":enableVulnerabilityAlertsWithLabel(security)"
 	],
-	"labels": [
-		"dependencies"
-	],
+	"labels": ["dependencies"],
 	"timezone": "Asia/Tokyo",
 	"prHourlyLimit": 4,
 	"prConcurrentLimit": 10,
 	"configMigration": true,
 	"lockFileMaintenance": {
 		"enabled": true,
-		"schedule": [
-			"before 3am on the first day of the month"
-		],
+		"schedule": ["before 3am on the first day of the month"],
 		"automerge": true
 	},
 	"packageRules": [
 		{
 			"groupName": "all non-major devDependencies",
 			"groupSlug": "all-devDependencies-minor-patch",
-			"matchUpdateTypes": [
-				"minor",
-				"patch"
-			],
+			"matchUpdateTypes": ["minor", "patch"],
 			"automerge": true,
-			"matchPackageNames": [
-				"*"
-			]
+			"matchPackageNames": ["*"]
 		},
 		{
 			"groupName": "all non-major dependencies",
 			"groupSlug": "all-dependencies-minor-patch",
-			"matchDepTypes": [
-				"dependencies"
-			],
-			"matchUpdateTypes": [
-				"minor",
-				"patch"
-			],
+			"matchDepTypes": ["dependencies"],
+			"matchUpdateTypes": ["minor", "patch"],
 			"automerge": true,
-			"matchPackageNames": [
-				"*"
-			]
+			"matchPackageNames": ["*"]
 		},
 		{
 			"groupName": "GitHub Action digests",
-			"matchDepTypes": [
-				"action"
-			],
+			"matchDepTypes": ["action"],
 			"pinDigests": true,
 			"automerge": true
 		},
 		{
 			"groupName": "Type definitions Group",
 			"automerge": true,
-			"matchPackageNames": [
-				"@types/{/,}**"
-			]
+			"matchPackageNames": ["@types/{/,}**"]
 		},
 		{
 			"groupName": "Test Group",
@@ -75,26 +55,16 @@
 		{
 			"groupName": "Lint Group",
 			"automerge": true,
-			"matchPackageNames": [
-				"/eslint/",
-				"/prettier/"
-			]
+			"matchPackageNames": ["/eslint/", "/prettier/"]
 		},
 		{
 			"groupName": "Next.js Group",
-			"matchPackageNames": [
-				"next",
-				"@next/{/,}**"
-			],
+			"matchPackageNames": ["next", "@next/{/,}**"],
 			"automerge": true
 		},
 		{
 			"groupName": "React Group",
-			"matchPackageNames": [
-				"@types/react",
-				"@types/react-dom",
-				"react{/,}**"
-			],
+			"matchPackageNames": ["@types/react", "@types/react-dom", "react{/,}**"],
 			"automerge": true
 		}
 	]
