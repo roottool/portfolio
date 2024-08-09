@@ -17,18 +17,15 @@ export default tseslint.config(
 	...tseslint.configs.recommendedTypeChecked,
 	...tseslint.configs.stylisticTypeChecked,
 	{
-		plugins: {
-			'unused-imports': unusedImports,
-		},
-	},
-	{
 		files: ['**/*.{ts,tsx}'],
 		languageOptions: {
 			parserOptions: {
 				project: true,
-				// TODO: Convert to `import.meta.dirname` if we are going to use `Node.js >=20.11.0`.
-				tsconfigRootDir: '.',
+				tsconfigRootDir: import.meta.dirname,
 			},
+		},
+		plugins: {
+			'unused-imports': unusedImports,
 		},
 		rules: {
 			'@typescript-eslint/no-unused-vars': 'off',

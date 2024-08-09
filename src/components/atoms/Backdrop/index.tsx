@@ -4,6 +4,7 @@ interface Props {
 	backdropClickHandler(): void
 }
 
+// eslint-disable-next-line  @typescript-eslint/unbound-method
 const Backdrop = ({ backdropClickHandler }: Props) => (
 	<StyledDiv aria-hidden="true" onClick={backdropClickHandler} />
 )
