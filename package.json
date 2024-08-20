@@ -65,7 +65,7 @@
 		"swr": "2.2.5",
 		"tailwind-merge": "2.5.2",
 		"tailwindcss-animate": "1.0.7",
-		"valibot": "0.37.0"
+		"valibot": "0.38.0"
 	},
 	"devDependencies": {
 		"@next/env": "14.2.5",
