@@ -81,7 +81,7 @@
 		"autoprefixer": "10.4.20",
 		"cssnano": "7.0.5",
 		"eslint": "9.9.1",
-		"eslint-config-flat-gitignore": "0.1.8",
+		"eslint-config-flat-gitignore": "0.3.0",
 		"eslint-import-resolver-typescript": "3.6.3",
 		"eslint-plugin-jsx-a11y": "6.9.0",
 		"eslint-plugin-react": "7.35.0",
