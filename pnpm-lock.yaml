@@ -83,7 +83,7 @@ importers:
         version: 4.3.1(vite@5.4.0(@types/node@20.16.2))
       '@vitest/coverage-v8':
         specifier: 2.0.5
-        version: 2.0.5(vitest@2.0.5(@types/node@20.16.2)(happy-dom@15.7.0))
+        version: 2.0.5(vitest@2.0.5(@types/node@20.16.2)(happy-dom@15.7.2))
       autoprefixer:
         specifier: 10.4.20
         version: 10.4.20(postcss@8.4.41)
@@ -115,8 +115,8 @@ importers:
         specifier: 15.9.0
         version: 15.9.0
       happy-dom:
-        specifier: 15.7.0
-        version: 15.7.0
+        specifier: 15.7.2
+        version: 15.7.2
       husky:
         specifier: 9.1.5
         version: 9.1.5
@@ -152,7 +152,7 @@ importers:
         version: 8.3.0(eslint@9.9.1(jiti@1.21.6))(typescript@5.5.4)
       vitest:
         specifier: 2.0.5
-        version: 2.0.5(@types/node@20.16.2)(happy-dom@15.7.0)
+        version: 2.0.5(@types/node@20.16.2)(happy-dom@15.7.2)
 
 packages:
 
@@ -1814,8 +1814,8 @@ packages:
     resolution: {integrity: sha512-GGTKBX4SD7Wdb8mqeDLni2oaRGYQWjWHGKPQ24ZMnUtKfcsVoiv4uX8+LJr1K6U5VW2Lu1BwJnj7uiori0YtRw==}
     engines: {node: ^12.22.0 || ^14.16.0 || ^16.0.0 || >=17.0.0}
 
-  happy-dom@15.7.0:
-    resolution: {integrity: sha512-tH48xarc37FLrtpNWuA89xw4IS1dxNrfzI8ehiafkj3kM3JSCMknuigKv2unDPRzd2C9Hv7ZDPkqPiBCvIz2Dg==}
+  happy-dom@15.7.2:
+    resolution: {integrity: sha512-ZU4a27Sj+J7fgd+Kx3PVZ5NbANQxQS4gGZ1SaNMA4zvSDB5ZNkXg4UHLCkMko0fogg9XowI4f51p5FzgDfhVeQ==}
     engines: {node: '>=18.0.0'}
 
   has-bigints@1.0.2:
@@ -4098,7 +4098,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@vitest/coverage-v8@2.0.5(vitest@2.0.5(@types/node@20.16.2)(happy-dom@15.7.0))':
+  '@vitest/coverage-v8@2.0.5(vitest@2.0.5(@types/node@20.16.2)(happy-dom@15.7.2))':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@bcoe/v8-coverage': 0.2.3
@@ -4112,7 +4112,7 @@ snapshots:
       std-env: 3.7.0
       test-exclude: 7.0.1
       tinyrainbow: 1.2.0
-      vitest: 2.0.5(@types/node@20.16.2)(happy-dom@15.7.0)
+      vitest: 2.0.5(@types/node@20.16.2)(happy-dom@15.7.2)
     transitivePeerDependencies:
       - supports-color
 
@@ -5143,7 +5143,7 @@ snapshots:
   graphql@16.9.0:
     optional: true
 
-  happy-dom@15.7.0:
+  happy-dom@15.7.2:
     dependencies:
       entities: 4.5.0
       webidl-conversions: 7.0.0
@@ -6503,7 +6503,7 @@ snapshots:
       '@types/node': 20.16.2
       fsevents: 2.3.3
 
-  vitest@2.0.5(@types/node@20.16.2)(happy-dom@15.7.0):
+  vitest@2.0.5(@types/node@20.16.2)(happy-dom@15.7.2):
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@vitest/expect': 2.0.5
@@ -6526,7 +6526,7 @@ snapshots:
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/node': 20.16.2
-      happy-dom: 15.7.0
+      happy-dom: 15.7.2
     transitivePeerDependencies:
       - less
       - lightningcss
