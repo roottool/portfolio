@@ -14,6 +14,10 @@ This is [my portfolio site](https://roottool.vercel.app). I use the below stacks
 - Next.js
 - TypeScript
 
+## Setting up the environment
+
+Run `pnpm install` in the root of your cloned repository.
+
 ## License
 
 [MIT license](LICENSE)
