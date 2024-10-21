@@ -83,7 +83,7 @@ importers:
         version: 4.3.3(vite@5.4.8(@types/node@20.16.13))
       '@vitest/coverage-v8':
         specifier: 2.1.3
-        version: 2.1.3(vitest@2.1.3(@types/node@20.16.13)(happy-dom@15.7.4)(msw@2.4.11(typescript@5.6.3)))
+        version: 2.1.3(vitest@2.1.3(@types/node@20.16.13)(happy-dom@15.7.4)(msw@2.4.12(typescript@5.6.3)))
       autoprefixer:
         specifier: 10.4.20
         version: 10.4.20(postcss@8.4.47)
@@ -127,8 +127,8 @@ importers:
         specifier: 15.2.10
         version: 15.2.10
       msw:
-        specifier: 2.4.11
-        version: 2.4.11(typescript@5.6.3)
+        specifier: 2.4.12
+        version: 2.4.12(typescript@5.6.3)
       npm-run-all2:
         specifier: 6.2.4
         version: 6.2.4
@@ -152,7 +152,7 @@ importers:
         version: 8.10.0(eslint@9.13.0(jiti@1.21.6))(typescript@5.6.3)
       vitest:
         specifier: 2.1.3
-        version: 2.1.3(@types/node@20.16.13)(happy-dom@15.7.4)(msw@2.4.11(typescript@5.6.3))
+        version: 2.1.3(@types/node@20.16.13)(happy-dom@15.7.4)(msw@2.4.12(typescript@5.6.3))
 
 packages:
 
@@ -536,8 +536,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
 
-  '@mswjs/interceptors@0.35.9':
-    resolution: {integrity: sha512-SSnyl/4ni/2ViHKkiZb8eajA/eN1DNFaHjhGiLUdZvDz6PKF4COSf/17xqSz64nOo2Ia29SA6B2KNCsyCbVmaQ==}
+  '@mswjs/interceptors@0.36.5':
+    resolution: {integrity: sha512-aQ8WF5zQwOdcxLsxSEk9Jd01GgGb80xxqCaiDDlewhtwqpSm8MOvUHslwPydVirasdW09++NxDNNftm1vLY8yA==}
     engines: {node: '>=18'}
 
   '@next/env@14.2.15':
@@ -2245,8 +2245,8 @@ packages:
   ms@2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
 
-  msw@2.4.11:
-    resolution: {integrity: sha512-TVEw9NOPTc6ufOQLJ53234S9NBRxQbu7xFMxs+OCP43JQcNEIOKiZHxEm2nDzYIrwccoIhUxUf8wr99SukD76A==}
+  msw@2.4.12:
+    resolution: {integrity: sha512-upQMKZt0fYIB0Gj6gKc5i/PK4JrICTu3ItfXiju3FTdgQLaqARv7+jugPCsOkrWpTzzjo5iLW+4F6L/mGNukbA==}
     engines: {node: '>=18'}
     hasBin: true
     peerDependencies:
@@ -3634,7 +3634,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  '@mswjs/interceptors@0.35.9':
+  '@mswjs/interceptors@0.36.5':
     dependencies:
       '@open-draft/deferred-promise': 2.2.0
       '@open-draft/logger': 0.3.0
@@ -4097,7 +4097,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@vitest/coverage-v8@2.1.3(vitest@2.1.3(@types/node@20.16.13)(happy-dom@15.7.4)(msw@2.4.11(typescript@5.6.3)))':
+  '@vitest/coverage-v8@2.1.3(vitest@2.1.3(@types/node@20.16.13)(happy-dom@15.7.4)(msw@2.4.12(typescript@5.6.3)))':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@bcoe/v8-coverage': 0.2.3
@@ -4111,7 +4111,7 @@ snapshots:
       std-env: 3.7.0
       test-exclude: 7.0.1
       tinyrainbow: 1.2.0
-      vitest: 2.1.3(@types/node@20.16.13)(happy-dom@15.7.4)(msw@2.4.11(typescript@5.6.3))
+      vitest: 2.1.3(@types/node@20.16.13)(happy-dom@15.7.4)(msw@2.4.12(typescript@5.6.3))
     transitivePeerDependencies:
       - supports-color
 
@@ -4122,13 +4122,13 @@ snapshots:
       chai: 5.1.1
       tinyrainbow: 1.2.0
 
-  '@vitest/mocker@2.1.3(@vitest/spy@2.1.3)(msw@2.4.11(typescript@5.6.3))(vite@5.4.8(@types/node@20.16.13))':
+  '@vitest/mocker@2.1.3(@vitest/spy@2.1.3)(msw@2.4.12(typescript@5.6.3))(vite@5.4.8(@types/node@20.16.13))':
     dependencies:
       '@vitest/spy': 2.1.3
       estree-walker: 3.0.3
       magic-string: 0.30.11
     optionalDependencies:
-      msw: 2.4.11(typescript@5.6.3)
+      msw: 2.4.12(typescript@5.6.3)
       vite: 5.4.8(@types/node@20.16.13)
 
   '@vitest/pretty-format@2.1.3':
@@ -5467,13 +5467,13 @@ snapshots:
 
   ms@2.1.3: {}
 
-  msw@2.4.11(typescript@5.6.3):
+  msw@2.4.12(typescript@5.6.3):
     dependencies:
       '@bundled-es-modules/cookie': 2.0.0
       '@bundled-es-modules/statuses': 1.0.1
       '@bundled-es-modules/tough-cookie': 0.1.6
       '@inquirer/confirm': 3.2.0
-      '@mswjs/interceptors': 0.35.9
+      '@mswjs/interceptors': 0.36.5
       '@open-draft/until': 2.1.0
       '@types/cookie': 0.6.0
       '@types/statuses': 2.0.5
@@ -6401,10 +6401,10 @@ snapshots:
       '@types/node': 20.16.13
       fsevents: 2.3.3
 
-  vitest@2.1.3(@types/node@20.16.13)(happy-dom@15.7.4)(msw@2.4.11(typescript@5.6.3)):
+  vitest@2.1.3(@types/node@20.16.13)(happy-dom@15.7.4)(msw@2.4.12(typescript@5.6.3)):
     dependencies:
       '@vitest/expect': 2.1.3
-      '@vitest/mocker': 2.1.3(@vitest/spy@2.1.3)(msw@2.4.11(typescript@5.6.3))(vite@5.4.8(@types/node@20.16.13))
+      '@vitest/mocker': 2.1.3(@vitest/spy@2.1.3)(msw@2.4.12(typescript@5.6.3))(vite@5.4.8(@types/node@20.16.13))
       '@vitest/pretty-format': 2.1.3
       '@vitest/runner': 2.1.3
       '@vitest/snapshot': 2.1.3
