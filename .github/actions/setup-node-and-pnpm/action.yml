@@ -18,7 +18,7 @@ runs:
       with:
         node-version: ${{ inputs.node-version }}
     - name: Restore dependences cache
-      uses: actions/cache/restore@3624ceb22c1c5a301c8db4169662070a689d9ea8 # v4.1.1
+      uses: actions/cache/restore@6849a6489940f00c2f30c0fb92c6274307ccb58a # v4.1.2
       id: restore-dependences-cache
       with:
         path: node_modules
@@ -29,7 +29,7 @@ runs:
       shell: bash
     - name: Save dependences cache
       if: steps.restore-dependences-cache.outputs.cache-hit != 'true'
-      uses: actions/cache/save@3624ceb22c1c5a301c8db4169662070a689d9ea8 # v4.1.1
+      uses: actions/cache/save@6849a6489940f00c2f30c0fb92c6274307ccb58a # v4.1.2
       id: save-dependences-cache
       with:
         path: node_modules
