@@ -10,8 +10,9 @@ runs:
       uses: actions/cache/restore@6849a6489940f00c2f30c0fb92c6274307ccb58a # v4.1.2
       id: restore-bun-dependences-cache
       with:
-        path: node_modules
-        key: ${{ runner.os }}-bun-dependences-${{ hashFiles('pnpm-lock.yaml') }}
+        path: |
+          ~/.bun/install/cache
+        key: ${{ runner.os }}-bun-dependences-${{ hashFiles('**/bun.lockb') }}
     - name: Install dependencies
       if: steps.restore-bun-dependences-cache.outputs.cache-hit != 'true'
       run: bun install
@@ -21,5 +22,6 @@ runs:
       uses: actions/cache/save@6849a6489940f00c2f30c0fb92c6274307ccb58a # v4.1.2
       id: save-dependences-cache
       with:
-        path: node_modules
-        key: ${{ runner.os }}-bun-dependences-${{ hashFiles('pnpm-lock.yaml') }}
+        path: |
+          ~/.bun/install/cache
+        key: ${{ runner.os }}-bun-dependences-${{ hashFiles('**/bun.lockb') }}
