@@ -1,6 +1,7 @@
 import eslint from '@eslint/js'
 import nextPlugin from '@next/eslint-plugin-next'
 import gitignore from 'eslint-config-flat-gitignore'
+import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript'
 import jsxA11yPlugin from 'eslint-plugin-jsx-a11y'
 import reactPlugin from 'eslint-plugin-react'
 import hooksPlugin from 'eslint-plugin-react-hooks'
@@ -26,6 +27,13 @@ export default tseslint.config(
 		},
 		plugins: {
 			'unused-imports': unusedImports,
+		},
+		settings: {
+			'import/resolver-next': [
+				createTypeScriptImportResolver({
+					alwaysTryTypes: true,
+				}),
+			],
 		},
 		rules: {
 			'@typescript-eslint/no-unused-vars': 'off',
