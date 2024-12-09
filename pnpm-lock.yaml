@@ -67,8 +67,8 @@ importers:
         specifier: 16.1.0
         version: 16.1.0(@testing-library/dom@10.4.0)(@types/react-dom@19.0.1)(@types/react@19.0.1)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       '@trivago/prettier-plugin-sort-imports':
-        specifier: 5.0.1
-        version: 5.0.1(prettier@3.4.2)
+        specifier: 5.2.0
+        version: 5.2.0(prettier@3.4.2)
       '@types/node':
         specifier: 22.10.1
         version: 22.10.1
@@ -994,8 +994,8 @@ packages:
       '@types/react-dom':
         optional: true
 
-  '@trivago/prettier-plugin-sort-imports@5.0.1':
-    resolution: {integrity: sha512-J9D/xdWO3Bm661ql9eSwYAagccGALwjFOVy1Mh1KzF3BAUr7Qd+GBcvtl0rhgN4U4OFWl9nbwXAaoOgPJw84FA==}
+  '@trivago/prettier-plugin-sort-imports@5.2.0':
+    resolution: {integrity: sha512-yEIJ7xMKYQwyNRjxSdi4Gs37iszikAjxfky+3hu9bn24u8eHLJNDMAoOTyowp8p6EpSl8IQMdkfBx+WnJTttsw==}
     engines: {node: '>18.12'}
     peerDependencies:
       '@vue/compiler-sfc': 3.x
@@ -4004,7 +4004,7 @@ snapshots:
       '@types/react': 19.0.1
       '@types/react-dom': 19.0.1
 
-  '@trivago/prettier-plugin-sort-imports@5.0.1(prettier@3.4.2)':
+  '@trivago/prettier-plugin-sort-imports@5.2.0(prettier@3.4.2)':
     dependencies:
       '@babel/generator': 7.26.2
       '@babel/parser': 7.26.2
