@@ -43,21 +43,6 @@
 			"matchPackageNames": ["@types/{/,}**"]
 		},
 		{
-			"groupName": "Test Group",
-			"matchPackageNames": [
-				"vitest",
-				"/@vitejs//",
-				"/@vitest//",
-				"/@testing-library//"
-			],
-			"automerge": true
-		},
-		{
-			"groupName": "Lint Group",
-			"automerge": true,
-			"matchPackageNames": ["/eslint/", "/prettier/"]
-		},
-		{
 			"groupName": "Next.js Group",
 			"matchPackageNames": ["next", "@next/{/,}**"],
 			"automerge": true
