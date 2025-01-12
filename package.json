@@ -16,8 +16,7 @@
 	"bugs": {
 		"url": "https://github.com/roottool/portfolio/issues"
 	},
-	"scripts": {
-		"prepare": "is-ci || husky",
+  "scripts": {
 		"clean": "rimraf .next .swc",
 		"dev": "next dev",
 		"build": "npm-run-all clean --parallel build:*",
@@ -88,8 +87,7 @@
 		"eslint-plugin-react-hooks": "5.1.0",
 		"eslint-plugin-unused-imports": "4.1.4",
 		"globals": "15.14.0",
-		"happy-dom": "16.5.3",
-		"is-ci": "4.1.0",
+    "happy-dom": "16.5.3",
 		"lefthook": "1.10.3",
 		"msw": "2.7.0",
 		"npm-run-all2": "7.0.2",
