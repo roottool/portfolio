@@ -24,24 +24,15 @@
 		"start": "next start",
 		"lint": "run-s -c lint:*",
 		"lint:prettier": "prettier --check .",
-		"lint:eslint": "eslint --config eslint.config.mjs --color --max-warnings=0 .",
+    "lint:eslint": "eslint --color --max-warnings=0 .",
 		"format": "prettier --cache --write .",
 		"fix": "run-s -c fix:* format",
-		"fix:eslint": "eslint --config eslint.config.mjs --color --cache --fix .",
+    "fix:eslint": "eslint --color --fix .",
 		"typecheck": "tsc --noEmit",
 		"test": "run-s -c test:vitest",
 		"test:watch": "vitest watch",
 		"test:vitest": "vitest run --coverage"
-	},
-	"lint-staged": {
-		"*.{js,ts?(x)}": [
-			"eslint --config eslint.config.mjs --color --fix",
-			"prettier --write"
-		],
-		"*.{md,json,y?(a)ml}": [
-			"prettier --write"
-		]
-	},
+  },
 	"msw": {
 		"workerDirectory": "public"
 	},
