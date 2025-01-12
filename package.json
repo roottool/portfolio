@@ -16,8 +16,7 @@
 	"bugs": {
 		"url": "https://github.com/roottool/portfolio/issues"
 	},
-	"scripts": {
-		"prepare": "is-ci || husky",
+  "scripts": {
 		"clean": "rimraf .next .swc",
 		"dev": "next dev",
 		"build": "npm-run-all clean --parallel build:*",
@@ -25,24 +24,15 @@
 		"start": "next start",
 		"lint": "run-s -c lint:*",
 		"lint:prettier": "prettier --check .",
-		"lint:eslint": "eslint --config eslint.config.mjs --color --max-warnings=0 .",
+    "lint:eslint": "eslint --color --max-warnings=0 .",
 		"format": "prettier --cache --write .",
 		"fix": "run-s -c fix:* format",
-		"fix:eslint": "eslint --config eslint.config.mjs --color --cache --fix .",
+    "fix:eslint": "eslint --color --fix .",
 		"typecheck": "tsc --noEmit",
 		"test": "run-s -c test:vitest",
 		"test:watch": "vitest watch",
 		"test:vitest": "vitest run --coverage"
-	},
-	"lint-staged": {
-		"*.{js,ts?(x)}": [
-			"eslint --config eslint.config.mjs --color --fix",
-			"prettier --write"
-		],
-		"*.{md,json,y?(a)ml}": [
-			"prettier --write"
-		]
-	},
+  },
 	"msw": {
 		"workerDirectory": "public"
 	},
@@ -88,10 +78,8 @@
 		"eslint-plugin-react-hooks": "5.1.0",
 		"eslint-plugin-unused-imports": "4.1.4",
 		"globals": "15.14.0",
-		"happy-dom": "16.5.3",
-		"husky": "9.1.7",
-		"is-ci": "4.1.0",
-		"lint-staged": "15.3.0",
+    "happy-dom": "16.5.3",
+		"lefthook": "1.10.3",
 		"msw": "2.7.0",
 		"npm-run-all2": "7.0.2",
 		"postcss": "8.4.49",

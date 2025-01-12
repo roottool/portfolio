@@ -28,6 +28,7 @@ jobs:
     outputs:
       typescript: ${{ steps.filter.outputs.typescript }}
       renovate-config: ${{ steps.filter.outputs.renovate-config }}
+      lefthook-config: ${{ steps.filter.outputs.lefthook-config }}
     if: ${{ !github.event.pull_request.draft }}
     steps:
       - name: Checkout Repository
@@ -46,6 +47,8 @@ jobs:
               - '**/*.tsx'
             renovate-config:
               - '.github/renovate.json'
+            lefthook-config:
+              - 'lefthook.yml'
 
   renovate-config-lint:
     name: Renovate config lint
@@ -72,6 +75,32 @@ jobs:
         run: pnpm exec prettier --check .github/renovate.json
       - name: Validate Renovate config
         run: pnpm --package renovate dlx renovate-config-validator --strict
+
+  validate-lefthook-config:
+    name: Validate Lefthook config
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs: [setup]
+    if: ${{ needs.setup.outputs.lefthook-config == 'true' }}
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          sparse-checkout: |
+            .github/actions/setup-node-and-pnpm/action.yml
+            lefthook.yml
+            package.json
+            pnpm-lock.yaml
+            prettier.config.mjs
+          sparse-checkout-cone-mode: false
+      - name: Initialize
+        uses: ./.github/actions/setup-node-and-pnpm
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Check format by Prettier
+        run: pnpm exec prettier --check lefthook.yml
+      - name: Validate Lefthook config
+        run: pnpm exec lefthook validate
 
   lint:
     name: Lint

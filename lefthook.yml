@@ -1,0 +1,21 @@
+# EXAMPLE USAGE:
+#
+#   Refer for explanation to following link:
+#   https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md
+
+pre-commit:
+  parallel: true
+  skip:
+    - merge
+    - rebase
+  commands:
+    jsts:
+      glob: "*.{?(c|m)js,jsx,?(c|m)ts,tsx}"
+      run: |
+        pnpm exec eslint --color --fix {staged_files} &&
+        pnpm exec prettier --write {staged_files}
+      stage_fixed: true
+    only-pretter:
+      glob: "*.{md,json,y?(a)ml}"
+      run: pnpm exec prettier --write {staged_files}
+      stage_fixed: true

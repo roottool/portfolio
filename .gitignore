@@ -43,3 +43,6 @@ yarn-error.log*
 
 # MSW
 public/mockServiceWorker.js
+
+# lefthook
+lefthook-local.yml
