@@ -10,6 +10,10 @@ on:
 # Declare default permissions as read only.
 permissions: read-all
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   analysis:
     name: Scorecards analysis

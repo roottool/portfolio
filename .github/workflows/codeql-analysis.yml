@@ -27,6 +27,10 @@ on:
 # Declare default permissions as read only.
 permissions: read-all
 
+defaults:
+  run:
+    shell: bash
+
 jobs:
   analyze:
     name: Analyze code by CodeQL
