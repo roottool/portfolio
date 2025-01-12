@@ -30,6 +30,6 @@
 		"files.trimTrailingWhitespace": false
 	},
 	// Extensions
-	"eslint.experimental.useFlatConfig": true,
+	"eslint.useFlatConfig": true,
 	"prettier.configPath": "prettier.config.mjs"
 }
