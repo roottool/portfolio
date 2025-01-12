@@ -10,12 +10,12 @@ pre-commit:
     - rebase
   commands:
     jsts:
-      glob: "*.{?(c|m)js,jsx,?(c|m)ts,tsx}"
+      glob: '*.{?(c|m)js,jsx,?(c|m)ts,tsx}'
       run: |
         pnpm exec eslint --color --fix {staged_files} &&
         pnpm exec prettier --write {staged_files}
       stage_fixed: true
     only-pretter:
-      glob: "*.{md,json,y?(a)ml}"
+      glob: '*.{md,json,y?(a)ml}'
       run: pnpm exec prettier --write {staged_files}
       stage_fixed: true

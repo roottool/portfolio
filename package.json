@@ -16,7 +16,7 @@
 	"bugs": {
 		"url": "https://github.com/roottool/portfolio/issues"
 	},
-  "scripts": {
+	"scripts": {
 		"clean": "rimraf .next .swc",
 		"dev": "next dev",
 		"build": "npm-run-all clean --parallel build:*",
@@ -24,15 +24,15 @@
 		"start": "next start",
 		"lint": "run-s -c lint:*",
 		"lint:prettier": "prettier --check .",
-    "lint:eslint": "eslint --color --max-warnings=0 .",
+		"lint:eslint": "eslint --color --max-warnings=0 .",
 		"format": "prettier --cache --write .",
 		"fix": "run-s -c fix:* format",
-    "fix:eslint": "eslint --color --fix .",
+		"fix:eslint": "eslint --color --fix .",
 		"typecheck": "tsc --noEmit",
 		"test": "run-s -c test:vitest",
 		"test:watch": "vitest watch",
 		"test:vitest": "vitest run --coverage"
-  },
+	},
 	"msw": {
 		"workerDirectory": "public"
 	},
@@ -78,7 +78,7 @@
 		"eslint-plugin-react-hooks": "5.1.0",
 		"eslint-plugin-unused-imports": "4.1.4",
 		"globals": "15.14.0",
-    "happy-dom": "16.5.3",
+		"happy-dom": "16.5.3",
 		"lefthook": "1.10.3",
 		"msw": "2.7.0",
 		"npm-run-all2": "7.0.2",
