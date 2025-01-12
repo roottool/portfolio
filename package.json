@@ -90,6 +90,7 @@
 		"globals": "15.14.0",
 		"happy-dom": "16.5.3",
 		"is-ci": "4.1.0",
+		"lefthook": "1.10.3",
 		"msw": "2.7.0",
 		"npm-run-all2": "7.0.2",
 		"postcss": "8.4.49",
