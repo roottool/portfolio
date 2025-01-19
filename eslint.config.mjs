@@ -4,7 +4,7 @@ import gitignore from 'eslint-config-flat-gitignore'
 import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript'
 import jsxA11yPlugin from 'eslint-plugin-jsx-a11y'
 import reactPlugin from 'eslint-plugin-react'
-import hooksPlugin from 'eslint-plugin-react-hooks'
+import reactHooksPlugin from 'eslint-plugin-react-hooks'
 import unusedImports from 'eslint-plugin-unused-imports'
 import globals from 'globals'
 import tseslint from 'typescript-eslint'
@@ -51,6 +51,7 @@ export default tseslint.config(
 	{
 		files: ['{app|src}/**/*.{ts,tsx}'],
 		...reactPlugin.configs['jsx-runtime'].languageOptions,
+		...reactHooksPlugin.configs['recommended-latest'],
 		// NOTE: https://github.com/vercel/next.js/discussions/49337#discussioncomment-5998603
 		settings: {
 			react: {
@@ -60,13 +61,11 @@ export default tseslint.config(
 		plugins: {
 			'jsx-a11y': jsxA11yPlugin,
 			react: reactPlugin,
-			'react-hooks': hooksPlugin,
 		},
 		rules: {
 			...jsxA11yPlugin.configs.recommended.rules,
 			...reactPlugin.configs.recommended.rules,
 			...reactPlugin.configs['jsx-runtime'].rules,
-			...hooksPlugin.configs.recommended.rules,
 			'react/prop-types': 'off',
 			'jsx-a11y/alt-text': [
 				'warn',
