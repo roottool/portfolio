@@ -157,7 +157,7 @@ jobs:
   gatekeeper:
     name: Gatekeeper
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 1
     needs:
       - test
       - renovate-config-lint
