@@ -12,7 +12,7 @@ runs:
       with:
         path: |
           ~/.bun/install/cache
-        key: ${{ runner.os }}-bun-dependences-${{ hashFiles('**/bun.lockb') }}
+        key: ${{ runner.os }}-bun-dependences-${{ hashFiles('**/bun.lock') }}
     - name: Install dependencies
       if: steps.restore-bun-dependences-cache.outputs.cache-hit != 'true'
       run: bun install
@@ -24,4 +24,4 @@ runs:
       with:
         path: |
           ~/.bun/install/cache
-        key: ${{ runner.os }}-bun-dependences-${{ hashFiles('**/bun.lockb') }}
+        key: ${{ runner.os }}-bun-dependences-${{ hashFiles('**/bun.lock') }}
