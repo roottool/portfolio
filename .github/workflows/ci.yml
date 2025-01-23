@@ -162,6 +162,9 @@ jobs:
       - test
       - renovate-config-lint
       - validate-lefthook-config
-    if: ${{ !(failure() || contains(needs.*.result, 'cancelled')) }}
     steps:
-      - run: exit 0
+      - name: Check if failed or canceled jobs are contained
+        if: ${{ failure() || contains(needs.*.result, 'cancelled') }}
+        run: exit 1
+      - name: Passed the check
+        run: exit 0
