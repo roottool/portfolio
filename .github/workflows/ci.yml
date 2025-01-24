@@ -168,4 +168,5 @@ jobs:
         if: ${{ !(failure() || contains(needs.*.result, 'cancelled')) }}
         run: exit 0
       - name: Failed to pass this workflow
+        if: ${{ failure() || contains(needs.*.result, 'cancelled') }}
         run: exit 1
