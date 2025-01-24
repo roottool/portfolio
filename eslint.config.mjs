@@ -126,7 +126,7 @@ export default tseslint.config(
 		},
 	},
 	{
-		files: ['*.{js,cjs,mjs}'],
+		files: ['*.{js,cjs,mjs}', 'vitest.config.mts'],
 		...tseslint.configs.disableTypeChecked,
 	},
 )
