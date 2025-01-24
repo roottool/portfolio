@@ -157,14 +157,16 @@ jobs:
   gatekeeper:
     name: Gatekeeper
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 1
     needs:
       - test
       - renovate-config-lint
       - validate-lefthook-config
+    if: ${{ always() }}
     steps:
-      - name: Check if failed or canceled jobs are contained
+      - name: Check for failed or canceled jobs
+        if: ${{ !(failure() || contains(needs.*.result, 'cancelled')) }}
+        run: exit 0
+      - name: Failed to pass this workflow
         if: ${{ failure() || contains(needs.*.result, 'cancelled') }}
         run: exit 1
-      - name: Passed the check
-        run: exit 0

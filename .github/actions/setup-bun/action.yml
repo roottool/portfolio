@@ -10,18 +10,18 @@ runs:
       uses: actions/cache/restore@1bd1e32a3bdc45362d1e726936510720a7c30a57 # v4.2.0
       id: restore-bun-dependences-cache
       with:
-        path: |
-          ~/.bun/install/cache
+        path: node_modules
         key: ${{ runner.os }}-bun-dependences-${{ hashFiles('**/bun.lock') }}
     - name: Install dependencies
-      if: steps.restore-bun-dependences-cache.outputs.cache-hit != 'true'
+      # bun.lock is not included in this repository.
+      if: ${{ !contains(steps.restore-bun-dependences-cache.outputs.cache-matched-key, steps.restore-bun-dependences-cache.outputs.cache-primary-key) }}
       run: bun install
       shell: bash
     - name: Save dependences cache
-      if: steps.restore-bun-dependences-cache.outputs.cache-hit != 'true'
+      # Execute cache by default branch only.
+      if: ${{ github.ref_name == github.event.repository.default_branch && !contains(steps.restore-bun-dependences-cache.outputs.cache-matched-key, steps.restore-bun-dependences-cache.outputs.cache-primary-key) }}
       uses: actions/cache/save@1bd1e32a3bdc45362d1e726936510720a7c30a57 # v4.2.0
       id: save-dependences-cache
       with:
-        path: |
-          ~/.bun/install/cache
+        path: node_modules
         key: ${{ runner.os }}-bun-dependences-${{ hashFiles('**/bun.lock') }}
