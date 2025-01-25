@@ -166,11 +166,11 @@ jobs:
       - test
       - renovate-config-lint
       - validate-lefthook-config
-    if: ${{ always() }}
+    if: ${{ !cancelled() }}
     steps:
       - name: Check for failed or canceled jobs
-        if: ${{ !(failure() || contains(needs.*.result, 'cancelled')) }}
-        run: exit 0
-      - name: Failed to pass this workflow
-        if: ${{ failure() || contains(needs.*.result, 'cancelled') }}
+        if: ${{ contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled') }}
         run: exit 1
+      - name: Passed this workflow
+        if: ${{ success() }}
+        run: exit 0
