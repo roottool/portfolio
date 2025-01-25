@@ -169,7 +169,8 @@ jobs:
     if: ${{ !cancelled() }}
     steps:
       - name: Check for failed or canceled jobs
-        if: ${{ failure() || contains(needs.*.result, 'cancelled') }}
+        # A parent job is the test job. `failure()` results `false` if the test job is skipped.
+        if: ${{ contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled') }}
         run: exit 1
       - name: Passed this workflow
         if: ${{ success() }}
