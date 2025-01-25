@@ -39,6 +39,7 @@
 	"include": [
 		"next-env.d.ts",
 		"vitest.*.ts",
+		"vitest.*.mts",
 		"src/**/*.ts",
 		"src/**/*.tsx",
 		"src/**/*.json",
