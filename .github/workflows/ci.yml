@@ -169,7 +169,7 @@ jobs:
     if: ${{ !cancelled() }}
     steps:
       - name: Check for failed or canceled jobs
-        if: ${{ contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled') }}
+        if: ${{ failure() || contains(needs.*.result, 'cancelled') }}
         run: exit 1
       - name: Passed this workflow
         if: ${{ success() }}
