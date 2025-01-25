@@ -18,7 +18,7 @@ export default tseslint.config(
 	...tseslint.configs.recommendedTypeChecked,
 	...tseslint.configs.stylisticTypeChecked,
 	{
-		files: ['**/*.{ts,tsx}'],
+		files: ['**/*.{ts,mts,tsx}'],
 		languageOptions: {
 			parserOptions: {
 				project: true,
@@ -126,7 +126,7 @@ export default tseslint.config(
 		},
 	},
 	{
-		files: ['*.{js,cjs,mjs}', 'vitest.config.mts'],
+		files: ['*.{js,cjs,mjs}'],
 		...tseslint.configs.disableTypeChecked,
 	},
 )
