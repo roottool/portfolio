@@ -78,7 +78,7 @@
 		"eslint-plugin-react-hooks": "5.1.0",
 		"eslint-plugin-unused-imports": "4.1.4",
 		"globals": "15.14.0",
-		"happy-dom": "16.8.1",
+		"happy-dom": "17.0.0",
 		"lefthook": "1.10.10",
 		"msw": "2.7.0",
 		"npm-run-all2": "7.0.2",
