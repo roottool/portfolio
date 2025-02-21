@@ -80,7 +80,7 @@
 		"globals": "16.0.0",
 		"happy-dom": "17.1.1",
 		"lefthook": "1.10.10",
-		"msw": "2.7.0",
+		"msw": "2.7.1",
 		"npm-run-all2": "7.0.2",
 		"postcss": "8.5.3",
 		"prettier": "3.5.1",
