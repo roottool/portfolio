@@ -47,7 +47,7 @@
 		"class-variance-authority": "0.7.1",
 		"clsx": "2.1.1",
 		"ky": "1.7.5",
-		"next": "15.1.7",
+		"next": "15.2.0",
 		"react": "19.0.0",
 		"react-dom": "19.0.0",
 		"react-error-boundary": "5.0.0",
@@ -58,8 +58,8 @@
 		"valibot": "0.42.1"
 	},
 	"devDependencies": {
-		"@next/env": "15.1.7",
-		"@next/eslint-plugin-next": "15.1.7",
+		"@next/env": "15.2.0",
+		"@next/eslint-plugin-next": "15.2.0",
 		"@tailwindcss/postcss": "4.0.9",
 		"@testing-library/jest-dom": "6.6.3",
 		"@testing-library/react": "16.2.0",
