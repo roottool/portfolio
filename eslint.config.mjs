@@ -15,10 +15,12 @@ export default tseslint.config(
 		ignores: ['pnpm-lock.yaml', 'public'],
 	},
 	eslint.configs.recommended,
-	...tseslint.configs.recommendedTypeChecked,
-	...tseslint.configs.stylisticTypeChecked,
 	{
-		files: ['**/*.{ts,mts,tsx}'],
+		files: ['**/*.{ts,cts,mts,tsx}'],
+		extends: [
+			tseslint.configs.recommendedTypeChecked,
+			tseslint.configs.stylisticTypeChecked,
+		],
 		languageOptions: {
 			parserOptions: {
 				project: true,
@@ -50,23 +52,9 @@ export default tseslint.config(
 	},
 	{
 		files: ['{app|src}/**/*.{ts,tsx}'],
-		...reactPlugin.configs['jsx-runtime'].languageOptions,
-		...reactHooksPlugin.configs['recommended-latest'],
-		// NOTE: https://github.com/vercel/next.js/discussions/49337#discussioncomment-5998603
-		settings: {
-			react: {
-				version: 'detect',
-			},
-		},
-		plugins: {
-			'jsx-a11y': jsxA11yPlugin,
-			react: reactPlugin,
-		},
+		...jsxA11yPlugin.flatConfigs.recommended,
 		rules: {
-			...jsxA11yPlugin.configs.recommended.rules,
-			...reactPlugin.configs.recommended.rules,
-			...reactPlugin.configs['jsx-runtime'].rules,
-			'react/prop-types': 'off',
+			...jsxA11yPlugin.flatConfigs.recommended.rules,
 			'jsx-a11y/alt-text': [
 				'warn',
 				{
@@ -81,6 +69,22 @@ export default tseslint.config(
 					specialLink: ['to'],
 				},
 			],
+		},
+	},
+	{
+		files: ['{app|src}/**/*.{ts,tsx}'],
+		extends: [reactHooksPlugin.configs['recommended-latest']],
+		...reactPlugin.configs.flat['jsx-runtime'],
+		// NOTE: https://github.com/vercel/next.js/discussions/49337#discussioncomment-5998603
+		settings: {
+			react: {
+				version: 'detect',
+			},
+		},
+		rules: {
+			...reactPlugin.configs.flat.recommended.rules,
+			...reactPlugin.configs.flat['jsx-runtime'].rules,
+			'react/prop-types': 'off',
 			'react/jsx-sort-props': [
 				'warn',
 				{
@@ -117,6 +121,7 @@ export default tseslint.config(
 		},
 	},
 	{
+		name: 'globals',
 		languageOptions: {
 			globals: {
 				...globals.browser,
