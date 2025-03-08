@@ -40,6 +40,11 @@
 		"node": "^22.12.0"
 	},
 	"packageManager": "pnpm@10.6.1",
+	"pnpm": {
+		"onlyBuiltDependencies": [
+			"lefthook"
+		]
+	},
 	"dependencies": {
 		"@radix-ui/react-slot": "1.1.2",
 		"@radix-ui/react-toolbar": "1.1.2",
