@@ -25,6 +25,7 @@
 		"esModuleInterop": true,
 		"isolatedModules": true,
 		"resolveJsonModule": true,
+		"erasableSyntaxOnly": true,
 		"plugins": [
 			{
 				"name": "next"
