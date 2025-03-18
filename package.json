@@ -42,7 +42,8 @@
 	"packageManager": "pnpm@10.6.4",
 	"pnpm": {
 		"onlyBuiltDependencies": [
-			"lefthook"
+			"lefthook",
+			"msw"
 		]
 	},
 	"dependencies": {
