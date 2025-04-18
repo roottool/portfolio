@@ -87,7 +87,7 @@
 		"globals": "16.0.0",
 		"happy-dom": "17.4.4",
 		"lefthook": "1.11.10",
-		"msw": "2.7.4",
+		"msw": "2.7.5",
 		"npm-run-all2": "7.0.2",
 		"postcss": "8.5.3",
 		"prettier": "3.5.3",
