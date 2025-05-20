@@ -47,8 +47,8 @@
 		]
 	},
 	"dependencies": {
-		"@radix-ui/react-slot": "1.2.2",
-		"@radix-ui/react-toolbar": "1.1.9",
+		"@radix-ui/react-slot": "1.2.3",
+		"@radix-ui/react-toolbar": "1.1.10",
 		"@stitches/react": "1.2.8",
 		"class-variance-authority": "0.7.1",
 		"clsx": "2.1.1",
