@@ -31,11 +31,17 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ### Dependency Management
 
-- **Validate Renovate config**: `pnpm --package renovate dlx renovate-config-validator --strict`
-- **Renovate runs**: Before 3am every weekday and Sunday (JST)
-- **Security updates**: High priority (10) with automatic merging
-- **Package groups**: ESLint/Prettier (2d), Testing (3d), Build tools (5d)
-- **Major updates**: 7-day minimum age with manual review required
+- **Validate Renovate config**: `pnpm --package renovate dlx renovate-config-validator --strict` (run from project root)
+- **Configuration file**: `.github/renovate.json`
+- **Schedule**: Before 3am every weekday and Sunday (JST)
+- **Security-first approach**: Security updates receive highest priority (10) with automatic merging
+- **Stability periods**: Non-patch updates wait 3 days, major updates wait 7 days
+- **Package grouping**: Related packages grouped for efficient updates:
+  - ESLint/Prettier tools: 2-day minimum age
+  - Testing frameworks: 3-day minimum age
+  - Build tools: 5-day minimum age
+- **GitHub Actions**: Trust-based handling with first-party actions auto-merged, third-party requiring manual review
+- **Node.js constraints**: Major Node.js updates disabled to prevent compatibility issues
 
 ## Architecture Overview
 
@@ -100,15 +106,3 @@ src/
 - MSW for API mocking in tests
 - Coverage reporting configured (excludes types, mocks, and styles)
 - Happy-dom as test environment for better performance than jsdom
-
-### Dependency Management Strategy
-
-- **Security-First Approach**: Security updates receive highest priority (10) and automatic merging
-- **Stability Periods**: Non-patch updates wait 3 days, major updates wait 7 days for stability
-- **Package Grouping**: Related packages are grouped for efficient updates:
-  - ESLint/Prettier tools: 2-day minimum age
-  - Testing frameworks: 3-day minimum age
-  - Build tools: 5-day minimum age
-- **GitHub Actions**: Trust-based handling with first-party actions auto-merged, third-party actions requiring manual review
-- **Node.js Constraints**: Major Node.js updates disabled to prevent compatibility issues
-- **Schedule**: Updates run before 3am every weekday and Sunday (JST) to avoid weekend disruptions
