@@ -5,7 +5,7 @@
 		"schedule:daily",
 		":enableVulnerabilityAlertsWithLabel(security)"
 	],
-	"schedule": ["before 3am on weekdays", "before 3am on sunday"],
+	"schedule": ["before 3am on weekday", "before 3am on sunday"],
 	"labels": ["dependencies"],
 	"timezone": "Asia/Tokyo",
 	"prHourlyLimit": 4,
@@ -26,7 +26,7 @@
 			"matchDepTypes": ["devDependencies"],
 			"matchUpdateTypes": ["minor", "patch"],
 			"automerge": true,
-			"automergetype": "pr",
+			"automergeType": "pr",
 			"minimumReleaseAge": "3 days"
 		},
 		{
@@ -35,7 +35,7 @@
 			"matchDepTypes": ["dependencies"],
 			"matchUpdateTypes": ["minor", "patch"],
 			"automerge": true,
-			"automergetype": "pr",
+			"automergeType": "pr",
 			"minimumReleaseAge": "3 days"
 		},
 		{
@@ -60,7 +60,7 @@
 		{
 			"groupName": "Third-party Actions",
 			"matchDepTypes": ["action"],
-			"excludePackageNames": ["actions/*", "github/*"],
+			"matchPackageNames": ["!actions/*", "!github/*"],
 			"automerge": false,
 			"minimumReleaseAge": "7 days"
 		},
@@ -135,6 +135,5 @@
 	"commitMessagePrefix": "deps:",
 	"commitMessageTopic": "{{depName}}",
 	"commitMessageExtra": "from {{currentVersion}} to {{newVersion}}",
-	"prTitle": "{{commitMessagePrefix}} {{commitMessageTopic}} {{commitMessageExtra}}",
 	"rebaseWhen": "conflicted"
 }
