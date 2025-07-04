@@ -87,6 +87,41 @@
 			"matchUpdateTypes": ["major"],
 			"enabled": false,
 			"description": "Disable Node.js major version updates"
+		},
+		{
+			"groupName": "ESLint and Prettier",
+			"matchPackageNames": [
+				"eslint",
+				"prettier",
+				"eslint-*",
+				"prettier-*",
+				"typescript-eslint"
+			],
+			"automerge": true,
+			"minimumReleaseAge": "2 days"
+		},
+		{
+			"groupName": "Testing Framework",
+			"matchPackageNames": [
+				"vitest",
+				"@testing-library/*",
+				"@vitest/*",
+				"happy-dom"
+			],
+			"automerge": true,
+			"minimumReleaseAge": "3 days"
+		},
+		{
+			"groupName": "Build Tools",
+			"matchPackageNames": [
+				"postcss",
+				"cssnano",
+				"tailwindcss",
+				"@tailwindcss/*",
+				"@vitejs/*"
+			],
+			"automerge": true,
+			"minimumReleaseAge": "5 days"
 		}
 	]
 }
