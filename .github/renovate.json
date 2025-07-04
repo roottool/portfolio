@@ -5,6 +5,7 @@
 		"schedule:daily",
 		":enableVulnerabilityAlertsWithLabel(security)"
 	],
+	"schedule": ["before 3am on weekdays", "before 3am on sunday"],
 	"labels": ["dependencies"],
 	"timezone": "Asia/Tokyo",
 	"prHourlyLimit": 4,
