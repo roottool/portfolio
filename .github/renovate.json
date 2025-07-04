@@ -46,6 +46,19 @@
 			"automerge": true
 		},
 		{
+			"groupName": "Common GitHub Actions",
+			"matchPackageNames": ["actions/*", "github/*"],
+			"matchDepTypes": ["action"],
+			"automerge": true
+		},
+		{
+			"groupName": "Third-party Actions",
+			"matchDepTypes": ["action"],
+			"excludePackageNames": ["actions/*", "github/*"],
+			"automerge": false,
+			"minimumReleaseAge": "7 days"
+		},
+		{
 			"groupName": "Type definitions Group",
 			"automerge": true,
 			"matchPackageNames": ["@types/{/,}**"]
