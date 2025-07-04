@@ -54,6 +54,14 @@
 			"groupName": "React Group",
 			"matchPackageNames": ["@types/react", "@types/react-dom", "react{/,}**"],
 			"automerge": true
+		},
+		{
+			"groupName": "Security Updates",
+			"matchDepTypes": ["dependencies", "devDependencies"],
+			"matchUpdateTypes": ["patch"],
+			"isVulnerabilityAlert": true,
+			"automerge": true,
+			"prPriority": 10
 		}
 	]
 }
