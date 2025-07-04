@@ -29,11 +29,19 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **Watch mode**: `pnpm run test:watch`
 - **Coverage only**: `pnpm run test:vitest`
 
+### Dependency Management
+
+- **Validate Renovate config**: `pnpm --package renovate dlx renovate-config-validator --strict`
+- **Renovate runs**: Before 3am every weekday and Sunday (JST)
+- **Security updates**: High priority (10) with automatic merging
+- **Package groups**: ESLint/Prettier (2d), Testing (3d), Build tools (5d)
+- **Major updates**: 7-day minimum age with manual review required
+
 ## Architecture Overview
 
 ### Tech Stack
 
-- **Framework**: Next.js 15.3.1 with React 19.1.0
+- **Framework**: Next.js 15.3.5 with React 19.1.0
 - **Language**: TypeScript with strict configuration
 - **Styling**: Tailwind CSS + Stitches (@stitches/react)
 - **State Management**: SWR for data fetching
@@ -71,6 +79,7 @@ src/
 - **Environment**: Requires Steam API configuration (STEAM_API_KEY, STEAM_USER_ID, etc.)
 - **Image Optimization**: Configured for Steam CDN images
 - **Git Hooks**: Lefthook configured for pre-commit linting and formatting
+- **Renovate Configuration**: Comprehensive dependency management with security-first approach
 
 ### Component Architecture
 
@@ -91,3 +100,15 @@ src/
 - MSW for API mocking in tests
 - Coverage reporting configured (excludes types, mocks, and styles)
 - Happy-dom as test environment for better performance than jsdom
+
+### Dependency Management Strategy
+
+- **Security-First Approach**: Security updates receive highest priority (10) and automatic merging
+- **Stability Periods**: Non-patch updates wait 3 days, major updates wait 7 days for stability
+- **Package Grouping**: Related packages are grouped for efficient updates:
+  - ESLint/Prettier tools: 2-day minimum age
+  - Testing frameworks: 3-day minimum age
+  - Build tools: 5-day minimum age
+- **GitHub Actions**: Trust-based handling with first-party actions auto-merged, third-party actions requiring manual review
+- **Node.js Constraints**: Major Node.js updates disabled to prevent compatibility issues
+- **Schedule**: Updates run before 3am every weekday and Sunday (JST) to avoid weekend disruptions
