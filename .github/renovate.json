@@ -24,7 +24,10 @@
 			"groupSlug": "all-devDependencies-minor-patch",
 			"matchDepTypes": ["devDependencies"],
 			"matchUpdateTypes": ["minor", "patch"],
-			"automerge": true
+			"automerge": true,
+			"automergetype": "pr",
+			"requiredStatusChecks": null,
+			"minimumReleaseAge": "3 days"
 		},
 		{
 			"groupName": "all non-major dependencies",
@@ -32,7 +35,9 @@
 			"matchDepTypes": ["dependencies"],
 			"matchUpdateTypes": ["minor", "patch"],
 			"automerge": true,
-			"matchPackageNames": ["*"]
+			"automergetype": "pr",
+			"requiredStatusChecks": null,
+			"minimumReleaseAge": "3 days"
 		},
 		{
 			"groupName": "GitHub Action digests",
