@@ -131,5 +131,12 @@
 			"automerge": true,
 			"minimumReleaseAge": "5 days"
 		}
-	]
+	],
+	"branchPrefix": "renovate/",
+	"branchConcurrentLimit": 10,
+	"commitMessagePrefix": "deps:",
+	"commitMessageTopic": "{{depName}}",
+	"commitMessageExtra": "from {{currentVersion}} to {{newVersion}}",
+	"prTitle": "{{commitMessagePrefix}} {{commitMessageTopic}} {{commitMessageExtra}}",
+	"rebaseWhen": "conflicted"
 }
