@@ -12,7 +12,7 @@
 	"configMigration": true,
 	"semanticCommits": "enabled",
 	"semanticCommitType": "deps",
-	"semanticCommitScope": null,
+	"semanticCommitScope": "",
 	"lockFileMaintenance": {
 		"enabled": true,
 		"schedule": ["before 3am on the first day of the month"],
@@ -67,6 +67,13 @@
 			"isVulnerabilityAlert": true,
 			"automerge": true,
 			"prPriority": 10
+		},
+		{
+			"groupName": "Node.js Version Constraint",
+			"matchPackageNames": ["node"],
+			"matchUpdateTypes": ["major"],
+			"enabled": false,
+			"description": "Disable Node.js major version updates"
 		}
 	]
 }
