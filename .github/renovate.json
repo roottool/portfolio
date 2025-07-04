@@ -22,9 +22,9 @@
 		{
 			"groupName": "all non-major devDependencies",
 			"groupSlug": "all-devDependencies-minor-patch",
+			"matchDepTypes": ["devDependencies"],
 			"matchUpdateTypes": ["minor", "patch"],
-			"automerge": true,
-			"matchPackageNames": ["*"]
+			"automerge": true
 		},
 		{
 			"groupName": "all non-major dependencies",
