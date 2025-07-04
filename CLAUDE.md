@@ -41,7 +41,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ### Tech Stack
 
-- **Framework**: Next.js 15.3.5 with React 19.1.0
+- **Framework**: Next.js with React (versions in package.json)
 - **Language**: TypeScript with strict configuration
 - **Styling**: Tailwind CSS + Stitches (@stitches/react)
 - **State Management**: SWR for data fetching
@@ -52,7 +52,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ### Project Structure
 
-```
+```text
 src/
 ├── components/
 │   ├── atoms/          # Basic UI components (Backdrop, PageTitleWrapper)
