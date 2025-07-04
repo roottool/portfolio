@@ -10,6 +10,9 @@
 	"prHourlyLimit": 4,
 	"prConcurrentLimit": 10,
 	"configMigration": true,
+	"semanticCommits": "enabled",
+	"semanticCommitType": "deps",
+	"semanticCommitScope": null,
 	"lockFileMaintenance": {
 		"enabled": true,
 		"schedule": ["before 3am on the first day of the month"],
