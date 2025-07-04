@@ -40,6 +40,13 @@
 			"minimumReleaseAge": "3 days"
 		},
 		{
+			"groupName": "Major Updates",
+			"matchUpdateTypes": ["major"],
+			"automerge": false,
+			"minimumReleaseAge": "7 days",
+			"prPriority": 5
+		},
+		{
 			"groupName": "GitHub Action digests",
 			"matchDepTypes": ["action"],
 			"pinDigests": true,
