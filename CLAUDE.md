@@ -29,22 +29,36 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **Watch mode**: `pnpm run test:watch`
 - **Coverage only**: `pnpm run test:vitest`
 
+### Dependency Management
+
+- **Validate Renovate config**: `pnpm --package renovate dlx renovate-config-validator --strict` (run from project root)
+- **Configuration file**: `.github/renovate.json`
+- **Schedule**: Before 3am every weekday and Sunday (JST)
+- **Security-first approach**: Security updates receive highest priority (10) with automatic merging
+- **Stability periods**: Non-patch updates wait 3 days, major updates wait 7 days
+- **Package grouping**: Related packages grouped for efficient updates:
+  - ESLint/Prettier tools: 2-day minimum age
+  - Testing frameworks: 3-day minimum age
+  - Build tools: 5-day minimum age
+- **GitHub Actions**: Trust-based handling with first-party actions auto-merged, third-party requiring manual review
+- **Node.js constraints**: Major Node.js updates disabled to prevent compatibility issues
+
 ## Architecture Overview
 
 ### Tech Stack
 
-- **Framework**: Next.js 15.3.1 with React 19.1.0
+- **Framework**: Next.js with React (versions in package.json)
 - **Language**: TypeScript with strict configuration
 - **Styling**: Tailwind CSS + Stitches (@stitches/react)
 - **State Management**: SWR for data fetching
 - **Validation**: Valibot for environment variables and schemas
 - **HTTP Client**: ky library
-- **Testing**: Vitest with React Testing Library and happy-dom
+- **Testing**: Vitest with React Testing Library and Happy DOM
 - **Mocking**: MSW (Mock Service Worker)
 
 ### Project Structure
 
-```
+```text
 src/
 ├── components/
 │   ├── atoms/          # Basic UI components (Backdrop, PageTitleWrapper)
@@ -71,6 +85,7 @@ src/
 - **Environment**: Requires Steam API configuration (STEAM_API_KEY, STEAM_USER_ID, etc.)
 - **Image Optimization**: Configured for Steam CDN images
 - **Git Hooks**: Lefthook configured for pre-commit linting and formatting
+- **Renovate Configuration**: Comprehensive dependency management with security-first approach
 
 ### Component Architecture
 
@@ -90,4 +105,4 @@ src/
 - Unit tests with Vitest and React Testing Library
 - MSW for API mocking in tests
 - Coverage reporting configured (excludes types, mocks, and styles)
-- Happy-dom as test environment for better performance than jsdom
+- Happy DOM as test environment for better performance than jsdom
