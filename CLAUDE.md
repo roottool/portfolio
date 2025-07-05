@@ -53,7 +53,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **State Management**: SWR for data fetching
 - **Validation**: Valibot for environment variables and schemas
 - **HTTP Client**: ky library
-- **Testing**: Vitest with React Testing Library and happy-dom
+- **Testing**: Vitest with React Testing Library and Happy DOM
 - **Mocking**: MSW (Mock Service Worker)
 
 ### Project Structure
@@ -105,4 +105,4 @@ src/
 - Unit tests with Vitest and React Testing Library
 - MSW for API mocking in tests
 - Coverage reporting configured (excludes types, mocks, and styles)
-- Happy-dom as test environment for better performance than jsdom
+- Happy DOM as test environment for better performance than jsdom
