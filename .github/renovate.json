@@ -99,6 +99,7 @@
 			"matchPackageNames": [
 				"eslint",
 				"prettier",
+				"@eslint/*",
 				"eslint-*",
 				"prettier-*",
 				"typescript-eslint"
