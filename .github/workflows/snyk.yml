@@ -38,7 +38,7 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
       - name: Run Snyk to check for vulnerabilities
-        uses: snyk/actions/node@28606799782bc8e809f4076e9f8293bc4212d05e # V0.4.0
+        uses: snyk/actions/node@77490d94e966421e076e95ad8fa87aa55e5ca409 # V0.4.0
         # * To make sure that SARIF upload gets called.
         continue-on-error: true
         env:
