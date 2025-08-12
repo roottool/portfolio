@@ -58,7 +58,7 @@
 		"react-dom": "19.1.1",
 		"react-error-boundary": "6.0.0",
 		"react-icons": "5.5.0",
-		"swr": "2.3.4",
+		"swr": "2.3.5",
 		"tailwind-merge": "3.3.1",
 		"tailwindcss-animate": "1.0.7",
 		"valibot": "1.1.0"
@@ -71,7 +71,7 @@
 		"@testing-library/jest-dom": "6.6.4",
 		"@testing-library/react": "16.3.0",
 		"@trivago/prettier-plugin-sort-imports": "5.2.2",
-		"@types/node": "22.17.0",
+		"@types/node": "22.17.1",
 		"@types/react": "19.1.9",
 		"@types/react-dom": "19.1.7",
 		"@vitejs/plugin-react": "4.7.0",
