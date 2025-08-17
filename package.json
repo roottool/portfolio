@@ -68,7 +68,7 @@
 		"@next/env": "15.4.6",
 		"@next/eslint-plugin-next": "15.4.6",
 		"@tailwindcss/postcss": "4.1.11",
-		"@testing-library/jest-dom": "6.6.4",
+		"@testing-library/jest-dom": "6.7.0",
 		"@testing-library/react": "16.3.0",
 		"@trivago/prettier-plugin-sort-imports": "5.2.2",
 		"@types/node": "22.17.1",
