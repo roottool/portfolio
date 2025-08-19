@@ -71,7 +71,7 @@
 		"@testing-library/jest-dom": "6.7.0",
 		"@testing-library/react": "16.3.0",
 		"@trivago/prettier-plugin-sort-imports": "5.2.2",
-		"@types/node": "22.17.1",
+		"@types/node": "22.17.2",
 		"@types/react": "19.1.10",
 		"@types/react-dom": "19.1.7",
 		"@vitejs/plugin-react": "5.0.0",
