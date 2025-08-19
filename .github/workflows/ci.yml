@@ -39,7 +39,7 @@ jobs:
     if: ${{ !github.event.pull_request.draft }}
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
       - name: Initialize
         uses: ./.github/actions/setup-bun
       - name: Check diff targets by path filters
@@ -65,7 +65,7 @@ jobs:
     if: ${{ needs.setup.outputs.renovate-config == 'true' }}
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
         with:
           sparse-checkout: |
             .github/actions/setup-node-and-pnpm/action.yml
@@ -91,7 +91,7 @@ jobs:
     if: ${{ needs.setup.outputs.lefthook-config == 'true' }}
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
         with:
           sparse-checkout: |
             .github/actions/setup-node-and-pnpm/action.yml
@@ -116,7 +116,7 @@ jobs:
     needs: [setup]
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
       - name: Initialize
         uses: ./.github/actions/setup-bun
       - name: Run format check
@@ -132,7 +132,7 @@ jobs:
     if: ${{ needs.setup.outputs.typescript == 'true' }}
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
       - name: Initialize
         uses: ./.github/actions/setup-bun
       - name: Run type check
@@ -145,7 +145,7 @@ jobs:
     needs: [lint, typecheck]
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
       - name: Initialize
         uses: ./.github/actions/setup-bun
       - name: Run test
