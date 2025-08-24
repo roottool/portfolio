@@ -1,13 +1,13 @@
-import eslint from '@eslint/js';
-import nextPlugin from '@next/eslint-plugin-next';
-import gitignore from 'eslint-config-flat-gitignore';
-import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript';
-import jsxA11yPlugin from 'eslint-plugin-jsx-a11y';
-import reactPlugin from 'eslint-plugin-react';
-import reactHooksPlugin from 'eslint-plugin-react-hooks';
-import unusedImports from 'eslint-plugin-unused-imports';
-import globals from 'globals';
-import tseslint from 'typescript-eslint';
+import eslint from '@eslint/js'
+import nextPlugin from '@next/eslint-plugin-next'
+import gitignore from 'eslint-config-flat-gitignore'
+import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript'
+import jsxA11yPlugin from 'eslint-plugin-jsx-a11y'
+import reactPlugin from 'eslint-plugin-react'
+import reactHooksPlugin from 'eslint-plugin-react-hooks'
+import unusedImports from 'eslint-plugin-unused-imports'
+import globals from 'globals'
+import tseslint from 'typescript-eslint'
 
 export default tseslint.config(
 	gitignore({ root: true }),
