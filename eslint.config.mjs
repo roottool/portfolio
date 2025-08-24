@@ -9,10 +9,6 @@ import unusedImports from 'eslint-plugin-unused-imports';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
-
-
-
-
 export default tseslint.config(
 	gitignore({ root: true }),
 	{
