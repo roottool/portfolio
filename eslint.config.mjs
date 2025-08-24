@@ -113,7 +113,7 @@ export default tseslint.config(
 							// TODO: Remove this rule if we use App Router.
 							name: 'next/navigation',
 							message:
-								"We can't use App Routerin this project because this project use Pages Router.",
+								"We can't use App Router in this project because this project use Pages Router.",
 						},
 					],
 				},
