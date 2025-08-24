@@ -1,12 +1,12 @@
 {
-	"recommendations": [
-		"tekumara.typos-vscode",
-		// * EditorConfig
-		"editorconfig.editorconfig",
-		// * JavaScript, TypeScript
-		"dbaeumer.vscode-eslint",
-		"esbenp.prettier-vscode",
-		"ZixuanChen.vitest-explorer",
-		"kingwl.vscode-vitest-runner"
-	]
+  "recommendations": [
+    "tekumara.typos-vscode",
+    // * EditorConfig
+    "editorconfig.editorconfig",
+    // * JavaScript, TypeScript
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "ZixuanChen.vitest-explorer",
+    "kingwl.vscode-vitest-runner"
+  ]
 }
