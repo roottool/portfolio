@@ -1,35 +1,35 @@
 {
-	"files.watcherExclude": {
-		"**/node_modules/**": true
-	},
-	// * For Linter and Formatter
-	"editor.codeActionsOnSave": [
-		"source.addMissingImports",
-		"source.fixAll.eslint"
-	],
-	"editor.formatOnSave": true,
-	"editor.formatOnSaveMode": "modificationsIfAvailable",
-	"editor.tabSize": 2,
-	"files.trimFinalNewlines": true,
-	"files.trimTrailingWhitespace": true,
-	"javascript.preferences.importModuleSpecifier": "non-relative",
-	"javascript.preferences.importModuleSpecifierEnding": "minimal",
-	"typescript.preferences.importModuleSpecifier": "non-relative",
-	"typescript.preferences.importModuleSpecifierEnding": "minimal",
-	"[javascript|typescript|typescriptreact|json|jsonc|yaml]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode"
-	},
-	"[markdown]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode",
-		"editor.wordWrap": "on",
-		"editor.quickSuggestions": {
-			"comments": "off",
-			"strings": "off",
-			"other": "off"
-		},
-		"files.trimTrailingWhitespace": false
-	},
-	// Extensions
-	"eslint.useFlatConfig": true,
-	"prettier.configPath": "prettier.config.mjs"
+  "files.watcherExclude": {
+    "**/node_modules/**": true
+  },
+  // * For Linter and Formatter
+  "editor.codeActionsOnSave": [
+    "source.addMissingImports",
+    "source.fixAll.eslint"
+  ],
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "modificationsIfAvailable",
+  "editor.tabSize": 2,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "javascript.preferences.importModuleSpecifier": "non-relative",
+  "javascript.preferences.importModuleSpecifierEnding": "minimal",
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "typescript.preferences.importModuleSpecifierEnding": "minimal",
+  "[javascript|typescript|typescriptreact|json|jsonc|yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    },
+    "files.trimTrailingWhitespace": false
+  },
+  // Extensions
+  "eslint.useFlatConfig": true,
+  "prettier.configPath": "prettier.config.mjs"
 }
