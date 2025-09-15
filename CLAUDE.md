@@ -12,9 +12,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ### Development Workflow
 
 - **Development server**: `pnpm run dev` (Next.js dev server)
-- **Build**: `pnpm run build` (runs clean + parallel build tasks)
+- **Build**: `pnpm run build` (Next.js build task)
 - **Production server**: `pnpm run start`
-- **Clean**: `pnpm run clean` (removes .next and .swc directories)
 
 ### Code Quality
 

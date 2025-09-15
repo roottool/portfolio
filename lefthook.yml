@@ -8,14 +8,16 @@ pre-commit:
   skip:
     - merge
     - rebase
-  commands:
-    jsts:
+  jobs:
+    - name: jsts
       glob: '*.{?(c|m)js,jsx,?(c|m)ts,tsx}'
-      run: |
-        pnpm exec eslint --color --fix {staged_files} &&
-        pnpm exec prettier --write {staged_files}
+      group:
+        piped: true
+        jobs:
+          - run: pnpm exec eslint --cache --color --fix {staged_files}
+          - run: pnpm exec prettier --cache --write {staged_files}
       stage_fixed: true
-    only-pretter:
+    - name: only prettier
       glob: '*.{md,json,y?(a)ml}'
-      run: pnpm exec prettier --write {staged_files}
+      run: pnpm exec prettier --cache --write {staged_files}
       stage_fixed: true
