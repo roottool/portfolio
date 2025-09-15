@@ -67,6 +67,30 @@
       "automerge": true
     },
     {
+      "groupName": "Testing Framework",
+      "matchPackageNames": [
+        "vitest",
+        "@testing-library/*",
+        "@vitest/*",
+        "happy-dom"
+      ],
+      "automerge": true,
+      "minimumReleaseAge": "3 days"
+    },
+    {
+      "groupName": "ESLint and Prettier",
+      "matchPackageNames": [
+        "eslint",
+        "prettier",
+        "@eslint/*",
+        "eslint-*",
+        "prettier-*",
+        "typescript-eslint"
+      ],
+      "automerge": true,
+      "minimumReleaseAge": "3 days"
+    },
+    {
       "groupName": "Type definitions Group",
       "automerge": true,
       "matchPackageNames": ["@types/{/,}**"],
@@ -88,30 +112,6 @@
       "matchUpdateTypes": ["major"],
       "enabled": false,
       "description": "Disable Node.js major version updates",
-      "minimumReleaseAge": "3 days"
-    },
-    {
-      "groupName": "ESLint and Prettier",
-      "matchPackageNames": [
-        "eslint",
-        "prettier",
-        "@eslint/*",
-        "eslint-*",
-        "prettier-*",
-        "typescript-eslint"
-      ],
-      "automerge": true,
-      "minimumReleaseAge": "3 days"
-    },
-    {
-      "groupName": "Testing Framework",
-      "matchPackageNames": [
-        "vitest",
-        "@testing-library/*",
-        "@vitest/*",
-        "happy-dom"
-      ],
-      "automerge": true,
       "minimumReleaseAge": "3 days"
     }
   ]
