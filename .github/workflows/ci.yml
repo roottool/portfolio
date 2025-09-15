@@ -42,8 +42,10 @@ jobs:
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
         with:
           persist-credentials: false
+
       - name: Initialize
         uses: ./.github/actions/setup-bun
+
       - name: Check diff targets by path filters
         uses: dorny/paths-filter@de90cc6fb38fc0963ad72b210f1f284cd68cea36 # v3.0.2
         id: filter
@@ -77,12 +79,15 @@ jobs:
             pnpm-lock.yaml
             prettier.config.mjs
           sparse-checkout-cone-mode: false
+
       - name: Initialize
         uses: ./.github/actions/setup-node-and-pnpm
         with:
           node-version: ${{ env.NODE_VERSION }}
+
       - name: Check format by Prettier
         run: pnpm exec prettier --check .github/renovate.json
+
       - name: Validate Renovate config
         run: pnpm --package renovate dlx renovate-config-validator --strict
 
@@ -104,12 +109,15 @@ jobs:
             pnpm-lock.yaml
             prettier.config.mjs
           sparse-checkout-cone-mode: false
+
       - name: Initialize
         uses: ./.github/actions/setup-node-and-pnpm
         with:
           node-version: ${{ env.NODE_VERSION }}
+
       - name: Check format by Prettier
         run: pnpm exec prettier --check lefthook.yml
+
       - name: Validate Lefthook config
         run: pnpm exec lefthook validate
 
@@ -123,10 +131,13 @@ jobs:
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
         with:
           persist-credentials: false
+
       - name: Initialize
         uses: ./.github/actions/setup-bun
+
       - name: Run format check
         run: bun run lint:prettier
+
       - name: Run lint
         run: bun run lint:eslint
 
@@ -141,8 +152,10 @@ jobs:
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
         with:
           persist-credentials: false
+
       - name: Initialize
         uses: ./.github/actions/setup-bun
+
       - name: Run type check
         run: bun run typecheck
 
@@ -156,10 +169,13 @@ jobs:
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
         with:
           persist-credentials: false
+
       - name: Initialize
         uses: ./.github/actions/setup-bun
+
       - name: Run test
         run: bun run test
+
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@fdcc8476540edceab3de004e990f80d881c6cc00 # v5.5.0
         with:
@@ -182,6 +198,7 @@ jobs:
         # A parent job is the test job. `failure()` results `false` if the test job is skipped.
         if: ${{ contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled') }}
         run: exit 1
+
       - name: Passed this workflow
         if: ${{ success() }}
         run: exit 0
