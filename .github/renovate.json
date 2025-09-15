@@ -1,10 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended",
-    "schedule:daily",
-    ":enableVulnerabilityAlertsWithLabel(security)"
-  ],
+  "extends": ["config:recommended", "schedule:daily"],
   "schedule": ["before 3am every weekday", "before 3am on sunday"],
   "labels": ["dependencies"],
   "timezone": "Asia/Tokyo",
@@ -14,6 +10,17 @@
   "semanticCommits": "enabled",
   "semanticCommitType": "deps",
   "semanticCommitScope": "",
+  "branchPrefix": "renovate/",
+  "branchConcurrentLimit": 10,
+  "commitMessagePrefix": "deps:",
+  "commitMessageTopic": "{{depName}}",
+  "commitMessageExtra": "from {{currentVersion}} to {{newVersion}}",
+  "rebaseWhen": "conflicted",
+  "vulnerabilityAlerts": {
+    "enabled": true,
+    "labels": ["security"],
+    "automerge": true
+  },
   "lockFileMaintenance": {
     "enabled": true,
     "schedule": ["before 3am on the first day of the month"],
@@ -49,63 +56,15 @@
       "groupName": "GitHub Action digests",
       "matchDepTypes": ["action"],
       "pinDigests": true,
-      "automerge": true
+      "automerge": true,
+      "minimumReleaseAge": "3 days"
     },
     {
-      "groupName": "Common GitHub Actions",
+      "groupName": "Common GitHub Action digests",
       "matchPackageNames": ["actions/*", "github/*"],
       "matchDepTypes": ["action"],
+      "pinDigests": true,
       "automerge": true
-    },
-    {
-      "groupName": "Third-party Actions",
-      "matchDepTypes": ["action"],
-      "matchPackageNames": ["!actions/*", "!github/*"],
-      "automerge": false,
-      "minimumReleaseAge": "7 days"
-    },
-    {
-      "groupName": "Type definitions Group",
-      "automerge": true,
-      "matchPackageNames": ["@types/{/,}**"]
-    },
-    {
-      "groupName": "Next.js Group",
-      "matchPackageNames": ["next", "@next/{/,}**"],
-      "automerge": true
-    },
-    {
-      "groupName": "React Group",
-      "matchPackageNames": ["@types/react", "@types/react-dom", "react{/,}**"],
-      "automerge": true
-    },
-    {
-      "groupName": "Security Updates",
-      "matchDepTypes": ["dependencies", "devDependencies"],
-      "matchUpdateTypes": ["patch"],
-      "isVulnerabilityAlert": true,
-      "automerge": true,
-      "prPriority": 10
-    },
-    {
-      "groupName": "Node.js Version Constraint",
-      "matchPackageNames": ["node"],
-      "matchUpdateTypes": ["major"],
-      "enabled": false,
-      "description": "Disable Node.js major version updates"
-    },
-    {
-      "groupName": "ESLint and Prettier",
-      "matchPackageNames": [
-        "eslint",
-        "prettier",
-        "@eslint/*",
-        "eslint-*",
-        "prettier-*",
-        "typescript-eslint"
-      ],
-      "automerge": true,
-      "minimumReleaseAge": "2 days"
     },
     {
       "groupName": "Testing Framework",
@@ -119,22 +78,41 @@
       "minimumReleaseAge": "3 days"
     },
     {
-      "groupName": "Build Tools",
+      "groupName": "ESLint and Prettier",
       "matchPackageNames": [
-        "postcss",
-        "cssnano",
-        "tailwindcss",
-        "@tailwindcss/*",
-        "@vitejs/*"
+        "eslint",
+        "prettier",
+        "@eslint/*",
+        "eslint-*",
+        "prettier-*",
+        "typescript-eslint"
       ],
       "automerge": true,
-      "minimumReleaseAge": "5 days"
+      "minimumReleaseAge": "3 days"
+    },
+    {
+      "groupName": "Type definitions Group",
+      "automerge": true,
+      "matchPackageNames": ["@types/{/,}**"],
+      "minimumReleaseAge": "3 days"
+    },
+    {
+      "groupName": "Next.js Group",
+      "matchPackageNames": ["next", "@next/{/,}**"],
+      "automerge": true
+    },
+    {
+      "groupName": "React Group",
+      "matchPackageNames": ["@types/react", "@types/react-dom", "react{/,}**"],
+      "automerge": true
+    },
+    {
+      "groupName": "Node.js Version Constraint",
+      "matchPackageNames": ["node"],
+      "matchUpdateTypes": ["major"],
+      "enabled": false,
+      "description": "Disable Node.js major version updates",
+      "minimumReleaseAge": "3 days"
     }
-  ],
-  "branchPrefix": "renovate/",
-  "branchConcurrentLimit": 10,
-  "commitMessagePrefix": "deps:",
-  "commitMessageTopic": "{{depName}}",
-  "commitMessageExtra": "from {{currentVersion}} to {{newVersion}}",
-  "rebaseWhen": "conflicted"
+  ]
 }
