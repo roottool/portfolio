@@ -15,9 +15,11 @@ jobs:
   assign:
     runs-on: ubuntu-latest
     timeout-minutes: 2
+    permissions:
+      pull-requests: write
     steps:
       - name: Assign PR to author if no assignees
-        if: ${{ toJSON(github.event.pull_request.assignees) == '[]' }}
+        if: ${{ github.event.pull_request.user.type != 'Bot' && toJSON(github.event.pull_request.assignees) == '[]' }}
         run: gh pr edit $NUMBER --add-assignee $ASSIGNEE
         env:
           GH_TOKEN: ${{ github.token }}
