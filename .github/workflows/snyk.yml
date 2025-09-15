@@ -33,10 +33,14 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          persist-credentials: false
+
       - name: Initialize
         uses: ./.github/actions/setup-node-and-pnpm
         with:
           node-version: ${{ env.NODE_VERSION }}
+
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/node@e2221410bff24446ba09102212d8bc75a567237d # V0.4.0
         # * To make sure that SARIF upload gets called.
@@ -45,6 +49,7 @@ jobs:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
           args: --sarif-file-output=snyk.sarif
+
       - name: Upload result to GitHub Code Scanning
         uses: github/codeql-action/upload-sarif@d3678e237b9c32a6c9bffb3315c335f976f3549f # v3.30.2
         with:
