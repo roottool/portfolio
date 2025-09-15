@@ -31,10 +31,9 @@
         "name": "next"
       }
     ],
-    "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
-      "$/*": ["public/*"]
+      "@/*": ["./src/*"],
+      "$/*": ["./public/*"]
     }
   },
   "include": [
