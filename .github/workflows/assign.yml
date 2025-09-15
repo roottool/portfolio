@@ -7,19 +7,20 @@ on:
       - reopened
       - ready_for_review
 
-permissions:
-  contents: read
-  pull-requests: write
-
 defaults:
   run:
     shell: bash
 
 jobs:
-  add-reviews:
+  assign:
     runs-on: ubuntu-latest
     timeout-minutes: 2
     steps:
-      - uses: kentaro-m/auto-assign-action@f4648c0a9fdb753479e9e75fc251f507ce17bb7e # v2.0.0
-        with:
-          repo-token: '${{ secrets.GITHUB_TOKEN }}'
+      - name: Assign PR to author if no assignees
+        if: ${{ toJSON(github.event.pull_request.assignees) == '[]' }}
+        run: gh pr edit $NUMBER --add-assignee $ASSIGNEE
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          NUMBER: ${{ github.event.pull_request.number }}
+          ASSIGNEE: ${{ github.event.pull_request.user.login }}
