@@ -3,6 +3,7 @@
  */
 const nextConfig = {
 	reactStrictMode: true,
+	typedRoutes: true,
 	pageExtensions: ['page.tsx', 'api.ts'],
 	images: {
 		remotePatterns: [
