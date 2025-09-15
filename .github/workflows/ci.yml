@@ -40,6 +40,8 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          persist-credentials: false
       - name: Initialize
         uses: ./.github/actions/setup-bun
       - name: Check diff targets by path filters
@@ -67,6 +69,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
         with:
+          persist-credentials: false
           sparse-checkout: |
             .github/actions/setup-node-and-pnpm/action.yml
             .github/renovate.json
@@ -93,6 +96,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
         with:
+          persist-credentials: false
           sparse-checkout: |
             .github/actions/setup-node-and-pnpm/action.yml
             lefthook.yml
@@ -117,6 +121,8 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          persist-credentials: false
       - name: Initialize
         uses: ./.github/actions/setup-bun
       - name: Run format check
@@ -133,6 +139,8 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          persist-credentials: false
       - name: Initialize
         uses: ./.github/actions/setup-bun
       - name: Run type check
@@ -146,6 +154,8 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          persist-credentials: false
       - name: Initialize
         uses: ./.github/actions/setup-bun
       - name: Run test
