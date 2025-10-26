@@ -3,19 +3,17 @@ node_modules/
 /.pnp
 .pnp.js
 
+# build output
+dist/
+
+# generated types
+.astro/
+
 # pnpm
 .pnpm-store/
 
 # testing
 coverage/
-
-# build
-.next/
-.swc/
-out/
-
-# production
-build/
 
 # cache
 .dccache
@@ -37,6 +35,7 @@ yarn-error.log*
 
 # ENV files
 .env*
+.dev.vars*
 
 # vercel
 .vercel

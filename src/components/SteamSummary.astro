@@ -1,0 +1,61 @@
+---
+export interface Props {
+	data: OwnedGamesInfoResponse
+}
+
+interface OwnedGamesInfoResponse {
+	game_count: number
+	games: OwnedGame[]
+}
+
+export interface OwnedGame {
+	appid: number
+	has_community_visible_stats: boolean
+	img_icon_url: string
+	name: string
+	playtime_forever: number
+}
+
+const { data } = Astro.props
+const games = data.games
+	.filter((g) => g.playtime_forever > 0)
+	.sort((a, b) => b.playtime_forever - a.playtime_forever)
+---
+
+<section class="flex flex-col gap-4">
+	<h2 class="text-2xl font-semibold text-white text-center sm:text-left">
+		🎮 Steamライブラリ
+	</h2>
+
+	<div
+		class="flex-1 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 gap-3 sm:gap-4 md:overflow-auto"
+	>
+		{
+			games.map((game) => (
+				<a
+					href={`https://store.steampowered.com/app/${game.appid}`}
+					target="_blank"
+					rel="noopener noreferrer"
+					class="grid grid-cols-subgrid gap-2 bg-neutral-900 rounded-xl p-2 sm:p-3 shadow hover:bg-neutral-800 transition border border-neutral-800"
+				>
+					<img
+						src={`https://cdn.cloudflare.steamstatic.com/steam/apps/${game.appid}/capsule_231x87.jpg`}
+						alt={game.name}
+						class="rounded-md w-full"
+						loading="lazy"
+						width="237"
+						height="87"
+					/>
+					<div>
+						<h3 class="text-xs sm:text-sm font-semibold text-white truncate">
+							{game.name}
+						</h3>
+						<p class="text-[10px] sm:text-xs text-gray-400">
+							合計プレイ時間: {(game.playtime_forever / 60).toFixed(1)} 時間
+						</p>
+					</div>
+				</a>
+			))
+		}
+	</div>
+</section>

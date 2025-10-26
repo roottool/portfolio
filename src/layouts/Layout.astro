@@ -1,0 +1,50 @@
+---
+const NAME = 'roottool' as const satisfies string
+const { title = NAME } = Astro.props
+---
+
+<html lang="ja" class="bg-black text-white">
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no"
+		/>
+		<meta name="theme-color" content="#000000" />
+		<meta name="description" content="This site is roottool's portfolio." />
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:site" content="@roottool" />
+		<meta name="og:title" content="roottool" />
+		<meta name="og:description" content="This site is roottool's portfolio." />
+		<!-- <meta name="og:url" content="https://roottool.github.io/" /> -->
+		<!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+		<link rel="manifest" href="/manifest.json" />
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<title>{title}</title>
+		<link rel="stylesheet" href="/src/styles/global.css" />
+	</head>
+	<body
+		class="grid grid-areas-layout grid-rows-[max-content_1fr_max-content] font-sans h-screen md:overflow-hidden bg-linear-to-b from-neutral-950 to-neutral-900"
+	>
+		<header
+			class="grid-area-header auto-rows-auto text-center py-6 border-b border-neutral-800"
+		>
+			<h1 class="text-3xl sm:text-4xl font-bold tracking-wide">🤖 roottool</h1>
+		</header>
+
+		<main
+			class="grid-area-main max-w-7xl mx-auto px-4 sm:px-8 py-10 md:overflow-hidden grid grid-rows-1 gap-8 sm:grid-cols-2 xl:grid-cols-3"
+		>
+			<slot />
+		</main>
+
+		<footer
+			class="grid-area-footer sticky bottom-0 bg-neutral-900 text-center text-gray-500 text-xs py-6 border-t border-neutral-800"
+		>
+			© 2025 {NAME}.dev
+		</footer>
+	</body>
+</html>

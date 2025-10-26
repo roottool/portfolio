@@ -1,0 +1,64 @@
+---
+import { GITHUB_USERNAME } from 'astro:env/server'
+
+export interface Props {
+	data: PartialIssuesResponse
+}
+interface PartialIssuesResponse {
+	items: PartialIssueItem[]
+}
+interface PartialIssueItem {
+	id: number
+	repository_url: string
+	html_url: string
+	title: string
+	number: number
+	closed_at: string
+}
+
+const { data } = Astro.props
+
+// 自分のリポジトリへのPRを除外
+const excludeOwnedItems = data.items.filter((pr) => {
+	const repoPath = pr.repository_url.split('/').slice(-2).join('/')
+	const [owner = ''] = repoPath.split('/')
+	return owner.toLowerCase() !== GITHUB_USERNAME.toLowerCase()
+})
+
+const mergedPrs = { items: excludeOwnedItems }
+const items = mergedPrs.items ?? []
+---
+
+<section class="flex flex-col gap-4">
+	<h2 class="text-2xl font-semibold text-white text-center sm:text-left">
+		🧩 OSS コントリビューション
+	</h2>
+
+	<div class="grid grid-rows-subgrid grid-cols-1 gap-4 md:overflow-auto">
+		{
+			items.map((pr) => {
+				const repoName = pr.repository_url.split('/').slice(-2).join('/')
+				return (
+					<a
+						href={pr.html_url}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="grid gap-2 bg-neutral-900 p-4 rounded-xl hover:bg-neutral-800 transition border border-neutral-800"
+					>
+						<div class="overflow-hidden">
+							<h3 class="text-sm sm:text-base font-semibold text-white truncate">
+								{pr.title}
+							</h3>
+							<p class="text-xs sm:text-sm text-gray-400 line-clamp-2 truncate">
+								{repoName}
+							</p>
+						</div>
+						<p class="text-xs text-gray-500">
+							#{pr.number} • {new Date(pr.closed_at).toLocaleDateString()}
+						</p>
+					</a>
+				)
+			})
+		}
+	</div>
+</section>

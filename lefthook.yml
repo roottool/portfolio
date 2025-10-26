@@ -14,10 +14,10 @@ pre-commit:
       group:
         piped: true
         jobs:
-          - run: pnpm exec eslint --cache --color --fix {staged_files}
-          - run: pnpm exec prettier --cache --write {staged_files}
+          - run: bunx eslint --cache --color --fix {staged_files}
+          - run: bunx prettier --cache --write {staged_files}
       stage_fixed: true
     - name: only prettier
       glob: '*.{md,json,y?(a)ml}'
-      run: pnpm exec prettier --cache --write {staged_files}
+      run: bunx prettier --cache --write {staged_files}
       stage_fixed: true

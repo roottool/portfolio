@@ -52,7 +52,7 @@ jobs:
         with:
           filters: |
             typescript:
-              - 'pnpm-lock.yaml'
+              - 'bun.lock'
               - '**/tsconfig*.json'
               - '**/*.ts'
               - '**/*.tsx'
@@ -73,23 +73,21 @@ jobs:
         with:
           persist-credentials: false
           sparse-checkout: |
-            .github/actions/setup-node-and-pnpm/action.yml
+            .github/actions/setup-bun/action.yml
             .github/renovate.json
             package.json
-            pnpm-lock.yaml
+            bun.lock
             prettier.config.mjs
           sparse-checkout-cone-mode: false
 
       - name: Initialize
-        uses: ./.github/actions/setup-node-and-pnpm
-        with:
-          node-version: ${{ env.NODE_VERSION }}
+        uses: ./.github/actions/setup-bun
 
       - name: Check format by Prettier
-        run: pnpm exec prettier --check .github/renovate.json
+        run: bunx prettier --check .github/renovate.json
 
       - name: Validate Renovate config
-        run: pnpm --package renovate dlx renovate-config-validator --strict
+        run: bunx -p renovate renovate-config-validator --strict
 
   validate-lefthook-config:
     name: Validate Lefthook config
@@ -103,23 +101,21 @@ jobs:
         with:
           persist-credentials: false
           sparse-checkout: |
-            .github/actions/setup-node-and-pnpm/action.yml
+            .github/actions/setup-bun/action.yml
             lefthook.yml
             package.json
-            pnpm-lock.yaml
+            bun.lock
             prettier.config.mjs
           sparse-checkout-cone-mode: false
 
       - name: Initialize
-        uses: ./.github/actions/setup-node-and-pnpm
-        with:
-          node-version: ${{ env.NODE_VERSION }}
+        uses: ./.github/actions/setup-bun
 
       - name: Check format by Prettier
-        run: pnpm exec prettier --check lefthook.yml
+        run: bunx prettier --check lefthook.yml
 
       - name: Validate Lefthook config
-        run: pnpm exec lefthook validate
+        run: bunx lefthook validate
 
   lint:
     name: Lint
@@ -156,31 +152,34 @@ jobs:
       - name: Initialize
         uses: ./.github/actions/setup-bun
 
+      - name: Run astro check
+        run: bun run typecheck:astro
+
       - name: Run type check
-        run: bun run typecheck
+        run: bun run typecheck:tsc
 
-  test:
-    name: Test
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    needs: [lint, typecheck]
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
-        with:
-          persist-credentials: false
+  # test:
+  #   name: Test
+  #   runs-on: ubuntu-latest
+  #   timeout-minutes: 5
+  #   needs: [lint, typecheck]
+  #   steps:
+  #     - name: Checkout Repository
+  #       uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+  #       with:
+  #         persist-credentials: false
 
-      - name: Initialize
-        uses: ./.github/actions/setup-bun
+  #     - name: Initialize
+  #       uses: ./.github/actions/setup-bun
 
-      - name: Run test
-        run: bun run test
+  #     - name: Run test
+  #       run: bun run test
 
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@5a1091511ad55cbe89839c7260b706298ca349f7 # v5.5.1
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          fail_ci_if_error: true
+  #     - name: Upload coverage to Codecov
+  #       uses: codecov/codecov-action@5a1091511ad55cbe89839c7260b706298ca349f7 # v5.5.1
+  #       with:
+  #         token: ${{ secrets.CODECOV_TOKEN }}
+  #         fail_ci_if_error: true
 
   gatekeeper:
     name: Gatekeeper
@@ -189,7 +188,7 @@ jobs:
     needs:
       - lint
       - typecheck
-      - test
+      # - test
       - renovate-config-lint
       - validate-lefthook-config
     if: ${{ !cancelled() }}

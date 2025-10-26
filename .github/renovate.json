@@ -67,17 +67,6 @@
       "automerge": true
     },
     {
-      "groupName": "Testing Framework",
-      "matchPackageNames": [
-        "vitest",
-        "@testing-library/*",
-        "@vitest/*",
-        "happy-dom"
-      ],
-      "automerge": true,
-      "minimumReleaseAge": "3 days"
-    },
-    {
       "groupName": "ESLint and Prettier",
       "matchPackageNames": [
         "eslint",
@@ -97,13 +86,8 @@
       "minimumReleaseAge": "3 days"
     },
     {
-      "groupName": "Next.js Group",
-      "matchPackageNames": ["next", "@next/{/,}**"],
-      "automerge": true
-    },
-    {
-      "groupName": "React Group",
-      "matchPackageNames": ["@types/react", "@types/react-dom", "react{/,}**"],
+      "groupName": "Astro Group",
+      "matchPackageNames": ["astro", "@astrojs/*"],
       "automerge": true
     },
     {

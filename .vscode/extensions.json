@@ -6,7 +6,8 @@
     // * JavaScript, TypeScript
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
-    "ZixuanChen.vitest-explorer",
-    "kingwl.vscode-vitest-runner"
+    "astro-build.astro-vscode"
+    // "ZixuanChen.vitest-explorer",
+    // "kingwl.vscode-vitest-runner"
   ]
 }

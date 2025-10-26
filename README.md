@@ -10,13 +10,14 @@
 
 This is [my portfolio site](https://roottool.vercel.app). I use the below stacks on this site.
 
-- React
-- Next.js
+- Astro 5.x
 - TypeScript
+- Tailwind CSS v4
+- Bun
 
 ## Setting up the environment
 
-Run `pnpm install` in the root of your cloned repository.
+Run `bun install` in the root of your cloned repository.
 
 ## License
 
