@@ -6,31 +6,28 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ### Package Management
 
-- Uses `pnpm` as package manager (version refers from packageManager in package.json)
-- Install dependencies: `pnpm install`
+- Uses `bun` as package manager and runtime
+- Install dependencies: `bun install`
 
 ### Development Workflow
 
-- **Development server**: `pnpm run dev` (Next.js dev server)
-- **Build**: `pnpm run build` (Next.js build task)
-- **Production server**: `pnpm run start`
+- **Development server**: `bun run dev` (Astro dev server)
+- **Build**: `bun run build` (Astro static site build)
+- **Production preview**: `bun run preview` (Preview production build locally)
 
 ### Code Quality
 
-- **Lint**: `pnpm run lint` (runs ESLint + Prettier checks)
-- **Format**: `pnpm run format` (formats code with Prettier)
-- **Fix**: `pnpm run fix` (auto-fixes ESLint issues + formats)
-- **Type check**: `pnpm run typecheck` (TypeScript compiler check)
-
-### Testing
-
-- **Run tests**: `pnpm run test` (Vitest with coverage)
-- **Watch mode**: `pnpm run test:watch`
-- **Coverage only**: `pnpm run test:vitest`
+- **Lint**: `bun run lint` (runs ESLint + Prettier + Astro checks)
+  - `bun run lint:prettier` - Prettier format check
+  - `bun run lint:eslint` - ESLint check
+  - `bun run lint:astro` - Astro check (TypeScript + template validation)
+- **Format**: `bun run format` (formats code with Prettier)
+- **Fix**: `bun run fix` (auto-fixes ESLint issues + formats)
+- **Type check**: `bun run typecheck` (TypeScript compiler check)
 
 ### Dependency Management
 
-- **Validate Renovate config**: `pnpm --package renovate dlx renovate-config-validator --strict` (run from project root)
+- **Validate Renovate config**: `bunx -p renovate renovate-config-validator --strict` (run from project root)
 - **Configuration file**: `.github/renovate.json`
 - **Schedule**: Before 3am every weekday and Sunday (JST)
 - **Security-first approach**: Security updates receive highest priority (10) with automatic merging
@@ -40,68 +37,78 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
   - Testing frameworks: 3-day minimum age
   - Build tools: 5-day minimum age
 - **GitHub Actions**: Trust-based handling with first-party actions auto-merged, third-party requiring manual review
-- **Node.js constraints**: Major Node.js updates disabled to prevent compatibility issues
+- **Runtime constraints**: Major runtime updates disabled to prevent compatibility issues
 
 ## Architecture Overview
 
 ### Tech Stack
 
-- **Framework**: Next.js with React (versions in package.json)
+- **Framework**: Astro 5.x (static site generator)
 - **Language**: TypeScript with strict configuration
-- **Styling**: Tailwind CSS + Stitches (@stitches/react)
-- **State Management**: SWR for data fetching
-- **Validation**: Valibot for environment variables and schemas
-- **HTTP Client**: ky library
-- **Testing**: Vitest with React Testing Library and Happy DOM
-- **Mocking**: MSW (Mock Service Worker)
+- **Styling**: Tailwind CSS v4 with custom utility system
+- **Runtime**: Bun (JavaScript runtime and package manager)
 
 ### Project Structure
 
 ```text
 src/
-├── components/
-│   ├── atoms/          # Basic UI components (Backdrop, PageTitleWrapper)
-│   ├── layouts/        # Layout components (Navbar, SideDrawer, FetchErrorBoundary)
-│   ├── organisms/      # Complex components (GameInfoList)
-│   ├── templates/      # Page templates (Home, Hobbies, BasicLayout)
-│   └── ui/            # Reusable UI components
-├── hooks/             # Custom React hooks (useFetch)
-├── libs/              # Utility libraries and configurations
-│   ├── steam/         # Steam API related utilities
-│   ├── env.ts         # Environment variable validation
-│   ├── fetcher.ts     # HTTP client configuration
-│   └── utils.ts       # General utilities
-├── mocks/             # MSW mock handlers and data
-├── pages/             # Next.js pages (file-based routing)
-│   └── api/           # API routes
-└── styles/            # Style constants and global CSS
+├── components/     # Astro components (GitHubContributions, SteamSummary, SpotifyRecent)
+├── layouts/        # Layout components (Layout.astro)
+├── pages/          # Astro pages with file-based routing (index.astro)
+└── styles/         # Global CSS and Tailwind configuration (global.css)
 ```
 
 ### Key Configuration Details
 
-- **File Extensions**: Next.js uses custom extensions (`.page.tsx` for pages, `.api.ts` for API routes)
+- **File Extensions**: Astro components use `.astro` extension
 - **Path Aliases**: `@/*` maps to `src/*`, `$/*` maps to `public/*`
-- **Environment**: Requires Steam API configuration (STEAM_API_KEY, STEAM_USER_ID, etc.)
-- **Image Optimization**: Configured for Steam CDN images
+- **Environment**: Astro environment variables (astro:env/server):
+  - `GITHUB_USERNAME` - GitHub username for contributions API (public)
+  - `STEAM_API_KEY` - Steam Web API key (secret)
+  - `STEAM_ID` - Steam user ID (public)
+- **Output**: Static site generation (`output: 'static'` in astro.config.mjs)
 - **Git Hooks**: Lefthook configured for pre-commit linting and formatting
 - **Renovate Configuration**: Comprehensive dependency management with security-first approach
 
+### Styling System
+
+- Uses Tailwind CSS v4 with custom utilities defined in `src/styles/global.css`
+- Custom grid area utilities for layout management:
+  - `grid-areas-layout` - Defines header/main/footer grid template
+  - `grid-area-{name}` - Assigns elements to named grid areas
+- Dark theme with neutral color palette (neutral-900, neutral-800, etc.)
+- Responsive design with mobile-first approach
+
+### API Integrations
+
+The portfolio displays data from three external sources:
+
+1. **GitHub Contributions**
+   - Fetches merged pull requests via GitHub Search API
+   - Filters out PRs to own repositories
+   - Displays recent OSS contributions
+
+2. **Steam Library**
+   - Uses Steam Web API to fetch owned games
+   - Shows games sorted by playtime
+   - Displays game capsule images from Steam CDN
+
+3. **Spotify**
+   - Embeds Spotify playlist (2024 Top Songs)
+   - Uses iframe embed with Spotify's generator
+
+All API calls are made at build time in `src/pages/index.astro` using `Promise.all()` for parallel fetching.
+
 ### Component Architecture
 
-- Follows atomic design principles (atoms → molecules → organisms → templates)
-- Uses compound export pattern for component organization
-- Leverages React Error Boundaries for API error handling
-- Implements responsive design with Tailwind CSS and Stitches breakpoints
+- **Layout Component**: Base HTML structure with header, main, and footer grid areas
+- **Feature Components**: Self-contained Astro components for each data source
+- **Props Interface**: TypeScript interfaces define expected data shapes
+- **Responsive Grid**: Utilizes Tailwind's responsive grid system (sm, md, xl breakpoints)
 
-### Steam Integration
+### Build and Deployment
 
-- Portfolio includes Steam gaming data integration
-- Custom utilities for Steam API URL construction, playtime conversion, and game sorting
-- Mock data and handlers available for development without API access
-
-### Testing Strategy
-
-- Unit tests with Vitest and React Testing Library
-- MSW for API mocking in tests
-- Coverage reporting configured (excludes types, mocks, and styles)
-- Happy DOM as test environment for better performance than jsdom
+- Static site generation with Astro
+- No client-side JavaScript by default (static HTML/CSS)
+- Build output in `dist/` directory
+- Optimized for deployment to static hosting platforms (Vercel)

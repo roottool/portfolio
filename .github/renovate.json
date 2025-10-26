@@ -66,17 +66,6 @@
       "pinDigests": true,
       "automerge": true
     },
-    // {
-    //   "groupName": "Testing Framework",
-    //   "matchPackageNames": [
-    //     "vitest",
-    //     "@testing-library/*",
-    //     "@vitest/*",
-    //     "happy-dom"
-    //   ],
-    //   "automerge": true,
-    //   "minimumReleaseAge": "3 days"
-    // },
     {
       "groupName": "ESLint and Prettier",
       "matchPackageNames": [

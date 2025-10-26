@@ -19,9 +19,10 @@ const commonTsConfig = {
 		'unused-imports': unusedImports,
 	},
 	settings: {
-		'import/resolver-next': [
+		'import/resolver': [
 			createTypeScriptImportResolver({
 				alwaysTryTypes: true,
+				bun: true,
 			}),
 		],
 	},

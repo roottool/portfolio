@@ -73,7 +73,7 @@ jobs:
         with:
           persist-credentials: false
           sparse-checkout: |
-            .github/actions/setup-node-and-pnpm/action.yml
+            .github/actions/setup-bun/action.yml
             .github/renovate.json
             package.json
             pnpm-lock.yaml
@@ -81,15 +81,13 @@ jobs:
           sparse-checkout-cone-mode: false
 
       - name: Initialize
-        uses: ./.github/actions/setup-node-and-pnpm
-        with:
-          node-version: ${{ env.NODE_VERSION }}
+        uses: ./.github/actions/setup-bun
 
       - name: Check format by Prettier
-        run: pnpm exec prettier --check .github/renovate.json
+        run: bunx prettier --check .github/renovate.json
 
       - name: Validate Renovate config
-        run: pnpm --package renovate dlx renovate-config-validator --strict
+        run: bunx -p renovate renovate-config-validator --strict
 
   validate-lefthook-config:
     name: Validate Lefthook config
@@ -103,7 +101,7 @@ jobs:
         with:
           persist-credentials: false
           sparse-checkout: |
-            .github/actions/setup-node-and-pnpm/action.yml
+            .github/actions/setup-bun/action.yml
             lefthook.yml
             package.json
             pnpm-lock.yaml
@@ -111,15 +109,13 @@ jobs:
           sparse-checkout-cone-mode: false
 
       - name: Initialize
-        uses: ./.github/actions/setup-node-and-pnpm
-        with:
-          node-version: ${{ env.NODE_VERSION }}
+        uses: ./.github/actions/setup-bun
 
       - name: Check format by Prettier
-        run: pnpm exec prettier --check lefthook.yml
+        run: bunx prettier --check lefthook.yml
 
       - name: Validate Lefthook config
-        run: pnpm exec lefthook validate
+        run: bunx lefthook validate
 
   lint:
     name: Lint
