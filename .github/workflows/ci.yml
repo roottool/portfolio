@@ -52,7 +52,7 @@ jobs:
         with:
           filters: |
             typescript:
-              - 'pnpm-lock.yaml'
+              - 'bun.lock'
               - '**/tsconfig*.json'
               - '**/*.ts'
               - '**/*.tsx'
@@ -76,7 +76,7 @@ jobs:
             .github/actions/setup-bun/action.yml
             .github/renovate.json
             package.json
-            pnpm-lock.yaml
+            bun.lock
             prettier.config.mjs
           sparse-checkout-cone-mode: false
 
@@ -104,7 +104,7 @@ jobs:
             .github/actions/setup-bun/action.yml
             lefthook.yml
             package.json
-            pnpm-lock.yaml
+            bun.lock
             prettier.config.mjs
           sparse-checkout-cone-mode: false
 
