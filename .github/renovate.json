@@ -34,6 +34,11 @@
       "matchUpdateTypes": ["minor", "patch"],
       "automerge": true,
       "automergeType": "pr",
+      "managerFilePatterns": [
+        "/(^|/)bun\\.lockb?$/",
+        "/(^|/)package\\.json$/",
+        "/(^|/)pnpm-lock\\.yaml$/"
+      ],
       "minimumReleaseAge": "3 days"
     },
     {
@@ -43,12 +48,22 @@
       "matchUpdateTypes": ["minor", "patch"],
       "automerge": true,
       "automergeType": "pr",
+      "managerFilePatterns": [
+        "/(^|/)bun\\.lockb?$/",
+        "/(^|/)package\\.json$/",
+        "/(^|/)pnpm-lock\\.yaml$/"
+      ],
       "minimumReleaseAge": "3 days"
     },
     {
       "groupName": "Major Updates",
       "matchUpdateTypes": ["major"],
       "automerge": false,
+      "managerFilePatterns": [
+        "/(^|/)bun\\.lockb?$/",
+        "/(^|/)package\\.json$/",
+        "/(^|/)pnpm-lock\\.yaml$/"
+      ],
       "minimumReleaseAge": "7 days",
       "prPriority": 5
     },
@@ -77,17 +92,32 @@
         "typescript-eslint"
       ],
       "automerge": true,
+      "managerFilePatterns": [
+        "/(^|/)bun\\.lockb?$/",
+        "/(^|/)package\\.json$/",
+        "/(^|/)pnpm-lock\\.yaml$/"
+      ],
       "minimumReleaseAge": "3 days"
     },
     {
       "groupName": "Type definitions Group",
       "automerge": true,
       "matchPackageNames": ["@types/{/,}**"],
+      "managerFilePatterns": [
+        "/(^|/)bun\\.lockb?$/",
+        "/(^|/)package\\.json$/",
+        "/(^|/)pnpm-lock\\.yaml$/"
+      ],
       "minimumReleaseAge": "3 days"
     },
     {
       "groupName": "Astro Group",
       "matchPackageNames": ["astro", "@astrojs/*"],
+      "managerFilePatterns": [
+        "/(^|/)bun\\.lockb?$/",
+        "/(^|/)package\\.json$/",
+        "/(^|/)pnpm-lock\\.yaml$/"
+      ],
       "automerge": true
     },
     {
