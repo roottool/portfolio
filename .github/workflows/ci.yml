@@ -152,8 +152,11 @@ jobs:
       - name: Initialize
         uses: ./.github/actions/setup-bun
 
+      - name: Run astro check
+        run: bun run typecheck:astro
+
       - name: Run type check
-        run: bun run typecheck
+        run: bun run typecheck:tsc
 
   # test:
   #   name: Test

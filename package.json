@@ -24,11 +24,12 @@
     "lint": "run-s -c lint:*",
     "lint:prettier": "prettier --check .",
     "lint:eslint": "eslint --color --max-warnings=0 .",
-    "lint:astro": "astro check",
     "format": "prettier --cache --write .",
     "fix": "run-s -c fix:* format",
     "fix:eslint": "eslint --color --fix .",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "run-s -c typecheck:*",
+    "typecheck:astro": "astro check",
+    "typecheck:tsc": "tsc --noEmit"
   },
   "msw": {
     "workerDirectory": "public"
