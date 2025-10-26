@@ -4,11 +4,17 @@ const config = {
 	singleQuote: true,
 	useTabs: true,
 	tabWidth: 2,
-	plugins: ['@trivago/prettier-plugin-sort-imports'],
-	importOrder: ['^next', '^react', '<THIRD_PARTY_MODULES>', '^(@|[.]{1,2})/'],
+	plugins: ['@trivago/prettier-plugin-sort-imports', 'prettier-plugin-astro'],
+	importOrder: ['<THIRD_PARTY_MODULES>', '^(@|[.]{1,2})/'],
 	importOrderSeparation: true,
 	importOrderSortSpecifiers: true,
 	overrides: [
+		{
+			files: '*.astro',
+			options: {
+				parser: 'astro',
+			},
+		},
 		{
 			files: ['*.md', '*.json', '*.yml', '*.yaml'],
 			options: {

@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro'
+import GitHubContributions from '../components/GitHubContributions.astro'
+import SteamSummary from '../components/SteamSummary.astro'
+import SpotifyRecent from '../components/SpotifyRecent.astro'
+import { GITHUB_USERNAME, STEAM_API_KEY, STEAM_ID } from 'astro:env/server'
+
+// OSSへのマージ済みPRを検索
+const githubUrl = `https://api.github.com/search/issues?q=author:${GITHUB_USERNAME}+is:pr+is:merged&sort=updated&order=desc`
+
+// Steam API（ライブラリ用）
+const steamUrl = `https://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${STEAM_API_KEY}&steamid=${STEAM_ID}&include_appinfo=1&include_played_free_games=1&format=json`
+
+const [github, steam] = await Promise.all([
+	fetch(githubUrl).then((r) => r.json()),
+	fetch(steamUrl).then((r) => r.json()),
+])
+---
+
+<Layout>
+	<GitHubContributions data={github} />
+	<SteamSummary data={steam.response} />
+	<SpotifyRecent />
+</Layout>

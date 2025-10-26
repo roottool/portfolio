@@ -1,10 +1,10 @@
 {
+  "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
     "target": "es2023",
     "lib": ["dom", "dom.iterable", "esnext"],
     "module": "esnext",
     "moduleResolution": "bundler",
-    "jsx": "preserve",
     "strict": true,
     "noEmit": true,
     "noUnusedLocals": true,
@@ -26,24 +26,11 @@
     "isolatedModules": true,
     "resolveJsonModule": true,
     "erasableSyntaxOnly": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
     "paths": {
       "@/*": ["./src/*"],
       "$/*": ["./public/*"]
     }
   },
-  "include": [
-    "next-env.d.ts",
-    "vitest.*.ts",
-    "vitest.*.mts",
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "src/**/*.json",
-    ".next/types/**/*.ts"
-  ],
-  "exclude": [".next", "node_modules"]
+  "include": [".astro/types.d.ts", "**/*"],
+  "exclude": ["dist"]
 }

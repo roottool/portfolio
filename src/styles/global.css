@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@utility grid-areas-* {
+	grid-template-areas: --value([\*]);
+}
+
+@utility grid-area-* {
+	grid-area: --value([\*]);
+}
+
+@theme {
+	--grid-areas-layout: 'header' 'main' 'footer';
+
+	--grid-area-header: header;
+	--grid-area-main: main;
+	--grid-area-footer: footer;
+}
