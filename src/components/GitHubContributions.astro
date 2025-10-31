@@ -13,7 +13,10 @@ interface PartialIssueItem {
 	html_url: string
 	title: string
 	number: number
-	closed_at: string
+	pull_request: PullRequest
+}
+interface PullRequest {
+	merged_at: string
 }
 
 const { data } = Astro.props
@@ -25,17 +28,15 @@ const excludeOwnedItems = data.items.filter((pr) => {
 	return owner.toLowerCase() !== GITHUB_USERNAME.toLowerCase()
 })
 
-const mergedPrs = { items: excludeOwnedItems }
-const items = mergedPrs.items ?? []
-items.sort((a, b) => {
-	const aTime = new Date(a.closed_at).getTime()
-	const bTime = new Date(b.closed_at).getTime()
+const mergedPrs = excludeOwnedItems.sort((a, b) => {
+	const aTime = new Date(a.pull_request.merged_at).getTime()
+	const bTime = new Date(b.pull_request.merged_at).getTime()
 	return bTime - aTime
 })
-const displayItems = items.map((pr) => {
-	const d = new Date(pr.closed_at)
-	const closed_at_fmt = `${d.getFullYear()}/${String(d.getMonth() + 1).padStart(2, '0')}/${String(d.getDate()).padStart(2, '0')}`
-	return { ...pr, closed_at_fmt }
+const mergedPrsInDesc = mergedPrs.map((pr) => {
+	const d = new Date(pr.pull_request.merged_at)
+	const mergedAtFmt = `${d.getFullYear()}/${String(d.getMonth() + 1).padStart(2, '0')}/${String(d.getDate()).padStart(2, '0')}`
+	return { ...pr, mergedAtFmt }
 })
 ---
 
@@ -46,7 +47,7 @@ const displayItems = items.map((pr) => {
 
 	<div class="grid grid-rows-subgrid grid-cols-1 gap-4 md:overflow-auto">
 		{
-			displayItems.map((pr) => {
+			mergedPrsInDesc.map((pr) => {
 				const repoName = pr.repository_url.split('/').slice(-2).join('/')
 				return (
 					<a
@@ -64,7 +65,7 @@ const displayItems = items.map((pr) => {
 							</p>
 						</div>
 						<p class="text-xs text-gray-500">
-							#{pr.number} • {pr.closed_at_fmt}
+							#{pr.number} • {pr.mergedAtFmt}
 						</p>
 					</a>
 				)
