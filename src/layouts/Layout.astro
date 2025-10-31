@@ -1,4 +1,8 @@
 ---
+import { GITHUB_USERNAME } from 'astro:env/server'
+import GitHubLogo from '../assets/logo/github.svg'
+import XLogo from '../assets/logo/x.svg'
+
 const NAME = 'roottool' as const satisfies string
 const { title = NAME } = Astro.props
 ---
@@ -44,7 +48,27 @@ const { title = NAME } = Astro.props
 		<footer
 			class="grid-area-footer sticky bottom-0 bg-neutral-900 text-center text-gray-500 text-xs py-6 border-t border-neutral-800"
 		>
-			© 2025 {NAME}.dev
+			<div class="flex justify-center gap-6 mb-4">
+				<a
+					href={`https://github.com/${GITHUB_USERNAME}`}
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label="GitHub"
+					class="text-gray-500 hover:text-white transition-colors duration-200"
+				>
+					<GitHubLogo class="w-6 h-6" />
+				</a>
+				<a
+					href="https://x.com/roottool"
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label="X"
+					class="text-gray-500 hover:text-white transition-colors duration-200"
+				>
+					<XLogo class="w-6 h-6" />
+				</a>
+			</div>
+			<div>© 2025 {NAME}</div>
 		</footer>
 	</body>
 </html>
