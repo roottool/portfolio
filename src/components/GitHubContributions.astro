@@ -27,6 +27,16 @@ const excludeOwnedItems = data.items.filter((pr) => {
 
 const mergedPrs = { items: excludeOwnedItems }
 const items = mergedPrs.items ?? []
+items.sort((a, b) => {
+	const aTime = new Date(a.closed_at).getTime()
+	const bTime = new Date(b.closed_at).getTime()
+	return bTime - aTime
+})
+const displayItems = items.map((pr) => {
+	const d = new Date(pr.closed_at)
+	const closed_at_fmt = `${d.getFullYear()}/${String(d.getMonth() + 1).padStart(2, '0')}/${String(d.getDate()).padStart(2, '0')}`
+	return { ...pr, closed_at_fmt }
+})
 ---
 
 <section class="flex flex-col gap-4">
@@ -36,7 +46,7 @@ const items = mergedPrs.items ?? []
 
 	<div class="grid grid-rows-subgrid grid-cols-1 gap-4 md:overflow-auto">
 		{
-			items.map((pr) => {
+			displayItems.map((pr) => {
 				const repoName = pr.repository_url.split('/').slice(-2).join('/')
 				return (
 					<a
@@ -54,7 +64,7 @@ const items = mergedPrs.items ?? []
 							</p>
 						</div>
 						<p class="text-xs text-gray-500">
-							#{pr.number} • {new Date(pr.closed_at).toLocaleDateString()}
+							#{pr.number} • {pr.closed_at_fmt}
 						</p>
 					</a>
 				)
