@@ -17,27 +17,35 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ### Code Quality
 
-- **Lint**: `bun run lint` (runs ESLint + Prettier + Astro checks)
+- **Lint**: `bun run lint` (runs ESLint + Prettier checks in sequence)
   - `bun run lint:prettier` - Prettier format check
   - `bun run lint:eslint` - ESLint check
-  - `bun run lint:astro` - Astro check (TypeScript + template validation)
 - **Format**: `bun run format` (formats code with Prettier)
-- **Fix**: `bun run fix` (auto-fixes ESLint issues + formats)
-- **Type check**: `bun run typecheck` (TypeScript compiler check)
+- **Fix**: `bun run fix` (auto-fixes ESLint issues + formats with Prettier)
+- **Type check**: `bun run typecheck` (runs both Astro check and TypeScript compiler)
+  - `bun run typecheck:astro` - Astro check (TypeScript + template validation)
+  - `bun run typecheck:tsc` - TypeScript compiler check
 
 ### Dependency Management
 
 - **Validate Renovate config**: `bunx -p renovate renovate-config-validator --strict` (run from project root)
 - **Configuration file**: `.github/renovate.json`
 - **Schedule**: Before 3am every weekday and Sunday (JST)
-- **Security-first approach**: Security updates receive highest priority (10) with automatic merging
-- **Stability periods**: Non-patch updates wait 3 days, major updates wait 7 days
-- **Package grouping**: Related packages grouped for efficient updates:
-  - ESLint/Prettier tools: 2-day minimum age
-  - Testing frameworks: 3-day minimum age
-  - Build tools: 5-day minimum age
-- **GitHub Actions**: Trust-based handling with first-party actions auto-merged, third-party requiring manual review
-- **Runtime constraints**: Major runtime updates disabled to prevent compatibility issues
+- **Security-first approach**: Vulnerability alerts automatically merged with priority
+- **Lock file maintenance**: Automatically updated on first day of each month
+- **Stability periods**:
+  - Non-patch updates: 3-day minimum release age
+  - Major updates: 7-day minimum release age
+- **Package grouping strategy**: Related packages grouped for efficient updates
+  - Non-major devDependencies: Auto-merge minor/patch updates
+  - Non-major dependencies: Auto-merge minor/patch updates
+  - ESLint/Prettier tools: Auto-merge with 3-day minimum age
+  - Astro packages: Auto-merge all updates
+  - Type definitions: Auto-merge with 3-day minimum age
+- **GitHub Actions**:
+  - Common first-party actions (actions/_, github/_): Auto-merge with digest pinning
+  - Other actions: Auto-merge with 3-day minimum age and digest pinning
+- **Runtime constraints**: Node.js major version updates disabled to prevent compatibility issues
 
 ## Architecture Overview
 
@@ -67,8 +75,11 @@ src/
   - `STEAM_API_KEY` - Steam Web API key (secret)
   - `STEAM_ID` - Steam user ID (public)
 - **Output**: Static site generation (`output: 'static'` in astro.config.mjs)
-- **Git Hooks**: Lefthook configured for pre-commit linting and formatting
-- **Renovate Configuration**: Comprehensive dependency management with security-first approach
+- **Git Hooks**: Lefthook configured for pre-commit workflow (see `lefthook.yml`)
+  - Automatically runs ESLint fix + Prettier on staged `.js/.ts/.jsx/.tsx` files
+  - Automatically runs Prettier on staged `.md/.json/.yml/.yaml` files
+  - Fixed files are automatically re-staged
+  - Skips during merge and rebase operations
 
 ### Styling System
 
