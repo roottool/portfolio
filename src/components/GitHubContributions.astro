@@ -1,38 +1,33 @@
 ---
 import { GITHUB_USERNAME } from 'astro:env/server'
+import type { IssuesSearchResponse } from '@/types/github'
 
 export interface Props {
-	data: PartialIssuesResponse
-}
-interface PartialIssuesResponse {
-	items: PartialIssueItem[]
-}
-interface PartialIssueItem {
-	id: number
-	repository_url: string
-	html_url: string
-	title: string
-	number: number
-	pull_request: PullRequest
-}
-interface PullRequest {
-	merged_at: string
+	data: IssuesSearchResponse
 }
 
 const { data } = Astro.props
 
-// 自分のリポジトリへのPRを除外
+// Validate props
+if (!data?.items) {
+	throw new Error('GitHub data is missing or invalid')
+}
+
+// Filter out PRs to own repositories
 const excludeOwnedItems = data.items.filter((pr) => {
 	const repoPath = pr.repository_url.split('/').slice(-2).join('/')
 	const [owner = ''] = repoPath.split('/')
 	return owner.toLowerCase() !== GITHUB_USERNAME.toLowerCase()
 })
 
+// Sort by merged date (descending)
 const mergedPrs = excludeOwnedItems.sort((a, b) => {
 	const aTime = new Date(a.pull_request.merged_at).getTime()
 	const bTime = new Date(b.pull_request.merged_at).getTime()
 	return bTime - aTime
 })
+
+// Format merged date for display
 const mergedPrsInDesc = mergedPrs.map((pr) => {
 	const d = new Date(pr.pull_request.merged_at)
 	const mergedAtFmt = `${d.getFullYear()}/${String(d.getMonth() + 1).padStart(2, '0')}/${String(d.getDate()).padStart(2, '0')}`

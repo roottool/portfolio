@@ -1,22 +1,18 @@
 ---
+import type { OwnedGamesResponse } from '@/types/steam'
+
 export interface Props {
-	data: OwnedGamesInfoResponse
-}
-
-interface OwnedGamesInfoResponse {
-	game_count: number
-	games: OwnedGame[]
-}
-
-export interface OwnedGame {
-	appid: number
-	has_community_visible_stats: boolean
-	img_icon_url: string
-	name: string
-	playtime_forever: number
+	data: OwnedGamesResponse
 }
 
 const { data } = Astro.props
+
+// Validate props
+if (!data?.games) {
+	throw new Error('Steam data is missing or invalid')
+}
+
+// Filter games with playtime and sort by playtime (descending)
 const games = data.games
 	.filter((g) => g.playtime_forever > 0)
 	.sort((a, b) => b.playtime_forever - a.playtime_forever)
