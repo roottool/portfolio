@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+	.card-base {
+		@apply bg-neutral-900 rounded-xl hover:bg-neutral-800 transition border border-neutral-800;
+	}
+}
+
 @utility grid-areas-* {
 	grid-template-areas: --value([\*]);
 }

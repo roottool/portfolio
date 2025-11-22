@@ -1,5 +1,6 @@
 ---
-import { GITHUB_USERNAME } from 'astro:env/server'
+import { config } from '@/lib/config'
+import { processPullRequests } from '@/lib/services/github'
 import type { IssuesSearchResponse } from '@/types/github'
 
 export interface Props {
@@ -13,26 +14,8 @@ if (!data?.items) {
 	throw new Error('GitHub data is missing or invalid')
 }
 
-// Filter out PRs to own repositories
-const excludeOwnedItems = data.items.filter((pr) => {
-	const repoPath = pr.repository_url.split('/').slice(-2).join('/')
-	const [owner = ''] = repoPath.split('/')
-	return owner.toLowerCase() !== GITHUB_USERNAME.toLowerCase()
-})
-
-// Sort by merged date (descending)
-const mergedPrs = excludeOwnedItems.sort((a, b) => {
-	const aTime = new Date(a.pull_request.merged_at).getTime()
-	const bTime = new Date(b.pull_request.merged_at).getTime()
-	return bTime - aTime
-})
-
-// Format merged date for display
-const mergedPrsInDesc = mergedPrs.map((pr) => {
-	const d = new Date(pr.pull_request.merged_at)
-	const mergedAtFmt = `${d.getFullYear()}/${String(d.getMonth() + 1).padStart(2, '0')}/${String(d.getDate()).padStart(2, '0')}`
-	return { ...pr, mergedAtFmt }
-})
+// Process pull requests using service layer
+const mergedPrsInDesc = processPullRequests(data.items, config.github.username)
 ---
 
 <section class="flex flex-col gap-4">
@@ -49,7 +32,7 @@ const mergedPrsInDesc = mergedPrs.map((pr) => {
 						href={pr.html_url}
 						target="_blank"
 						rel="noopener noreferrer"
-						class="grid gap-2 bg-neutral-900 p-4 rounded-xl hover:bg-neutral-800 transition border border-neutral-800"
+						class="grid gap-2 card-base p-4"
 					>
 						<div class="overflow-hidden">
 							<h3 class="text-sm sm:text-base font-semibold text-white truncate">

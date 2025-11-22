@@ -3,22 +3,40 @@ import Layout from '../layouts/Layout.astro'
 import GitHubContributions from '../components/GitHubContributions.astro'
 import SteamSummary from '../components/SteamSummary.astro'
 import SpotifyRecent from '../components/SpotifyRecent.astro'
-import { GITHUB_USERNAME, STEAM_API_KEY, STEAM_ID } from 'astro:env/server'
+import { config } from '@/lib/config'
+import { fetchGitHubContributions } from '@/lib/api/github'
+import { fetchSteamLibrary } from '@/lib/api/steam'
+import type { IssuesSearchResponse } from '@/types/github'
+import type { OwnedGamesResponse } from '@/types/steam'
 
-// Search for merged PRs to OSS projects
-const githubUrl = `https://api.github.com/search/issues?q=author:${GITHUB_USERNAME}+is:pr+is:merged&sort=updated&order=desc`
+let github: IssuesSearchResponse | null = null
+let steam: OwnedGamesResponse | null = null
+let errorMessage: string | null = null
 
-// Steam API (for owned games library)
-const steamUrl = `https://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${STEAM_API_KEY}&steamid=${STEAM_ID}&include_appinfo=1&include_played_free_games=1&format=json`
-
-const [github, steam] = await Promise.all([
-	fetch(githubUrl).then((r) => r.json()),
-	fetch(steamUrl).then((r) => r.json()),
-])
+try {
+	const [githubData, steamData] = await Promise.all([
+		fetchGitHubContributions(config.github.username),
+		fetchSteamLibrary(config.steam.apiKey, config.steam.steamId),
+	])
+	github = githubData
+	steam = steamData.response
+} catch (error) {
+	console.error('API fetch failed:', error)
+	errorMessage =
+		error instanceof Error ? error.message : 'Unknown error occurred'
+}
 ---
 
 <Layout>
-	<GitHubContributions data={github} />
+	{
+		errorMessage && (
+			<div class="bg-red-900/20 border border-red-800 text-red-400 p-4 rounded-xl">
+				<p class="font-semibold">エラーが発生しました</p>
+				<p class="text-sm mt-1">{errorMessage}</p>
+			</div>
+		)
+	}
+	{github && <GitHubContributions data={github} />}
 	<SpotifyRecent />
-	<SteamSummary data={steam.response} />
+	{steam && <SteamSummary data={steam} />}
 </Layout>

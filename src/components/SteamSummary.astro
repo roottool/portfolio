@@ -1,4 +1,6 @@
 ---
+import { STEAM } from '@/lib/constants'
+import { processGames } from '@/lib/services/steam'
 import type { OwnedGamesResponse } from '@/types/steam'
 
 export interface Props {
@@ -12,10 +14,8 @@ if (!data?.games) {
 	throw new Error('Steam data is missing or invalid')
 }
 
-// Filter games with playtime and sort by playtime (descending)
-const games = data.games
-	.filter((g) => g.playtime_forever > 0)
-	.sort((a, b) => b.playtime_forever - a.playtime_forever)
+// Process games using service layer
+const games = processGames(data.games)
 ---
 
 <section class="flex flex-col gap-4">
@@ -29,13 +29,13 @@ const games = data.games
 		{
 			games.map((game) => (
 				<a
-					href={`https://store.steampowered.com/app/${game.appid}`}
+					href={`${STEAM.STORE_URL}${game.appid}`}
 					target="_blank"
 					rel="noopener noreferrer"
-					class="grid grid-cols-subgrid gap-2 bg-neutral-900 rounded-xl p-2 sm:p-3 shadow hover:bg-neutral-800 transition border border-neutral-800"
+					class="grid grid-cols-subgrid gap-2 card-base p-2 sm:p-3 shadow"
 				>
 					<img
-						src={`https://cdn.cloudflare.steamstatic.com/steam/apps/${game.appid}/capsule_231x87.jpg`}
+						src={`${STEAM.CDN_URL}${game.appid}/capsule_231x87.jpg`}
 						alt={game.name}
 						class="rounded-md w-full"
 						loading="lazy"
@@ -47,7 +47,8 @@ const games = data.games
 							{game.name}
 						</h3>
 						<p class="text-[10px] sm:text-xs text-gray-400">
-							合計プレイ時間: {(game.playtime_forever / 60).toFixed(1)} 時間
+							合計プレイ時間:{' '}
+							{(game.playtime_forever / STEAM.MINUTES_PER_HOUR).toFixed(1)} 時間
 						</p>
 					</div>
 				</a>
