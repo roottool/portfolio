@@ -53,10 +53,10 @@ const games = processGames(data.games)
 						height="87"
 					/>
 					<div>
-						<h3 class="text-xs sm:text-sm font-semibold text-white truncate">
+						<h3 class="text-sm sm:text-base font-semibold text-white truncate">
 							{game.name}
 						</h3>
-						<p class="text-[10px] sm:text-xs text-gray-400">
+						<p class="text-xs text-gray-400">
 							合計プレイ時間:{' '}
 							{(game.playtime_forever / STEAM.MINUTES_PER_HOUR).toFixed(1)} 時間
 						</p>
