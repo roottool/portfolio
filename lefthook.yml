@@ -10,7 +10,7 @@ pre-commit:
     - rebase
   jobs:
     - name: jsts
-      glob: "*.{?(c|m)js,jsx,?(c|m)ts,tsx}"
+      glob: "*.{astro,?(c|m)js,jsx,?(c|m)ts,tsx}"
       group:
         piped: true
         jobs:
@@ -18,6 +18,6 @@ pre-commit:
           - run: bunx dprint fmt {staged_files}
       stage_fixed: true
     - name: other-formats
-      glob: "*.{astro,md,json,y?(a)ml}"
+      glob: "*.{md,json,y?(a)ml}"
       run: bunx dprint fmt {staged_files}
       stage_fixed: true
