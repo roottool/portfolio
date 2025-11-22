@@ -18,7 +18,7 @@ languages:
 
 # the encoding used by text files in the project
 # For a list of possible encodings, see https://docs.python.org/3.11/library/codecs.html#standard-encodings
-encoding: 'utf-8'
+encoding: "utf-8"
 
 # whether to use the project's gitignore file to ignore files
 # Added on 2025-04-07
@@ -78,7 +78,7 @@ excluded_tools: []
 
 # initial prompt for the project. It will always be given to the LLM upon activating the project
 # (contrary to the memories, which are loaded on demand).
-initial_prompt: ''
+initial_prompt: ""
 
-project_name: 'portfolio'
+project_name: "portfolio"
 included_optional_tools: []

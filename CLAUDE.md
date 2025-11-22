@@ -21,9 +21,10 @@ This file contains Claude Code-specific guidance and detailed configurations.
 - **Package grouping strategy**: Related packages grouped for efficient updates
   - Non-major devDependencies: Auto-merge minor/patch updates
   - Non-major dependencies: Auto-merge minor/patch updates
-  - ESLint/Prettier tools: Auto-merge with 3-day minimum age
+  - ESLint/dprint tools: Auto-merge with 3-day minimum age
   - Astro packages: Auto-merge all updates
   - Type definitions: Auto-merge with 3-day minimum age
+  - dprint plugins (via custom regex manager): Auto-update plugin URLs in dprint.json
 - **GitHub Actions**:
   - Common first-party actions (actions/_, github/_): Auto-merge with digest pinning
   - Other actions: Auto-merge with 3-day minimum age and digest pinning
@@ -33,8 +34,8 @@ This file contains Claude Code-specific guidance and detailed configurations.
 
 Lefthook configured for pre-commit workflow (see `lefthook.yml`):
 
-- Automatically runs ESLint fix + Prettier on staged `.js/.ts/.jsx/.tsx` files
-- Automatically runs Prettier on staged `.md/.json/.yml/.yaml` files
+- Automatically runs ESLint fix + dprint on staged `.js/.ts/.jsx/.tsx` files
+- Automatically runs dprint on staged `.astro/.md/.json/.yml/.yaml` files
 - Fixed files are automatically re-staged
 - Skips during merge and rebase operations
 

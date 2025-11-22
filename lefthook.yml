@@ -10,14 +10,14 @@ pre-commit:
     - rebase
   jobs:
     - name: jsts
-      glob: '*.{?(c|m)js,jsx,?(c|m)ts,tsx}'
+      glob: "*.{astro,?(c|m)js,jsx,?(c|m)ts,tsx}"
       group:
         piped: true
         jobs:
           - run: bunx eslint --cache --color --fix {staged_files}
-          - run: bunx prettier --cache --write {staged_files}
+          - run: bunx dprint fmt {staged_files}
       stage_fixed: true
-    - name: only prettier
-      glob: '*.{md,json,y?(a)ml}'
-      run: bunx prettier --cache --write {staged_files}
+    - name: other-formats
+      glob: "*.{md,json,y?(a)ml}"
+      run: bunx dprint fmt {staged_files}
       stage_fixed: true

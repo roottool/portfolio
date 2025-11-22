@@ -33,24 +33,16 @@ const { title = NAME } = Astro.props
 		<title>{title}</title>
 		<link rel="stylesheet" href="/src/styles/global.css" />
 	</head>
-	<body
-		class="grid grid-areas-layout grid-rows-[max-content_1fr_max-content] font-sans h-screen md:overflow-hidden bg-linear-to-b from-neutral-950 to-neutral-900"
-	>
-		<header
-			class="grid-area-header auto-rows-auto text-center py-6 border-b border-neutral-800"
-		>
+	<body class="grid grid-areas-layout grid-rows-[max-content_1fr_max-content] font-sans h-screen md:overflow-hidden bg-linear-to-b from-neutral-950 to-neutral-900">
+		<header class="grid-area-header auto-rows-auto text-center py-6 border-b border-neutral-800">
 			<h1 class="text-3xl sm:text-4xl font-bold tracking-wide">🤖 roottool</h1>
 		</header>
 
-		<main
-			class="grid-area-main max-w-7xl mx-auto px-4 sm:px-8 py-10 md:overflow-hidden grid grid-rows-1 gap-8 sm:grid-cols-2 xl:grid-cols-3"
-		>
+		<main class="grid-area-main max-w-7xl mx-auto px-4 sm:px-8 py-10 md:overflow-hidden grid grid-rows-1 gap-8 sm:grid-cols-2 xl:grid-cols-3">
 			<slot />
 		</main>
 
-		<footer
-			class="grid-area-footer sticky bottom-0 bg-neutral-900 text-center text-gray-400 text-xs py-6 border-t border-neutral-800"
-		>
+		<footer class="grid-area-footer sticky bottom-0 bg-neutral-900 text-center text-gray-400 text-xs py-6 border-t border-neutral-800">
 			<div class="flex justify-center gap-6 mb-4">
 				<a
 					href={`https://github.com/${GITHUB_USERNAME}`}

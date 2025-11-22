@@ -8,7 +8,8 @@ import type { IssuesSearchResponse } from '@/types/github'
 export async function fetchGitHubContributions(
 	username: string,
 ): Promise<IssuesSearchResponse> {
-	const url = `https://api.github.com/search/issues?q=author:${username}+is:pr+is:merged&sort=updated&order=desc`
+	const url =
+		`https://api.github.com/search/issues?q=author:${username}+is:pr+is:merged&sort=updated&order=desc`
 	const response = await fetch(url)
 
 	if (!response.ok) {

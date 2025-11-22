@@ -1,5 +1,5 @@
 name: CI
-run-name: '${{ github.workflow }} (${{ github.ref_name }})'
+run-name: "${{ github.workflow }} (${{ github.ref_name }})"
 on:
   push:
     branches:
@@ -12,7 +12,7 @@ on:
       - ready_for_review
 
 env:
-  NODE_VERSION: '22'
+  NODE_VERSION: "22"
 
 # Declare default permissions as read only.
 permissions: read-all
@@ -77,14 +77,14 @@ jobs:
             .github/renovate.json
             package.json
             bun.lock
-            prettier.config.mjs
+            dprint.json
           sparse-checkout-cone-mode: false
 
       - name: Initialize
         uses: ./.github/actions/setup-bun
 
-      - name: Check format by Prettier
-        run: bunx prettier --check .github/renovate.json
+      - name: Check format by dprint
+        run: bunx dprint check .github/renovate.json
 
       - name: Validate Renovate config
         run: bunx -p renovate renovate-config-validator --strict
@@ -105,14 +105,14 @@ jobs:
             lefthook.yml
             package.json
             bun.lock
-            prettier.config.mjs
+            dprint.json
           sparse-checkout-cone-mode: false
 
       - name: Initialize
         uses: ./.github/actions/setup-bun
 
-      - name: Check format by Prettier
-        run: bunx prettier --check lefthook.yml
+      - name: Check format by dprint
+        run: bunx dprint check lefthook.yml
 
       - name: Validate Lefthook config
         run: bunx lefthook validate
@@ -131,11 +131,11 @@ jobs:
       - name: Initialize
         uses: ./.github/actions/setup-bun
 
+      - name: Run format check
+        run: bun run lint:dprint
+
       - name: Generate Astro types
         run: bunx astro sync
-
-      - name: Run format check
-        run: bun run lint:prettier
 
       - name: Run lint
         run: bun run lint:eslint

@@ -5,7 +5,7 @@
     "editorconfig.editorconfig",
     // * JavaScript, TypeScript
     "dbaeumer.vscode-eslint",
-    "esbenp.prettier-vscode",
+    "dprint.dprint",
     "astro-build.astro-vscode"
     // "ZixuanChen.vitest-explorer",
     // "kingwl.vscode-vitest-runner"
