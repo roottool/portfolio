@@ -19,6 +19,15 @@ This is [my portfolio site](https://roottool.vercel.app). I use the below stacks
 
 Run `bun install` in the root of your cloned repository.
 
+## Quick Start
+
+```bash
+bun install    # Install dependencies
+bun run dev    # Start development server
+```
+
+For detailed development guide, see [AGENTS.md](./AGENTS.md).
+
 ## License
 
 [MIT license](LICENSE)
