@@ -35,13 +35,16 @@ const games = processGames(data.games)
 					class="grid grid-cols-subgrid gap-2 card-base p-2 sm:p-3 shadow"
 				>
 					<img
-						src={`${STEAM.CDN_URL}${game.appid}/capsule_231x87.jpg`}
+						src={`${STEAM.CDN_URL}${game.appid}/capsule_184x69.jpg`}
+						srcset={`${STEAM.CDN_URL}${game.appid}/capsule_184x69.jpg 184w, ${STEAM.CDN_URL}${game.appid}/capsule_231x87.jpg 231w`}
+						sizes="(max-width: 640px) 184px, 231px"
 						alt={game.name}
 						class="rounded-md w-full"
+						style="aspect-ratio: 231 / 87;"
 						loading={index < 6 ? 'eager' : 'lazy'}
 						decoding="async"
 						fetchpriority={index < 6 ? 'high' : 'low'}
-						width="237"
+						width="231"
 						height="87"
 					/>
 					<div>
