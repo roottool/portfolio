@@ -27,19 +27,29 @@ const games = processGames(data.games)
 		class="flex-1 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 gap-3 sm:gap-4 md:overflow-auto"
 	>
 		{
-			games.map((game) => (
+			games.map((game, index) => (
 				<a
 					href={`${STEAM.STORE_URL}${game.appid}`}
 					target="_blank"
 					rel="noopener noreferrer"
 					class="grid grid-cols-subgrid gap-2 card-base p-2 sm:p-3 shadow"
+					style={
+						index >= 6
+							? 'content-visibility: auto; contain-intrinsic-size: auto 120px;'
+							: ''
+					}
 				>
 					<img
-						src={`${STEAM.CDN_URL}${game.appid}/capsule_231x87.jpg`}
+						src={`${STEAM.CDN_URL}${game.appid}/capsule_184x69.jpg`}
+						srcset={`${STEAM.CDN_URL}${game.appid}/capsule_184x69.jpg 184w, ${STEAM.CDN_URL}${game.appid}/capsule_231x87.jpg 231w`}
+						sizes="(max-width: 640px) 184px, 231px"
 						alt={game.name}
 						class="rounded-md w-full"
-						loading="lazy"
-						width="237"
+						style="aspect-ratio: 231 / 87;"
+						loading={index < 6 ? 'eager' : 'lazy'}
+						decoding="async"
+						fetchpriority={index < 6 ? 'high' : 'low'}
+						width="231"
 						height="87"
 					/>
 					<div>
