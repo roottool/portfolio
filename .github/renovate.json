@@ -1,8 +1,16 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended", "schedule:daily"],
-  "schedule": ["before 3am every weekday", "before 3am on sunday"],
-  "labels": ["dependencies"],
+  "extends": [
+    "config:recommended",
+    "schedule:daily"
+  ],
+  "schedule": [
+    "before 3am every weekday",
+    "before 3am on sunday"
+  ],
+  "labels": [
+    "dependencies"
+  ],
   "timezone": "Asia/Tokyo",
   "prHourlyLimit": 4,
   "prConcurrentLimit": 10,
@@ -18,19 +26,25 @@
   "rebaseWhen": "conflicted",
   "vulnerabilityAlerts": {
     "enabled": true,
-    "labels": ["security"],
+    "labels": [
+      "security"
+    ],
     "automerge": true
   },
   "lockFileMaintenance": {
     "enabled": true,
-    "schedule": ["before 3am on the first day of the month"],
+    "schedule": [
+      "before 3am on the first day of the month"
+    ],
     "automerge": true
   },
   "customManagers": [
     {
       "description": "Update dprint plugin versions in dprint.json",
       "customType": "regex",
-      "fileMatch": ["^dprint\\.json$"],
+      "managerFilePatterns": [
+        "/^dprint\\.json$/"
+      ],
       "matchStrings": [
         "https://plugins\\.dprint\\.dev/(?<depName>[^/]+)-v?(?<currentValue>[\\d.]+)\\.wasm",
         "https://plugins\\.dprint\\.dev/g-plane/(?<depName>[^-]+)-v(?<currentValue>[\\d.]+)\\.wasm"
@@ -42,7 +56,9 @@
     {
       "description": "Update g-plane dprint plugins in dprint.json",
       "customType": "regex",
-      "fileMatch": ["^dprint\\.json$"],
+      "managerFilePatterns": [
+        "/^dprint\\.json$/"
+      ],
       "matchStrings": [
         "https://plugins\\.dprint\\.dev/g-plane/(?<depName>[^-]+)-v(?<currentValue>[\\d.]+)\\.wasm"
       ],
@@ -55,8 +71,13 @@
     {
       "groupName": "all non-major devDependencies",
       "groupSlug": "all-devDependencies-minor-patch",
-      "matchDepTypes": ["devDependencies"],
-      "matchUpdateTypes": ["minor", "patch"],
+      "matchDepTypes": [
+        "devDependencies"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
       "automerge": true,
       "automergeType": "pr",
       "minimumReleaseAge": "3 days"
@@ -64,30 +85,44 @@
     {
       "groupName": "all non-major dependencies",
       "groupSlug": "all-dependencies-minor-patch",
-      "matchDepTypes": ["dependencies"],
-      "matchUpdateTypes": ["minor", "patch"],
+      "matchDepTypes": [
+        "dependencies"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
       "automerge": true,
       "automergeType": "pr",
       "minimumReleaseAge": "3 days"
     },
     {
       "groupName": "Major Updates",
-      "matchUpdateTypes": ["major"],
+      "matchUpdateTypes": [
+        "major"
+      ],
       "automerge": false,
       "minimumReleaseAge": "7 days",
       "prPriority": 5
     },
     {
       "groupName": "GitHub Action digests",
-      "matchDepTypes": ["action"],
+      "matchDepTypes": [
+        "action"
+      ],
       "pinDigests": true,
       "automerge": true,
       "minimumReleaseAge": "3 days"
     },
     {
       "groupName": "Common GitHub Action digests",
-      "matchPackageNames": ["actions/*", "github/*"],
-      "matchDepTypes": ["action"],
+      "matchPackageNames": [
+        "actions/*",
+        "github/*"
+      ],
+      "matchDepTypes": [
+        "action"
+      ],
       "pinDigests": true,
       "automerge": true
     },
@@ -106,18 +141,27 @@
     {
       "groupName": "Type definitions Group",
       "automerge": true,
-      "matchPackageNames": ["@types/{/,}**"],
+      "matchPackageNames": [
+        "@types/{/,}**"
+      ],
       "minimumReleaseAge": "3 days"
     },
     {
       "groupName": "Astro Group",
-      "matchPackageNames": ["astro", "@astrojs/*"],
+      "matchPackageNames": [
+        "astro",
+        "@astrojs/*"
+      ],
       "automerge": true
     },
     {
       "groupName": "Node.js Version Constraint",
-      "matchPackageNames": ["node"],
-      "matchUpdateTypes": ["major"],
+      "matchPackageNames": [
+        "node"
+      ],
+      "matchUpdateTypes": [
+        "major"
+      ],
       "enabled": false,
       "description": "Disable Node.js major version updates",
       "minimumReleaseAge": "3 days"
