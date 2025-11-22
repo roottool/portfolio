@@ -27,7 +27,7 @@ const games = processGames(data.games)
 		class="flex-1 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 gap-3 sm:gap-4 md:overflow-auto"
 	>
 		{
-			games.map((game) => (
+			games.map((game, index) => (
 				<a
 					href={`${STEAM.STORE_URL}${game.appid}`}
 					target="_blank"
@@ -38,7 +38,9 @@ const games = processGames(data.games)
 						src={`${STEAM.CDN_URL}${game.appid}/capsule_231x87.jpg`}
 						alt={game.name}
 						class="rounded-md w-full"
-						loading="lazy"
+						loading={index < 6 ? 'eager' : 'lazy'}
+						decoding="async"
+						fetchpriority={index < 6 ? 'high' : 'low'}
 						width="237"
 						height="87"
 					/>
