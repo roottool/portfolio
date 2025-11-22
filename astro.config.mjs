@@ -1,8 +1,7 @@
-import tailwind from '@astrojs/tailwind'
+import tailwindcss from '@tailwindcss/vite'
 import { defineConfig, envField } from 'astro/config'
 
 export default defineConfig({
-	integrations: [tailwind()],
 	output: 'static',
 	env: {
 		schema: {
@@ -10,5 +9,8 @@ export default defineConfig({
 			STEAM_API_KEY: envField.string({ context: 'server', access: 'secret' }),
 			STEAM_ID: envField.string({ context: 'server', access: 'public' }),
 		},
+	},
+	vite: {
+		plugins: [tailwindcss()],
 	},
 })
