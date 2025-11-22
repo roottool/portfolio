@@ -2,31 +2,13 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Development Commands
+For general development information, see [AGENTS.md](./AGENTS.md).
 
-### Package Management
+This file contains Claude Code-specific guidance and detailed configurations.
 
-- Uses `bun` as package manager and runtime
-- Install dependencies: `bun install`
+## Dependency Management
 
-### Development Workflow
-
-- **Development server**: `bun run dev` (Astro dev server)
-- **Build**: `bun run build` (Astro static site build)
-- **Production preview**: `bun run preview` (Preview production build locally)
-
-### Code Quality
-
-- **Lint**: `bun run lint` (runs ESLint + Prettier checks in sequence)
-  - `bun run lint:prettier` - Prettier format check
-  - `bun run lint:eslint` - ESLint check
-- **Format**: `bun run format` (formats code with Prettier)
-- **Fix**: `bun run fix` (auto-fixes ESLint issues + formats with Prettier)
-- **Type check**: `bun run typecheck` (runs both Astro check and TypeScript compiler)
-  - `bun run typecheck:astro` - Astro check (TypeScript + template validation)
-  - `bun run typecheck:tsc` - TypeScript compiler check
-
-### Dependency Management
+### Renovate Configuration
 
 - **Validate Renovate config**: `bunx -p renovate renovate-config-validator --strict` (run from project root)
 - **Configuration file**: `.github/renovate.json`
@@ -47,77 +29,59 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
   - Other actions: Auto-merge with 3-day minimum age and digest pinning
 - **Runtime constraints**: Node.js major version updates disabled to prevent compatibility issues
 
-## Architecture Overview
+## Git Hooks
 
-### Tech Stack
+Lefthook configured for pre-commit workflow (see `lefthook.yml`):
 
-- **Framework**: Astro 5.x (static site generator)
-- **Language**: TypeScript with strict configuration
-- **Styling**: Tailwind CSS v4 with custom utility system
-- **Runtime**: Bun (JavaScript runtime and package manager)
+- Automatically runs ESLint fix + Prettier on staged `.js/.ts/.jsx/.tsx` files
+- Automatically runs Prettier on staged `.md/.json/.yml/.yaml` files
+- Fixed files are automatically re-staged
+- Skips during merge and rebase operations
 
-### Project Structure
+## Environment Variables
 
-```text
-src/
-├── components/     # Astro components (GitHubContributions, SteamSummary, SpotifyRecent)
-├── layouts/        # Layout components (Layout.astro)
-├── pages/          # Astro pages with file-based routing (index.astro)
-└── styles/         # Global CSS and Tailwind configuration (global.css)
-```
+Astro environment variables (astro:env/server):
 
-### Key Configuration Details
+- `GITHUB_USERNAME` - GitHub username for contributions API (public)
+- `STEAM_API_KEY` - Steam Web API key (secret)
+- `STEAM_ID` - Steam user ID (public)
 
-- **File Extensions**: Astro components use `.astro` extension
-- **Path Aliases**: `@/*` maps to `src/*`, `$/*` maps to `public/*`
-- **Environment**: Astro environment variables (astro:env/server):
-  - `GITHUB_USERNAME` - GitHub username for contributions API (public)
-  - `STEAM_API_KEY` - Steam Web API key (secret)
-  - `STEAM_ID` - Steam user ID (public)
-- **Output**: Static site generation (`output: 'static'` in astro.config.mjs)
-- **Git Hooks**: Lefthook configured for pre-commit workflow (see `lefthook.yml`)
-  - Automatically runs ESLint fix + Prettier on staged `.js/.ts/.jsx/.tsx` files
-  - Automatically runs Prettier on staged `.md/.json/.yml/.yaml` files
-  - Fixed files are automatically re-staged
-  - Skips during merge and rebase operations
+## API Integration Details
 
-### Styling System
-
-- Uses Tailwind CSS v4 with custom utilities defined in `src/styles/global.css`
-- Custom grid area utilities for layout management:
-  - `grid-areas-layout` - Defines header/main/footer grid template
-  - `grid-area-{name}` - Assigns elements to named grid areas
-- Dark theme with neutral color palette (neutral-900, neutral-800, etc.)
-- Responsive design with mobile-first approach
-
-### API Integrations
-
-The portfolio displays data from three external sources:
-
-1. **GitHub Contributions**
-   - Fetches merged pull requests via GitHub Search API
-   - Filters out PRs to own repositories
-   - Displays recent OSS contributions
-
-2. **Steam Library**
-   - Uses Steam Web API to fetch owned games
-   - Shows games sorted by playtime
-   - Displays game capsule images from Steam CDN
-
-3. **Spotify**
-   - Embeds Spotify playlist (2024 Top Songs)
-   - Uses iframe embed with Spotify's generator
+### Implementation
 
 All API calls are made at build time in `src/pages/index.astro` using `Promise.all()` for parallel fetching.
 
-### Component Architecture
+### GitHub Contributions
 
-- **Layout Component**: Base HTML structure with header, main, and footer grid areas
-- **Feature Components**: Self-contained Astro components for each data source
-- **Props Interface**: TypeScript interfaces define expected data shapes
-- **Responsive Grid**: Utilizes Tailwind's responsive grid system (sm, md, xl breakpoints)
+- Fetches merged pull requests via GitHub Search API
+- Filters out PRs to own repositories
+- Displays recent OSS contributions
 
-### Build and Deployment
+### Steam Library
+
+- Uses Steam Web API to fetch owned games
+- Shows games sorted by playtime
+- Displays game capsule images from Steam CDN
+
+### Spotify
+
+- Embeds Spotify playlist (2024 Top Songs)
+- Uses iframe embed with Spotify's generator
+
+## Component Architecture Details
+
+### Props Interface
+
+TypeScript interfaces define expected data shapes for all components.
+
+### Layout System
+
+- Base HTML structure with header, main, and footer grid areas
+- Custom grid area utilities for layout management
+- Responsive Grid: Utilizes Tailwind's responsive grid system (sm, md, xl breakpoints)
+
+## Build and Deployment
 
 - Static site generation with Astro
 - No client-side JavaScript by default (static HTML/CSS)
