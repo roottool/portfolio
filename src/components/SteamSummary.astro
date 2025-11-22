@@ -15,7 +15,7 @@ if (!data?.games) {
 }
 
 // Process games using service layer
-const games = processGames(data.games)
+const games = processGames(data.games).slice(0, 12)
 ---
 
 <section class="flex flex-col gap-4">
@@ -24,7 +24,7 @@ const games = processGames(data.games)
 	</h2>
 
 	<div
-		class="flex-1 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 gap-3 sm:gap-4 md:overflow-auto"
+		class="flex-1 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 auto-rows-1fr gap-3 sm:gap-4 md:overflow-auto"
 	>
 		{
 			games.map((game, index) => (
@@ -32,19 +32,14 @@ const games = processGames(data.games)
 					href={`${STEAM.STORE_URL}${game.appid}`}
 					target="_blank"
 					rel="noopener noreferrer"
-					class="grid grid-cols-subgrid gap-2 card-base p-2 sm:p-3 shadow"
-					style={
-						index >= 6
-							? 'content-visibility: auto; contain-intrinsic-size: auto 120px;'
-							: ''
-					}
+					class="flex flex-col gap-2 sm:gap-3 card-base p-2 sm:p-3 shadow"
 				>
 					<img
 						src={`${STEAM.CDN_URL}${game.appid}/capsule_184x69.jpg`}
 						srcset={`${STEAM.CDN_URL}${game.appid}/capsule_184x69.jpg 184w, ${STEAM.CDN_URL}${game.appid}/capsule_231x87.jpg 231w`}
 						sizes="(max-width: 640px) 184px, 231px"
 						alt={game.name}
-						class="rounded-md w-full"
+						class="rounded-md w-full object-cover"
 						style="aspect-ratio: 231 / 87;"
 						loading={index < 6 ? 'eager' : 'lazy'}
 						decoding="async"
@@ -52,11 +47,11 @@ const games = processGames(data.games)
 						width="231"
 						height="87"
 					/>
-					<div>
-						<h3 class="text-xs sm:text-sm font-semibold text-white truncate">
+					<div class="flex flex-col gap-0 sm:gap-1">
+						<h3 class="text-sm sm:text-base font-semibold text-white truncate">
 							{game.name}
 						</h3>
-						<p class="text-[10px] sm:text-xs text-gray-400">
+						<p class="text-xs text-gray-400">
 							合計プレイ時間:{' '}
 							{(game.playtime_forever / STEAM.MINUTES_PER_HOUR).toFixed(1)} 時間
 						</p>
