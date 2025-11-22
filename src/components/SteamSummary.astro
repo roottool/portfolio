@@ -33,7 +33,11 @@ const games = processGames(data.games)
 					target="_blank"
 					rel="noopener noreferrer"
 					class="grid grid-cols-subgrid gap-2 card-base p-2 sm:p-3 shadow"
-					style={index >= 6 ? 'content-visibility: auto; contain-intrinsic-size: auto 120px;' : ''}
+					style={
+						index >= 6
+							? 'content-visibility: auto; contain-intrinsic-size: auto 120px;'
+							: ''
+					}
 				>
 					<img
 						src={`${STEAM.CDN_URL}${game.appid}/capsule_184x69.jpg`}
