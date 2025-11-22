@@ -26,6 +26,31 @@
     "schedule": ["before 3am on the first day of the month"],
     "automerge": true
   },
+  "customManagers": [
+    {
+      "description": "Update dprint plugin versions in dprint.json",
+      "customType": "regex",
+      "fileMatch": ["^dprint\\.json$"],
+      "matchStrings": [
+        "https://plugins\\.dprint\\.dev/(?<depName>[^/]+)-v?(?<currentValue>[\\d.]+)\\.wasm",
+        "https://plugins\\.dprint\\.dev/g-plane/(?<depName>[^-]+)-v(?<currentValue>[\\d.]+)\\.wasm"
+      ],
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "dprint/dprint-plugin-{{{depName}}}",
+      "extractVersionTemplate": "^v?(?<version>.+)$"
+    },
+    {
+      "description": "Update g-plane dprint plugins in dprint.json",
+      "customType": "regex",
+      "fileMatch": ["^dprint\\.json$"],
+      "matchStrings": [
+        "https://plugins\\.dprint\\.dev/g-plane/(?<depName>[^-]+)-v(?<currentValue>[\\d.]+)\\.wasm"
+      ],
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "g-plane/{{{depName}}}",
+      "extractVersionTemplate": "^v?(?<version>.+)$"
+    }
+  ],
   "packageRules": [
     {
       "groupName": "all non-major devDependencies",
@@ -67,13 +92,12 @@
       "automerge": true
     },
     {
-      "groupName": "ESLint and Prettier",
+      "groupName": "ESLint and dprint",
       "matchPackageNames": [
         "eslint",
-        "prettier",
+        "dprint",
         "@eslint/*",
         "eslint-*",
-        "prettier-*",
         "typescript-eslint"
       ],
       "automerge": true,

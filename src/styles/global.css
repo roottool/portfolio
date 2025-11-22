@@ -1,8 +1,9 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @layer components {
 	.card-base {
-		@apply bg-neutral-900 rounded-xl hover:bg-neutral-800 transition border border-neutral-800;
+		@apply bg-neutral-900 rounded-xl hover:bg-neutral-800 transition border
+			border-neutral-800;
 	}
 }
 
@@ -15,7 +16,7 @@
 }
 
 @theme {
-	--grid-areas-layout: 'header' 'main' 'footer';
+	--grid-areas-layout: "header" "main" "footer";
 
 	--grid-area-header: header;
 	--grid-area-main: main;

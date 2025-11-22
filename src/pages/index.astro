@@ -22,20 +22,19 @@ try {
 	steam = steamData.response
 } catch (error) {
 	console.error('API fetch failed:', error)
-	errorMessage =
-		error instanceof Error ? error.message : 'Unknown error occurred'
+	errorMessage = error instanceof Error
+		? error.message
+		: 'Unknown error occurred'
 }
 ---
 
 <Layout>
-	{
-		errorMessage && (
-			<div class="bg-red-900/20 border border-red-800 text-red-400 p-4 rounded-xl">
-				<p class="font-semibold">エラーが発生しました</p>
-				<p class="text-sm mt-1">{errorMessage}</p>
-			</div>
-		)
-	}
+	{errorMessage && (
+		<div class="bg-red-900/20 border border-red-800 text-red-400 p-4 rounded-xl">
+			<p class="font-semibold">エラーが発生しました</p>
+			<p class="text-sm mt-1">{errorMessage}</p>
+		</div>
+	)}
 	{github && <GitHubContributions data={github} />}
 	<SpotifyRecent />
 	{steam && <SteamSummary data={steam} />}
