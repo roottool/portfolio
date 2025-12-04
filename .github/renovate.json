@@ -139,6 +139,22 @@
       "minimumReleaseAge": "3 days"
     },
     {
+      "groupName": "dprint WASM plugins",
+      "matchManagers": [
+        "custom.regex"
+      ],
+      "matchPackageNames": [
+        "dprint/dprint-plugin-typescript",
+        "dprint/dprint-plugin-json",
+        "dprint/dprint-plugin-markdown",
+        "g-plane/malva",
+        "g-plane/markup_fmt",
+        "g-plane/pretty_yaml"
+      ],
+      "automerge": true,
+      "minimumReleaseAge": "3 days"
+    },
+    {
       "groupName": "Type definitions Group",
       "automerge": true,
       "matchPackageNames": [
