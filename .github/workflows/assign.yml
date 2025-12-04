@@ -13,7 +13,7 @@ defaults:
 
 jobs:
   assign:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     timeout-minutes: 2
     permissions:
       pull-requests: write
