@@ -17,7 +17,7 @@
   "javascript.preferences.importModuleSpecifierEnding": "minimal",
   "typescript.preferences.importModuleSpecifier": "non-relative",
   "typescript.preferences.importModuleSpecifierEnding": "minimal",
-  "[javascript|typescript|typescriptreact|json|jsonc|yaml]": {
+  "[astro|javascript|typescript|typescriptreact|json|jsonc|yaml]": {
     "editor.defaultFormatter": "dprint.dprint"
   },
   "json.schemas": [
