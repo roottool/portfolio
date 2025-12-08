@@ -186,7 +186,7 @@ jobs:
 
   gatekeeper:
     name: Gatekeeper
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-slim
     timeout-minutes: 1
     needs:
       - lint
