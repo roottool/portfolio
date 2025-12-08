@@ -51,7 +51,7 @@
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "{{{depName}}}",
       "extractVersionTemplate": "^v?(?<version>.+)$"
-    },
+    }
   ],
   "packageRules": [
     {
