@@ -46,7 +46,7 @@
         "/^dprint\\.json$/"
       ],
       "matchStrings": [
-        "https://plugins\\.dprint\\.dev/(?<depName>[^/]+)-v?(?<currentValue>[\\d.]+)\\.wasm",
+        "https://plugins\\.dprint\\.dev/(?<depName>[^/]+)-v?(?<currentValue>[\\d.]+)\\.wasm"
       ],
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "dprint/dprint-plugin-{{{depName}}}",
