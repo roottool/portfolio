@@ -68,6 +68,7 @@ jobs:
 
       - name: Create branch and commit
         if: steps.changes.outputs.changed == 'true'
+        id: create_branch
         run: |
           BRANCH="chore/update-oss-contributions-$(date +%Y%m%d%H%M%S)"
           git config user.name "github-actions[bot]"
@@ -76,6 +77,7 @@ jobs:
           git add src/assets/oss-contributions.json
           git commit -m "chore: update OSS contributions data"
           git push --set-upstream origin "$BRANCH"
+          echo "branch=$BRANCH" >> $GITHUB_OUTPUT
 
       - name: Create Pull Request
         if: steps.changes.outputs.changed == 'true'
@@ -95,21 +97,23 @@ jobs:
 
             ---
             🤖 This PR was automatically created by GitHub Actions
+          BRANCH: ${{ steps.create_branch.outputs.branch }}
+        id: create_pr
         run: |
-          BRANCH="chore/update-oss-contributions-$(date +%Y%m%d%H%M%S)"
-          gh pr create \
+          PR_NUMBER=$(gh pr create \
             --base main \
             --head "$BRANCH" \
             --title "chore: update OSS contributions data" \
             --body "$PR_BODY" \
             --label "data,automated" \
-            --assignee "${{ github.repository_owner }}"
+            --assignee "${{ github.repository_owner }}" \
+            --json number -q .number)
+          echo "pr_number=$PR_NUMBER" >> $GITHUB_OUTPUT
 
       - name: Enable auto-merge
         if: steps.changes.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          BRANCH="chore/update-oss-contributions-$(date +%Y%m%d%H%M%S)"
-          PR_NUMBER=$(gh pr view "$BRANCH" --json number -q .number)
+          PR_NUMBER=${{ steps.create_pr.outputs.pr_number }}
           gh pr merge "$PR_NUMBER" --auto --squash
