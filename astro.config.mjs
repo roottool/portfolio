@@ -5,7 +5,6 @@ export default defineConfig({
 	output: 'static',
 	env: {
 		schema: {
-			GITHUB_USERNAME: envField.string({ context: 'server', access: 'public' }),
 			STEAM_API_KEY: envField.string({ context: 'server', access: 'secret' }),
 			STEAM_ID: envField.string({ context: 'server', access: 'public' }),
 		},
