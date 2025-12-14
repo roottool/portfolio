@@ -3,7 +3,7 @@ run-name: "${{ github.workflow }} (${{ github.ref_name }})"
 
 on:
   schedule:
-    # 毎週日曜日午前0時（JST）= 土曜日15:00（UTC）
+    # Every Sunday at 00:00 JST = Saturday 15:00 UTC
     - cron: "0 15 * * 6"
   workflow_dispatch:
 
@@ -24,8 +24,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
-      contents: write # For branch creation and push
-      pull-requests: write # For PR creation and auto-merge
+      # For branch creation and push
+      contents: write
+      # For PR creation and auto-merge
+      pull-requests: write
     steps:
       - name: Checkout Repository
         uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
