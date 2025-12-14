@@ -1,332 +1,305 @@
 [
   {
-    "closedAt": "2025-09-08T20:06:21Z",
-    "id": "PR_kwDOBC3Cis6lpKEx",
-    "number": 83121,
-    "repository": {
-      "name": "next.js",
-      "nameWithOwner": "vercel/next.js"
-    },
-    "title": "cna: fix typo",
-    "url": "https://github.com/vercel/next.js/pull/83121"
+    "closedAt": "2025-12-14T15:58:19Z",
+    "id": "PR_kwDOQolsQM64xu96",
+    "number": 2,
+    "repository": { "name": "aywson", "nameWithOwner": "threepointone/aywson" },
+    "title": "Version Packages",
+    "url": "https://github.com/threepointone/aywson/pull/2"
   },
   {
-    "closedAt": "2025-05-31T12:00:25Z",
-    "id": "PR_kwDOCPu5ec6YX7Dx",
-    "number": 1065,
-    "repository": {
-      "name": "eslint-plugin-package-json",
-      "nameWithOwner": "JoshuaKGoldberg/eslint-plugin-package-json"
-    },
-    "title": "feat: add `require-type` rule",
-    "url": "https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/pull/1065"
+    "closedAt": "2025-12-14T15:56:34Z",
+    "id": "PR_kwDOLrbNpM64xuRT",
+    "number": 3644,
+    "repository": { "name": "website", "nameWithOwner": "biomejs/website" },
+    "title": "chore(ci): synchronize to `b064786`",
+    "url": "https://github.com/biomejs/website/pull/3644"
   },
   {
-    "closedAt": "2025-06-02T14:01:40Z",
-    "id": "PR_kwDOCd3hms6X_mFU",
-    "number": 11251,
+    "closedAt": "2025-12-14T15:56:16Z",
+    "id": "PR_kwDOO1qx2c64xuNx",
+    "number": 3927,
     "repository": {
-      "name": "typescript-eslint",
-      "nameWithOwner": "typescript-eslint/typescript-eslint"
+      "name": "Analysis",
+      "nameWithOwner": "Castro-Media/Analysis"
     },
-    "title": "fix: exclude docs/ directory from eslint-plugin package",
-    "url": "https://github.com/typescript-eslint/typescript-eslint/pull/11251"
+    "title": "Automated pipeline run",
+    "url": "https://github.com/Castro-Media/Analysis/pull/3927"
   },
   {
-    "closedAt": "2025-03-21T21:32:27Z",
-    "id": "PR_kwDOFwVEvs6PggwY",
-    "number": 549,
+    "closedAt": "2025-12-14T15:55:34Z",
+    "id": "PR_kwDOIkdAO864xt8w",
+    "number": 8645,
     "repository": {
-      "name": "tailwind-merge",
-      "nameWithOwner": "dcastil/tailwind-merge"
+      "name": "TMLeague.github.io",
+      "nameWithOwner": "TMLeague/TMLeague.github.io"
     },
-    "title": "Fix typo in comment in types.ts",
-    "url": "https://github.com/dcastil/tailwind-merge/pull/549"
+    "title": "Games imported automatically",
+    "url": "https://github.com/TMLeague/TMLeague.github.io/pull/8645"
   },
   {
-    "closedAt": "2025-03-08T08:49:44Z",
-    "id": "PR_kwDOKp7B386N25A-",
-    "number": 301,
-    "repository": {
-      "name": "oxc-project.github.io",
-      "nameWithOwner": "oxc-project/oxc-project.github.io"
-    },
-    "title": "docs(linter): Fix broken URL by typo",
-    "url": "https://github.com/oxc-project/oxc-project.github.io/pull/301"
+    "closedAt": "2025-12-14T15:55:35Z",
+    "id": "PR_kwDOQolsQM64xtub",
+    "number": 1,
+    "repository": { "name": "aywson", "nameWithOwner": "threepointone/aywson" },
+    "title": "Version Packages",
+    "url": "https://github.com/threepointone/aywson/pull/1"
   },
   {
-    "closedAt": "2024-12-10T03:51:35Z",
-    "id": "PR_kwDOLpBp6s6CPXht",
-    "number": 39,
+    "closedAt": "2025-12-14T15:51:42Z",
+    "id": "PR_kwDOMxkbr864xtBQ",
+    "number": 1923,
     "repository": {
-      "name": "delete-action-cache",
-      "nameWithOwner": "toshimaru/delete-action-cache"
+      "name": "FrancoStino",
+      "nameWithOwner": "FrancoStino/FrancoStino"
     },
-    "title": "chore: Fix typo",
-    "url": "https://github.com/toshimaru/delete-action-cache/pull/39"
+    "title": "🤖 Auto-update: GitHub Stats & Visualizations",
+    "url": "https://github.com/FrancoStino/FrancoStino/pull/1923"
   },
   {
-    "closedAt": "2024-11-16T13:26:07Z",
-    "id": "PR_kwDOI06dYs6CCgTm",
-    "number": 204,
+    "closedAt": "2025-12-14T15:48:46Z",
+    "id": "PR_kwDOPYO57M64xsgz",
+    "number": 347,
     "repository": {
-      "name": "typescript-graph",
-      "nameWithOwner": "ysk8hori/typescript-graph"
+      "name": "nswws-feed",
+      "nameWithOwner": "kcm-nswws-feed/nswws-feed"
     },
-    "title": "Fix typo",
-    "url": "https://github.com/ysk8hori/typescript-graph/pull/204"
+    "title": "Automated file generation",
+    "url": "https://github.com/kcm-nswws-feed/nswws-feed/pull/347"
   },
   {
-    "closedAt": "2024-08-15T07:26:30Z",
-    "id": "PR_kwDOGW5OAc54PFcW",
-    "number": 6481,
-    "repository": {
-      "name": "workers-sdk",
-      "nameWithOwner": "cloudflare/workers-sdk"
-    },
-    "title": "feat (C3): Remove a bindings snippet for Hono template",
-    "url": "https://github.com/cloudflare/workers-sdk/pull/6481"
+    "closedAt": "2025-12-14T15:48:44Z",
+    "id": "PR_kwDONY5XWs64xscA",
+    "number": 535,
+    "repository": { "name": "qdash", "nameWithOwner": "oqtopus-team/qdash" },
+    "title": "release: 2025-12-15 00:48",
+    "url": "https://github.com/oqtopus-team/qdash/pull/535"
   },
   {
-    "closedAt": "2024-06-15T01:45:26Z",
-    "id": "PR_kwDOJBG-Bc5ogZNz",
-    "number": 7,
-    "repository": {
-      "name": "zenn.dev",
-      "nameWithOwner": "kimutyam/zenn.dev"
-    },
-    "title": "typo修正",
-    "url": "https://github.com/kimutyam/zenn.dev/pull/7"
+    "closedAt": "2025-12-14T15:51:27Z",
+    "id": "PR_kwDOQFA0ZM64xsYT",
+    "number": 175,
+    "repository": { "name": "re-cue", "nameWithOwner": "cue-3/re-cue" },
+    "title": "chore: bump version to 0.2.0",
+    "url": "https://github.com/cue-3/re-cue/pull/175"
   },
   {
-    "closedAt": "2024-02-11T17:56:02Z",
-    "id": "PR_kwDOJ4uKGc5miB04",
-    "number": 431,
+    "closedAt": "2025-12-14T15:47:42Z",
+    "id": "PR_kwDOBOwwks64xrwb",
+    "number": 154,
     "repository": {
-      "name": "valibot",
-      "nameWithOwner": "open-circle/valibot"
+      "name": "WellandValleyCC.github.io",
+      "nameWithOwner": "WellandValleyCC/WellandValleyCC.github.io"
     },
-    "title": "feat(i18n): add Japanese translations",
-    "url": "https://github.com/open-circle/valibot/pull/431"
+    "title": "Automated site generation for 2025",
+    "url": "https://github.com/WellandValleyCC/WellandValleyCC.github.io/pull/154"
   },
   {
-    "closedAt": "2023-12-22T14:00:27Z",
-    "id": "PR_kwDOKtMiZc5ipZpa",
-    "number": 32,
+    "closedAt": "2025-12-14T15:41:50Z",
+    "id": "PR_kwDOMxkbr864xq4E",
+    "number": 1922,
     "repository": {
-      "name": "medi-xplorer",
-      "nameWithOwner": "kohii/medi-xplorer"
+      "name": "FrancoStino",
+      "nameWithOwner": "FrancoStino/FrancoStino"
     },
-    "title": "Fix typo",
-    "url": "https://github.com/kohii/medi-xplorer/pull/32"
+    "title": "🤖 Auto-update: GitHub Stats & Visualizations",
+    "url": "https://github.com/FrancoStino/FrancoStino/pull/1922"
   },
   {
-    "closedAt": "2023-12-02T17:25:48Z",
-    "id": "PR_kwDOC4NVf85g9lGM",
-    "number": 890,
-    "repository": {
-      "name": "arktype",
-      "nameWithOwner": "arktypeio/arktype"
-    },
-    "title": " refactor: fix some typos",
-    "url": "https://github.com/arktypeio/arktype/pull/890"
+    "closedAt": "2025-12-14T15:38:06Z",
+    "id": "PR_kwDOLrbNpM64xqQV",
+    "number": 3643,
+    "repository": { "name": "website", "nameWithOwner": "biomejs/website" },
+    "title": "chore(ci): synchronize to `204844f`",
+    "url": "https://github.com/biomejs/website/pull/3643"
   },
   {
-    "closedAt": "2023-10-03T08:32:16Z",
-    "id": "PR_kwDOAzqfmc5bDraN",
-    "number": 24290,
+    "closedAt": "2025-12-14T15:33:08Z",
+    "id": "PR_kwDOLyIlLM64xoPX",
+    "number": 1204,
     "repository": {
-      "name": "storybook",
-      "nameWithOwner": "storybookjs/storybook"
+      "name": "simplifier-project-source-control",
+      "nameWithOwner": "jadedavies11/simplifier-project-source-control"
     },
-    "title": "NextJS: Change babel plugins from `proposal-...` to `transform-...`",
-    "url": "https://github.com/storybookjs/storybook/pull/24290"
+    "title": "fhir-standards-wales-dev Sun Dec 14 15:31:58 UTC 2025",
+    "url": "https://github.com/jadedavies11/simplifier-project-source-control/pull/1204"
   },
   {
-    "closedAt": "2023-07-21T22:27:37Z",
-    "id": "PR_kwDOCzCEGc5WIE2W",
-    "number": 1005,
+    "closedAt": "2025-12-14T15:31:23Z",
+    "id": "PR_kwDOPYO57M64xoCc",
+    "number": 346,
     "repository": {
-      "name": "documentation",
-      "nameWithOwner": "react-hook-form/documentation"
+      "name": "nswws-feed",
+      "nameWithOwner": "kcm-nswws-feed/nswws-feed"
     },
-    "title": "Fix some linked URLs on the \"Advanced Usage\" page",
-    "url": "https://github.com/react-hook-form/documentation/pull/1005"
+    "title": "Automated file generation",
+    "url": "https://github.com/kcm-nswws-feed/nswws-feed/pull/346"
   },
   {
-    "closedAt": "2023-01-09T16:30:26Z",
-    "id": "PR_kwDODP2WSM5G_Jrd",
-    "number": 408,
+    "closedAt": "2025-12-14T15:31:27Z",
+    "id": "PR_kwDOMxkbr864xn65",
+    "number": 1921,
     "repository": {
-      "name": "swr-site",
-      "nameWithOwner": "vercel/swr-site"
+      "name": "FrancoStino",
+      "nameWithOwner": "FrancoStino/FrancoStino"
     },
-    "title": "docs: Fix typo in `understanding.ja.mdx`",
-    "url": "https://github.com/vercel/swr-site/pull/408"
+    "title": "🤖 Auto-update: GitHub Stats & Visualizations",
+    "url": "https://github.com/FrancoStino/FrancoStino/pull/1921"
   },
   {
-    "closedAt": "2022-12-22T02:29:55Z",
-    "id": "PR_kwDOAg7WpM5GAJHB",
-    "number": 39722,
+    "closedAt": "2025-12-14T15:30:55Z",
+    "id": "PR_kwDOQj_UcM64xn5V",
+    "number": 43,
     "repository": {
-      "name": "ant-design",
-      "nameWithOwner": "ant-design/ant-design"
+      "name": "Photo-Studio-Pricing-Simulator",
+      "nameWithOwner": "ykmp-dev/Photo-Studio-Pricing-Simulator"
     },
-    "title": "docs: Fix typo in QRCode page",
-    "url": "https://github.com/ant-design/ant-design/pull/39722"
+    "title": "Auto-merge: claude/tax-inclusive-pricing-01BmvtLhyedN4MCeLRHfWDFK",
+    "url": "https://github.com/ykmp-dev/Photo-Studio-Pricing-Simulator/pull/43"
   },
   {
-    "closedAt": "2023-02-23T18:41:14Z",
-    "id": "PR_kwDOCCF3gM5ENhZc",
-    "number": 3496,
-    "repository": {
-      "name": "layer5",
-      "nameWithOwner": "layer5io/layer5"
-    },
-    "title": "Add an infinite carousel in the partner section",
-    "url": "https://github.com/layer5io/layer5/pull/3496"
+    "closedAt": "2025-12-14T15:28:12Z",
+    "id": "PR_kwDOQZa74864xme5",
+    "number": 170,
+    "repository": { "name": "dev-agent", "nameWithOwner": "lytics/dev-agent" },
+    "title": "chore: release packages",
+    "url": "https://github.com/lytics/dev-agent/pull/170"
   },
   {
-    "closedAt": "2022-10-18T20:17:09Z",
-    "id": "PR_kwDOAzqfmc5BC4wQ",
-    "number": 19526,
-    "repository": {
-      "name": "storybook",
-      "nameWithOwner": "storybookjs/storybook"
-    },
-    "title": "docs: Fix typo within doc-block-story.md",
-    "url": "https://github.com/storybookjs/storybook/pull/19526"
+    "closedAt": "2025-12-14T15:40:28Z",
+    "id": "PR_kwDOQFA0ZM64xmWx",
+    "number": 173,
+    "repository": { "name": "re-cue", "nameWithOwner": "cue-3/re-cue" },
+    "title": "chore: bump version to 0.1.0",
+    "url": "https://github.com/cue-3/re-cue/pull/173"
   },
   {
-    "closedAt": "2022-09-03T12:10:34Z",
-    "id": "PR_kwDOBIJyPs4-T8Sw",
-    "number": 8319,
+    "closedAt": "2025-12-14T15:24:49Z",
+    "id": "PR_kwDOQgzi-c64xlYK",
+    "number": 278,
     "repository": {
-      "name": "graphql-code-generator",
-      "nameWithOwner": "dotansimha/graphql-code-generator"
+      "name": "Admin-Tattler-archiver",
+      "nameWithOwner": "kcm-automation/Admin-Tattler-archiver"
     },
-    "title": "website: Add several symbols into some samples to fix typo",
-    "url": "https://github.com/dotansimha/graphql-code-generator/pull/8319"
+    "title": "Automated log update - 2025-12-14-152443",
+    "url": "https://github.com/kcm-automation/Admin-Tattler-archiver/pull/278"
   },
   {
-    "closedAt": "2022-07-07T07:46:09Z",
-    "id": "PR_kwDOBReUZ8465NZ4",
-    "number": 162,
+    "closedAt": "2025-12-14T15:32:34Z",
+    "id": "PR_kwDODVX8Hs64xk4t",
+    "number": 1443,
     "repository": {
-      "name": "shakapacker",
-      "nameWithOwner": "shakacode/shakapacker"
+      "name": "service-authenticator",
+      "nameWithOwner": "Kronos-Integration/service-authenticator"
     },
-    "title": "Fix typo in README.md",
-    "url": "https://github.com/shakacode/shakapacker/pull/162"
+    "title": "Regenerate package lock",
+    "url": "https://github.com/Kronos-Integration/service-authenticator/pull/1443"
   },
   {
-    "closedAt": "2022-06-09T13:47:30Z",
-    "id": "PR_kwDOBK7V3M415N6S",
-    "number": 2510,
+    "closedAt": "2025-12-14T15:22:37Z",
+    "id": "PR_kwDOIh3Bfc64xkuD",
+    "number": 25087,
     "repository": {
-      "name": "prettier-vscode",
-      "nameWithOwner": "prettier/prettier-vscode"
+      "name": "firefly3823",
+      "nameWithOwner": "firefly3823/firefly3823"
     },
-    "title": "Fix misspellings",
-    "url": "https://github.com/prettier/prettier-vscode/pull/2510"
+    "title": "Auto-generated metrics for run #20210044035",
+    "url": "https://github.com/firefly3823/firefly3823/pull/25087"
   },
   {
-    "closedAt": "2022-03-10T03:25:33Z",
-    "id": "PR_kwDOFAFgcc40NGtf",
-    "number": 14,
+    "closedAt": "2025-12-14T15:21:35Z",
+    "id": "PR_kwDOMxkbr864xkdt",
+    "number": 1920,
     "repository": {
-      "name": "zenn-content",
-      "nameWithOwner": "kaityo256/zenn-content"
+      "name": "FrancoStino",
+      "nameWithOwner": "FrancoStino/FrancoStino"
     },
-    "title": "Fix typo",
-    "url": "https://github.com/kaityo256/zenn-content/pull/14"
+    "title": "🤖 Auto-update: GitHub Stats & Visualizations",
+    "url": "https://github.com/FrancoStino/FrancoStino/pull/1920"
   },
   {
-    "closedAt": "2022-01-14T04:23:00Z",
-    "id": "PR_kwDOEbE9Fs4w_qgI",
-    "number": 8,
+    "closedAt": "2025-12-14T15:19:20Z",
+    "id": "PR_kwDOJWzUns64xj3Q",
+    "number": 29010,
     "repository": {
-      "name": "zenn.dev",
-      "nameWithOwner": "uhyo/zenn.dev"
+      "name": "3bsalam-1",
+      "nameWithOwner": "3bsalam-1/3bsalam-1"
     },
-    "title": "Fix typo",
-    "url": "https://github.com/uhyo/zenn.dev/pull/8"
+    "title": "Pull Request..",
+    "url": "https://github.com/3bsalam-1/3bsalam-1/pull/29010"
   },
   {
-    "closedAt": "2021-09-12T16:41:01Z",
-    "id": "MDExOlB1bGxSZXF1ZXN0NzMyMDExNTcz",
-    "number": 769,
+    "closedAt": "2025-12-14T15:19:16Z",
+    "id": "PR_kwDOJWzUns64xj2j",
+    "number": 29009,
     "repository": {
-      "name": "vscode-jest",
-      "nameWithOwner": "jest-community/vscode-jest"
+      "name": "3bsalam-1",
+      "nameWithOwner": "3bsalam-1/3bsalam-1"
     },
-    "title": "Fix typo and trim trailing whitespaces in `README.md`",
-    "url": "https://github.com/jest-community/vscode-jest/pull/769"
+    "title": "Pull Request.",
+    "url": "https://github.com/3bsalam-1/3bsalam-1/pull/29009"
   },
   {
-    "closedAt": "2021-07-19T15:29:20Z",
-    "id": "MDExOlB1bGxSZXF1ZXN0NjkyMjE3ODE5",
-    "number": 4583,
+    "closedAt": "2025-12-14T15:18:41Z",
+    "id": "PR_kwDOQj_UcM64xjkT",
+    "number": 42,
     "repository": {
-      "name": "refined-github",
-      "nameWithOwner": "refined-github/refined-github"
+      "name": "Photo-Studio-Pricing-Simulator",
+      "nameWithOwner": "ykmp-dev/Photo-Studio-Pricing-Simulator"
     },
-    "title": "Remove `copy-file` from rendered pages",
-    "url": "https://github.com/refined-github/refined-github/pull/4583"
+    "title": "Auto-merge: claude/tax-inclusive-pricing-01BmvtLhyedN4MCeLRHfWDFK",
+    "url": "https://github.com/ykmp-dev/Photo-Studio-Pricing-Simulator/pull/42"
   },
   {
-    "closedAt": "2021-01-19T18:22:09Z",
-    "id": "MDExOlB1bGxSZXF1ZXN0NTU3NTc0MDM2",
-    "number": 179,
-    "repository": {
-      "name": "media-services-application-mapper",
-      "nameWithOwner": "aws-solutions/media-services-application-mapper"
-    },
-    "title": "Remove an one sentence about a qualtrics survey from `README.md`",
-    "url": "https://github.com/aws-solutions/media-services-application-mapper/pull/179"
+    "closedAt": "2025-12-14T15:18:52Z",
+    "id": "PR_kwDOQSP7Lc64xji7",
+    "number": 265,
+    "repository": { "name": "gentoo", "nameWithOwner": "miasvanklei/gentoo" },
+    "title": "Fork Sync: Update from parent repository",
+    "url": "https://github.com/miasvanklei/gentoo/pull/265"
   },
   {
-    "closedAt": "2021-01-22T06:12:44Z",
-    "id": "MDExOlB1bGxSZXF1ZXN0NTU2MzQ1ODcx",
-    "number": 5907,
+    "closedAt": "2025-12-14T15:18:32Z",
+    "id": "PR_kwDOLfgS5864xjiv",
+    "number": 28880,
     "repository": {
-      "name": "covid19",
-      "nameWithOwner": "Tokyo-Metro-Gov/covid19"
+      "name": "MountainCar",
+      "nameWithOwner": "3bsalam-1/MountainCar"
     },
-    "title": "ドキュメント等に記載されている Node.js のバージョンを更新",
-    "url": "https://github.com/Tokyo-Metro-Gov/covid19/pull/5907"
+    "title": "Pull Request..",
+    "url": "https://github.com/3bsalam-1/MountainCar/pull/28880"
   },
   {
-    "closedAt": "2020-11-08T11:40:15Z",
-    "id": "MDExOlB1bGxSZXF1ZXN0NTE3Mjc2MTU4",
-    "number": 695,
+    "closedAt": "2025-12-14T15:18:28Z",
+    "id": "PR_kwDOLfgS5864xjhz",
+    "number": 28879,
     "repository": {
-      "name": "linaria",
-      "nameWithOwner": "callstack/linaria"
+      "name": "MountainCar",
+      "nameWithOwner": "3bsalam-1/MountainCar"
     },
-    "title": "fix: fix typo in the error message",
-    "url": "https://github.com/callstack/linaria/pull/695"
+    "title": "Pull Request.",
+    "url": "https://github.com/3bsalam-1/MountainCar/pull/28879"
   },
   {
-    "closedAt": "2019-10-28T09:17:00Z",
-    "id": "MDExOlB1bGxSZXF1ZXN0MzI5NzUyNjc1",
-    "number": 3285,
+    "closedAt": "2025-12-14T15:19:19Z",
+    "id": "PR_kwDONKVNCc64xjgw",
+    "number": 25,
     "repository": {
-      "name": "BoostNote-Legacy",
-      "nameWithOwner": "BoostIO/BoostNote-Legacy"
+      "name": "pocketbase-ts",
+      "nameWithOwner": "satohshi/pocketbase-ts"
     },
-    "title": "Fix/fix to work markdownlint#3147",
-    "url": "https://github.com/BoostIO/BoostNote-Legacy/pull/3285"
+    "title": "Version Packages",
+    "url": "https://github.com/satohshi/pocketbase-ts/pull/25"
   },
   {
-    "closedAt": "2019-05-17T07:06:06Z",
-    "id": "MDExOlB1bGxSZXF1ZXN0Mjc5NDkwOTEz",
-    "number": 11,
+    "closedAt": "2025-12-14T15:19:21Z",
+    "id": "PR_kwDOBZzkQc64xjE3",
+    "number": 1133,
     "repository": {
-      "name": "internet-cleaner",
-      "nameWithOwner": "404-html/internet-cleaner"
+      "name": "kaltura-player-js",
+      "nameWithOwner": "kaltura/kaltura-player-js"
     },
-    "title": "Fixed all content being replaced",
-    "url": "https://github.com/404-html/internet-cleaner/pull/11"
+    "title": "chore: upgrade kaltura-player dependencies",
+    "url": "https://github.com/kaltura/kaltura-player-js/pull/1133"
   }
 ]
