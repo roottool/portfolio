@@ -1,7 +1,6 @@
 ---
-import { STEAM } from '@/lib/constants'
-import { processGames } from '@/lib/services/steam'
-import type { OwnedGamesResponse } from '@/types/steam'
+import { STEAM, type OwnedGamesResponse } from '@/features/steam/api'
+import { processGames } from '@/features/steam/service'
 
 export interface Props {
 	data: OwnedGamesResponse

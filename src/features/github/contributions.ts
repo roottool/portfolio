@@ -1,5 +1,4 @@
 import { formatDate } from '@/lib/utils/date'
-import type { FormattedContribution, OssContribution } from '@/types/github'
 
 /**
  * Formats OSS contributions with display data
@@ -38,4 +37,35 @@ export function processContributions(
 	const sorted = sortByClosedDate(contributions)
 	const formatted = formatContributions(sorted)
 	return formatted.slice(0, 10)
+}
+
+/**
+ * Static OSS contribution data structure
+ */
+export interface OssContribution {
+	closedAt: string
+	id: string
+	number: number
+	repository: {
+		name: string
+		nameWithOwner: string
+	}
+	title: string
+	url: string
+}
+
+/**
+ * Formatted contribution with additional display data
+ */
+export interface FormattedContribution {
+	closedAt: string
+	id: string
+	number: number
+	repository: {
+		name: string
+		nameWithOwner: string
+	}
+	title: string
+	url: string
+	closedAtFmt: string
 }

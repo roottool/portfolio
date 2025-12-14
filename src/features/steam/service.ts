@@ -1,4 +1,4 @@
-import type { OwnedGame } from '@/types/steam'
+import type { OwnedGame } from './api'
 
 /**
  * Filters games that have been played (playtime > 0)
