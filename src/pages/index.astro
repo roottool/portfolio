@@ -1,32 +1,24 @@
 ---
-import ossContributions from '@/assets/oss-contributions.json'
-import GitHubContributions from '@/components/GitHubContributions.astro'
-import SpotifyRecent from '@/components/SpotifyRecent.astro'
-import SteamSummary from '@/components/SteamSummary.astro'
-import type { OssContribution } from '@/features/github/contributions'
-import {
-	fetchSteamLibrary,
-	type OwnedGamesResponse,
-} from '@/features/steam/api'
-import Layout from '@/layouts/Layout.astro'
-import { config } from '@/lib/config'
+import ossContributions from "@/assets/oss-contributions.json";
+import GitHubContributions from "@/components/GitHubContributions.astro";
+import SpotifyRecent from "@/components/SpotifyRecent.astro";
+import SteamSummary from "@/components/SteamSummary.astro";
+import type { OssContribution } from "@/features/github/contributions";
+import { fetchSteamLibrary, type OwnedGamesResponse } from "@/features/steam/api";
+import Layout from "@/layouts/Layout.astro";
+import { config } from "@/lib/config";
 
-let steam: OwnedGamesResponse | null = null
-let errorMessage: string | null = null
+let steam: OwnedGamesResponse | null = null;
+let errorMessage: string | null = null;
 
-const github: OssContribution[] = ossContributions as OssContribution[]
+const github: OssContribution[] = ossContributions as OssContribution[];
 
 try {
-	const steamData = await fetchSteamLibrary(
-		config.steam.apiKey,
-		config.steam.steamId,
-	)
-	steam = steamData.response
+	const steamData = await fetchSteamLibrary(config.steam.apiKey, config.steam.steamId);
+	steam = steamData.response;
 } catch (error) {
-	console.error('Steam API fetch failed:', error)
-	errorMessage = error instanceof Error
-		? error.message
-		: 'Unknown error occurred'
+	console.error("Steam API fetch failed:", error);
+	errorMessage = error instanceof Error ? error.message : "Unknown error occurred";
 }
 ---
 

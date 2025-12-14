@@ -1,12 +1,12 @@
-import eslint from '@eslint/js'
-import gitignore from 'eslint-config-flat-gitignore'
-import { createTypeScriptImportResolver } from 'eslint-import-resolver-typescript'
-import eslintPluginAstro from 'eslint-plugin-astro'
-import jsxA11yPlugin from 'eslint-plugin-jsx-a11y'
-import unusedImports from 'eslint-plugin-unused-imports'
-import { defineConfig } from 'eslint/config'
-import globals from 'globals'
-import tseslint from 'typescript-eslint'
+import eslint from "@eslint/js";
+import gitignore from "eslint-config-flat-gitignore";
+import { createTypeScriptImportResolver } from "eslint-import-resolver-typescript";
+import eslintPluginAstro from "eslint-plugin-astro";
+import jsxA11yPlugin from "eslint-plugin-jsx-a11y";
+import unusedImports from "eslint-plugin-unused-imports";
+import { defineConfig } from "eslint/config";
+import globals from "globals";
+import tseslint from "typescript-eslint";
 
 const commonTsConfig = {
 	languageOptions: {
@@ -16,10 +16,10 @@ const commonTsConfig = {
 		},
 	},
 	plugins: {
-		'unused-imports': unusedImports,
+		"unused-imports": unusedImports,
 	},
 	settings: {
-		'import/resolver': [
+		"import/resolver": [
 			createTypeScriptImportResolver({
 				alwaysTryTypes: true,
 				bun: true,
@@ -27,27 +27,27 @@ const commonTsConfig = {
 		],
 	},
 	rules: {
-		'@typescript-eslint/no-unused-vars': 'off',
-		'unused-imports/no-unused-vars': [
-			'warn',
+		"@typescript-eslint/no-unused-vars": "off",
+		"unused-imports/no-unused-vars": [
+			"warn",
 			{
-				vars: 'all',
-				varsIgnorePattern: '^_',
-				args: 'after-used',
-				argsIgnorePattern: '^_',
+				vars: "all",
+				varsIgnorePattern: "^_",
+				args: "after-used",
+				argsIgnorePattern: "^_",
 			},
 		],
 	},
-}
+};
 
 export default defineConfig(
 	gitignore({ root: true }),
 	{
-		ignores: ['pnpm-lock.yaml', 'public'],
+		ignores: ["pnpm-lock.yaml", "public"],
 	},
 	eslint.configs.recommended,
 	{
-		files: ['**/*.{astro}'],
+		files: ["**/*.{astro}"],
 		extends: [
 			eslint.configs.recommended,
 			tseslint.configs.recommendedTypeChecked,
@@ -58,7 +58,7 @@ export default defineConfig(
 		...commonTsConfig,
 	},
 	{
-		files: ['**/*.{ts,cts,mts,tsx}'],
+		files: ["**/*.{ts,cts,mts,tsx}"],
 		extends: [
 			tseslint.configs.recommendedTypeChecked,
 			tseslint.configs.stylisticTypeChecked,
@@ -67,7 +67,7 @@ export default defineConfig(
 		...commonTsConfig,
 	},
 	{
-		name: 'globals',
+		name: "globals",
 		languageOptions: {
 			globals: {
 				...globals.browser,
@@ -77,7 +77,7 @@ export default defineConfig(
 		},
 	},
 	{
-		files: ['*.{js,cjs,mjs}'],
+		files: ["*.{js,cjs,mjs}"],
 		...tseslint.configs.disableTypeChecked,
 	},
-)
+);

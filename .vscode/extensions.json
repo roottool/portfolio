@@ -1,13 +1,13 @@
 {
-  "recommendations": [
-    "tekumara.typos-vscode",
-    // * EditorConfig
-    "editorconfig.editorconfig",
-    // * JavaScript, TypeScript
-    "dbaeumer.vscode-eslint",
-    "dprint.dprint",
-    "astro-build.astro-vscode"
-    // "ZixuanChen.vitest-explorer",
-    // "kingwl.vscode-vitest-runner"
-  ]
+	"recommendations": [
+		"tekumara.typos-vscode",
+		// * EditorConfig
+		"editorconfig.editorconfig",
+		// * JavaScript, TypeScript
+		"dbaeumer.vscode-eslint",
+		"dprint.dprint",
+		"astro-build.astro-vscode"
+		// "ZixuanChen.vitest-explorer",
+		// "kingwl.vscode-vitest-runner"
+	]
 }

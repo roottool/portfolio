@@ -1,4 +1,4 @@
-import type { OwnedGame } from './api'
+import type { OwnedGame } from "./api";
 
 /**
  * Filters games that have been played (playtime > 0)
@@ -6,7 +6,7 @@ import type { OwnedGame } from './api'
  * @returns Filtered array of games with playtime
  */
 export function filterPlayedGames(games: OwnedGame[]): OwnedGame[] {
-	return games.filter((game) => game.playtime_forever > 0)
+	return games.filter((game) => game.playtime_forever > 0);
 }
 
 /**
@@ -15,7 +15,7 @@ export function filterPlayedGames(games: OwnedGame[]): OwnedGame[] {
  * @returns Sorted array of games
  */
 export function sortByPlaytime(games: OwnedGame[]): OwnedGame[] {
-	return [...games].sort((a, b) => b.playtime_forever - a.playtime_forever)
+	return [...games].sort((a, b) => b.playtime_forever - a.playtime_forever);
 }
 
 /**
@@ -24,6 +24,6 @@ export function sortByPlaytime(games: OwnedGame[]): OwnedGame[] {
  * @returns Processed array of games
  */
 export function processGames(games: OwnedGame[]): OwnedGame[] {
-	const filtered = filterPlayedGames(games)
-	return sortByPlaytime(filtered)
+	const filtered = filterPlayedGames(games);
+	return sortByPlaytime(filtered);
 }

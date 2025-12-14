@@ -1,58 +1,58 @@
 {
-  "name": "portfolio",
-  "version": "1.0.0",
-  "description": "My portfolio with Astro using TypeScript.",
-  "license": "MIT",
-  "private": true,
-  "author": {
-    "name": "roottool",
-    "url": "https://github.com/roottool"
-  },
-  "homepage": "https://roottool.vercel.app",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/roottool/portfolio.git"
-  },
-  "bugs": {
-    "url": "https://github.com/roottool/portfolio/issues"
-  },
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro",
-    "lint": "run-s -c lint:*",
-    "lint:dprint": "dprint check",
-    "lint:eslint": "eslint --color --max-warnings=0 .",
-    "format": "dprint fmt",
-    "fix": "run-s -c fix:* format",
-    "fix:eslint": "eslint --color --fix .",
-    "typecheck": "run-s -c typecheck:*",
-    "typecheck:astro": "astro check",
-    "typecheck:tsc": "tsc --noEmit"
-  },
-  "msw": {
-    "workerDirectory": "public"
-  },
-  "dependencies": {
-    "@astrojs/check": "0.9.6",
-    "astro": "5.16.5"
-  },
-  "devDependencies": {
-    "@eslint/js": "9.39.1",
-    "@tailwindcss/vite": "4.1.17",
-    "dprint": "0.50.2",
-    "eslint": "9.39.1",
-    "eslint-config-flat-gitignore": "2.1.0",
-    "eslint-import-resolver-typescript": "4.4.4",
-    "eslint-plugin-astro": "1.5.0",
-    "eslint-plugin-jsx-a11y": "6.10.2",
-    "eslint-plugin-unused-imports": "4.3.0",
-    "globals": "16.5.0",
-    "lefthook": "2.0.9",
-    "npm-run-all2": "8.0.4",
-    "tailwindcss": "4.1.17",
-    "typescript": "5.9.3",
-    "typescript-eslint": "8.49.0"
-  }
+	"name": "portfolio",
+	"version": "1.0.0",
+	"description": "My portfolio with Astro using TypeScript.",
+	"license": "MIT",
+	"private": true,
+	"author": {
+		"name": "roottool",
+		"url": "https://github.com/roottool"
+	},
+	"homepage": "https://roottool.vercel.app",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/roottool/portfolio.git"
+	},
+	"bugs": {
+		"url": "https://github.com/roottool/portfolio/issues"
+	},
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"lint": "run-s -c lint:*",
+		"lint:dprint": "dprint check",
+		"lint:eslint": "eslint --color --max-warnings=0 .",
+		"format": "dprint fmt",
+		"fix": "run-s -c fix:* format",
+		"fix:eslint": "eslint --color --fix .",
+		"typecheck": "run-s -c typecheck:*",
+		"typecheck:astro": "astro check",
+		"typecheck:tsc": "tsc --noEmit"
+	},
+	"msw": {
+		"workerDirectory": "public"
+	},
+	"dependencies": {
+		"@astrojs/check": "0.9.6",
+		"astro": "5.16.5"
+	},
+	"devDependencies": {
+		"@eslint/js": "9.39.1",
+		"@tailwindcss/vite": "4.1.17",
+		"dprint": "0.50.2",
+		"eslint": "9.39.1",
+		"eslint-config-flat-gitignore": "2.1.0",
+		"eslint-import-resolver-typescript": "4.4.4",
+		"eslint-plugin-astro": "1.5.0",
+		"eslint-plugin-jsx-a11y": "6.10.2",
+		"eslint-plugin-unused-imports": "4.3.0",
+		"globals": "16.5.0",
+		"lefthook": "2.0.9",
+		"npm-run-all2": "8.0.4",
+		"tailwindcss": "4.1.17",
+		"typescript": "5.9.3",
+		"typescript-eslint": "8.49.0"
+	}
 }

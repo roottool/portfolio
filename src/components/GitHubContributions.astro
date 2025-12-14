@@ -1,22 +1,19 @@
 ---
-import {
-	processContributions,
-	type OssContribution,
-} from '@/features/github/contributions'
+import { processContributions, type OssContribution } from "@/features/github/contributions";
 
 export interface Props {
-	data: OssContribution[]
+	data: OssContribution[];
 }
 
-const { data } = Astro.props
+const { data } = Astro.props;
 
 // Validate props
 if (!data || !Array.isArray(data)) {
-	throw new Error('GitHub contributions data is missing or invalid')
+	throw new Error("GitHub contributions data is missing or invalid");
 }
 
 // Process contributions
-const formattedContributions = processContributions(data)
+const formattedContributions = processContributions(data);
 ---
 
 <section class="flex flex-col gap-4">

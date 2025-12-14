@@ -1,46 +1,43 @@
 {
-  "files.watcherExclude": {
-    "**/node_modules/**": true
-  },
-  // * For Linter and Formatter
-  "editor.codeActionsOnSave": {
-    "source.addMissingImports": "explicit",
-    "source.organizeImports": "explicit",
-    "source.fixAll.eslint": "explicit"
-  },
-  "editor.formatOnSave": true,
-  "editor.formatOnSaveMode": "modificationsIfAvailable",
-  "editor.tabSize": 2,
-  "files.trimFinalNewlines": true,
-  "files.trimTrailingWhitespace": true,
-  "javascript.preferences.importModuleSpecifier": "non-relative",
-  "javascript.preferences.importModuleSpecifierEnding": "minimal",
-  "typescript.preferences.importModuleSpecifier": "non-relative",
-  "typescript.preferences.importModuleSpecifierEnding": "minimal",
-  "[astro|javascript|typescript|typescriptreact|json|jsonc|yaml]": {
-    "editor.defaultFormatter": "dprint.dprint"
-  },
-  "json.schemas": [
-    {
-      "fileMatch": [
-        "*.jsonc",
-        ".vscode/*.json"
-      ],
-      "schema": {
-        "allowTrailingCommas": true
-      }
-    }
-  ],
-  "[markdown]": {
-    "editor.defaultFormatter": "dprint.dprint",
-    "editor.wordWrap": "on",
-    "editor.quickSuggestions": {
-      "comments": "off",
-      "strings": "off",
-      "other": "off"
-    },
-    "files.trimTrailingWhitespace": false
-  },
-  // Extensions
-  "eslint.useFlatConfig": true
+	"files.watcherExclude": {
+		"**/node_modules/**": true
+	},
+	// * For Linter and Formatter
+	"editor.codeActionsOnSave": {
+		"source.addMissingImports": "explicit",
+		"source.organizeImports": "explicit",
+		"source.fixAll.eslint": "explicit"
+	},
+	"editor.formatOnSave": true,
+	"editor.formatOnSaveMode": "modificationsIfAvailable",
+	"editor.tabSize": 2,
+	"files.trimFinalNewlines": true,
+	"files.trimTrailingWhitespace": true,
+	"javascript.preferences.importModuleSpecifier": "non-relative",
+	"javascript.preferences.importModuleSpecifierEnding": "minimal",
+	"typescript.preferences.importModuleSpecifier": "non-relative",
+	"typescript.preferences.importModuleSpecifierEnding": "minimal",
+	"[astro|javascript|typescript|typescriptreact|json|jsonc|yaml]": {
+		"editor.defaultFormatter": "dprint.dprint"
+	},
+	"json.schemas": [
+		{
+			"fileMatch": ["*.jsonc", ".vscode/*.json"],
+			"schema": {
+				"allowTrailingCommas": true
+			}
+		}
+	],
+	"[markdown]": {
+		"editor.defaultFormatter": "dprint.dprint",
+		"editor.wordWrap": "on",
+		"editor.quickSuggestions": {
+			"comments": "off",
+			"strings": "off",
+			"other": "off"
+		},
+		"files.trimTrailingWhitespace": false
+	},
+	// Extensions
+	"eslint.useFlatConfig": true
 }

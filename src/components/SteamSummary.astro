@@ -1,20 +1,20 @@
 ---
-import { STEAM, type OwnedGamesResponse } from '@/features/steam/api'
-import { processGames } from '@/features/steam/service'
+import { STEAM, type OwnedGamesResponse } from "@/features/steam/api";
+import { processGames } from "@/features/steam/service";
 
 export interface Props {
-	data: OwnedGamesResponse
+	data: OwnedGamesResponse;
 }
 
-const { data } = Astro.props
+const { data } = Astro.props;
 
 // Validate props
 if (!data?.games) {
-	throw new Error('Steam data is missing or invalid')
+	throw new Error("Steam data is missing or invalid");
 }
 
 // Process games using service layer
-const games = processGames(data.games).slice(0, 12)
+const games = processGames(data.games).slice(0, 12);
 ---
 
 <section class="flex flex-col gap-4">
@@ -37,9 +37,9 @@ const games = processGames(data.games).slice(0, 12)
 					alt={game.name}
 					class="rounded-md w-full object-cover"
 					style="aspect-ratio: 231 / 87"
-					loading={index < 6 ? 'eager' : 'lazy'}
+					loading={index < 6 ? "eager" : "lazy"}
 					decoding="async"
-					fetchpriority={index < 6 ? 'high' : 'low'}
+					fetchpriority={index < 6 ? "high" : "low"}
 					width="231"
 					height="87"
 				/>
@@ -48,7 +48,7 @@ const games = processGames(data.games).slice(0, 12)
 						{game.name}
 					</h3>
 					<p class="text-xs text-gray-400">
-						合計プレイ時間:{' '}
+						合計プレイ時間:{" "}
 						{(game.playtime_forever / STEAM.MINUTES_PER_HOUR).toFixed(1)} 時間
 					</p>
 				</div>
