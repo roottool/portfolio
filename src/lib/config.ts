@@ -19,9 +19,7 @@ validateEnv();
 /**
  * Validated and type-safe configuration object
  */
-export const config = {
-	steam: {
-		apiKey: STEAM_API_KEY,
-		steamId: STEAM_ID,
-	},
+export const STEAM_CONFIG = {
+	apiKey: STEAM_API_KEY,
+	steamId: STEAM_ID,
 } as const;
