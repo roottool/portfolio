@@ -106,8 +106,7 @@ jobs:
             --title "chore: update OSS contributions data" \
             --body "$PR_BODY" \
             --label "data,automated" \
-            --assignee "${{ github.repository_owner }}" \
-            --json number -q .number)
+            --assignee "${{ github.repository_owner }}")
           echo "pr_number=$PR_NUMBER" >> $GITHUB_OUTPUT
 
       - name: Enable auto-merge
