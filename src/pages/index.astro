@@ -1,13 +1,15 @@
 ---
 import ossContributions from '@/assets/oss-contributions.json'
-import type { OwnedGamesResponse } from '@/features/steam/api'
-import { fetchSteamLibrary } from '@/features/steam/api'
+import GitHubContributions from '@/components/GitHubContributions.astro'
+import SpotifyRecent from '@/components/SpotifyRecent.astro'
+import SteamSummary from '@/components/SteamSummary.astro'
+import type { OssContribution } from '@/features/github/contributions'
+import {
+	fetchSteamLibrary,
+	type OwnedGamesResponse,
+} from '@/features/steam/api'
+import Layout from '@/layouts/Layout.astro'
 import { config } from '@/lib/config'
-import type { OssContribution } from '@/types/github'
-import GitHubContributions from '../components/GitHubContributions.astro'
-import SpotifyRecent from '../components/SpotifyRecent.astro'
-import SteamSummary from '../components/SteamSummary.astro'
-import Layout from '../layouts/Layout.astro'
 
 let steam: OwnedGamesResponse | null = null
 let errorMessage: string | null = null

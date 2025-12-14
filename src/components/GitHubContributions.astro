@@ -1,6 +1,8 @@
 ---
-import { processContributions } from '@/lib/utils/contributions'
-import type { OssContribution } from '@/types/github'
+import {
+	processContributions,
+	type OssContribution,
+} from '@/features/github/contributions'
 
 export interface Props {
 	data: OssContribution[]
