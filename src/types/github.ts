@@ -1,25 +1,4 @@
 /**
- * GitHub API type definitions (LEGACY - for reference only)
- */
-
-export interface PullRequest {
-	merged_at: string
-}
-
-export interface IssueItem {
-	id: number
-	repository_url: string
-	html_url: string
-	title: string
-	number: number
-	pull_request: PullRequest
-}
-
-export interface IssuesSearchResponse {
-	items: IssueItem[]
-}
-
-/**
  * Static OSS contribution data structure
  */
 export interface OssContribution {
