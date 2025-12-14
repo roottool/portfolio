@@ -15,8 +15,9 @@ pre-commit:
         piped: true
         jobs:
           - run: bunx eslint --cache --color --fix {staged_files}
+            stage_fixed: true
           - run: bunx dprint fmt {staged_files}
-      stage_fixed: true
+            stage_fixed: true
     - name: other-formats
       glob: "*.{md,json,y?(a)ml}"
       run: bunx dprint fmt {staged_files}
