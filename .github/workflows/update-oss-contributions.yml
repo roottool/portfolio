@@ -39,11 +39,11 @@ jobs:
         id: fetch
         run: |
           gh search prs \
-            --author "@me" \
+            --author "roottool" \
             --merged \
             --visibility "public" \
             --json id,number,title,url,repository,closedAt \
-            -- -user:"@me" \
+            -- -user:"roottool" \
             > temp-contributions.json
         env:
           GH_TOKEN: ${{ github.token }}
