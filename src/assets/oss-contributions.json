@@ -3,7 +3,10 @@
     "closedAt": "2025-09-08T20:06:21Z",
     "id": "PR_kwDOBC3Cis6lpKEx",
     "number": 83121,
-    "repository": { "name": "next.js", "nameWithOwner": "vercel/next.js" },
+    "repository": {
+      "name": "next.js",
+      "nameWithOwner": "vercel/next.js"
+    },
     "title": "cna: fix typo",
     "url": "https://github.com/vercel/next.js/pull/83121"
   },
@@ -88,7 +91,10 @@
     "closedAt": "2024-06-15T01:45:26Z",
     "id": "PR_kwDOJBG-Bc5ogZNz",
     "number": 7,
-    "repository": { "name": "zenn.dev", "nameWithOwner": "kimutyam/zenn.dev" },
+    "repository": {
+      "name": "zenn.dev",
+      "nameWithOwner": "kimutyam/zenn.dev"
+    },
     "title": "typo修正",
     "url": "https://github.com/kimutyam/zenn.dev/pull/7"
   },
@@ -96,7 +102,10 @@
     "closedAt": "2024-02-11T17:56:02Z",
     "id": "PR_kwDOJ4uKGc5miB04",
     "number": 431,
-    "repository": { "name": "valibot", "nameWithOwner": "open-circle/valibot" },
+    "repository": {
+      "name": "valibot",
+      "nameWithOwner": "open-circle/valibot"
+    },
     "title": "feat(i18n): add Japanese translations",
     "url": "https://github.com/open-circle/valibot/pull/431"
   },
@@ -115,7 +124,10 @@
     "closedAt": "2023-12-02T17:25:48Z",
     "id": "PR_kwDOC4NVf85g9lGM",
     "number": 890,
-    "repository": { "name": "arktype", "nameWithOwner": "arktypeio/arktype" },
+    "repository": {
+      "name": "arktype",
+      "nameWithOwner": "arktypeio/arktype"
+    },
     "title": " refactor: fix some typos",
     "url": "https://github.com/arktypeio/arktype/pull/890"
   },
@@ -145,7 +157,10 @@
     "closedAt": "2023-01-09T16:30:26Z",
     "id": "PR_kwDODP2WSM5G_Jrd",
     "number": 408,
-    "repository": { "name": "swr-site", "nameWithOwner": "vercel/swr-site" },
+    "repository": {
+      "name": "swr-site",
+      "nameWithOwner": "vercel/swr-site"
+    },
     "title": "docs: Fix typo in `understanding.ja.mdx`",
     "url": "https://github.com/vercel/swr-site/pull/408"
   },
@@ -164,7 +179,10 @@
     "closedAt": "2023-02-23T18:41:14Z",
     "id": "PR_kwDOCCF3gM5ENhZc",
     "number": 3496,
-    "repository": { "name": "layer5", "nameWithOwner": "layer5io/layer5" },
+    "repository": {
+      "name": "layer5",
+      "nameWithOwner": "layer5io/layer5"
+    },
     "title": "Add an infinite carousel in the partner section",
     "url": "https://github.com/layer5io/layer5/pull/3496"
   },
@@ -227,7 +245,10 @@
     "closedAt": "2022-01-14T04:23:00Z",
     "id": "PR_kwDOEbE9Fs4w_qgI",
     "number": 8,
-    "repository": { "name": "zenn.dev", "nameWithOwner": "uhyo/zenn.dev" },
+    "repository": {
+      "name": "zenn.dev",
+      "nameWithOwner": "uhyo/zenn.dev"
+    },
     "title": "Fix typo",
     "url": "https://github.com/uhyo/zenn.dev/pull/8"
   },
@@ -279,7 +300,10 @@
     "closedAt": "2020-11-08T11:40:15Z",
     "id": "MDExOlB1bGxSZXF1ZXN0NTE3Mjc2MTU4",
     "number": 695,
-    "repository": { "name": "linaria", "nameWithOwner": "callstack/linaria" },
+    "repository": {
+      "name": "linaria",
+      "nameWithOwner": "callstack/linaria"
+    },
     "title": "fix: fix typo in the error message",
     "url": "https://github.com/callstack/linaria/pull/695"
   },
