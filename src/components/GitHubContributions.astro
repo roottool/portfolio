@@ -1,21 +1,20 @@
 ---
-import { config } from '@/lib/config'
-import { processPullRequests } from '@/lib/services/github'
-import type { IssuesSearchResponse } from '@/types/github'
+import { processContributions } from '@/lib/utils/contributions'
+import type { OssContribution } from '@/types/github'
 
 export interface Props {
-	data: IssuesSearchResponse
+	data: OssContribution[]
 }
 
 const { data } = Astro.props
 
 // Validate props
-if (!data?.items) {
-	throw new Error('GitHub data is missing or invalid')
+if (!data || !Array.isArray(data)) {
+	throw new Error('GitHub contributions data is missing or invalid')
 }
 
-// Process pull requests using service layer
-const mergedPrsInDesc = processPullRequests(data.items, config.github.username)
+// Process contributions
+const formattedContributions = processContributions(data)
 ---
 
 <section class="flex flex-col gap-4">
@@ -24,28 +23,25 @@ const mergedPrsInDesc = processPullRequests(data.items, config.github.username)
 	</h2>
 
 	<div class="grid grid-rows-subgrid grid-cols-1 gap-4 md:overflow-auto">
-		{mergedPrsInDesc.map((pr) => {
-			const repoName = pr.repository_url.split('/').slice(-2).join('/')
-			return (
-			 <a
-				 href={pr.html_url}
-				 target="_blank"
-				 rel="noopener noreferrer"
-				 class="grid gap-2 card-base p-4"
-			 >
-				 <div class="overflow-hidden">
-					 <h3 class="text-sm sm:text-base font-semibold text-white truncate">
-						 {pr.title}
-					 </h3>
-					 <p class="text-xs sm:text-sm text-gray-400 line-clamp-2 truncate">
-						 {repoName}
-					 </p>
-				 </div>
-				 <p class="text-xs text-gray-400">
-					 #{pr.number} • {pr.mergedAtFmt}
-				 </p>
-			 </a>
-		 )
-		})}
+		{formattedContributions.map((contrib) => (
+			<a
+				href={contrib.url}
+				target="_blank"
+				rel="noopener noreferrer"
+				class="grid gap-2 card-base p-4"
+			>
+				<div class="overflow-hidden">
+					<h3 class="text-sm sm:text-base font-semibold text-white truncate">
+						{contrib.title}
+					</h3>
+					<p class="text-xs sm:text-sm text-gray-400 line-clamp-2 truncate">
+						{contrib.repository.nameWithOwner}
+					</p>
+				</div>
+				<p class="text-xs text-gray-400">
+					#{contrib.number} • {contrib.closedAtFmt}
+				</p>
+			</a>
+		))}
 	</div>
 </section>

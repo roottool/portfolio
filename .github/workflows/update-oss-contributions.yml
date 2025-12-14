@@ -1,0 +1,113 @@
+name: Update OSS Contributions
+run-name: "${{ github.workflow }} (${{ github.ref_name }})"
+
+on:
+  schedule:
+    # 毎週日曜日午前0時（JST）= 土曜日15:00（UTC）
+    - cron: "0 15 * * 6"
+  workflow_dispatch:
+
+# Declare default permissions as read only.
+permissions: read-all
+
+defaults:
+  run:
+    shell: bash
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+
+jobs:
+  update:
+    name: Update OSS contributions data
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write # For branch creation and push
+      pull-requests: write # For PR creation and auto-merge
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+        with:
+          persist-credentials: true
+
+      - name: Initialize
+        uses: ./.github/actions/setup-bun
+
+      - name: Fetch OSS contributions
+        id: fetch
+        run: |
+          gh search prs \
+            --author "@me" \
+            --merged \
+            --visibility "public" \
+            --json id,number,title,url,repository,closedAt \
+            -- -user:"@me" \
+            > temp-contributions.json
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Format and move JSON
+        run: |
+          bunx dprint fmt temp-contributions.json
+          mv temp-contributions.json src/assets/oss-contributions.json
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if git diff --quiet src/assets/oss-contributions.json; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "No changes detected"
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "Changes detected"
+          fi
+
+      - name: Create branch and commit
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          BRANCH="chore/update-oss-contributions-$(date +%Y%m%d)"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add src/assets/oss-contributions.json
+          git commit -m "chore: update OSS contributions data"
+          git push origin "$BRANCH"
+
+      - name: Create Pull Request
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_BODY: |
+            ## Summary
+            Automatically updated OSS contributions data.
+
+            ## Changes
+            - 📊 Updated `src/assets/oss-contributions.json` with the latest merged PR data
+
+            ## Checklist
+            - [ ] Data format is correct
+            - [ ] New contributions are included
+            - [ ] Existing data is preserved
+
+            ---
+            🤖 This PR was automatically created by GitHub Actions
+        run: |
+          BRANCH="chore/update-oss-contributions-$(date +%Y%m%d)"
+          gh pr create \
+            --base main \
+            --head "$BRANCH" \
+            --title "chore: update OSS contributions data" \
+            --body "$PR_BODY" \
+            --label "data,automated" \
+            --assignee "${{ github.repository_owner }}"
+
+      - name: Enable auto-merge
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          BRANCH="chore/update-oss-contributions-$(date +%Y%m%d)"
+          PR_NUMBER=$(gh pr view "$BRANCH" --json number -q .number)
+          gh pr merge "$PR_NUMBER" --auto --squash
