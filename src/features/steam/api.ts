@@ -1,12 +1,3 @@
-import type { OwnedGamesResponse } from '@/types/steam'
-
-/**
- * Steam API response wrapper
- */
-interface SteamApiResponse {
-	response: OwnedGamesResponse
-}
-
 /**
  * Fetches the Steam library for a given user
  * @param apiKey - Steam Web API key
@@ -28,4 +19,25 @@ export async function fetchSteamLibrary(
 	}
 
 	return (await response.json()) as SteamApiResponse
+}
+
+/**
+ * Steam API type definitions
+ */
+
+export interface OwnedGame {
+	appid: number
+	has_community_visible_stats: boolean
+	img_icon_url: string
+	name: string
+	playtime_forever: number
+}
+
+export interface OwnedGamesResponse {
+	game_count: number
+	games: OwnedGame[]
+}
+
+interface SteamApiResponse {
+	response: OwnedGamesResponse
 }
