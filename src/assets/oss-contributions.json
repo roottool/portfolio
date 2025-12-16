@@ -33,10 +33,7 @@
 		"closedAt": "2025-03-21T21:32:27Z",
 		"id": "PR_kwDOFwVEvs6PggwY",
 		"number": 549,
-		"repository": {
-			"name": "tailwind-merge",
-			"nameWithOwner": "dcastil/tailwind-merge"
-		},
+		"repository": { "name": "tailwind-merge", "nameWithOwner": "dcastil/tailwind-merge" },
 		"title": "Fix typo in comment in types.ts",
 		"url": "https://github.com/dcastil/tailwind-merge/pull/549"
 	},
@@ -66,10 +63,7 @@
 		"closedAt": "2024-11-16T13:26:07Z",
 		"id": "PR_kwDOI06dYs6CCgTm",
 		"number": 204,
-		"repository": {
-			"name": "typescript-graph",
-			"nameWithOwner": "ysk8hori/typescript-graph"
-		},
+		"repository": { "name": "typescript-graph", "nameWithOwner": "ysk8hori/typescript-graph" },
 		"title": "Fix typo",
 		"url": "https://github.com/ysk8hori/typescript-graph/pull/204"
 	},
@@ -77,10 +71,7 @@
 		"closedAt": "2024-08-15T07:26:30Z",
 		"id": "PR_kwDOGW5OAc54PFcW",
 		"number": 6481,
-		"repository": {
-			"name": "workers-sdk",
-			"nameWithOwner": "cloudflare/workers-sdk"
-		},
+		"repository": { "name": "workers-sdk", "nameWithOwner": "cloudflare/workers-sdk" },
 		"title": "feat (C3): Remove a bindings snippet for Hono template",
 		"url": "https://github.com/cloudflare/workers-sdk/pull/6481"
 	},
@@ -104,10 +95,7 @@
 		"closedAt": "2023-12-22T14:00:27Z",
 		"id": "PR_kwDOKtMiZc5ipZpa",
 		"number": 32,
-		"repository": {
-			"name": "medi-xplorer",
-			"nameWithOwner": "kohii/medi-xplorer"
-		},
+		"repository": { "name": "medi-xplorer", "nameWithOwner": "kohii/medi-xplorer" },
 		"title": "Fix typo",
 		"url": "https://github.com/kohii/medi-xplorer/pull/32"
 	},
@@ -123,10 +111,7 @@
 		"closedAt": "2023-10-03T08:32:16Z",
 		"id": "PR_kwDOAzqfmc5bDraN",
 		"number": 24290,
-		"repository": {
-			"name": "storybook",
-			"nameWithOwner": "storybookjs/storybook"
-		},
+		"repository": { "name": "storybook", "nameWithOwner": "storybookjs/storybook" },
 		"title": "NextJS: Change babel plugins from `proposal-...` to `transform-...`",
 		"url": "https://github.com/storybookjs/storybook/pull/24290"
 	},
@@ -134,10 +119,7 @@
 		"closedAt": "2023-07-21T22:27:37Z",
 		"id": "PR_kwDOCzCEGc5WIE2W",
 		"number": 1005,
-		"repository": {
-			"name": "documentation",
-			"nameWithOwner": "react-hook-form/documentation"
-		},
+		"repository": { "name": "documentation", "nameWithOwner": "react-hook-form/documentation" },
 		"title": "Fix some linked URLs on the \"Advanced Usage\" page",
 		"url": "https://github.com/react-hook-form/documentation/pull/1005"
 	},
@@ -153,10 +135,7 @@
 		"closedAt": "2022-12-22T02:29:55Z",
 		"id": "PR_kwDOAg7WpM5GAJHB",
 		"number": 39722,
-		"repository": {
-			"name": "ant-design",
-			"nameWithOwner": "ant-design/ant-design"
-		},
+		"repository": { "name": "ant-design", "nameWithOwner": "ant-design/ant-design" },
 		"title": "docs: Fix typo in QRCode page",
 		"url": "https://github.com/ant-design/ant-design/pull/39722"
 	},
@@ -172,10 +151,7 @@
 		"closedAt": "2022-10-18T20:17:09Z",
 		"id": "PR_kwDOAzqfmc5BC4wQ",
 		"number": 19526,
-		"repository": {
-			"name": "storybook",
-			"nameWithOwner": "storybookjs/storybook"
-		},
+		"repository": { "name": "storybook", "nameWithOwner": "storybookjs/storybook" },
 		"title": "docs: Fix typo within doc-block-story.md",
 		"url": "https://github.com/storybookjs/storybook/pull/19526"
 	},
@@ -194,10 +170,7 @@
 		"closedAt": "2022-07-07T07:46:09Z",
 		"id": "PR_kwDOBReUZ8465NZ4",
 		"number": 162,
-		"repository": {
-			"name": "shakapacker",
-			"nameWithOwner": "shakacode/shakapacker"
-		},
+		"repository": { "name": "shakapacker", "nameWithOwner": "shakacode/shakapacker" },
 		"title": "Fix typo in README.md",
 		"url": "https://github.com/shakacode/shakapacker/pull/162"
 	},
@@ -205,10 +178,7 @@
 		"closedAt": "2022-06-09T13:47:30Z",
 		"id": "PR_kwDOBK7V3M415N6S",
 		"number": 2510,
-		"repository": {
-			"name": "prettier-vscode",
-			"nameWithOwner": "prettier/prettier-vscode"
-		},
+		"repository": { "name": "prettier-vscode", "nameWithOwner": "prettier/prettier-vscode" },
 		"title": "Fix misspellings",
 		"url": "https://github.com/prettier/prettier-vscode/pull/2510"
 	},
@@ -216,10 +186,7 @@
 		"closedAt": "2022-03-10T03:25:33Z",
 		"id": "PR_kwDOFAFgcc40NGtf",
 		"number": 14,
-		"repository": {
-			"name": "zenn-content",
-			"nameWithOwner": "kaityo256/zenn-content"
-		},
+		"repository": { "name": "zenn-content", "nameWithOwner": "kaityo256/zenn-content" },
 		"title": "Fix typo",
 		"url": "https://github.com/kaityo256/zenn-content/pull/14"
 	},
@@ -235,10 +202,7 @@
 		"closedAt": "2021-09-12T16:41:01Z",
 		"id": "MDExOlB1bGxSZXF1ZXN0NzMyMDExNTcz",
 		"number": 769,
-		"repository": {
-			"name": "vscode-jest",
-			"nameWithOwner": "jest-community/vscode-jest"
-		},
+		"repository": { "name": "vscode-jest", "nameWithOwner": "jest-community/vscode-jest" },
 		"title": "Fix typo and trim trailing whitespaces in `README.md`",
 		"url": "https://github.com/jest-community/vscode-jest/pull/769"
 	},
@@ -246,10 +210,7 @@
 		"closedAt": "2021-07-19T15:29:20Z",
 		"id": "MDExOlB1bGxSZXF1ZXN0NjkyMjE3ODE5",
 		"number": 4583,
-		"repository": {
-			"name": "refined-github",
-			"nameWithOwner": "refined-github/refined-github"
-		},
+		"repository": { "name": "refined-github", "nameWithOwner": "refined-github/refined-github" },
 		"title": "Remove `copy-file` from rendered pages",
 		"url": "https://github.com/refined-github/refined-github/pull/4583"
 	},
@@ -268,10 +229,7 @@
 		"closedAt": "2021-01-22T06:12:44Z",
 		"id": "MDExOlB1bGxSZXF1ZXN0NTU2MzQ1ODcx",
 		"number": 5907,
-		"repository": {
-			"name": "covid19",
-			"nameWithOwner": "Tokyo-Metro-Gov/covid19"
-		},
+		"repository": { "name": "covid19", "nameWithOwner": "Tokyo-Metro-Gov/covid19" },
 		"title": "ドキュメント等に記載されている Node.js のバージョンを更新",
 		"url": "https://github.com/Tokyo-Metro-Gov/covid19/pull/5907"
 	},
@@ -287,10 +245,7 @@
 		"closedAt": "2019-10-28T09:17:00Z",
 		"id": "MDExOlB1bGxSZXF1ZXN0MzI5NzUyNjc1",
 		"number": 3285,
-		"repository": {
-			"name": "BoostNote-Legacy",
-			"nameWithOwner": "BoostIO/BoostNote-Legacy"
-		},
+		"repository": { "name": "BoostNote-Legacy", "nameWithOwner": "BoostIO/BoostNote-Legacy" },
 		"title": "Fix/fix to work markdownlint#3147",
 		"url": "https://github.com/BoostIO/BoostNote-Legacy/pull/3285"
 	},
@@ -298,10 +253,7 @@
 		"closedAt": "2019-05-17T07:06:06Z",
 		"id": "MDExOlB1bGxSZXF1ZXN0Mjc5NDkwOTEz",
 		"number": 11,
-		"repository": {
-			"name": "internet-cleaner",
-			"nameWithOwner": "404-html/internet-cleaner"
-		},
+		"repository": { "name": "internet-cleaner", "nameWithOwner": "404-html/internet-cleaner" },
 		"title": "Fixed all content being replaced",
 		"url": "https://github.com/404-html/internet-cleaner/pull/11"
 	}
