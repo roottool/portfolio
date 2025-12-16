@@ -66,6 +66,14 @@ jobs:
             echo "Changes detected"
           fi
 
+      - name: Generate token
+        if: steps.changes.outputs.changed == 'true'
+        id: generate_token
+        uses: actions/create-github-app-token@29824e69f54612133e76f7eaac726eef6c875baf # v2.2.1
+        with:
+          app-id: ${{ vars.GH_APP_ID }}
+          private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
+
       - name: Create branch and commit
         if: steps.changes.outputs.changed == 'true'
         id: create_branch
@@ -82,7 +90,7 @@ jobs:
       - name: Create Pull Request
         if: steps.changes.outputs.changed == 'true'
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ steps.generate_token.outputs.token }}
           PR_BODY: |
             ## Summary
             Automatically updated OSS contributions data.
