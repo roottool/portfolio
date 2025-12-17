@@ -1,5 +1,5 @@
 ---
-import { STEAM, type OwnedGamesResponse, processGames } from "@/features/steam/utils";
+import { processGames, STEAM, type OwnedGamesResponse } from "@/features/steam/utils";
 
 export interface Props {
 	data: OwnedGamesResponse;
@@ -8,7 +8,7 @@ export interface Props {
 const { data } = Astro.props;
 
 // Validate props
-if (!data?.games) {
+if (!data?.games || !Array.isArray(data.games)) {
 	throw new Error("Steam data is missing or invalid");
 }
 

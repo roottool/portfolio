@@ -8,8 +8,8 @@ import type { OssContribution } from "@/features/github/contributions";
 import { type OwnedGamesResponse } from "@/features/steam/utils";
 import Layout from "@/layouts/Layout.astro";
 
-const steam: OwnedGamesResponse = ownedGames as OwnedGamesResponse;
-const github: OssContribution[] = ossContributions as OssContribution[];
+const github = ossContributions as OssContribution[];
+const steam = ownedGames.response as OwnedGamesResponse;
 ---
 
 <Layout>
