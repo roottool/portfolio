@@ -1,6 +1,5 @@
 ---
-import { STEAM, type OwnedGamesResponse } from "@/features/steam/api";
-import { processGames } from "@/features/steam/service";
+import { STEAM, type OwnedGamesResponse, processGames } from "@/features/steam/utils";
 
 export interface Props {
 	data: OwnedGamesResponse;
