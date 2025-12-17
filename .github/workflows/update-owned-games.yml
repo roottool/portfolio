@@ -1,0 +1,136 @@
+name: Update Owned Games
+run-name: "${{ github.workflow }} (${{ github.ref_name }})"
+
+on:
+  schedule:
+    # Every Saturday at 00:00 JST = Friday 15:00 UTC
+    - cron: "0 15 * * 5"
+  workflow_dispatch:
+
+# Declare default permissions as read only.
+permissions: read-all
+
+defaults:
+  run:
+    shell: bash
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+
+jobs:
+  update:
+    name: Update Owned Games data
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      # For branch creation and push
+      contents: write
+      # For PR creation and auto-merge
+      pull-requests: write
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+        with:
+          persist-credentials: true
+
+      - name: Initialize
+        uses: ./.github/actions/setup-bun
+
+      - name: Fetch owned games
+        id: fetch
+        run: |
+          set -e
+          set -o pipefail
+
+          HTTP_CODE=$(curl -s -w "%{http_code}" -o temp-owned-games.json \
+            "https://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${STEAM_API_KEY}&steamid=${STEAM_ID}&include_appinfo=1&include_played_free_games=1&format=json")
+
+          if [ "$HTTP_CODE" != "200" ]; then
+            echo "Failed to fetch Steam API. HTTP status: $HTTP_CODE"
+            exit 1
+          fi
+
+          # Validate JSON response
+          if ! jq '.response | has("game_count") and has("games")' temp-owned-games.json | grep -q true; then
+            echo "Invalid Steam API response structure"
+            exit 1
+          fi
+        env:
+          STEAM_API_KEY: ${{ secrets.STEAM_API_KEY }}
+          STEAM_ID: ${{ vars.STEAM_ID }}
+
+      - name: Format and move JSON
+        run: |
+          bunx dprint fmt temp-owned-games.json
+          mv temp-owned-games.json src/assets/owned-games.json
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if git diff --quiet src/assets/owned-games.json; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "No changes detected"
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "Changes detected"
+          fi
+
+      - name: Generate token
+        if: steps.changes.outputs.changed == 'true'
+        id: generate_token
+        uses: actions/create-github-app-token@29824e69f54612133e76f7eaac726eef6c875baf # v2.2.1
+        with:
+          app-id: ${{ vars.GH_APP_ID }}
+          private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
+
+      - name: Create branch and commit
+        if: steps.changes.outputs.changed == 'true'
+        id: create_branch
+        run: |
+          BRANCH="chore/update-owned-games-$(date +%Y%m%d%H%M%S)"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add src/assets/owned-games.json
+          git commit -m "chore: update owned games data"
+          git push --set-upstream origin "$BRANCH"
+          echo "branch=$BRANCH" >> $GITHUB_OUTPUT
+
+      - name: Create Pull Request
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ steps.generate_token.outputs.token }}
+          PR_BODY: |
+            ## Summary
+            Automatically updated owned games data from Steam API.
+
+            ## Changes
+            - 🎮 Updated `src/assets/owned-games.json` with the latest owned games data from Steam Web API
+
+            ## Checklist
+            - [ ] Data format is correct
+            - [ ] Game count is reasonable
+            - [ ] Existing data structure is preserved
+
+            ---
+            🤖 This PR was automatically created by GitHub Actions
+          BRANCH: ${{ steps.create_branch.outputs.branch }}
+        id: create_pr
+        run: |
+          PR_NUMBER=$(gh pr create \
+            --base main \
+            --head "$BRANCH" \
+            --title "chore: update owned games data" \
+            --body "$PR_BODY" \
+            --label "data,automated" \
+            --assignee "${{ github.repository_owner }}")
+          echo "pr_number=$PR_NUMBER" >> $GITHUB_OUTPUT
+
+      - name: Enable auto-merge
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          PR_NUMBER=${{ steps.create_pr.outputs.pr_number }}
+          gh pr merge "$PR_NUMBER" --auto --squash

@@ -16,7 +16,7 @@
 	"malva": {},
 	"markup": {},
 	"yaml": {},
-	"excludes": ["**/pnpm-lock.yaml", "public/"],
+	"excludes": ["**/pnpm-lock.yaml", "public/", "src/assets/"],
 	"plugins": [
 		"https://plugins.dprint.dev/biome-0.11.7.wasm",
 		"https://plugins.dprint.dev/typescript-0.95.13.wasm",
