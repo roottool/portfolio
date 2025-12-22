@@ -54,6 +54,7 @@ jobs:
             typescript:
               - 'bun.lock'
               - '**/tsconfig*.json'
+              - '**/*.astro'
               - '**/*.ts'
               - '**/*.tsx'
             renovate-config:
@@ -189,6 +190,7 @@ jobs:
     runs-on: ubuntu-slim
     timeout-minutes: 1
     needs:
+      - setup
       - lint
       - typecheck
       # - test
