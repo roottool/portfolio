@@ -22,6 +22,7 @@ runs:
       # Install only if cache is not matched.
       if: ${{ !contains(steps.restore-bun-dependences-cache.outputs.cache-matched-key, steps.restore-bun-dependences-cache.outputs.cache-primary-key) }}
       run: bun install --frozen-lockfile
+      shell: bash
       
     - name: Save dependences cache
       # Execute cache by default branch only.
