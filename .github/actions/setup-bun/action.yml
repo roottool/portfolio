@@ -1,22 +1,28 @@
 name: Setup Bun
 description: Setup Bun
 
+defaults:
+  run:
+    shell: bash
+
 runs:
   using: composite
   steps:
     - name: Setup Bun
       uses: oven-sh/setup-bun@735343b667d3e6f658f44d0eca948eb6282f2b76 # v2.0.2
+      
     - name: Restore dependences cache
       uses: actions/cache/restore@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
       id: restore-bun-dependences-cache
       with:
         path: node_modules
         key: ${{ runner.os }}-bun-dependences-${{ hashFiles('**/bun.lock') }}
+        
     - name: Install dependencies
-      # bun.lock is not included in this repository.
+      # Install only if cache is not matched.
       if: ${{ !contains(steps.restore-bun-dependences-cache.outputs.cache-matched-key, steps.restore-bun-dependences-cache.outputs.cache-primary-key) }}
-      run: bun install
-      shell: bash
+      run: bun install --frozen-lockfile
+      
     - name: Save dependences cache
       # Execute cache by default branch only.
       if: ${{ github.ref_name == github.event.repository.default_branch && !contains(steps.restore-bun-dependences-cache.outputs.cache-matched-key, steps.restore-bun-dependences-cache.outputs.cache-primary-key) }}
