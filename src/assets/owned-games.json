@@ -1,6 +1,6 @@
 {
 	"response": {
-		"game_count": 336,
+		"game_count": 338,
 		"games": [
 			{
 				"appid": 70,
@@ -2755,6 +2755,20 @@
 				"playtime_disconnected": 0
 			},
 			{
+				"appid": 460960,
+				"name": "The Deed: Dynasty",
+				"playtime_forever": 0,
+				"img_icon_url": "68d817a51a08c82a0afffa3008b33c38e5119ffe",
+				"has_community_visible_stats": true,
+				"playtime_windows_forever": 0,
+				"playtime_mac_forever": 0,
+				"playtime_linux_forever": 0,
+				"playtime_deck_forever": 0,
+				"rtime_last_played": 0,
+				"content_descriptorids": [2, 5],
+				"playtime_disconnected": 0
+			},
+			{
 				"appid": 464920,
 				"name": "Surviving Mars",
 				"playtime_forever": 0,
@@ -3873,6 +3887,19 @@
 				"playtime_disconnected": 0
 			},
 			{
+				"appid": 1510580,
+				"name": "Toy Tinker Simulator",
+				"playtime_forever": 0,
+				"img_icon_url": "7a7c69259b7d1f622d8f7c0d34f93a85683c8fa4",
+				"has_community_visible_stats": true,
+				"playtime_windows_forever": 0,
+				"playtime_mac_forever": 0,
+				"playtime_linux_forever": 0,
+				"playtime_deck_forever": 0,
+				"rtime_last_played": 0,
+				"playtime_disconnected": 0
+			},
+			{
 				"appid": 1515950,
 				"name": "Capcom Arcade Stadium",
 				"playtime_forever": 0,
@@ -3957,7 +3984,6 @@
 			{
 				"appid": 1771300,
 				"name": "Kingdom Come: Deliverance II",
-				"playtime_2weeks": 66,
 				"playtime_forever": 6448,
 				"img_icon_url": "80e8d75b87433627cafd2a1bcbb5b9f5741e2277",
 				"has_community_visible_stats": true,
@@ -4246,15 +4272,15 @@
 			{
 				"appid": 2807960,
 				"name": "Battlefield™ 6",
-				"playtime_2weeks": 245,
-				"playtime_forever": 5024,
+				"playtime_2weeks": 158,
+				"playtime_forever": 5183,
 				"img_icon_url": "f07be1624106283c0d85e1bc9211d431caa9b4b8",
 				"has_community_visible_stats": true,
-				"playtime_windows_forever": 5024,
+				"playtime_windows_forever": 5183,
 				"playtime_mac_forever": 0,
 				"playtime_linux_forever": 0,
 				"playtime_deck_forever": 0,
-				"rtime_last_played": 1765463752,
+				"rtime_last_played": 1766671720,
 				"playtime_disconnected": 0
 			},
 			{
