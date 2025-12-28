@@ -24,7 +24,7 @@ This file contains Claude Code-specific guidance and detailed configurations.
   - ESLint/dprint tools: Auto-merge with 3-day minimum age
   - Astro packages: Auto-merge all updates
   - Type definitions: Auto-merge with 3-day minimum age
-  - dprint plugins (via custom regex manager): Auto-update plugin URLs in dprint.json
+  - dprint plugins (via custom regex manager): Auto-update plugin URLs in dprint.jsonc
 - **GitHub Actions**:
   - Common first-party actions (actions/_, github/_): Auto-merge with digest pinning
   - Other actions: Auto-merge with 3-day minimum age and digest pinning

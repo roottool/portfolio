@@ -75,7 +75,7 @@ jobs:
             .github/renovate.json
             package.json
             bun.lock
-            dprint.json
+            dprint.jsonc
           sparse-checkout-cone-mode: false
 
       - name: Initialize
@@ -103,7 +103,7 @@ jobs:
             lefthook.yml
             package.json
             bun.lock
-            dprint.json
+            dprint.jsonc
           sparse-checkout-cone-mode: false
 
       - name: Initialize

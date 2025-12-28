@@ -12,7 +12,7 @@
 	},
 	"customManagers": [
 		{
-			"description": "Update dprint plugin versions in dprint.json",
+			"description": "Update dprint plugin versions in dprint.jsonc",
 			"customType": "regex",
 			"managerFilePatterns": ["/^dprint\\.json$/"],
 			"matchStrings": [
@@ -23,7 +23,7 @@
 			"extractVersionTemplate": "^v?(?<version>.+)$"
 		},
 		{
-			"description": "Update g-plane dprint plugins in dprint.json",
+			"description": "Update g-plane dprint plugins in dprint.jsonc",
 			"customType": "regex",
 			"managerFilePatterns": ["/^dprint\\.json$/"],
 			"matchStrings": [
