@@ -8,7 +8,7 @@
 	"configMigration": true,
 	"lockFileMaintenance": {
 		"enabled": true,
-		"schedule": ["before 5am on Monday"]
+		"schedule": ["before 3am on the first day of the month"]
 	},
 	"customManagers": [
 		{
