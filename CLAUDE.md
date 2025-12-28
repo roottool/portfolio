@@ -12,23 +12,14 @@ This file contains Claude Code-specific guidance and detailed configurations.
 
 - **Validate Renovate config**: `bunx -p renovate renovate-config-validator --strict` (run from project root)
 - **Configuration file**: `.github/renovate.json`
-- **Schedule**: Before 3am every weekday and Sunday (JST)
-- **Security-first approach**: Vulnerability alerts automatically merged with priority
-- **Lock file maintenance**: Automatically updated on first day of each month
-- **Stability periods**:
-  - Non-patch updates: 3-day minimum release age
-  - Major updates: 7-day minimum release age
-- **Package grouping strategy**: Related packages grouped for efficient updates
-  - Non-major devDependencies: Auto-merge minor/patch updates
-  - Non-major dependencies: Auto-merge minor/patch updates
-  - ESLint/dprint tools: Auto-merge with 3-day minimum age
-  - Astro packages: Auto-merge all updates
-  - Type definitions: Auto-merge with 3-day minimum age
-  - dprint plugins (via custom regex manager): Auto-update plugin URLs in dprint.jsonc
-- **GitHub Actions**:
-  - Common first-party actions (actions/_, github/_): Auto-merge with digest pinning
-  - Other actions: Auto-merge with 3-day minimum age and digest pinning
-- **Runtime constraints**: Node.js major version updates disabled to prevent compatibility issues
+- **Base preset**: `config:best-practices` (delegates most settings to Renovate's recommended defaults)
+- **Schedule**: Before 5am on Monday (JST) for regular updates
+- **Auto-merge**: Enabled by default for all updates except major version updates
+- **Lock file maintenance**: Automatically updated on first day of each month (before 3am JST)
+- **Custom configurations**:
+  - **Major updates**: 7-day minimum release age, auto-merge disabled
+  - **Non-major grouping**: devDependencies and dependencies grouped separately for minor/patch updates
+  - **dprint WASM plugins**: Custom regex manager for automatic plugin URL updates in dprint.jsonc
 
 ## Git Hooks
 
