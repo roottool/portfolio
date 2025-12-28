@@ -14,7 +14,7 @@
 		{
 			"description": "Update dprint plugin versions in dprint.jsonc",
 			"customType": "regex",
-			"managerFilePatterns": ["/^dprint\\.json$/"],
+			"managerFilePatterns": ["/^dprint\\.jsonc$/"],
 			"matchStrings": [
 				"https://plugins\\.dprint\\.dev/(?<depName>[^/]+)-v?(?<currentValue>[\\d.]+)\\.wasm"
 			],
@@ -25,7 +25,7 @@
 		{
 			"description": "Update g-plane dprint plugins in dprint.jsonc",
 			"customType": "regex",
-			"managerFilePatterns": ["/^dprint\\.json$/"],
+			"managerFilePatterns": ["/^dprint\\.jsonc$/"],
 			"matchStrings": [
 				"https://plugins\\.dprint\\.dev/g-plane/(?<depName>[^-]+)-v(?<currentValue>[\\d.]+)\\.wasm"
 			],
