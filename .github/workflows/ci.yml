@@ -11,9 +11,6 @@ on:
       - reopened
       - ready_for_review
 
-env:
-  NODE_VERSION: "22"
-
 # Declare default permissions as read only.
 permissions: read-all
 
