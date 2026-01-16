@@ -1,6 +1,6 @@
 {
 	"response": {
-		"game_count": 339,
+		"game_count": 340,
 		"games": [
 			{
 				"appid": 70,
@@ -3863,6 +3863,19 @@
 				"playtime_disconnected": 0
 			},
 			{
+				"appid": 1456200,
+				"name": "Initial Drift Online",
+				"playtime_forever": 0,
+				"img_icon_url": "8cf914628b765f7e1c681e127f85dd96ee8224b8",
+				"has_community_visible_stats": true,
+				"playtime_windows_forever": 0,
+				"playtime_mac_forever": 0,
+				"playtime_linux_forever": 0,
+				"playtime_deck_forever": 0,
+				"rtime_last_played": 0,
+				"playtime_disconnected": 0
+			},
+			{
 				"appid": 1472130,
 				"name": "Thunder Tier One Playtest",
 				"playtime_forever": 0,
@@ -3998,15 +4011,15 @@
 			{
 				"appid": 1771300,
 				"name": "Kingdom Come: Deliverance II",
-				"playtime_2weeks": 76,
-				"playtime_forever": 6525,
+				"playtime_2weeks": 153,
+				"playtime_forever": 6602,
 				"img_icon_url": "80e8d75b87433627cafd2a1bcbb5b9f5741e2277",
 				"has_community_visible_stats": true,
-				"playtime_windows_forever": 6525,
+				"playtime_windows_forever": 6602,
 				"playtime_mac_forever": 0,
 				"playtime_linux_forever": 0,
 				"playtime_deck_forever": 0,
-				"rtime_last_played": 1767384192,
+				"rtime_last_played": 1768231311,
 				"content_descriptorids": [1, 2, 5],
 				"playtime_disconnected": 0
 			},
@@ -4287,15 +4300,15 @@
 			{
 				"appid": 2807960,
 				"name": "Battlefield™ 6",
-				"playtime_2weeks": 237,
-				"playtime_forever": 5420,
+				"playtime_2weeks": 255,
+				"playtime_forever": 5598,
 				"img_icon_url": "f07be1624106283c0d85e1bc9211d431caa9b4b8",
 				"has_community_visible_stats": true,
-				"playtime_windows_forever": 5420,
+				"playtime_windows_forever": 5598,
 				"playtime_mac_forever": 0,
 				"playtime_linux_forever": 0,
 				"playtime_deck_forever": 0,
-				"rtime_last_played": 1767806413,
+				"rtime_last_played": 1768567606,
 				"playtime_disconnected": 0
 			},
 			{
