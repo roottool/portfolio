@@ -41,12 +41,9 @@
 		"closedAt": "2025-03-08T08:49:44Z",
 		"id": "PR_kwDOKp7B386N25A-",
 		"number": 301,
-		"repository": {
-			"name": "oxc-project.github.io",
-			"nameWithOwner": "oxc-project/oxc-project.github.io"
-		},
+		"repository": { "name": "website", "nameWithOwner": "oxc-project/website" },
 		"title": "docs(linter): Fix broken URL by typo",
-		"url": "https://github.com/oxc-project/oxc-project.github.io/pull/301"
+		"url": "https://github.com/oxc-project/website/pull/301"
 	},
 	{
 		"closedAt": "2024-12-10T03:51:35Z",
