@@ -1,6 +1,6 @@
 {
 	"response": {
-		"game_count": 340,
+		"game_count": 342,
 		"games": [
 			{
 				"appid": 70,
@@ -2968,6 +2968,20 @@
 				"playtime_disconnected": 0
 			},
 			{
+				"appid": 527710,
+				"name": "Crown Champion: Legends of the Arena",
+				"playtime_forever": 0,
+				"img_icon_url": "287a61d68fa827578a6856d85107ee10b935b9c4",
+				"has_community_visible_stats": true,
+				"playtime_windows_forever": 0,
+				"playtime_mac_forever": 0,
+				"playtime_linux_forever": 0,
+				"playtime_deck_forever": 0,
+				"rtime_last_played": 0,
+				"content_descriptorids": [5],
+				"playtime_disconnected": 0
+			},
+			{
 				"appid": 544330,
 				"name": "Snake Pass",
 				"playtime_forever": 0,
@@ -4009,17 +4023,30 @@
 				"playtime_disconnected": 0
 			},
 			{
-				"appid": 1771300,
-				"name": "Kingdom Come: Deliverance II",
-				"playtime_2weeks": 153,
-				"playtime_forever": 6602,
-				"img_icon_url": "80e8d75b87433627cafd2a1bcbb5b9f5741e2277",
+				"appid": 1755300,
+				"name": "Smart Factory Tycoon",
+				"playtime_forever": 0,
+				"img_icon_url": "4db3100c3c29e2d949ef6d3d163864527921c063",
 				"has_community_visible_stats": true,
-				"playtime_windows_forever": 6602,
+				"playtime_windows_forever": 0,
 				"playtime_mac_forever": 0,
 				"playtime_linux_forever": 0,
 				"playtime_deck_forever": 0,
-				"rtime_last_played": 1768231311,
+				"rtime_last_played": 0,
+				"playtime_disconnected": 0
+			},
+			{
+				"appid": 1771300,
+				"name": "Kingdom Come: Deliverance II",
+				"playtime_2weeks": 308,
+				"playtime_forever": 6834,
+				"img_icon_url": "80e8d75b87433627cafd2a1bcbb5b9f5741e2277",
+				"has_community_visible_stats": true,
+				"playtime_windows_forever": 6834,
+				"playtime_mac_forever": 0,
+				"playtime_linux_forever": 0,
+				"playtime_deck_forever": 0,
+				"rtime_last_played": 1769288990,
 				"content_descriptorids": [1, 2, 5],
 				"playtime_disconnected": 0
 			},
@@ -4260,6 +4287,18 @@
 				"playtime_disconnected": 0
 			},
 			{
+				"appid": 2623090,
+				"name": "Battle Simulator: Counter Stickman",
+				"playtime_forever": 0,
+				"img_icon_url": "befd7301ba5923037d643600a012ca7792cd89f8",
+				"playtime_windows_forever": 0,
+				"playtime_mac_forever": 0,
+				"playtime_linux_forever": 0,
+				"playtime_deck_forever": 0,
+				"rtime_last_played": 0,
+				"playtime_disconnected": 0
+			},
+			{
 				"appid": 2709440,
 				"name": "Delta Force Alpha Test",
 				"playtime_forever": 1553,
@@ -4300,15 +4339,15 @@
 			{
 				"appid": 2807960,
 				"name": "Battlefield™ 6",
-				"playtime_2weeks": 255,
-				"playtime_forever": 5598,
+				"playtime_2weeks": 230,
+				"playtime_forever": 5650,
 				"img_icon_url": "f07be1624106283c0d85e1bc9211d431caa9b4b8",
 				"has_community_visible_stats": true,
-				"playtime_windows_forever": 5598,
+				"playtime_windows_forever": 5650,
 				"playtime_mac_forever": 0,
 				"playtime_linux_forever": 0,
 				"playtime_deck_forever": 0,
-				"rtime_last_played": 1768567606,
+				"rtime_last_played": 1769193176,
 				"playtime_disconnected": 0
 			},
 			{
@@ -4408,18 +4447,6 @@
 				"playtime_linux_forever": 0,
 				"playtime_deck_forever": 0,
 				"rtime_last_played": 1740765187,
-				"playtime_disconnected": 0
-			},
-			{
-				"appid": 3217940,
-				"name": "Fate Trigger Playtest",
-				"playtime_forever": 634,
-				"img_icon_url": "959a2f17c06bb8e0822d490d241d344b448e997e",
-				"playtime_windows_forever": 634,
-				"playtime_mac_forever": 0,
-				"playtime_linux_forever": 0,
-				"playtime_deck_forever": 0,
-				"rtime_last_played": 1753992332,
 				"playtime_disconnected": 0
 			},
 			{
