@@ -113,7 +113,7 @@ jobs:
             --head "$BRANCH" \
             --title "chore: update OSS contributions data" \
             --body "$PR_BODY" \
-            --label "data,automated"
+            --label "data,automated")
           echo "pr_number=$PR_NUMBER" >> $GITHUB_OUTPUT
 
       - name: Enable auto-merge
