@@ -4051,7 +4051,6 @@
 			{
 				"appid": 1771300,
 				"name": "Kingdom Come: Deliverance II",
-				"playtime_2weeks": 152,
 				"playtime_forever": 6883,
 				"img_icon_url": "80e8d75b87433627cafd2a1bcbb5b9f5741e2277",
 				"has_community_visible_stats": true,
@@ -4274,14 +4273,15 @@
 			{
 				"appid": 2507950,
 				"name": "Delta Force",
-				"playtime_forever": 8177,
+				"playtime_2weeks": 52,
+				"playtime_forever": 8229,
 				"img_icon_url": "52bc6c4bf0c232cf30d66eb3d1638bf099bc6061",
 				"has_community_visible_stats": true,
-				"playtime_windows_forever": 8177,
+				"playtime_windows_forever": 8229,
 				"playtime_mac_forever": 0,
 				"playtime_linux_forever": 0,
 				"playtime_deck_forever": 0,
-				"rtime_last_played": 1763770447,
+				"rtime_last_played": 1770750936,
 				"playtime_disconnected": 0
 			},
 			{
@@ -4352,7 +4352,7 @@
 			{
 				"appid": 2807960,
 				"name": "Battlefield™ 6",
-				"playtime_2weeks": 76,
+				"playtime_2weeks": 41,
 				"playtime_forever": 5717,
 				"img_icon_url": "f07be1624106283c0d85e1bc9211d431caa9b4b8",
 				"has_community_visible_stats": true,
@@ -4361,6 +4361,7 @@
 				"playtime_linux_forever": 0,
 				"playtime_deck_forever": 0,
 				"rtime_last_played": 1769888657,
+				"content_descriptorids": [2, 5],
 				"playtime_disconnected": 0
 			},
 			{
@@ -4518,7 +4519,6 @@
 			{
 				"appid": 4128260,
 				"name": "Highguard",
-				"playtime_2weeks": 105,
 				"playtime_forever": 105,
 				"img_icon_url": "cc96b1a760e4aafef7a407f25e3d1c70475808cb",
 				"has_community_visible_stats": true,
