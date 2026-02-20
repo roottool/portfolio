@@ -1,6 +1,6 @@
 {
 	"response": {
-		"game_count": 344,
+		"game_count": 345,
 		"games": [
 			{
 				"appid": 70,
@@ -2634,6 +2634,20 @@
 				"playtime_disconnected": 0
 			},
 			{
+				"appid": 418180,
+				"name": "Tempest",
+				"playtime_forever": 0,
+				"img_icon_url": "a59aa4c6ddcc41e619ee190a2d1e647dcd0244e5",
+				"has_community_visible_stats": true,
+				"playtime_windows_forever": 0,
+				"playtime_mac_forever": 0,
+				"playtime_linux_forever": 0,
+				"playtime_deck_forever": 0,
+				"rtime_last_played": 0,
+				"has_leaderboards": true,
+				"playtime_disconnected": 0
+			},
+			{
 				"appid": 418240,
 				"name": "Shadow Tactics: Blades of the Shogun",
 				"playtime_forever": 1471,
@@ -4051,14 +4065,15 @@
 			{
 				"appid": 1771300,
 				"name": "Kingdom Come: Deliverance II",
-				"playtime_forever": 6883,
+				"playtime_2weeks": 40,
+				"playtime_forever": 6924,
 				"img_icon_url": "80e8d75b87433627cafd2a1bcbb5b9f5741e2277",
 				"has_community_visible_stats": true,
-				"playtime_windows_forever": 6883,
+				"playtime_windows_forever": 6924,
 				"playtime_mac_forever": 0,
 				"playtime_linux_forever": 0,
 				"playtime_deck_forever": 0,
-				"rtime_last_played": 1769701163,
+				"rtime_last_played": 1771263483,
 				"content_descriptorids": [1, 2, 5],
 				"playtime_disconnected": 0
 			},
@@ -4352,15 +4367,15 @@
 			{
 				"appid": 2807960,
 				"name": "Battlefield™ 6",
-				"playtime_2weeks": 41,
-				"playtime_forever": 5717,
+				"playtime_2weeks": 89,
+				"playtime_forever": 5806,
 				"img_icon_url": "f07be1624106283c0d85e1bc9211d431caa9b4b8",
 				"has_community_visible_stats": true,
-				"playtime_windows_forever": 5717,
+				"playtime_windows_forever": 5806,
 				"playtime_mac_forever": 0,
 				"playtime_linux_forever": 0,
 				"playtime_deck_forever": 0,
-				"rtime_last_played": 1769888657,
+				"rtime_last_played": 1771512068,
 				"content_descriptorids": [2, 5],
 				"playtime_disconnected": 0
 			},
