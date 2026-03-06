@@ -1,6 +1,6 @@
 {
 	"response": {
-		"game_count": 346,
+		"game_count": 347,
 		"games": [
 			{
 				"appid": 70,
@@ -4065,7 +4065,6 @@
 			{
 				"appid": 1771300,
 				"name": "Kingdom Come: Deliverance II",
-				"playtime_2weeks": 40,
 				"playtime_forever": 6924,
 				"img_icon_url": "80e8d75b87433627cafd2a1bcbb5b9f5741e2277",
 				"has_community_visible_stats": true,
@@ -4366,7 +4365,7 @@
 			{
 				"appid": 2807960,
 				"name": "Battlefield™ 6",
-				"playtime_2weeks": 322,
+				"playtime_2weeks": 233,
 				"playtime_forever": 6040,
 				"img_icon_url": "8b06f13e9fd82e1a436ffdca4e1de118ee4a9ed2",
 				"has_community_visible_stats": true,
@@ -4477,6 +4476,18 @@
 				"playtime_deck_forever": 0,
 				"rtime_last_played": 1755317052,
 				"playtime_disconnected": 1
+			},
+			{
+				"appid": 3098890,
+				"name": "World Crafter TD",
+				"playtime_forever": 0,
+				"img_icon_url": "e3e3b01e7cb04d499803542ce3c226e23725fd8b",
+				"playtime_windows_forever": 0,
+				"playtime_mac_forever": 0,
+				"playtime_linux_forever": 0,
+				"playtime_deck_forever": 0,
+				"rtime_last_played": 0,
+				"playtime_disconnected": 0
 			},
 			{
 				"appid": 3145170,
