@@ -44,6 +44,7 @@ yarn-error.log*
 public/mockServiceWorker.js
 
 # lefthook
+lefthook.yml
 lefthook-local.yml
 
 # Snyk Security Extension - AI Rules (auto-generated)
