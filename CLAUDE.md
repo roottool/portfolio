@@ -21,15 +21,6 @@ This file contains Claude Code-specific guidance and detailed configurations.
   - **Non-major grouping**: devDependencies and dependencies grouped separately for minor/patch updates
   - **dprint WASM plugins**: Custom regex manager for automatic plugin URL updates in dprint.jsonc
 
-## Git Hooks
-
-Lefthook configured for pre-commit workflow (see `lefthook.yml`):
-
-- Automatically runs ESLint fix + dprint on staged `.js/.ts/.jsx/.tsx` files
-- Automatically runs dprint on staged `.astro/.md/.json/.yml/.yaml` files
-- Fixed files are automatically re-staged
-- Skips during merge and rebase operations
-
 ## Environment Variables
 
 Astro environment variables (astro:env/server):

@@ -32,7 +32,6 @@ jobs:
     outputs:
       typescript: ${{ steps.filter.outputs.typescript }}
       renovate-config: ${{ steps.filter.outputs.renovate-config }}
-      lefthook-config: ${{ steps.filter.outputs.lefthook-config }}
     if: ${{ !github.event.pull_request.draft }}
     steps:
       - name: Checkout Repository
@@ -56,8 +55,6 @@ jobs:
               - '**/*.tsx'
             renovate-config:
               - '.github/renovate.json'
-            lefthook-config:
-              - 'lefthook.yml'
 
   renovate-config-lint:
     name: Renovate config lint
@@ -86,34 +83,6 @@ jobs:
 
       - name: Validate Renovate config
         run: bunx -p renovate renovate-config-validator --strict
-
-  validate-lefthook-config:
-    name: Validate Lefthook config
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    needs: [setup]
-    if: ${{ needs.setup.outputs.lefthook-config == 'true' }}
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
-        with:
-          persist-credentials: false
-          sparse-checkout: |
-            .github/actions/setup-bun/action.yml
-            lefthook.yml
-            package.json
-            bun.lock
-            dprint.jsonc
-          sparse-checkout-cone-mode: false
-
-      - name: Initialize
-        uses: ./.github/actions/setup-bun
-
-      - name: Check format by dprint
-        run: bunx dprint check lefthook.yml
-
-      - name: Validate Lefthook config
-        run: bunx lefthook validate
 
   lint:
     name: Lint
@@ -192,7 +161,6 @@ jobs:
       - typecheck
       # - test
       - renovate-config-lint
-      - validate-lefthook-config
     if: ${{ !cancelled() }}
     steps:
       - name: Check for failed or canceled jobs
