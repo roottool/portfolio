@@ -13,10 +13,8 @@
 	"editor.tabSize": 2,
 	"files.trimFinalNewlines": true,
 	"files.trimTrailingWhitespace": true,
-	"javascript.preferences.importModuleSpecifier": "non-relative",
-	"javascript.preferences.importModuleSpecifierEnding": "minimal",
-	"typescript.preferences.importModuleSpecifier": "non-relative",
-	"typescript.preferences.importModuleSpecifierEnding": "minimal",
+	"js/ts.preferences.importModuleSpecifier": "non-relative",
+	"js/ts.preferences.importModuleSpecifierEnding": "minimal",
 	"[astro|javascript|typescript|typescriptreact|json|jsonc|yaml]": {
 		"editor.defaultFormatter": "dprint.dprint"
 	},
