@@ -13,10 +13,10 @@
 		"number": 1065,
 		"repository": {
 			"name": "eslint-plugin-package-json",
-			"nameWithOwner": "JoshuaKGoldberg/eslint-plugin-package-json"
+			"nameWithOwner": "michaelfaith/eslint-plugin-package-json"
 		},
 		"title": "feat: add `require-type` rule",
-		"url": "https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/pull/1065"
+		"url": "https://github.com/michaelfaith/eslint-plugin-package-json/pull/1065"
 	},
 	{
 		"closedAt": "2025-06-02T14:01:40Z",
