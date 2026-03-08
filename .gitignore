@@ -43,6 +43,9 @@ yarn-error.log*
 # MSW
 public/mockServiceWorker.js
 
+# generated OG image
+public/og.png
+
 # lefthook
 lefthook.yml
 lefthook-local.yml
