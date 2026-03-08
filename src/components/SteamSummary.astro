@@ -17,41 +17,71 @@ const games = processGames(data.games).slice(0, 12);
 ---
 
 <section class="flex flex-col gap-4">
-	<h2 class="text-2xl font-semibold text-white text-center sm:text-left">
-		🎮 Steamライブラリ
+	<h2 class="vk-section-title">
+		<span style="color: var(--vk-gold); font-size: 1rem;">⚔</span>
+		Steam Library
 	</h2>
 
-	<div class="flex-1 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 auto-rows-1fr gap-3 sm:gap-4 xl:overflow-y-auto">
+	<div class="flex-1 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 gap-3 sm:gap-4 xl:overflow-y-auto">
 		{games.map((game, index) => (
 			<a
 				href={`${STEAM.STORE_URL}${game.appid}`}
 				target="_blank"
 				rel="noopener noreferrer"
-				class="flex flex-col gap-2 sm:gap-3 card-base p-2 sm:p-3 shadow"
+				class="card-base flex flex-col gap-2 p-2 sm:p-3 group"
+				style={`animation: vk-fade-in 0.6s ${0.04 * index}s ease both;`}
 			>
-				<img
-					src={`${STEAM.CDN_URL}${game.appid}/capsule_184x69.jpg`}
-					srcset={`${STEAM.CDN_URL}${game.appid}/capsule_184x69.jpg 184w, ${STEAM.CDN_URL}${game.appid}/capsule_231x87.jpg 231w`}
-					sizes="(max-width: 640px) 184px, 231px"
-					alt={game.name}
-					class="rounded-md w-full object-cover"
-					style="aspect-ratio: 231 / 87"
-					loading={index < 6 ? "eager" : "lazy"}
-					decoding="async"
-					fetchpriority={index < 6 ? "high" : "low"}
-					width="231"
-					height="87"
-				/>
-				<div class="flex flex-col gap-0 sm:gap-1">
-					<h3 class="text-sm sm:text-base font-semibold text-white truncate">
+				<div style="position: relative; overflow: hidden; border-radius: 1px;">
+					<img
+						src={`${STEAM.CDN_URL}${game.appid}/capsule_184x69.jpg`}
+						srcset={`${STEAM.CDN_URL}${game.appid}/capsule_184x69.jpg 184w, ${STEAM.CDN_URL}${game.appid}/capsule_231x87.jpg 231w`}
+						sizes="(max-width: 640px) 184px, 231px"
+						alt={game.name}
+						class="w-full object-cover transition-all duration-500"
+						style="aspect-ratio: 231 / 87; filter: saturate(0.7) brightness(0.85);"
+						loading={index < 6 ? "eager" : "lazy"}
+						decoding="async"
+						fetchpriority={index < 6 ? "high" : "low"}
+						width="231"
+						height="87"
+					/>
+					<!-- Crimson overlay on hover -->
+					<span
+						aria-hidden="true"
+						style="
+							position: absolute; inset: 0;
+							background: linear-gradient(135deg, rgba(200,0,46,0.15) 0%, transparent 60%);
+							opacity: 0;
+							transition: opacity 0.3s ease;
+						"
+						class="group-hover:overlay-show"
+					></span>
+				</div>
+
+				<div class="flex flex-col gap-0.5">
+					<h3
+						class="text-xs sm:text-sm font-semibold truncate"
+						style="font-family: 'Cormorant SC', serif; letter-spacing: 0.03em; color: var(--vk-text);"
+					>
 						{game.name}
 					</h3>
-					<p class="text-xs text-gray-400">
-						合計プレイ時間:{" "}
-						{(game.playtime_forever / STEAM.MINUTES_PER_HOUR).toFixed(1)} 時間
+					<p
+						class="text-xs"
+						style="color: var(--vk-muted); font-family: 'Cormorant Garamond', serif; font-style: italic;"
+					>
+						{(game.playtime_forever / STEAM.MINUTES_PER_HOUR).toFixed(1)} hrs
 					</p>
 				</div>
 			</a>
 		))}
 	</div>
 </section>
+
+<style>
+	.group:hover .group-hover\:overlay-show {
+		opacity: 1 !important;
+	}
+	.group:hover img {
+		filter: saturate(0.9) brightness(1.0) !important;
+	}
+</style>

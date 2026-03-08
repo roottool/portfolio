@@ -17,30 +17,61 @@ const formattedContributions = processContributions(data);
 ---
 
 <section class="flex flex-col gap-4 sm:row-span-2 xl:row-span-1">
-	<h2 class="text-2xl font-semibold text-white text-center sm:text-left">
-		🧩 OSSコントリビューション
+	<h2 class="vk-section-title">
+		<span style="color: var(--vk-gold); font-size: 1rem;">⚜</span>
+		OSS Contributions
 	</h2>
 
-	<div class="flex flex-col gap-4 xl:flex-1 xl:overflow-y-auto">
-		{formattedContributions.map((contrib) => (
+	<div class="flex flex-col gap-3 xl:flex-1 xl:overflow-y-auto pr-1">
+		{formattedContributions.map((contrib, i) => (
 			<a
 				href={contrib.url}
 				target="_blank"
 				rel="noopener noreferrer"
-				class="grid gap-2 card-base p-4"
+				class="card-base flex flex-col gap-1.5 p-4 group"
+				style={`animation: vk-fade-in 0.6s ${0.05 * i}s ease both;`}
 			>
+				<!-- Crimson left accent bar -->
+				<span
+					aria-hidden="true"
+					style="
+						position: absolute;
+						left: 0; top: 0; bottom: 0;
+						width: 2px;
+						background: linear-gradient(180deg, transparent, var(--vk-crimson-dim), transparent);
+						opacity: 0;
+						transition: opacity 0.3s ease;
+					"
+					class="group-hover:opacity-100"
+				></span>
+
 				<div class="overflow-hidden">
-					<h3 class="text-sm sm:text-base font-semibold text-white truncate">
+					<h3
+						class="text-sm font-semibold truncate transition-colors duration-300"
+						style="font-family: 'Cormorant SC', serif; letter-spacing: 0.05em; color: var(--vk-text);"
+					>
 						{contrib.title}
 					</h3>
-					<p class="text-xs sm:text-sm text-gray-400 line-clamp-2 truncate">
+					<p
+						class="text-xs truncate mt-0.5"
+						style="color: var(--vk-silver-dim);"
+					>
 						{contrib.repository.nameWithOwner}
 					</p>
 				</div>
-				<p class="text-xs text-gray-400">
-					#{contrib.number} • {contrib.closedAtFmt}
+				<p
+					class="text-xs"
+					style="color: var(--vk-muted); font-family: 'Cormorant Garamond', serif; font-style: italic;"
+				>
+					#{contrib.number} &nbsp;·&nbsp; {contrib.closedAtFmt}
 				</p>
 			</a>
 		))}
 	</div>
 </section>
+
+<style>
+	.group:hover .group-hover\:opacity-100 {
+		opacity: 1 !important;
+	}
+</style>

@@ -1,11 +1,95 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cormorant+SC:wght@300;400;600&display=swap");
 
-@layer components {
-	.card-base {
-		@apply bg-neutral-900 rounded-xl hover:bg-neutral-800 transition border border-neutral-800;
-	}
+/* ── Visual Kei CSS Design Tokens ─────────────────────────── */
+:root {
+	--vk-bg:          #060008;
+	--vk-surface:     rgba(10, 2, 16, 0.92);
+	--vk-surface-h:   rgba(18, 4, 26, 0.96);
+	--vk-crimson:     #c8002e;
+	--vk-crimson-dim: #7a0019;
+	--vk-gold:        #c9a84c;
+	--vk-gold-dim:    #7a6020;
+	--vk-silver:      #cac4d8;
+	--vk-silver-dim:  #7a7490;
+	--vk-text:        #e8dff2;
+	--vk-muted:       #7a6e90;
+	--vk-border:      rgba(200, 0, 46, 0.25);
+	--vk-border-h:    rgba(200, 0, 46, 0.6);
+	--vk-glow:        0 0 20px rgba(200, 0, 46, 0.3), 0 0 60px rgba(200, 0, 46, 0.1);
+	--vk-glow-gold:   0 0 12px rgba(201, 168, 76, 0.4);
 }
 
+/* ── Base ──────────────────────────────────────────────────── */
+html {
+	background-color: var(--vk-bg);
+	color: var(--vk-text);
+	font-family: "Cormorant Garamond", "Noto Serif JP", Georgia, serif;
+}
+
+::selection {
+	background: var(--vk-crimson-dim);
+	color: var(--vk-gold);
+}
+
+/* ── Scrollbar ─────────────────────────────────────────────── */
+::-webkit-scrollbar {
+	width: 4px;
+}
+::-webkit-scrollbar-track {
+	background: var(--vk-bg);
+}
+::-webkit-scrollbar-thumb {
+	background: var(--vk-crimson-dim);
+	border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: var(--vk-crimson);
+}
+
+/* ── Body Background ───────────────────────────────────────── */
+body {
+	position: relative;
+	background-color: var(--vk-bg);
+}
+
+/* Deep radial vignette */
+body::before {
+	content: "";
+	position: fixed;
+	inset: 0;
+	background:
+		radial-gradient(ellipse 80% 60% at 50% 0%,   rgba(80, 0, 100, 0.18) 0%, transparent 70%),
+		radial-gradient(ellipse 50% 40% at 20% 80%,  rgba(200, 0, 46, 0.08) 0%, transparent 60%),
+		radial-gradient(ellipse 50% 40% at 80% 80%,  rgba(201, 168, 76, 0.05) 0%, transparent 60%),
+		radial-gradient(ellipse 100% 100% at 50% 50%, rgba(0, 0, 0, 0.4) 40%, transparent 100%);
+	pointer-events: none;
+	z-index: 0;
+}
+
+/* Diagonal grain texture */
+body::after {
+	content: "";
+	position: fixed;
+	inset: 0;
+	background-image:
+		repeating-linear-gradient(
+			-45deg,
+			transparent,
+			transparent 3px,
+			rgba(255, 255, 255, 0.012) 3px,
+			rgba(255, 255, 255, 0.012) 4px
+		);
+	pointer-events: none;
+	z-index: 0;
+}
+
+/* ── Typography ────────────────────────────────────────────── */
+h1, h2, h3 {
+	font-family: "Cormorant SC", "Noto Serif JP", serif;
+}
+
+/* ── Grid Layout Utilities ─────────────────────────────────── */
 @utility grid-areas-* {
 	grid-template-areas: --value([\*]);
 }
@@ -16,8 +100,116 @@
 
 @theme {
 	--grid-areas-layout: "header" "main" "footer";
-
 	--grid-area-header: header;
 	--grid-area-main: main;
 	--grid-area-footer: footer;
+}
+
+/* ── Card Base ─────────────────────────────────────────────── */
+@layer components {
+	.card-base {
+		background: var(--vk-surface);
+		border-radius: 2px;
+		border: 1px solid var(--vk-border);
+		position: relative;
+		transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+	}
+
+	.card-base::before,
+	.card-base::after {
+		content: "";
+		position: absolute;
+		width: 8px;
+		height: 8px;
+		border-color: var(--vk-gold-dim);
+		border-style: solid;
+		transition: border-color 0.3s ease;
+	}
+	.card-base::before {
+		top: -1px;
+		left: -1px;
+		border-width: 1px 0 0 1px;
+	}
+	.card-base::after {
+		bottom: -1px;
+		right: -1px;
+		border-width: 0 1px 1px 0;
+	}
+
+	.card-base:hover {
+		background: var(--vk-surface-h);
+		border-color: var(--vk-border-h);
+		box-shadow: var(--vk-glow);
+	}
+	.card-base:hover::before,
+	.card-base:hover::after {
+		border-color: var(--vk-gold);
+	}
+}
+
+/* ── Section Heading Ornament ──────────────────────────────── */
+@layer components {
+	.vk-section-title {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		font-family: "Cormorant SC", serif;
+		font-size: 1.25rem;
+		font-weight: 600;
+		letter-spacing: 0.15em;
+		color: var(--vk-text);
+		text-transform: uppercase;
+	}
+
+	.vk-section-title::before,
+	.vk-section-title::after {
+		content: "";
+		flex: 1;
+		height: 1px;
+		background: linear-gradient(90deg, transparent, var(--vk-crimson-dim));
+	}
+	.vk-section-title::before {
+		display: none;
+	}
+	.vk-section-title::after {
+		background: linear-gradient(90deg, var(--vk-crimson-dim), transparent);
+	}
+}
+
+/* ── Entrance Animations ───────────────────────────────────── */
+@keyframes vk-fade-in {
+	from { opacity: 0; transform: translateY(12px); }
+	to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes vk-flicker {
+	0%, 100% { opacity: 1; }
+	92%       { opacity: 1; }
+	93%       { opacity: 0.85; }
+	94%       { opacity: 1; }
+	96%       { opacity: 0.9; }
+	97%       { opacity: 1; }
+}
+
+.vk-animate-in {
+	animation: vk-fade-in 0.8s ease both;
+}
+
+/* ── Decorative Cross Divider ──────────────────────────────── */
+@layer components {
+	.vk-divider {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		color: var(--vk-crimson-dim);
+		font-size: 0.6rem;
+		letter-spacing: 0.3em;
+	}
+	.vk-divider::before,
+	.vk-divider::after {
+		content: "";
+		flex: 1;
+		height: 1px;
+		background: linear-gradient(90deg, transparent, var(--vk-crimson-dim), transparent);
+	}
 }
