@@ -104,7 +104,7 @@ const svg = await satori(
               display: "flex",
               alignItems: "flex-end",
               gap: 16,
-              marginTop: 36,
+              marginTop: 32,
             },
             children: [
               {
