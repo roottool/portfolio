@@ -8,7 +8,7 @@ const NAME = "roottool" as const satisfies string;
 const { title = NAME } = Astro.props;
 ---
 
-<html lang="ja" style="background-color:#060008; color:#e8dff2;">
+<html lang="ja" style="background-color: #060008; color: #e8dff2">
 	<head>
 		<meta charset="utf-8" />
 		<meta
@@ -31,51 +31,44 @@ const { title = NAME } = Astro.props;
 		<link rel="preconnect" href="https://cdn.cloudflare.steamstatic.com" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cormorant+SC:wght@300;400;600&display=swap" />
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cormorant+SC:wght@300;400;600&display=swap"
+		/>
 		<title>{title}</title>
 		<link rel="stylesheet" href="/src/styles/global.css" />
 	</head>
 	<body
 		class="grid grid-areas-layout grid-rows-[max-content_1fr_max-content] xl:h-screen xl:overflow-hidden"
-		style="position:relative; z-index:1;"
+		style="position: relative; z-index: 1"
 	>
 		<!-- Header -->
 		<header
 			class="grid-area-header text-center py-8 relative"
-			style="border-bottom: 1px solid rgba(200,0,46,0.2); background: linear-gradient(180deg, rgba(80,0,60,0.25) 0%, transparent 100%);"
+			style="border-bottom: 1px solid rgba(200, 0, 46, 0.2); background: linear-gradient(180deg, rgba(80, 0, 60, 0.25) 0%, transparent 100%)"
 		>
 			<!-- Corner ornaments -->
 			<span
 				aria-hidden="true"
 				class="absolute top-0 left-0 w-16 h-16 pointer-events-none"
-				style="border-top: 1px solid rgba(202,196,216,0.3); border-left: 1px solid rgba(202,196,216,0.3);"
+				style="border-top: 1px solid rgba(202, 196, 216, 0.3); border-left: 1px solid rgba(202, 196, 216, 0.3)"
 			></span>
 			<span
 				aria-hidden="true"
 				class="absolute top-0 right-0 w-16 h-16 pointer-events-none"
-				style="border-top: 1px solid rgba(202,196,216,0.3); border-right: 1px solid rgba(202,196,216,0.3);"
+				style="border-top: 1px solid rgba(202, 196, 216, 0.3); border-right: 1px solid rgba(202, 196, 216, 0.3)"
 			></span>
 
 			<!-- Tagline -->
 			<p
 				class="text-xs tracking-[0.5em] uppercase mb-2"
-				style="color: #e0304a; font-family: 'Cormorant SC', serif; animation: vk-fade-in 0.6s ease both;"
+				style='color: #e0304a; font-family: "Cormorant SC", serif; animation: vk-fade-in 0.6s ease both'
 			>
 				Portfolio
 			</p>
 
 			<!-- Main title -->
-			<h1
-				style="
-					font-family: 'Cinzel Decorative', serif;
-					font-size: clamp(1.6rem, 4vw, 2.8rem);
-					font-weight: 700;
-					letter-spacing: 0.15em;
-					color: var(--vk-text);
-					text-shadow: 0 0 30px rgba(200,0,46,0.4), 0 0 80px rgba(200,0,46,0.1);
-					animation: vk-fade-in 0.8s 0.1s ease both, vk-flicker 8s 2s ease infinite, vk-glitch 16s 5s linear infinite;
-				"
-			>
+			<h1 style='font-family: "Cinzel Decorative", serif; font-size: clamp(1.6rem, 4vw, 2.8rem); font-weight: 700; letter-spacing: 0.15em; color: var(--vk-text); text-shadow: 0 0 30px rgba(200, 0, 46, 0.4), 0 0 80px rgba(200, 0, 46, 0.1); animation: vk-fade-in 0.8s 0.1s ease both, vk-flicker 8s 2s ease infinite, vk-glitch 16s 5s linear infinite'>
 				roottool
 			</h1>
 
@@ -83,18 +76,22 @@ const { title = NAME } = Astro.props;
 			<div
 				class="flex items-center justify-center gap-3 mt-3"
 				aria-hidden="true"
-				style="animation: vk-fade-in 0.8s 0.3s ease both;"
+				style="animation: vk-fade-in 0.8s 0.3s ease both"
 			>
-				<span style="display:block; width:60px; height:1px; background: linear-gradient(90deg, transparent, var(--vk-crimson-dim));"></span>
-				<span style="color: var(--vk-gold); font-size: 0.5rem; letter-spacing: 0.2em;">✦ ✦ ✦</span>
-				<span style="display:block; width:60px; height:1px; background: linear-gradient(90deg, var(--vk-crimson-dim), transparent);"></span>
+				<span
+					style="display: block; width: 60px; height: 1px; background: linear-gradient(90deg, transparent, var(--vk-crimson-dim))"
+				></span>
+				<span style="color: var(--vk-gold); font-size: 0.5rem; letter-spacing: 0.2em">✦ ✦ ✦</span>
+				<span
+					style="display: block; width: 60px; height: 1px; background: linear-gradient(90deg, var(--vk-crimson-dim), transparent)"
+				></span>
 			</div>
 		</header>
 
 		<!-- Main content -->
 		<main
 			class="grid-area-main max-w-7xl mx-auto w-full px-4 sm:px-8 py-10 xl:overflow-hidden grid xl:grid-rows-1 gap-8 sm:grid-cols-2 xl:grid-cols-3"
-			style="animation: vk-fade-in 0.9s 0.4s ease both;"
+			style="animation: vk-fade-in 0.9s 0.4s ease both"
 		>
 			<slot />
 		</main>
@@ -102,11 +99,7 @@ const { title = NAME } = Astro.props;
 		<!-- Footer -->
 		<footer
 			class="grid-area-footer sticky bottom-0 text-center py-5"
-			style="
-				background: rgba(6,0,8,0.95);
-				border-top: 1px solid rgba(200,0,46,0.2);
-				backdrop-filter: blur(8px);
-			"
+			style="background: rgba(6, 0, 8, 0.95); border-top: 1px solid rgba(200, 0, 46, 0.2); backdrop-filter: blur(8px)"
 		>
 			<div class="flex justify-center gap-8 mb-3">
 				<a
@@ -115,9 +108,11 @@ const { title = NAME } = Astro.props;
 					rel="noopener noreferrer"
 					aria-label="GitHub"
 					class="transition-all duration-300"
-					style="color: var(--vk-silver-dim);"
-					onmouseover="this.style.color='var(--vk-crimson)'; this.style.filter='drop-shadow(0 0 8px rgba(200,0,46,0.6))';"
-					onmouseout="this.style.color='var(--vk-silver-dim)'; this.style.filter='none';"
+					style="color: var(--vk-silver-dim)"
+					onmouseover="this.style.color = 'var(--vk-crimson)';
+this.style.filter = 'drop-shadow(0 0 8px rgba(200,0,46,0.6))'"
+					onmouseout="this.style.color = 'var(--vk-silver-dim)';
+this.style.filter = 'none'"
 				>
 					<GitHubLogo class="w-5 h-5" />
 				</a>
@@ -127,22 +122,16 @@ const { title = NAME } = Astro.props;
 					rel="noopener noreferrer"
 					aria-label="X"
 					class="transition-all duration-300"
-					style="color: var(--vk-silver-dim);"
-					onmouseover="this.style.color='var(--vk-crimson)'; this.style.filter='drop-shadow(0 0 8px rgba(200,0,46,0.6))';"
-					onmouseout="this.style.color='var(--vk-silver-dim)'; this.style.filter='none';"
+					style="color: var(--vk-silver-dim)"
+					onmouseover="this.style.color = 'var(--vk-crimson)';
+this.style.filter = 'drop-shadow(0 0 8px rgba(200,0,46,0.6))'"
+					onmouseout="this.style.color = 'var(--vk-silver-dim)';
+this.style.filter = 'none'"
 				>
 					<XLogo class="w-5 h-5" />
 				</a>
 			</div>
-			<p
-				style="
-					font-family: 'Cormorant SC', serif;
-					font-size: 0.75rem;
-					letter-spacing: 0.3em;
-					color: var(--vk-muted);
-					text-transform: uppercase;
-				"
-			>
+			<p style='font-family: "Cormorant SC", serif; font-size: 0.75rem; letter-spacing: 0.3em; color: var(--vk-muted); text-transform: uppercase'>
 				© 2025 &nbsp;{NAME}
 			</p>
 		</footer>
