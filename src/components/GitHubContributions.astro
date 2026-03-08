@@ -16,12 +16,12 @@ if (!data || !Array.isArray(data)) {
 const formattedContributions = processContributions(data);
 ---
 
-<section class="flex flex-col gap-4">
+<section class="flex flex-col gap-4 sm:row-span-2 xl:row-span-1">
 	<h2 class="text-2xl font-semibold text-white text-center sm:text-left">
 		🧩 OSSコントリビューション
 	</h2>
 
-	<div class="grid grid-rows-subgrid grid-cols-1 gap-4 md:overflow-auto">
+	<div class="flex flex-col gap-4 xl:flex-1 xl:overflow-y-auto">
 		{formattedContributions.map((contrib) => (
 			<a
 				href={contrib.url}
