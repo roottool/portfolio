@@ -6,6 +6,9 @@
       "name": "portfolio",
       "dependencies": {
         "@astrojs/check": "0.9.6",
+        "@fontsource/cinzel-decorative": "5.2.8",
+        "@fontsource/cormorant-garamond": "5.2.11",
+        "@fontsource/cormorant-sc": "5.2.8",
         "astro": "5.17.3",
       },
       "devDependencies": {
@@ -164,6 +167,12 @@
     "@eslint/object-schema": ["@eslint/object-schema@2.1.7", "", {}, "sha512-VtAOaymWVfZcmZbp6E2mympDIHvyjXs/12LqWYjVw6qjrfF+VK+fyG33kChz3nnK+SU5/NeHOqrTEHS8sXO3OA=="],
 
     "@eslint/plugin-kit": ["@eslint/plugin-kit@0.4.1", "", { "dependencies": { "@eslint/core": "^0.17.0", "levn": "^0.4.1" } }, "sha512-43/qtrDUokr7LJqoF2c3+RInu/t4zfrpYdoSDfYyhg52rwLV6TnOvdG4fXm7IkSB3wErkcmJS9iEhjVtOSEjjA=="],
+
+    "@fontsource/cinzel-decorative": ["@fontsource/cinzel-decorative@5.2.8", "", {}, "sha512-BtrvcprcCd0DyAcIXZRohfMyh+n/MwNvmhmAZ0kXDe9T1w2XSOodb3RNoD1uHm3TlGw7fjTU0YepgAQbPW0sFw=="],
+
+    "@fontsource/cormorant-garamond": ["@fontsource/cormorant-garamond@5.2.11", "", {}, "sha512-5JjpN023lhA5soijgVT0BdRGzmlijm402ppjccMd6h+vRE0mX2lJnE+41UPfnlidrkV9/rCo1mf58WZlHnB0CA=="],
+
+    "@fontsource/cormorant-sc": ["@fontsource/cormorant-sc@5.2.8", "", {}, "sha512-CwDlqVYqCeEoSB2P3TsgRM/beU/hsJbFyU+MIvfcWim48BGhtVcJzvvHLWiGnmj5ZY3kVvO0KiWA0OLb/Hfc9A=="],
 
     "@humanfs/core": ["@humanfs/core@0.19.1", "", {}, "sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA=="],
 
