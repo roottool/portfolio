@@ -13,9 +13,9 @@
 	--vk-silver-dim:  #7a7490;
 	--vk-text:        #e8dff2;
 	--vk-muted:       #8e82a4;
-	--vk-border:      rgba(200, 0, 46, 0.25);
-	--vk-border-h:    rgba(200, 0, 46, 0.6);
-	--vk-glow:        0 0 20px rgba(200, 0, 46, 0.3), 0 0 60px rgba(200, 0, 46, 0.1);
+	--vk-border:      rgba(200, 0, 46, 0.32);
+	--vk-border-h:    rgba(200, 0, 46, 0.75);
+	--vk-glow:        0 0 28px rgba(200, 0, 46, 0.5), 0 0 80px rgba(200, 0, 46, 0.18);
 	--vk-glow-gold:   0 0 12px rgba(201, 168, 76, 0.4);
 }
 
@@ -40,7 +40,7 @@ html {
 }
 ::-webkit-scrollbar-thumb {
 	background: var(--vk-crimson-dim);
-	border-radius: 2px;
+	border-radius: 0;
 }
 ::-webkit-scrollbar-thumb:hover {
 	background: var(--vk-crimson);
@@ -75,9 +75,9 @@ body::after {
 		repeating-linear-gradient(
 			-45deg,
 			transparent,
-			transparent 3px,
-			rgba(255, 255, 255, 0.012) 3px,
-			rgba(255, 255, 255, 0.012) 4px
+			transparent 2px,
+			rgba(255, 255, 255, 0.022) 2px,
+			rgba(255, 255, 255, 0.022) 3px
 		);
 	pointer-events: none;
 	z-index: 0;
@@ -108,7 +108,7 @@ h1, h2, h3 {
 @layer components {
 	.card-base {
 		background: var(--vk-surface);
-		border-radius: 2px;
+		border-radius: 0;
 		border: 1px solid var(--vk-border);
 		position: relative;
 		transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
@@ -120,7 +120,7 @@ h1, h2, h3 {
 		position: absolute;
 		width: 8px;
 		height: 8px;
-		border-color: var(--vk-gold-dim);
+		border-color: var(--vk-silver-dim);
 		border-style: solid;
 		transition: border-color 0.3s ease;
 	}
@@ -142,7 +142,7 @@ h1, h2, h3 {
 	}
 	.card-base:hover::before,
 	.card-base:hover::after {
-		border-color: var(--vk-gold);
+		border-color: var(--vk-silver);
 	}
 }
 
