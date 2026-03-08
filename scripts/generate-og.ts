@@ -111,8 +111,7 @@ const svg = await satori(
 									style: {
 										width: 120,
 										height: 1,
-										background:
-											"linear-gradient(90deg, transparent, #7a0019)",
+										background: "linear-gradient(90deg, transparent, #7a0019)",
 									},
 								},
 							},
@@ -133,8 +132,7 @@ const svg = await satori(
 									style: {
 										width: 120,
 										height: 1,
-										background:
-											"linear-gradient(90deg, #7a0019, transparent)",
+										background: "linear-gradient(90deg, #7a0019, transparent)",
 									},
 								},
 							},
