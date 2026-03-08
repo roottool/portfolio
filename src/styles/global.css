@@ -282,3 +282,33 @@ h1, h2, h3 {
 		background: linear-gradient(90deg, transparent, var(--vk-crimson-dim), transparent);
 	}
 }
+
+/* ── Reduced Motion ────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+	@keyframes vk-fade-in {
+		from {
+			opacity: 1;
+			transform: none;
+		}
+		to {
+			opacity: 1;
+			transform: none;
+		}
+	}
+
+	@keyframes vk-flicker {
+		0%,
+		100% {
+			opacity: 1;
+		}
+	}
+
+	@keyframes vk-glitch {
+		0%,
+		100% {
+			text-shadow: 0 0 30px rgba(200, 0, 46, 0.4), 0 0 80px rgba(200, 0, 46, 0.1);
+			transform: none;
+			filter: none;
+		}
+	}
+}
