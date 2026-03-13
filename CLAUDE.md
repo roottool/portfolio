@@ -65,4 +65,3 @@ All API calls are made at build time in `src/pages/index.astro` using `Promise.a
 
 - Embeds Spotify playlist (2024 Top Songs)
 - Uses iframe embed with Spotify's generator
-
