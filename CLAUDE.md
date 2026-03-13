@@ -6,6 +6,20 @@ For general development information, see [AGENTS.md](./AGENTS.md).
 
 This file contains Claude Code-specific guidance and detailed configurations.
 
+## Quick Commands
+
+- **Dev server**: `bun run dev`
+- **Build** (includes OG image generation): `bun run build`
+- **Lint**: `bun run lint`
+- **Format**: `bun run format`
+- **Fix** (ESLint + format): `bun run fix`
+- **Type check**: `bun run typecheck`
+- **Preview production**: `bun run preview`
+
+## Build Gotchas
+
+- `bun run build` runs `scripts/generate-og.ts` before `astro build` — OG image is generated statically at build time
+
 ## Dependency Management
 
 ### Renovate Configuration
@@ -52,21 +66,3 @@ All API calls are made at build time in `src/pages/index.astro` using `Promise.a
 - Embeds Spotify playlist (2024 Top Songs)
 - Uses iframe embed with Spotify's generator
 
-## Component Architecture Details
-
-### Props Interface
-
-TypeScript interfaces define expected data shapes for all components.
-
-### Layout System
-
-- Base HTML structure with header, main, and footer grid areas
-- Custom grid area utilities for layout management
-- Responsive Grid: Utilizes Tailwind's responsive grid system (sm, md, xl breakpoints)
-
-## Build and Deployment
-
-- Static site generation with Astro
-- No client-side JavaScript by default (static HTML/CSS)
-- Build output in `dist/` directory
-- Optimized for deployment to static hosting platforms (Vercel)
