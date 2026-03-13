@@ -1,6 +1,6 @@
 {
 	"response": {
-		"game_count": 347,
+		"game_count": 349,
 		"games": [
 			{
 				"appid": 70,
@@ -1064,6 +1064,19 @@
 				"name": "Galactic Civilizations I: Ultimate Edition",
 				"playtime_forever": 0,
 				"img_icon_url": "66df956909f51af564f8d6086c201004ab81aa51",
+				"playtime_windows_forever": 0,
+				"playtime_mac_forever": 0,
+				"playtime_linux_forever": 0,
+				"playtime_deck_forever": 0,
+				"rtime_last_played": 0,
+				"playtime_disconnected": 0
+			},
+			{
+				"appid": 214340,
+				"name": "Deponia",
+				"playtime_forever": 0,
+				"img_icon_url": "48a94d33cae6065b0bedf7eefd01bd5321c7c729",
+				"has_community_visible_stats": true,
 				"playtime_windows_forever": 0,
 				"playtime_mac_forever": 0,
 				"playtime_linux_forever": 0,
@@ -3762,7 +3775,7 @@
 				"appid": 1172470,
 				"name": "Apex Legends",
 				"playtime_forever": 158,
-				"img_icon_url": "1bd542699970c8a2d82d114da3fe4e466209e717",
+				"img_icon_url": "8986dd626da56db5f3fe09bc1b8871739de8b00d",
 				"has_community_visible_stats": true,
 				"playtime_windows_forever": 158,
 				"playtime_mac_forever": 0,
@@ -3817,6 +3830,19 @@
 				"name": "A Juggler's Tale",
 				"playtime_forever": 0,
 				"img_icon_url": "294ccb2049069e873531fa6a42aa223659eb50a0",
+				"has_community_visible_stats": true,
+				"playtime_windows_forever": 0,
+				"playtime_mac_forever": 0,
+				"playtime_linux_forever": 0,
+				"playtime_deck_forever": 0,
+				"rtime_last_played": 0,
+				"playtime_disconnected": 0
+			},
+			{
+				"appid": 1269500,
+				"name": "Crowalt: Traces of the Lost Colony",
+				"playtime_forever": 0,
+				"img_icon_url": "6e8ee8b68546626ee4fa662adc5f83d6f4947827",
 				"has_community_visible_stats": true,
 				"playtime_windows_forever": 0,
 				"playtime_mac_forever": 0,
@@ -4365,15 +4391,15 @@
 			{
 				"appid": 2807960,
 				"name": "Battlefield™ 6",
-				"playtime_2weeks": 233,
-				"playtime_forever": 6040,
+				"playtime_2weeks": 31,
+				"playtime_forever": 6071,
 				"img_icon_url": "8b06f13e9fd82e1a436ffdca4e1de118ee4a9ed2",
 				"has_community_visible_stats": true,
-				"playtime_windows_forever": 6040,
+				"playtime_windows_forever": 6071,
 				"playtime_mac_forever": 0,
 				"playtime_linux_forever": 0,
 				"playtime_deck_forever": 0,
-				"rtime_last_played": 1771821215,
+				"rtime_last_played": 1772815529,
 				"content_descriptorids": [2, 5],
 				"playtime_disconnected": 0
 			},
