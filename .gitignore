@@ -52,3 +52,10 @@ lefthook-local.yml
 
 # Snyk Security Extension - AI Rules (auto-generated)
 .github/instructions/snyk_rules.instructions.md
+
+# Claude Code local config
+.claude/skills/
+.claude/agents/
+
+# Serena memories
+.serena/memories/
