@@ -6,38 +6,38 @@ import "../styles/global.css";
 
 const NAME = "roottool" as const satisfies string;
 const { title = NAME } = Astro.props;
+const currentYear = new Date().getFullYear();
 ---
 
 <html lang="ja" style="background-color: #060008; color: #e8dff2">
 	<head>
 		<meta charset="utf-8" />
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1, shrink-to-fit=no"
-		/>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="theme-color" content="#060008" />
 		<meta name="description" content="This site is roottool's portfolio." />
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:site" content="@roottool" />
 		<meta name="twitter:image" content="https://portfolio-6od.pages.dev/og.png" />
-		<meta name="og:title" content="roottool" />
-		<meta name="og:description" content="This site is roottool's portfolio." />
+		<meta property="og:title" content="roottool" />
+		<meta property="og:description" content="This site is roottool's portfolio." />
 		<meta property="og:image" content="https://portfolio-6od.pages.dev/og.png" />
-		<!-- <meta name="og:url" content="https://roottool.github.io/" /> -->
+		<meta property="og:url" content="https://portfolio-6od.pages.dev/" />
 		<!--
       manifest.json provides metadata used when your web app is added to the
       homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
     -->
 		<link rel="manifest" href="/manifest.json" />
 		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" href="/android-chrome-192x192.png" />
 		<link rel="preconnect" href="https://cdn.cloudflare.steamstatic.com" />
 		<title>{title}</title>
-		<link rel="stylesheet" href="/src/styles/global.css" />
 	</head>
 	<body
 		class="grid grid-areas-layout grid-rows-[max-content_1fr_max-content] xl:h-screen xl:overflow-hidden"
 		style="position: relative; z-index: 1"
 	>
+		<a href="#main-content" class="skip-link">Skip to main content</a>
+
 		<!-- Header -->
 		<header
 			class="grid-area-header text-center py-8 relative"
@@ -86,6 +86,7 @@ const { title = NAME } = Astro.props;
 
 		<!-- Main content -->
 		<main
+			id="main-content"
 			class="grid-area-main max-w-7xl mx-auto w-full px-4 sm:px-8 py-10 xl:overflow-hidden grid xl:grid-rows-1 gap-8 sm:grid-cols-2 xl:grid-cols-3"
 			style="animation: vk-fade-in 0.9s 0.4s ease both"
 		>
@@ -103,12 +104,7 @@ const { title = NAME } = Astro.props;
 					target="_blank"
 					rel="noopener noreferrer"
 					aria-label="GitHub"
-					class="transition-all duration-300"
-					style="color: var(--vk-silver-dim)"
-					onmouseover="this.style.color = 'var(--vk-crimson)';
-this.style.filter = 'drop-shadow(0 0 8px rgba(200,0,46,0.6))'"
-					onmouseout="this.style.color = 'var(--vk-silver-dim)';
-this.style.filter = 'none'"
+					class="footer-link"
 				>
 					<GitHubLogo class="w-5 h-5" />
 				</a>
@@ -117,19 +113,48 @@ this.style.filter = 'none'"
 					target="_blank"
 					rel="noopener noreferrer"
 					aria-label="X"
-					class="transition-all duration-300"
-					style="color: var(--vk-silver-dim)"
-					onmouseover="this.style.color = 'var(--vk-crimson)';
-this.style.filter = 'drop-shadow(0 0 8px rgba(200,0,46,0.6))'"
-					onmouseout="this.style.color = 'var(--vk-silver-dim)';
-this.style.filter = 'none'"
+					class="footer-link"
 				>
 					<XLogo class="w-5 h-5" />
 				</a>
 			</div>
 			<p style='font-family: "Cormorant SC", serif; font-size: 0.75rem; letter-spacing: 0.3em; color: var(--vk-muted); text-transform: uppercase'>
-				© 2025 &nbsp;{NAME}
+				© 2025{currentYear > 2025 ? `–${currentYear}` : ""} &nbsp;{NAME}
 			</p>
 		</footer>
 	</body>
 </html>
+
+<style>
+/* Skip navigation link */
+.skip-link {
+	position: absolute;
+	top: -100%;
+	left: 1rem;
+	z-index: 9999;
+	padding: 0.5rem 1rem;
+	background: var(--vk-surface);
+	color: var(--vk-text);
+	border: 1px solid var(--vk-crimson);
+	font-family: "Cormorant SC", serif;
+	font-size: 0.875rem;
+	letter-spacing: 0.1em;
+	text-decoration: none;
+	transition: top 0.2s ease;
+}
+.skip-link:focus {
+	top: 1rem;
+}
+
+/* Footer social links — CSS-only hover/focus, no inline JS */
+.footer-link {
+	color: var(--vk-silver-dim);
+	transition: color 0.3s ease, filter 0.3s ease;
+}
+.footer-link:hover,
+.footer-link:focus-visible {
+	color: var(--vk-crimson);
+	filter: drop-shadow(0 0 8px rgba(200, 0, 46, 0.6));
+	outline: none;
+}
+</style>

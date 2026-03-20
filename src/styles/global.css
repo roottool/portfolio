@@ -155,13 +155,17 @@ h1, h2, h3 {
 		border-width: 0 1px 1px 0;
 	}
 
-	.card-base:hover {
+	.card-base:hover,
+	.card-base:focus-visible {
 		background: var(--vk-surface-h);
 		border-color: var(--vk-border-h);
 		box-shadow: var(--vk-glow);
+		outline: none;
 	}
 	.card-base:hover::before,
-	.card-base:hover::after {
+	.card-base:hover::after,
+	.card-base:focus-visible::before,
+	.card-base:focus-visible::after {
 		border-color: var(--vk-silver);
 	}
 }
