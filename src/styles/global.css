@@ -184,17 +184,10 @@ h1, h2, h3 {
 		text-transform: uppercase;
 	}
 
-	.vk-section-title::before,
 	.vk-section-title::after {
 		content: "";
 		flex: 1;
 		height: 1px;
-		background: linear-gradient(90deg, transparent, var(--vk-crimson-dim));
-	}
-	.vk-section-title::before {
-		display: none;
-	}
-	.vk-section-title::after {
 		background: linear-gradient(90deg, var(--vk-crimson-dim), transparent);
 	}
 }
