@@ -16,10 +16,10 @@ if (!data?.games || !Array.isArray(data.games)) {
 const games = processGames(data.games).slice(0, 12);
 ---
 
-<section class="flex flex-col gap-4">
+<section class="flex flex-col gap-4 flex-1 min-h-0">
 	<h2 class="vk-section-title" lang="en">
 		<span style="color: var(--vk-gold); font-size: 1rem">⚔</span>
-		Steam Library
+		The Archive
 	</h2>
 
 	<div class="flex-1 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 gap-3 sm:gap-4 xl:overflow-y-auto">
@@ -63,7 +63,7 @@ const games = processGames(data.games).slice(0, 12);
 						class="text-sm"
 						style='color: var(--vk-muted); font-family: "Cormorant Garamond", serif; font-style: italic'
 					>
-						Played: {(game.playtime_forever / STEAM.MINUTES_PER_HOUR).toFixed(1)} hrs
+						{(game.playtime_forever / STEAM.MINUTES_PER_HOUR).toFixed(1)} hrs in communion
 					</p>
 				</div>
 			</a>
