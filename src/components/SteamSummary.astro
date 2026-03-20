@@ -38,7 +38,7 @@ const games = processGames(data.games).slice(0, 12);
 						sizes="(max-width: 640px) 184px, 231px"
 						alt={game.name}
 						class="w-full object-cover transition-all duration-500"
-						style="aspect-ratio: 231 / 87; filter: saturate(0.7) brightness(0.85)"
+						class="game-image"
 						loading={index < 6 ? "eager" : "lazy"}
 						decoding="async"
 						fetchpriority={index < 6 ? "high" : "low"}
@@ -48,8 +48,7 @@ const games = processGames(data.games).slice(0, 12);
 					<!-- Crimson overlay on hover -->
 					<span
 						aria-hidden="true"
-						style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(200, 0, 46, 0.15) 0%, transparent 60%); opacity: 0; transition: opacity 0.3s ease"
-						class="group-hover:overlay-show"
+						class="game-overlay"
 					></span>
 				</div>
 
@@ -73,10 +72,22 @@ const games = processGames(data.games).slice(0, 12);
 </section>
 
 <style>
-.group:hover .group-hover\:overlay-show {
-	opacity: 1 !important;
+.game-image {
+	aspect-ratio: 231 / 87;
+	filter: saturate(0.7) brightness(0.85);
+	transition: filter 0.5s ease;
 }
-.group:hover img {
-	filter: saturate(0.9) brightness(1.0) !important;
+.group:hover .game-image {
+	filter: saturate(0.9) brightness(1);
+}
+.game-overlay {
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(135deg, rgba(200, 0, 46, 0.15) 0%, transparent 60%);
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+.group:hover .game-overlay {
+	opacity: 1;
 }
 </style>

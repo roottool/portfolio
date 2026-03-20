@@ -13,12 +13,18 @@ const { title = NAME } = Astro.props;
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="theme-color" content="#060008" />
-		<meta name="description" content="This site is roottool's portfolio." />
+		<meta
+			name="description"
+			content="roottool — web app developer and Visual Kei enthusiast."
+		/>
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:site" content="@roottool" />
 		<meta name="twitter:image" content="https://portfolio-6od.pages.dev/og.png" />
 		<meta property="og:title" content="roottool" />
-		<meta property="og:description" content="This site is roottool's portfolio." />
+		<meta
+			property="og:description"
+			content="roottool — web app developer and Visual Kei enthusiast."
+		/>
 		<meta property="og:image" content="https://portfolio-6od.pages.dev/og.png" />
 		<meta property="og:url" content="https://portfolio-6od.pages.dev/" />
 		<!--
@@ -143,6 +149,11 @@ const { title = NAME } = Astro.props;
 }
 .skip-link:focus {
 	top: 1rem;
+}
+
+/* Promote glitch-animated h1 to compositor layer */
+h1 {
+	will-change: transform, filter;
 }
 
 /* Footer social links — CSS-only hover/focus, no inline JS */
