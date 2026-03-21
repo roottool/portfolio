@@ -35,7 +35,7 @@ jobs:
           persist-credentials: true
 
       - name: Initialize
-        uses: ./.github/actions/setup-bun
+        uses: ./.github/actions/setup-environment
 
       - name: Fetch OSS contributions
         id: fetch
