@@ -11,8 +11,7 @@ on:
       - reopened
       - ready_for_review
 
-# Declare default permissions as read only.
-permissions: read-all
+permissions: {}
 
 defaults:
   run:
@@ -161,13 +160,6 @@ jobs:
       - typecheck
       # - test
       - renovate-config-lint
-    if: ${{ !cancelled() }}
+    if: always() && (contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled'))
     steps:
-      - name: Check for failed or canceled jobs
-        # A parent job is the test job. `failure()` results `false` if the test job is skipped.
-        if: ${{ contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled') }}
-        run: exit 1
-
-      - name: Passed this workflow
-        if: ${{ success() }}
-        run: exit 0
+      - run: exit 1
