@@ -130,6 +130,6 @@ jobs:
         if: steps.changes.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ steps.create_pr.outputs.pr_number }}
         run: |
-          PR_NUMBER=${{ steps.create_pr.outputs.pr_number }}
-          gh pr merge "$PR_NUMBER" --auto --squash
+          gh pr merge "${PR_NUMBER}" --auto --squash
