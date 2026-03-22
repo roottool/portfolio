@@ -23,7 +23,8 @@ on:
       - reopened
       - ready_for_review
   schedule:
-    - cron: 30 21 * * 4
+    - cron: "30 6 * * 5"
+      timezone: "Asia/Tokyo"
 
 # Declare default permissions as read only.
 permissions: {}
