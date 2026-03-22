@@ -86,6 +86,8 @@ jobs:
 
       - name: Create branch and commit
         if: steps.changes.outputs.changed == 'true'
+        env:
+          COMMIT_MSG: "chore: update owned games data"
         id: create_branch
         run: |
           BRANCH="chore/update-owned-games-$(date +%Y%m%d%H%M%S)"
@@ -93,7 +95,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git checkout -b "${BRANCH}"
           git add src/assets/owned-games.json
-          git commit -m "chore: update owned games data"
+          git commit -m "${COMMIT_MSG}"
           git push --set-upstream origin "${BRANCH}"
           echo "branch=${BRANCH}" >> ${GITHUB_OUTPUT}
 

@@ -76,6 +76,8 @@ jobs:
 
       - name: Create branch and commit
         if: steps.changes.outputs.changed == 'true'
+        env:
+          COMMIT_MSG: "chore: update OSS contributions data"
         id: create_branch
         run: |
           BRANCH="chore/update-oss-contributions-$(date +%Y%m%d%H%M%S)"
@@ -83,7 +85,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git checkout -b "${BRANCH}"
           git add src/assets/oss-contributions.json
-          git commit -m "chore: update OSS contributions data"
+          git commit -m "${COMMIT_MSG}"
           git push --set-upstream origin "${BRANCH}"
           echo "branch=${BRANCH}" >> ${GITHUB_OUTPUT}
 
@@ -91,6 +93,7 @@ jobs:
         if: steps.changes.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ steps.generate_token.outputs.token }}
+          PR_TITLE: "chore: update OSS contributions data"
           PR_BODY: |
             ## Summary
             Automatically updated OSS contributions data.
@@ -105,15 +108,16 @@ jobs:
 
             ---
             🤖 This PR was automatically created by GitHub Actions
+          PR_LABEL: "data,automated"
           BRANCH: ${{ steps.create_branch.outputs.branch }}
         id: create_pr
         run: |
           PR_NUMBER=$(gh pr create \
             --base main \
             --head "${BRANCH}" \
-            --title "chore: update OSS contributions data" \
+            --title "${PR_TITLE}" \
             --body "${PR_BODY}" \
-            --label "data,automated")
+            --label "${PR_LABEL}")
           echo "pr_number=${PR_NUMBER}" >> ${GITHUB_OUTPUT}
 
       - name: Enable auto-merge
