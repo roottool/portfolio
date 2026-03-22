@@ -3,8 +3,8 @@ run-name: "${{ github.workflow }} (${{ github.ref_name }})"
 
 on:
   schedule:
-    # Every Sunday at 00:00 JST = Saturday 15:00 UTC
-    - cron: "0 15 * * 6"
+    - cron: "0 0 * * 6"
+      timezone: "Asia/Tokyo"
   workflow_dispatch:
 
 # Declare default permissions as read only.
