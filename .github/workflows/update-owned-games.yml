@@ -103,17 +103,21 @@ jobs:
           GH_TOKEN: ${{ steps.generate_token.outputs.token }}
           PR_BODY: |
             ## Summary
+
             Automatically updated owned games data from Steam API.
 
             ## Changes
+
             - 🎮 Updated `src/assets/owned-games.json` with the latest owned games data from Steam Web API
 
             ## Checklist
+
             - [ ] Data format is correct
             - [ ] Game count is reasonable
             - [ ] Existing data structure is preserved
 
             ---
+
             🤖 This PR was automatically created by GitHub Actions
           BRANCH: ${{ steps.create_branch.outputs.branch }}
         id: create_pr
