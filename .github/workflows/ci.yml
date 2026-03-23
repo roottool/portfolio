@@ -67,7 +67,7 @@ jobs:
         with:
           persist-credentials: false
           sparse-checkout: |
-            .github/actions/setup-bun/action.yml
+            .github/actions/setup-environment/action.yml
             .github/renovate.json
             package.json
             bun.lock
