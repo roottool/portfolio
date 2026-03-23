@@ -11,8 +11,7 @@ on:
       - reopened
       - ready_for_review
 
-# Declare default permissions as read only.
-permissions: read-all
+permissions: {}
 
 defaults:
   run:
@@ -40,7 +39,7 @@ jobs:
           persist-credentials: false
 
       - name: Initialize
-        uses: ./.github/actions/setup-bun
+        uses: ./.github/actions/setup-environment
 
       - name: Check diff targets by path filters
         uses: dorny/paths-filter@de90cc6fb38fc0963ad72b210f1f284cd68cea36 # v3.0.2
@@ -76,7 +75,7 @@ jobs:
           sparse-checkout-cone-mode: false
 
       - name: Initialize
-        uses: ./.github/actions/setup-bun
+        uses: ./.github/actions/setup-environment
 
       - name: Check format by dprint
         run: bunx dprint check .github/renovate.json
@@ -96,7 +95,7 @@ jobs:
           persist-credentials: false
 
       - name: Initialize
-        uses: ./.github/actions/setup-bun
+        uses: ./.github/actions/setup-environment
 
       - name: Run format check
         run: bun run lint:dprint
@@ -120,7 +119,7 @@ jobs:
           persist-credentials: false
 
       - name: Initialize
-        uses: ./.github/actions/setup-bun
+        uses: ./.github/actions/setup-environment
 
       - name: Run astro check
         run: bun run typecheck:astro
@@ -140,7 +139,7 @@ jobs:
   #         persist-credentials: false
 
   #     - name: Initialize
-  #       uses: ./.github/actions/setup-bun
+  #       uses: ./.github/actions/setup-environment
 
   #     - name: Run test
   #       run: bun run test
@@ -161,13 +160,6 @@ jobs:
       - typecheck
       # - test
       - renovate-config-lint
-    if: ${{ !cancelled() }}
+    if: always() && (contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled'))
     steps:
-      - name: Check for failed or canceled jobs
-        # A parent job is the test job. `failure()` results `false` if the test job is skipped.
-        if: ${{ contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled') }}
-        run: exit 1
-
-      - name: Passed this workflow
-        if: ${{ success() }}
-        run: exit 0
+      - run: exit 1

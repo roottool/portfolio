@@ -3,12 +3,12 @@ run-name: "${{ github.workflow }} (${{ github.ref_name }})"
 
 on:
   schedule:
-    # Every Sunday at 00:00 JST = Saturday 15:00 UTC
-    - cron: "0 15 * * 6"
+    - cron: "0 0 * * 6"
+      timezone: "Asia/Tokyo"
   workflow_dispatch:
 
 # Declare default permissions as read only.
-permissions: read-all
+permissions: {}
 
 defaults:
   run:
@@ -24,22 +24,25 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
-      # For branch creation and push
-      contents: write
+      # For checkout
+      contents: read
       # For PR creation and auto-merge
       pull-requests: write
     steps:
       - name: Checkout Repository
         uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
         with:
-          persist-credentials: true
+          persist-credentials: false
 
       - name: Initialize
-        uses: ./.github/actions/setup-bun
+        uses: ./.github/actions/setup-environment
 
       - name: Fetch OSS contributions
         id: fetch
         run: |
+          set -e
+          set -o pipefail
+
           gh search prs \
             --author "roottool" \
             --merged \
@@ -59,10 +62,10 @@ jobs:
         id: changes
         run: |
           if git diff --quiet src/assets/oss-contributions.json; then
-            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "changed=false" >> ${GITHUB_OUTPUT}
             echo "No changes detected"
           else
-            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "changed=true" >> ${GITHUB_OUTPUT}
             echo "Changes detected"
           fi
 
@@ -76,21 +79,26 @@ jobs:
 
       - name: Create branch and commit
         if: steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ steps.generate_token.outputs.token }}
+          REPOSITORY: ${{ github.repository }}
+          COMMIT_MSG: "chore: update OSS contributions data"
         id: create_branch
         run: |
           BRANCH="chore/update-oss-contributions-$(date +%Y%m%d%H%M%S)"
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git checkout -b "$BRANCH"
+          git checkout -b "${BRANCH}"
           git add src/assets/oss-contributions.json
-          git commit -m "chore: update OSS contributions data"
-          git push --set-upstream origin "$BRANCH"
-          echo "branch=$BRANCH" >> $GITHUB_OUTPUT
+          git commit -m "${COMMIT_MSG}"
+          git push "https://x-access-token:${GH_TOKEN}@github.com/${REPOSITORY}.git" "${BRANCH}"
+          echo "branch=${BRANCH}" >> ${GITHUB_OUTPUT}
 
       - name: Create Pull Request
         if: steps.changes.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ steps.generate_token.outputs.token }}
+          PR_TITLE: "chore: update OSS contributions data"
           PR_BODY: |
             ## Summary
             Automatically updated OSS contributions data.
@@ -105,21 +113,22 @@ jobs:
 
             ---
             🤖 This PR was automatically created by GitHub Actions
+          PR_LABEL: "data,automated"
           BRANCH: ${{ steps.create_branch.outputs.branch }}
         id: create_pr
         run: |
           PR_NUMBER=$(gh pr create \
             --base main \
-            --head "$BRANCH" \
-            --title "chore: update OSS contributions data" \
-            --body "$PR_BODY" \
-            --label "data,automated")
-          echo "pr_number=$PR_NUMBER" >> $GITHUB_OUTPUT
+            --head "${BRANCH}" \
+            --title "${PR_TITLE}" \
+            --body "${PR_BODY}" \
+            --label "${PR_LABEL}")
+          echo "pr_number=${PR_NUMBER}" >> ${GITHUB_OUTPUT}
 
       - name: Enable auto-merge
         if: steps.changes.outputs.changed == 'true'
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ steps.generate_token.outputs.token }}
+          PR_NUMBER: ${{ steps.create_pr.outputs.pr_number }}
         run: |
-          PR_NUMBER=${{ steps.create_pr.outputs.pr_number }}
-          gh pr merge "$PR_NUMBER" --auto --squash
+          gh pr merge "${PR_NUMBER}" --auto --squash

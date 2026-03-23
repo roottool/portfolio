@@ -7,6 +7,9 @@ on:
       - reopened
       - ready_for_review
 
+# Declare default permissions as read only.
+permissions: {}
+
 defaults:
   run:
     shell: bash
@@ -20,7 +23,7 @@ jobs:
     steps:
       - name: Assign PR to author if no assignees
         if: ${{ github.event.pull_request.user.type != 'Bot' && toJSON(github.event.pull_request.assignees) == '[]' }}
-        run: gh pr edit $NUMBER --add-assignee $ASSIGNEE
+        run: gh pr edit ${NUMBER} --add-assignee ${ASSIGNEE}
         env:
           GH_TOKEN: ${{ github.token }}
           GH_REPO: ${{ github.repository }}
