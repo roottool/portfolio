@@ -24,15 +24,15 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
-      # For branch creation and push
-      contents: write
+      # For checkout
+      contents: read
       # For PR creation and auto-merge
       pull-requests: write
     steps:
       - name: Checkout Repository
         uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
         with:
-          persist-credentials: true
+          persist-credentials: false
 
       - name: Initialize
         uses: ./.github/actions/setup-environment
@@ -77,6 +77,8 @@ jobs:
       - name: Create branch and commit
         if: steps.changes.outputs.changed == 'true'
         env:
+          GH_TOKEN: ${{ steps.generate_token.outputs.token }}
+          REPOSITORY: ${{ github.repository }}
           COMMIT_MSG: "chore: update OSS contributions data"
         id: create_branch
         run: |
@@ -86,7 +88,7 @@ jobs:
           git checkout -b "${BRANCH}"
           git add src/assets/oss-contributions.json
           git commit -m "${COMMIT_MSG}"
-          git push --set-upstream origin "${BRANCH}"
+          git push "https://x-access-token:${GH_TOKEN}@github.com/${REPOSITORY}.git" "${BRANCH}"
           echo "branch=${BRANCH}" >> ${GITHUB_OUTPUT}
 
       - name: Create Pull Request
@@ -123,7 +125,7 @@ jobs:
       - name: Enable auto-merge
         if: steps.changes.outputs.changed == 'true'
         env:
-          GH_TOKEN: ${{ github.token }}
-          PR_NUMBER: ${{steps.create_pr.outputs.pr_number }}
+          GH_TOKEN: ${{ steps.generate_token.outputs.token }}
+          PR_NUMBER: ${{ steps.create_pr.outputs.pr_number }}
         run: |
           gh pr merge "${PR_NUMBER}" --auto --squash
