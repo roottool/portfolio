@@ -40,6 +40,9 @@ jobs:
       - name: Fetch OSS contributions
         id: fetch
         run: |
+          set -e
+          set -o pipefail
+
           gh search prs \
             --author "roottool" \
             --merged \
