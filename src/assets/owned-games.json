@@ -1,6 +1,6 @@
 {
 	"response": {
-		"game_count": 351,
+		"game_count": 353,
 		"games": [
 			{
 				"appid": 70,
@@ -3291,6 +3291,18 @@
 				"playtime_disconnected": 0
 			},
 			{
+				"appid": 640700,
+				"name": "Narvas",
+				"playtime_forever": 0,
+				"img_icon_url": "345f20d9939d75e6e73195b9f4b0997029de451f",
+				"playtime_windows_forever": 0,
+				"playtime_mac_forever": 0,
+				"playtime_linux_forever": 0,
+				"playtime_deck_forever": 0,
+				"rtime_last_played": 0,
+				"playtime_disconnected": 0
+			},
+			{
 				"appid": 640890,
 				"name": "Will Glow the Wisp",
 				"playtime_forever": 53,
@@ -4406,7 +4418,7 @@
 			{
 				"appid": 2807960,
 				"name": "Battlefield™ 6",
-				"playtime_2weeks": 138,
+				"playtime_2weeks": 107,
 				"playtime_forever": 6178,
 				"img_icon_url": "8b06f13e9fd82e1a436ffdca4e1de118ee4a9ed2",
 				"has_community_visible_stats": true,
@@ -4531,6 +4543,18 @@
 				"playtime_disconnected": 0
 			},
 			{
+				"appid": 3144950,
+				"name": "Pet Lands",
+				"playtime_forever": 0,
+				"img_icon_url": "e76f32ecbc3baeae416bbd38abda77b60ea8cb8e",
+				"playtime_windows_forever": 0,
+				"playtime_mac_forever": 0,
+				"playtime_linux_forever": 0,
+				"playtime_deck_forever": 0,
+				"rtime_last_played": 0,
+				"playtime_disconnected": 0
+			},
+			{
 				"appid": 3145170,
 				"name": "Splitgate 2 - Alpha",
 				"playtime_forever": 45,
@@ -4545,15 +4569,15 @@
 			{
 				"appid": 3280350,
 				"name": "DEATH STRANDING 2: ON THE BEACH",
-				"playtime_2weeks": 126,
-				"playtime_forever": 126,
+				"playtime_2weeks": 951,
+				"playtime_forever": 951,
 				"img_icon_url": "d3d279eef0742abbfb318492123a454466c7e004",
 				"has_community_visible_stats": true,
-				"playtime_windows_forever": 126,
+				"playtime_windows_forever": 951,
 				"playtime_mac_forever": 0,
 				"playtime_linux_forever": 0,
 				"playtime_deck_forever": 0,
-				"rtime_last_played": 1774001655,
+				"rtime_last_played": 1774464592,
 				"content_descriptorids": [2, 5],
 				"playtime_disconnected": 0
 			},
