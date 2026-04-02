@@ -4418,7 +4418,6 @@
 			{
 				"appid": 2807960,
 				"name": "Battlefield™ 6",
-				"playtime_2weeks": 107,
 				"playtime_forever": 6178,
 				"img_icon_url": "8b06f13e9fd82e1a436ffdca4e1de118ee4a9ed2",
 				"has_community_visible_stats": true,
@@ -4569,15 +4568,15 @@
 			{
 				"appid": 3280350,
 				"name": "DEATH STRANDING 2: ON THE BEACH",
-				"playtime_2weeks": 951,
-				"playtime_forever": 951,
+				"playtime_2weeks": 2380,
+				"playtime_forever": 2380,
 				"img_icon_url": "d3d279eef0742abbfb318492123a454466c7e004",
 				"has_community_visible_stats": true,
-				"playtime_windows_forever": 951,
+				"playtime_windows_forever": 2380,
 				"playtime_mac_forever": 0,
 				"playtime_linux_forever": 0,
 				"playtime_deck_forever": 0,
-				"rtime_last_played": 1774464592,
+				"rtime_last_played": 1775137680,
 				"content_descriptorids": [2, 5],
 				"playtime_disconnected": 0
 			},
