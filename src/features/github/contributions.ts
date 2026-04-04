@@ -1,9 +1,11 @@
-import { formatDate } from "@/lib/utils/date";
+import { formatDate } from "#lib/utils/date";
 
 /**
  * Formats OSS contributions with display data
  */
-function formatContributions(contributions: OssContribution[]): FormattedContribution[] {
+function formatContributions(
+	contributions: OssContribution[],
+): FormattedContribution[] {
 	return contributions.map((contrib) => {
 		const closedAt = new Date(contrib.closedAt);
 		const closedAtFmt = formatDate(closedAt);
@@ -27,7 +29,9 @@ function sortByClosedDate(contributions: OssContribution[]): OssContribution[] {
 /**
  * Processes raw contribution data: sorts, formats, and returns top 10
  */
-export function processContributions(contributions: OssContribution[]): FormattedContribution[] {
+export function processContributions(
+	contributions: OssContribution[],
+): FormattedContribution[] {
 	const sorted = sortByClosedDate(contributions);
 	const formatted = formatContributions(sorted);
 	return formatted.slice(0, 10);

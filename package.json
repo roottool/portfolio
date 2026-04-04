@@ -31,6 +31,12 @@
 		"typecheck:astro": "astro check",
 		"typecheck:tsc": "tsc --noEmit"
 	},
+	"imports": {
+		"#*": {
+			"types": "./src/*.ts",
+			"default": "./src/*"
+		}
+	},
 	"dependencies": {
 		"@astrojs/check": "0.9.8",
 		"@fontsource/cinzel-decorative": "5.2.8",

@@ -46,7 +46,7 @@ src/
 ## Key Configuration
 
 - **File Extensions**: Astro components use `.astro` extension
-- **Path Aliases**: `@/*` maps to `src/*`, `$/*` maps to `public/*`
+- **Path Aliases**: `#*` maps to `src/*` via Node.js subpath imports (`package.json` `imports` field)
 - **Output**: Static site generation (`output: 'static'` in astro.config.mjs)
 
 ## Architecture Overview
@@ -85,7 +85,7 @@ The portfolio displays data from three external sources:
    - Embeds Spotify playlist (2024 Top Songs)
    - Uses iframe embed with Spotify's generator
 
-All API calls are made at build time in `src/pages/index.astro` using `Promise.all()` for parallel fetching.
+Static data is read from pre-generated JSON files (`src/assets/oss-contributions.json`, `src/assets/owned-games.json`) in `src/pages/index.astro`. These files are updated via dedicated GitHub Actions workflows.
 
 ### Build and Deployment
 

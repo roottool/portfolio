@@ -24,11 +24,7 @@
 		"esModuleInterop": true,
 		"isolatedModules": true,
 		"resolveJsonModule": true,
-		"erasableSyntaxOnly": true,
-		"paths": {
-			"@/*": ["./src/*"],
-			"$/*": ["./public/*"]
-		}
+		"erasableSyntaxOnly": true
 	},
 	"include": [".astro/types.d.ts", "**/*"],
 	"exclude": ["dist"]
