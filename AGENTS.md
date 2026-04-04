@@ -4,7 +4,7 @@ This file provides guidance to AI coding assistants when working with code in th
 
 ## Tech Stack
 
-- **Framework**: Astro 5.x (static site generator)
+- **Framework**: Astro 6.x (static site generator)
 - **Language**: TypeScript with strict configuration
 - **Styling**: Tailwind CSS v4 with custom utility system
 - **Runtime**: Bun (JavaScript runtime and package manager)
@@ -37,8 +37,14 @@ This file provides guidance to AI coding assistants when working with code in th
 
 ```text
 src/
+├── assets/         # Static assets (SVG logos, static JSON data)
 ├── components/     # Astro components (GitHubContributions, SteamSummary, SpotifyRecent)
+├── features/       # Feature-specific business logic
+│   ├── github/     # GitHub contributions processing
+│   └── steam/      # Steam library processing
 ├── layouts/        # Layout components (Layout.astro)
+├── lib/            # Shared utilities
+│   └── utils/      # Utility functions (date formatting, etc.)
 ├── pages/          # Astro pages with file-based routing (index.astro)
 └── styles/         # Global CSS and Tailwind configuration (global.css)
 ```
@@ -93,3 +99,12 @@ All API calls are made at build time in `src/pages/index.astro` using `Promise.a
 - No client-side JavaScript by default (static HTML/CSS)
 - Build output in `dist/` directory
 - Optimized for deployment to static hosting platforms (Vercel)
+- `bun run build` runs `scripts/generate-og.ts` before `astro build` — OG image is generated statically at build time
+
+## Environment Variables
+
+Astro environment variables (`astro:env/server`):
+
+- `GITHUB_USERNAME` - GitHub username for contributions API (public)
+- `STEAM_API_KEY` - Steam Web API key (secret)
+- `STEAM_ID` - Steam user ID (public)
