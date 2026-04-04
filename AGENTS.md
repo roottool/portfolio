@@ -99,3 +99,12 @@ All API calls are made at build time in `src/pages/index.astro` using `Promise.a
 - No client-side JavaScript by default (static HTML/CSS)
 - Build output in `dist/` directory
 - Optimized for deployment to static hosting platforms (Vercel)
+- `bun run build` runs `scripts/generate-og.ts` before `astro build` — OG image is generated statically at build time
+
+## Environment Variables
+
+Astro environment variables (`astro:env/server`):
+
+- `GITHUB_USERNAME` - GitHub username for contributions API (public)
+- `STEAM_API_KEY` - Steam Web API key (secret)
+- `STEAM_ID` - Steam user ID (public)
