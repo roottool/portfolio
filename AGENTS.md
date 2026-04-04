@@ -4,7 +4,7 @@ This file provides guidance to AI coding assistants when working with code in th
 
 ## Tech Stack
 
-- **Framework**: Astro 5.x (static site generator)
+- **Framework**: Astro 6.x (static site generator)
 - **Language**: TypeScript with strict configuration
 - **Styling**: Tailwind CSS v4 with custom utility system
 - **Runtime**: Bun (JavaScript runtime and package manager)
