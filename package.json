@@ -31,9 +31,6 @@
 		"typecheck:astro": "astro check",
 		"typecheck:tsc": "tsc --noEmit"
 	},
-	"msw": {
-		"workerDirectory": "public"
-	},
 	"dependencies": {
 		"@astrojs/check": "0.9.8",
 		"@fontsource/cinzel-decorative": "5.2.8",
