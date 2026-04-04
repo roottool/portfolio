@@ -8,6 +8,17 @@ defaults:
 runs:
   using: composite
   steps:
+    # Workaround: Bun v1.x hard-codes process.versions.node to v20.x as part of its
+    # Node.js compatibility layer, regardless of the system Node.js version.
+    # Astro v6 requires Node.js >=22.12.0 and checks process.versions.node at startup,
+    # so the build fails under Bun alone. Installing Node.js 22 first causes setup-node
+    # to override the value, allowing Astro's version check to pass.
+    # This step can be removed once Bun reports a Node.js 22-compatible version natively.
+    - name: Setup Node.js
+      uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
+      with:
+        node-version: "22"
+
     - name: Setup Bun
       uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
 
