@@ -1,15 +1,10 @@
 {
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
-	"extends": ["config:best-practices"],
+	"extends": ["config:best-practices", ":pinAllExceptPeerDependencies"],
 	"timezone": "Asia/Tokyo",
-	"schedule": ["before 5am on Monday"],
+	"schedule": ["* 0-4 * * *"],
 	"labels": ["dependencies"],
 	"automerge": true,
-	"configMigration": true,
-	"lockFileMaintenance": {
-		"enabled": true,
-		"schedule": ["before 3am on the first day of the month"]
-	},
 	"customManagers": [
 		{
 			"description": "Update dprint plugin versions in dprint.jsonc",
