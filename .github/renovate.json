@@ -1,69 +1,64 @@
 {
-	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
-	"extends": ["config:best-practices"],
-	"timezone": "Asia/Tokyo",
-	"schedule": ["before 5am on Monday"],
-	"labels": ["dependencies"],
-	"automerge": true,
-	"configMigration": true,
-	"lockFileMaintenance": {
-		"enabled": true,
-		"schedule": ["before 3am on the first day of the month"]
-	},
-	"customManagers": [
-		{
-			"description": "Update dprint plugin versions in dprint.jsonc",
-			"customType": "regex",
-			"managerFilePatterns": ["/^dprint\\.jsonc$/"],
-			"matchStrings": [
-				"https://plugins\\.dprint\\.dev/(?<depName>[^/]+)-v?(?<currentValue>[\\d.]+)\\.wasm"
-			],
-			"datasourceTemplate": "github-releases",
-			"depNameTemplate": "dprint/dprint-plugin-{{{depName}}}",
-			"extractVersionTemplate": "^v?(?<version>.+)$"
-		},
-		{
-			"description": "Update g-plane dprint plugins in dprint.jsonc",
-			"customType": "regex",
-			"managerFilePatterns": ["/^dprint\\.jsonc$/"],
-			"matchStrings": [
-				"https://plugins\\.dprint\\.dev/g-plane/(?<depName>[^-]+)-v(?<currentValue>[\\d.]+)\\.wasm"
-			],
-			"datasourceTemplate": "github-releases",
-			"depNameTemplate": "g-plane/{{{depName}}}",
-			"extractVersionTemplate": "^v?(?<version>.+)$"
-		}
-	],
-	"packageRules": [
-		{
-			"groupName": "all non-major devDependencies",
-			"groupSlug": "all-devDependencies-minor-patch",
-			"matchDepTypes": ["devDependencies"],
-			"matchUpdateTypes": ["minor", "patch"]
-		},
-		{
-			"groupName": "all non-major dependencies",
-			"groupSlug": "all-dependencies-minor-patch",
-			"matchDepTypes": ["dependencies"],
-			"matchUpdateTypes": ["minor", "patch"]
-		},
-		{
-			"groupName": "Major Updates",
-			"matchUpdateTypes": ["major"],
-			"automerge": false,
-			"minimumReleaseAge": "7 days"
-		},
-		{
-			"groupName": "dprint WASM plugins",
-			"matchManagers": ["custom.regex"],
-			"matchPackageNames": [
-				"dprint/dprint-plugin-typescript",
-				"dprint/dprint-plugin-json",
-				"dprint/dprint-plugin-markdown",
-				"g-plane/malva",
-				"g-plane/markup_fmt",
-				"g-plane/pretty_yaml"
-			]
-		}
-	]
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:best-practices", ":pinAllExceptPeerDependencies"],
+  "timezone": "Asia/Tokyo",
+  "schedule": ["* 0-4 * * *"],
+  "labels": ["dependencies"],
+  "automerge": true,
+  "customManagers": [
+    {
+      "description": "Update dprint plugin versions in dprint.jsonc",
+      "customType": "regex",
+      "managerFilePatterns": ["/^dprint\\.jsonc$/"],
+      "matchStrings": [
+        "https://plugins\\.dprint\\.dev/(?<depName>[^/]+)-v?(?<currentValue>[\\d.]+)\\.wasm"
+      ],
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "dprint/dprint-plugin-{{{depName}}}",
+      "extractVersionTemplate": "^v?(?<version>.+)$"
+    },
+    {
+      "description": "Update g-plane dprint plugins in dprint.jsonc",
+      "customType": "regex",
+      "managerFilePatterns": ["/^dprint\\.jsonc$/"],
+      "matchStrings": [
+        "https://plugins\\.dprint\\.dev/g-plane/(?<depName>[^-]+)-v(?<currentValue>[\\d.]+)\\.wasm"
+      ],
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "g-plane/{{{depName}}}",
+      "extractVersionTemplate": "^v?(?<version>.+)$"
+    }
+  ],
+  "packageRules": [
+    {
+      "groupName": "all non-major devDependencies",
+      "groupSlug": "all-devDependencies-minor-patch",
+      "matchDepTypes": ["devDependencies"],
+      "matchUpdateTypes": ["minor", "patch"]
+    },
+    {
+      "groupName": "all non-major dependencies",
+      "groupSlug": "all-dependencies-minor-patch",
+      "matchDepTypes": ["dependencies"],
+      "matchUpdateTypes": ["minor", "patch"]
+    },
+    {
+      "groupName": "Major Updates",
+      "matchUpdateTypes": ["major"],
+      "automerge": false,
+      "minimumReleaseAge": "7 days"
+    },
+    {
+      "groupName": "dprint WASM plugins",
+      "matchManagers": ["custom.regex"],
+      "matchPackageNames": [
+        "dprint/dprint-plugin-typescript",
+        "dprint/dprint-plugin-json",
+        "dprint/dprint-plugin-markdown",
+        "g-plane/malva",
+        "g-plane/markup_fmt",
+        "g-plane/pretty_yaml"
+      ]
+    }
+  ]
 }
