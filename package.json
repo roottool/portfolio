@@ -23,10 +23,10 @@
 		"astro": "astro",
 		"lint": "run-s -c lint:*",
 		"lint:dprint": "dprint check",
-		"lint:eslint": "eslint --color --max-warnings=0 .",
+		"lint:eslint": "eslint --max-warnings=0 .",
 		"format": "dprint fmt",
 		"fix": "run-s -c fix:* format",
-		"fix:eslint": "eslint --color --fix .",
+		"fix:eslint": "eslint --fix .",
 		"typecheck": "run-s -c typecheck:*",
 		"typecheck:astro": "astro check",
 		"typecheck:tsc": "tsc --noEmit"
