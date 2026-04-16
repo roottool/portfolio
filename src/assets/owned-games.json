@@ -1,6 +1,6 @@
 {
 	"response": {
-		"game_count": 354,
+		"game_count": 355,
 		"games": [
 			{
 				"appid": 70,
@@ -3158,6 +3158,20 @@
 				"playtime_disconnected": 0
 			},
 			{
+				"appid": 599140,
+				"name": "Graveyard Keeper",
+				"playtime_forever": 0,
+				"img_icon_url": "b37ef6d7eb243b4d9fc017dec7bc11b234f34cc2",
+				"has_community_visible_stats": true,
+				"playtime_windows_forever": 0,
+				"playtime_mac_forever": 0,
+				"playtime_linux_forever": 0,
+				"playtime_deck_forever": 0,
+				"rtime_last_played": 0,
+				"content_descriptorids": [2, 5],
+				"playtime_disconnected": 0
+			},
+			{
 				"appid": 608800,
 				"name": "Guns of Icarus Alliance",
 				"playtime_forever": 0,
@@ -4583,15 +4597,15 @@
 			{
 				"appid": 3280350,
 				"name": "DEATH STRANDING 2: ON THE BEACH",
-				"playtime_2weeks": 1429,
-				"playtime_forever": 2380,
+				"playtime_2weeks": 853,
+				"playtime_forever": 3234,
 				"img_icon_url": "d3d279eef0742abbfb318492123a454466c7e004",
 				"has_community_visible_stats": true,
-				"playtime_windows_forever": 2380,
+				"playtime_windows_forever": 3234,
 				"playtime_mac_forever": 0,
 				"playtime_linux_forever": 0,
 				"playtime_deck_forever": 0,
-				"rtime_last_played": 1775137680,
+				"rtime_last_played": 1776348096,
 				"content_descriptorids": [2, 5],
 				"playtime_disconnected": 0
 			},
