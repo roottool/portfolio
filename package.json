@@ -39,7 +39,7 @@
 		"@fontsource/cinzel-decorative": "5.2.8",
 		"@fontsource/cormorant-garamond": "5.2.11",
 		"@fontsource/cormorant-sc": "5.2.8",
-		"astro": "6.1.8"
+		"astro": "6.1.9"
 	},
 	"devDependencies": {
 		"@eslint/js": "9.39.4",
