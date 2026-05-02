@@ -36,11 +36,11 @@
 		"workerDirectory": "public"
 	},
 	"dependencies": {
-		"@astrojs/check": "0.9.8",
+		"@astrojs/check": "0.9.9",
 		"@fontsource/cinzel-decorative": "5.2.8",
 		"@fontsource/cormorant-garamond": "5.2.11",
 		"@fontsource/cormorant-sc": "5.2.8",
-		"astro": "6.1.9"
+		"astro": "6.1.10"
 	},
 	"devDependencies": {
 		"@eslint/js": "9.39.4",
