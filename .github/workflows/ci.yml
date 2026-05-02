@@ -52,6 +52,9 @@ jobs:
               - '**/*.astro'
               - '**/*.ts'
               - '**/*.tsx'
+            astro:
+              - 'bun.lock'
+              - '**/*.astro'
             renovate-config:
               - '.github/renovate.json'
 
@@ -102,6 +105,10 @@ jobs:
 
       - name: Run lint
         run: bun run lint:oxeslint
+
+      - name: Run Markuplint
+        if: ${{ needs.setup.outputs.astro == 'true' }}
+        run: bun run lint:markuplint
 
   typecheck:
     name: Type check
