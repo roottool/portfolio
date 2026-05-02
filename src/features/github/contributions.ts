@@ -19,7 +19,7 @@ const formatContributions = (contributions: OssContribution[]): FormattedContrib
  * Sorts contributions by closed date in descending order (newest first)
  */
 const sortByClosedDate = (contributions: OssContribution[]): OssContribution[] => {
-	return [...contributions].sort((a, b) => {
+	return [...contributions].toSorted((a, b) => {
 		return new Date(b.closedAt).getTime() - new Date(a.closedAt).getTime();
 	});
 };

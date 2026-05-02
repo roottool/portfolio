@@ -100,11 +100,8 @@ jobs:
       - name: Run format check
         run: bun run lint:dprint
 
-      - name: Generate Astro types
-        run: bunx astro sync
-
       - name: Run lint
-        run: bun run lint:eslint
+        run: bun run lint:oxeslint
 
   typecheck:
     name: Type check
