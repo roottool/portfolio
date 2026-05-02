@@ -43,7 +43,6 @@
 		"astro": "6.1.9"
 	},
 	"devDependencies": {
-		"@eslint/js": "9.39.4",
 		"@markuplint/astro-parser": "4.18.0",
 		"@resvg/resvg-js": "2.6.2",
 		"@tailwindcss/vite": "4.2.4",
