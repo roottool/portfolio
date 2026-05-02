@@ -16,6 +16,15 @@
 	},
 	"ignorePatterns": ["public"],
 	"rules": {
+		"no-unused-vars": [
+			"error",
+			{
+				"fix": {
+					"imports": "safe-fix",
+					"variables": "off"
+				}
+			}
+		],
 		"import/no-unassigned-import": ["warn", { "allow": ["**/*.css"] }]
 	},
 	"overrides": [
