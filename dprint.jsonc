@@ -16,7 +16,7 @@
 	"malva": {},
 	"markup": {},
 	"yaml": {},
-	"excludes": ["**/pnpm-lock.yaml", "public/", "src/assets/"],
+	"excludes": ["**/pnpm-lock.yaml", ".serena/project.yml", "public/", "src/assets/"],
 	"plugins": [
 		"https://plugins.dprint.dev/biome-0.12.9.wasm",
 		"https://plugins.dprint.dev/typescript-0.95.15.wasm",
