@@ -1,0 +1,29 @@
+{
+	"$schema": "./node_modules/oxlint/configuration_schema.json",
+	"plugins": ["eslint", "unicorn", "typescript", "oxc", "jsx-a11y", "import", "promise"],
+	"categories": {
+		"correctness": "error",
+		"suspicious": "warn"
+	},
+	"options": {
+		"typeAware": true,
+		// "typeCheck": true,
+		"maxWarnings": 0
+	},
+	"env": {
+		"builtin": true,
+		"browser": true
+	},
+	"ignorePatterns": ["public"],
+	"rules": {
+		"import/no-unassigned-import": ["warn", { "allow": ["**/*.css"] }]
+	},
+	"overrides": [
+		{
+			"files": ["scripts/**/*.ts"],
+			"rules": {
+				"no-underscore-dangle": ["warn", { "allow": ["__dirname", "__filename"] }]
+			}
+		}
+	]
+}
