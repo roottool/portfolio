@@ -23,7 +23,7 @@
 		"astro": "astro",
 		"lint": "run-s -c lint:*",
 		"lint:dprint": "dprint check",
-		"lint:oxeslint": "oxlint && eslint --max-warnings=0 .",
+		"lint:oxeslint": "astro sync && oxlint && eslint --max-warnings=0 .",
 		"format": "dprint fmt",
 		"fix": "run-s -c fix:* format",
 		"fix:oxeslint": "oxlint --fix && eslint --fix .",
