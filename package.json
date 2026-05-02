@@ -46,7 +46,7 @@
 		"@eslint/js": "9.39.4",
 		"@markuplint/astro-parser": "4.18.0",
 		"@resvg/resvg-js": "2.6.2",
-		"@tailwindcss/vite": "4.2.2",
+		"@tailwindcss/vite": "4.2.4",
 		"@types/node": "25.6.0",
 		"dprint": "0.54.0",
 		"eslint": "9.39.4",
@@ -59,8 +59,8 @@
 		"oxlint": "1.62.0",
 		"oxlint-tsgolint": "0.22.1",
 		"satori": "0.26.0",
-		"tailwindcss": "4.2.2",
+		"tailwindcss": "4.2.4",
 		"typescript": "5.9.3",
-		"typescript-eslint": "8.58.2"
+		"typescript-eslint": "8.59.1"
 	}
 }
