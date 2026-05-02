@@ -13,7 +13,7 @@ export const filterPlayedGames = (games: OwnedGame[]): OwnedGame[] => {
  * @returns Sorted array of games
  */
 export const sortByPlaytime = (games: OwnedGame[]): OwnedGame[] => {
-	return [...games].sort((a, b) => b.playtime_forever - a.playtime_forever);
+	return [...games].toSorted((a, b) => b.playtime_forever - a.playtime_forever);
 };
 
 /**
