@@ -4160,7 +4160,7 @@
 			{
 				"appid": 1771300,
 				"name": "Kingdom Come: Deliverance II",
-				"playtime_2weeks": 50,
+				"playtime_2weeks": 25,
 				"playtime_forever": 7006,
 				"img_icon_url": "80e8d75b87433627cafd2a1bcbb5b9f5741e2277",
 				"has_community_visible_stats": true,
@@ -4474,15 +4474,15 @@
 			{
 				"appid": 2807960,
 				"name": "Battlefield™ 6",
-				"playtime_2weeks": 125,
-				"playtime_forever": 6314,
-				"img_icon_url": "8b06f13e9fd82e1a436ffdca4e1de118ee4a9ed2",
+				"playtime_2weeks": 322,
+				"playtime_forever": 6511,
+				"img_icon_url": "a758cc85720fc89b5c97995bd8eafb38b3604e47",
 				"has_community_visible_stats": true,
-				"playtime_windows_forever": 6314,
+				"playtime_windows_forever": 6511,
 				"playtime_mac_forever": 0,
 				"playtime_linux_forever": 0,
 				"playtime_deck_forever": 0,
-				"rtime_last_played": 1778060383,
+				"rtime_last_played": 1778684392,
 				"content_descriptorids": [2, 5],
 				"playtime_disconnected": 0
 			},
@@ -4625,7 +4625,6 @@
 			{
 				"appid": 3280350,
 				"name": "DEATH STRANDING 2: ON THE BEACH",
-				"playtime_2weeks": 2354,
 				"playtime_forever": 6222,
 				"img_icon_url": "d3d279eef0742abbfb318492123a454466c7e004",
 				"has_community_visible_stats": true,
