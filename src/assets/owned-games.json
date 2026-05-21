@@ -4160,7 +4160,6 @@
 			{
 				"appid": 1771300,
 				"name": "Kingdom Come: Deliverance II",
-				"playtime_2weeks": 25,
 				"playtime_forever": 7006,
 				"img_icon_url": "80e8d75b87433627cafd2a1bcbb5b9f5741e2277",
 				"has_community_visible_stats": true,
@@ -4474,7 +4473,7 @@
 			{
 				"appid": 2807960,
 				"name": "Battlefield™ 6",
-				"playtime_2weeks": 322,
+				"playtime_2weeks": 197,
 				"playtime_forever": 6511,
 				"img_icon_url": "a758cc85720fc89b5c97995bd8eafb38b3604e47",
 				"has_community_visible_stats": true,
