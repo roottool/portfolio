@@ -7,7 +7,7 @@
 	},
 	"options": {
 		"typeAware": true,
-		// "typeCheck": true,
+		"typeCheck": true,
 		"maxWarnings": 0
 	},
 	"env": {
