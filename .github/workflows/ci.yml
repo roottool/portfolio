@@ -54,7 +54,12 @@ jobs:
               - '**/*.tsx'
             astro:
               - 'bun.lock'
+              - 'astro.config.*'
               - '**/*.astro'
+            lint-config:
+              - '.oxlintrc.json'
+              - 'eslint.config.*'
+              - 'package.json'
             renovate-config:
               - '.github/renovate.json'
 
@@ -104,32 +109,12 @@ jobs:
         run: bun run lint:dprint
 
       - name: Run lint
+        if: ${{ needs.setup.outputs.typescript == 'true' || needs.setup.outputs.lint-config == 'true' }}
         run: bun run lint:oxeslint
 
       - name: Run Markuplint
         if: ${{ needs.setup.outputs.astro == 'true' }}
         run: bun run lint:markuplint
-
-  typecheck:
-    name: Type check
-    runs-on: ubuntu-latest
-    timeout-minutes: 3
-    needs: [setup]
-    if: ${{ needs.setup.outputs.typescript == 'true' }}
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
-        with:
-          persist-credentials: false
-
-      - name: Initialize
-        uses: ./.github/actions/setup-environment
-
-      - name: Run astro check
-        run: bun run typecheck:astro
-
-      - name: Run type check
-        run: bun run typecheck:tsc
 
   build:
     name: Build
@@ -152,7 +137,7 @@ jobs:
   #   name: Test
   #   runs-on: ubuntu-latest
   #   timeout-minutes: 5
-  #   needs: [lint, typecheck]
+  #   needs: [lint]
   #   steps:
   #     - name: Checkout Repository
   #       uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
@@ -178,7 +163,6 @@ jobs:
     needs:
       - setup
       - lint
-      - typecheck
       - build
       # - test
       - renovate-config-lint

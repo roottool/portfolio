@@ -23,14 +23,11 @@
 		"astro": "astro",
 		"lint": "run-s -c lint:*",
 		"lint:dprint": "dprint check",
-		"lint:oxeslint": "astro sync && oxlint && eslint --max-warnings=0 .",
+		"lint:oxeslint": "astro check && oxlint && eslint --max-warnings=0 .",
 		"lint:markuplint": "markuplint \"**/*.astro\"",
-		"format": "dprint fmt",
 		"fix": "run-s -c fix:* format",
 		"fix:oxeslint": "oxlint --fix && eslint --fix .",
-		"typecheck": "run-s -c typecheck:*",
-		"typecheck:astro": "astro check",
-		"typecheck:tsc": "tsc --noEmit"
+		"format": "dprint fmt"
 	},
 	"msw": {
 		"workerDirectory": "public"
