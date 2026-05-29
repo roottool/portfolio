@@ -1,6 +1,6 @@
 {
 	"response": {
-		"game_count": 358,
+		"game_count": 359,
 		"games": [
 			{
 				"appid": 70,
@@ -1950,7 +1950,7 @@
 				"appid": 292030,
 				"name": "The Witcher 3: Wild Hunt",
 				"playtime_forever": 10574,
-				"img_icon_url": "78d0ff98b67851f24539cdf2402cf147679134f4",
+				"img_icon_url": "7b52d11edee478d652ef4e7103e00644bed2c74c",
 				"has_community_visible_stats": true,
 				"playtime_windows_forever": 202,
 				"playtime_mac_forever": 0,
@@ -3357,6 +3357,19 @@
 				"playtime_disconnected": 0
 			},
 			{
+				"appid": 645630,
+				"name": "Car Mechanic Simulator 2018",
+				"playtime_forever": 0,
+				"img_icon_url": "f793ad58cbe121b079a40f9e560ad6d957ede22d",
+				"has_community_visible_stats": true,
+				"playtime_windows_forever": 0,
+				"playtime_mac_forever": 0,
+				"playtime_linux_forever": 0,
+				"playtime_deck_forever": 0,
+				"rtime_last_played": 0,
+				"playtime_disconnected": 0
+			},
+			{
 				"appid": 654310,
 				"name": "For Honor - Public Test",
 				"playtime_forever": 0,
@@ -4369,9 +4382,9 @@
 			},
 			{
 				"appid": 2488530,
-				"name": "Tempest Rising Preview",
+				"name": "Tempest Rising: Veti Multiplayer Public Beta",
 				"playtime_forever": 0,
-				"img_icon_url": "82a3a9bdd11143c4ffedafa2e5b058af13eb88f9",
+				"img_icon_url": "86bc542f07edf6d5737c444cf6d2d5a167bbc7aa",
 				"playtime_windows_forever": 0,
 				"playtime_mac_forever": 0,
 				"playtime_linux_forever": 0,
@@ -4473,15 +4486,15 @@
 			{
 				"appid": 2807960,
 				"name": "Battlefield™ 6",
-				"playtime_2weeks": 197,
-				"playtime_forever": 6511,
+				"playtime_2weeks": 222,
+				"playtime_forever": 6734,
 				"img_icon_url": "a758cc85720fc89b5c97995bd8eafb38b3604e47",
 				"has_community_visible_stats": true,
-				"playtime_windows_forever": 6511,
+				"playtime_windows_forever": 6734,
 				"playtime_mac_forever": 0,
 				"playtime_linux_forever": 0,
 				"playtime_deck_forever": 0,
-				"rtime_last_played": 1778684392,
+				"rtime_last_played": 1779611856,
 				"content_descriptorids": [2, 5],
 				"playtime_disconnected": 0
 			},
