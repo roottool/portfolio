@@ -1,6 +1,6 @@
 {
 	"response": {
-		"game_count": 359,
+		"game_count": 363,
 		"games": [
 			{
 				"appid": 70,
@@ -3120,6 +3120,19 @@
 				"playtime_disconnected": 0
 			},
 			{
+				"appid": 577740,
+				"name": "Winexy",
+				"playtime_forever": 0,
+				"img_icon_url": "8ec65580cb2e3d9564d1afa757c9cfc643250411",
+				"has_community_visible_stats": true,
+				"playtime_windows_forever": 0,
+				"playtime_mac_forever": 0,
+				"playtime_linux_forever": 0,
+				"playtime_deck_forever": 0,
+				"rtime_last_played": 0,
+				"playtime_disconnected": 0
+			},
+			{
 				"appid": 579110,
 				"name": "Interkosmos",
 				"playtime_forever": 0,
@@ -3631,6 +3644,19 @@
 				"playtime_disconnected": 0
 			},
 			{
+				"appid": 858710,
+				"name": "Gravity Circuit",
+				"playtime_forever": 0,
+				"img_icon_url": "dcb12cf4247c32d177b4399e9ca58f875bddc028",
+				"has_community_visible_stats": true,
+				"playtime_windows_forever": 0,
+				"playtime_mac_forever": 0,
+				"playtime_linux_forever": 0,
+				"playtime_deck_forever": 0,
+				"rtime_last_played": 0,
+				"playtime_disconnected": 0
+			},
+			{
 				"appid": 862740,
 				"name": "OneShift",
 				"playtime_forever": 0,
@@ -3789,6 +3815,19 @@
 				"playtime_disconnected": 0
 			},
 			{
+				"appid": 1035110,
+				"name": "Moonrise Fall",
+				"playtime_forever": 0,
+				"img_icon_url": "9161810111182af0fe5694d9090f25aa08ad998a",
+				"has_community_visible_stats": true,
+				"playtime_windows_forever": 0,
+				"playtime_mac_forever": 0,
+				"playtime_linux_forever": 0,
+				"playtime_deck_forever": 0,
+				"rtime_last_played": 0,
+				"playtime_disconnected": 0
+			},
+			{
 				"appid": 1035510,
 				"name": "Ultimate Zombie Defense",
 				"playtime_forever": 0,
@@ -3800,6 +3839,19 @@
 				"playtime_deck_forever": 0,
 				"rtime_last_played": 0,
 				"content_descriptorids": [2, 5],
+				"playtime_disconnected": 0
+			},
+			{
+				"appid": 1070580,
+				"name": "Drift86",
+				"playtime_forever": 0,
+				"img_icon_url": "4a23c4e85e64d2d41d287bded0047b0762cf65e8",
+				"has_community_visible_stats": true,
+				"playtime_windows_forever": 0,
+				"playtime_mac_forever": 0,
+				"playtime_linux_forever": 0,
+				"playtime_deck_forever": 0,
+				"rtime_last_played": 0,
 				"playtime_disconnected": 0
 			},
 			{
@@ -4173,14 +4225,15 @@
 			{
 				"appid": 1771300,
 				"name": "Kingdom Come: Deliverance II",
-				"playtime_forever": 7006,
+				"playtime_2weeks": 7,
+				"playtime_forever": 7014,
 				"img_icon_url": "80e8d75b87433627cafd2a1bcbb5b9f5741e2277",
 				"has_community_visible_stats": true,
-				"playtime_windows_forever": 7006,
+				"playtime_windows_forever": 7014,
 				"playtime_mac_forever": 0,
 				"playtime_linux_forever": 0,
 				"playtime_deck_forever": 0,
-				"rtime_last_played": 1778075503,
+				"rtime_last_played": 1780127874,
 				"content_descriptorids": [1, 2, 5],
 				"playtime_disconnected": 0
 			},
@@ -4486,15 +4539,15 @@
 			{
 				"appid": 2807960,
 				"name": "Battlefield™ 6",
-				"playtime_2weeks": 222,
-				"playtime_forever": 6734,
+				"playtime_2weeks": 494,
+				"playtime_forever": 7005,
 				"img_icon_url": "a758cc85720fc89b5c97995bd8eafb38b3604e47",
 				"has_community_visible_stats": true,
-				"playtime_windows_forever": 6734,
+				"playtime_windows_forever": 7005,
 				"playtime_mac_forever": 0,
 				"playtime_linux_forever": 0,
 				"playtime_deck_forever": 0,
-				"rtime_last_played": 1779611856,
+				"rtime_last_played": 1780223535,
 				"content_descriptorids": [2, 5],
 				"playtime_disconnected": 0
 			},
