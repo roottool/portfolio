@@ -70,7 +70,8 @@ const formattedContributions = processContributions(data);
 	opacity: 0;
 	transition: opacity 0.3s ease;
 }
-.group:hover .accent-bar {
+.group:hover .accent-bar,
+.group:focus-within .accent-bar {
 	opacity: 1;
 }
 </style>
