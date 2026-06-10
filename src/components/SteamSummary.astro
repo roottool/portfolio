@@ -40,7 +40,7 @@ const games = processGames(data.games).slice(0, 12);
 						class="game-image w-full object-cover transition-all duration-500"
 						loading={index < 6 ? "eager" : "lazy"}
 						decoding="async"
-						fetchpriority={index < 6 ? "high" : "low"}
+						fetchpriority={index < 6 ? "high" : undefined}
 						width="231"
 						height="87"
 					/>

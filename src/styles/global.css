@@ -71,6 +71,8 @@ html::after {
 body {
 	position: relative;
 	background-color: var(--vk-bg);
+	/* Layer body content above the html::after scanlines (z-index: 0) */
+	z-index: 1;
 }
 
 /* Deep radial vignette */
