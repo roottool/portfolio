@@ -19,9 +19,6 @@ export default defineConfig(
 	},
 	{
 		files: ["**/*.{astro}"],
-		extends: [
-			astroPluginConfigs.recommended,
-			...oxlint.configs["flat/recommended"],
-		],
+		extends: [astroPluginConfigs.recommended, ...oxlint.configs["flat/recommended"]],
 	},
 );

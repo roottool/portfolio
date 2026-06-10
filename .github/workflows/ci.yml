@@ -79,14 +79,14 @@ jobs:
             .github/renovate.json
             package.json
             bun.lock
-            dprint.jsonc
+            .oxfmtrc.json
           sparse-checkout-cone-mode: false
 
       - name: Initialize
         uses: ./.github/actions/setup-environment
 
-      - name: Check format by dprint
-        run: bunx dprint check .github/renovate.json
+      - name: Check format by oxfmt
+        run: bunx oxfmt --check .github/renovate.json
 
       - name: Validate Renovate config
         run: bunx -p renovate renovate-config-validator --strict
@@ -105,7 +105,10 @@ jobs:
       - name: Initialize
         uses: ./.github/actions/setup-environment
 
-      - name: Run format check
+      - name: Run format check (oxfmt)
+        run: bun run lint:oxfmt
+
+      - name: Run format check (dprint)
         run: bun run lint:dprint
 
       - name: Run lint

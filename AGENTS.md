@@ -24,11 +24,12 @@ This file provides guidance to AI coding assistants when working with code in th
 
 ### Code Quality
 
-- **Lint**: `bun run lint` (runs ESLint + dprint checks in sequence)
-  - `bun run lint:dprint` - dprint format check
-  - `bun run lint:eslint` - ESLint check
-- **Format**: `bun run format` (formats code with dprint)
-- **Fix**: `bun run fix` (auto-fixes ESLint issues + formats with dprint)
+- **Lint**: `bun run lint` (runs format checks + oxlint/ESLint + Markuplint in sequence)
+  - `bun run lint:oxfmt` - oxfmt format check (all files except `.astro`)
+  - `bun run lint:dprint` - dprint format check (`.astro` files only)
+  - `bun run lint:oxeslint` - Astro check + oxlint + ESLint check
+- **Format**: `bun run format` (formats code with oxfmt + dprint)
+- **Fix**: `bun run fix` (auto-fixes oxlint/ESLint issues + formats)
 - **Type check**: `bun run typecheck` (runs both Astro check and TypeScript compiler)
   - `bun run typecheck:astro` - Astro check (TypeScript + template validation)
   - `bun run typecheck:tsc` - TypeScript compiler check

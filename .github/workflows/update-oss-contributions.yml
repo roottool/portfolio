@@ -55,7 +55,7 @@ jobs:
 
       - name: Format and move JSON
         run: |
-          bunx dprint fmt temp-contributions.json
+          bunx oxfmt temp-contributions.json
           mv temp-contributions.json src/assets/oss-contributions.json
 
       - name: Check for changes
