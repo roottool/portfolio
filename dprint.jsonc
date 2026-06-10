@@ -4,25 +4,20 @@
 	"lineWidth": 100,
 	"indentWidth": 2,
 	"useTabs": true,
-	"biome": {
-		"associations": ["!**/*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}"]
-	},
 	"typescript": {
 		"module.sortImportDeclarations": "maintain",
 		"module.sortExportDeclarations": "maintain",
-		"importDeclaration.sortNamedImports": "maintain"
+		"importDeclaration.sortNamedImports": "maintain",
 	},
-	"markdown": {},
 	"malva": {},
 	"markup": {},
-	"yaml": {},
-	"excludes": ["**/pnpm-lock.yaml", ".serena/project.yml", "public/", "src/assets/"],
+	// Astro files only: oxfmt does not support Astro, so dprint (markup_fmt) keeps handling them.
+	// The typescript and malva plugins remain for embedded scripts and styles inside .astro files.
+	"includes": ["**/*.astro"],
+	"excludes": ["public/", "src/assets/"],
 	"plugins": [
-		"https://plugins.dprint.dev/biome-0.12.12.wasm",
 		"https://plugins.dprint.dev/typescript-0.96.1.wasm",
-		"https://plugins.dprint.dev/markdown-0.22.1.wasm",
 		"https://plugins.dprint.dev/g-plane/malva-v0.16.0.wasm",
 		"https://plugins.dprint.dev/g-plane/markup_fmt-v0.27.3.wasm",
-		"https://plugins.dprint.dev/g-plane/pretty_yaml-v0.6.0.wasm"
-	]
+	],
 }

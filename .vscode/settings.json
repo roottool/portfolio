@@ -15,8 +15,11 @@
 	"files.trimTrailingWhitespace": true,
 	"js/ts.preferences.importModuleSpecifier": "non-relative",
 	"js/ts.preferences.importModuleSpecifierEnding": "minimal",
-	"[astro|javascript|typescript|typescriptreact|json|jsonc|yaml]": {
+	"[astro]": {
 		"editor.defaultFormatter": "dprint.dprint"
+	},
+	"[javascript|typescript|typescriptreact|json|jsonc|yaml]": {
+		"editor.defaultFormatter": "oxc.oxc-vscode"
 	},
 	"json.schemas": [
 		{
@@ -27,7 +30,7 @@
 		}
 	],
 	"[markdown]": {
-		"editor.defaultFormatter": "dprint.dprint",
+		"editor.defaultFormatter": "oxc.oxc-vscode",
 		"editor.wordWrap": "on",
 		"editor.quickSuggestions": {
 			"comments": "off",

@@ -62,7 +62,7 @@ jobs:
 
       - name: Format and move JSON
         run: |
-          bunx dprint fmt temp-owned-games.json
+          bunx oxfmt temp-owned-games.json
           mv temp-owned-games.json src/assets/owned-games.json
 
       - name: Check for changes

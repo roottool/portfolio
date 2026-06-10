@@ -5,6 +5,8 @@
 		"editorconfig.editorconfig",
 		// * JavaScript, TypeScript
 		"dbaeumer.vscode-eslint",
+		"oxc.oxc-vscode",
+		// * Astro (dprint formats .astro files only)
 		"dprint.dprint",
 		"astro-build.astro-vscode"
 		// "ZixuanChen.vitest-explorer",
