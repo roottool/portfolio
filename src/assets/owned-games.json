@@ -1,6 +1,6 @@
 {
 	"response": {
-		"game_count": 366,
+		"game_count": 365,
 		"games": [
 			{
 				"appid": 70,
@@ -4253,15 +4253,15 @@
 			{
 				"appid": 1771300,
 				"name": "Kingdom Come: Deliverance II",
-				"playtime_2weeks": 28,
-				"playtime_forever": 7042,
+				"playtime_2weeks": 104,
+				"playtime_forever": 7146,
 				"img_icon_url": "80e8d75b87433627cafd2a1bcbb5b9f5741e2277",
 				"has_community_visible_stats": true,
-				"playtime_windows_forever": 7042,
+				"playtime_windows_forever": 7146,
 				"playtime_mac_forever": 0,
 				"playtime_linux_forever": 0,
 				"playtime_deck_forever": 0,
-				"rtime_last_played": 1780732189,
+				"rtime_last_played": 1782040529,
 				"content_descriptorids": [1, 2, 5],
 				"playtime_disconnected": 0
 			},
@@ -4567,15 +4567,15 @@
 			{
 				"appid": 2807960,
 				"name": "Battlefield™ 6",
-				"playtime_2weeks": 394,
-				"playtime_forever": 7400,
+				"playtime_2weeks": 441,
+				"playtime_forever": 7583,
 				"img_icon_url": "a758cc85720fc89b5c97995bd8eafb38b3604e47",
 				"has_community_visible_stats": true,
-				"playtime_windows_forever": 7400,
+				"playtime_windows_forever": 7583,
 				"playtime_mac_forever": 0,
 				"playtime_linux_forever": 0,
 				"playtime_deck_forever": 0,
-				"rtime_last_played": 1781801848,
+				"rtime_last_played": 1782393547,
 				"content_descriptorids": [2, 5],
 				"playtime_disconnected": 0
 			},
@@ -4806,19 +4806,6 @@
 				"playtime_linux_forever": 0,
 				"playtime_deck_forever": 0,
 				"rtime_last_played": 1769610682,
-				"playtime_disconnected": 0
-			},
-			{
-				"appid": 4402020,
-				"name": "EMPULSE - Demo",
-				"playtime_2weeks": 114,
-				"playtime_forever": 114,
-				"img_icon_url": "cd34395d7900aa960f27dd508be2a9ae2efe7916",
-				"playtime_windows_forever": 114,
-				"playtime_mac_forever": 0,
-				"playtime_linux_forever": 0,
-				"playtime_deck_forever": 0,
-				"rtime_last_played": 1781795174,
 				"playtime_disconnected": 0
 			}
 		]
