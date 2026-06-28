@@ -1,6 +1,6 @@
 {
 	"response": {
-		"game_count": 363,
+		"game_count": 365,
 		"games": [
 			{
 				"appid": 70,
@@ -957,7 +957,7 @@
 			},
 			{
 				"appid": 208140,
-				"name": "ENDLESS™ Space - Definitive Edition",
+				"name": "ENDLESS Space™ - Definitive Edition",
 				"playtime_forever": 587,
 				"img_icon_url": "7a72ff611d3d6567f91df23a733d22380a7d7d80",
 				"has_community_visible_stats": true,
@@ -1922,7 +1922,7 @@
 			},
 			{
 				"appid": 289130,
-				"name": "ENDLESS™ Legend",
+				"name": "ENDLESS Legend™",
 				"playtime_forever": 30,
 				"img_icon_url": "02277be6b9b09671b857948006316057974d7036",
 				"has_community_visible_stats": true,
@@ -3277,6 +3277,20 @@
 				"playtime_disconnected": 0
 			},
 			{
+				"appid": 633360,
+				"name": "Remothered: Tormented Fathers",
+				"playtime_forever": 0,
+				"img_icon_url": "c3e2e34bccda6c2ec494c123739c19560dfc7298",
+				"has_community_visible_stats": true,
+				"playtime_windows_forever": 0,
+				"playtime_mac_forever": 0,
+				"playtime_linux_forever": 0,
+				"playtime_deck_forever": 0,
+				"rtime_last_played": 0,
+				"content_descriptorids": [1, 2, 5],
+				"playtime_disconnected": 0
+			},
+			{
 				"appid": 635730,
 				"name": "Dragonia",
 				"playtime_forever": 253,
@@ -3842,6 +3856,20 @@
 				"playtime_disconnected": 0
 			},
 			{
+				"appid": 1053710,
+				"name": "The Red Lantern",
+				"playtime_forever": 0,
+				"img_icon_url": "0efc0c5e80b66389d33981aceaf67b7309b4baec",
+				"has_community_visible_stats": true,
+				"playtime_windows_forever": 0,
+				"playtime_mac_forever": 0,
+				"playtime_linux_forever": 0,
+				"playtime_deck_forever": 0,
+				"rtime_last_played": 0,
+				"content_descriptorids": [5],
+				"playtime_disconnected": 0
+			},
+			{
 				"appid": 1070580,
 				"name": "Drift86",
 				"playtime_forever": 0,
@@ -4225,15 +4253,15 @@
 			{
 				"appid": 1771300,
 				"name": "Kingdom Come: Deliverance II",
-				"playtime_2weeks": 7,
-				"playtime_forever": 7014,
+				"playtime_2weeks": 104,
+				"playtime_forever": 7146,
 				"img_icon_url": "80e8d75b87433627cafd2a1bcbb5b9f5741e2277",
 				"has_community_visible_stats": true,
-				"playtime_windows_forever": 7014,
+				"playtime_windows_forever": 7146,
 				"playtime_mac_forever": 0,
 				"playtime_linux_forever": 0,
 				"playtime_deck_forever": 0,
-				"rtime_last_played": 1780127874,
+				"rtime_last_played": 1782040529,
 				"content_descriptorids": [1, 2, 5],
 				"playtime_disconnected": 0
 			},
@@ -4539,15 +4567,15 @@
 			{
 				"appid": 2807960,
 				"name": "Battlefield™ 6",
-				"playtime_2weeks": 494,
-				"playtime_forever": 7005,
+				"playtime_2weeks": 441,
+				"playtime_forever": 7583,
 				"img_icon_url": "a758cc85720fc89b5c97995bd8eafb38b3604e47",
 				"has_community_visible_stats": true,
-				"playtime_windows_forever": 7005,
+				"playtime_windows_forever": 7583,
 				"playtime_mac_forever": 0,
 				"playtime_linux_forever": 0,
 				"playtime_deck_forever": 0,
-				"rtime_last_played": 1780223535,
+				"rtime_last_played": 1782393547,
 				"content_descriptorids": [2, 5],
 				"playtime_disconnected": 0
 			},
