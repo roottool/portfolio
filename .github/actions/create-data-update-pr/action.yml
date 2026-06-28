@@ -1,0 +1,86 @@
+name: Create Data Update PR
+description: Detect changes in a data asset file, commit, open a PR, and enable auto-merge
+
+inputs:
+  asset-file:
+    description: "Path to the asset file to check and commit"
+    required: true
+  branch-prefix:
+    description: "Branch name prefix (e.g. chore/update-owned-games)"
+    required: true
+  commit-msg:
+    description: "Commit message"
+    required: true
+  pr-title:
+    description: "Pull request title"
+    required: true
+  pr-body:
+    description: "Pull request body"
+    required: true
+  gh-token:
+    description: "GitHub token for git push, PR creation, and auto-merge"
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: Check for changes
+      id: changes
+      shell: bash
+      env:
+        ASSET_FILE: ${{ inputs.asset-file }}
+      run: |
+        if git diff --quiet "${ASSET_FILE}"; then
+          echo "changed=false" >> ${GITHUB_OUTPUT}
+          echo "No changes detected"
+        else
+          echo "changed=true" >> ${GITHUB_OUTPUT}
+          echo "Changes detected"
+        fi
+
+    - name: Create branch and commit
+      if: steps.changes.outputs.changed == 'true'
+      id: create_branch
+      shell: bash
+      env:
+        GH_TOKEN: ${{ inputs.gh-token }}
+        REPOSITORY: ${{ github.repository }}
+        COMMIT_MSG: ${{ inputs.commit-msg }}
+        ASSET_FILE: ${{ inputs.asset-file }}
+        BRANCH_PREFIX: ${{ inputs.branch-prefix }}
+      run: |
+        BRANCH="${BRANCH_PREFIX}-$(date +%Y%m%d%H%M%S)"
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        git checkout -b "${BRANCH}"
+        git add "${ASSET_FILE}"
+        git commit -m "${COMMIT_MSG}"
+        git push "https://x-access-token:${GH_TOKEN}@github.com/${REPOSITORY}.git" "${BRANCH}"
+        echo "branch=${BRANCH}" >> ${GITHUB_OUTPUT}
+
+    - name: Create Pull Request
+      if: steps.changes.outputs.changed == 'true'
+      id: create_pr
+      shell: bash
+      env:
+        GH_TOKEN: ${{ inputs.gh-token }}
+        PR_TITLE: ${{ inputs.pr-title }}
+        PR_BODY: ${{ inputs.pr-body }}
+        BRANCH: ${{ steps.create_branch.outputs.branch }}
+      run: |
+        PR_NUMBER=$(gh pr create \
+          --base main \
+          --head "${BRANCH}" \
+          --title "${PR_TITLE}" \
+          --body "${PR_BODY}" \
+          --label "data,automated")
+        echo "pr_number=${PR_NUMBER}" >> ${GITHUB_OUTPUT}
+
+    - name: Enable auto-merge
+      if: steps.changes.outputs.changed == 'true'
+      shell: bash
+      env:
+        GH_TOKEN: ${{ inputs.gh-token }}
+        PR_NUMBER: ${{ steps.create_pr.outputs.pr_number }}
+      run: |
+        gh pr merge "${PR_NUMBER}" --auto --squash
