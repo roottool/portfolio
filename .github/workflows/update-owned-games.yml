@@ -65,7 +65,19 @@ jobs:
           bunx oxfmt temp-owned-games.json
           mv temp-owned-games.json src/assets/owned-games.json
 
+      - name: Check for changes
+        id: changes
+        run: |
+          if git diff HEAD --quiet src/assets/owned-games.json; then
+            echo "changed=false" >> ${GITHUB_OUTPUT}
+            echo "No changes detected"
+          else
+            echo "changed=true" >> ${GITHUB_OUTPUT}
+            echo "Changes detected"
+          fi
+
       - name: Generate token
+        if: steps.changes.outputs.changed == 'true'
         id: generate_token
         uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
         with:
@@ -73,6 +85,7 @@ jobs:
           private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
 
       - name: Create Data Update PR
+        if: steps.changes.outputs.changed == 'true'
         uses: ./.github/actions/create-data-update-pr
         with:
           asset-file: src/assets/owned-games.json
