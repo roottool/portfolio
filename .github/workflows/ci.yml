@@ -105,19 +105,20 @@ jobs:
       - name: Initialize
         uses: ./.github/actions/setup-environment
 
-      - name: Run format check (oxfmt)
-        run: bun run lint:oxfmt
+      - parallel:
+          - name: Run format check (dprint)
+            run: bun run lint:dprint
 
-      - name: Run format check (dprint)
-        run: bun run lint:dprint
+          - name: Run format check (oxfmt)
+            run: bun run lint:oxfmt
 
-      - name: Run lint
-        if: ${{ needs.setup.outputs.typescript == 'true' || needs.setup.outputs.lint-config == 'true' }}
-        run: bun run lint:oxeslint
+          - name: Run lint
+            if: ${{ needs.setup.outputs.typescript == 'true' || needs.setup.outputs.lint-config == 'true' }}
+            run: bun run lint:oxeslint
 
-      - name: Run Markuplint
-        if: ${{ needs.setup.outputs.astro == 'true' }}
-        run: bun run lint:markuplint
+          - name: Run Markuplint
+            if: ${{ needs.setup.outputs.astro == 'true' }}
+            run: bun run lint:markuplint
 
   build:
     name: Build
