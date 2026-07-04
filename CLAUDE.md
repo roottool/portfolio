@@ -1,5 +1,10 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+Claude Code (claude.ai/code) specific guidance for this repository.
 
-For general development information, see [@AGENTS.md](./AGENTS.md).
+Shared guidance for all AI coding assistants is imported from @AGENTS.md
+
+## Claude Code Resources
+
+- **`new-visual-kei-component` skill**: use when adding a new section or feature component
+- **`visual-kei-reviewer` agent**: use after creating or modifying UI components or CSS
