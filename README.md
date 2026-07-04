@@ -2,7 +2,6 @@
   <h1>My Portfolio</h1>
 </div>
 
-[![codecov](https://codecov.io/gh/roottool/portfolio/branch/main/graph/badge.svg?token=2A3TNPORX3)](https://codecov.io/gh/roottool/portfolio)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Froottool%2Fportfolio.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Froottool%2Fportfolio?ref=badge_shield)
 [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/roottool/portfolio/badge)](https://api.securityscorecards.dev/projects/github.com/roottool/portfolio)
 
@@ -10,16 +9,14 @@
 
 This is [my portfolio site](https://portfolio-6od.pages.dev). I use the below stacks on this site.
 
-- Astro 5.x
+- Astro
 - TypeScript
-- Tailwind CSS v4
+- Tailwind CSS
 - Bun
 
-## Setting up the environment
+See [package.json](./package.json) for exact versions.
 
-Run `bun install` in the root of your cloned repository.
-
-## Quick Start
+## Getting Started
 
 ```bash
 bun install    # Install dependencies
