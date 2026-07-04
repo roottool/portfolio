@@ -9,10 +9,12 @@
 
 This is [my portfolio site](https://portfolio-6od.pages.dev). I use the below stacks on this site.
 
-- Astro 7.x
+- Astro
 - TypeScript
-- Tailwind CSS v4
+- Tailwind CSS
 - Bun
+
+See [package.json](./package.json) for exact versions.
 
 ## Getting Started
 
