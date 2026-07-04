@@ -3,7 +3,7 @@
 	"version": "1.0.0",
 	"private": true,
 	"description": "My portfolio with Astro using TypeScript.",
-	"homepage": "https://roottool.vercel.app",
+	"homepage": "https://portfolio-6od.pages.dev",
 	"bugs": {
 		"url": "https://github.com/roottool/portfolio/issues"
 	},
