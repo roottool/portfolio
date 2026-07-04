@@ -6,7 +6,7 @@ This file is an index, not a manual: it holds only the always-applicable constra
 
 ## Stack Summary
 
-Astro 6.x (`output: 'static'`) · TypeScript (strict) · Tailwind CSS v4 + Visual Kei design system · Bun · Cloudflare Pages
+Astro (`output: 'static'`) · TypeScript (strict) · Tailwind CSS v4 + Visual Kei design system · Bun · Cloudflare Pages
 
 ## Core Constraints (always apply)
 
