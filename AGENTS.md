@@ -1,111 +1,36 @@
 # AGENTS.md
 
-This file provides guidance to AI coding assistants when working with code in this repository.
+Guidance for AI coding assistants working in this repository.
 
-## Tech Stack
+This file is an index, not a manual: it holds only the always-applicable constraints, plus a map to the source of truth for everything else. When a detail here conflicts with a referenced file, the referenced file wins.
 
-- **Framework**: Astro 6.x (static site generator)
-- **Language**: TypeScript with strict configuration
-- **Styling**: Tailwind CSS v4 with custom utility system
-- **Runtime**: Bun (JavaScript runtime and package manager)
+## Stack Summary
 
-## Development Commands
+Astro 6.x (`output: 'static'`) · TypeScript (strict) · Tailwind CSS v4 + Visual Kei design system · Bun · Cloudflare Pages
 
-### Package Management
+## Core Constraints (always apply)
 
-- Uses `bun` as package manager and runtime
-- Install dependencies: `bun install`
+- **Runtime/package manager is Bun**: `bun install`, `bun run <script>` — never npm/yarn/pnpm
+- **Fully static site — no client-side JavaScript**: `client:*` directives are forbidden; components are static HTML/CSS only
+- **Visual Kei design system**:
+  - Colors only via `var(--vk-*)` custom properties — never raw hex values or Tailwind color utilities (e.g. `text-red-500`)
+  - Typography: `"Cinzel Decorative"` (display headings), `"Cormorant SC"` (section labels/metadata, with letter-spacing), `"Cormorant Garamond"` (body)
+  - Reuse the utility classes (`card-base`, `vk-section-title`, `vk-divider`, `vk-animate-in`) instead of reinventing surfaces
+- **`src/assets/*.json` is auto-updated by scheduled GitHub Actions** — never edit these files manually
+- **Local builds need no environment variables** — API secrets exist only in repository/workflow settings
+- **Conventional Commits** (`feat:`, `fix:`, `chore:`, `docs:`, `ci:`)
 
-### Development Workflow
+## Source-of-Truth Map
 
-- **Development server**: `bun run dev` (Astro dev server)
-- **Build**: `bun run build` (Astro static site build)
-- **Production preview**: `bun run preview` (Preview production build locally)
-
-### Code Quality
-
-- **Lint**: `bun run lint` (runs format checks + oxlint/ESLint + Markuplint in sequence)
-  - `bun run lint:oxfmt` - oxfmt format check (all files except `.astro`)
-  - `bun run lint:dprint` - dprint format check (`.astro` files only)
-  - `bun run lint:oxeslint` - Astro check + oxlint + ESLint check
-- **Format**: `bun run format` (formats code with oxfmt + dprint)
-- **Fix**: `bun run fix` (auto-fixes oxlint/ESLint issues + formats)
-- **Type check**: `bun run typecheck` (runs both Astro check and TypeScript compiler)
-  - `bun run typecheck:astro` - Astro check (TypeScript + template validation)
-  - `bun run typecheck:tsc` - TypeScript compiler check
-
-## Project Structure
-
-```text
-src/
-├── assets/         # Static assets (SVG logos, static JSON data)
-├── components/     # Astro components (GitHubContributions, SteamSummary, SpotifyRecent)
-├── features/       # Feature-specific business logic
-│   ├── github/     # GitHub contributions processing
-│   └── steam/      # Steam library processing
-├── layouts/        # Layout components (Layout.astro)
-├── lib/            # Shared utilities
-│   └── utils/      # Utility functions (date formatting, etc.)
-├── pages/          # Astro pages with file-based routing (index.astro)
-└── styles/         # Global CSS and Tailwind configuration (global.css)
-```
-
-## Key Configuration
-
-- **File Extensions**: Astro components use `.astro` extension
-- **Path Aliases**: `@/*` maps to `src/*`, `$/*` maps to `public/*`
-- **Output**: Static site generation (`output: 'static'` in astro.config.mjs)
-
-## Architecture Overview
-
-### Component Architecture
-
-- **Layout Component**: Base HTML structure with header, main, and footer grid areas
-- **Feature Components**: Self-contained Astro components for each data source
-- **Props Interface**: TypeScript interfaces define expected data shapes
-- **Responsive Grid**: Utilizes Tailwind's responsive grid system (sm, md, xl breakpoints)
-
-### Styling System
-
-- Uses Tailwind CSS v4 with custom utilities defined in `src/styles/global.css`
-- Custom grid area utilities for layout management:
-  - `grid-areas-layout` - Defines header/main/footer grid template
-  - `grid-area-{name}` - Assigns elements to named grid areas
-- Dark theme with neutral color palette (neutral-900, neutral-800, etc.)
-- Responsive design with mobile-first approach
-
-### API Integrations
-
-The portfolio displays data from three external sources:
-
-1. **GitHub Contributions**
-   - Fetches merged pull requests via GitHub Search API
-   - Filters out PRs to own repositories
-   - Displays recent OSS contributions
-
-2. **Steam Library**
-   - Uses Steam Web API to fetch owned games
-   - Shows games sorted by playtime
-   - Displays game capsule images from Steam CDN
-
-3. **Spotify**
-   - Embeds Spotify playlist (2024 Top Songs)
-   - Uses iframe embed with Spotify's generator
-
-All API calls are made at build time in `src/pages/index.astro` using `Promise.all()` for parallel fetching.
-
-### Build and Deployment
-
-- Static site generation with Astro
-- No client-side JavaScript by default (static HTML/CSS)
-- Build output in `dist/` directory
-- Optimized for deployment to static hosting platforms (Vercel)
-- `bun run build` runs `scripts/generate-og.ts` before `astro build` — OG image is generated statically at build time
-
-## Environment Variables
-
-Astro environment variables (`astro:env/server`):
-
-- `GITHUB_USERNAME` - GitHub username for contributions API (public)
-- `STEAM_API_KEY` - Steam Web API key (secret)
-- `STEAM_ID` - Steam user ID (public)
+| Topic                                | Read                                                                                         | Notes                                                                 |
+| ------------------------------------ | -------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| Commands (dev/build/lint/fix/format) | `package.json` scripts                                                                       | No standalone `typecheck` — `astro check` runs inside `lint:oxeslint` |
+| Formatter split                      | `.oxfmtrc.json` / `dprint.jsonc` / `.editorconfig`                                           | oxfmt: everything except `.astro`; dprint: `.astro` files only        |
+| Design tokens & utilities            | `src/styles/global.css`                                                                      | `--vk-*` tokens, `card-base`, `vk-*` classes, `grid-areas-layout`     |
+| Component creation guide             | `.claude/skills/new-visual-kei-component/SKILL.md`                                           | Plain Markdown — readable by any agent, not just Claude Code          |
+| Reference implementations            | `src/components/GitHubContributions.astro`, `src/components/SteamSummary.astro`              | List + staggered animation + hover accent bar / grid layout           |
+| Data update pipelines                | `.github/workflows/update-owned-games.yml`, `.github/workflows/update-oss-contributions.yml` | Weekly schedules (JST); fetch data and open PRs automatically         |
+| CI                                   | `.github/workflows/ci.yml`                                                                   | Format checks + lint + build; draft PRs are skipped                   |
+| Deployment                           | `wrangler.jsonc`                                                                             | Cloudflare Pages, build output in `dist/`                             |
+| Path aliases                         | `tsconfig.json`                                                                              | `@/*` → `src/*`, `$/*` → `public/*`                                   |
+| OG image generation                  | `scripts/generate-og.ts`                                                                     | Runs before `astro build` as part of `bun run build`                  |
