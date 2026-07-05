@@ -30,6 +30,8 @@ jobs:
       pull-requests: read
     outputs:
       typescript: ${{ steps.filter.outputs.typescript }}
+      astro: ${{ steps.filter.outputs.astro }}
+      lint-config: ${{ steps.filter.outputs.lint-config }}
       renovate-config: ${{ steps.filter.outputs.renovate-config }}
     if: ${{ !github.event.pull_request.draft }}
     steps:
