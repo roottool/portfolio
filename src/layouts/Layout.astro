@@ -54,6 +54,7 @@ const jsonLd = {
 		<meta property="og:url" content={canonicalURL} />
 		<link rel="canonical" href={canonicalURL} />
 		<script
+			is:inline
 			type="application/ld+json"
 			set:html={JSON.stringify(jsonLd).replace(/</g, "\\u003c")}
 		/>
