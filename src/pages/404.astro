@@ -1,0 +1,31 @@
+---
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout title="404 — roottool">
+	<section class="col-span-full flex flex-col items-center justify-center gap-6 py-16 text-center vk-animate-in">
+		<p
+			class="text-xs tracking-[0.5em] uppercase"
+			style='color: var(--vk-crimson); font-family: "Cormorant SC", serif'
+		>
+			Lost in the Abyss
+		</p>
+		<h2 style='font-family: "Cinzel Decorative", serif; font-size: clamp(4rem, 12vw, 8rem); font-weight: 700; color: var(--vk-text); text-shadow: var(--vk-glow); line-height: 1'>
+			404
+		</h2>
+		<div class="vk-divider w-48" aria-hidden="true">✦</div>
+		<p
+			class="text-lg"
+			style='color: var(--vk-muted); font-family: "Cormorant Garamond", serif; font-style: italic'
+		>
+			This page has faded into the void.
+		</p>
+		<a
+			href="/"
+			class="card-base px-6 py-3 mt-2"
+			style='font-family: "Cormorant SC", serif; letter-spacing: 0.15em; text-transform: uppercase; color: var(--vk-silver)'
+		>
+			Return to the Sanctuary
+		</a>
+	</section>
+</Layout>
