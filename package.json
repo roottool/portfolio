@@ -37,6 +37,7 @@
 		"@fontsource/cinzel-decorative": "5.2.8",
 		"@fontsource/cormorant-garamond": "5.2.11",
 		"@fontsource/cormorant-sc": "5.2.8",
+		"@fontsource/noto-serif-jp": "5.2.8",
 		"astro": "7.0.6"
 	},
 	"devDependencies": {
