@@ -47,11 +47,17 @@ jobs:
             --author "roottool" \
             --merged \
             --visibility "public" \
+            --limit 100 \
             --json id,number,title,url,repository,closedAt \
             -- -user:"roottool" \
             > temp-contributions.json
         env:
           GH_TOKEN: ${{ github.token }}
+
+      - name: Validate JSON structure
+        run: |
+          jq -e 'type == "array" and all(.[]; has("closedAt") and has("title") and has("url") and has("repository"))' \
+            temp-contributions.json > /dev/null
 
       - name: Format and move JSON
         run: |
