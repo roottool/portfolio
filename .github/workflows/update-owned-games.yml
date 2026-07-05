@@ -60,6 +60,16 @@ jobs:
           STEAM_API_KEY: ${{ secrets.STEAM_API_KEY }}
           STEAM_ID: ${{ vars.STEAM_ID }}
 
+      - name: Slim down JSON to used fields
+        run: |
+          jq '{
+            response: {
+              game_count: .response.game_count,
+              games: [.response.games[] | { appid, name, playtime_forever }]
+            }
+          }' temp-owned-games.json > temp-owned-games-slim.json
+          mv temp-owned-games-slim.json temp-owned-games.json
+
       - name: Format and move JSON
         run: |
           bunx oxfmt temp-owned-games.json
