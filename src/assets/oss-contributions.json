@@ -253,5 +253,173 @@
 		"repository": { "name": "internet-cleaner", "nameWithOwner": "404-html/internet-cleaner" },
 		"title": "Fixed all content being replaced",
 		"url": "https://github.com/404-html/internet-cleaner/pull/11"
+	},
+	{
+		"closedAt": "2019-05-16T20:54:01Z",
+		"id": "MDExOlB1bGxSZXF1ZXN0Mjc5MTc1NDk2",
+		"number": 23,
+		"repository": { "name": "reiwa_bustimer", "nameWithOwner": "sfc-tlab/reiwa_bustimer" },
+		"title": "Pathの取得方法を変更",
+		"url": "https://github.com/sfc-tlab/reiwa_bustimer/pull/23"
+	},
+	{
+		"closedAt": "2019-05-14T12:44:45Z",
+		"id": "MDExOlB1bGxSZXF1ZXN0Mjc4MzMwMzY2",
+		"number": 2010,
+		"repository": { "name": "profiler", "nameWithOwner": "firefox-devtools/profiler" },
+		"title": "Fix #2008: Changes contrast of the time ruler",
+		"url": "https://github.com/firefox-devtools/profiler/pull/2010"
+	},
+	{
+		"closedAt": "2019-06-28T15:40:17Z",
+		"id": "MDExOlB1bGxSZXF1ZXN0Mjc3MDgxODg4",
+		"number": 2994,
+		"repository": { "name": "BoostNote-Legacy", "nameWithOwner": "BoostIO/BoostNote-Legacy" },
+		"title": "Fixes that TOC hasn't id attribute when the title is all 2-byte characters",
+		"url": "https://github.com/BoostIO/BoostNote-Legacy/pull/2994"
+	},
+	{
+		"closedAt": "2019-05-03T19:59:05Z",
+		"id": "MDExOlB1bGxSZXF1ZXN0Mjc1ODExNzI3",
+		"number": 2039,
+		"repository": { "name": "xterm.js", "nameWithOwner": "xtermjs/xterm.js" },
+		"title": "Refactored the CSS code of cursor blink",
+		"url": "https://github.com/xtermjs/xterm.js/pull/2039"
+	},
+	{
+		"closedAt": "2019-05-04T04:13:01Z",
+		"id": "MDExOlB1bGxSZXF1ZXN0Mjc1NzkxMjI2",
+		"number": 2038,
+		"repository": { "name": "xterm.js", "nameWithOwner": "xtermjs/xterm.js" },
+		"title": "Fix that webLinks not interpreted",
+		"url": "https://github.com/xtermjs/xterm.js/pull/2038"
+	},
+	{
+		"closedAt": "2019-04-29T06:27:58Z",
+		"id": "MDExOlB1bGxSZXF1ZXN0Mjc0MDk1ODY2",
+		"number": 5,
+		"repository": { "name": "anno1800helper", "nameWithOwner": "glkwhr/anno1800helper" },
+		"title": "Fix: Choose default language",
+		"url": "https://github.com/glkwhr/anno1800helper/pull/5"
+	},
+	{
+		"closedAt": "2019-04-29T18:29:15Z",
+		"id": "MDExOlB1bGxSZXF1ZXN0MjczNjcxMjcz",
+		"number": 7406,
+		"repository": { "name": "desktop", "nameWithOwner": "desktop/desktop" },
+		"title": "Fix: Cannot use `esc` key to close Repository list and Branch list",
+		"url": "https://github.com/desktop/desktop/pull/7406"
+	},
+	{
+		"closedAt": "2019-04-22T16:36:02Z",
+		"id": "MDExOlB1bGxSZXF1ZXN0MjcyNDEzODk5",
+		"number": 2,
+		"repository": { "name": "pySankey", "nameWithOwner": "Pierre-Sassoulas/pySankey" },
+		"title": "Fix to install on windows",
+		"url": "https://github.com/Pierre-Sassoulas/pySankey/pull/2"
+	},
+	{
+		"closedAt": "2019-05-11T03:06:28Z",
+		"id": "MDExOlB1bGxSZXF1ZXN0MjcyMjQ4MDY2",
+		"number": 72689,
+		"repository": { "name": "vscode", "nameWithOwner": "microsoft/vscode" },
+		"title": "Add PS Core in select default shell on windows#72425",
+		"url": "https://github.com/microsoft/vscode/pull/72689"
+	},
+	{
+		"closedAt": "2019-04-23T07:48:04Z",
+		"id": "MDExOlB1bGxSZXF1ZXN0MjcyMjM5MDM3",
+		"number": 39,
+		"repository": { "name": "django-survey", "nameWithOwner": "Pierre-Sassoulas/django-survey" },
+		"title": "Fixed - Some tests fail under Windows #12",
+		"url": "https://github.com/Pierre-Sassoulas/django-survey/pull/39"
+	},
+	{
+		"closedAt": "2019-04-21T19:36:49Z",
+		"id": "MDExOlB1bGxSZXF1ZXN0MjcyMjMzODAy",
+		"number": 378,
+		"repository": { "name": "pre-commit-hooks", "nameWithOwner": "pre-commit/pre-commit-hooks" },
+		"title": "Changed from open() to io.open()",
+		"url": "https://github.com/pre-commit/pre-commit-hooks/pull/378"
+	},
+	{
+		"closedAt": "2019-04-16T21:08:44Z",
+		"id": "MDExOlB1bGxSZXF1ZXN0MjcwOTgzMTEx",
+		"number": 7315,
+		"repository": { "name": "desktop", "nameWithOwner": "desktop/desktop" },
+		"title": "[Stashing] Changed the button title from Clear to Discard",
+		"url": "https://github.com/desktop/desktop/pull/7315"
+	},
+	{
+		"closedAt": "2019-04-15T17:24:18Z",
+		"id": "MDExOlB1bGxSZXF1ZXN0MjcwMzI5ODUx",
+		"number": 6,
+		"repository": { "name": "internet-cleaner", "nameWithOwner": "404-html/internet-cleaner" },
+		"title": " Implemented a case sensitive logic in Cleaner",
+		"url": "https://github.com/404-html/internet-cleaner/pull/6"
+	},
+	{
+		"closedAt": "2019-05-06T09:31:02Z",
+		"id": "MDExOlB1bGxSZXF1ZXN0MjQ4NDg4MjE1",
+		"number": 2846,
+		"repository": { "name": "BoostNote-Legacy", "nameWithOwner": "BoostIO/BoostNote-Legacy" },
+		"title": "Introduce markdownlint #864",
+		"url": "https://github.com/BoostIO/BoostNote-Legacy/pull/2846"
+	},
+	{
+		"closedAt": "2019-01-28T01:02:20Z",
+		"id": "MDExOlB1bGxSZXF1ZXN0MjQ3NzE4Njkz",
+		"number": 2831,
+		"repository": { "name": "BoostNote-Legacy", "nameWithOwner": "BoostIO/BoostNote-Legacy" },
+		"title": "Change default editor font #1995",
+		"url": "https://github.com/BoostIO/BoostNote-Legacy/pull/2831"
+	},
+	{
+		"closedAt": "2019-01-28T02:39:15Z",
+		"id": "MDExOlB1bGxSZXF1ZXN0MjQ1MTY1MDMw",
+		"number": 2809,
+		"repository": { "name": "BoostNote-Legacy", "nameWithOwner": "BoostIO/BoostNote-Legacy" },
+		"title": "Zoom in and out image #1448",
+		"url": "https://github.com/BoostIO/BoostNote-Legacy/pull/2809"
+	},
+	{
+		"closedAt": "2018-12-26T22:23:05Z",
+		"id": "MDExOlB1bGxSZXF1ZXN0MjQwOTk3Mzk3",
+		"number": 23,
+		"repository": { "name": "algos-ngular", "nameWithOwner": "mohitkyadav/algos-ngular" },
+		"title": "Optimize UI for mobile devices",
+		"url": "https://github.com/mohitkyadav/algos-ngular/pull/23"
+	},
+	{
+		"closedAt": "2018-12-26T09:27:34Z",
+		"id": "MDExOlB1bGxSZXF1ZXN0MjQwOTMxNjU4",
+		"number": 22,
+		"repository": { "name": "algos-ngular", "nameWithOwner": "mohitkyadav/algos-ngular" },
+		"title": "Add loading progress spinner",
+		"url": "https://github.com/mohitkyadav/algos-ngular/pull/22"
+	},
+	{
+		"closedAt": "2018-12-26T10:01:27Z",
+		"id": "MDExOlB1bGxSZXF1ZXN0MjQwOTE0Mjg1",
+		"number": 11,
+		"repository": { "name": "Go-Qiita", "nameWithOwner": "Band-Aid/Go-Qiita" },
+		"title": "Improved an error message",
+		"url": "https://github.com/Band-Aid/Go-Qiita/pull/11"
+	},
+	{
+		"closedAt": "2018-12-24T07:38:36Z",
+		"id": "MDExOlB1bGxSZXF1ZXN0MjQwNjQzNDE5",
+		"number": 2741,
+		"repository": { "name": "BoostNote-Legacy", "nameWithOwner": "BoostIO/BoostNote-Legacy" },
+		"title": "fixed issue #2729",
+		"url": "https://github.com/BoostIO/BoostNote-Legacy/pull/2741"
+	},
+	{
+		"closedAt": "2019-01-07T05:15:48Z",
+		"id": "MDExOlB1bGxSZXF1ZXN0MjM4OTczOTEw",
+		"number": 2712,
+		"repository": { "name": "BoostNote-Legacy", "nameWithOwner": "BoostIO/BoostNote-Legacy" },
+		"title": "fix issues #2644 and #2662",
+		"url": "https://github.com/BoostIO/BoostNote-Legacy/pull/2712"
 	}
 ]
