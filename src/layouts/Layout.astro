@@ -7,8 +7,27 @@ import XLogo from "../assets/logo/x.svg";
 import "../styles/global.css";
 
 const NAME = "roottool" as const satisfies string;
+const DESCRIPTION =
+	"roottool — web app developer and Visual Kei enthusiast." as const satisfies string;
 const { title = NAME } = Astro.props;
 const year = new Date().getFullYear();
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL("/og.png", Astro.site);
+
+// Personal info guard: name is the handle only. Do not add real name,
+// affiliation, job title, or other career/personal identifiers here.
+const jsonLd = {
+	"@context": "https://schema.org",
+	"@type": "ProfilePage",
+	mainEntity: {
+		"@type": "Person",
+		name: NAME,
+		url: Astro.site?.toString(),
+		description: "Web app developer and Visual Kei enthusiast.",
+		sameAs: ["https://github.com/roottool", "https://x.com/roottool"],
+	},
+};
 ---
 
 <html lang="en" style="background-color: #060008; color: #e8dff2">
@@ -17,26 +36,27 @@ const year = new Date().getFullYear();
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="theme-color" content="#060008" />
 		<meta name="color-scheme" content="dark" />
-		<meta
-			name="description"
-			content="roottool — web app developer and Visual Kei enthusiast."
-		/>
+		<meta name="description" content={DESCRIPTION} />
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:site" content="@roottool" />
-		<meta name="twitter:image" content="https://portfolio-6od.pages.dev/og.png" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={DESCRIPTION} />
+		<meta name="twitter:image" content={ogImageURL} />
 		<meta property="og:type" content="website" />
-		<meta property="og:title" content="roottool" />
-		<meta
-			property="og:description"
-			content="roottool — web app developer and Visual Kei enthusiast."
+		<meta property="og:site_name" content={NAME} />
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={DESCRIPTION} />
+		<meta property="og:image" content={ogImageURL} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:alt" content="roottool — Portfolio" />
+		<meta property="og:url" content={canonicalURL} />
+		<link rel="canonical" href={canonicalURL} />
+		<script
+			type="application/ld+json"
+			set:html={JSON.stringify(jsonLd).replace(/</g, "\\u003c")}
 		/>
-		<meta property="og:image" content="https://portfolio-6od.pages.dev/og.png" />
-		<meta property="og:url" content="https://portfolio-6od.pages.dev/" />
-		<!--
-      manifest.json provides metadata used when your web app is added to the
-      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
-    -->
-		<link rel="canonical" href="https://portfolio-6od.pages.dev/" />
 		<link rel="manifest" href="/manifest.json" />
 		<link rel="icon" href="/favicon.ico" />
 		<link rel="apple-touch-icon" href="/android-chrome-192x192.png" />
