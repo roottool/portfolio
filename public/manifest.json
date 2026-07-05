@@ -18,8 +18,9 @@
       "type": "image/png"
     }
   ],
-  "start_url": "./index.html",
+  "start_url": "/",
   "display": "standalone",
+  "description": "roottool — web app developer and Visual Kei enthusiast.",
   "theme_color": "#060008",
   "background_color": "#060008"
 }

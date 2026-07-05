@@ -59,8 +59,5 @@
 		"satori": "0.26.0",
 		"tailwindcss": "4.3.2",
 		"typescript": "6.0.3"
-	},
-	"msw": {
-		"workerDirectory": "public"
 	}
 }
