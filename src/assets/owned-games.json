@@ -1,6 +1,6 @@
 {
 	"response": {
-		"game_count": 365,
+		"game_count": 366,
 		"games": [
 			{
 				"appid": 70,
@@ -1735,7 +1735,7 @@
 			{
 				"appid": 2807960,
 				"name": "Battlefield™ 6",
-				"playtime_forever": 7789
+				"playtime_forever": 7856
 			},
 			{
 				"appid": 2881650,
@@ -1826,6 +1826,11 @@
 				"appid": 4128260,
 				"name": "Highguard",
 				"playtime_forever": 105
+			},
+			{
+				"appid": 4617860,
+				"name": "OMEGA PHENEX COMMENCED PROJECT SIX Playtest",
+				"playtime_forever": 60
 			}
 		]
 	}
