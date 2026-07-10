@@ -263,14 +263,6 @@
 		"url": "https://github.com/sfc-tlab/reiwa_bustimer/pull/23"
 	},
 	{
-		"closedAt": "2019-05-14T12:44:45Z",
-		"id": "MDExOlB1bGxSZXF1ZXN0Mjc4MzMwMzY2",
-		"number": 2010,
-		"repository": { "name": "profiler", "nameWithOwner": "firefox-devtools/profiler" },
-		"title": "Fix #2008: Changes contrast of the time ruler",
-		"url": "https://github.com/firefox-devtools/profiler/pull/2010"
-	},
-	{
 		"closedAt": "2019-06-28T15:40:17Z",
 		"id": "MDExOlB1bGxSZXF1ZXN0Mjc3MDgxODg4",
 		"number": 2994,
