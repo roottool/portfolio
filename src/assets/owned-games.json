@@ -1,6 +1,6 @@
 {
 	"response": {
-		"game_count": 366,
+		"game_count": 368,
 		"games": [
 			{
 				"appid": 70,
@@ -249,7 +249,7 @@
 			},
 			{
 				"appid": 65790,
-				"name": "Arma: Cold War Assault",
+				"name": "Arma: Cold War Assault Remastered",
 				"playtime_forever": 0
 			},
 			{
@@ -1608,6 +1608,11 @@
 				"playtime_forever": 1619
 			},
 			{
+				"appid": 1741160,
+				"name": "Catch Me!",
+				"playtime_forever": 0
+			},
+			{
 				"appid": 1755300,
 				"name": "Smart Factory Tycoon",
 				"playtime_forever": 0
@@ -1700,7 +1705,7 @@
 			{
 				"appid": 2507950,
 				"name": "Delta Force",
-				"playtime_forever": 8280
+				"playtime_forever": 8333
 			},
 			{
 				"appid": 2543510,
@@ -1735,7 +1740,7 @@
 			{
 				"appid": 2807960,
 				"name": "Battlefield™ 6",
-				"playtime_forever": 7856
+				"playtime_forever": 7906
 			},
 			{
 				"appid": 2881650,
@@ -1826,6 +1831,11 @@
 				"appid": 4128260,
 				"name": "Highguard",
 				"playtime_forever": 105
+			},
+			{
+				"appid": 4384550,
+				"name": "Call of Duty®: Black Ops 6",
+				"playtime_forever": 0
 			},
 			{
 				"appid": 4617860,
