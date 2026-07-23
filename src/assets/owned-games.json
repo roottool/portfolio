@@ -1,6 +1,6 @@
 {
 	"response": {
-		"game_count": 368,
+		"game_count": 369,
 		"games": [
 			{
 				"appid": 70,
@@ -730,7 +730,7 @@
 			{
 				"appid": 289070,
 				"name": "Sid Meier's Civilization VI",
-				"playtime_forever": 4388
+				"playtime_forever": 4807
 			},
 			{
 				"appid": 289130,
@@ -1523,6 +1523,11 @@
 				"playtime_forever": 0
 			},
 			{
+				"appid": 1272160,
+				"name": "The Life and Suffering of Sir Brante",
+				"playtime_forever": 0
+			},
+			{
 				"appid": 1282270,
 				"name": "Strinova",
 				"playtime_forever": 490
@@ -1740,7 +1745,7 @@
 			{
 				"appid": 2807960,
 				"name": "Battlefield™ 6",
-				"playtime_forever": 7906
+				"playtime_forever": 8169
 			},
 			{
 				"appid": 2881650,
