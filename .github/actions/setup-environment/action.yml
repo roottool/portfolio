@@ -11,7 +11,7 @@ runs:
     # to override the value, allowing Astro's version check to pass.
     # This step can be removed once Bun reports a Node.js 22-compatible version natively.
     - name: Setup Node.js
-      uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6.5.0
+      uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
       with:
         node-version: "24.18.0"
 
@@ -19,7 +19,7 @@ runs:
       uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
 
     - name: Restore dependences cache
-      uses: actions/cache/restore@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
+      uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
       id: restore-bun-dependences-cache
       with:
         path: node_modules
@@ -34,7 +34,7 @@ runs:
     - name: Save dependences cache
       # Execute cache by default branch only.
       if: ${{ github.ref_name == github.event.repository.default_branch && !contains(steps.restore-bun-dependences-cache.outputs.cache-matched-key, steps.restore-bun-dependences-cache.outputs.cache-primary-key) }}
-      uses: actions/cache/save@caa296126883cff596d87d8935842f9db880ef25 # v5.1.0
+      uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
       id: save-dependences-cache
       with:
         path: node_modules
