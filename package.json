@@ -47,7 +47,7 @@
 		"@types/node": "26.1.1",
 		"@typescript-eslint/parser": "8.65.0",
 		"dprint": "0.55.2",
-		"eslint": "10.7.0",
+		"eslint": "10.8.0",
 		"eslint-config-flat-gitignore": "2.3.0",
 		"eslint-plugin-astro": "3.0.1",
 		"eslint-plugin-oxlint": "1.75.0",
