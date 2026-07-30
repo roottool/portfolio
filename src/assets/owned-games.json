@@ -730,7 +730,7 @@
 			{
 				"appid": 289070,
 				"name": "Sid Meier's Civilization VI",
-				"playtime_forever": 4807
+				"playtime_forever": 5319
 			},
 			{
 				"appid": 289130,
@@ -1313,6 +1313,11 @@
 				"playtime_forever": 1679
 			},
 			{
+				"appid": 674750,
+				"name": "Yet Another Zombie Defense HD",
+				"playtime_forever": 0
+			},
+			{
 				"appid": 677620,
 				"name": "Splitgate",
 				"playtime_forever": 180
@@ -1745,7 +1750,7 @@
 			{
 				"appid": 2807960,
 				"name": "Battlefield™ 6",
-				"playtime_forever": 8169
+				"playtime_forever": 8301
 			},
 			{
 				"appid": 2881650,
@@ -1841,11 +1846,6 @@
 				"appid": 4384550,
 				"name": "Call of Duty®: Black Ops 6",
 				"playtime_forever": 0
-			},
-			{
-				"appid": 4617860,
-				"name": "OMEGA PHENEX COMMENCED PROJECT SIX Playtest",
-				"playtime_forever": 60
 			}
 		]
 	}
