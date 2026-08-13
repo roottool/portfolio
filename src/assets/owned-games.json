@@ -1,6 +1,6 @@
 {
 	"response": {
-		"game_count": 369,
+		"game_count": 371,
 		"games": [
 			{
 				"appid": 70,
@@ -1208,6 +1208,11 @@
 				"playtime_forever": 0
 			},
 			{
+				"appid": 606150,
+				"name": "Moonlighter",
+				"playtime_forever": 0
+			},
+			{
 				"appid": 608800,
 				"name": "Guns of Icarus Alliance",
 				"playtime_forever": 0
@@ -1750,7 +1755,7 @@
 			{
 				"appid": 2807960,
 				"name": "Battlefield™ 6",
-				"playtime_forever": 8301
+				"playtime_forever": 8619
 			},
 			{
 				"appid": 2881650,
@@ -1836,6 +1841,11 @@
 				"appid": 3595270,
 				"name": "Call of Duty®: Modern Warfare® III",
 				"playtime_forever": 0
+			},
+			{
+				"appid": 3858730,
+				"name": "Corsair Cove Demo",
+				"playtime_forever": 14
 			},
 			{
 				"appid": 4128260,
