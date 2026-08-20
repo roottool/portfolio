@@ -1,6 +1,6 @@
 {
 	"response": {
-		"game_count": 371,
+		"game_count": 372,
 		"games": [
 			{
 				"appid": 70,
@@ -1743,6 +1743,11 @@
 				"playtime_forever": 0
 			},
 			{
+				"appid": 2764460,
+				"name": "Sandustry",
+				"playtime_forever": 488
+			},
+			{
 				"appid": 2792610,
 				"name": "Stickman Killing Zombie",
 				"playtime_forever": 0
@@ -1755,7 +1760,7 @@
 			{
 				"appid": 2807960,
 				"name": "Battlefield™ 6",
-				"playtime_forever": 8619
+				"playtime_forever": 8825
 			},
 			{
 				"appid": 2881650,
