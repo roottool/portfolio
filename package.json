@@ -57,7 +57,7 @@
 		"oxfmt": "0.64.0",
 		"oxlint": "1.79.0",
 		"oxlint-tsgolint": "7.0.2001",
-		"satori": "0.29.1",
+		"satori": "0.33.0",
 		"tailwindcss": "4.3.3",
 		"typescript": "6.0.3"
 	}
