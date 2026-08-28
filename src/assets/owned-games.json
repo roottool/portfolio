@@ -1,6 +1,6 @@
 {
 	"response": {
-		"game_count": 372,
+		"game_count": 373,
 		"games": [
 			{
 				"appid": 70,
@@ -744,7 +744,7 @@
 			},
 			{
 				"appid": 292030,
-				"name": "The Witcher 3: Wild Hunt",
+				"name": "The Witcher 3: Wild Hunt - Complete Edition",
 				"playtime_forever": 10574
 			},
 			{
@@ -1635,7 +1635,7 @@
 			{
 				"appid": 1771300,
 				"name": "Kingdom Come: Deliverance II",
-				"playtime_forever": 7587
+				"playtime_forever": 7692
 			},
 			{
 				"appid": 1850570,
@@ -1745,7 +1745,7 @@
 			{
 				"appid": 2764460,
 				"name": "Sandustry",
-				"playtime_forever": 488
+				"playtime_forever": 1382
 			},
 			{
 				"appid": 2792610,
@@ -1850,7 +1850,7 @@
 			{
 				"appid": 3858730,
 				"name": "Corsair Cove Demo",
-				"playtime_forever": 14
+				"playtime_forever": 75
 			},
 			{
 				"appid": 4128260,
@@ -1861,6 +1861,11 @@
 				"appid": 4384550,
 				"name": "Call of Duty®: Black Ops 6",
 				"playtime_forever": 0
+			},
+			{
+				"appid": 4783780,
+				"name": "Call of Duty®: Modern Warfare® 4 - Beta",
+				"playtime_forever": 498
 			}
 		]
 	}
