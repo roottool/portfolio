@@ -44,7 +44,7 @@
 		"@markuplint/astro-parser": "4.18.3",
 		"@resvg/resvg-js": "2.6.2",
 		"@tailwindcss/vite": "4.3.3",
-		"@types/node": "26.5.0",
+		"@types/node": "26.5.1",
 		"@typescript-eslint/parser": "8.70.0",
 		"dprint": "0.57.4",
 		"eslint": "10.10.0",
