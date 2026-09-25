@@ -2,5 +2,8 @@
     "extends": ["markuplint:recommended"],
     "parser": {
         "\\.astro$": "@markuplint/astro-parser"
+    },
+    "rules": {
+        "meta-charset-position": false
     }
 }

@@ -34,14 +34,7 @@ const jsonLd = {
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="theme-color" content="#060008" />
-		<meta name="color-scheme" content="dark" />
-		<meta name="description" content={DESCRIPTION} />
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:site" content="@roottool" />
-		<meta name="twitter:title" content={title} />
-		<meta name="twitter:description" content={DESCRIPTION} />
-		<meta name="twitter:image" content={ogImageURL} />
+		<title>{title}</title>
 		<meta property="og:type" content="website" />
 		<meta property="og:site_name" content={NAME} />
 		<meta property="og:locale" content="en_US" />
@@ -52,12 +45,15 @@ const jsonLd = {
 		<meta property="og:image:height" content="630" />
 		<meta property="og:image:alt" content="roottool — Portfolio" />
 		<meta property="og:url" content={canonicalURL} />
+		<meta name="color-scheme" content="dark" />
+		<meta name="description" content={DESCRIPTION} />
+		<meta name="theme-color" content="#060008" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:description" content={DESCRIPTION} />
+		<meta name="twitter:image" content={ogImageURL} />
+		<meta name="twitter:site" content="@roottool" />
+		<meta name="twitter:title" content={title} />
 		<link rel="canonical" href={canonicalURL} />
-		<script
-			is:inline
-			type="application/ld+json"
-			set:html={JSON.stringify(jsonLd).replace(/</g, "\\u003c")}
-		/>
 		<link rel="manifest" href="/manifest.json" />
 		<link rel="icon" href="/favicon.ico" />
 		<link rel="apple-touch-icon" href="/android-chrome-192x192.png" />
@@ -71,7 +67,11 @@ const jsonLd = {
 			type="font/woff2"
 			crossorigin
 		/>
-		<title>{title}</title>
+		<script
+			is:inline
+			type="application/ld+json"
+			set:html={JSON.stringify(jsonLd).replace(/</g, "\\u003c")}
+		/>
 	</head>
 	<body class="grid grid-areas-layout grid-rows-[max-content_1fr_max-content] xl:h-screen xl:overflow-hidden">
 		<a href="#main-content" class="skip-link">Skip to main content</a>

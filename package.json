@@ -41,7 +41,7 @@
 		"astro": "7.3.3"
 	},
 	"devDependencies": {
-		"@markuplint/astro-parser": "4.18.3",
+		"@markuplint/astro-parser": "5.0.1",
 		"@resvg/resvg-js": "2.6.2",
 		"@tailwindcss/vite": "4.3.3",
 		"@types/node": "26.6.1",
@@ -52,7 +52,7 @@
 		"eslint-plugin-astro": "3.2.1",
 		"eslint-plugin-oxlint": "1.83.0",
 		"globals": "17.12.0",
-		"markuplint": "4.18.3",
+		"markuplint": "5.0.1",
 		"npm-run-all2": "9.0.3",
 		"oxfmt": "0.68.0",
 		"oxlint": "1.83.0",
