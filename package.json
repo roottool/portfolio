@@ -38,7 +38,7 @@
 		"@fontsource/cormorant-garamond": "5.3.0",
 		"@fontsource/cormorant-sc": "5.3.0",
 		"@fontsource/noto-serif-jp": "5.3.0",
-		"astro": "7.3.3"
+		"astro": "7.3.4"
 	},
 	"devDependencies": {
 		"@markuplint/astro-parser": "5.0.1",
