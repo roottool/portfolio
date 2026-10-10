@@ -46,7 +46,7 @@
 		"@tailwindcss/vite": "4.3.3",
 		"@types/node": "26.6.4",
 		"@typescript-eslint/parser": "8.71.1",
-		"dprint": "0.60.1",
+		"dprint": "0.61.0",
 		"eslint": "10.12.0",
 		"eslint-config-flat-gitignore": "2.4.0",
 		"eslint-plugin-astro": "3.2.1",
@@ -57,7 +57,7 @@
 		"oxfmt": "0.72.0",
 		"oxlint": "1.87.0",
 		"oxlint-tsgolint": "7.0.2003",
-		"satori": "0.35.0",
+		"satori": "0.36.0",
 		"tailwindcss": "4.3.3",
 		"typescript": "6.0.3"
 	}
