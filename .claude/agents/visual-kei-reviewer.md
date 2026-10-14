@@ -1,6 +1,6 @@
 ---
 name: visual-kei-reviewer
-description: Use this agent to review Astro components and CSS changes for Visual Kei design system consistency after creating or modifying UI in this portfolio. Does NOT review TypeScript logic in `src/features/**` or `scripts/**`, run linters, or edit files. For formatting, HTML validity, and type errors, run `bun run lint` instead.
+description: Use this agent to review Astro components and CSS for Visual Kei design system consistency after creating or modifying UI. Does NOT review TypeScript logic, run linters, or edit files. For formatting, HTML validity, and type errors, use `bun run lint` instead.
 tools: Read, Grep, Glob
 model: haiku
 ---
