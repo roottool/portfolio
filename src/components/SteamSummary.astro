@@ -76,7 +76,8 @@ const games = processGames(data.games).slice(0, 12);
 	filter: saturate(0.7) brightness(0.85);
 	transition: filter 0.5s ease;
 }
-.group:hover .game-image {
+.group:hover .game-image,
+.group:focus-visible .game-image {
 	filter: saturate(0.9) brightness(1);
 }
 .game-overlay {
@@ -86,7 +87,8 @@ const games = processGames(data.games).slice(0, 12);
 	opacity: 0;
 	transition: opacity 0.3s ease;
 }
-.group:hover .game-overlay {
+.group:hover .game-overlay,
+.group:focus-visible .game-overlay {
 	opacity: 1;
 }
 </style>
