@@ -31,6 +31,7 @@ jobs:
     outputs:
       typescript: ${{ steps.filter.outputs.typescript }}
       astro: ${{ steps.filter.outputs.astro }}
+      build: ${{ steps.filter.outputs.build }}
       dprint: ${{ steps.filter.outputs.dprint }}
       lint-config: ${{ steps.filter.outputs.lint-config }}
       renovate-config: ${{ steps.filter.outputs.renovate-config }}
@@ -55,10 +56,22 @@ jobs:
               - '**/*.astro'
               - '**/*.ts'
               - '**/*.tsx'
+              - 'src/assets/*.json'
             astro:
               - 'bun.lock'
               - 'astro.config.*'
               - '**/*.astro'
+              - '.markuplintrc*'
+              - '.github/actions/**'
+            build:
+              - 'bun.lock'
+              - 'package.json'
+              - 'astro.config.*'
+              - '**/tsconfig*.json'
+              - 'src/**'
+              - 'public/**'
+              - 'scripts/**'
+              - '.github/actions/**'
             dprint:
               - 'bun.lock'
               - 'dprint.jsonc'
@@ -68,6 +81,7 @@ jobs:
               - '.oxlintrc.json'
               - 'eslint.config.*'
               - 'package.json'
+              - '.github/actions/**'
             renovate-config:
               - '.github/renovate.json'
 
@@ -130,6 +144,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     needs: [setup]
+    if: ${{ needs.setup.outputs.build == 'true' }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
