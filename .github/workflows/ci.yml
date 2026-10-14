@@ -31,6 +31,7 @@ jobs:
     outputs:
       typescript: ${{ steps.filter.outputs.typescript }}
       astro: ${{ steps.filter.outputs.astro }}
+      dprint: ${{ steps.filter.outputs.dprint }}
       lint-config: ${{ steps.filter.outputs.lint-config }}
       renovate-config: ${{ steps.filter.outputs.renovate-config }}
     if: ${{ !github.event.pull_request.draft }}
@@ -58,6 +59,11 @@ jobs:
               - 'bun.lock'
               - 'astro.config.*'
               - '**/*.astro'
+            dprint:
+              - 'bun.lock'
+              - 'dprint.jsonc'
+              - 'package.json'
+              - '**/*.astro'
             lint-config:
               - '.oxlintrc.json'
               - 'eslint.config.*'
@@ -81,14 +87,10 @@ jobs:
             .github/renovate.json
             package.json
             bun.lock
-            .oxfmtrc.json
           sparse-checkout-cone-mode: false
 
       - name: Initialize
         uses: ./.github/actions/setup-environment
-
-      - name: Check format by oxfmt
-        run: bunx oxfmt --check .github/renovate.json
 
       - name: Validate Renovate config
         run: bunx -p renovate renovate-config-validator --strict
@@ -109,6 +111,7 @@ jobs:
 
       - parallel:
           - name: Run format check (dprint)
+            if: ${{ needs.setup.outputs.dprint == 'true' }}
             run: bun run lint:dprint
 
           - name: Run format check (oxfmt)
