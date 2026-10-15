@@ -1,6 +1,6 @@
 {
 	"response": {
-		"game_count": 375,
+		"game_count": 377,
 		"games": [
 			{
 				"appid": 70,
@@ -973,6 +973,11 @@
 				"playtime_forever": 0
 			},
 			{
+				"appid": 405640,
+				"name": "Pony Island",
+				"playtime_forever": 0
+			},
+			{
 				"appid": 407530,
 				"name": "ARK: Survival Of The Fittest",
 				"playtime_forever": 0
@@ -1640,7 +1645,7 @@
 			{
 				"appid": 1771300,
 				"name": "Kingdom Come: Deliverance II",
-				"playtime_forever": 9273
+				"playtime_forever": 11230
 			},
 			{
 				"appid": 1850570,
@@ -1795,6 +1800,11 @@
 			{
 				"appid": 2955840,
 				"name": "Kitchen Wars",
+				"playtime_forever": 0
+			},
+			{
+				"appid": 2990600,
+				"name": "Fireside Feelings",
 				"playtime_forever": 0
 			},
 			{
