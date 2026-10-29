@@ -45,7 +45,7 @@
 		"@resvg/resvg-js": "2.6.2",
 		"@tailwindcss/vite": "4.3.3",
 		"@types/node": "26.6.5",
-		"@typescript-eslint/parser": "8.72.0",
+		"@typescript-eslint/parser": "8.72.1",
 		"dprint": "0.64.3",
 		"eslint": "10.13.0",
 		"eslint-config-flat-gitignore": "2.4.0",
