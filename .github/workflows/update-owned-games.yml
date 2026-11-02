@@ -79,10 +79,10 @@ jobs:
         id: changes
         run: |
           if git diff HEAD --quiet src/assets/owned-games.json; then
-            echo "changed=false" >> ${GITHUB_OUTPUT}
+            echo "changed=false" >> "${GITHUB_OUTPUT}"
             echo "No changes detected"
           else
-            echo "changed=true" >> ${GITHUB_OUTPUT}
+            echo "changed=true" >> "${GITHUB_OUTPUT}"
             echo "Changes detected"
           fi
 
