@@ -27,8 +27,7 @@
 		"lint:markuplint": "markuplint \"**/*.astro\"",
 		"fix": "run-s -c fix:* format",
 		"fix:oxeslint": "oxlint --fix && eslint --fix .",
-		"format": "run-s -c format:*",
-		"format:oxfmt": "oxfmt"
+		"format": "oxfmt"
 	},
 	"dependencies": {
 		"@astrojs/check": "0.9.12",
