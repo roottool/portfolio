@@ -1,0 +1,28 @@
+# yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
+
+# Free-tier conservation: reviews run only when requested with `@coderabbitai review`.
+reviews:
+  auto_review:
+    enabled: false
+  review_status: false
+  high_level_summary: false
+  sequence_diagrams: false
+  poem: false
+  finishing_touches:
+    docstrings:
+      enabled: false
+    unit_tests:
+      enabled: false
+    autofix:
+      enabled: false
+    fix_ci:
+      enabled: false
+    resolve_merge_conflict:
+      enabled: false
+  # Generated or bot-maintained files stay out of manual reviews as well.
+  path_filters:
+    - "!bun.lock"
+    - "!src/assets/*.json"
+    - "!dist/**"
+chat:
+  auto_reply: false
