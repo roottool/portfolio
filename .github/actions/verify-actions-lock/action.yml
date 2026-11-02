@@ -1,0 +1,28 @@
+name: Verify actions.lock
+description: Install gh-actions-lock and verify that .github/workflows/actions.lock is in sync with the workflows
+
+inputs:
+  version:
+    description: "gh-actions-lock release tag. Pre-1.0 extension: pin the version and bump it manually."
+    required: false
+    default: v0.4.0
+  gh-token:
+    description: "GitHub token for resolving actions and the repository itself"
+    required: false
+    default: ${{ github.token }}
+
+runs:
+  using: composite
+  steps:
+    - name: Install gh-actions-lock
+      shell: bash
+      env:
+        GH_TOKEN: ${{ inputs.gh-token }}
+        VERSION: ${{ inputs.version }}
+      run: gh extension install github/gh-actions-lock --pin "${VERSION}"
+
+    - name: Verify workflow dependency lockfile
+      shell: bash
+      env:
+        GH_TOKEN: ${{ inputs.gh-token }}
+      run: gh actions-lock --verify
