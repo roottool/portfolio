@@ -15,10 +15,7 @@
 	"files.trimTrailingWhitespace": true,
 	"js/ts.preferences.importModuleSpecifier": "non-relative",
 	"js/ts.preferences.importModuleSpecifierEnding": "minimal",
-	"[astro]": {
-		"editor.defaultFormatter": "dprint.dprint"
-	},
-	"[javascript|typescript|typescriptreact|json|jsonc|yaml]": {
+	"[javascript|typescript|typescriptreact|json|jsonc|yaml|astro]": {
 		"editor.defaultFormatter": "oxc.oxc-vscode"
 	},
 	"json.schemas": [
