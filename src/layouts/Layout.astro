@@ -60,13 +60,7 @@ const jsonLd = {
 		<link rel="preconnect" href="https://cdn.cloudflare.steamstatic.com" />
 		<link rel="preconnect" href="https://open.spotify.com" />
 		<link rel="preconnect" href="https://i.scdn.co" />
-		<link
-			rel="preload"
-			href={cinzelDecorative700}
-			as="font"
-			type="font/woff2"
-			crossorigin
-		/>
+		<link rel="preload" href={cinzelDecorative700} as="font" type="font/woff2" crossorigin />
 		<script
 			is:inline
 			type="application/ld+json"
@@ -74,7 +68,9 @@ const jsonLd = {
 		/>
 	</head>
 	<body class="grid grid-areas-layout grid-rows-[max-content_1fr_max-content] xl:h-screen xl:overflow-hidden">
-		<a href="#main-content" class="skip-link">Skip to main content</a>
+		<a href="#main-content" class="skip-link">
+			Skip to main content
+		</a>
 
 		<!-- Header -->
 		<header
@@ -112,14 +108,9 @@ const jsonLd = {
 				aria-hidden="true"
 				style="animation: vk-fade-in 0.8s 0.3s ease both"
 			>
-				<span
-					style="display: block; width: 60px; height: 1px; background: linear-gradient(90deg, transparent, var(--vk-crimson-dim))"
-				></span>
-				<span style="color: var(--vk-gold); font-size: 0.5rem; letter-spacing: 0.2em"
-				>✦ ✦ ✦</span>
-				<span
-					style="display: block; width: 60px; height: 1px; background: linear-gradient(90deg, var(--vk-crimson-dim), transparent)"
-				></span>
+				<span style="display: block; width: 60px; height: 1px; background: linear-gradient(90deg, transparent, var(--vk-crimson-dim))"></span>
+				<span style="color: var(--vk-gold); font-size: 0.5rem; letter-spacing: 0.2em">✦ ✦ ✦</span>
+				<span style="display: block; width: 60px; height: 1px; background: linear-gradient(90deg, var(--vk-crimson-dim), transparent)"></span>
 			</div>
 		</header>
 
@@ -180,40 +171,42 @@ const jsonLd = {
 </html>
 
 <style>
-/* Skip navigation link */
-.skip-link {
-	position: absolute;
-	top: -100%;
-	left: 1rem;
-	z-index: 9999;
-	padding: 0.5rem 1rem;
-	background: var(--vk-surface);
-	color: var(--vk-text);
-	border: 1px solid var(--vk-crimson);
-	font-family: "Cormorant SC", serif;
-	font-size: 0.875rem;
-	letter-spacing: 0.1em;
-	text-decoration: none;
-	transition: top 0.2s ease;
-}
-.skip-link:focus {
-	top: 1rem;
-}
+	/* Skip navigation link */
+	.skip-link {
+		position: absolute;
+		top: -100%;
+		left: 1rem;
+		z-index: 9999;
+		padding: 0.5rem 1rem;
+		background: var(--vk-surface);
+		color: var(--vk-text);
+		border: 1px solid var(--vk-crimson);
+		font-family: "Cormorant SC", serif;
+		font-size: 0.875rem;
+		letter-spacing: 0.1em;
+		text-decoration: none;
+		transition: top 0.2s ease;
+	}
+	.skip-link:focus {
+		top: 1rem;
+	}
 
-/* Promote glitch-animated h1 to compositor layer */
-h1 {
-	will-change: transform, filter;
-}
+	/* Promote glitch-animated h1 to compositor layer */
+	h1 {
+		will-change: transform, filter;
+	}
 
-/* Footer social links — CSS-only hover/focus, no inline JS */
-.footer-link {
-	color: var(--vk-silver-dim);
-	transition: color 0.3s ease, filter 0.3s ease;
-}
-.footer-link:hover,
-.footer-link:focus-visible {
-	color: var(--vk-crimson);
-	filter: drop-shadow(0 0 8px rgba(200, 0, 46, 0.6));
-	outline: none;
-}
+	/* Footer social links — CSS-only hover/focus, no inline JS */
+	.footer-link {
+		color: var(--vk-silver-dim);
+		transition:
+			color 0.3s ease,
+			filter 0.3s ease;
+	}
+	.footer-link:hover,
+	.footer-link:focus-visible {
+		color: var(--vk-crimson);
+		filter: drop-shadow(0 0 8px rgba(200, 0, 46, 0.6));
+		outline: none;
+	}
 </style>

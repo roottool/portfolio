@@ -22,15 +22,13 @@
 		"preview": "astro preview",
 		"astro": "astro",
 		"lint": "run-s -c lint:*",
-		"lint:dprint": "dprint check",
 		"lint:oxfmt": "oxfmt --check",
 		"lint:oxeslint": "astro check && oxlint && eslint --max-warnings=0 .",
 		"lint:markuplint": "markuplint \"**/*.astro\"",
 		"fix": "run-s -c fix:* format",
 		"fix:oxeslint": "oxlint --fix && eslint --fix .",
 		"format": "run-s -c format:*",
-		"format:oxfmt": "oxfmt",
-		"format:dprint": "dprint fmt"
+		"format:oxfmt": "oxfmt"
 	},
 	"dependencies": {
 		"@astrojs/check": "0.9.12",
@@ -41,12 +39,12 @@
 		"astro": "7.4.4"
 	},
 	"devDependencies": {
+		"@astrojs/compiler-rs": "0.5.2",
 		"@markuplint/astro-parser": "5.4.0",
 		"@resvg/resvg-js": "2.6.2",
 		"@tailwindcss/vite": "4.3.3",
 		"@types/node": "26.6.6",
 		"@typescript-eslint/parser": "8.72.1",
-		"dprint": "0.64.3",
 		"eslint": "10.13.0",
 		"eslint-config-flat-gitignore": "2.4.0",
 		"eslint-plugin-astro": "3.2.1",

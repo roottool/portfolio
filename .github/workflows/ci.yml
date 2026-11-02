@@ -32,7 +32,6 @@ jobs:
       typescript: ${{ steps.filter.outputs.typescript }}
       astro: ${{ steps.filter.outputs.astro }}
       build: ${{ steps.filter.outputs.build }}
-      dprint: ${{ steps.filter.outputs.dprint }}
       lint-config: ${{ steps.filter.outputs.lint-config }}
       renovate-config: ${{ steps.filter.outputs.renovate-config }}
     if: ${{ !github.event.pull_request.draft }}
@@ -69,11 +68,6 @@ jobs:
               - 'public/**'
               - 'scripts/**'
               - '.github/actions/**'
-            dprint:
-              - 'bun.lock'
-              - 'dprint.jsonc'
-              - 'package.json'
-              - '**/*.astro'
             lint-config:
               - '.oxlintrc.json'
               - 'eslint.config.*'
@@ -121,10 +115,6 @@ jobs:
         uses: ./.github/actions/setup-environment
 
       - parallel:
-          - name: Run format check (dprint)
-            if: ${{ needs.setup.outputs.dprint == 'true' }}
-            run: bun run lint:dprint
-
           - name: Run format check (oxfmt)
             run: bun run lint:oxfmt
 

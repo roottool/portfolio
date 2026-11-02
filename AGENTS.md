@@ -42,24 +42,24 @@ Astro (`output: 'static'`) · TypeScript (strict) · Tailwind CSS v4 + Visual Ke
 Run both, in this order, and fix what they report:
 
 ```bash
-bun run format   # oxfmt (everything except .astro) + dprint (.astro only)
-bun run lint     # dprint check, oxfmt check, astro check + oxlint + eslint, markuplint
+bun run format   # oxfmt (all file types, including .astro)
+bun run lint     # oxfmt check, astro check + oxlint + eslint, markuplint
 ```
 
 `bun run lint:markuplint` catches HTML-validity errors in `.astro` that nothing else does — do not skip it after touching markup. There is no standalone `typecheck` script; `astro check` runs inside `lint:oxeslint`.
 
 ## Source-of-Truth Map
 
-| Topic                                | Read                                                                                         | Notes                                                                  |
-| ------------------------------------ | -------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| Commands (dev/build/lint/fix/format) | `package.json` scripts                                                                       | See Definition of Done above                                           |
-| Formatter split                      | `.oxfmtrc.json` / `dprint.jsonc` / `.editorconfig`                                           | oxfmt: everything except `.astro` (incl. `.md`); dprint: `.astro` only |
-| Design tokens & utilities            | `src/styles/global.css`                                                                      | `--vk-*` tokens, `card-base`, `vk-*` classes, `grid-areas-layout`      |
-| Component creation guide             | `.claude/skills/new-visual-kei-component/SKILL.md`                                           | Plain Markdown — readable by any agent, not just Claude Code           |
-| Reference implementations            | `src/components/GitHubContributions.astro`, `src/components/SteamSummary.astro`              | List + staggered animation + hover accent bar / grid layout            |
-| Page composition & grid              | `src/pages/index.astro`, `src/layouts/Layout.astro`                                          | New sections must be wired into `index.astro` inside `<Layout>`        |
-| Data update pipelines                | `.github/workflows/update-owned-games.yml`, `.github/workflows/update-oss-contributions.yml` | Weekly schedules (JST); fetch data and open PRs automatically          |
-| CI                                   | `.github/workflows/ci.yml`                                                                   | Format checks + lint + build; draft PRs are skipped                    |
-| Deployment                           | `wrangler.jsonc`                                                                             | Cloudflare Pages, build output in `dist/`                              |
-| Path aliases                         | `tsconfig.json`                                                                              | `@/*` → `src/*`, `$/*` → `public/*`                                    |
-| OG image generation                  | `scripts/generate-og.ts`                                                                     | Runs before `astro build` as part of `bun run build`                   |
+| Topic                                | Read                                                                                         | Notes                                                                   |
+| ------------------------------------ | -------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| Commands (dev/build/lint/fix/format) | `package.json` scripts                                                                       | See Definition of Done above                                            |
+| Formatter                            | `.oxfmtrc.json` / `.editorconfig`                                                            | oxfmt formats everything; `.astro` goes through `prettier-plugin-astro` |
+| Design tokens & utilities            | `src/styles/global.css`                                                                      | `--vk-*` tokens, `card-base`, `vk-*` classes, `grid-areas-layout`       |
+| Component creation guide             | `.claude/skills/new-visual-kei-component/SKILL.md`                                           | Plain Markdown — readable by any agent, not just Claude Code            |
+| Reference implementations            | `src/components/GitHubContributions.astro`, `src/components/SteamSummary.astro`              | List + staggered animation + hover accent bar / grid layout             |
+| Page composition & grid              | `src/pages/index.astro`, `src/layouts/Layout.astro`                                          | New sections must be wired into `index.astro` inside `<Layout>`         |
+| Data update pipelines                | `.github/workflows/update-owned-games.yml`, `.github/workflows/update-oss-contributions.yml` | Weekly schedules (JST); fetch data and open PRs automatically           |
+| CI                                   | `.github/workflows/ci.yml`                                                                   | Format checks + lint + build; draft PRs are skipped                     |
+| Deployment                           | `wrangler.jsonc`                                                                             | Cloudflare Pages, build output in `dist/`                               |
+| Path aliases                         | `tsconfig.json`                                                                              | `@/*` → `src/*`, `$/*` → `public/*`                                     |
+| OG image generation                  | `scripts/generate-og.ts`                                                                     | Runs before `astro build` as part of `bun run build`                    |
