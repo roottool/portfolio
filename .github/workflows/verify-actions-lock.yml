@@ -1,0 +1,37 @@
+name: Verify actions.lock
+run-name: "${{ github.workflow }} (${{ github.ref_name }})"
+
+# Catches upstream tags that were re-pointed after they were locked.
+# Pull requests are verified by the `lockfile-verify` job in ci.yml.
+on:
+  schedule:
+    - cron: "30 7 * * 5"
+      timezone: "Asia/Tokyo"
+  workflow_dispatch:
+
+# Declare default permissions as read only.
+permissions: {}
+
+defaults:
+  run:
+    shell: bash
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    name: Verify actions.lock
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Verify actions.lock
+        uses: $/.github/actions/verify-actions-lock
