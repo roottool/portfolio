@@ -93,6 +93,9 @@ jobs:
         with:
           client-id: ${{ vars.GH_APP_CLIENT_ID }}
           private-key: ${{ secrets.GH_APP_PRIVATE_KEY }}
+          # Least privilege: push the branch, then open the PR and enable auto-merge.
+          permission-contents: write
+          permission-pull-requests: write
 
       - name: Create Data Update PR
         if: steps.changes.outputs.changed == 'true'
