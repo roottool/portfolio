@@ -44,7 +44,7 @@
 		"@tailwindcss/vite": "4.3.3",
 		"@types/node": "26.6.6",
 		"@typescript-eslint/parser": "8.72.1",
-		"eslint": "10.13.0",
+		"eslint": "10.14.0",
 		"eslint-config-flat-gitignore": "2.4.0",
 		"eslint-plugin-astro": "3.2.1",
 		"eslint-plugin-oxlint": "1.90.0",
