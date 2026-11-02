@@ -34,6 +34,7 @@ jobs:
       build: ${{ steps.filter.outputs.build }}
       lint-config: ${{ steps.filter.outputs.lint-config }}
       renovate-config: ${{ steps.filter.outputs.renovate-config }}
+      lockfile: ${{ steps.filter.outputs.lockfile }}
     if: ${{ !github.event.pull_request.draft }}
     steps:
       - name: Checkout Repository
@@ -75,6 +76,9 @@ jobs:
               - '.github/actions/**'
             renovate-config:
               - '.github/renovate.json'
+            lockfile:
+              - '.github/workflows/**'
+              - '.github/actions/**'
 
   renovate-config-lint:
     name: Renovate config lint
@@ -144,6 +148,29 @@ jobs:
       - name: Run build
         run: bun run build
 
+  lockfile-verify:
+    name: Verify actions.lock
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    needs: [setup]
+    if: ${{ needs.setup.outputs.lockfile == 'true' }}
+    permissions:
+      contents: read
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Install gh-actions-lock
+        # Pre-1.0 extension: pin the version and bump it manually.
+        run: gh extension install github/gh-actions-lock --pin v0.4.0
+
+      - name: Verify workflow dependency lockfile
+        run: gh actions-lock --verify
+
   gatekeeper:
     name: Gatekeeper
     runs-on: ubuntu-slim
@@ -153,6 +180,7 @@ jobs:
       - lint
       - build
       - renovate-config-lint
+      - lockfile-verify
     if: always() && (contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled'))
     steps:
       - run: exit 1
