@@ -50,16 +50,16 @@ bun run lint     # oxfmt check, astro check + oxlint + eslint, markuplint
 
 ## Source-of-Truth Map
 
-| Topic                                | Read                                                                                         | Notes                                                                   |
-| ------------------------------------ | -------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| Commands (dev/build/lint/fix/format) | `package.json` scripts                                                                       | See Definition of Done above                                            |
-| Formatter                            | `.oxfmtrc.json` / `.editorconfig`                                                            | oxfmt formats everything; `.astro` goes through `prettier-plugin-astro` |
-| Design tokens & utilities            | `src/styles/global.css`                                                                      | `--vk-*` tokens, `card-base`, `vk-*` classes, `grid-areas-layout`       |
-| Component creation guide             | `.claude/skills/new-visual-kei-component/SKILL.md`                                           | Plain Markdown — readable by any agent, not just Claude Code            |
-| Reference implementations            | `src/components/GitHubContributions.astro`, `src/components/SteamSummary.astro`              | List + staggered animation + hover accent bar / grid layout             |
-| Page composition & grid              | `src/pages/index.astro`, `src/layouts/Layout.astro`                                          | New sections must be wired into `index.astro` inside `<Layout>`         |
-| Data update pipelines                | `.github/workflows/update-owned-games.yml`, `.github/workflows/update-oss-contributions.yml` | Weekly schedules (JST); fetch data and open PRs automatically           |
-| CI                                   | `.github/workflows/ci.yml`                                                                   | Format checks + lint + build; draft PRs are skipped                     |
-| Deployment                           | `wrangler.jsonc`                                                                             | Cloudflare Pages, build output in `dist/`                               |
-| Path aliases                         | `tsconfig.json`                                                                              | `@/*` → `src/*`, `$/*` → `public/*`                                     |
-| OG image generation                  | `scripts/generate-og.ts`                                                                     | Runs before `astro build` as part of `bun run build`                    |
+| Topic                                | Read                                                                                         | Notes                                                             |
+| ------------------------------------ | -------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| Commands (dev/build/lint/fix/format) | `package.json` scripts                                                                       | See Definition of Done above                                      |
+| Formatter                            | `.oxfmtrc.json` / `.editorconfig`                                                            | oxfmt formats everything; `.astro` is enabled by `"astro": true`  |
+| Design tokens & utilities            | `src/styles/global.css`                                                                      | `--vk-*` tokens, `card-base`, `vk-*` classes, `grid-areas-layout` |
+| Component creation guide             | `.claude/skills/new-visual-kei-component/SKILL.md`                                           | Plain Markdown — readable by any agent, not just Claude Code      |
+| Reference implementations            | `src/components/GitHubContributions.astro`, `src/components/SteamSummary.astro`              | List + staggered animation + hover accent bar / grid layout       |
+| Page composition & grid              | `src/pages/index.astro`, `src/layouts/Layout.astro`                                          | New sections must be wired into `index.astro` inside `<Layout>`   |
+| Data update pipelines                | `.github/workflows/update-owned-games.yml`, `.github/workflows/update-oss-contributions.yml` | Weekly schedules (JST); fetch data and open PRs automatically     |
+| CI                                   | `.github/workflows/ci.yml`                                                                   | Format checks + lint + build; draft PRs are skipped               |
+| Deployment                           | `wrangler.jsonc`                                                                             | Cloudflare Pages, build output in `dist/`                         |
+| Path aliases                         | `tsconfig.json`                                                                              | `@/*` → `src/*`, `$/*` → `public/*`                               |
+| OG image generation                  | `scripts/generate-og.ts`                                                                     | Runs before `astro build` as part of `bun run build`              |
