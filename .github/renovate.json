@@ -1,5 +1,6 @@
 {
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
+	"description": ["Temporary change to trigger renovate-config-lint; revert before merge"],
 	"extends": ["config:best-practices", ":pinAllExceptPeerDependencies"],
 	"timezone": "Asia/Tokyo",
 	"schedule": ["* 0-4 * * *"],
